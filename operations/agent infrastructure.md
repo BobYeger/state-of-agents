@@ -1,0 +1,29 @@
+# Agent Infrastructure
+
+Agent infrastructure includes the runtime components that let agents act reliably: harnesses, sessions, sandboxes, tools, memory, permissions, queues, observability, and recovery.
+
+The infrastructure layer is where many agent improvements become real: the same model can behave differently depending on its tools, state, sandbox, traces, memory, and recovery path.
+
+## Related
+
+- [[operations/durable sessions]]
+- [[operations/sandboxes]]
+- [[operations/agent memory]]
+- [[operations/agent observability]]
+- [[operations/permissions]]
+- [[operations/agent harnesses]]
+- [[operations/agent evals]]
+- [[maps/What Makes Agent Systems Better]]
+
+## Related Sources
+
+- [[sources/Anthropic Effective Harnesses for Long-Running Agents|Effective harnesses for long-running agents]]
+- [[sources/OpenAI Responses API Computer Environment|From model to agent: Equipping the Responses API with a computer environment]]
+- [[sources/llm-wiki - Karpathy|llm-wiki]]
+- [[sources/MasRouter|MasRouter: Learning to Route LLMs for Multi-Agent Systems]]
+- [[sources/Cloudflare Project Think|Project Think: building the next generation of AI agents on Cloudflare]]
+- [[sources/Cloudflare Sandboxing AI Agents|Sandboxing AI agents, 100x faster]]
+- [[sources/Anthropic Managed Agents|Scaling Managed Agents: Decoupling the brain from the hands]]
+- [[sources/The 2025 AI Agent Index|The 2025 AI Agent Index: Documenting Technical and Safety Features of Deployed Agentic AI Systems]]
+- [[sources/Understanding Multi-Agent LLM Frameworks|Understanding Multi-Agent LLM Frameworks: A Unified Benchmark and Experimental Analysis]]
+- [[sources/OpenAI Codex Agent Loop|Unrolling the Codex agent loop]]

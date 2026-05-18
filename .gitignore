@@ -1,0 +1,8 @@
+.DS_Store
+
+# Obsidian local session state
+.obsidian/workspace*.json
+
+# Common Obsidian/local generated folders
+.trash/
+.obsidian/cache/
