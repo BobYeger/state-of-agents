@@ -6,6 +6,7 @@
 - When do [[concepts/multi-agent systems|multi-agent systems]] outperform single-agent systems?
 - Which topologies, routing policies, and coordination protocols matter?
 - If more agents is not sufficient, which concrete levers actually improve agent systems? See [[maps/What Makes Agent Systems Better]].
+- Which agent designs scale with more compute, search, learning, feedback, and experience? See [[concepts/scaling with computation]].
 - How should [[benchmarks/agent evaluation|agent evaluation]] handle long horizons, tools, state, and interaction?
 - What infrastructure is needed for [[concepts/long-horizon agents|long-horizon agents]]?
 - How do [[protocols/agent protocols|agent protocols]] such as MCP and A2A change interoperability?

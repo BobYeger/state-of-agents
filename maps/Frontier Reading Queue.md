@@ -5,6 +5,7 @@ Prioritized queue for deeper reading. Source notes and raw artifacts are already
 ## Priority 0: Process Anchors
 
 - [[sources/llm-wiki - Karpathy]]
+- [[sources/Rich Sutton The Bitter Lesson]]
 
 ## Priority 1: Deep Reading
 

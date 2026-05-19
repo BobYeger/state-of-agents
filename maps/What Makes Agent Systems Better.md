@@ -12,6 +12,7 @@ Agent systems get better when structure, runtime control, tools, context, memory
 |---|---|---|
 | Task-fit and decomposition | Use multiple agents only when the task has breadth, separable context, or useful specialization. | [[claims/Claim - Agent systems improve when structure matches the task]] |
 | Prompt, role, and topology search | Treat prompts, roles, and communication graph as design variables. | [[methods/topology optimization]], [[methods/agentic workflow search]] |
+| Scaling-compatible design | Prefer structures that improve with more compute, search, learning, traces, feedback, and experience. | [[concepts/scaling with computation]], [[methods/agentic workflow search]] |
 | Runtime routing and pruning | Route by task state, role, model cost, uncertainty, and observed redundancy. | [[methods/runtime routing]] |
 | Supervision and verification | Add monitors, critics, evaluators, stopping criteria, and repair loops. | [[claims/Claim - Runtime control and verification improve agent reliability]], [[methods/runtime supervision]] |
 | Harness and context design | Make the loop, state, tools, approvals, compaction, and handoffs explicit. | [[claims/Claim - Harnesses tools and context are core agent performance levers]], [[operations/agent harnesses]] |
@@ -23,15 +24,16 @@ Agent systems get better when structure, runtime control, tools, context, memory
 ## First Reading Path
 
 1. [[sources/Anthropic Building Effective Agents]]
-2. [[sources/Anthropic Multi-Agent Research System]]
-3. [[sources/Google Scaling Agent Systems]]
-4. [[sources/Multi-Agent Design - MASS]]
-5. [[sources/Why Do Multi-Agent LLM Systems Fail]]
-6. [[sources/Stop Wasting Your Tokens]]
-7. [[sources/Anthropic Writing Tools for Agents]]
-8. [[sources/Anthropic Effective Harnesses for Long-Running Agents]]
-9. [[sources/SkillsBench]]
-10. [[sources/Google ReasoningBank]]
+2. [[sources/Rich Sutton The Bitter Lesson]]
+3. [[sources/Anthropic Multi-Agent Research System]]
+4. [[sources/Google Scaling Agent Systems]]
+5. [[sources/Multi-Agent Design - MASS]]
+6. [[sources/Why Do Multi-Agent LLM Systems Fail]]
+7. [[sources/Stop Wasting Your Tokens]]
+8. [[sources/Anthropic Writing Tools for Agents]]
+9. [[sources/Anthropic Effective Harnesses for Long-Running Agents]]
+10. [[sources/SkillsBench]]
+11. [[sources/Google ReasoningBank]]
 
 ## Related Maps
 

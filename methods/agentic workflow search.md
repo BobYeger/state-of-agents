@@ -16,9 +16,15 @@ Workflow search improves agent systems by making design choices empirical. Promp
 - Tool availability, tool order, and tool-call constraints.
 - Evaluation metric, budget, and rollback policy.
 
+## Related
+
+- [[concepts/scaling with computation]]
+- [[maps/What Makes Agent Systems Better]]
+
 ## Related Sources
 
 - [[sources/AFlow|AFlow: Automating Agentic Workflow Generation]]
 - [[sources/ADAS|Automated Design of Agentic Systems]]
 - [[sources/HALO|HALO: Hierarchical Autonomous Logic-Oriented Orchestration for Multi-Agent LLM Systems]]
 - [[sources/Karpathy Autoresearch|autoresearch]]
+- [[sources/Rich Sutton The Bitter Lesson|The Bitter Lesson]]

@@ -6,6 +6,7 @@ Agentic systems are AI systems that repeatedly reason, act through tools or envi
 
 - [[concepts/long-horizon agents]]
 - [[concepts/tool use]]
+- [[concepts/scaling with computation]]
 - [[operations/agent infrastructure]]
 - [[benchmarks/agent evaluation]]
 
@@ -16,5 +17,5 @@ Agentic systems are AI systems that repeatedly reason, act through tools or envi
 - [[sources/ADAS|Automated Design of Agentic Systems]]
 - [[sources/Anthropic Building Effective Agents|Building effective agents]]
 - [[sources/llm-wiki - Karpathy|llm-wiki]]
+- [[sources/Rich Sutton The Bitter Lesson|The Bitter Lesson]]
 - [[sources/The 2025 AI Agent Index|The 2025 AI Agent Index: Documenting Technical and Safety Features of Deployed Agentic AI Systems]]
-
