@@ -1,0 +1,34 @@
+Title: Welcome to the BeeAI Framework - BeeAI Framework
+
+URL Source: https://framework.beeai.dev/
+
+Markdown Content:
+> ## Documentation Index
+> 
+> 
+> Fetch the complete documentation index at: [https://framework.beeai.dev/llms.txt](https://framework.beeai.dev/llms.txt)
+> 
+> 
+> Use this file to discover all available pages before exploring further.
+
+**BeeAI Framework** is an open-source framework for building production-grade multi-agent systems. It is hosted by the Linux Foundation under open governance, ensuring transparency, community-driven development, and enterprise-grade stability.BeeAI goes beyond simple prompting by providing a lightweight yet powerful approach to reliable agent development, with **built-in constraint enforcement** and rule-based governance that preserves reasoning abilities while ensuring **predictable behavior**. The BeeAI Framework provides the flexibility and performance needed for scalable AI systems, supporting both **Python** and **TypeScript** with complete feature parity.
+
+## Key Features
+
+| **Feature** | **Description** |
+| --- | --- |
+| **Production Optimization** | Built-in caching, memory optimization, and resource management for scalable deployment |
+| **Agents with Constraints** | Preserve your agent’s reasoning abilities while enforcing deterministic rules instead of suggesting behavior |
+| **Dynamic Workflows** | Use simple decorators to design multi-agent systems with advanced patterns like parallelism, retries, and replanning |
+| **Declarative Orchestration** | Define complex agent systems in YAML for more predictable and maintainable orchestration |
+| **Pluggable Observability** | Integrate with your existing stack in minutes with native OpenTelemetry support for real-time monitoring, auditing, and detailed tracing |
+| **MCP and A2A Native** | Build MCP-compatible components, equip agents with MCP tools, and interoperate with any MCP or A2A agent system |
+| **Provider Agnostic** | Supports 10+ LLM providers including Ollama, Groq, OpenAI, Watsonx.ai, and more with seamless switching |
+| **Python and TypeScript Support** | Complete feature parity between Python and TypeScript implementations lets teams build with the tools they already know and love |
+
+* * *
+
+Was this page helpful?
+
+*   [Key Features](https://framework.beeai.dev/#key-features)
+*   [Join the Community](https://framework.beeai.dev/#join-the-community)
