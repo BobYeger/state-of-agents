@@ -21,4 +21,4 @@ Prioritized queue for deeper reading. Source notes and raw artifacts are already
 
 ## Priority 2: Verification Backlog
 
-External backlog: `/Users/matan/projects/State of Agents work artifacts/metadata/backlogs/Unverified Leads.md`
+Unverified leads are kept outside the public graph until they have enough source evidence to become source notes.

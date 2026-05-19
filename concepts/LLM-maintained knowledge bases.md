@@ -17,7 +17,7 @@ For this vault, the rule is:
 - [[operations/agent memory]]
 - [[operations/agent infrastructure]]
 
-Implementation comparison notes live outside the graph at `/Users/matan/projects/State of Agents work artifacts/metadata/knowledge-base-design/Karpathy LLM Wiki Implementations.md`.
+Implementation comparison notes are kept outside the public graph until they are promoted into synthesis notes.
 
 ## Related Sources
 

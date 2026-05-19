@@ -28,4 +28,4 @@ Use this as a navigation page for long-running autonomy, persistent work, and ag
 
 ## Source Trail
 
-Follow the related-source sections in the core notes. The canonical source registry lives outside the graph at `/Users/matan/projects/State of Agents work artifacts/metadata/Source Registry.md`.
+Follow the related-source sections in the core notes. Source cards in `sources/` hold the public evidence trail; private crawl logs and working registries stay outside this graph.

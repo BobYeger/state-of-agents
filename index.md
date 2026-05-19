@@ -9,7 +9,7 @@ This vault tracks frontier AI agent research and practice, with emphasis on mult
 - [[maps/Claims Map]]
 - [[maps/Frontier Reading Queue]]
 
-Project metadata lives outside the knowledge graph in `/Users/matan/projects/State of Agents work artifacts/metadata/`.
+Project metadata and private working artifacts are kept outside the public knowledge graph. This repository contains the public vault, the source notes, and the raw source archive needed to inspect the evidence trail.
 
 ## Operating Model
 
@@ -17,6 +17,7 @@ Project metadata lives outside the knowledge graph in `/Users/matan/projects/Sta
 - Full source material lives under `raw/` and is excluded from the graph view.
 - Maps are navigation pages, not source registries.
 - Durable connections should live in concepts, systems, methods, protocols, benchmarks, safety, operations, and claims.
+- Promotional or product-only pages are included only when they expose useful architecture, harness, protocol, evaluation, safety, or operational details.
 
 ## Core Areas
 

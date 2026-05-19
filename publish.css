@@ -1,134 +1,335 @@
-/* State of AI Agents — Obsidian Publish Custom Theme */
-/* Light color scheme with colored graph nodes */
+/* State of AI Agents - Obsidian Publish theme */
 
-/* ── Light theme overrides ── */
 .published-container {
-  --background-primary: #fafafa;
-  --background-secondary: #f0f0f0;
-  --background-modifier-border: #e0e0e0;
-  --text-normal: #1a1a2e;
-  --text-muted: #555;
-  --text-faint: #888;
-  --text-accent: #3b82f6;
-  --interactive-accent: #3b82f6;
-  --link-color: #3b82f6;
-  --link-color-hover: #2563eb;
+  --background-primary: #fbfbf8;
+  --background-secondary: #f1f3ef;
+  --background-secondary-alt: #e8ece5;
+  --background-modifier-border: #dce2d7;
+  --background-modifier-hover: #eef2ea;
+  --text-normal: #172026;
+  --text-muted: #5b6972;
+  --text-faint: #7d8991;
+  --text-accent: #2563eb;
+  --interactive-accent: #2563eb;
+  --link-color: #2563eb;
+  --link-color-hover: #1d4ed8;
+  --h1-color: #0f172a;
+  --h2-color: #17324d;
+  --h3-color: #294056;
+  --code-background: #edf2f7;
+  --code-normal: #27384a;
+  --soa-source-2026: #ef4444;
+  --soa-source-2025: #f59e0b;
+  --soa-source-2024: #2563eb;
+  --soa-concepts: #14b8a6;
+  --soa-systems: #3b82f6;
+  --soa-methods: #8b5cf6;
+  --soa-protocols: #f97316;
+  --soa-benchmarks: #eab308;
+  --soa-safety: #dc2626;
+  --soa-operations: #64748b;
+  --soa-claims: #ec4899;
+  --soa-maps: #475569;
+  --radius-s: 4px;
+  --radius-m: 8px;
+  --content-width: 820px;
 }
 
-/* ── Graph node colors by path ── */
-/* Obsidian Publish graph doesn't natively support color groups,
-   but the graph SVG elements can be styled via CSS tag matching.
-   Note: Publish renders nodes as circles with data attributes. */
+body {
+  background: var(--background-primary);
+}
+
+.site-body {
+  background: var(--background-primary);
+}
+
+.markdown-preview-view,
+.markdown-rendered {
+  color: var(--text-normal);
+  line-height: 1.62;
+}
+
+.markdown-preview-view h1,
+.markdown-rendered h1 {
+  max-width: var(--content-width);
+  margin-top: 0.65em;
+  margin-bottom: 0.65em;
+  color: var(--h1-color);
+  letter-spacing: 0;
+}
+
+.markdown-preview-view h2,
+.markdown-rendered h2 {
+  max-width: var(--content-width);
+  margin-top: 1.75em;
+  border-bottom: 1px solid var(--background-modifier-border);
+  padding-bottom: 0.25em;
+  color: var(--h2-color);
+  letter-spacing: 0;
+}
+
+.markdown-preview-view h3,
+.markdown-rendered h3 {
+  max-width: var(--content-width);
+  margin-top: 1.35em;
+  color: var(--h3-color);
+  letter-spacing: 0;
+}
+
+.markdown-preview-view p,
+.markdown-preview-view ul,
+.markdown-preview-view ol,
+.markdown-preview-view table,
+.markdown-preview-view blockquote,
+.markdown-rendered p,
+.markdown-rendered ul,
+.markdown-rendered ol,
+.markdown-rendered table,
+.markdown-rendered blockquote {
+  max-width: var(--content-width);
+}
+
+.markdown-preview-view li,
+.markdown-rendered li {
+  margin: 0.15em 0;
+}
+
+.markdown-preview-view table,
+.markdown-rendered table {
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-m);
+}
+
+.markdown-preview-view th,
+.markdown-rendered th {
+  background: #eef3f7;
+  color: #243647;
+  font-weight: 650;
+}
+
+.markdown-preview-view td,
+.markdown-preview-view th,
+.markdown-rendered td,
+.markdown-rendered th {
+  border-color: var(--background-modifier-border);
+  padding: 0.55em 0.7em;
+  vertical-align: top;
+}
+
+.site-body-left-column {
+  background: #f4f6f1;
+  border-right: 1px solid var(--background-modifier-border);
+}
+
+.site-body-left-column-site-name {
+  color: #111827;
+  font-weight: 750;
+  letter-spacing: 0;
+}
+
+.tree-item-self {
+  border-radius: var(--radius-s);
+}
+
+.tree-item-self:hover {
+  background: var(--background-modifier-hover);
+}
+
+.tree-item-inner {
+  color: #34414d;
+}
+
+.site-body-right-column {
+  background: #fbfbf8;
+  border-left: 1px solid var(--background-modifier-border);
+}
+
+.site-body-right-column .site-body-right-column-inner {
+  color: var(--text-muted);
+}
+
+.internal-link {
+  color: var(--link-color);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+}
+
+.internal-link:hover {
+  color: var(--link-color-hover);
+}
+
+.internal-link[data-href^="concepts/"],
+.internal-link[href*="/concepts/"] {
+  color: var(--soa-concepts);
+}
+
+.internal-link[data-href^="systems/"],
+.internal-link[href*="/systems/"] {
+  color: var(--soa-systems);
+}
+
+.internal-link[data-href^="methods/"],
+.internal-link[href*="/methods/"] {
+  color: var(--soa-methods);
+}
+
+.internal-link[data-href^="protocols/"],
+.internal-link[href*="/protocols/"] {
+  color: var(--soa-protocols);
+}
+
+.internal-link[data-href^="benchmarks/"],
+.internal-link[href*="/benchmarks/"] {
+  color: var(--soa-benchmarks);
+}
+
+.internal-link[data-href^="safety/"],
+.internal-link[href*="/safety/"] {
+  color: var(--soa-safety);
+}
+
+.internal-link[data-href^="operations/"],
+.internal-link[href*="/operations/"] {
+  color: var(--soa-operations);
+}
+
+.internal-link[data-href^="claims/"],
+.internal-link[href*="/claims/"] {
+  color: var(--soa-claims);
+}
+
+.internal-link[data-href^="maps/"],
+.internal-link[href*="/maps/"] {
+  color: var(--soa-maps);
+}
+
+.internal-link[data-href^="sources/"],
+.internal-link[href*="/sources/"] {
+  color: #475569;
+}
+
+.tag {
+  border: 1px solid #bae6fd;
+  border-radius: 999px;
+  background: #e0f2fe;
+  color: #075985;
+  font-size: 0.82em;
+  padding: 0.1em 0.55em;
+}
+
+code {
+  border: 1px solid #dce5ee;
+  border-radius: var(--radius-s);
+  background: var(--code-background);
+  color: var(--code-normal);
+  padding: 0.12em 0.32em;
+}
+
+pre {
+  max-width: var(--content-width);
+  border: 1px solid #d9e2ec;
+  border-radius: var(--radius-m);
+  background: #f8fafc;
+}
+
+pre code {
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+
+.metadata-container,
+.frontmatter-container {
+  max-width: var(--content-width);
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-m);
+  background: #f7f9f5;
+}
+
+.metadata-property-key,
+.metadata-property-value {
+  font-size: 0.92em;
+}
+
+.callout {
+  max-width: var(--content-width);
+  border-radius: var(--radius-m);
+  background: #eef7ff;
+  border: 1px solid #cbe3fb;
+  border-left: 4px solid #2563eb;
+}
+
+.callout[data-callout="warning"],
+.callout[data-callout="danger"],
+.callout[data-callout="failure"],
+.callout[data-callout="bug"] {
+  background: #fff1f2;
+  border-color: #fecdd3;
+  border-left-color: var(--soa-safety);
+}
+
+.callout[data-callout="tip"],
+.callout[data-callout="success"] {
+  background: #ecfdf5;
+  border-color: #bbf7d0;
+  border-left-color: var(--soa-concepts);
+}
+
+.popover {
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-m);
+  background: #ffffff;
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.14);
+}
+
+.search-input-container input {
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-m);
+  background: #ffffff;
+  color: var(--text-normal);
+}
+
+.backlinks {
+  border-top: 1px solid var(--background-modifier-border);
+}
+
+.graph-view-outer {
+  overflow: hidden;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-m);
+  background: #ffffff;
+}
+
+.graph-view-container {
+  background: #fbfbf8;
+}
 
 .graph-view circle {
-  fill: #94a3b8;  /* default: slate */
-  stroke: none;
-}
-
-/* Make the graph background lighter */
-.graph-view-container {
-  background-color: #fafafa;
+  fill: #94a3b8;
+  stroke: #ffffff;
+  stroke-width: 1.4px;
 }
 
 .graph-view text {
-  fill: #1a1a2e;
+  fill: #1f2937;
 }
 
 .graph-view line {
   stroke: #cbd5e1;
+  stroke-opacity: 0.55;
 }
 
-/* ── Navigation sidebar ── */
-.site-body-left-column {
-  background-color: #f5f5f5;
-  border-right: 1px solid #e5e7eb;
-}
+@media (max-width: 900px) {
+  .published-container {
+    --content-width: 100%;
+  }
 
-.site-body-left-column-site-name {
-  color: #1a1a2e;
-  font-weight: 700;
-}
-
-.tree-item-self:hover {
-  background-color: #e5e7eb;
-}
-
-/* ── Content area ── */
-.markdown-preview-view {
-  color: #1a1a2e;
-}
-
-.markdown-preview-view h1,
-.markdown-preview-view h2,
-.markdown-preview-view h3 {
-  color: #0f172a;
-}
-
-/* ── Right sidebar (graph, outline, backlinks) ── */
-.site-body-right-column {
-  background-color: #fafafa;
-}
-
-.graph-view-outer {
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-/* ── Interactive graph header ── */
-.graph-view-outer .graph-view-header {
-  color: #64748b;
-}
-
-/* ── Backlinks section ── */
-.backlinks {
-  border-top: 1px solid #e5e7eb;
-}
-
-/* ── Hover preview popup ── */
-.popover {
-  background-color: #ffffff;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-/* ── Search ── */
-.search-input-container input {
-  background-color: #ffffff;
-  border: 1px solid #d1d5db;
-  color: #1a1a2e;
-}
-
-/* ── Links ── */
-.internal-link {
-  color: #3b82f6;
-}
-
-.internal-link:hover {
-  color: #2563eb;
-}
-
-/* ── Tags ── */
-.tag {
-  background-color: #e0f2fe;
-  color: #0369a1;
-}
-
-/* ── Code blocks ── */
-code {
-  background-color: #f1f5f9;
-  color: #334155;
-  padding: 2px 4px;
-  border-radius: 3px;
-}
-
-pre code {
-  background-color: #f8fafc;
-  border: 1px solid #e2e8f0;
-}
-
-/* ── Callouts ── */
-.callout {
-  background-color: #f0f9ff;
-  border-left: 4px solid #3b82f6;
+  .markdown-preview-view,
+  .markdown-rendered {
+    line-height: 1.55;
+  }
 }
