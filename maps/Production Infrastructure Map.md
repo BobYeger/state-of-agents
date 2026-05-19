@@ -10,6 +10,7 @@ Use this as a navigation page for production agent runtimes. Source evidence sho
 - [[operations/agent memory]]
 - [[operations/agent observability]]
 - [[operations/permissions]]
+- [[methods/deliberative control]]
 - [[methods/runtime routing]]
 - [[maps/What Makes Agent Systems Better]]
 

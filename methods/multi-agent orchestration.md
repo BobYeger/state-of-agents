@@ -11,6 +11,7 @@ Orchestration improves agent systems when it turns task structure into explicit 
 - [[concepts/multi-agent systems]]
 - [[maps/What Makes Agent Systems Better]]
 - [[claims/Claim - Agent systems improve when structure matches the task]]
+- [[methods/deliberative control]]
 - [[methods/topology optimization]]
 - [[methods/runtime supervision]]
 
@@ -22,6 +23,8 @@ Orchestration improves agent systems when it turns task structure into explicit 
 - [[sources/ADAS|Automated Design of Agentic Systems]]
 - [[sources/Anthropic Building Effective Agents|Building effective agents]]
 - [[sources/HALO|HALO: Hierarchical Autonomous Logic-Oriented Orchestration for Multi-Agent LLM Systems]]
+- [[sources/VeriMAP|Verification-Aware Planning for Multi-Agent Systems]]
+- [[sources/AgentFlow|In-the-Flow Agentic System Optimization for Effective Planning and Tool Use]]
 - [[sources/Anthropic Multi-Agent Research System|How we built our multi-agent research system]]
 - [[sources/MAPRO|MAPRO: Recasting Multi-Agent Prompt Optimization as Maximum a Posteriori Inference]]
 - [[sources/MAS2|MAS2: Self-Generative, Self-Configuring, Self-Rectifying Multi-Agent Systems]]

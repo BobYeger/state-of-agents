@@ -9,6 +9,7 @@ Use this as a navigation page, not a source registry. Start from the synthesis n
 - [[methods/multi-agent orchestration]]
 - [[methods/topology optimization]]
 - [[methods/multi-agent learning]]
+- [[methods/deliberative control]]
 - [[methods/runtime routing]]
 - [[methods/runtime supervision]]
 

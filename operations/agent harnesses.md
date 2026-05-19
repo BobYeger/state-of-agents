@@ -11,6 +11,7 @@ Harnesses improve agent systems by making the loop inspectable and recoverable: 
 ## Tracker
 
 - [[maps/Harness Tracker]]
+- [[methods/deliberative control]]
 - [[claims/Claim - Harnesses tools and context are core agent performance levers]]
 - [[maps/What Makes Agent Systems Better]]
 
@@ -34,10 +35,13 @@ Harnesses improve agent systems by making the loop inspectable and recoverable: 
 - [[sources/Manus Documentation]]
 - [[sources/Google Jules Docs]]
 - [[sources/MiniMax Agent Team]]
+- [[sources/Plan-Then-Execute]]
+- [[sources/Web Agents Plan-Then-Execute]]
 
 ## Related
 
 - [[operations/agent infrastructure]]
+- [[methods/deliberative control]]
 - [[operations/durable sessions]]
 - [[operations/permissions]]
 - [[operations/sandboxes]]

@@ -6,6 +6,7 @@
 - When do [[concepts/multi-agent systems|multi-agent systems]] outperform single-agent systems?
 - Which topologies, routing policies, and coordination protocols matter?
 - If more agents is not sufficient, which concrete levers actually improve agent systems? See [[maps/What Makes Agent Systems Better]].
+- When should planning, execution, verification, and human approval be separated? See [[methods/deliberative control]].
 - Which agent designs scale with more compute, search, learning, feedback, and experience? See [[concepts/scaling with computation]].
 - How should [[benchmarks/agent evaluation|agent evaluation]] handle long horizons, tools, state, and interaction?
 - What infrastructure is needed for [[concepts/long-horizon agents|long-horizon agents]]?

@@ -15,6 +15,7 @@ The positive design rule is task-contingent orchestration: choose the smallest s
 - [[sources/MultiAgentBench]] treats coordination protocol and topology as measured variables.
 - [[sources/Understanding Multi-Agent LLM Frameworks]] shows framework architecture can strongly affect latency, planning accuracy, and coordination success.
 - [[sources/Google ADK Multi-Agent Patterns]] is practical evidence for pipelines, routing, delegation, and human-in-loop patterns.
+- [[sources/Plan-Then-Execute]] and [[sources/VeriMAP]] show that explicit planner-executor or planner-executor-verifier structure helps when tasks benefit from plan review, structured subtask I/O, or verification.
 
 ## Design Implications
 
@@ -28,5 +29,6 @@ The positive design rule is task-contingent orchestration: choose the smallest s
 - [[claims/Claim - More agents are not automatically better]]
 - [[maps/What Makes Agent Systems Better]]
 - [[methods/multi-agent orchestration]]
+- [[methods/deliberative control]]
 - [[methods/topology optimization]]
 - [[concepts/multi-agent systems]]

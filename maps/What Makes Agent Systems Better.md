@@ -11,6 +11,7 @@ Agent systems get better when structure, runtime control, tools, context, memory
 | Lever | What improves | Main notes |
 |---|---|---|
 | Task-fit and decomposition | Use multiple agents only when the task has breadth, separable context, or useful specialization. | [[claims/Claim - Agent systems improve when structure matches the task]] |
+| Deliberative control | Separate planning, execution, observation, verification, and revision when the task benefits from explicit control flow. | [[methods/deliberative control]], [[methods/runtime supervision]] |
 | Prompt, role, and topology search | Treat prompts, roles, and communication graph as design variables. | [[methods/topology optimization]], [[methods/agentic workflow search]] |
 | Scaling-compatible design | Prefer structures that improve with more compute, search, learning, traces, feedback, and experience. | [[concepts/scaling with computation]], [[methods/agentic workflow search]] |
 | Runtime routing and pruning | Route by task state, role, model cost, uncertainty, and observed redundancy. | [[methods/runtime routing]] |
@@ -27,13 +28,16 @@ Agent systems get better when structure, runtime control, tools, context, memory
 2. [[sources/Rich Sutton The Bitter Lesson]]
 3. [[sources/Anthropic Multi-Agent Research System]]
 4. [[sources/Google Scaling Agent Systems]]
-5. [[sources/Multi-Agent Design - MASS]]
-6. [[sources/Why Do Multi-Agent LLM Systems Fail]]
-7. [[sources/Stop Wasting Your Tokens]]
-8. [[sources/Anthropic Writing Tools for Agents]]
-9. [[sources/Anthropic Effective Harnesses for Long-Running Agents]]
-10. [[sources/SkillsBench]]
-11. [[sources/Google ReasoningBank]]
+5. [[sources/SAND]]
+6. [[sources/VeriMAP]]
+7. [[sources/AgentFlow]]
+8. [[sources/Multi-Agent Design - MASS]]
+9. [[sources/Why Do Multi-Agent LLM Systems Fail]]
+10. [[sources/Stop Wasting Your Tokens]]
+11. [[sources/Anthropic Writing Tools for Agents]]
+12. [[sources/Anthropic Effective Harnesses for Long-Running Agents]]
+13. [[sources/SkillsBench]]
+14. [[sources/Google ReasoningBank]]
 
 ## Related Maps
 

@@ -17,4 +17,5 @@ Prompt injection attacks manipulate an agent through untrusted content in tool o
 - [[sources/Design Patterns for Securing LLM Agents|Design Patterns for Securing LLM Agents against Prompt Injections]]
 - [[sources/InjecAgent|InjecAgent: Benchmarking Indirect Prompt Injections in Tool-Integrated Large Language Model Agents]]
 - [[sources/OpenAI Operator System Card|Operator System Card]]
-
+- [[sources/PEAR|PEAR: Planner-Executor Agent Robustness Benchmark]]
+- [[sources/Web Agents Plan-Then-Execute|Web Agents Should Adopt the Plan-Then-Execute Paradigm]]

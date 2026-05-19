@@ -9,6 +9,7 @@ Use this as a navigation page for agent safety, security, and robustness. Source
 - [[safety/protocol security]]
 - [[operations/agent memory]]
 - [[safety/agentic misalignment risk]]
+- [[methods/deliberative control]]
 - [[operations/sandboxes]]
 
 ## Systems

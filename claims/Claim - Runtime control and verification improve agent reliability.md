@@ -9,6 +9,9 @@ Agent systems improve when runtime behavior is supervised, pruned, verified, and
 - [[sources/AgentDropout]] shows redundant agents and communication can be removed dynamically.
 - [[sources/Multi-Agent Collaboration via Evolving Orchestration]] supports adaptive orchestration instead of fixed execution.
 - [[sources/MiniMax Agent Team]] is a concrete Leader / Worker / Verifier runtime pattern.
+- [[sources/VeriMAP]] shows planning can produce verification functions and structured I/O for subtasks.
+- [[sources/PEAR]] shows planner-stage attacks can be especially dangerous in planner-executor agents.
+- [[sources/AgentFlow]] treats planner, executor, verifier, and generator roles as an optimizable live system.
 - [[sources/Cursor Building Better Bugbot]] and [[sources/Cursor Bugbot Learned Rules]] show production improvement through eval loops and feedback.
 - [[sources/Anthropic Demystifying Agent Evals]] makes agent evals a design practice for multi-turn, tool-using behavior.
 
@@ -22,6 +25,7 @@ Agent systems improve when runtime behavior is supervised, pruned, verified, and
 ## Related
 
 - [[maps/What Makes Agent Systems Better]]
+- [[methods/deliberative control]]
 - [[methods/runtime supervision]]
 - [[methods/runtime routing]]
 - [[operations/agent observability]]

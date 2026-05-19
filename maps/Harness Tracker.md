@@ -27,6 +27,7 @@ The practical question for every harness is how the loop closes: what the agent 
 | Simple tool loop | OpenAI Agents SDK, Responses API | Model calls tool, observes output, repeats until done. |
 | Coding-agent loop | Codex, Claude Code, Pi, OpenCode, Cline, Cascade | Read repo, plan, edit files, run shell/tests, observe, patch, summarize. |
 | Plan/Act split | Cline, OpenCode, Windsurf Cascade | Read-only planning separated from write/execute mode. |
+| Deliberative control | Three-layer architectures, plan-then-execute, planner-executor-verifier | Planning, execution, observation, and verification have explicit boundaries and authority. |
 | Durable session + sandbox | Anthropic Managed Agents, Cloudflare Agents, Manus, Jules, Copilot cloud agent | Long-task state persists outside model context; execution happens in an isolated environment. |
 | Initializer + worker handoff | Anthropic long-running harness | First agent creates artifacts; later agents resume from them. |
 | Planner/generator/evaluator | Anthropic app-development harness | Generation and evaluation are separate agents and context resets are explicit. |
@@ -67,6 +68,7 @@ The practical question for every harness is how the loop closes: what the agent 
 - [[operations/agent harnesses]]
 - [[maps/Builder Ecosystem Map]]
 - [[operations/agent infrastructure]]
+- [[methods/deliberative control]]
 - [[operations/agent memory]]
 - [[operations/sandboxes]]
 - [[operations/permissions]]
