@@ -1,0 +1,134 @@
+/* State of AI Agents — Obsidian Publish Custom Theme */
+/* Light color scheme with colored graph nodes */
+
+/* ── Light theme overrides ── */
+.published-container {
+  --background-primary: #fafafa;
+  --background-secondary: #f0f0f0;
+  --background-modifier-border: #e0e0e0;
+  --text-normal: #1a1a2e;
+  --text-muted: #555;
+  --text-faint: #888;
+  --text-accent: #3b82f6;
+  --interactive-accent: #3b82f6;
+  --link-color: #3b82f6;
+  --link-color-hover: #2563eb;
+}
+
+/* ── Graph node colors by path ── */
+/* Obsidian Publish graph doesn't natively support color groups,
+   but the graph SVG elements can be styled via CSS tag matching.
+   Note: Publish renders nodes as circles with data attributes. */
+
+.graph-view circle {
+  fill: #94a3b8;  /* default: slate */
+  stroke: none;
+}
+
+/* Make the graph background lighter */
+.graph-view-container {
+  background-color: #fafafa;
+}
+
+.graph-view text {
+  fill: #1a1a2e;
+}
+
+.graph-view line {
+  stroke: #cbd5e1;
+}
+
+/* ── Navigation sidebar ── */
+.site-body-left-column {
+  background-color: #f5f5f5;
+  border-right: 1px solid #e5e7eb;
+}
+
+.site-body-left-column-site-name {
+  color: #1a1a2e;
+  font-weight: 700;
+}
+
+.tree-item-self:hover {
+  background-color: #e5e7eb;
+}
+
+/* ── Content area ── */
+.markdown-preview-view {
+  color: #1a1a2e;
+}
+
+.markdown-preview-view h1,
+.markdown-preview-view h2,
+.markdown-preview-view h3 {
+  color: #0f172a;
+}
+
+/* ── Right sidebar (graph, outline, backlinks) ── */
+.site-body-right-column {
+  background-color: #fafafa;
+}
+
+.graph-view-outer {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* ── Interactive graph header ── */
+.graph-view-outer .graph-view-header {
+  color: #64748b;
+}
+
+/* ── Backlinks section ── */
+.backlinks {
+  border-top: 1px solid #e5e7eb;
+}
+
+/* ── Hover preview popup ── */
+.popover {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* ── Search ── */
+.search-input-container input {
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  color: #1a1a2e;
+}
+
+/* ── Links ── */
+.internal-link {
+  color: #3b82f6;
+}
+
+.internal-link:hover {
+  color: #2563eb;
+}
+
+/* ── Tags ── */
+.tag {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+/* ── Code blocks ── */
+code {
+  background-color: #f1f5f9;
+  color: #334155;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+pre code {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+/* ── Callouts ── */
+.callout {
+  background-color: #f0f9ff;
+  border-left: 4px solid #3b82f6;
+}
