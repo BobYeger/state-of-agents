@@ -35,6 +35,18 @@ obsidian help
 
 `publish.css` provides the public site theme. Obsidian Publish does not expose the same full local graph configuration surface as the desktop app, so graph color groups remain canonical in `.obsidian/graph.json`; the public CSS adds matching folder/topic color cues where Publish supports them.
 
+The headless Publish CLI uses the `ob` command:
+
+```bash
+ob login
+ob publish-list-sites
+ob publish-setup --path .
+ob publish --dry-run
+ob publish
+```
+
+Use the interactive login prompt rather than putting account passwords in shell commands.
+
 ## Inclusion Rule
 
 Include sources that expose useful agent-system knowledge: architecture, harnesses, protocols, multi-agent coordination, tool use, memory, skills, evaluation, safety, security, operations, or frontier research.
