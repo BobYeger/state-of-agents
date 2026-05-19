@@ -32,10 +32,6 @@ updated: 2026-05-18
 - Useful bridge between general coding agents and research/ML engineering agents.
 - Pairs with MLR-Bench, PaperBench, and AI co-scientist sources.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[concepts/long-horizon agents]]

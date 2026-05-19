@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Useful product anchor for the transition from demos to engineering agents embedded in team workflows.
 - Selected for deployed-agent context, not as a research methods source.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Builder Ecosystem Map]]

@@ -34,10 +34,6 @@ updated: 2026-05-18
 - Useful as the reference implementation corpus for SKILL.md packaging, progressive disclosure, scripts, references, and assets.
 - The full repository snapshot is archived as a tarball to avoid adding every skill file as a graph node.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Agent Skills Map]]

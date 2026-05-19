@@ -11,9 +11,11 @@ Model Context Protocol is an interoperability protocol for connecting agents and
 
 ## Related Sources
 
+- [[sources/Anthropic Introducing MCP|Introducing the Model Context Protocol]]
+- [[sources/MCP Specification 2025-11-25|MCP Specification 2025-11-25]]
 - [[sources/A2A Specification|Agent2Agent Protocol Specification]]
 - [[sources/MCP Authorization|MCP Authorization]]
 - [[sources/MCP Security Best Practices|MCP Security Best Practices]]
+- [[sources/Cloudflare Remote MCP Servers|Build and deploy Remote MCP servers to Cloudflare]]
 - [[sources/Cloudflare MCP Auth Durable Objects|Piecing together the Agent puzzle: MCP, authentication & authorization, and Durable Objects free tier]]
 - [[sources/Anthropic Managed Agents|Scaling Managed Agents: Decoupling the brain from the hands]]
-

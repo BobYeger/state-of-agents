@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Useful bridge from Claude Code product skills to programmatic skill-equipped agents.
 - Marked partial because the living docs do not expose a stable publication date.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Agent Skills Map]]

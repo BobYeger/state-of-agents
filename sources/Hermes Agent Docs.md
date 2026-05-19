@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Useful for the self-improving local-agent runtime branch.
 - Selected as one source note only; separate Hermes model pages are intentionally excluded.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Builder Ecosystem Map]]

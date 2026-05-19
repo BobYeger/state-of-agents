@@ -48,7 +48,6 @@ updated: 2026-05-18
 ## Claims
 
 - [[claims/Claim - Agent memory and skills create compounding improvement loops]]
-- 
 
 ## Connections
 

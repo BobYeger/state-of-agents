@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Important because it exposes training, synthetic data, agentic mid/post-training, and deep-research benchmark results.
 - Selected instead of generic Qwen model pages because it has a specific agent-system angle.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Builder Ecosystem Map]]

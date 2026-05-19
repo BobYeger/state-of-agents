@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Complements the UI-TARS paper by capturing the deployed/open-source stack and MCP/tooling surface.
 - Useful for computer-use agent and China ecosystem coverage.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[systems/china agent ecosystem]]

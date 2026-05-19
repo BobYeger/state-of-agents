@@ -32,10 +32,6 @@ updated: 2026-05-18
 - Important safety source for trained agentic systems where optimization pressure and long-horizon autonomy interact.
 - Pairs with SHADE-Arena and Agentic Misalignment.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[safety/agentic misalignment risk]]

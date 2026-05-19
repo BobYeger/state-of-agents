@@ -32,10 +32,6 @@ updated: 2026-05-18
 - Extends the A2A/MCP protocol stack into commercial action and payment authorization.
 - Important for studying agents that do not merely retrieve information but can transact.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[protocols/AP2]]

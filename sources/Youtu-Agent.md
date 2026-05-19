@@ -50,10 +50,6 @@ updated: 2026-05-18
 - Important because it combines configuration decoupling, meta-agent generation, experience practice, and RL for agent improvement.
 - Selected as a strong China-origin framework/self-improvement source.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Builder Ecosystem Map]]

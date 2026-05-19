@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Useful because it exposes the harness-level mechanics: skill metadata, lazy loading, sandbox staging, and context injection.
 - Marked partial because the SDK docs are living generated reference docs.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Agent Skills Map]]

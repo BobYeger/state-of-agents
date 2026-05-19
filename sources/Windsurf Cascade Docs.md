@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Useful product comparator for tool calling, editor context, checkpoints, and agentic IDE workflows.
 - Marked partial because the living docs did not expose a stable original publication date.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Builder Ecosystem Map]]

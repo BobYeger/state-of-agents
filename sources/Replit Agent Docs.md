@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Useful because it represents agentic software creation for end users rather than only developer IDE workflows.
 - Selected for deployed-product coverage.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Builder Ecosystem Map]]

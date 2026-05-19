@@ -34,10 +34,6 @@ updated: 2026-05-18
 - Useful as the low-code/visual China ecosystem anchor.
 - Marked partial because the repository did not expose a stable original publication date in the source pass.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Builder Ecosystem Map]]

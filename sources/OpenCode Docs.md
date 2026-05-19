@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Useful as an open-source comparator to Codex CLI, Claude Code, Cline, and Aider.
 - Marked partial because the living docs did not expose a stable original publication date.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Builder Ecosystem Map]]

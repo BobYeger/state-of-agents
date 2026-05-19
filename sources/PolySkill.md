@@ -36,10 +36,6 @@ updated: 2026-05-18
 - Important for web-agent skills that otherwise overfit to one site or environment.
 - Connects skill libraries with abstraction and transfer.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Agent Skills Map]]

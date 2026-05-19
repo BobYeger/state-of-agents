@@ -32,10 +32,6 @@ updated: 2026-05-18
 - Useful production companion to more conceptual agent-infrastructure posts.
 - Connects agent utility inside a large engineering organization to governance and access control.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[operations/agent infrastructure]]

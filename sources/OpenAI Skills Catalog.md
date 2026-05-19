@@ -34,10 +34,6 @@ updated: 2026-05-18
 - Useful for comparing skill packaging conventions across Anthropic, OpenAI, GitHub, and other hosts.
 - The full repository snapshot is archived as a tarball to keep the graph focused on the source note rather than every skill file.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Agent Skills Map]]

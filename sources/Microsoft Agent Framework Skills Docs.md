@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Useful because it describes skills as context providers with load/read/run tools and explicit security guidance.
 - Connects SKILL.md to enterprise workflow and framework design.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Agent Skills Map]]

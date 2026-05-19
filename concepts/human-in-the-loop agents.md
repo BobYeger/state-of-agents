@@ -4,6 +4,8 @@ Human-in-the-loop agent design decides when a system should keep acting autonomo
 
 The useful pattern is calibrated intervention. Humans should not be asked for every trivial step, but they should be brought in for ambiguity, irreversible actions, high-authority tool calls, policy-sensitive work, and cases where the agent lacks confidence or grounding.
 
+Human-in-the-loop agents explicitly involve users in planning, approval, correction, monitoring, or handoff.
+
 ## Improvement Levers
 
 - Ask humans at planning boundaries, not only after failure.
@@ -26,7 +28,3 @@ The useful pattern is calibrated intervention. Humans should not be asked for ev
 - [[sources/OpenAI Running Codex Safely]]
 - [[sources/Google ADK Multi-Agent Patterns]]
 - [[sources/Anthropic Measuring Agent Autonomy]]
-
-Human-in-the-loop agents explicitly involve users in planning, approval, correction, monitoring, or handoff.
-
-## Related Sources

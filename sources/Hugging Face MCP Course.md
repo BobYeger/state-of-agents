@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Useful as an open curriculum source for the protocol layer.
 - Only public pages are archived.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Courses and Curricula Map]]

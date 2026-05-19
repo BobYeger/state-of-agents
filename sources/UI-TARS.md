@@ -67,10 +67,6 @@ updated: 2026-05-18
 - Important comparator to OpenAI CUA, Operator, and AutoGLM.
 - Selected because it is agent-specific; generic ByteDance model pages are excluded.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Builder Ecosystem Map]]

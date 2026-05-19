@@ -32,10 +32,6 @@ updated: 2026-05-18
 - Useful concrete example of decomposition, coordination, artifacts, and verification in long-running parallel coding.
 - Pairs naturally with Cursor's long-running coding and OpenAI Codex harness material.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[systems/Claude Code]]

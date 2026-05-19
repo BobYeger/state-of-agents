@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Important bridge: MCP gives agents tools and resources; skills teach agents reusable procedures for using them well.
 - Marked partial because MCP docs are living documentation.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Agent Skills Map]]

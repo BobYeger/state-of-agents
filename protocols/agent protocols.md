@@ -20,5 +20,7 @@ The useful distinction is between tool protocols and agent-to-agent protocols. T
 ## Related Sources
 
 - [[sources/A2A Specification|Agent2Agent Protocol Specification]]
-- [[sources/A2A Specification|Agent2Agent Protocol Specification]]
+- [[sources/A2A GitHub Repository|A2A GitHub Repository]]
+- [[sources/MCP Specification 2025-11-25|MCP Specification 2025-11-25]]
+- [[sources/Google Developer Guide to AI Agent Protocols|Developer's Guide to AI Agent Protocols]]
 - [[sources/Multi-Agent Collaboration Mechanisms - A Survey of LLMs|Multi-Agent Collaboration Mechanisms: A Survey of LLMs]]

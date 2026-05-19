@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Useful as ByteDance/Coze's agent-ops counterpart to Coze Studio.
 - Marked partial because the repository does not provide a stable publication date.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[systems/china agent ecosystem]]

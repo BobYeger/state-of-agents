@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Important because it shows skills inside a deployed coding harness, not only as a standard.
 - Marked partial because the living docs do not expose a stable publication date.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Agent Skills Map]]

@@ -32,10 +32,6 @@ updated: 2026-05-18
 - Covers stateful agents, persistent memory, WebSockets, scheduled tasks, and durable execution patterns.
 - Treat as a platform reference rather than a static paper.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[systems/Cloudflare Agents SDK]]

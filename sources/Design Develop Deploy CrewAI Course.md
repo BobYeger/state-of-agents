@@ -34,10 +34,6 @@ updated: 2026-05-18
 - Useful for mapping the production curriculum around CrewAI-style systems.
 - Only public outline material is archived.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Courses and Curricula Map]]

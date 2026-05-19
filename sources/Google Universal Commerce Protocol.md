@@ -32,10 +32,6 @@ updated: 2026-05-18
 - Connects the agent protocol stack to shopping, merchant discovery, and transaction workflows.
 - Best read after AP2 when tracking how A2A/MCP-style interoperability extends into commerce.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[protocols/UCP]]

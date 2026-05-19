@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Important China-origin framework source because it is tied directly to the Qwen/Tongyi agent stack.
 - Marked partial because the repository did not expose a stable original publication date in the source pass.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Builder Ecosystem Map]]

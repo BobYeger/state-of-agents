@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Useful as the graph-based framework anchor for agents with durable state, control flow, and human-in-the-loop patterns.
 - Selected instead of separate Supervisor/Swarm pages to keep the graph routed through one framework anchor.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Builder Ecosystem Map]]

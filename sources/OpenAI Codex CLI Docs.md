@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Complements the existing Codex articles by preserving the product/runtime interface.
 - Important for comparing local CLI harnesses with cloud coding agents and IDE agents.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[systems/Codex]]

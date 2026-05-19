@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Important deployed-agent source because the agent works through issues, GitHub Actions environments, and draft PRs.
 - Useful for comparing cloud worktree agents with local coding-agent harnesses.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Builder Ecosystem Map]]

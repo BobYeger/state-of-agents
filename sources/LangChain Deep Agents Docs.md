@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Useful because it sits between framework primitives and product-style long-horizon harnesses.
 - Connects LangGraph-style orchestration to the harness category.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Builder Ecosystem Map]]

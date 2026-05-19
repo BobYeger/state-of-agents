@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Complements Anthropic's architecture and safety articles by capturing the deployed coding-agent surface.
 - Important for comparing coding-agent products, approvals, context setup, and command execution.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[systems/Claude Code]]

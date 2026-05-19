@@ -32,10 +32,6 @@ updated: 2026-05-18
 - Useful bridge between the original scaling post and Cursor's agent-computer-use/cloud-agent posts.
 - Connects long-horizon software tasks, harness design, and evaluation.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[systems/Cursor agents]]

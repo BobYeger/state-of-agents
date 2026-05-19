@@ -35,10 +35,6 @@ updated: 2026-05-18
 - Useful curriculum companion to Claude Code docs and Anthropic harness posts.
 - Only public outline material is archived.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Courses and Curricula Map]]

@@ -40,10 +40,6 @@ updated: 2026-05-18
 - Useful for the skill-composition thread even though the application is reasoning-data synthesis.
 - Connects skills, tool use, and agent-generated training data.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Agent Skills Map]]

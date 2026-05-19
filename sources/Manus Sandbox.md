@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Useful for classifying Manus as a hosted general-purpose autonomous-agent harness with a sandboxed execution environment.
 - Marked partial because the official page did not expose a stable publication date in the source pass.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Harness Tracker]]

@@ -21,3 +21,5 @@ For this vault, Codex is mainly a production-harness case study: the useful obje
 ## Related Sources
 
 - [[sources/OpenAI Codex Agent Loop|Unrolling the Codex agent loop]]
+- [[sources/OpenAI Responses API WebSockets|Speeding up agentic workflows with WebSockets in the Responses API]]
+- [[sources/OpenAI Agents SDK Skills Capability|OpenAI Agents SDK Skills capability]]

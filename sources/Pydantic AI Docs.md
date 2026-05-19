@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Useful as a contrast case for type-safe, application-engineering-first agent design.
 - Selected because it represents a different builder persona from graph, crew, and low-code frameworks.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Builder Ecosystem Map]]

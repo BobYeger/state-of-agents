@@ -32,10 +32,6 @@ updated: 2026-05-18
 - Important because agent interoperability is not only agent-to-tool or agent-to-agent; agents also need structured ways to present and negotiate UI.
 - Pairs with AG-UI in the user-interface layer of the protocol stack.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[protocols/A2UI]]

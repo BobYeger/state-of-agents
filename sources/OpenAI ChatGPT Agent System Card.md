@@ -32,10 +32,6 @@ updated: 2026-05-18
 - Complements the ChatGPT agent product post already in the vault.
 - Important for safeguards, risk evaluations, and deployment constraints around unified agentic systems.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[systems/ChatGPT agent]]

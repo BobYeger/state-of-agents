@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Important because it confirms cross-vendor adoption of the Agent Skills packaging layer in OpenAI's agent stack.
 - Marked partial because the living docs do not expose a stable publication date.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Agent Skills Map]]

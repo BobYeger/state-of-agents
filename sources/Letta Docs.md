@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Important for the memory/stateful-agent branch of the builder ecosystem.
 - Selected because the framework explicitly treats memory and persistent state as first-class agent infrastructure.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Builder Ecosystem Map]]

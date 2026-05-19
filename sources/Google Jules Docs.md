@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Useful profile evidence for cloud VM execution, plan review, activity feed, diffs, PR workflow, and concurrent background tasks.
 - Marked partial because the docs did not expose a stable original publication date.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Harness Tracker]]

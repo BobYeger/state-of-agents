@@ -34,10 +34,6 @@ updated: 2026-05-18
 - Useful learning source for graph-structured agent orchestration.
 - Only public outline material is archived.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Courses and Curricula Map]]

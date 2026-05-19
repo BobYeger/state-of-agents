@@ -21,6 +21,7 @@ Harnesses improve agent systems by making the loop inspectable and recoverable: 
 - [[sources/OpenAI Unlocking Codex Harness]]
 - [[sources/Anthropic Effective Harnesses for Long-Running Agents]]
 - [[sources/Anthropic Harness Design Long-Running Apps]]
+- [[sources/Anthropic Parallel Claudes C Compiler]]
 - [[sources/Cursor Improving Agent Harness]]
 - [[sources/OpenClaw Agent Harness Plugins]]
 - [[sources/Hermes Agent Docs]]
@@ -41,7 +42,6 @@ Harnesses improve agent systems by making the loop inspectable and recoverable: 
 ## Related
 
 - [[operations/agent infrastructure]]
-- [[methods/deliberative control]]
 - [[operations/durable sessions]]
 - [[operations/permissions]]
 - [[operations/sandboxes]]

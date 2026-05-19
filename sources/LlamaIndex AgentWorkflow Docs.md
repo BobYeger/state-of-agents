@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Important for the RAG/data-native branch of agent orchestration.
 - Selected because it shows how retrieval/data frameworks are becoming agent workflow systems.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Builder Ecosystem Map]]

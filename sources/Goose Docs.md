@@ -34,10 +34,6 @@ updated: 2026-05-18
 - Useful as a local workflow agent beyond code-completion and IDE-only use.
 - Selected because Goose connects deployed agent runtime design with protocol governance.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Builder Ecosystem Map]]

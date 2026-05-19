@@ -32,10 +32,6 @@ updated: 2026-05-18
 - Important protocol-side counterpart to A2A: MCP standardizes tool and context access rather than agent-to-agent coordination.
 - Useful as the starting point for the MCP governance and protocol timeline.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[protocols/MCP]]

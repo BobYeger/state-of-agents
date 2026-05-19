@@ -34,10 +34,6 @@ updated: 2026-05-18
 - Added because the researcher specifically called for docs/repo capture, not only the paper.
 - Marked partial because living docs do not expose a stable original publication date.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[systems/agent frameworks and orchestration libraries]]

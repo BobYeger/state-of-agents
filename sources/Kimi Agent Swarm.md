@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Useful as the Moonshot/Kimi source to keep, while excluding generic Kimi model pages.
 - Selected because it is specifically about multi-agent execution.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Builder Ecosystem Map]]

@@ -35,10 +35,6 @@ updated: 2026-05-18
 - Useful practical curriculum for builder-side MAS patterns.
 - Only public outline material is archived.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Courses and Curricula Map]]

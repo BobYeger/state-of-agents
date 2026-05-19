@@ -32,10 +32,6 @@ updated: 2026-05-18
 - Important for long-running coding agents because permission prompts alone do not scale well.
 - Connects Claude Code to production security patterns also seen in Codex and Cloudflare sandboxing material.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[systems/Claude Code]]

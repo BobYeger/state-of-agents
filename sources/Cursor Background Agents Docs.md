@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Complements Cursor's research-style articles on long-running autonomous coding and harness iteration.
 - Useful for studying how a deployed IDE agent exposes background work, environment setup, and task execution.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[systems/Cursor agents]]

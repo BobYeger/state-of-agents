@@ -32,10 +32,6 @@ updated: 2026-05-18
 - Keeps the living implementation repository separate from announcement posts and the versioned specification note.
 - Useful for tracking practical protocol adoption and reference implementations.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[protocols/A2A]]

@@ -33,10 +33,6 @@ updated: 2026-05-18
 - High-value ecosystem/governance source because it adds versioning, provenance, update checks, and supported host targets.
 - Connects skills to supply-chain security and package-manager-like workflows.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Agent Skills Map]]

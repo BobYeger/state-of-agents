@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Fills the coding-agent/editor protocol layer alongside MCP, A2A, A2UI, AG-UI, and AP2.
 - Important once deployed coding agents and local harnesses are in scope.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[protocols/ACP]]

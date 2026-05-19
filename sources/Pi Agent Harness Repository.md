@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Useful code/docs evidence for Pi as an agent harness project with tool calling, state/session management, skills, extensions, and packageable customization.
 - Kept separate from the product site because the repo is the auditable implementation surface.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Harness Tracker]]

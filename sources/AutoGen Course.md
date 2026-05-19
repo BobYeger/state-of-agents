@@ -36,10 +36,6 @@ updated: 2026-05-18
 - Useful prelude curriculum for multi-agent design patterns.
 - Only public outline material is archived.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Courses and Curricula Map]]

@@ -32,10 +32,6 @@ updated: 2026-05-18
 - Useful as the policy and deployment-design counterpart to more engineering-focused harness posts.
 - Marked partial until the final visible publication date is rechecked from the live page.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[safety/agent safety and security]]

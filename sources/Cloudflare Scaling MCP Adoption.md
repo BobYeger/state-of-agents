@@ -32,10 +32,6 @@ updated: 2026-05-18
 - Important governance and security source for large organizations adopting MCP.
 - Introduces risks such as authorization sprawl and shadow MCP.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[protocols/MCP]]

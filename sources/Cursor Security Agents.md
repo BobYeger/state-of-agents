@@ -32,10 +32,6 @@ updated: 2026-05-18
 - Useful applied source for security-oriented coding agents and agent fleets.
 - Connects production agent operations to safety and software-security outcomes.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[systems/Cursor agents]]

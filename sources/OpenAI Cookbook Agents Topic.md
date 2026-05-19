@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Useful as curriculum-like practical examples for parallel agents, sandbox agents, memory, MCP, Codex, and skills.
 - Marked partial because it is a living topic index rather than a dated course.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Courses and Curricula Map]]

@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Complements the existing OpenAI announcement articles by capturing the living developer surface.
 - Useful for handoffs, guardrails, tracing, sessions, and multi-agent orchestration patterns.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[systems/OpenAI Agents SDK]]

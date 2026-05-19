@@ -35,7 +35,6 @@ updated: 2026-05-18
 ## Claims
 
 - [[claims/Claim - Harnesses tools and context are core agent performance levers]]
-- 
 
 ## Connections
 

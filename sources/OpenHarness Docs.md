@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Useful for the programmable-harness pattern because it exposes harness primitives instead of a sealed product.
 - Marked partial because the docs did not expose a stable original publication date.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Harness Tracker]]

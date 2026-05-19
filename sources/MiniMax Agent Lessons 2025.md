@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Useful harness/product source because it discusses agent architecture choices rather than only model release metrics.
 - Selected while excluding generic MiniMax model-release pages.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Builder Ecosystem Map]]

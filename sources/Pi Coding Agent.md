@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Important for the minimal extensible harness pattern: small core, tree sessions, AGENTS.md, SYSTEM.md, compaction, skills, prompt templates, and TypeScript extensions.
 - Marked partial because the living site does not expose a stable original publication date.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Harness Tracker]]

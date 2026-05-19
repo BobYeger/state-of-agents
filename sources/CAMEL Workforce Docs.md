@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Important research-native multi-agent framework source with explicit workforce/team framing.
 - Selected as the bridge from generative-agent research to practical MAS framework design.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Builder Ecosystem Map]]

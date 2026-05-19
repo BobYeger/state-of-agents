@@ -32,10 +32,6 @@ updated: 2026-05-18
 - Useful for tracking agent runtimes becoming reusable developer infrastructure.
 - Pairs with OpenAI Agents SDK, AgentKit, and Cloudflare Agents SDK material.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[systems/Cursor agents]]

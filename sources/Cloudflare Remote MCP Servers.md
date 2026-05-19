@@ -32,10 +32,6 @@ updated: 2026-05-18
 - Important for moving MCP from local desktop/tool integrations to deployable remote infrastructure.
 - Pairs with later enterprise MCP governance and Cloudflare Agents SDK material.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[protocols/MCP]]

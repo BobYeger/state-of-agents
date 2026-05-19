@@ -36,7 +36,6 @@ updated: 2026-05-18
 
 - [[claims/Claim - Agent memory and skills create compounding improvement loops]]
 - [[claims/Claim - Runtime control and verification improve agent reliability]]
-- 
 
 ## Connections
 

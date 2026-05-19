@@ -32,10 +32,6 @@ updated: 2026-05-18
 - Useful for tracking how ADK, A2A, and deployment infrastructure fit together.
 - Pairs with Google ADK and A2A launch notes.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[systems/Google ADK]]

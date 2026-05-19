@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Useful official learning source for the Google ADK stack.
 - Marked partial because Google Skills paths are living catalog entries.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Courses and Curricula Map]]

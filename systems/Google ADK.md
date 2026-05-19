@@ -20,3 +20,4 @@ It matters because Google is pairing framework design with interoperability desi
 ## Related Sources
 
 - [[sources/Google ADK Multi-Agent Patterns|Developer's guide to multi-agent patterns in ADK]]
+- [[sources/Google ADK Interactions API|Building agents with the ADK and the new Interactions API]]

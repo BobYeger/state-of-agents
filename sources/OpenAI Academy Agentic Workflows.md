@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Useful OpenAI curriculum counterpart to the Agents SDK docs.
 - Only public page metadata is archived.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Courses and Curricula Map]]

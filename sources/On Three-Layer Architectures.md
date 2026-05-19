@@ -6,8 +6,8 @@ aliases:
 source_type: "paper"
 status: "verified"
 year: 1998
-publication_date: "1998"
-publication_date_basis: "book_publication_year_secondary_bibliography"
+publication_date: "1998-01-01"
+publication_date_basis: "book_publication_year_only_secondary_bibliography"
 source_updated_date: null
 source_updated_date_basis: null
 arxiv_id: null
@@ -47,4 +47,4 @@ updated: 2026-05-19
 ## Notes
 
 - Canonical PDF URL: https://flownet.com/ron/papers/tla.pdf
-- Bibliographic year checked from AI planning reading lists and citation snippets; exact publication month is not stable in the local capture.
+- Bibliographic year checked from AI planning reading lists and citation snippets; month and day are placeholders because the exact publication date is not stable in the local capture.

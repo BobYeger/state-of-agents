@@ -32,10 +32,6 @@ updated: 2026-05-18
 - Fills the UI integration layer in the broader agent protocol stack.
 - Useful when comparing agent runtime protocols with presentation and interaction protocols.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[protocols/AG-UI]]

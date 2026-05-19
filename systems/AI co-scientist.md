@@ -22,3 +22,4 @@ It matters because it is one of the clearest industry examples of a domain-speci
 
 - [[sources/Google AI Co-Scientist Article|Accelerating scientific breakthroughs with an AI co-scientist]]
 - [[sources/AI Co-Scientist|Towards an AI Co-Scientist]]
+- [[sources/Google MLE-STAR]]

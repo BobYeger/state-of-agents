@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Useful as a practical precursor to newer long-horizon coding agents.
 - Selected because it represents a mature local coding-agent workflow, not just a chatbot integration.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Builder Ecosystem Map]]

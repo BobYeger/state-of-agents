@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Useful product-level harness evidence for plan-execute-deliver workflows, persistent file system, internet access, software installation, and custom tools.
 - Marked partial because the public docs did not expose a stable original publication date.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Harness Tracker]]

@@ -32,10 +32,6 @@ updated: 2026-05-18
 - Complements the existing MCP Authorization and Security Best Practices notes.
 - Useful as the stable reference point for protocol semantics after the initial 2024 launch.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[protocols/MCP]]

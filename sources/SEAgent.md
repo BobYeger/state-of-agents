@@ -40,10 +40,6 @@ updated: 2026-05-18
 - Not SKILL.md-specific, but important for skill acquisition and computer-use agents learning reusable behaviors.
 - Connects UI-TARS, CUA, and procedural memory.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Agent Skills Map]]

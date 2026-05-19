@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Useful China ecosystem source for research-agent training and long-horizon web-scale search.
 - Selected because it has a specific agent/research-system angle rather than being a generic model page.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Builder Ecosystem Map]]

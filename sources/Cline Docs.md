@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Useful deployed-agent comparator in the open-source IDE-agent family.
 - Marked partial because the living docs did not expose a stable original publication date.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Builder Ecosystem Map]]

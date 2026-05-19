@@ -35,10 +35,6 @@ updated: 2026-05-18
 - Useful as a production-oriented continuation of the intro CrewAI course.
 - Only public outline material is archived.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Courses and Curricula Map]]

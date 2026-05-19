@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Useful as a broad open curriculum source for agent education.
 - Only public pages are archived.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Courses and Curricula Map]]

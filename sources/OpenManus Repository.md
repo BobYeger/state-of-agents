@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Added as a source note instead of treating Manus/OpenManus as a model page.
 - Marked partial because the repository does not provide a stable publication date.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[systems/deployed agent products]]

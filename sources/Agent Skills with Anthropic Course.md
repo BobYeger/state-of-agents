@@ -35,10 +35,6 @@ updated: 2026-05-18
 - High-priority curriculum source because it is directly about the new skills layer.
 - Only the public course page and outline are archived.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Courses and Curricula Map]]

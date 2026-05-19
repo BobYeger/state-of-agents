@@ -34,10 +34,6 @@ updated: 2026-05-18
 - Useful adoption evidence because it brings SKILL.md into a mainstream editor surface.
 - Marked partial because the page is living documentation and does not expose a stable article-style date.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Agent Skills Map]]

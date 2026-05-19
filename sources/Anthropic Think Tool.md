@@ -32,10 +32,6 @@ updated: 2026-05-18
 - Useful for separating immediate tool execution from deliberate synthesis over observations.
 - Connects tool use, context engineering, and agent reliability.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[concepts/tool use]]

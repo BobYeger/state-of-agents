@@ -62,10 +62,6 @@ updated: 2026-05-18
 - Important China-origin comparator for GUI/mobile agents and computer-use systems.
 - Selected because it is a system paper, not a generic GLM model announcement.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Builder Ecosystem Map]]

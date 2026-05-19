@@ -35,10 +35,6 @@ updated: 2026-05-18
 - Important adoption point because skills work across Copilot cloud agent, Copilot CLI, and VS Code agent mode.
 - Connects skills to repository instructions and cloud coding agents.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Agent Skills Map]]

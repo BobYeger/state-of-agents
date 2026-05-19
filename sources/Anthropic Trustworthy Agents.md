@@ -35,7 +35,6 @@ updated: 2026-05-18
 ## Claims
 
 - [[claims/Claim - Runtime control and verification improve agent reliability]]
-- 
 
 ## Connections
 

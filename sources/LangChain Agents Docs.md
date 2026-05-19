@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Important for separating application-level agent interfaces from lower-level graph/runtime primitives.
 - Use as the lightweight entry point for LangChain's agent stack.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Builder Ecosystem Map]]

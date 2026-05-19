@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Important enterprise framework anchor in the builder ecosystem.
 - Selected while leaving older AutoGen and Semantic Kernel agent pages in backlog to avoid duplicate lineage nodes.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Builder Ecosystem Map]]

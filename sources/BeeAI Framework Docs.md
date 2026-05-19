@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Useful because it connects builder frameworks with MCP, A2A, and ACP-era interoperability.
 - Selected because it belongs to the emerging Agentic AI Foundation ecosystem.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Builder Ecosystem Map]]

@@ -32,10 +32,6 @@ updated: 2026-05-18
 - Important for agent safety because long-horizon actions can look correct while underlying reasons remain risky.
 - Pairs with Agentic Misalignment and reward-hacking sabotage material.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[safety/agentic misalignment risk]]

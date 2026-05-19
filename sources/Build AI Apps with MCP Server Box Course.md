@@ -35,10 +35,6 @@ updated: 2026-05-18
 - Useful example of MCP and A2A connected in a practical workflow.
 - Only public outline material is archived.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Courses and Curricula Map]]

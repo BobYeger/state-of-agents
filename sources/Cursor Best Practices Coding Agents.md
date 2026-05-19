@@ -32,10 +32,6 @@ updated: 2026-05-18
 - Useful for comparing user-facing coding-agent practice with research benchmarks.
 - Pairs with Cursor's long-running coding research posts.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[systems/Cursor agents]]

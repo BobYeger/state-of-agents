@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Important contrast to graph-based orchestration because CrewAI centers agents, crews, flows, memory, guardrails, and observability.
 - Selected as a builder-ecosystem anchor rather than a generic product page.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Builder Ecosystem Map]]

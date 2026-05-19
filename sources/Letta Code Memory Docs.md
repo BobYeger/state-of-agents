@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Important for the memory-first harness profile: the agent is a persistent entity, while conversations are threads with shared memory.
 - Marked partial because the docs did not expose a stable original publication date.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Harness Tracker]]

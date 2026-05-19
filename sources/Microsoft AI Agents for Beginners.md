@@ -34,10 +34,6 @@ updated: 2026-05-18
 - Useful because it covers frameworks, design patterns, tool use, multi-agent design, production, protocols, context engineering, memory, browser use, and security.
 - A lightweight README and study-guide snapshot is archived; the full repository remains linked as the canonical source to avoid adding a very large course archive to the vault.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Courses and Curricula Map]]

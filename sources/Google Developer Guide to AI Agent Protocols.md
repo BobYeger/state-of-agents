@@ -32,10 +32,6 @@ updated: 2026-05-18
 - Useful as a connective tissue source for explaining why agent protocols split across tools, agents, payments, commerce, and UI layers.
 - Helps prevent the vault from treating MCP and A2A as the whole protocol ecosystem.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[protocols/agent protocols]]

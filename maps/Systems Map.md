@@ -5,8 +5,10 @@ Use this map for named agent systems, platforms, and productized harnesses. The 
 ## Systems
 
 - [[systems/AI co-scientist]]
+- [[systems/AgentKit]]
 - [[systems/autoresearch]]
 - [[systems/ChatGPT agent]]
+- [[systems/Cloudflare Agents SDK]]
 - [[systems/Codex]]
 - [[systems/Cursor agents]]
 - [[systems/Google ADK]]

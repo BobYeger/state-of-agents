@@ -32,10 +32,6 @@ updated: 2026-05-18
 - Important bridge between Claude Code usage patterns and managed-agent infrastructure.
 - Connects environment setup, state, testing, artifact management, and long-horizon reliability.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[systems/Claude Code]]

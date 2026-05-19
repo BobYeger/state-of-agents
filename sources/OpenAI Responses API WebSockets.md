@@ -32,10 +32,6 @@ updated: 2026-05-18
 - Important for production latency and throughput in long-running agent workflows.
 - Pairs with Responses API computer environment and Codex loop material.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[systems/OpenAI Agents SDK]]

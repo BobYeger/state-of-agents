@@ -5,11 +5,11 @@ aliases:
 source_type: "paper"
 status: "verified"
 year: 2026
-publication_date: "2026-03"
-publication_date_basis: "acl_anthology_publication_date"
+publication_date: "2026-03-01"
+publication_date_basis: "acl_anthology_month_only_placeholder_day"
 source_updated_date: null
 source_updated_date_basis: null
-arxiv_id: null
+arxiv_id: "2510.07505"
 citation_count: null
 citation_source: null
 citation_snapshot_date: null
@@ -56,3 +56,5 @@ updated: 2026-05-19
 - Canonical URL: https://aclanthology.org/2026.findings-eacl.237/
 - PDF URL: https://aclanthology.org/2026.findings-eacl.237.pdf
 - DOI: 10.18653/v1/2026.findings-eacl.237
+- ACL Anthology gives month/year as March 2026; day is a placeholder for sortable metadata.
+- arXiv preprint date: 2025-10-08.

@@ -11,9 +11,9 @@ Agent systems get better when structure, runtime control, tools, context, memory
 | Lever | What improves | Main notes |
 |---|---|---|
 | Task-fit and decomposition | Use multiple agents only when the task has breadth, separable context, or useful specialization. | [[claims/Claim - Agent systems improve when structure matches the task]] |
-| Deliberative control | Separate planning, execution, observation, verification, and revision when the task benefits from explicit control flow. | [[methods/deliberative control]], [[methods/runtime supervision]] |
+| Deliberative control | Separate planning, execution, observation, verification, and revision when the task benefits from explicit control flow. | [[methods/deliberative control]] |
 | Prompt, role, and topology search | Treat prompts, roles, and communication graph as design variables. | [[methods/topology optimization]], [[methods/agentic workflow search]] |
-| Scaling-compatible design | Prefer structures that improve with more compute, search, learning, traces, feedback, and experience. | [[concepts/scaling with computation]], [[methods/agentic workflow search]] |
+| Scaling-compatible design | Prefer structures that improve with more compute, search, learning, traces, feedback, and experience. | [[concepts/scaling with computation]] |
 | Runtime routing and pruning | Route by task state, role, model cost, uncertainty, and observed redundancy. | [[methods/runtime routing]] |
 | Supervision and verification | Add monitors, critics, evaluators, stopping criteria, and repair loops. | [[claims/Claim - Runtime control and verification improve agent reliability]], [[methods/runtime supervision]] |
 | Harness and context design | Make the loop, state, tools, approvals, compaction, and handoffs explicit. | [[claims/Claim - Harnesses tools and context are core agent performance levers]], [[operations/agent harnesses]] |
@@ -44,5 +44,4 @@ Agent systems get better when structure, runtime control, tools, context, memory
 - [[maps/Claims Map]]
 - [[maps/Multi-Agent Systems Map]]
 - [[maps/Production Infrastructure Map]]
-- [[maps/Agent Skills Map]]
 - [[maps/Evaluation Map]]

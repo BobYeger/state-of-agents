@@ -33,10 +33,6 @@ updated: 2026-05-18
 - Useful China ecosystem source for enterprise MAS outside the main US lab stack.
 - Marked partial because the repository did not expose a stable original publication date in the source pass.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Builder Ecosystem Map]]

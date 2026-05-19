@@ -17,6 +17,8 @@ Related synthesis: [[claims/Claim - Agent memory and skills create compounding i
 - [[sources/Anthropic Skills Repository]]
 - [[sources/OpenAI Skills Docs]]
 - [[sources/OpenAI Skills Catalog]]
+- [[sources/Claude Code Skills Docs]]
+- [[sources/Claude Agent SDK Agent Skills Docs]]
 - [[sources/GitHub Copilot Agent Skills Docs]]
 - [[sources/VS Code Agent Skills Docs]]
 - [[sources/Microsoft Agent Framework Skills Docs]]
@@ -52,13 +54,13 @@ Related synthesis: [[claims/Claim - Agent memory and skills create compounding i
 
 ## Reading Order
 
-1. [[sources/Anthropic Agent Skills]]
-2. [[sources/Agent Skills Specification]]
-3. [[sources/OpenAI Skills Docs]]
-4. [[sources/GitHub Copilot Agent Skills Docs]]
-5. [[sources/SkillsBench]]
-6. [[sources/Agentic Skills in the Wild]]
-7. [[sources/Agent Skills for Large Language Models]]
-8. [[sources/Comprehensive Survey on Agent Skills]]
-9. [[sources/SAGE Skill Library]]
-10. [[sources/SkillRL]]
+1. Anthropic Agent Skills
+2. Agent Skills Specification
+3. OpenAI Skills Docs
+4. GitHub Copilot Agent Skills Docs
+5. SkillsBench
+6. Agentic Skills in the Wild
+7. Agent Skills for Large Language Models
+8. Comprehensive Survey on Agent Skills
+9. SAGE Skill Library
+10. SkillRL

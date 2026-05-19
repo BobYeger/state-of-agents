@@ -41,10 +41,6 @@ updated: 2026-05-18
 - Added because it is clearly agent-framework material, not a generic model release.
 - Useful for China ecosystem and self-improving-agent coverage.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[systems/china agent ecosystem]]

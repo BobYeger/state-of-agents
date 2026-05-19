@@ -35,10 +35,6 @@ updated: 2026-05-18
 - Useful public curriculum source for the MCP side of the agent protocol stack.
 - Only public outline material is archived.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Courses and Curricula Map]]

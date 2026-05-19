@@ -34,10 +34,6 @@ updated: 2026-05-18
 - Useful curriculum node for LangGraph/Deep Agents and agent engineering/observability.
 - Marked partial because the catalog is living and individual course availability can change.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Courses and Curricula Map]]

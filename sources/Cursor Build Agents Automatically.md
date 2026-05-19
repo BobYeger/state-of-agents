@@ -32,10 +32,6 @@ updated: 2026-05-18
 - Important for always-on and event-triggered coding agents.
 - Pairs with durable sessions and production observability material.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[systems/Cursor agents]]

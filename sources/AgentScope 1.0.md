@@ -55,10 +55,6 @@ updated: 2026-05-18
 - Important China-origin production framework source.
 - Selected as the primary AgentScope source instead of duplicating docs and repo pages.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[maps/Builder Ecosystem Map]]

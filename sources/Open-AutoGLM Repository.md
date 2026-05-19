@@ -35,10 +35,6 @@ updated: 2026-05-18
 - Complements the existing AutoGLM paper with an implementation/project node.
 - Marked partial because publication metadata is not stable on the project page.
 
-## Claims
-
-- 
-
 ## Connections
 
 - [[systems/china agent ecosystem]]
