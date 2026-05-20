@@ -38,7 +38,6 @@ updated: 2026-05-18
 - [[maps/Harness Tracker]]
 - [[operations/agent harnesses]]
 - [[operations/agent memory]]
-- [[sources/Letta Docs]]
 
 ## Artifacts
 

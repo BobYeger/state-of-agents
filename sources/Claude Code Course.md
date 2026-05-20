@@ -38,7 +38,6 @@ updated: 2026-05-18
 ## Connections
 
 - [[maps/Courses and Curricula Map]]
-- [[sources/Anthropic Claude Code Docs]]
 - [[operations/agent harnesses]]
 
 ## Artifacts

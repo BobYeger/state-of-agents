@@ -36,7 +36,6 @@ updated: 2026-05-18
 ## Connections
 
 - [[maps/Harness Tracker]]
-- [[sources/Manus Documentation]]
 - [[operations/sandboxes]]
 
 ## Artifacts

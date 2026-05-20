@@ -37,7 +37,6 @@ updated: 2026-05-18
 
 - [[maps/Harness Tracker]]
 - [[operations/agent harnesses]]
-- [[sources/Pi Coding Agent]]
 
 ## Artifacts
 

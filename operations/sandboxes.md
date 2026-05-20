@@ -31,3 +31,4 @@ Useful control points:
 - [[sources/Cloudflare Sandboxing AI Agents|Sandboxing AI agents, 100x faster]]
 - [[sources/Cursor Scaling Long-Running Autonomous Coding|Scaling long-running autonomous coding]]
 - [[sources/Anthropic Managed Agents|Scaling Managed Agents: Decoupling the brain from the hands]]
+- [[sources/Manus Sandbox|Understanding Manus sandbox - your cloud computer]]

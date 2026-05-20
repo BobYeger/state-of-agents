@@ -38,7 +38,6 @@ updated: 2026-05-18
 ## Connections
 
 - [[maps/Agent Skills Map]]
-- [[sources/GitHub Copilot Coding Agent Docs]]
 - [[sources/Agent Skills Specification]]
 
 ## Artifacts

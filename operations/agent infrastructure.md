@@ -23,7 +23,6 @@ The infrastructure layer is where many agent improvements become real: the same 
 - [[sources/MasRouter|MasRouter: Learning to Route LLMs for Multi-Agent Systems]]
 - [[sources/Cloudflare Project Think|Project Think: building the next generation of AI agents on Cloudflare]]
 - [[sources/The Orchestration of Multi-Agent Systems|The Orchestration of Multi-Agent Systems: Architectures, Protocols, and Enterprise Adoption]]
-- [[sources/Cloudflare Internal AI Engineering Stack|The AI engineering stack we built internally]]
 - [[sources/Cloudflare Sandboxing AI Agents|Sandboxing AI agents, 100x faster]]
 - [[sources/Cloudflare Scaling MCP Adoption|Scaling MCP adoption: reference architecture]]
 - [[sources/Anthropic Managed Agents|Scaling Managed Agents: Decoupling the brain from the hands]]

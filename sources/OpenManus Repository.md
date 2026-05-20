@@ -37,7 +37,6 @@ updated: 2026-05-18
 
 - [[systems/deployed agent products]]
 - [[systems/china agent ecosystem]]
-- [[sources/Manus Documentation]]
 
 ## Artifacts
 

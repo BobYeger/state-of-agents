@@ -2,7 +2,7 @@
 
 Agent Skills are the reusable procedural-knowledge layer for agents: folders or packages of instructions, scripts, references, and assets that an agent can discover and load only when relevant.
 
-This map keeps standards, platform docs, repositories, and papers together without duplicating the core concept note.
+This map keeps standards, original architecture/research sources, adoption evidence, and benchmark papers together without duplicating the core concept note. Vendor implementation pages are included only when they add distinct security, governance, runtime, or case-study evidence.
 
 ## Role In System Improvement
 
@@ -18,11 +18,8 @@ Related synthesis: [[claims/Claim - Agent memory and skills create compounding i
 - [[sources/OpenAI Skills Docs]]
 - [[sources/OpenAI Skills Catalog]]
 - [[sources/Claude Code Skills Docs]]
-- [[sources/Claude Agent SDK Agent Skills Docs]]
 - [[sources/GitHub Copilot Agent Skills Docs]]
-- [[sources/VS Code Agent Skills Docs]]
 - [[sources/Microsoft Agent Framework Skills Docs]]
-- [[sources/MCP Build with Agent Skills]]
 - [[sources/GitHub CLI Manage Agent Skills]]
 
 ## Research and Benchmarks
@@ -42,7 +39,6 @@ Related synthesis: [[claims/Claim - Agent memory and skills create compounding i
 
 - [[sources/OpenAI Using Skills for OSS Maintenance]]
 - [[sources/OpenAI Eval Skills]]
-- [[sources/Agent Skills with Anthropic Course]]
 
 ## Concept Threads
 

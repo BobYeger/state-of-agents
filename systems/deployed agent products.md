@@ -9,14 +9,8 @@ This node avoids creating a separate low-content page for every product. Add a d
 - [[systems/Claude Code]]
 - [[systems/Codex]]
 - [[systems/Cursor agents]]
-- [[sources/Devin Docs]]
-- [[sources/GitHub Copilot Coding Agent Docs]]
-- [[sources/Replit Agent Docs]]
-- [[sources/OpenCode Docs]]
-- [[sources/Cline Docs]]
-- [[sources/Aider Docs]]
-- [[sources/Windsurf Cascade Docs]]
 - [[sources/MiniMax Agent Lessons 2025]]
+- [[sources/MiniMax Agent Team]]
 
 ## Related
 
