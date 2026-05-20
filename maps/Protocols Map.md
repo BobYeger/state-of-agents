@@ -7,6 +7,7 @@ Use this as a navigation page for protocol-level agent interoperability. Source 
 - [[protocols/agent protocols]]
 - [[protocols/MCP]]
 - [[protocols/A2A]]
+- [[concepts/dynamic tool discovery]]
 - [[safety/protocol security]]
 
 ## Source Trail

@@ -19,6 +19,7 @@ Useful control points:
 ## Related
 
 - [[operations/permissions]]
+- [[operations/agent infrastructure]]
 - [[safety/prompt injection]]
 - [[safety/agent safety and security]]
 
@@ -26,6 +27,7 @@ Useful control points:
 
 - [[sources/Cursor Agent Computer Use|Cursor agents can now control their own computers]]
 - [[sources/OpenAI Responses API Computer Environment|From model to agent: Equipping the Responses API with a computer environment]]
+- [[sources/Anthropic Managed Agents Sandboxes MCP Tunnels|New in Claude Managed Agents: self-hosted sandboxes and MCP tunnels]]
 - [[sources/OpenHands|OpenHands: An Open Platform for AI Software Developers as Generalist Agents]]
 - [[sources/Cloudflare Project Think|Project Think: building the next generation of AI agents on Cloudflare]]
 - [[sources/Cloudflare Sandboxing AI Agents|Sandboxing AI agents, 100x faster]]

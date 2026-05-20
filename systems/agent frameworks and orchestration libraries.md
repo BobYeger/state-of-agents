@@ -8,6 +8,9 @@ This node is a routing hub. Individual framework source notes stay in the source
 
 - [[sources/LangGraph Docs]]
 - [[sources/LangChain Deep Agents Docs]]
+- [[sources/LangChain Deep Agents v0.6]]
+- [[sources/LangChain Delta Channels]]
+- [[sources/LangSmith Context Hub]]
 - [[sources/CrewAI Docs]]
 - [[sources/OpenAI Agents SDK Docs]]
 - [[sources/Microsoft Agent Framework Docs]]

@@ -44,6 +44,8 @@ Related synthesis: [[claims/Claim - Agent memory and skills create compounding i
 
 - [[concepts/agent skills]]
 - [[concepts/procedural memory]]
+- [[concepts/versioned context]]
+- [[concepts/dreaming and memory consolidation]]
 - [[operations/agent memory]]
 - [[operations/agent harnesses]]
 - [[protocols/MCP]]

@@ -21,6 +21,7 @@
 - [[maps/Claims Map]]
 - [[maps/Multi-Agent Systems Map]]
 - [[maps/MAS Orchestration and Architecture]]
+- [[maps/Recent Agent Operating Concepts]]
 - [[maps/Long-Horizon Agents Map]]
 - [[maps/Protocols Map]]
 - [[maps/Evaluation Map]]

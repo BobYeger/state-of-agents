@@ -23,6 +23,8 @@ Useful control points:
 ## Related
 
 - [[concepts/context engineering]]
+- [[concepts/dreaming and memory consolidation]]
+- [[concepts/reasoning memory]]
 - [[claims/Claim - Agent memory and skills create compounding improvement loops]]
 - [[maps/What Makes Agent Systems Better]]
 - [[safety/prompt injection]]
@@ -33,7 +35,11 @@ Useful control points:
 - [[sources/Agent Security Bench|Agent Security Bench (ASB): Formalizing and Benchmarking Attacks and Defenses in LLM-based Agents]]
 - [[sources/AgentNet|AgentNet: Decentralized Evolutionary Coordination for LLM-based Multi-Agent Systems]]
 - [[sources/Cloudflare Agent Memory|Agents that remember: introducing Agent Memory]]
+- [[sources/Anthropic Managed Agents Dreaming Outcomes|New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration]]
 - [[sources/Anthropic Effective Context Engineering|Effective context engineering for AI agents]]
+- [[sources/Memory for Autonomous LLM Agents|Memory for Autonomous LLM Agents: Mechanisms, Evaluation, and Emerging Frontiers]]
+- [[sources/Trajectory-Informed Memory Generation|Trajectory-Informed Memory Generation for Self-Improving Agent Systems]]
+- [[sources/Google ReasoningBank|ReasoningBank: Enabling agents to learn from experience]]
 - [[sources/SiriuS|SiriuS: Self-improving Multi-agent Systems via Bootstrapped Reasoning]]
 - [[sources/When Agents Misremember Collectively|When Agents Misremember Collectively: Exploring the Mandela Effect in LLM-based Multi-Agent Systems]]
 

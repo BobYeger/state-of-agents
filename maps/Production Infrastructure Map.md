@@ -13,12 +13,15 @@ Use this as a navigation page for production agent runtimes. Source evidence sho
 - [[methods/deliberative control]]
 - [[methods/runtime routing]]
 - [[maps/What Makes Agent Systems Better]]
+- [[maps/Recent Agent Operating Concepts]]
 
 ## Systems
 
 - [[systems/Codex]]
 - [[systems/Cursor agents]]
 - [[systems/OpenAI Agents SDK]]
+- [[systems/Google ADK]]
+- [[systems/Cloudflare Agents SDK]]
 - [[systems/OpenHands]]
 
 ## Source Trail

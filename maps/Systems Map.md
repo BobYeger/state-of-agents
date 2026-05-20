@@ -32,5 +32,6 @@ Use this map for named agent systems, platforms, and productized harnesses. The 
 - [[maps/Multi-Agent Systems Map]]
 - [[maps/Long-Horizon Agents Map]]
 - [[maps/Production Infrastructure Map]]
+- [[maps/Recent Agent Operating Concepts]]
 - [[maps/Evaluation Map]]
 - [[maps/Safety Map]]

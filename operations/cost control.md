@@ -31,3 +31,7 @@ Cost is part of system quality for agents. A design that only works through unbo
 - [[sources/X-MAS]]
 - [[sources/Anthropic Code Execution with MCP]]
 - [[sources/Cloudflare Code Mode MCP]]
+- [[sources/MCP-Zero]]
+- [[sources/ScaleMCP]]
+- [[sources/LangChain Delta Channels]]
+- [[sources/LangChain Deep Agents v0.6]]

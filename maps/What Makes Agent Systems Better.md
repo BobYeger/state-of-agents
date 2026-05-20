@@ -18,7 +18,8 @@ Agent systems get better when structure, runtime control, tools, context, memory
 | Supervision and verification | Add monitors, critics, evaluators, stopping criteria, and repair loops. | [[claims/Claim - Runtime control and verification improve agent reliability]], [[methods/runtime supervision]] |
 | Harness and context design | Make the loop, state, tools, approvals, compaction, and handoffs explicit. | [[claims/Claim - Harnesses tools and context are core agent performance levers]], [[operations/agent harnesses]] |
 | Tool contracts | Improve schemas, errors, affordances, permissions, and observability. | [[concepts/tool use]], [[concepts/tool-use contracts]] |
-| Memory and skills | Reuse successful procedures, strategies, learned rules, and skill packages. | [[claims/Claim - Agent memory and skills create compounding improvement loops]], [[maps/Agent Skills Map]] |
+| Memory and skills | Reuse successful procedures, strategies, learned rules, and skill packages. | [[claims/Claim - Agent memory and skills create compounding improvement loops]], [[maps/Agent Skills Map]], [[concepts/reasoning memory]] |
+| Operating substrate | Add durable state, versioned context, dynamic tools, rubric graders, subagents, and event streams around the model. | [[maps/Recent Agent Operating Concepts]] |
 | Evals and observability | Measure multi-turn behavior, tool use, cost, failure modes, and interventions. | [[operations/agent evals]], [[operations/agent observability]] |
 | Human-in-the-loop control | Route ambiguous, risky, or high-authority actions to humans at the right time. | [[concepts/human-in-the-loop agents]], [[operations/permissions]] |
 
@@ -38,6 +39,10 @@ Agent systems get better when structure, runtime control, tools, context, memory
 12. [[sources/Anthropic Effective Harnesses for Long-Running Agents]]
 13. [[sources/SkillsBench]]
 14. [[sources/Google ReasoningBank]]
+15. [[sources/Anthropic Managed Agents Dreaming Outcomes]]
+16. [[sources/Agentic Context Engineering]]
+17. [[sources/MCP-Zero]]
+18. [[sources/OpenAI Symphony]]
 
 ## Related Maps
 
@@ -46,3 +51,4 @@ Agent systems get better when structure, runtime control, tools, context, memory
 - [[maps/MAS Orchestration and Architecture]]
 - [[maps/Production Infrastructure Map]]
 - [[maps/Evaluation Map]]
+- [[maps/Recent Agent Operating Concepts]]

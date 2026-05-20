@@ -15,6 +15,7 @@ For this vault, Codex is mainly a production-harness case study: the useful obje
 - [[concepts/long-horizon agents]]
 - [[concepts/tool use]]
 - [[concepts/context engineering]]
+- [[concepts/issue tracker control plane]]
 - [[operations/agent infrastructure]]
 - [[operations/sandboxes]]
 
@@ -24,3 +25,4 @@ For this vault, Codex is mainly a production-harness case study: the useful obje
 - [[sources/OpenAI Responses API Computer Environment|From model to agent: Equipping the Responses API with a computer environment]]
 - [[sources/OpenAI Running Codex Safely]]
 - [[sources/OpenAI Unlocking Codex Harness]]
+- [[sources/OpenAI Symphony]]

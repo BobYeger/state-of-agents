@@ -13,6 +13,7 @@ It matters because Google is pairing framework design with interoperability desi
 ## Related
 
 - [[concepts/multi-agent systems]]
+- [[concepts/durable dormant agents]]
 - [[protocols/A2A]]
 - [[protocols/agent protocols]]
 - [[methods/multi-agent orchestration]]
@@ -21,3 +22,4 @@ It matters because Google is pairing framework design with interoperability desi
 
 - [[sources/Google ADK Multi-Agent Patterns|Developer's guide to multi-agent patterns in ADK]]
 - [[sources/Google ADK Interactions API|Building agents with the ADK and the new Interactions API]]
+- [[sources/Google ADK Durable Agents|Build Long-running AI agents that pause, resume, and never lose context with ADK]]

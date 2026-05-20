@@ -21,6 +21,8 @@ Useful contract surface:
 ## Related
 
 - [[protocols/MCP]]
+- [[concepts/dynamic tool discovery]]
+- [[concepts/programmatic tool calling]]
 - [[claims/Claim - Harnesses tools and context are core agent performance levers]]
 - [[operations/sandboxes]]
 - [[operations/permissions]]
@@ -37,6 +39,10 @@ Useful contract surface:
 - [[sources/OpenAI Computer-Using Agent|Computer-Using Agent]]
 - [[sources/Cursor Agent Computer Use|Cursor agents can now control their own computers]]
 - [[sources/Anthropic Effective Context Engineering|Effective context engineering for AI agents]]
+- [[sources/MCP-Zero|MCP-Zero: Active Tool Discovery for Autonomous LLM Agents]]
+- [[sources/ScaleMCP|ScaleMCP: Dynamic and Auto-Synchronizing Model Context Protocol Tools for LLM Agents]]
+- [[sources/Anthropic Advanced Tool Use|Introducing advanced tool use on the Claude Developer Platform]]
+- [[sources/Anthropic Code Execution with MCP|Code execution with MCP: Building more efficient agents]]
 - [[sources/OpenAI Responses API Computer Environment|From model to agent: Equipping the Responses API with a computer environment]]
 - [[sources/Anthropic Multi-Agent Research System|How we built our multi-agent research system]]
 - [[sources/OpenAI ChatGPT Agent System Card|ChatGPT agent System Card]]

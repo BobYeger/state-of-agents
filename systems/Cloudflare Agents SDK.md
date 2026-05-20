@@ -8,11 +8,13 @@ Cloudflare's platform for building stateful agents with durable execution, memor
 - [[operations/durable sessions]]
 - [[operations/agent memory]]
 - [[operations/sandboxes]]
+- [[operations/agent observability]]
 - [[protocols/MCP]]
 
 ## Related Sources
 
 - [[sources/Cloudflare Project Think]]
+- [[sources/Cloudflare Think Docs]]
 - [[sources/Cloudflare Agent Memory]]
 - [[sources/Cloudflare Sandboxing AI Agents]]
 - [[sources/Cloudflare MCP Auth Durable Objects]]
