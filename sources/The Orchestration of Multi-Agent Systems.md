@@ -13,7 +13,7 @@ arxiv_id: "2601.13671"
 citation_count: null
 citation_source: null
 citation_snapshot_date: null
-citation_lookup: null
+citation_lookup: "pending"
 authors:
   - "Apoorva Adimulam"
   - "Rajesh Gupta"
@@ -34,6 +34,10 @@ updated: 2026-05-20
 - High-level architecture blueprint for orchestrated multi-agent systems.
 - Frames orchestration as a control plane that integrates planning, policy enforcement, state management, quality operations, governance, observability, MCP, and A2A.
 - Useful as the enterprise-scale counterpart to framework papers and protocol specs.
+
+## Claims
+
+- [[claims/Claim - Agent systems improve when structure matches the task]]
 
 ## Connections
 

@@ -11,7 +11,6 @@ Agent systems improve when the harness, tools, and context are engineered as car
 - [[sources/OpenAI Codex Agent Loop]] gives a concrete production loop across model calls, tools, context, and compaction.
 - [[sources/Cursor Improving Agent Harness]] treats harness improvement as an ongoing engineering discipline.
 - [[sources/OpenClaw Agent Harness Plugins]] gives a clean boundary for the harness as executor of prepared agent turns.
-- [[sources/Plan-Then-Execute]] and [[sources/Web Agents Plan-Then-Execute]] show why the loop boundary between planning and execution affects trust, security, and control.
 
 ## Design Implications
 

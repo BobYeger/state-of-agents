@@ -39,6 +39,10 @@ updated: 2026-05-19
 - Important caveat for deliberative architectures: attacks against the planning stage can be more damaging than attacks against execution because the planner controls downstream behavior.
 - Useful companion to prompt-injection and agent-security benchmarks because it focuses on planner-stage vulnerability.
 
+## Claims
+
+- [[claims/Claim - Runtime control and verification improve agent reliability]]
+
 ## Connections
 
 - [[methods/deliberative control]]

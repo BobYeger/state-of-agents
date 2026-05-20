@@ -20,6 +20,8 @@ url: "https://github.com/a2aproject/A2A"
 pdf_url: ""
 artifacts:
   - "raw/protocols/a2a-github-readme.md"
+  - "raw/assets/a2a-logo-black.svg"
+  - "raw/assets/a2a-logo-white.svg"
 created: 2026-05-18
 updated: 2026-05-18
 ---
@@ -41,6 +43,8 @@ updated: 2026-05-18
 ## Artifacts
 
 - [[raw/protocols/a2a-github-readme.md]]
+- [[raw/assets/a2a-logo-black.svg]]
+- [[raw/assets/a2a-logo-white.svg]]
 
 ## Notes
 

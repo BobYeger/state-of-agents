@@ -29,6 +29,7 @@ Routing improves agent systems by making participation conditional. Instead of e
 
 - [[sources/AgentDropout|AgentDropout: Dynamic Agent Elimination for Token-Efficient and High-Performance LLM-Based Multi-Agent Collaboration]]
 - [[sources/BAMAS|BAMAS: Structuring Budget-Aware Multi-Agent Systems]]
+- [[sources/Graph-of-Agents|Graph-of-Agents: A Graph-based Framework for Multi-Agent LLM Collaboration]]
 - [[sources/MasRouter|MasRouter: Learning to Route LLMs for Multi-Agent Systems]]
 - [[sources/Stop Wasting Your Tokens|Stop Wasting Your Tokens: Towards Efficient Runtime Multi-Agent Systems]]
 - [[sources/X-MAS|X-MAS: Towards Building Multi-Agent Systems with Heterogeneous LLMs]]

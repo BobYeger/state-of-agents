@@ -41,6 +41,10 @@ updated: 2026-05-19
 - Important because planner behavior is optimized within the agent flow rather than designed once by hand.
 - Connects deliberative control with workflow search, tool-use optimization, and evolving memory.
 
+## Claims
+
+- [[claims/Claim - Runtime control and verification improve agent reliability]]
+
 ## Connections
 
 - [[methods/deliberative control]]

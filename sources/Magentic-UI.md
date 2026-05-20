@@ -13,7 +13,7 @@ arxiv_id: "2507.22358"
 citation_count: null
 citation_source: null
 citation_snapshot_date: null
-citation_lookup: null
+citation_lookup: "pending"
 authors:
   - "Hussein Mozannar"
   - "Gagan Bansal"

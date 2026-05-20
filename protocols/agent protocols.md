@@ -12,10 +12,13 @@ The useful distinction is between tool protocols and agent-to-agent protocols. T
 - What prevents prompt injection, impersonation, confused-deputy behavior, or over-broad authorization?
 - Which parts are interoperability standards versus framework-specific conventions?
 
-## Key Protocols
+## Protocol Surfaces
 
-- [[protocols/MCP]]
-- [[protocols/A2A]]
+- [[protocols/MCP]]: agent to tools, data, and context.
+- [[protocols/A2A]]: agent to agent.
+- [[protocols/ACP]]: coding agent to editor or client.
+- [[protocols/AG-UI]] and [[protocols/A2UI]]: agent to user interface.
+- [[protocols/AP2]] and [[protocols/UCP]]: agent-mediated payments and commerce.
 
 ## Related Sources
 

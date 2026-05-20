@@ -40,6 +40,7 @@ updated: 2026-05-18
 
 - [[methods/runtime routing]]
 - [[methods/topology optimization]]
+- [[operations/cost control]]
 
 ## Artifacts
 

@@ -3,7 +3,7 @@ title: "Building agents with the ADK and the new Interactions API"
 aliases: []
 source_type: "article"
 status: "verified"
-year: 2026
+year: 2025
 publication_date: "2025-12-11"
 publication_date_basis: "google_developers_visible_date"
 source_updated_date: null

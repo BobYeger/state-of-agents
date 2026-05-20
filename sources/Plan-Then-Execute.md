@@ -35,6 +35,10 @@ updated: 2026-05-19
 - Important because planning can improve coordination and user trust, but plausible bad plans can also mislead users.
 - Supports treating human involvement, plan review, and execution control as part of the architecture rather than an afterthought.
 
+## Claims
+
+- [[claims/Claim - Agent systems improve when structure matches the task]]
+
 ## Connections
 
 - [[methods/deliberative control]]

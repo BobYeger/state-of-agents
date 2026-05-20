@@ -36,6 +36,11 @@ updated: 2026-05-19
 - Strong source for the positive case that planning should include checkability, not only decomposition.
 - Connects deliberative control to runtime supervision and task-specific validation.
 
+## Claims
+
+- [[claims/Claim - Agent systems improve when structure matches the task]]
+- [[claims/Claim - Runtime control and verification improve agent reliability]]
+
 ## Connections
 
 - [[methods/deliberative control]]

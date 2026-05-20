@@ -13,7 +13,7 @@ arxiv_id: "2411.04468"
 citation_count: null
 citation_source: null
 citation_snapshot_date: null
-citation_lookup: null
+citation_lookup: "pending"
 authors:
   - "Adam Fourney"
   - "Gagan Bansal"
@@ -50,6 +50,10 @@ updated: 2026-05-20
 - Microsoft generalist multi-agent system built around an Orchestrator that plans, tracks progress, delegates to specialized agents, and replans after errors.
 - Important pre-2025 anchor for orchestrator-worker architecture across web browsing, local files, code generation, and terminal execution.
 - Includes AutoGenBench for contained agentic evaluation, which matters because agent actions have side effects.
+
+## Claims
+
+- [[claims/Claim - Agent systems improve when structure matches the task]]
 
 ## Connections
 

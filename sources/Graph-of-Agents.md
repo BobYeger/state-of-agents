@@ -14,7 +14,7 @@ arxiv_id: "2604.17148"
 citation_count: null
 citation_source: null
 citation_snapshot_date: null
-citation_lookup: null
+citation_lookup: "pending"
 authors:
   - "Sukwon Yun"
   - "Jie Peng"
