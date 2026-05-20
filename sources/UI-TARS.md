@@ -10,10 +10,10 @@ publication_date_basis: "bytedance_seed_visible_publication_date"
 source_updated_date: null
 source_updated_date_basis: null
 arxiv_id: "2501.12326"
-citation_count: null
-citation_source: null
-citation_snapshot_date: null
-citation_lookup: null
+citation_count: 5
+citation_source: "OpenAlex"
+citation_snapshot_date: "2026-05-20"
+citation_lookup: "doi:10.48550/arxiv.2501.12326"
 authors:
   - "Yujia Qin"
   - "Yining Ye"

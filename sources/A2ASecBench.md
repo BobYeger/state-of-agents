@@ -10,9 +10,9 @@ source_updated_date: "2026-04-11"
 source_updated_date_basis: "openreview_last_modified"
 arxiv_id: null
 citation_count: null
-citation_source: "OpenAlex"
-citation_snapshot_date: "2026-05-18"
-citation_lookup: "title_search_no_match"
+citation_source: null
+citation_snapshot_date: "2026-05-20"
+citation_lookup: "not_found_openalex_2026-05-20"
 authors:
   - "Tianhao Li"
   - "Chuangxin Chu"
@@ -53,4 +53,3 @@ updated: 2026-05-18
 - PDF URL: https://openreview.net/pdf?id=LfdFnakqGJ
 - Publication date basis: openreview_publication_date.
 - Source updated date basis: openreview_last_modified.
-- Citation count: not found in OpenAlex title search snapshot on 2026-05-18.

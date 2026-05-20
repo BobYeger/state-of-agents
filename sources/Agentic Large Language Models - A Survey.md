@@ -11,7 +11,7 @@ source_updated_date_basis: "arxiv_updated"
 arxiv_id: "2503.23037"
 citation_count: 21
 citation_source: "OpenAlex"
-citation_snapshot_date: "2026-05-18"
+citation_snapshot_date: "2026-05-20"
 citation_lookup: "title_search_exact"
 authors:
   - "Aske Plaat"
@@ -53,4 +53,3 @@ updated: 2026-05-18
 - PDF URL: https://arxiv.org/pdf/2503.23037
 - Publication date basis: arxiv_published.
 - Source updated date basis: arxiv_updated.
-- Citation count: 21 (OpenAlex, snapshot 2026-05-18).

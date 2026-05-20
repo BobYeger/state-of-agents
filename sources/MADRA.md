@@ -11,10 +11,10 @@ publication_date_basis: "arxiv_published"
 source_updated_date: "2025-11-26"
 source_updated_date_basis: "arxiv_updated"
 arxiv_id: "2511.21460"
-citation_count: null
-citation_source: null
-citation_snapshot_date: null
-citation_lookup: null
+citation_count: 0
+citation_source: "OpenAlex"
+citation_snapshot_date: "2026-05-20"
+citation_lookup: "doi:10.48550/arxiv.2511.21460"
 authors:
   - "Junjian Wang"
   - "Lidan Zhao"

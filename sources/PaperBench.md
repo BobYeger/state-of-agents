@@ -11,8 +11,8 @@ source_updated_date_basis: "arxiv_updated"
 arxiv_id: "2504.01848"
 citation_count: 3
 citation_source: "OpenAlex"
-citation_snapshot_date: "2026-05-18"
-citation_lookup: "arxiv_doi"
+citation_snapshot_date: "2026-05-20"
+citation_lookup: "doi:10.48550/arxiv.2504.01848"
 authors:
   - "OpenAI"
 venue: "OpenAI"
@@ -47,4 +47,3 @@ updated: 2026-05-18
 - PDF URL: https://cdn.openai.com/papers/22265bac-3191-44e5-b057-7aaacd8e90cd/paperbench.pdf
 - Publication date basis: arxiv_published.
 - Source updated date basis: arxiv_updated.
-- Citation count: 3 (OpenAlex, snapshot 2026-05-18).

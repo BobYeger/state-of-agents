@@ -11,10 +11,10 @@ publication_date_basis: "book_publication_year_only_secondary_bibliography"
 source_updated_date: null
 source_updated_date_basis: null
 arxiv_id: null
-citation_count: null
-citation_source: null
-citation_snapshot_date: null
-citation_lookup: null
+citation_count: 360
+citation_source: "OpenAlex"
+citation_snapshot_date: "2026-05-20"
+citation_lookup: "title_search_exact"
 authors:
   - "Erann Gat"
 venue: "Artificial Intelligence and Mobile Robots"

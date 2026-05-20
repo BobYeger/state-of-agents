@@ -11,8 +11,8 @@ source_updated_date_basis: null
 arxiv_id: null
 citation_count: null
 citation_source: null
-citation_snapshot_date: null
-citation_lookup: null
+citation_snapshot_date: "2026-05-20"
+citation_lookup: "not_found_openalex_2026-05-20"
 authors:
   - "Anthropic"
 venue: "Anthropic Research"

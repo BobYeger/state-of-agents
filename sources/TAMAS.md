@@ -11,8 +11,8 @@ source_updated_date_basis: "arxiv_updated"
 arxiv_id: "2511.05269"
 citation_count: 0
 citation_source: "OpenAlex"
-citation_snapshot_date: "2026-05-18"
-citation_lookup: "arxiv_doi"
+citation_snapshot_date: "2026-05-20"
+citation_lookup: "doi:10.48550/arxiv.2511.05269"
 authors:
   - "Ishan Kavathekar"
   - "Hemang Jain"
@@ -52,4 +52,3 @@ updated: 2026-05-18
 - PDF URL: https://arxiv.org/pdf/2511.05269
 - Publication date basis: arxiv_published.
 - Source updated date basis: arxiv_updated.
-- Citation count: 0 (OpenAlex, snapshot 2026-05-18).

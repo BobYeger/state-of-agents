@@ -10,10 +10,10 @@ publication_date_basis: "arxiv_published"
 source_updated_date: "2025-10-07"
 source_updated_date_basis: "arxiv_updated"
 arxiv_id: "2510.05592"
-citation_count: null
-citation_source: null
-citation_snapshot_date: null
-citation_lookup: null
+citation_count: 0
+citation_source: "OpenAlex"
+citation_snapshot_date: "2026-05-20"
+citation_lookup: "doi:10.48550/arxiv.2510.05592"
 authors:
   - "Zhuofeng Li"
   - "Haoxiang Zhang"

@@ -10,10 +10,10 @@ publication_date_basis: "arxiv_published"
 source_updated_date: "2024-11-07"
 source_updated_date_basis: "arxiv_updated"
 arxiv_id: "2411.04468"
-citation_count: null
-citation_source: null
-citation_snapshot_date: null
-citation_lookup: "pending"
+citation_count: 13
+citation_source: "OpenAlex"
+citation_snapshot_date: "2026-05-20"
+citation_lookup: "doi:10.48550/arxiv.2411.04468"
 authors:
   - "Adam Fourney"
   - "Gagan Bansal"
