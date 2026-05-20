@@ -5,6 +5,7 @@ Use this as a navigation page, not a source registry. Start from the synthesis n
 ## Core Notes
 
 - [[concepts/multi-agent systems]]
+- [[maps/MAS Orchestration and Architecture]]
 - [[maps/What Makes Agent Systems Better]]
 - [[methods/multi-agent orchestration]]
 - [[methods/topology optimization]]

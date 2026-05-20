@@ -22,6 +22,7 @@ Multi-agent benchmarks should measure more than task success. The frontier quest
 
 - [[sources/A2ASecBench|A2ASecBench: A Protocol-Aware Security Benchmark for Agent-to-Agent Multi-Agent Systems]]
 - [[sources/MultiAgentBench|MultiAgentBench: Evaluating the Collaboration and Competition of LLM agents]]
+- [[sources/Magentic-One|Magentic-One: A Generalist Multi-Agent System for Solving Complex Tasks]]
 - [[sources/PEAR|PEAR: Planner-Executor Agent Robustness Benchmark]]
 - [[sources/TAMAS|TAMAS: Benchmarking Adversarial Risks in Multi-Agent LLM Systems]]
 - [[sources/Understanding Multi-Agent LLM Frameworks|Understanding Multi-Agent LLM Frameworks: A Unified Benchmark and Experimental Analysis]]

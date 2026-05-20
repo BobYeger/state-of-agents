@@ -9,6 +9,7 @@ Orchestration improves agent systems when it turns task structure into explicit 
 ## Related
 
 - [[concepts/multi-agent systems]]
+- [[maps/MAS Orchestration and Architecture]]
 - [[maps/What Makes Agent Systems Better]]
 - [[claims/Claim - Agent systems improve when structure matches the task]]
 - [[methods/deliberative control]]
@@ -23,6 +24,9 @@ Orchestration improves agent systems when it turns task structure into explicit 
 - [[sources/ADAS|Automated Design of Agentic Systems]]
 - [[sources/Anthropic Building Effective Agents|Building effective agents]]
 - [[sources/HALO|HALO: Hierarchical Autonomous Logic-Oriented Orchestration for Multi-Agent LLM Systems]]
+- [[sources/The Orchestration of Multi-Agent Systems|The Orchestration of Multi-Agent Systems: Architectures, Protocols, and Enterprise Adoption]]
+- [[sources/Magentic-One|Magentic-One: A Generalist Multi-Agent System for Solving Complex Tasks]]
+- [[sources/Magentic-UI|Magentic-UI: Towards Human-in-the-loop Agentic Systems]]
 - [[sources/VeriMAP|Verification-Aware Planning for Multi-Agent Systems]]
 - [[sources/AgentFlow|In-the-Flow Agentic System Optimization for Effective Planning and Tool Use]]
 - [[sources/Anthropic Multi-Agent Research System|How we built our multi-agent research system]]
@@ -34,4 +38,5 @@ Orchestration improves agent systems when it turns task structure into explicit 
 - [[sources/Multi-Agent Collaboration via Evolving Orchestration|Multi-Agent Collaboration via Evolving Orchestration]]
 - [[sources/Multi-Agent Design - MASS|Multi-Agent Design: Optimizing Agents with Better Prompts and Topologies]]
 - [[sources/OWL|OWL: Optimized Workforce Learning for General Multi-Agent Assistance in Real-World Task Automation]]
+- [[sources/Graph-of-Agents|Graph-of-Agents: A Graph-based Framework for Multi-Agent LLM Collaboration]]
 - [[sources/Understanding Multi-Agent LLM Frameworks|Understanding Multi-Agent LLM Frameworks: A Unified Benchmark and Experimental Analysis]]

@@ -20,3 +20,4 @@ Topology is a performance lever, not decoration. Better agent systems search or 
 - [[sources/MAPRO|MAPRO: Recasting Multi-Agent Prompt Optimization as Maximum a Posteriori Inference]]
 - [[sources/Multi-Agent Design - MASS|Multi-Agent Design: Optimizing Agents with Better Prompts and Topologies]]
 - [[sources/MultiAgentBench|MultiAgentBench: Evaluating the Collaboration and Competition of LLM agents]]
+- [[sources/Graph-of-Agents|Graph-of-Agents: A Graph-based Framework for Multi-Agent LLM Collaboration]]

@@ -28,3 +28,4 @@ Human-in-the-loop agents explicitly involve users in planning, approval, correct
 - [[sources/OpenAI Running Codex Safely]]
 - [[sources/Google ADK Multi-Agent Patterns]]
 - [[sources/Anthropic Measuring Agent Autonomy]]
+- [[sources/Magentic-UI]]
