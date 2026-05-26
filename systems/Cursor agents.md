@@ -7,6 +7,7 @@ Cursor is useful here less as a single product and more as a corpus of productio
 ## Design Pattern
 
 - Run many coding agents in parallel when the work can be decomposed.
+- Use worktrees or remote machines to keep parallel agent attempts from interfering with one another.
 - Use shared project state, tests, screenshots, logs, and review artifacts as coordination surfaces.
 - Treat harness design and evaluation as the durable product, not only the model choice.
 
@@ -16,11 +17,13 @@ Cursor is useful here less as a single product and more as a corpus of productio
 - [[concepts/multi-agent systems]]
 - [[methods/multi-agent orchestration]]
 - [[operations/agent infrastructure]]
+- [[operations/worktree isolation]]
 - [[operations/sandboxes]]
 
 ## Related Sources
 
 - [[sources/Cursor Agent Computer Use|Cursor agents can now control their own computers]]
+- [[sources/Cursor 2.0|Introducing Cursor 2.0 and Composer]]
 - [[sources/Cursor Improving Agent Harness|Continually improving our agent harness]]
 - [[sources/Cursor Scaling Long-Running Autonomous Coding|Scaling long-running autonomous coding]]
 - [[sources/Cursor Multi-Agent Kernels|Speeding up GPU kernels by 38% with a multi-agent system]]

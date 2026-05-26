@@ -29,3 +29,6 @@ Weak tool contracts force the model to infer hidden semantics. Strong contracts 
 - [[sources/OpenAI Codex Agent Loop]]
 - [[sources/OpenAI Responses API Computer Environment]]
 - [[sources/Cloudflare Code Mode MCP]]
+- [[sources/Cloudflare Code Mode MCP API]]
+- [[sources/Cloudflare CLI for All Cloudflare]]
+- [[sources/OpenAI Agents SDK Tools]]

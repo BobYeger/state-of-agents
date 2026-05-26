@@ -19,6 +19,8 @@ Model Context Protocol is an interoperability protocol for connecting agents and
 - [[sources/MCP Security Best Practices|MCP Security Best Practices]]
 - [[sources/Cloudflare MCP Auth Durable Objects|Piecing together the Agent puzzle: MCP, authentication & authorization, and Durable Objects free tier]]
 - [[sources/Cloudflare Code Mode MCP]]
+- [[sources/Cloudflare Code Mode MCP API]]
+- [[sources/OpenAI Codex CLI Agents SDK Cookbook]]
 - [[sources/MCP-Zero]]
 - [[sources/ScaleMCP]]
 - [[sources/Anthropic Managed Agents Sandboxes MCP Tunnels]]

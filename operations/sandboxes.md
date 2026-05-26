@@ -6,6 +6,8 @@ Sandboxes isolate agent-executed code, file edits, browser actions, and external
 
 Sandboxes should prevent generated code, untrusted inputs, and prompt-injected actions from reaching credentials, internal networks, or privileged host resources.
 
+Worktrees are useful for file and branch isolation, but they are not sandboxes. A coding agent in a worktree can still need separate policy for commands, network access, credentials, secrets, local services, and host filesystem boundaries.
+
 The risk is not only a classical sandbox escape. A model can also be tricked into reading credentials, exfiltrating logs, modifying configuration, authorizing unintended actions, or using one tool's authority to affect another system.
 
 Useful control points:
@@ -20,6 +22,7 @@ Useful control points:
 
 - [[operations/permissions]]
 - [[operations/agent infrastructure]]
+- [[operations/worktree isolation]]
 - [[safety/prompt injection]]
 - [[safety/agent safety and security]]
 
@@ -31,6 +34,8 @@ Useful control points:
 - [[sources/OpenHands|OpenHands: An Open Platform for AI Software Developers as Generalist Agents]]
 - [[sources/Cloudflare Project Think|Project Think: building the next generation of AI agents on Cloudflare]]
 - [[sources/Cloudflare Sandboxing AI Agents|Sandboxing AI agents, 100x faster]]
+- [[sources/Cloudflare Code Mode MCP API|Code Mode: give agents an entire API in 1,000 tokens]]
 - [[sources/Cursor Scaling Long-Running Autonomous Coding|Scaling long-running autonomous coding]]
 - [[sources/Anthropic Managed Agents|Scaling Managed Agents: Decoupling the brain from the hands]]
 - [[sources/Manus Sandbox|Understanding Manus sandbox - your cloud computer]]
+- [[sources/OpenAI Codex App]]

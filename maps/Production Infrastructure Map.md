@@ -6,6 +6,7 @@ Use this as a navigation page for production agent runtimes. Source evidence sho
 
 - [[operations/agent infrastructure]]
 - [[operations/durable sessions]]
+- [[operations/worktree isolation]]
 - [[operations/sandboxes]]
 - [[operations/agent memory]]
 - [[operations/agent observability]]

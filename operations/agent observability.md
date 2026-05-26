@@ -18,6 +18,7 @@ Observability improves agent systems by making hidden coordination and tool beha
 
 - [[sources/MegaAgent|MegaAgent: A Large-Scale Autonomous LLM-based Multi-Agent System Without Predefined SOPs]]
 - [[sources/OpenAI Agents SDK Docs|OpenAI Agents SDK Documentation]]
+- [[sources/OpenAI Codex CLI Agents SDK Cookbook|Building Consistent Workflows with Codex CLI & Agents SDK]]
 - [[sources/Anthropic Managed Agents Dreaming Outcomes|New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration]]
 - [[sources/LangChain Deep Agents v0.6|New in Deep Agents v0.6]]
 - [[sources/LangChain Delta Channels|Delta Channels: Evolving our Runtime for Long-Running Agents]]

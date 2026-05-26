@@ -15,8 +15,11 @@ It matters as a production abstraction layer: it packages common agent control-f
 - [[concepts/agentic systems]]
 - [[concepts/tool use]]
 - [[concepts/multi-agent systems]]
+- [[concepts/agent operating surfaces]]
 - [[operations/agent infrastructure]]
 
 ## Related Sources
 
 - [[sources/OpenAI Agents SDK Docs|OpenAI Agents SDK Documentation]]
+- [[sources/OpenAI Agents SDK Tools]]
+- [[sources/OpenAI Codex CLI Agents SDK Cookbook]]

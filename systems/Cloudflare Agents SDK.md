@@ -10,6 +10,7 @@ Cloudflare's platform for building stateful agents with durable execution, memor
 - [[operations/sandboxes]]
 - [[operations/agent observability]]
 - [[protocols/MCP]]
+- [[concepts/agent operating surfaces]]
 
 ## Related Sources
 
@@ -19,3 +20,5 @@ Cloudflare's platform for building stateful agents with durable execution, memor
 - [[sources/Cloudflare Sandboxing AI Agents]]
 - [[sources/Cloudflare MCP Auth Durable Objects]]
 - [[sources/Cloudflare Scaling MCP Adoption]]
+- [[sources/Cloudflare Code Mode MCP API]]
+- [[sources/Cloudflare CLI for All Cloudflare]]

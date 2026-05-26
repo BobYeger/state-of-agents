@@ -7,6 +7,8 @@ This reduces contamination of the lead context and makes specialization auditabl
 ## Related Sources
 
 - [[sources/Anthropic Managed Agents Dreaming Outcomes]]
+- [[sources/Anthropic Claude Code Worktrees]]
+- [[sources/Cursor 2.0]]
 - [[sources/Anthropic Multi-Agent Research System]]
 - [[sources/LangChain Deep Agents Docs]]
 - [[sources/MiniMax Agent Team]]
@@ -15,5 +17,6 @@ This reduces contamination of the lead context and makes specialization auditabl
 
 - [[concepts/multi-agent systems]]
 - [[methods/multi-agent orchestration]]
+- [[operations/worktree isolation]]
 - [[operations/agent observability]]
 - [[maps/MAS Orchestration and Architecture]]
