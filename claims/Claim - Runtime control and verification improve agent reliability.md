@@ -12,6 +12,7 @@ Agent systems improve when runtime behavior is supervised, pruned, verified, and
 - [[sources/VeriMAP]] shows planning can produce verification functions and structured I/O for subtasks.
 - [[sources/PEAR]] shows planner-stage attacks can be especially dangerous in planner-executor agents.
 - [[sources/AgentFlow]] treats planner, executor, verifier, and generator roles as an optimizable live system.
+- [[sources/Claude Managed Agents Define Outcomes]] makes the definition of done executable through rubric-driven artifact evaluation and repair feedback.
 - [[sources/Cursor Building Better Bugbot]] and [[sources/Cursor Bugbot Learned Rules]] show production improvement through eval loops and feedback.
 - [[sources/Anthropic Demystifying Agent Evals]] makes agent evals a design practice for multi-turn, tool-using behavior.
 
@@ -28,6 +29,7 @@ Agent systems improve when runtime behavior is supervised, pruned, verified, and
 - [[methods/deliberative control]]
 - [[methods/runtime supervision]]
 - [[methods/runtime routing]]
+- [[concepts/outcomes and rubric graders]]
 - [[operations/agent observability]]
 - [[operations/agent evals]]
 - [[operations/cost control]]

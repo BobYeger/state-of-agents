@@ -657,7 +657,7 @@ To create or add agent skills, see:
 
 ### Did you find what you needed?
 
-Yes No 
+Yes No
 
 [Privacy policy](https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement)
 

@@ -55,7 +55,9 @@ updated: 2026-05-20
 ## Connections
 
 - [[maps/MAS Orchestration and Architecture]]
+- [[maps/Agent Teams and Workforces Map]]
 - [[methods/multi-agent orchestration]]
+- [[concepts/agent teams]]
 - [[concepts/human-in-the-loop agents]]
 - [[operations/permissions]]
 - [[safety/agent safety and security]]

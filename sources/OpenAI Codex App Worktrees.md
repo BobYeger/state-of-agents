@@ -44,7 +44,9 @@ updated: 2026-05-26
 - [[operations/worktree isolation]]
 - [[operations/agent harnesses]]
 - [[concepts/issue tracker control plane]]
+- [[concepts/agent teams]]
 - [[systems/Codex]]
+- [[maps/Agent Teams and Workforces Map]]
 
 ## Artifacts
 

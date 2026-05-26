@@ -12,7 +12,7 @@ This led us to create [**Agent Skills**](https://www.anthropic.com/news/skills):
 Building a skill for an agent is like putting together an onboarding guide for a new hire. Instead of building fragmented, custom-designed agents for each use case, anyone can now specialize their agents with composable capabilities by capturing and sharing their procedural knowledge. In this article, we explain what Skills are, show how they work, and share best practices for building your own.
 
 
-A skill is a directory containing a SKILL.md file that contains organized folders of instructions, scripts, and resources that give agents additional capabilities. 
+A skill is a directory containing a SKILL.md file that contains organized folders of instructions, scripts, and resources that give agents additional capabilities.
 
 ## The anatomy of a skill
 
@@ -42,7 +42,7 @@ Agents with a filesystem and code execution tools don’t need to read the entir
 The following diagram shows how the context window changes when a skill is triggered by a user’s message.
 
 
-Skills are triggered in the context window via your system prompt. 
+Skills are triggered in the context window via your system prompt.
 
 The sequence of operations shown:
 

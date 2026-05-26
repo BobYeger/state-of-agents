@@ -171,7 +171,7 @@ For larger workflows, we introduce a team of agents:
 
 In this example, we intentionally have the Project Manager agent enforce gating logic between each of the specialized downstream agents. This ensures that artifacts exist before handoffs are made. This mirrors real world enterprise workflows such as JIRA task orchestration, long-chained rollouts, and QA sign-offs.
 
-![Multi-Agent Codex Workflow with Codex MCP](https://developers.openai.com/cookbook/assets/images/multi_agent_codex_workflow.png)  
+![Multi-Agent Codex Workflow with Codex MCP](https://developers.openai.com/cookbook/assets/images/multi_agent_codex_workflow.png)
 *Multi-agent orchestration with Codex MCP and gated handoffs producing artifacts.*
 
 In this structure, each of our agents serve a specialized purpose. The Project Manager is overall responsible for coordinating across all other agents and ensuring the overall task is complete.

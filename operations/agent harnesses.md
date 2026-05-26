@@ -11,9 +11,13 @@ Harnesses improve agent systems by making the loop inspectable and recoverable: 
 ## Tracker
 
 - [[maps/Harness Tracker]]
+- [[maps/Agent Teams and Workforces Map]]
+- [[methods/ralph loop]]
 - [[methods/deliberative control]]
 - [[claims/Claim - Harnesses tools and context are core agent performance levers]]
+- [[claims/Claim - Context management is an agent architecture choice]]
 - [[maps/What Makes Agent Systems Better]]
+- [[maps/Context Management Map]]
 
 ## Current Anchors
 
@@ -24,22 +28,32 @@ Harnesses improve agent systems by making the loop inspectable and recoverable: 
 - [[sources/Anthropic Effective Harnesses for Long-Running Agents]]
 - [[sources/Anthropic Harness Design Long-Running Apps]]
 - [[sources/Anthropic Parallel Claudes C Compiler]]
+- [[sources/Claude Code Agent Teams]]
+- [[sources/OpenAI Codex Subagents]]
+- [[sources/Cursor 3 Agents Window]]
+- [[sources/Devin Manages Devins]]
 - [[sources/Anthropic Managed Agents Dreaming Outcomes]]
+- [[sources/Claude Managed Agents Define Outcomes]]
 - [[sources/Google ADK Durable Agents]]
 - [[sources/OpenAI Symphony]]
 - [[sources/Anthropic Claude Code Worktrees]]
 - [[sources/OpenAI Codex App Worktrees]]
 - [[sources/LangChain Deep Agents v0.6]]
 - [[sources/LangChain Delta Channels]]
+- [[sources/Parallel Context Compaction]]
 - [[sources/Cursor Improving Agent Harness]]
+- [[sources/OpenClaw Repository]]
 - [[sources/OpenClaw Agent Harness Plugins]]
+- [[sources/Hermes Agent Repository]]
 - [[sources/Hermes Agent Docs]]
 - [[sources/MiniMax Agent Lessons 2025]]
+- [[sources/Cursor 3.2]]
 - [[sources/OpenHarness Docs]]
 - [[sources/Letta Code Memory Docs]]
 - [[sources/MiniMax Agent Team]]
 - [[sources/Plan-Then-Execute]]
 - [[sources/Web Agents Plan-Then-Execute]]
+- [[sources/Ralph Playbook]]
 
 ## Related
 
@@ -50,4 +64,5 @@ Harnesses improve agent systems by making the loop inspectable and recoverable: 
 - [[operations/sandboxes]]
 - [[operations/agent observability]]
 - [[concepts/agent operating surfaces]]
+- [[concepts/context compaction]]
 - [[maps/Recent Agent Operating Concepts]]

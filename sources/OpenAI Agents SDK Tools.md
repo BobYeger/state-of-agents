@@ -5,8 +5,8 @@ source_type: "docs"
 kind: "framework-docs"
 status: "verified"
 year: 2026
-publication_date: null
-publication_date_basis: "living_docs_no_single_publication_date"
+publication_date: "2026-05-26"
+publication_date_basis: "accessed_living_docs_no_visible_publication_date"
 source_updated_date: "2026-05-26"
 source_updated_date_basis: "captured_docs_snapshot"
 arxiv_id: null
@@ -49,4 +49,4 @@ updated: 2026-05-26
 ## Notes
 
 - Canonical URL: https://openai.github.io/openai-agents-python/tools/
-- Publication date basis: living docs page; capture date stored as source_updated_date.
+- Publication date basis: living docs page with no stable publication date; snapshot/access date used for sortable metadata.

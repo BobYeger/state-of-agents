@@ -58,9 +58,11 @@ updated: 2026-05-20
 ## Connections
 
 - [[maps/MAS Orchestration and Architecture]]
+- [[maps/Agent Teams and Workforces Map]]
 - [[methods/multi-agent orchestration]]
 - [[methods/deliberative control]]
 - [[benchmarks/agent evaluation]]
+- [[concepts/agent teams]]
 - [[concepts/multi-agent systems]]
 
 ## Artifacts

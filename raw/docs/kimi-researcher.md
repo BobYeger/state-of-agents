@@ -12,16 +12,16 @@ Meet **Kimi-Researcher**, an autonomous agent that excels at multi-turn search a
 Kimi-Researcher has also achieved strong performance across several complex and challenging real-world benchmarks. On [xbench](https://xbench.org/), a new, dynamic, professionally-aligned suite designed to bridge AI capabilities with real-world productivity, Kimi-Researcher achieved 69% pass@1 (averaged on 4 runs) on xbench-DeepSearch, outperforming models such as o3 with search tools. On benchmark tests for multi-turn search reasoning ([FRAMES](https://arxiv.org/abs/2409.12941), [Seal-0](https://arxiv.org/abs/2506.01062v1)) and factual information ([SimpleQA](https://arxiv.org/abs/2411.04368)), Kimi-Researcher also achieved strong performance.
 
 
-1.    Potential fluctuations in tools, such as search engines, may affect performance. The results are tested on: HLE on June 17, 2025; and xbench-DeepSearch, Seal-0, Frames, and SimpleQA on June 18, 2025. 
+1.    Potential fluctuations in tools, such as search engines, may affect performance. The results are tested on: HLE on June 17, 2025; and xbench-DeepSearch, Seal-0, Frames, and SimpleQA on June 18, 2025.
 2.    All Kimi-Researcher results were evaluated using o3-mini. Scores of other models are referenced from the relevant papers or leaderboards. [1](https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf)[2](https://github.com/deepseek-ai/DeepSeek-R1/blob/main/DeepSeek_R1.pdf)[3](https://arxiv.org/abs/2503.20201)[4](https://openai.com/index/introducing-deep-research/)[5](https://lastexam.ai/)
-3.    For benchmarks with fewer than 200 test samples (xbench, Seal-0), we performed four runs and reported the average result (avg@4). 
-4.    We do not compare multi-agent workflows based on multiple frontier models here, as our focus is on evaluating model capabilities. 
+3.    For benchmarks with fewer than 200 test samples (xbench, Seal-0), we performed four runs and reported the average result (avg@4).
+4.    We do not compare multi-agent workflows based on multiple frontier models here, as our focus is on evaluating model capabilities.
 
 ### End-to-end agentic RL is promising but challenging
 
 Kimi-Researcher is an autonomous agentic and thinking model designed to solve complex problems through multi-step planning, reasoning, and tool use. It leverages three main tools: a parallel, real-time internal **search tool**; a text-based **browser tool** for interactive web tasks; and a **coding tool** for automated code execution.
 
-Formally, given the state observation $s_{t}$ (for instance, $s_{0}$ includes system prompt, tool declarations, and user query) , Kimi-Researcher generates $\text{think}_{t}$ and $\text{action}_{t}$. An action can either be a tool call or an indication to terminate the trajectory. The detailed behavior of Kimi-Researcher is as follows: 
+Formally, given the state observation $s_{t}$ (for instance, $s_{0}$ includes system prompt, tool declarations, and user query) , Kimi-Researcher generates $\text{think}_{t}$ and $\text{action}_{t}$. An action can either be a tool call or an indication to terminate the trajectory. The detailed behavior of Kimi-Researcher is as follows:
 
 $$
 \begin{cases} \left(\right. s_{t} \left.\right) \overset{\text{Kimi}-\text{Researcher} }{\rightarrow} \left(\right. \text{think}_{t} , \text{action}_{t} \left.\right) \\ s_{t + 1} = \text{context}_\text{manager} \left(\right. s_{t} , \text{think}_{t} , \text{tool}_\text{call}_\text{result}_{t} \left.\right) & \text{if}\textrm{ } \text{action}_{t} \neq \text{finish} \\ \text{terminate} & \text{if}\textrm{ } \text{action}_{t} = \text{finish} \end{cases}
@@ -29,15 +29,15 @@ $$
 
 Traditional agent development has key limitations:
 
-1.   **Workflow-Based Systems:**[Multi-agent workflows](https://www.anthropic.com/engineering/built-multi-agent-research-system) assign roles to specialized agents and coordinate the agents using prompt-based workflows. While effective, they are tied to specific LLM versions and need frequent manual updates as models or environments change, reducing scalability and flexibility. 
-2.   **Imitation Learning with Supervised Finetuning (SFT):** Imitation learning aligns models well with human demonstrations but struggles with data labeling—especially for long-horizon, agentic tasks in dynamic environments. Furthermore, SFT datasets are tightly coupled with specific tool versions, resulting in poor generalization as tools evolve. 
+1.   **Workflow-Based Systems:**[Multi-agent workflows](https://www.anthropic.com/engineering/built-multi-agent-research-system) assign roles to specialized agents and coordinate the agents using prompt-based workflows. While effective, they are tied to specific LLM versions and need frequent manual updates as models or environments change, reducing scalability and flexibility.
+2.   **Imitation Learning with Supervised Finetuning (SFT):** Imitation learning aligns models well with human demonstrations but struggles with data labeling—especially for long-horizon, agentic tasks in dynamic environments. Furthermore, SFT datasets are tightly coupled with specific tool versions, resulting in poor generalization as tools evolve.
 
 End-to-end agentic reinforcement learning trains a single model to solve problems holistically: given a query, the agent explores a large number of possible strategies, receives rewards for correct solutions, and learns from the full trajectory. Unlike SFT, it naturally handles long, on-policy reasoning and adapts to changing tools and environments; unlike modular approaches, all skills—planning, perception, and tool use—are learned together without hand-crafted rules or workflow templates. Previous work like [OpenAI's Deep Research](https://openai.com/index/introducing-deep-research/) also highlights the strong performance of this approach, but it introduces new challenges:
 
-*   **Dynamic Environments:** Agents must adapt to constantly changing conditions, as even identical queries can yield different results over time. The goal is robust generalization despite distribution shifts. 
-*   **Long-Horizon Tasks:** Kimi-Researcher can run 70+ search queries[*](https://moonshotai.github.io/Kimi-Researcher/#note-long-horizon-tasks) per trajectory, with context windows reaching hundreds of thousands of tokens. This demands advanced memory management and long-context models. 
-*   **Data Scarcity:** High-quality RL datasets for agentic QA are rare. We address this by automatically synthesizing training data, allowing large-scale learning without manual labeling. 
-*   **Rollout Efficiency:** Multi-turn reasoning and heavy tool use can slow training and cause GPU under-utilization. Optimizing rollout efficiency is crucial for scalable, practical agent RL training. 
+*   **Dynamic Environments:** Agents must adapt to constantly changing conditions, as even identical queries can yield different results over time. The goal is robust generalization despite distribution shifts.
+*   **Long-Horizon Tasks:** Kimi-Researcher can run 70+ search queries[*](https://moonshotai.github.io/Kimi-Researcher/#note-long-horizon-tasks) per trajectory, with context windows reaching hundreds of thousands of tokens. This demands advanced memory management and long-context models.
+*   **Data Scarcity:** High-quality RL datasets for agentic QA are rare. We address this by automatically synthesizing training data, allowing large-scale learning without manual labeling.
+*   **Rollout Efficiency:** Multi-turn reasoning and heavy tool use can slow training and cause GPU under-utilization. Optimizing rollout efficiency is crucial for scalable, practical agent RL training.
 
 * calculated based on a small set of queries.
 
@@ -55,8 +55,8 @@ First, we developed a suite of challenging, tool-centric tasks designed to promo
 
 Second, we curated and synthesized reasoning-intensive tasks to reinforce the agent's core cognitive abilities and its capacity to integrate reasoning with tool usage. This component is further subdivided into:
 
-*   **Math and Code Reasoning:** Tasks that target logical inference, algorithmic problem-solving, and sequential computation. Kimi-Researcher learns to solve this kind of problem with our toolset beyond purely using chain-of-thought. 
-*   **Hard Search:** Scenarios where the agent must iteratively search, synthesize, and reason within context constraints to derive valid answers. Case studies illustrate how these hard search tasks drive the emergence of deeper planning and robust, tool-augmented reasoning strategies. 
+*   **Math and Code Reasoning:** Tasks that target logical inference, algorithmic problem-solving, and sequential computation. Kimi-Researcher learns to solve this kind of problem with our toolset beyond purely using chain-of-thought.
+*   **Hard Search:** Scenarios where the agent must iteratively search, synthesize, and reason within context constraints to derive valid answers. Case studies illustrate how these hard search tasks drive the emergence of deeper planning and robust, tool-augmented reasoning strategies.
 
 To build this diverse prompt set at scale, we developed a **fully automated pipeline** capable of generating and validating many question-answer pairs with **minimal manual intervention**, ensuring both diversity and correctness at unprecedented scale. **Ensuring accurate ground truth (GT) is critical for synthetic tasks**, so we introduced a robust GT extraction method to guarantee that each question is paired with a reliable answer whenever possible. Additionally, a rigorous filtering funnel removes ambiguous, trivial, or incorrect pairs — with **Pass@N checks ensuring only non-trivial questions are retained**. [Figure 4](https://moonshotai.github.io/Kimi-Researcher/#figure-4) shows the effectiveness of our synthetic tasks based on two experimental results.
 
@@ -64,33 +64,33 @@ To build this diverse prompt set at scale, we developed a **fully automated pipe
 
 The model is primarily trained using the [REINFORCE](https://link.springer.com/content/pdf/10.1007/BF00992696.pdf) algorithm. We have observed that the following factors contribute to more stable training:
 
-*   **On-policy Training:** It is critical to generate strict on-policy data. During training, we disable LLM engine mechanisms like toolcall format enforcers to ensure each trajectory is generated entirely based on the model's own probability distribution. 
-*   **Negative Sample Control:** Negative samples lead to a decrease in token probabilities, which increases the risk of entropy collapse during RL training. To address this, we discard some negative samples strategically, allowing the model to continue improving over a longer training period. 
+*   **On-policy Training:** It is critical to generate strict on-policy data. During training, we disable LLM engine mechanisms like toolcall format enforcers to ensure each trajectory is generated entirely based on the model's own probability distribution.
+*   **Negative Sample Control:** Negative samples lead to a decrease in token probabilities, which increases the risk of entropy collapse during RL training. To address this, we discard some negative samples strategically, allowing the model to continue improving over a longer training period.
 
 Kimi-Researcher uses outcome rewards for training, aiming to provide a constant preference in a dynamic training environment.
 
-*   **Format Reward:** The model is penalized for trajectories that include invalid tool calls or if the context/iteration exceeds the maximum limitation. 
-*   **Correctness Reward:** For trajectories without format errors, rewards are based on the comparison between the model's answer and the ground truth. 
+*   **Format Reward:** The model is penalized for trajectories that include invalid tool calls or if the context/iteration exceeds the maximum limitation.
+*   **Correctness Reward:** For trajectories without format errors, rewards are based on the comparison between the model's answer and the ground truth.
 
 To promote efficiency, a gamma-decay factor is applied to correct trajectories. Concretely, the reward of step $i$ becomes $r \times \gamma^{T - i}$, where $r$ is the outcome reward, $T$ is the number of steps, and $0 < \gamma < 1$ represents the gamma-decay coeficient. This encourages the model to discover shorter, more efficient exploration. For example, while two correct trajectories may receive equal final rewards, the shorter one earns a higher reward for its initial actions.
 
 #### Context management
 
- A long-horizon research trajectory may involve massive observation contexts, and a naive agent without memory management can easily exceed the limitation within 10 iterations. To address this, we design a context-management mechanism that allows the model to retain important information while discarding unnecessary documents, thereby extending a single rollout trajectory to over 50 iterations. An early ablation study shows that a model trained with context management uses **30%** more iterations, which enables it to acquire more information and achieve higher performance. 
+ A long-horizon research trajectory may involve massive observation contexts, and a naive agent without memory management can easily exceed the limitation within 10 iterations. To address this, we design a context-management mechanism that allows the model to retain important information while discarding unnecessary documents, thereby extending a single rollout trajectory to over 50 iterations. An early ablation study shows that a model trained with context management uses **30%** more iterations, which enables it to acquire more information and achieve higher performance.
 #### Large-scale agent RL infra
 
 
 To address the efficiency and stability challenges of large-scale Agent RL, we have developed a suite of infrastructure with the following key features:
 
-*   **Fully asynchronous rollout:** We implement a fully asynchronous rollout system with extensible Gym-like interfaces. The server-based architecture efficiently orchestrates actor rollouts, environmental interactions, and reward calculations in parallel. This design significantly outperforms its synchronous counterpart by eliminating resource idle time. 
-*   **Turn-level partial rollout:** During Agent RL, while the majority of tasks completed at the early stage, a small fraction required extensive turns. To solve this long-tail problem, we designed a Turn-level Partial Rollout mechanism. Concretely, tasks that exceed a time budget would be saved to a replay buffer. In subsequent iterations, the remaining turns would be executed with updated model weights. Combined with adapted algorithms, this mechanism delivers substantial rollout acceleration (at least 1.5x). 
-*   **Robust sandbox environment:** Our unified sandbox architecture eliminates inter-container overhead while maintaining isolation. Zero-downtime scheduling with Kubernetes-based hybrid cloud architecture enables dynamic resource allocation. Agent-tool communication via Model Context Protocol (MCP) maintains stateful sessions with reconnection capabilities. Our implementation supports multi-replica deployment, ensuring fault-tolerant operation and high availability in production environments. 
+*   **Fully asynchronous rollout:** We implement a fully asynchronous rollout system with extensible Gym-like interfaces. The server-based architecture efficiently orchestrates actor rollouts, environmental interactions, and reward calculations in parallel. This design significantly outperforms its synchronous counterpart by eliminating resource idle time.
+*   **Turn-level partial rollout:** During Agent RL, while the majority of tasks completed at the early stage, a small fraction required extensive turns. To solve this long-tail problem, we designed a Turn-level Partial Rollout mechanism. Concretely, tasks that exceed a time budget would be saved to a replay buffer. In subsequent iterations, the remaining turns would be executed with updated model weights. Combined with adapted algorithms, this mechanism delivers substantial rollout acceleration (at least 1.5x).
+*   **Robust sandbox environment:** Our unified sandbox architecture eliminates inter-container overhead while maintaining isolation. Zero-downtime scheduling with Kubernetes-based hybrid cloud architecture enables dynamic resource allocation. Agent-tool communication via Model Context Protocol (MCP) maintains stateful sessions with reconnection capabilities. Our implementation supports multi-replica deployment, ensuring fault-tolerant operation and high availability in production environments.
 
 ### Emerging agentic capacities
 
 During end-to-end reinforcement learning, we observed several notable emergent abilities in Kimi-Researcher. Here are two highlights:
 
-*    When presented with conflicting information from multiple sources, Kimi-Researcher resolves inconsistencies through iterative hypothesis refinement and self-correction. 
+*    When presented with conflicting information from multiple sources, Kimi-Researcher resolves inconsistencies through iterative hypothesis refinement and self-correction.
 
 Query
 
@@ -112,7 +112,7 @@ Answer: **4**
 
 In "The Woman in Green" from Volume 10 of "Strange Tales from a Chinese Studio," the scholar Yu Jing spoke a total of **4** sentences.
 
-*    Kimi-Researcher demonstrates caution and rigor: even for seemingly straightforward questions, it deliberately performs additional searches and cross-validates information before answering. 
+*    Kimi-Researcher demonstrates caution and rigor: even for seemingly straightforward questions, it deliberately performs additional searches and cross-validates information before answering.
 
 Query
 

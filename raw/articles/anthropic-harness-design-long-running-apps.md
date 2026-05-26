@@ -162,11 +162,11 @@ That being said, the QA agent still caught real gaps. In its first-round feedbac
 In its second round feedback, it again caught several functionality gaps:
 
 > Remaining gaps:
-> 
+>
 > - Audio recording is still stub-only (button toggles but no mic capture)
-> 
+>
 > - Clip resize by edge drag and clip split not implemented
-> 
+>
 > - Effect visualizations are numeric sliders, not graphical (no EQ curve)
 
 The generator was still liable to miss details or stub features when left to its own devices, and the QA still added value in catching those last mile issues for the generator to fix.
@@ -222,7 +222,7 @@ Project Data Model: Each project contains:
 Project metadata (name, description, created/modified timestamps)
 Canvas settings (resolution: e.g., 256x224, 320x240, or 160x144)
 Tile size configuration (8x8, 16x16, or 32x32 pixels)
-Color palette selection 
+Color palette selection
 All associated sprites, tilesets, levels, and entity definitions
 
 ...

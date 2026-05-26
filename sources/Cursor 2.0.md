@@ -43,7 +43,9 @@ updated: 2026-05-26
 - [[operations/worktree isolation]]
 - [[operations/agent harnesses]]
 - [[systems/Cursor agents]]
+- [[concepts/agent teams]]
 - [[concepts/subagent context isolation]]
+- [[maps/Agent Teams and Workforces Map]]
 
 ## Artifacts
 

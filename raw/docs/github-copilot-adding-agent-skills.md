@@ -649,10 +649,10 @@ Skill subdirectory names should be lowercase and use hyphens for spaces.
 
 Important
 
-Skill files must be named `SKILL.md`. 
+Skill files must be named `SKILL.md`.
 `SKILL.md` files are Markdown files with YAML frontmatter. In their simplest form, they include:
 
-    *   YAML frontmatter 
+    *   YAML frontmatter
         *   **name** (required): A unique identifier for the skill. This must be lowercase, using hyphens for spaces. Typically, this matches the name of the skill's directory.
         *   **description** (required): A description of what the skill does, and when Copilot should use it.
         *   **license** (optional): A description of the license that applies to this skill.
@@ -721,7 +721,7 @@ allowed-tools: shell
 ```
 Warning
 
-Only pre-approve the `shell` or `bash` tools if you have reviewed this skill and any referenced scripts, and you fully trust their source. Pre-approving `shell` or `bash` removes the confirmation step for running terminal commands and can allow attacker-controlled skills or prompt injections to execute arbitrary commands in your environment. When in doubt, omit `shell` and `bash` from `allowed-tools` so that Copilot must ask for your explicit confirmation before running terminal commands. 
+Only pre-approve the `shell` or `bash` tools if you have reviewed this skill and any referenced scripts, and you fully trust their source. Pre-approving `shell` or `bash` removes the confirmation step for running terminal commands and can allow attacker-controlled skills or prompt injections to execute arbitrary commands in your environment. When in doubt, omit `shell` and `bash` from `allowed-tools` so that Copilot must ask for your explicit confirmation before running terminal commands.
 3.   **Write instructions that tell Copilot how to use the script.** In the Markdown body of `SKILL.md`, describe when and how to run the script.
 
 ```markdown
@@ -796,14 +796,14 @@ Shell gh skill install github/awesome-copilot documentation-writer
 
 ```shell
 gh skill install github/awesome-copilot documentation-writer
-``` 
+```
 You can install a specific version using `@TAG` or `@SHA`:
 
 Shell gh skill install github/awesome-copilot documentation-writer@v1.2.0
 
 ```shell
 gh skill install github/awesome-copilot documentation-writer@v1.2.0
-``` 
+```
 To lock a skill to a specific version (or commit SHA) so it is skipped during updates, use `--pin`:
 
 Shell gh skill install github/awesome-copilot documentation-writer --pin v1.2.0
@@ -812,14 +812,14 @@ Shell gh skill install github/awesome-copilot documentation-writer --pin v1.2.0
 gh skill install github/awesome-copilot documentation-writer --pin v1.2.0
 ``` Note
 
-The `@VERSION` syntax and `--pin` flag are mutually exclusive. Use one or the other, not both. 
+The `@VERSION` syntax and `--pin` flag are mutually exclusive. Use one or the other, not both.
 To install a skill for a specific agent host, use the `--agent` flag. To control the install scope, use `--scope`:
 
 Shell gh skill install github/awesome-copilot documentation-writer --agent claude-code --scope user
 
 ```shell
 gh skill install github/awesome-copilot documentation-writer --agent claude-code --scope user
-``` 
+```
 
 Skills are automatically installed to the correct directory for your agent host. By default, skills are installed for Copilot at project scope.
 
@@ -887,7 +887,7 @@ To learn more about repository custom instructions, see [Adding repository custo
 
 ### Did you find what you needed?
 
-Yes No 
+Yes No
 
 [Privacy policy](https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement)
 

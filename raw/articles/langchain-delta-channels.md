@@ -71,12 +71,12 @@ The setup looked like the following:
 \`\`\`py
 
 checkpointer = InMemorySaver()
-agent = create_deep_agent(    
-    model=_MockModel(),   # deterministic mock, no API calls    
-    tools=[external_search],    
+agent = create_deep_agent(
+    model=_MockModel(),   # deterministic mock, no API calls
+    tools=[external_search],
     checkpointer=checkpointer,
 )
-for i in range(turns):    
+for i in range(turns):
     agent.invoke({"messages": [HumanMessage(...)]}, config)
 \`\`\`
 ```
@@ -121,7 +121,7 @@ from langgraph.channels.delta import DeltaChannel
 def append(state: list[str], writes: list[list[str]]) -> list[str]:
     return state + [item for batch in writes for item in batch]
 
-class MyAgentState(TypedDict):   
+class MyAgentState(TypedDict):
     items: Annotated[list[str], DeltaChannel(reducer=append, snapshot_frequency=50)]
 ```
 

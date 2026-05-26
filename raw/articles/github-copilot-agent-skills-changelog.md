@@ -16,7 +16,7 @@ Markdown Content:
 
 [Try GitHub Copilot CLI](https://github.com/features/copilot/cli?utm_source=blog-top-nav-cli-features-cta&utm_medium=blog&utm_campaign=dev-pod-copilot-cli-2026)[See what's new](https://github.com/events/universe/recap?utm_source=k2k-blog-tap-nav&utm_medium=blog&utm_campaign=universe25)
 
- Search 
+ Search
 
 *   [Changelog](https://github.blog/changelog/)
 *   [Docs](https://docs.github.com/)
@@ -28,7 +28,7 @@ Markdown Content:
 
 Release
 
- December 18, 2025 • 1 minute read 
+ December 18, 2025 • 1 minute read
 
 # GitHub Copilot now supports Agent Skills
 
@@ -75,13 +75,13 @@ If you’ve already set up skills for Claude Code in the `.claude/skills` direct
 
 [Team-level Copilot usage metrics now available via API](https://github.blog/changelog/2026-05-14-team-level-copilot-usage-metrics-now-available-via-api)
 
-[account management](https://github.blog/changelog/2026/?label=account-management)[copilot](https://github.blog/changelog/2026/?label=copilot)[enterprise management tools](https://github.blog/changelog/2026/?label=enterprise-management-tools)... +2 
+[account management](https://github.blog/changelog/2026/?label=account-management)[copilot](https://github.blog/changelog/2026/?label=copilot)[enterprise management tools](https://github.blog/changelog/2026/?label=enterprise-management-tools)... +2
 
 ### May.14 Release
 
 [GitHub Copilot app is now available in technical preview](https://github.blog/changelog/2026-05-14-github-copilot-app-is-now-available-in-technical-preview)
 
-[client apps](https://github.blog/changelog/2026/?label=client-apps)[copilot](https://github.blog/changelog/2026/?label=copilot)... +1 
+[client apps](https://github.blog/changelog/2026/?label=client-apps)[copilot](https://github.blog/changelog/2026/?label=copilot)... +1
 
 ### May.14 Improvement
 
@@ -111,7 +111,7 @@ If you’ve already set up skills for Claude Code in the `.claude/skills` direct
 
 Discover tips, technical guides, and best practices in our biweekly newsletter just for devs.
 
- Enter your email*  Subscribe 
+ Enter your email*  Subscribe
 By submitting, I agree to let GitHub and its affiliates use my information for personalized communications, targeted advertising, and campaign effectiveness. See the [GitHub Privacy Statement](https://github.com/site/privacy) for more details.
 
 [Back to top](https://github.blog/changelog/2025-12-18-github-copilot-now-supports-agent-skills/#start-of-content)

@@ -97,17 +97,17 @@ About
 
 [Google AI Learn about all our AI](https://ai.google/?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content=)[Google DeepMind Explore the frontier of AI](https://deepmind.google/?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content=/)[Google Labs Try our AI experiments](https://labs.google/?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content=)
 
- Research 
+ Research
 
- Resources 
+ Resources
 
 [Conferences & events](https://research.google/conferences-and-events/)
 
- Careers 
+ Careers
 
 [Blog](https://research.google/blog/)
 
- About 
+ About
 
 Search
 
@@ -132,7 +132,7 @@ Through a controlled evaluation of 180 agent configurations, we derive the first
     *   [](https://www.facebook.com/sharer/sharer.php?u=https%3A//research.google/blog/towards-a-science-of-scaling-agent-systems-when-and-why-agent-systems-work/ "Share on Facebook")
     *   [](https://www.linkedin.com/shareArticle?url=https%3A//research.google/blog/towards-a-science-of-scaling-agent-systems-when-and-why-agent-systems-work/&mini=true "Share on LinkedIn")
     *   [](mailto:name@example.com?subject=Check%20out%20this%20site&body=Check%20out%20https%3A//research.google/blog/towards-a-science-of-scaling-agent-systems-when-and-why-agent-systems-work/ "Send via Email")
-    *    Copy link  ×    
+    *    Copy link  ×
 
 AI agents — systems capable of reasoning, planning, and acting — are becoming a common paradigm for real-world AI applications. From [coding assistants](https://codeassist.google/) to [personal health coaches](https://research.google/blog/the-anatomy-of-a-personal-health-agent/), the industry is shifting from single-shot question answering to sustained, multi-step interactions. While researchers have long utilized established metrics to optimize the accuracy of traditional machine learning models, agents introduce a new layer of complexity. Unlike isolated predictions, agents must navigate sustained, multi-step interactions where a single error can cascade throughout a workflow. This shift compels us to look beyond standard accuracy and ask: How do we actually design these systems for optimal performance?
 
@@ -206,7 +206,7 @@ As foundational models like Gemini continue to advance, our research suggests th
 
 _We would like to thank our co-authors and collaborators from Google Research, Google DeepMind, and academia for their contributions to this work._
 
-Labels:*   [Generative AI](https://research.google/blog/label/generative-ai) 
+Labels:*   [Generative AI](https://research.google/blog/label/generative-ai)
 *   [Machine Intelligence](https://research.google/blog/label/machine-intelligence)
 
 ## Quick links
@@ -218,7 +218,7 @@ Labels:*   [Generative AI](https://research.google/blog/label/generative-ai)
     *   [](https://www.facebook.com/sharer/sharer.php?u=https%3A//research.google/blog/towards-a-science-of-scaling-agent-systems-when-and-why-agent-systems-work/ "Share on Facebook")
     *   [](https://www.linkedin.com/shareArticle?url=https%3A//research.google/blog/towards-a-science-of-scaling-agent-systems-when-and-why-agent-systems-work/&mini=true "Share on LinkedIn")
     *   [](mailto:name@example.com?subject=Check%20out%20this%20site&body=Check%20out%20https%3A//research.google/blog/towards-a-science-of-scaling-agent-systems-when-and-why-agent-systems-work/ "Send via Email")
-    *    Copy link  ×    
+    *    Copy link  ×
 
 ### Other posts of interest
 
@@ -244,6 +244,6 @@ Follow us
 *   [Terms](https://policies.google.com/terms)
 
 *   [Help](https://support.google.com/?hl=en)
-*    Submit feedback 
+*    Submit feedback
 
 ×

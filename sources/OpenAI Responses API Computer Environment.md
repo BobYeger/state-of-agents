@@ -43,6 +43,8 @@ updated: 2026-05-18
 - [[operations/agent infrastructure]]
 - [[operations/sandboxes]]
 - [[concepts/tool use]]
+- [[concepts/context compaction]]
+- [[maps/Context Management Map]]
 
 ## Artifacts
 

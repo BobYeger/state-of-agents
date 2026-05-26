@@ -301,7 +301,7 @@ from app.tools import provision_software_accounts
 it_agent = Agent(
     name="it_agent",
     model=Gemini(model="gemini-3.1-flash-lite"),
-    instruction="""You are an IT Provisioning Agent. Provision corporate software 
+    instruction="""You are an IT Provisioning Agent. Provision corporate software
     accounts (email, Slack) for the new hire.
 
     Current Step: {current_step}

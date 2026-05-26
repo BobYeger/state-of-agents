@@ -41,12 +41,12 @@ Share
 
 Specific areas of risk
 
-*   Prompt injections 
-*   Disallowed content 
-*   Privacy 
-*   Ability to run code 
-*   Bias 
-*    Hallucinations 
+*   Prompt injections
+*   Disallowed content
+*   Privacy
+*   Ability to run code
+*   Bias
+*    Hallucinations
 
 Preparedness Scorecard
 

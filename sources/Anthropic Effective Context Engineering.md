@@ -39,9 +39,12 @@ updated: 2026-05-18
 ## Connections
 
 - [[concepts/context engineering]]
+- [[concepts/context compaction]]
+- [[concepts/tool-result clearing]]
 - [[operations/agent memory]]
 - [[concepts/long-horizon agents]]
 - [[concepts/tool use]]
+- [[maps/Context Management Map]]
 
 ## Artifacts
 

@@ -55,7 +55,7 @@ Observe, evaluate, and deploy agents with LangSmith, the agent engineering platf
 
 ## Learn with the community
 
-Learn alongside other builders at in-person LangChain meetups. 
+Learn alongside other builders at in-person LangChain meetups.
 
 Subscribe to our calendar to be the first to know about upcoming events near you.
 

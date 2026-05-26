@@ -41,7 +41,9 @@ updated: 2026-05-18
 
 - [[operations/agent memory]]
 - [[concepts/context engineering]]
+- [[concepts/context compaction]]
 - [[operations/durable sessions]]
+- [[maps/Context Management Map]]
 
 ## Artifacts
 

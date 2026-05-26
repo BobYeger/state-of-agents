@@ -40,8 +40,10 @@ updated: 2026-05-18
 
 - [[systems/Google ADK]]
 - [[methods/multi-agent orchestration]]
+- [[concepts/agent teams]]
 - [[concepts/multi-agent systems]]
 - [[concepts/human-in-the-loop agents]]
+- [[maps/Agent Teams and Workforces Map]]
 
 ## Artifacts
 

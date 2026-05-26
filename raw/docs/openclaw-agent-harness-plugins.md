@@ -6,11 +6,11 @@ Published Time: Sun, 17 May 2026 18:32:49 GMT
 
 Markdown Content:
 > ## Documentation Index
-> 
-> 
+>
+>
 > Fetch the complete documentation index at: [https://docs.openclaw.ai/llms.txt](https://docs.openclaw.ai/llms.txt)
-> 
-> 
+>
+>
 > Use this file to discover all available pages before exploring further.
 
 An **agent harness** is the low level executor for one prepared OpenClaw agent turn. It is not a model provider, not a channel, and not a tool registry. For the user-facing mental model, see [Agent runtimes](https://docs.openclaw.ai/concepts/agent-runtimes).Use this surface only for bundled or trusted native plugins. The contract is still experimental because the parameter types intentionally mirror the current embedded runner.

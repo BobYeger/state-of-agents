@@ -46,14 +46,14 @@ Introduction
 
 ##### Guides
 
-*    Strategy  
-*    Agents  
-*    Crews  
-*    Flows  
-*    Tools  
-*    Coding Tools  
-*    Advanced  
-*    Migration  
+*    Strategy
+*    Agents
+*    Crews
+*    Flows
+*    Tools
+*    Coding Tools
+*    Advanced
+*    Migration
 
 ##### Core Concepts
 
@@ -92,14 +92,14 @@ Introduction
 ##### Tools
 
 *   [Tools Overview](https://docs.crewai.com/en/tools/overview)
-*    File & Document  
-*    Web Scraping & Browsing  
-*    Search & Research  
-*    Database & Data  
-*    AI & Machine Learning  
-*    Cloud & Storage  
-*    Integrations  
-*    Automation  
+*    File & Document
+*    Web Scraping & Browsing
+*    Search & Research
+*    Database & Data
+*    AI & Machine Learning
+*    Cloud & Storage
+*    Integrations
+*    Automation
 
 ##### Observability
 
@@ -165,11 +165,11 @@ Build AI agent teams that work together to tackle complex tasks
 Copy page
 
 > ## Documentation Index
-> 
-> 
+>
+>
 > Fetch the complete documentation index at: [https://docs.crewai.com/llms.txt](https://docs.crewai.com/llms.txt)
-> 
-> 
+>
+>
 > Use this file to discover all available pages before exploring further.
 
 # [​](https://docs.crewai.com/en/introduction#what-is-crewai)

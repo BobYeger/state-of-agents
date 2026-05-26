@@ -30,7 +30,7 @@ Community
 [Membership](https://learn.deeplearning.ai/membership)[Start Learning](https://learn.deeplearning.ai/my/learning)
 
 *   [Explore Courses](https://corporate.deeplearning.ai/courses)
-*   
+*
 AI Newsletter
     *   [The Batch](https://www.deeplearning.ai/the-batch/)
     *   [Andrew's Letter](https://www.deeplearning.ai/the-batch/tag/letters/)
@@ -38,7 +38,7 @@ AI Newsletter
     *   [ML Research](https://www.deeplearning.ai/the-batch/tag/research/)
     *   [Blog](https://www.deeplearning.ai/blog/)
 
-*   
+*
 Community
     *   [Forum](https://community.deeplearning.ai/)
     *   [Events](https://www.deeplearning.ai/events/)
@@ -283,15 +283,15 @@ Join today and be on the forefront of the next generation of AI!
 
 Keep learning with updates on curated AI news, courses, events, as well as Andrew’s thoughts from DeepLearning.AI!
 
-First name* 
+First name*
 
-Last name* 
+Last name*
 
-Email* 
+Email*
 
-Where do you live?* 
+Where do you live?*
 
-*   - [x] I want to get the latest news, courses, and workshops and events announcements* 
+*   - [x] I want to get the latest news, courses, and workshops and events announcements*
 
 [Start Learning](https://learn.deeplearning.ai/courses/design-develop-and-deploy-multi-agent-systems-with-crewai/lesson/rc39v/welcome?utm_source=home&utm_medium=course-landing-page&utm_campaign=summary-cta-button)
 Also available on [Coursera](https://www.coursera.org/learn/design-develop-and-deploy-multi-agent-systems-with-crewai?utm_campaign=WebsiteCoursesCrewAI&utm_medium=institutions&utm_source=deeplearning-ai?utm_source=home&utm_medium=course-landing-page&utm_campaign=summary-cta-button)

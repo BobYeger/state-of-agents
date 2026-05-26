@@ -8,11 +8,11 @@ Markdown Content:
 The complete format specification for Agent Skills.
 
 > ## Documentation Index
-> 
-> 
+>
+>
 > Fetch the complete documentation index at: [https://agentskills.io/llms.txt](https://agentskills.io/llms.txt)
-> 
-> 
+>
+>
 > Use this file to discover all available pages before exploring further.
 
 ## Directory structure

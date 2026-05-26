@@ -41,6 +41,8 @@ updated: 2026-05-18
 - [[operations/agent infrastructure]]
 - [[operations/durable sessions]]
 - [[operations/sandboxes]]
+- [[concepts/context compaction]]
+- [[maps/Context Management Map]]
 - [[protocols/MCP]]
 
 ## Artifacts

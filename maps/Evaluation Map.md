@@ -11,6 +11,7 @@ Agent evaluation is one of the main mechanisms for making agent systems better: 
 - [[benchmarks/long-horizon benchmarks]]
 - [[operations/agent evals]]
 - [[methods/deliberative control]]
+- [[maps/Context Management Map]]
 - [[claims/Claim - Runtime control and verification improve agent reliability]]
 - [[maps/What Makes Agent Systems Better]]
 
@@ -19,7 +20,14 @@ Agent evaluation is one of the main mechanisms for making agent systems better: 
 - [[systems/OpenHands]]
 - [[systems/AI co-scientist]]
 - [[concepts/tool use]]
+- [[concepts/context retrieval]]
 
 ## Source Trail
 
 Follow the related-source sections in the benchmark notes. Source cards in `sources/` hold the public evidence trail; private crawl logs and working registries stay outside this graph.
+
+## Context Management Benchmarks
+
+- [[sources/LOCA-bench]]
+- [[sources/ContextBench]]
+- [[sources/Letta Context-Bench]]

@@ -41,7 +41,9 @@ updated: 2026-05-18
 - [[systems/Codex]]
 - [[operations/agent infrastructure]]
 - [[concepts/context engineering]]
+- [[concepts/context compaction]]
 - [[concepts/tool use]]
+- [[maps/Context Management Map]]
 
 ## Artifacts
 

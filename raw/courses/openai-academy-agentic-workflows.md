@@ -9,7 +9,7 @@ Markdown Content:
 
 OpenAI Academy
 
-Search 
+Search
 
 SIGN IN
 
@@ -18,30 +18,30 @@ SIGN IN
 *   [Content](https://academy.openai.com/en/public/content)
 *   [Communities](https://academy.openai.com/en/public/clubs)
 *   [What's new](https://academy.openai.com/public/collections/whats-new?linkMenu=What%27s%2520New)
-*     
-*    Stories      
-*    Work      
-*    Education      
+*
+*    Stories
+*    Work
+*    Education
 *   [Small business](https://academy.openai.com/public/clubs/small-business-ipf4m)
 *   [Nonprofits](https://academy.openai.com/public/clubs/nonprofits-8kc1e/overview?linkMenu=Nonprofits)
 *   [Government](https://academy.openai.com/public/clubs/government-25yzc/overview?linkMenu=Government)
 *   [News organizations](https://academy.openai.com/public/clubs/news-organizations-b9osl/overview)
-*    Help    
+*    Help
 
 *   [Home](https://academy.openai.com/en)
 *   [Events](https://academy.openai.com/en/public/events)
 *   [Content](https://academy.openai.com/en/public/content)
 *   [Communities](https://academy.openai.com/en/public/clubs)
 *   [What's new](https://academy.openai.com/public/collections/whats-new?linkMenu=What%27s%2520New)
-*     
-*    Stories      
-*    Work      
-*    Education      
+*
+*    Stories
+*    Work
+*    Education
 *   [Small business](https://academy.openai.com/public/clubs/small-business-ipf4m)
 *   [Nonprofits](https://academy.openai.com/public/clubs/nonprofits-8kc1e/overview?linkMenu=Nonprofits)
 *   [Government](https://academy.openai.com/public/clubs/government-25yzc/overview?linkMenu=Government)
 *   [News organizations](https://academy.openai.com/public/clubs/news-organizations-b9osl/overview)
-*    Help    
+*    Help
 
 [](https://www.gradual.com/?utm_source=oaiacademy&utm_campaign=poweredByLink&utm_medium=gradual)
 

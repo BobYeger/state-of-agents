@@ -73,7 +73,7 @@ while (frontier.length && findings.length < 6) {
   const question = frontier.shift();
 
   const report = await tools.task({
-    description: 
+    description:
         \`Answer this question. If there is a useful next question, \` +
         \`include it as "Follow-up: ..."\n\n${question}\`,
     subagent_type: "general-purpose",

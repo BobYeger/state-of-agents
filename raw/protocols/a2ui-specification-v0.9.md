@@ -7,11 +7,11 @@ Markdown Content:
 ## A2UI Protocol v0.9 — Draft[¶](https://a2ui.org/specification/v0.9-a2ui/#a2ui-protocol-v09-draft "Permanent link")
 
 > Version 0.9 is currently in draft status. For production use, consider [v0.8 (Stable)](https://a2ui.org/specification/v0.8-a2ui/).
-> 
-> 
+>
+>
 > NOTE: Living Document
-> 
-> 
+>
+>
 > This specification is automatically included from `specification/v0_9/docs/a2ui_protocol.md`. Any updates to the specification will automatically appear here.
 
 For more information, see the following related documentation:
@@ -406,8 +406,8 @@ This section describes how UI components **represent** and reference data from t
 Data bindings in A2UI are defined using **JSON Pointers** ([RFC 6901](https://datatracker.ietf.org/doc/html/rfc6901)). How a pointer is resolved depends on the current **Evaluation Scope**.
 
 > [!NOTE] A2UI extends JSON Pointer to support **Relative Paths** that do not start with a forward slash `/`. This is a deviation from strict RFC 6901 to support template-based list rendering.
-> 
-> 
+>
+>
 > **Note on progressive rendering:** During the initial streaming phase, data paths may resolve to `undefined` if the `updateDataModel` message containing that data has not yet arrived. Renderers should handle `undefined` values gracefully (e.g., by treating them as empty strings or showing a loading indicator) to support progressive rendering.
 
 #### The root scope[¶](https://a2ui.org/specification/v0.9-a2ui/#the-root-scope "Permanent link")
@@ -520,7 +520,7 @@ It is critical to note that Two-Way Binding is **local to the client**.
     }
   }
 }
-``` 
+```
 4.   **Send:** When clicked, the client resolves `/formData/email` (getting "jane@example.com") and sends it in the `action` payload.
 
 ## Data model updates: synchronization and convergence[¶](https://a2ui.org/specification/v0.9-a2ui/#data-model-updates-synchronization-and-convergence "Permanent link")

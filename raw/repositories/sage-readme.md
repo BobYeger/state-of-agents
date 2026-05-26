@@ -35,7 +35,7 @@ After building the modified dependencies, the final repository has the following
 
 **`sage/`** - Main SAGE algorithm implementation (requires AppWorld installation).
 
-**`appworld/`** - AppWorld environment setup and Skill Library Agent evaluation.  
+**`appworld/`** - AppWorld environment setup and Skill Library Agent evaluation.
 → Evaluation code located at: `appworld/experiments/code/skill_library_agent/`
 
 **`LLaMA-Factory/`** - Code for Supervised Fine-Tuning (SFT).
@@ -115,7 +115,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python3 -m vllm.entrypoints.openai.api_serv
 Run the following commands to perform the appworld evaluation and get results:
 ```bash
 # Start evaluation
-appworld run sage_test_normal --config-name sage_test_normal > sage_test_normal.log    
+appworld run sage_test_normal --config-name sage_test_normal > sage_test_normal.log
 # Obtain results
 appworld evaluate sage_test_normal
 ```
@@ -163,12 +163,12 @@ This code is being released solely for academic and scientific reproducibility p
 Please cite our paper if you find this repository helpful:
 ```
 @misc{wang2025reinforcementlearningselfimprovingagent,
-      title={Reinforcement Learning for Self-Improving Agent with Skill Library}, 
+      title={Reinforcement Learning for Self-Improving Agent with Skill Library},
       author={Jiongxiao Wang and Qiaojing Yan and Yawei Wang and Yijun Tian and Soumya Smruti Mishra and Zhichao Xu and Megha Gandhi and Panpan Xu and Lin Lee Cheong},
       year={2025},
       eprint={2512.17102},
       archivePrefix={arXiv},
       primaryClass={cs.AI},
-      url={https://arxiv.org/abs/2512.17102}, 
+      url={https://arxiv.org/abs/2512.17102},
 }
 ```

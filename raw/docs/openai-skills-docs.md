@@ -33,7 +33,7 @@ Start searching
 
 ## Search the API docs
 
-Search docs 
+Search docs
 
 ### Suggested
 
@@ -41,9 +41,9 @@ responses create reasoning_effort realtime prompt caching
 
 Primary navigation
 
- API  API Reference  Codex  ChatGPT  Resources 
+ API  API Reference  Codex  ChatGPT  Resources
 
-Search docs 
+Search docs
 
 ### Suggested
 
@@ -55,7 +55,7 @@ responses create reasoning_effort realtime prompt caching
 *   [Quickstart](https://developers.openai.com/api/docs/quickstart)
 *   [Models](https://developers.openai.com/api/docs/models)
 *   [Pricing](https://developers.openai.com/api/docs/pricing)
-*   
+*
 [SDKs and CLI](https://developers.openai.com/api/docs/libraries)
     *   [OpenAI SDK](https://developers.openai.com/api/docs/libraries)
     *   [Agents SDK](https://developers.openai.com/api/docs/guides/agents)
@@ -89,12 +89,12 @@ responses create reasoning_effort realtime prompt caching
 *   [Integrations and observability](https://developers.openai.com/api/docs/guides/agents/integrations-observability)
 *   [Evaluate agent workflows](https://developers.openai.com/api/docs/guides/agent-evals)
 *   [Voice agents](https://developers.openai.com/api/docs/guides/voice-agents)
-*   
+*
 Agent Builder
     *   [Overview](https://developers.openai.com/api/docs/guides/agent-builder)
     *   [Node reference](https://developers.openai.com/api/docs/guides/node-reference)
     *   [Safety in building agents](https://developers.openai.com/api/docs/guides/agent-builder-safety)
-    *   
+    *
 ChatKit
         *   [Overview](https://developers.openai.com/api/docs/guides/chatkit)
         *   [Customize](https://developers.openai.com/api/docs/guides/chatkit-themes)
@@ -109,13 +109,13 @@ ChatKit
 *   [Skills](https://developers.openai.com/api/docs/guides/tools-skills)
 *   [Shell](https://developers.openai.com/api/docs/guides/tools-shell)
 *   [Computer use](https://developers.openai.com/api/docs/guides/tools-computer-use)
-*   
+*
 File search and retrieval
     *   [File search](https://developers.openai.com/api/docs/guides/tools-file-search)
     *   [Retrieval](https://developers.openai.com/api/docs/guides/retrieval)
 
 *   [Tool search](https://developers.openai.com/api/docs/guides/tools-tool-search)
-*   
+*
 More tools
     *   [Apply Patch](https://developers.openai.com/api/docs/guides/tools-apply-patch)
     *   [Local shell](https://developers.openai.com/api/docs/guides/tools-local-shell)
@@ -130,19 +130,19 @@ More tools
 *   [WebSocket mode](https://developers.openai.com/api/docs/guides/websocket-mode)
 *   [Webhooks](https://developers.openai.com/api/docs/guides/webhooks)
 *   [File inputs](https://developers.openai.com/api/docs/guides/file-inputs)
-*   
+*
 Context management
     *   [Compaction](https://developers.openai.com/api/docs/guides/compaction)
     *   [Counting tokens](https://developers.openai.com/api/docs/guides/token-counting)
     *   [Prompt caching](https://developers.openai.com/api/docs/guides/prompt-caching)
 
-*   
+*
 Prompting
     *   [Overview](https://developers.openai.com/api/docs/guides/prompting)
     *   [Prompt engineering](https://developers.openai.com/api/docs/guides/prompt-engineering)
     *   [Citation formatting](https://developers.openai.com/api/docs/guides/citation-formatting)
 
-*   
+*
 Reasoning
     *   [Reasoning models](https://developers.openai.com/api/docs/guides/reasoning)
     *   [Reasoning best practices](https://developers.openai.com/api/docs/guides/reasoning-best-practices)
@@ -160,20 +160,20 @@ Reasoning
 *   [Overview](https://developers.openai.com/api/docs/guides/realtime)
 *   [Voice agents](https://developers.openai.com/api/docs/guides/voice-agents)
 *   [Live translation](https://developers.openai.com/api/docs/guides/realtime-translation)
-*   
+*
 Transcription
     *   [Realtime transcription](https://developers.openai.com/api/docs/guides/realtime-transcription)
     *   [Speech to text](https://developers.openai.com/api/docs/guides/speech-to-text)
 
 *   [Speech generation](https://developers.openai.com/api/docs/guides/text-to-speech)
 *   [Realtime prompting guide](https://developers.openai.com/api/docs/guides/realtime-models-prompting)
-*   
+*
 Connection methods
     *   [WebRTC](https://developers.openai.com/api/docs/guides/realtime-webrtc)
     *   [WebSocket](https://developers.openai.com/api/docs/guides/realtime-websocket)
     *   [SIP](https://developers.openai.com/api/docs/guides/realtime-sip)
 
-*   
+*
 Realtime sessions
     *   [Managing conversations](https://developers.openai.com/api/docs/guides/realtime-conversations)
     *   [Voice activity detection](https://developers.openai.com/api/docs/guides/realtime-vad)
@@ -184,7 +184,7 @@ Realtime sessions
 ### Model optimization
 
 *   [Optimization cycle](https://developers.openai.com/api/docs/guides/model-optimization)
-*   
+*
 Fine-tuning
     *   [Supervised fine-tuning](https://developers.openai.com/api/docs/guides/supervised-fine-tuning)
     *   [Vision fine-tuning](https://developers.openai.com/api/docs/guides/vision-fine-tuning)
@@ -207,20 +207,20 @@ Fine-tuning
 
 *   [Production best practices](https://developers.openai.com/api/docs/guides/production-best-practices)
 *   [Deployment checklist](https://developers.openai.com/api/docs/guides/deployment-checklist)
-*   
+*
 Latency optimization
     *   [Overview](https://developers.openai.com/api/docs/guides/latency-optimization)
     *   [Predicted Outputs](https://developers.openai.com/api/docs/guides/predicted-outputs)
     *   [Priority processing](https://developers.openai.com/api/docs/guides/priority-processing)
 
-*   
+*
 Cost optimization
     *   [Overview](https://developers.openai.com/api/docs/guides/cost-optimization)
     *   [Batch](https://developers.openai.com/api/docs/guides/batch)
     *   [Flex processing](https://developers.openai.com/api/docs/guides/flex-processing)
 
 *   [Accuracy optimization](https://developers.openai.com/api/docs/guides/optimizing-llm-accuracy)
-*   
+*
 Safety
     *   [Safety best practices](https://developers.openai.com/api/docs/guides/safety-best-practices)
     *   [Safety checks](https://developers.openai.com/api/docs/guides/safety-checks)
@@ -229,7 +229,7 @@ Safety
 
 ### Legacy APIs
 
-*   
+*
 Assistants API
     *   [Migration guide](https://developers.openai.com/api/docs/assistants/migration)
     *   [Deep dive](https://developers.openai.com/api/docs/assistants/deep-dive)
@@ -246,7 +246,7 @@ Assistants API
 *   [Deprecations](https://developers.openai.com/api/docs/deprecations)
 *   [MCP for deep research](https://developers.openai.com/api/docs/mcp)
 *   [Developer mode](https://developers.openai.com/api/docs/guides/developer-mode)
-*   
+*
 ChatGPT Actions
     *   [Introduction](https://developers.openai.com/api/docs/actions/introduction)
     *   [Getting started](https://developers.openai.com/api/docs/actions/getting-started)
@@ -256,7 +256,7 @@ ChatGPT Actions
     *   [Data retrieval](https://developers.openai.com/api/docs/actions/data-retrieval)
     *   [Sending files](https://developers.openai.com/api/docs/actions/sending-files)
 
- Docs  Use cases 
+ Docs  Use cases
 
 ### Getting Started
 
@@ -265,15 +265,15 @@ ChatGPT Actions
 *   [Explore use cases](https://developers.openai.com/codex/use-cases)
 *   [Migrate](https://developers.openai.com/codex/migrate)
 *   [Pricing](https://developers.openai.com/codex/pricing)
-*   
+*
 Concepts
     *   [Prompting](https://developers.openai.com/codex/prompting)
     *   [Customization](https://developers.openai.com/codex/concepts/customization)
-    *   
+    *
 [Memories](https://developers.openai.com/codex/memories)
         *   [Chronicle](https://developers.openai.com/codex/memories/chronicle)
 
-    *   
+    *
 [Sandboxing](https://developers.openai.com/codex/concepts/sandboxing)
         *   [Auto-review](https://developers.openai.com/codex/concepts/sandboxing/auto-review)
 
@@ -284,7 +284,7 @@ Concepts
 
 ### Using Codex
 
-*   
+*
 App
     *   [Overview](https://developers.openai.com/codex/app)
     *   [Features](https://developers.openai.com/codex/app/features)
@@ -300,7 +300,7 @@ App
     *   [Windows](https://developers.openai.com/codex/app/windows)
     *   [Troubleshooting](https://developers.openai.com/codex/app/troubleshooting)
 
-*   
+*
 IDE Extension
     *   [Overview](https://developers.openai.com/codex/ide)
     *   [Features](https://developers.openai.com/codex/ide/features)
@@ -308,26 +308,26 @@ IDE Extension
     *   [IDE Commands](https://developers.openai.com/codex/ide/commands)
     *   [Slash commands](https://developers.openai.com/codex/ide/slash-commands)
 
-*   
+*
 CLI
     *   [Overview](https://developers.openai.com/codex/cli)
     *   [Features](https://developers.openai.com/codex/cli/features)
     *   [Command Line Options](https://developers.openai.com/codex/cli/reference)
     *   [Slash commands](https://developers.openai.com/codex/cli/slash-commands)
 
-*   
+*
 Web
     *   [Overview](https://developers.openai.com/codex/cloud)
     *   [Environments](https://developers.openai.com/codex/cloud/environments)
     *   [Internet Access](https://developers.openai.com/codex/cloud/internet-access)
 
-*   
+*
 Integrations
     *   [GitHub](https://developers.openai.com/codex/integrations/github)
     *   [Slack](https://developers.openai.com/codex/integrations/slack)
     *   [Linear](https://developers.openai.com/codex/integrations/linear)
 
-*   
+*
 Codex Security
     *   [Overview](https://developers.openai.com/codex/security)
     *   [Setup](https://developers.openai.com/codex/security/setup)
@@ -336,7 +336,7 @@ Codex Security
 
 ### Configuration
 
-*   
+*
 Config File
     *   [Config Basics](https://developers.openai.com/codex/config-basic)
     *   [Advanced Config](https://developers.openai.com/codex/config-advanced)
@@ -348,7 +348,7 @@ Config File
 *   [Hooks](https://developers.openai.com/codex/hooks)
 *   [AGENTS.md](https://developers.openai.com/codex/guides/agents-md)
 *   [MCP](https://developers.openai.com/codex/mcp)
-*   
+*
 Plugins
     *   [Overview](https://developers.openai.com/codex/plugins)
     *   [Build plugins](https://developers.openai.com/codex/plugins/build)
@@ -358,14 +358,14 @@ Plugins
 
 ### Administration
 
-*   
+*
 Authentication
     *   [Overview](https://developers.openai.com/codex/auth)
     *   [Access tokens](https://developers.openai.com/codex/enterprise/access-tokens)
 
 *   [Agent approvals & security](https://developers.openai.com/codex/agent-approvals-security)
 *   [Remote connections](https://developers.openai.com/codex/remote-connections)
-*   
+*
 Enterprise
     *   [Admin Setup](https://developers.openai.com/codex/enterprise/admin-setup)
     *   [Governance](https://developers.openai.com/codex/enterprise/governance)
@@ -386,13 +386,13 @@ Enterprise
 *   [Best practices](https://developers.openai.com/codex/learn/best-practices)
 *   [Videos](https://developers.openai.com/codex/videos)
 *   [Community](https://developers.openai.com/community)
-*   
+*
 Blog
     *   [Using skills to accelerate OSS maintenance](https://developers.openai.com/blog/skills-agents-sdk)
     *   [Building frontend UIs with Codex and Figma](https://developers.openai.com/blog/building-frontend-uis-with-codex-and-figma)
     *   [View all](https://developers.openai.com/blog/topic/codex)
 
-*   
+*
 Cookbooks
     *   [Build an Agent Improvement Loop with Traces, Evals, and Codex](https://developers.openai.com/cookbook/examples/agents_sdk/agent_improvement_loop)
     *   [Build iterative repair loops with Codex](https://developers.openai.com/cookbook/examples/codex/build_iterative_repair_loops_with_codex)
@@ -409,7 +409,7 @@ Cookbooks
 *   [Home](https://developers.openai.com/codex/use-cases)
 *   [Collections](https://developers.openai.com/codex/use-cases/collections)
 
- Apps SDK  Commerce  Ads 
+ Apps SDK  Commerce  Ads
 
 *   [Home](https://developers.openai.com/apps-sdk)
 *   [Quickstart](https://developers.openai.com/apps-sdk/quickstart)
@@ -502,7 +502,7 @@ Cookbooks
 *   [Insights](https://developers.openai.com/ads/api-reference/insights)
 *   [Files](https://developers.openai.com/ads/api-reference/files)
 
- Showcase  Blog  Cookbook  Learn  Community 
+ Showcase  Blog  Cookbook  Learn  Community
 
 *   [Home](https://developers.openai.com/showcase)
 *   [API examples](https://developers.openai.com/showcase/api-examples)
@@ -590,7 +590,7 @@ Cookbooks
 *   [Quickstart](https://developers.openai.com/api/docs/quickstart)
 *   [Models](https://developers.openai.com/api/docs/models)
 *   [Pricing](https://developers.openai.com/api/docs/pricing)
-*   
+*
 [SDKs and CLI](https://developers.openai.com/api/docs/libraries)
     *   [OpenAI SDK](https://developers.openai.com/api/docs/libraries)
     *   [Agents SDK](https://developers.openai.com/api/docs/guides/agents)
@@ -624,12 +624,12 @@ Cookbooks
 *   [Integrations and observability](https://developers.openai.com/api/docs/guides/agents/integrations-observability)
 *   [Evaluate agent workflows](https://developers.openai.com/api/docs/guides/agent-evals)
 *   [Voice agents](https://developers.openai.com/api/docs/guides/voice-agents)
-*   
+*
 Agent Builder
     *   [Overview](https://developers.openai.com/api/docs/guides/agent-builder)
     *   [Node reference](https://developers.openai.com/api/docs/guides/node-reference)
     *   [Safety in building agents](https://developers.openai.com/api/docs/guides/agent-builder-safety)
-    *   
+    *
 ChatKit
         *   [Overview](https://developers.openai.com/api/docs/guides/chatkit)
         *   [Customize](https://developers.openai.com/api/docs/guides/chatkit-themes)
@@ -644,13 +644,13 @@ ChatKit
 *   [Skills](https://developers.openai.com/api/docs/guides/tools-skills)
 *   [Shell](https://developers.openai.com/api/docs/guides/tools-shell)
 *   [Computer use](https://developers.openai.com/api/docs/guides/tools-computer-use)
-*   
+*
 File search and retrieval
     *   [File search](https://developers.openai.com/api/docs/guides/tools-file-search)
     *   [Retrieval](https://developers.openai.com/api/docs/guides/retrieval)
 
 *   [Tool search](https://developers.openai.com/api/docs/guides/tools-tool-search)
-*   
+*
 More tools
     *   [Apply Patch](https://developers.openai.com/api/docs/guides/tools-apply-patch)
     *   [Local shell](https://developers.openai.com/api/docs/guides/tools-local-shell)
@@ -665,19 +665,19 @@ More tools
 *   [WebSocket mode](https://developers.openai.com/api/docs/guides/websocket-mode)
 *   [Webhooks](https://developers.openai.com/api/docs/guides/webhooks)
 *   [File inputs](https://developers.openai.com/api/docs/guides/file-inputs)
-*   
+*
 Context management
     *   [Compaction](https://developers.openai.com/api/docs/guides/compaction)
     *   [Counting tokens](https://developers.openai.com/api/docs/guides/token-counting)
     *   [Prompt caching](https://developers.openai.com/api/docs/guides/prompt-caching)
 
-*   
+*
 Prompting
     *   [Overview](https://developers.openai.com/api/docs/guides/prompting)
     *   [Prompt engineering](https://developers.openai.com/api/docs/guides/prompt-engineering)
     *   [Citation formatting](https://developers.openai.com/api/docs/guides/citation-formatting)
 
-*   
+*
 Reasoning
     *   [Reasoning models](https://developers.openai.com/api/docs/guides/reasoning)
     *   [Reasoning best practices](https://developers.openai.com/api/docs/guides/reasoning-best-practices)
@@ -695,20 +695,20 @@ Reasoning
 *   [Overview](https://developers.openai.com/api/docs/guides/realtime)
 *   [Voice agents](https://developers.openai.com/api/docs/guides/voice-agents)
 *   [Live translation](https://developers.openai.com/api/docs/guides/realtime-translation)
-*   
+*
 Transcription
     *   [Realtime transcription](https://developers.openai.com/api/docs/guides/realtime-transcription)
     *   [Speech to text](https://developers.openai.com/api/docs/guides/speech-to-text)
 
 *   [Speech generation](https://developers.openai.com/api/docs/guides/text-to-speech)
 *   [Realtime prompting guide](https://developers.openai.com/api/docs/guides/realtime-models-prompting)
-*   
+*
 Connection methods
     *   [WebRTC](https://developers.openai.com/api/docs/guides/realtime-webrtc)
     *   [WebSocket](https://developers.openai.com/api/docs/guides/realtime-websocket)
     *   [SIP](https://developers.openai.com/api/docs/guides/realtime-sip)
 
-*   
+*
 Realtime sessions
     *   [Managing conversations](https://developers.openai.com/api/docs/guides/realtime-conversations)
     *   [Voice activity detection](https://developers.openai.com/api/docs/guides/realtime-vad)
@@ -719,7 +719,7 @@ Realtime sessions
 ### Model optimization
 
 *   [Optimization cycle](https://developers.openai.com/api/docs/guides/model-optimization)
-*   
+*
 Fine-tuning
     *   [Supervised fine-tuning](https://developers.openai.com/api/docs/guides/supervised-fine-tuning)
     *   [Vision fine-tuning](https://developers.openai.com/api/docs/guides/vision-fine-tuning)
@@ -742,20 +742,20 @@ Fine-tuning
 
 *   [Production best practices](https://developers.openai.com/api/docs/guides/production-best-practices)
 *   [Deployment checklist](https://developers.openai.com/api/docs/guides/deployment-checklist)
-*   
+*
 Latency optimization
     *   [Overview](https://developers.openai.com/api/docs/guides/latency-optimization)
     *   [Predicted Outputs](https://developers.openai.com/api/docs/guides/predicted-outputs)
     *   [Priority processing](https://developers.openai.com/api/docs/guides/priority-processing)
 
-*   
+*
 Cost optimization
     *   [Overview](https://developers.openai.com/api/docs/guides/cost-optimization)
     *   [Batch](https://developers.openai.com/api/docs/guides/batch)
     *   [Flex processing](https://developers.openai.com/api/docs/guides/flex-processing)
 
 *   [Accuracy optimization](https://developers.openai.com/api/docs/guides/optimizing-llm-accuracy)
-*   
+*
 Safety
     *   [Safety best practices](https://developers.openai.com/api/docs/guides/safety-best-practices)
     *   [Safety checks](https://developers.openai.com/api/docs/guides/safety-checks)
@@ -764,7 +764,7 @@ Safety
 
 ### Legacy APIs
 
-*   
+*
 Assistants API
     *   [Migration guide](https://developers.openai.com/api/docs/assistants/migration)
     *   [Deep dive](https://developers.openai.com/api/docs/assistants/deep-dive)
@@ -781,7 +781,7 @@ Assistants API
 *   [Deprecations](https://developers.openai.com/api/docs/deprecations)
 *   [MCP for deep research](https://developers.openai.com/api/docs/mcp)
 *   [Developer mode](https://developers.openai.com/api/docs/guides/developer-mode)
-*   
+*
 ChatGPT Actions
     *   [Introduction](https://developers.openai.com/api/docs/actions/introduction)
     *   [Getting started](https://developers.openai.com/api/docs/actions/getting-started)

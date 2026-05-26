@@ -9,6 +9,9 @@ This node avoids creating a separate low-content page for every product. Add a d
 - [[systems/Claude Code]]
 - [[systems/Codex]]
 - [[systems/Cursor agents]]
+- [[sources/OpenAI Workspace Agents]]
+- [[sources/Hermes Agent Repository]]
+- [[sources/OpenClaw Repository]]
 - [[sources/MiniMax Agent Lessons 2025]]
 - [[sources/MiniMax Agent Team]]
 

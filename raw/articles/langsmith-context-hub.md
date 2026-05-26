@@ -216,16 +216,16 @@ We’re working with Elastic, MongoDB, Pinecone, and Redis to develop an open st
 
 **Here’s what our partners are saying:**
 
-> *Building agents that work in production comes down to retrieval: getting the right context to the right model at the right time. Elastic already powers vector, keyword, and hybrid search for teams running agents at scale, and the Context Hub brings those capabilities to even more developers. Our work with LangChain demonstrates the value of an open ecosystem approach to advancing AI innovation.  
+> *Building agents that work in production comes down to retrieval: getting the right context to the right model at the right time. Elastic already powers vector, keyword, and hybrid search for teams running agents at scale, and the Context Hub brings those capabilities to even more developers. Our work with LangChain demonstrates the value of an open ecosystem approach to advancing AI innovation.
 > *\- Ken Exner, Chief Product Officer at Elastic
 
-> *The next generation of agents never sleep, work at machine speed and need the right context from vast amounts of conversation logs, memory and enterprise data. The real challenge is getting the right context to the right agent at the right moment. Agent context demands a dynamic schema and precise retrieval that operates at line speed. MongoDB is built for exactly that. We’re excited to collaborate with LangChain to develop the ContextHub open standard and reference architecture to enable the future of AI agents.*  
+> *The next generation of agents never sleep, work at machine speed and need the right context from vast amounts of conversation logs, memory and enterprise data. The real challenge is getting the right context to the right agent at the right moment. Agent context demands a dynamic schema and precise retrieval that operates at line speed. MongoDB is built for exactly that. We’re excited to collaborate with LangChain to develop the ContextHub open standard and reference architecture to enable the future of AI agents.*
 > \- Pablo Stern-Plaza, Chief Product Officer, AI and Emerging Products, MongoDB
 
-> *Memory and context are what turn intelligent models into knowledgeable agents. We’re glad to be working with LangChain to help shape the Context Hub as an open standard for the ecosystem. Pinecone gives teams the retrieval layer to make those agents accurate and reliable in production.*  
+> *Memory and context are what turn intelligent models into knowledgeable agents. We’re glad to be working with LangChain to help shape the Context Hub as an open standard for the ecosystem. Pinecone gives teams the retrieval layer to make those agents accurate and reliable in production.*
 > \- Ash Ashutosh, CEO at Pinecone
 
-> *Memory and context are the most important unsolved problems for teams building agents today. It’s exciting to see LangChain’s Context Hub come together, and we’re proud to help shape what that standard looks like alongside LangChain’s team. Redis helps teams build agents that are faster, more reliable, and more useful in production. The Context Hub will be another step forward in that mission.*  
+> *Memory and context are the most important unsolved problems for teams building agents today. It’s exciting to see LangChain’s Context Hub come together, and we’re proud to help shape what that standard looks like alongside LangChain’s team. Redis helps teams build agents that are faster, more reliable, and more useful in production. The Context Hub will be another step forward in that mission.*
 > \- Rowan Trollope, CEO at Redis
 
 ## Conclusion

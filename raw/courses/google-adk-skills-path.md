@@ -7,7 +7,7 @@ Markdown Content:
 
 1.   navigate_next
 2.   [Paths](https://www.skills.google/paths)navigate_next
-3.    Develop Agents with Agent Development Kit (ADK) 
+3.    Develop Agents with Agent Development Kit (ADK)
 
 Apply your skills in Google Cloud console
 

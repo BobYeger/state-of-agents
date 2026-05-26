@@ -30,7 +30,7 @@ Community
 [Membership](https://learn.deeplearning.ai/membership)[Start Learning](https://learn.deeplearning.ai/my/learning)
 
 *   [Explore Courses](https://learn.deeplearning.ai/courses)
-*   
+*
 AI Newsletter
     *   [The Batch](https://www.deeplearning.ai/the-batch/)
     *   [Andrew's Letter](https://www.deeplearning.ai/the-batch/tag/letters/)
@@ -38,7 +38,7 @@ AI Newsletter
     *   [ML Research](https://www.deeplearning.ai/the-batch/tag/research/)
     *   [Blog](https://www.deeplearning.ai/blog/)
 
-*   
+*
 Community
     *   [Forum](https://community.deeplearning.ai/)
     *   [Events](https://www.deeplearning.ai/events/)

@@ -120,7 +120,7 @@ client = client_factory.create(card)
 
 # 4. Use it exactly like any other A2A agent
 async for event in client.send_message(new_text_message("Research the history of Google TPUs")):
-    # The transport converts Interactions API 'Thoughts' and 'Content' 
+    # The transport converts Interactions API 'Thoughts' and 'Content'
     # into standard A2A Task events.
     print(event)
 ```

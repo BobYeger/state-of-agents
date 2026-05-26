@@ -29,7 +29,7 @@ Enable Agents to think and learn through the PES paradigm, and accumulate experi
             src="https://img.shields.io/badge/license-Apache--2.0-green"
             alt="license"
         />
-    </a>       
+    </a>
 </p>
 
 [🚀 **Quick Start**](#quick-start) • [**Examples**](#loongflow-examples) • [**Math-Agent**](./agents/math_agent) • [**ML-Agent**](./agents/ml_agent) • [**General-Agent**](./agents/general_agent) • [**Discussions**](https://github.com/baidu-baige/LoongFlow/discussions)

@@ -36,11 +36,14 @@ updated: 2026-05-18
 ## Claims
 
 - [[claims/Claim - Runtime control and verification improve agent reliability]]
+- [[claims/Claim - Agent teams need explicit organization]]
 
 ## Connections
 
 - [[maps/Harness Tracker]]
+- [[maps/Agent Teams and Workforces Map]]
 - [[sources/MiniMax Agent Lessons 2025]]
+- [[concepts/agent teams]]
 - [[concepts/multi-agent systems]]
 - [[operations/agent harnesses]]
 

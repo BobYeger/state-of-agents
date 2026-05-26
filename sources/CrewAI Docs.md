@@ -36,7 +36,9 @@ updated: 2026-05-18
 ## Connections
 
 - [[maps/Builder Ecosystem Map]]
+- [[maps/Agent Teams and Workforces Map]]
 - [[systems/agent frameworks and orchestration libraries]]
+- [[concepts/agent teams]]
 - [[concepts/multi-agent systems]]
 
 ## Artifacts

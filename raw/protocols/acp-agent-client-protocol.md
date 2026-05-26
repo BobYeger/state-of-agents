@@ -6,11 +6,11 @@ Published Time: Mon, 18 May 2026 04:44:31 GMT
 
 Markdown Content:
 > ## Documentation Index
-> 
-> 
+>
+>
 > Fetch the complete documentation index at: [https://agentclientprotocol.com/llms.txt](https://agentclientprotocol.com/llms.txt)
-> 
-> 
+>
+>
 > Use this file to discover all available pages before exploring further.
 
 The Agent Client Protocol (ACP) standardizes communication between code editors/IDEs and coding agents and is suitable for both local and remote scenarios.

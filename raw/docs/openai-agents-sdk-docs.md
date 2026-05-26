@@ -6,30 +6,30 @@ Published Time: Mon, 18 May 2026 08:06:49 GMT
 
 Markdown Content:
 # OpenAI Agents SDK
-- [x] - [x] 
+- [x] - [x]
 
 [Skip to content](https://openai.github.io/openai-agents-python/#openai-agents-sdk)
 
 [![Image 1: logo](https://openai.github.io/openai-agents-python/assets/logo.svg)](https://openai.github.io/openai-agents-python/ "OpenAI Agents SDK")
 
- OpenAI Agents SDK 
+ OpenAI Agents SDK
 
- Intro 
+ Intro
 
 *   [English](https://openai.github.io/openai-agents-python/)
 *   [日本語](https://openai.github.io/openai-agents-python/ja/)
 *   [한국어](https://openai.github.io/openai-agents-python/ko/)
 *   [简体中文](https://openai.github.io/openai-agents-python/zh/)
 
- Initializing search 
+ Initializing search
 
 [openai-agents-python](https://github.com/openai/openai-agents-python "Go to repository")
 
-[![Image 2: logo](https://openai.github.io/openai-agents-python/assets/logo.svg)](https://openai.github.io/openai-agents-python/ "OpenAI Agents SDK") OpenAI Agents SDK  
+[![Image 2: logo](https://openai.github.io/openai-agents-python/assets/logo.svg)](https://openai.github.io/openai-agents-python/ "OpenAI Agents SDK") OpenAI Agents SDK
 
 [openai-agents-python](https://github.com/openai/openai-agents-python "Go to repository")
 
-*   - [x]  Intro  [Intro](https://openai.github.io/openai-agents-python/) Table of contents  
+*   - [x]  Intro  [Intro](https://openai.github.io/openai-agents-python/) Table of contents
     *   [Why use the Agents SDK](https://openai.github.io/openai-agents-python/#why-use-the-agents-sdk)
     *   [Agents SDK or Responses API?](https://openai.github.io/openai-agents-python/#agents-sdk-or-responses-api)
     *   [Installation](https://openai.github.io/openai-agents-python/#installation)
@@ -39,9 +39,9 @@ Markdown Content:
 
 *   [Quickstart](https://openai.github.io/openai-agents-python/quickstart/)
 *   [Configuration](https://openai.github.io/openai-agents-python/config/)
-*   - [x]  Documentation   Documentation  
+*   - [x]  Documentation   Documentation
     *   [Agents](https://openai.github.io/openai-agents-python/agents/)
-    *   - [x]  Sandbox agents   Sandbox agents  
+    *   - [x]  Sandbox agents   Sandbox agents
         *   [Quickstart](https://openai.github.io/openai-agents-python/sandbox_agents/)
         *   [Concepts](https://openai.github.io/openai-agents-python/sandbox/guide/)
         *   [Sandbox clients](https://openai.github.io/openai-agents-python/sandbox/clients/)
@@ -56,7 +56,7 @@ Markdown Content:
     *   [Handoffs](https://openai.github.io/openai-agents-python/handoffs/)
     *   [Results](https://openai.github.io/openai-agents-python/results/)
     *   [Human-in-the-loop](https://openai.github.io/openai-agents-python/human_in_the_loop/)
-    *   - [x]  Sessions   Sessions  
+    *   - [x]  Sessions   Sessions
         *   [Overview](https://openai.github.io/openai-agents-python/sessions/)
         *   [SQLAlchemy session](https://openai.github.io/openai-agents-python/sessions/sqlalchemy_session/)
         *   [Advanced SQLite session](https://openai.github.io/openai-agents-python/sessions/advanced_sqlite_session/)
@@ -66,12 +66,12 @@ Markdown Content:
     *   [Usage](https://openai.github.io/openai-agents-python/usage/)
     *   [Model context protocol (MCP)](https://openai.github.io/openai-agents-python/mcp/)
     *   [Tracing](https://openai.github.io/openai-agents-python/tracing/)
-    *   - [x]  Realtime agents   Realtime agents  
+    *   - [x]  Realtime agents   Realtime agents
         *   [Quickstart](https://openai.github.io/openai-agents-python/realtime/quickstart/)
         *   [Transport](https://openai.github.io/openai-agents-python/realtime/transport/)
         *   [Guide](https://openai.github.io/openai-agents-python/realtime/guide/)
 
-    *   - [x]  Voice agents   Voice agents  
+    *   - [x]  Voice agents   Voice agents
         *   [Quickstart](https://openai.github.io/openai-agents-python/voice/quickstart/)
         *   [Pipeline](https://openai.github.io/openai-agents-python/voice/pipeline/)
         *   [Tracing](https://openai.github.io/openai-agents-python/voice/tracing/)
@@ -81,21 +81,21 @@ Markdown Content:
     *   [Examples](https://openai.github.io/openai-agents-python/examples/)
     *   [Release process/changelog](https://openai.github.io/openai-agents-python/release/)
 
-*   - [x]  API Reference   API Reference  
-    *   - [x]  Agents   Agents  
+*   - [x]  API Reference   API Reference
+    *   - [x]  Agents   Agents
         *   [Agents module](https://openai.github.io/openai-agents-python/ref/)
         *   [Agent](https://openai.github.io/openai-agents-python/ref/agent/)
         *   [Runner](https://openai.github.io/openai-agents-python/ref/run/)
         *   [Run config](https://openai.github.io/openai-agents-python/ref/run_config/)
         *   [Run state](https://openai.github.io/openai-agents-python/ref/run_state/)
-        *   - [x]  Sandbox   Sandbox  
+        *   - [x]  Sandbox   Sandbox
             *   [Overview](https://openai.github.io/openai-agents-python/ref/sandbox/)
             *   [SandboxAgent](https://openai.github.io/openai-agents-python/ref/sandbox/sandbox_agent/)
             *   [Manifest](https://openai.github.io/openai-agents-python/ref/sandbox/manifest/)
             *   [Permissions](https://openai.github.io/openai-agents-python/ref/sandbox/permissions/)
             *   [SnapshotSpec](https://openai.github.io/openai-agents-python/ref/sandbox/snapshot/)
             *   [Workspace entries](https://openai.github.io/openai-agents-python/ref/sandbox/entries/)
-            *   - [x]  Capabilities   Capabilities  
+            *   - [x]  Capabilities   Capabilities
                 *   [Capabilities](https://openai.github.io/openai-agents-python/ref/sandbox/capabilities/capabilities/)
                 *   [Capability](https://openai.github.io/openai-agents-python/ref/sandbox/capabilities/capability/)
                 *   [Filesystem](https://openai.github.io/openai-agents-python/ref/sandbox/capabilities/filesystem/)
@@ -141,7 +141,7 @@ Markdown Content:
         *   [MCP util](https://openai.github.io/openai-agents-python/ref/mcp/util/)
         *   [MCP manager](https://openai.github.io/openai-agents-python/ref/mcp/manager/)
 
-    *   - [x]  Tracing   Tracing  
+    *   - [x]  Tracing   Tracing
         *   [Tracing module](https://openai.github.io/openai-agents-python/ref/tracing/)
         *   [Creating traces/spans](https://openai.github.io/openai-agents-python/ref/tracing/create/)
         *   [Traces](https://openai.github.io/openai-agents-python/ref/tracing/traces/)
@@ -153,7 +153,7 @@ Markdown Content:
         *   [Span data](https://openai.github.io/openai-agents-python/ref/tracing/span_data/)
         *   [Util](https://openai.github.io/openai-agents-python/ref/tracing/util/)
 
-    *   - [x]  Realtime   Realtime  
+    *   - [x]  Realtime   Realtime
         *   [RealtimeAgent](https://openai.github.io/openai-agents-python/ref/realtime/agent/)
         *   [RealtimeRunner](https://openai.github.io/openai-agents-python/ref/realtime/runner/)
         *   [RealtimeSession](https://openai.github.io/openai-agents-python/ref/realtime/session/)
@@ -161,7 +161,7 @@ Markdown Content:
         *   [Configuration](https://openai.github.io/openai-agents-python/ref/realtime/config/)
         *   [Model](https://openai.github.io/openai-agents-python/ref/realtime/model/)
 
-    *   - [x]  Voice   Voice  
+    *   - [x]  Voice   Voice
         *   [Pipeline](https://openai.github.io/openai-agents-python/ref/voice/pipeline/)
         *   [Workflow](https://openai.github.io/openai-agents-python/ref/voice/workflow/)
         *   [Input](https://openai.github.io/openai-agents-python/ref/voice/input/)
@@ -175,10 +175,10 @@ Markdown Content:
         *   [OpenAI STT](https://openai.github.io/openai-agents-python/ref/voice/models/openai_stt/)
         *   [OpenAI TTS](https://openai.github.io/openai-agents-python/ref/voice/models/openai_tts/)
 
-    *   - [x]  Extensions   Extensions  
+    *   - [x]  Extensions   Extensions
         *   [Handoff filters](https://openai.github.io/openai-agents-python/ref/extensions/handoff_filters/)
         *   [Handoff prompt](https://openai.github.io/openai-agents-python/ref/extensions/handoff_prompt/)
-        *   - [x]  Third-party adapters   Third-party adapters  
+        *   - [x]  Third-party adapters   Third-party adapters
             *   [Any-LLM model](https://openai.github.io/openai-agents-python/ref/extensions/models/any_llm_model/)
             *   [Any-LLM provider](https://openai.github.io/openai-agents-python/ref/extensions/models/any_llm_provider/)
             *   [LiteLLM model](https://openai.github.io/openai-agents-python/ref/extensions/models/litellm_model/)
@@ -193,7 +193,7 @@ Markdown Content:
         *   [EncryptedSession](https://openai.github.io/openai-agents-python/ref/extensions/memory/encrypt_session/)
         *   [AdvancedSQLiteSession](https://openai.github.io/openai-agents-python/ref/extensions/memory/advanced_sqlite_session/)
 
- Table of contents  
+ Table of contents
 *   [Why use the Agents SDK](https://openai.github.io/openai-agents-python/#why-use-the-agents-sdk)
 *   [Agents SDK or Responses API?](https://openai.github.io/openai-agents-python/#agents-sdk-or-responses-api)
 *   [Installation](https://openai.github.io/openai-agents-python/#installation)

@@ -10,7 +10,12 @@ For agents, context engineering is performance engineering. The context window c
 - [[concepts/long-horizon agents]]
 - [[operations/agent memory]]
 - [[concepts/versioned context]]
+- [[concepts/context compaction]]
+- [[concepts/context retrieval]]
+- [[concepts/context evolution]]
 - [[claims/Claim - Harnesses tools and context are core agent performance levers]]
+- [[claims/Claim - Context management is an agent architecture choice]]
+- [[maps/Context Management Map]]
 - [[maps/What Makes Agent Systems Better]]
 
 ## Related Sources
@@ -22,3 +27,6 @@ For agents, context engineering is performance engineering. The context window c
 - [[sources/Anthropic Multi-Agent Research System|How we built our multi-agent research system]]
 - [[sources/llm-wiki - Karpathy|llm-wiki]]
 - [[sources/OpenAI Codex Agent Loop|Unrolling the Codex agent loop]]
+- [[sources/Anthropic Context Engineering Cookbook|Context Engineering for AI Agents: Memory vs. Compaction vs. Tool Clearing]]
+- [[sources/The Complexity Trap|The Complexity Trap]]
+- [[sources/ACON|ACON]]

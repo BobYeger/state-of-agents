@@ -101,7 +101,7 @@ claude
 
 # In the Claude Code session:
 # Ask Claude to help find and fix the authentication issue
-Human: Please help me identify and fix authentication issues in our React application. 
+Human: Please help me identify and fix authentication issues in our React application.
 Users are sometimes getting logged out unexpectedly when navigating between pages.
 Can you examine our auth provider implementation and token refresh logic?
 ```
@@ -119,7 +119,7 @@ claude
 
 # In this Claude Code session:
 # Ask Claude to help with your feature development
-Human: I'm implementing a new user profile page in our React app. 
+Human: I'm implementing a new user profile page in our React app.
 Can you help me create a component that allows users to update their profile information?
 We need to include fields for name, bio, profile picture, and account preferences.
 ```
@@ -172,7 +172,7 @@ You're building an e-commerce platform and need to develop both a product recomm
 	cd ../ecommerce-shared
 	claude
 	# In Claude Code session:
-	Human: I need to create reusable UI components for our e-commerce app. 
+	Human: I need to create reusable UI components for our e-commerce app.
 	Specifically, I need:
 	1. A PreferenceToggle component that can be used for user settings
 	2. A ProductCard component that can display product information
@@ -203,8 +203,8 @@ You're building an e-commerce platform and need to develop both a product recomm
 	cd ../ecommerce-recommendations
 	claude
 	# In this Claude Code session:
-	Human: Using our shared components (ProductCard and pricing utils), 
-	help me implement a product recommendation system that shows 
+	Human: Using our shared components (ProductCard and pricing utils),
+	help me implement a product recommendation system that shows
 	personalized product suggestions based on browsing history.
 	```
 	In the second terminal (preferences):
@@ -212,8 +212,8 @@ You're building an e-commerce platform and need to develop both a product recomm
 	cd ../ecommerce-preferences
 	claude
 	# In this Claude Code session:
-	Human: Using our shared PreferenceToggle component, 
-	help me create a user preferences page that allows 
+	Human: Using our shared PreferenceToggle component,
+	help me create a user preferences page that allows
 	users to set their notification settings, theme preferences, and privacy options.
 	```
 6. **Step 6: Periodically update shared components**
@@ -317,7 +317,7 @@ You need to implement a complex "password reset" feature that spans all these se
 	# In Claude Code session:
 	Human: [PASSWORD RESET AUTH SERVICE] I need to implement new endpoints in our Node.js Express authentication service to handle password reset:
 	1. POST /auth/forgot-password - Request a reset code
-	2. POST /auth/verify-reset-code - Verify the code is valid 
+	2. POST /auth/verify-reset-code - Verify the code is valid
 	3. POST /auth/reset-password - Update password with the verified code
 	The service should handle token generation, verification, expiration, and communicate with the user service via gRPC.
 	```
@@ -349,7 +349,7 @@ You need to implement a complex "password reset" feature that spans all these se
 	With all services being developed in parallel, you can use your project coordination directory to keep track of progress and test the integration:
 	```bash
 	cd ~/projects/password-reset-feature
-	                      
+
 	# Create a docker-compose file to run all services locally
 	claude
 	# In Claude Code session:
@@ -367,7 +367,7 @@ You need to implement a complex "password reset" feature that spans all these se
 	As you complete components of the feature, update your coordination repository:
 	```bash
 	cd ~/projects/password-reset-feature
-	      
+
 	# Update the README with progress
 	sed -i 's/- [ ] Frontend UI components (React)/- [x] Frontend UI components (React)/' README.md
 	git commit -am "Complete frontend implementation for password reset"
@@ -483,7 +483,7 @@ Clearly label your Claude Code sessions and use prefix tags in your prompts:
 ```bash
 # Start Claude with a clear session identifier
 claude
-                  
+
 # Always start your prompts with a clear context tag
 Human: [FEATURE-A] Let's continue working on the authentication implementation.
 

@@ -15,7 +15,7 @@ English | [中文](README.zh_CN.md)
 
 ## What is Coze Studio?
 
-[Coze Studio](https://www.coze.cn/home) is an all-in-one AI agent development tool. Providing the latest large models and tools, various development modes and frameworks, Coze Studio offers the most convenient AI agent development environment, from development to deployment. 
+[Coze Studio](https://www.coze.cn/home) is an all-in-one AI agent development tool. Providing the latest large models and tools, various development modes and frameworks, Coze Studio offers the most convenient AI agent development environment, from development to deployment.
 
 * **Provides all core technologies needed for AI agent development**: prompt, RAG, plugin, workflow, enabling developers to focus on creating the core value of AI.
 * **Ready to use for professional AI agent development at the lowest cost**: Coze Studio provides developers with complete app templates and build frameworks, allowing you to quickly construct various AI agents and turn creative ideas into reality.
@@ -54,7 +54,7 @@ Deployment steps:
    cd coze-studio
    # start service
    # for macOS or Linux
-   make web  
+   make web
    # for windows
    cp ./docker/.env.example ./docker/.env
    docker compose -f ./docker/docker-compose.yml up
@@ -110,14 +110,14 @@ To efficiently track and resolve issues while ensuring transparency and collabor
 ### 💬 Technical Discussion & Communication
 Join our technical discussion groups to share experiences with other developers and stay updated with the latest project developments:
 
-**Feishu Group Chat**  
+**Feishu Group Chat**
 Scan the QR code below with Feishu mobile app to join:
 
 
-**Discord Server**  
+**Discord Server**
 Click to join: [Coze Community](https://discord.gg/sTVN9EVS4B)
 
-**Telegram Group**  
+**Telegram Group**
 Click to join: Telegram Group [Coze](https://t.me/+pP9CkPnomDA0Mjgx)
 
 ## Acknowledgments

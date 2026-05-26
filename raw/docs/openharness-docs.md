@@ -51,7 +51,7 @@ Ctrl K
 
 *   [Website](https://open-harness.dev/)
 *   [GitHub](https://github.com/MaxGfeller/open-harness)
-*    
+*
 
 [OpenHarness home page![Image 3: light logo](https://mintcdn.com/max-8f0c51d4/6CLDhc2myLoLNqya/logo/light.svg?fit=max&auto=format&n=6CLDhc2myLoLNqya&q=85&s=33ca0828c712c8e50b5c40e397889d7d)![Image 4: dark logo](https://mintcdn.com/max-8f0c51d4/6CLDhc2myLoLNqya/logo/dark.svg?fit=max&auto=format&n=6CLDhc2myLoLNqya&q=85&s=868e0d82995f12ca99aa5e41fa70830b)](https://docs.open-harness.dev/)
 
@@ -81,11 +81,11 @@ Getting Started
 Build capable, general-purpose AI agents in code
 
 > ## Documentation Index
-> 
-> 
+>
+>
 > Fetch the complete documentation index at: [https://docs.open-harness.dev/llms.txt](https://docs.open-harness.dev/llms.txt)
-> 
-> 
+>
+>
 > Use this file to discover all available pages before exploring further.
 
 OpenHarness is an open-source framework for building general-purpose AI agents programmatically. Built on [Vercel’s AI SDK](https://sdk.vercel.ai/), it provides the building blocks inspired by Claude Code, Codex, and similar advanced agent harnesses — but in a lightweight, composable form you can use in your own applications.

@@ -31,7 +31,7 @@ parser = LlmAgent(
     name="ParserAgent",
     instruction="Parse raw PDF and extract text.",
     tools=[PDFParser],
-    output_key="raw_text" 
+    output_key="raw_text"
 )
 
 # Step 2: Extract structured data
@@ -72,13 +72,13 @@ This relies on LLM-driven delegation. You simply define a parent CoordinatorAgen
 ```
 # ADK Pseudocode
 billing_specialist = LlmAgent(
-    name="BillingSpecialist", 
+    name="BillingSpecialist",
     description="Handles billing inquiries and invoices.",
     tools=[BillingSystemDB]
 )
 
 tech_support = LlmAgent(
-    name="TechSupportSpecialist", 
+    name="TechSupportSpecialist",
     description="Troubleshoots technical issues.",
     tools=[DiagnosticTool]
 )
@@ -110,19 +110,19 @@ The ParallelAgent in ADK should be used to run sub-agents simultaneously. Be awa
 
 # Define parallel workers
 security_scanner = LlmAgent(
-    name="SecurityAuditor", 
+    name="SecurityAuditor",
     instruction="Check for vulnerabilities like injection attacks.",
     output_key="security_report"
 )
 
 style_checker = LlmAgent(
-    name="StyleEnforcer", 
+    name="StyleEnforcer",
     instruction="Check for PEP8 compliance and formatting issues.",
     output_key="style_report"
 )
 
 complexity_analyzer = LlmAgent(
-    name="PerformanceAnalyst", 
+    name="PerformanceAnalyst",
     instruction="Analyze time complexity and resource usage.",
     output_key="performance_report"
 )
@@ -167,7 +167,7 @@ research_assistant = LlmAgent(
     name="ResearchAssistant",
     description="Finds and summarizes info.",
     # Coordinator manages the tool agents
-    sub_agents=[web_searcher, summarizer] 
+    sub_agents=[web_searcher, summarizer]
 )
 
 # Level 1: Top-Level Agent
@@ -175,7 +175,7 @@ report_writer = LlmAgent(
     name="ReportWriter",
     instruction="Write a comprehensive report on AI trends. Use the ResearchAssistant to gather info.",
     # Wrap the sub-agent hierarchy as a tool for the parent
-    tools=[AgentTool(research_assistant)] 
+    tools=[AgentTool(research_assistant)]
 )
 ```
 
@@ -195,26 +195,26 @@ To implement this in ADK, you separate concerns into two specific primitives: a 
 ```
 # ADK Pseudocode
 
-# The Generator 
+# The Generator
 generator = LlmAgent(
     name="Generator",
     instruction="Generate a SQL query. If you receive {feedback}, fix the errors and generate again.",
     output_key="draft"
 )
 
-# The Critic 
+# The Critic
 critic = LlmAgent(
     name="Critic",
     instruction="Check if {draft} is valid SQL. If correct, output 'PASS'. If not, output error details.",
     output_key="feedback"
 )
 
-# The Loop 
+# The Loop
 loop = LoopAgent(
     name="ValidationLoop",
     sub_agents=[generator, critic],
     condition_key="feedback",
-    exit_condition="PASS" 
+    exit_condition="PASS"
 )
 ```
 
@@ -241,14 +241,14 @@ generator = LlmAgent(
     output_key="current_draft"
 )
 
-# Critique Agent 
+# Critique Agent
 critic = LlmAgent(
     name="Critic",
     instruction="Review {current_draft}. List ways to optimize it for performance.",
     output_key="critique_notes"
 )
 
-# Refiner Agent 
+# Refiner Agent
 refiner = LlmAgent(
     name="Refiner",
     instruction="Read {current_draft} and {critique_notes}. Rewrite the draft to be more efficient.",
@@ -258,7 +258,7 @@ refiner = LlmAgent(
 # The Loop (Critique -> Refine)
 loop = LoopAgent(
     name="RefinementLoop",
-    max_iterations=3, 
+    max_iterations=3,
     sub_agents=[critic, refiner]
 )
 
@@ -284,7 +284,7 @@ ADK allows you to implement this via custom tools. An agent can call an approval
 transaction_agent = LlmAgent(
     name="TransactionAgent",
     instruction="Handle routine processing. If high stakes, call ApprovalTool.",
-    tools=[ApprovalTool] 
+    tools=[ApprovalTool]
 )
 
 approval_agent = LlmAgent(

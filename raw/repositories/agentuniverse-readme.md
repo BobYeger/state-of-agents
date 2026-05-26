@@ -44,12 +44,12 @@ For example, to use deepseek model, you can simply set DEEPSEEK_API_KEY value in
 
 ## Table of Contents
 
-* [Quick Start](#Quick-Start)  
+* [Quick Start](#Quick-Start)
 * [How to build an agent application](#How-to-build-an-agent-application)
 * [Setup the visual agentic workflow platform](#Set-up-the-visual-agentic-workflow-platform)
-* [Why use agentUniverse](#Why-use-agentUniverse)  
-* [Sample Apps](#Sample-Apps)  
-* [Documents](#Documents)  
+* [Why use agentUniverse](#Why-use-agentUniverse)
+* [Sample Apps](#Sample-Apps)
+* [Documents](#Documents)
 * [Support](#Support)
 
 ****************************************
@@ -73,7 +73,7 @@ Please refer to the document for detail steps: [Run the first example](docs/guid
 Setup the standard project: [agentUniverse Standard Project](examples/sample_standard_app)
 
 #### Quick Start for Building a Single Agent
-You can learn how to quickly build a single agent by reading the [Quick Guide to Build Single Agent](docs/guidebook/en/Get_Start/3.Quick_Guide_to_Build_Single_Agent.md). This will help you understand how to enhance your agent's capabilities using tools, knowledge bases, RAG technologies, and more. Additionally, you will grasp the basic application development processes for agents, including configuration, testing, optimizing, deployment, and performance evaluation. 
+You can learn how to quickly build a single agent by reading the [Quick Guide to Build Single Agent](docs/guidebook/en/Get_Start/3.Quick_Guide_to_Build_Single_Agent.md). This will help you understand how to enhance your agent's capabilities using tools, knowledge bases, RAG technologies, and more. Additionally, you will grasp the basic application development processes for agents, including configuration, testing, optimizing, deployment, and performance evaluation.
 
 #### Building Typical Multi-Agent Applications
 You can further understand how to break down intelligent capabilities into multiple agents in complex task scenarios and enhance your task performance through collaboration by referring to the [Building Typical Multi-Agent App](docs/guidebook/en/Get_Start/4.Building_Typical_Multi-Agent_App.md) chapter.
@@ -182,7 +182,7 @@ https://private-user-images.githubusercontent.com/39180831/355437700-192f712d-1b
 😊 Join our [Discord Channel](https://discord.gg/DHFcdkWAhn) to interact with us.
 
 ### Contact Us via Administrator Email
-😊 Email: 
+😊 Email:
 * [jihan.hanji@antgroup.com](mailto:jihan.hanji@antgroup.com)
 * [jerry.zzw@antgroup.com](mailto:jerry.zzw@antgroup.com)
 * [jinshi.zjs@antgroup.com](mailto:jinshi.zjs@antgroup.com)
@@ -200,16 +200,16 @@ The PEER multi-agent framework build in agentUniverse project is supported by th
 BibTeX formatted
 ```text
 @misc{wang2024peerexpertizingdomainspecifictasks,
-      title={PEER: Expertizing Domain-Specific Tasks with a Multi-Agent Framework and Tuning Methods}, 
+      title={PEER: Expertizing Domain-Specific Tasks with a Multi-Agent Framework and Tuning Methods},
       author={Yiying Wang and Xiaojing Li and Binzhu Wang and Yueyang Zhou and Han Ji and Hong Chen and Jinshi Zhang and Fei Yu and Zewei Zhao and Song Jin and Renji Gong and Wanqing Xu},
       year={2024},
       eprint={2407.06985},
       archivePrefix={arXiv},
       primaryClass={cs.AI},
-      url={https://arxiv.org/abs/2407.06985}, 
+      url={https://arxiv.org/abs/2407.06985},
 }
 ```
-Overview: This document introduces in detailed the mechanisms and principles underlying the PEER multi-agent framework. The experimental section assigned scores across seven dimensions: completeness, relevance, conciseness, factualness, logicality, structure, and comprehensiveness, with a maximum score of 5 points for each dimension. On average, the PEER model scored higher in each evaluation dimension compared to BabyAGI, and show notable advantages particularly in completeness, relevance, logicality, structure, and comprehensiveness. Furthermore, when tested with the GPT-3.5 Turbo (16k) model, the PEER model achieved a superior accuracy rate of 83% compared to BabyAGI, and with the GPT-4 model, it achieved an accuracy rate of 81%. For more details, please refer to the document. 
+Overview: This document introduces in detailed the mechanisms and principles underlying the PEER multi-agent framework. The experimental section assigned scores across seven dimensions: completeness, relevance, conciseness, factualness, logicality, structure, and comprehensiveness, with a maximum score of 5 points for each dimension. On average, the PEER model scored higher in each evaluation dimension compared to BabyAGI, and show notable advantages particularly in completeness, relevance, logicality, structure, and comprehensiveness. Furthermore, when tested with the GPT-3.5 Turbo (16k) model, the PEER model achieved a superior accuracy rate of 83% compared to BabyAGI, and with the GPT-4 model, it achieved an accuracy rate of 81%. For more details, please refer to the document.
 🔗https://arxiv.org/pdf/2407.06985
 
 ****************************************

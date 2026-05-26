@@ -35,6 +35,7 @@ updated: 2026-05-26
 ## Claims
 
 - [[claims/Claim - Harnesses tools and context are core agent performance levers]]
+- [[claims/Claim - Agent teams need explicit organization]]
 
 ## Connections
 
@@ -42,7 +43,9 @@ updated: 2026-05-26
 - [[operations/agent harnesses]]
 - [[operations/sandboxes]]
 - [[systems/Codex]]
+- [[concepts/agent teams]]
 - [[concepts/long-horizon agents]]
+- [[maps/Agent Teams and Workforces Map]]
 
 ## Artifacts
 

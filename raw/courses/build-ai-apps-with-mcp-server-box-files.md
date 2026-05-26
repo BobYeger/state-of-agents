@@ -30,7 +30,7 @@ Community
 [Membership](https://learn.deeplearning.ai/membership)[Start Learning](https://learn.deeplearning.ai/my/learning)
 
 *   [Explore Courses](https://learn.deeplearning.ai/courses)
-*   
+*
 AI Newsletter
     *   [The Batch](https://www.deeplearning.ai/the-batch/)
     *   [Andrew's Letter](https://www.deeplearning.ai/the-batch/tag/letters/)
@@ -38,7 +38,7 @@ AI Newsletter
     *   [ML Research](https://www.deeplearning.ai/the-batch/tag/research/)
     *   [Blog](https://www.deeplearning.ai/blog/)
 
-*   
+*
 Community
     *   [Forum](https://community.deeplearning.ai/)
     *   [Events](https://www.deeplearning.ai/events/)
@@ -170,15 +170,15 @@ Course access is free for a limited time during the DeepLearning.AI learning pla
 
 Keep learning with updates on curated AI news, courses, and events, as well as Andrew’s thoughts from DeepLearning.AI!
 
-First name* 
+First name*
 
-Last name* 
+Last name*
 
-Email* 
+Email*
 
-Where do you live?* 
+Where do you live?*
 
-*   - [x] I want to get the latest news, courses, and workshops and events announcements* 
+*   - [x] I want to get the latest news, courses, and workshops and events announcements*
 
 [Start Learning](https://learn.deeplearning.ai/courses/build-ai-apps-with-mcp-server-working-with-box-files?utm_source=home&utm_medium=course-landing-page&utm_campaign=summary-cta-button)
 

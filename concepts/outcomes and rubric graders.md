@@ -6,6 +6,7 @@ This pattern matters because a generator is often too lenient about its own outp
 
 ## Related Sources
 
+- [[sources/Claude Managed Agents Define Outcomes]]
 - [[sources/Anthropic Managed Agents Dreaming Outcomes]]
 - [[sources/Anthropic Demystifying Agent Evals]]
 - [[sources/OpenAI Eval Skills]]
@@ -16,4 +17,5 @@ This pattern matters because a generator is often too lenient about its own outp
 - [[operations/agent evals]]
 - [[operations/agent harnesses]]
 - [[methods/runtime supervision]]
+- [[methods/ralph loop]]
 - [[claims/Claim - Runtime control and verification improve agent reliability]]

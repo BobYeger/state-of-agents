@@ -1,7 +1,7 @@
 ---
 title: "From shortcuts to sabotage: natural emergent misalignment from reward hacking"
 aliases: []
-source_type: "paper"
+source_type: "article"
 status: "verified"
 year: 2025
 publication_date: "2025-11-21"
@@ -11,8 +11,8 @@ source_updated_date_basis: null
 arxiv_id: null
 citation_count: null
 citation_source: null
-citation_snapshot_date: "2026-05-20"
-citation_lookup: "not_found_openalex_2026-05-20"
+citation_snapshot_date: null
+citation_lookup: null
 authors:
   - "Anthropic"
 venue: "Anthropic Research"
@@ -45,3 +45,4 @@ updated: 2026-05-18
 
 - Canonical URL: https://www.anthropic.com/research/emergent-misalignment-reward-hacking
 - Publication date basis: anthropic_visible_published_date.
+- Curation note: categorized as a research article rather than a paper because the local source is an Anthropic research post without arXiv/PDF metadata.

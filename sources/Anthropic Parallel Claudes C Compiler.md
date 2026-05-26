@@ -36,8 +36,10 @@ updated: 2026-05-18
 
 - [[systems/Claude Code]]
 - [[concepts/long-horizon agents]]
+- [[concepts/agent teams]]
 - [[concepts/multi-agent systems]]
 - [[methods/multi-agent orchestration]]
+- [[maps/Agent Teams and Workforces Map]]
 
 ## Artifacts
 

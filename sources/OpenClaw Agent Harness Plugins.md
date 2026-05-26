@@ -39,7 +39,8 @@ updated: 2026-05-18
 
 ## Connections
 
-- [[maps/Builder Ecosystem Map]]
+- [[sources/OpenClaw Repository]]
+- [[systems/deployed agent products]]
 - [[operations/agent harnesses]]
 - [[operations/agent infrastructure]]
 

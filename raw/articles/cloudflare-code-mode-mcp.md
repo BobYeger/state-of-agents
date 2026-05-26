@@ -118,7 +118,7 @@ const stream = streamText({
     { role: "user", content: "Write a function that adds two numbers" }
   ],
   tools: {
-    // tool definitions 
+    // tool definitions
   }
 })
 ```
@@ -131,7 +131,7 @@ import { codemode } from "agents/codemode/ai";
 const {system, tools} = codemode({
   system: "You are a helpful assistant",
   tools: {
-    // tool definitions 
+    // tool definitions
   },
   // ...config
 })

@@ -133,7 +133,7 @@ Shell
 Copied
 
 ```
-Response: 
+Response:
 
 {
   "ucp": {
@@ -217,7 +217,7 @@ Full request [example](https://github.com/Universal-Commerce-Protocol/samples/bl
 Your agent will receive the following response with the discount applied:
 
 ```
-RESPONSE: 
+RESPONSE:
 
 {
   "ucp": { "version": "2026-01-11", "capabilities": [ { "name": "dev.ucp.shopping.checkout", "version": "2026-01-11" } ] },

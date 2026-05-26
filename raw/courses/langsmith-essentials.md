@@ -15,25 +15,25 @@ Learn the essentials of LangSmith — the comprehensive platform for agent engin
 
 ## Course curriculum
 
-1.   
+1.
     1.   Intro
 
     2.   Getting Started
 
     3.   Course Transcripts
 
-2.   
+2.
     1.   Tracing
 
-3.   
+3.
     1.   Online Evaluation & Insights
 
     2.   Offline Evaluation
 
-4.   
+4.
     1.   Prompt Engineering
 
-5.   
+5.
     1.   Deployment
 
     2.   Course Feedback
@@ -41,14 +41,14 @@ Learn the essentials of LangSmith — the comprehensive platform for agent engin
 ### About this course
 
 *   Free
-*    9 lessons 
-*    0.5 hours of video content 
+*    9 lessons
+*    0.5 hours of video content
 
 [](https://academy.langchain.com/courses/quickstart-langsmith-essentials/)
 
 ## Ready to starts shipping reliable agents faster?
 
-Our platform provides tools for every step of the agent development lifecycle 
+Our platform provides tools for every step of the agent development lifecycle
 
 — built to unlock powerful AI in production.
 
@@ -56,6 +56,6 @@ Our platform provides tools for every step of the agent development lifecycle
 
 ## Learn with the community
 
-Learn alongside other builders at in-person LangChain meetups. 
+Learn alongside other builders at in-person LangChain meetups.
 
 Subscribe to our calendar to be the first to know about upcoming events near you.
