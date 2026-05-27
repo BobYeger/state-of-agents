@@ -6,3 +6,14 @@
 # Common Obsidian/local generated folders
 .trash/
 .obsidian/cache/
+
+# Generated NotebookLM bundles and local auth/browser state
+exports/notebooklm/
+.notebooklm/
+notebooklm/.auth/
+notebooklm/session*
+playwright/.auth/
+
+# Generated media
+*.mp3
+*.mp4
