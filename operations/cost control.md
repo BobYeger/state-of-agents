@@ -32,6 +32,7 @@ Cost is part of system quality for agents. A design that only works through unbo
 - [[sources/Anthropic Code Execution with MCP]]
 - [[sources/Cloudflare Code Mode MCP]]
 - [[sources/Cloudflare Code Mode MCP API]]
+- [[sources/Claude Code Workflows]]
 - [[sources/MCP-Zero]]
 - [[sources/ScaleMCP]]
 - [[sources/LangChain Delta Channels]]

@@ -44,6 +44,7 @@ Related synthesis: [[claims/Claim - Agent memory and skills create compounding i
 
 - [[concepts/agent skills]]
 - [[concepts/procedural memory]]
+- [[methods/self-improving code loops]]
 - [[concepts/versioned context]]
 - [[concepts/dreaming and memory consolidation]]
 - [[operations/agent memory]]

@@ -10,6 +10,7 @@ For this vault, Codex is mainly a production-harness case study: the useful obje
 - Use shell, file edits, tests, and execution logs as the main observation channel.
 - Use worktrees to let multiple Codex threads or automations work against the same repository without disturbing the local checkout.
 - Treat approvals, sandbox policy, and network access as part of the agent design rather than peripheral UI.
+- Treat goals, automations, and repeated thread/worktree runs as loop-engineering surfaces around the inner Codex agent loop.
 
 ## Related
 
@@ -18,6 +19,7 @@ For this vault, Codex is mainly a production-harness case study: the useful obje
 - [[concepts/context engineering]]
 - [[concepts/issue tracker control plane]]
 - [[concepts/agent operating surfaces]]
+- [[concepts/loop engineering]]
 - [[operations/worktree isolation]]
 - [[operations/agent infrastructure]]
 - [[operations/sandboxes]]

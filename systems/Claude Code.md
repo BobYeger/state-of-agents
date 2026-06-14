@@ -12,6 +12,8 @@ Anthropic's coding-agent product and harness surface for terminal-centered softw
 
 - [[sources/Anthropic Claude Code Worktrees]]
 - [[sources/Claude Code Skills Docs]]
+- [[sources/Claude Code Scheduled Tasks]]
+- [[sources/Claude Code Workflows]]
 - [[sources/Anthropic Effective Harnesses for Long-Running Agents]]
 - [[sources/Anthropic Harness Design Long-Running Apps]]
 - [[sources/Anthropic Claude Code Sandboxing]]

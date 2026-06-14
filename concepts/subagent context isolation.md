@@ -8,6 +8,7 @@ This reduces contamination of the lead context and makes specialization auditabl
 
 - [[sources/Anthropic Managed Agents Dreaming Outcomes]]
 - [[sources/Anthropic Claude Code Worktrees]]
+- [[sources/Claude Code Workflows]]
 - [[sources/Cursor 2.0]]
 - [[sources/Anthropic Multi-Agent Research System]]
 - [[sources/LangChain Deep Agents Docs]]

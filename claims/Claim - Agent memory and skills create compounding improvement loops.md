@@ -12,12 +12,15 @@ Agent systems improve when successful procedures, failed attempts, learned rules
 - [[sources/SAGE Skill Library]] and [[sources/SkillRL]] study skill libraries as evolving agent state.
 - [[sources/Voyager]] is the pre-SKILL.md precedent for executable skill libraries and self-verification.
 - [[sources/Cursor Bugbot Learned Rules]] is a deployed feedback-to-rules example.
+- [[sources/Darwin Godel Machine]], [[sources/Hyperagents]], and [[sources/Meta-Harness]] extend the pattern from memory/skills to executable self-improvement over agent and harness code.
+- [[sources/AlphaEvolve]] and [[sources/The AI Scientist-v2]] show the adjacent algorithm/research-code version: mutate code or hypotheses, evaluate, select, and repeat.
 
 ## Design Implications
 
 - Store procedures, not just facts.
 - Track provenance and task context for learned memory.
 - Evaluate skills before broad reuse.
+- For executable improvements, require sandboxing, rollback, and evaluator-hardening before reuse.
 - Separate trusted project instructions from untrusted retrieved content.
 - Prefer compact, discoverable skills over stuffing every procedure into the base prompt.
 
@@ -29,3 +32,4 @@ Agent systems improve when successful procedures, failed attempts, learned rules
 - [[concepts/procedural memory]]
 - [[operations/agent memory]]
 - [[concepts/lifelong agent learning]]
+- [[methods/self-improving code loops]]

@@ -25,6 +25,7 @@ The infrastructure layer is where many agent improvements become real: the same 
 - [[sources/llm-wiki - Karpathy|llm-wiki]]
 - [[sources/MasRouter|MasRouter: Learning to Route LLMs for Multi-Agent Systems]]
 - [[sources/Cloudflare Project Think|Project Think: building the next generation of AI agents on Cloudflare]]
+- [[sources/Cloudflare Dynamic Workflows|Introducing Dynamic Workflows]]
 - [[sources/Cloudflare Think Docs|Cloudflare Think docs]]
 - [[sources/LangChain Deep Agents v0.6|New in Deep Agents v0.6]]
 - [[sources/Anthropic Managed Agents Sandboxes MCP Tunnels|New in Claude Managed Agents: self-hosted sandboxes and MCP tunnels]]

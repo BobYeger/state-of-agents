@@ -39,6 +39,7 @@ updated: 2026-05-18
 
 - [[systems/autoresearch]]
 - [[methods/agentic workflow search]]
+- [[methods/self-improving code loops]]
 - [[concepts/long-horizon agents]]
 
 ## Artifacts

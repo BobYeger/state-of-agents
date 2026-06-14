@@ -10,6 +10,7 @@ The useful design question is how an agent turns experience into reusable, gover
 - Convert repeated procedures into skills or learned rules.
 - Use evals to decide whether a learned behavior should be reused.
 - Track provenance, scope, and freshness for learned memory.
+- For code-based learning, use sandboxes, rollback, and evaluator-hardening before learned artifacts can affect future runs.
 
 ## Related
 
@@ -17,6 +18,7 @@ The useful design question is how an agent turns experience into reusable, gover
 - [[concepts/procedural memory]]
 - [[concepts/agent skills]]
 - [[methods/multi-agent learning]]
+- [[methods/self-improving code loops]]
 - [[operations/agent evals]]
 - [[claims/Claim - Agent memory and skills create compounding improvement loops]]
 - [[maps/What Makes Agent Systems Better]]
@@ -24,6 +26,9 @@ The useful design question is how an agent turns experience into reusable, gover
 ## Related Sources
 
 - [[sources/Google ReasoningBank]]
+- [[sources/Darwin Godel Machine]]
+- [[sources/Hyperagents]]
+- [[sources/Meta-Harness]]
 - [[sources/Cursor Bugbot Learned Rules]]
 - [[sources/SkillRL]]
 - [[sources/SAGE Skill Library]]

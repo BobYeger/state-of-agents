@@ -18,6 +18,8 @@ Agent systems get better when structure, runtime control, tools, context, memory
 | Runtime routing and pruning | Route by task state, role, model cost, uncertainty, and observed redundancy. | [[methods/runtime routing]] |
 | Supervision and verification | Add monitors, critics, evaluators, stopping criteria, and repair loops. | [[claims/Claim - Runtime control and verification improve agent reliability]], [[methods/runtime supervision]] |
 | Harness and context design | Make the loop, state, tools, approvals, compaction, and handoffs explicit. | [[claims/Claim - Harnesses tools and context are core agent performance levers]], [[operations/agent harnesses]] |
+| Loop engineering | Design how agents are re-entered over time: wake trigger, recurrence, durable state, verification, retry, escalation, and stop policy. | [[concepts/loop engineering]], [[sources/Claude Code Scheduled Tasks]], [[sources/Addy Osmani Loop Engineering]] |
+| Self-improving code loops | Mutate executable artifacts only when evaluator evidence improves, with rollback and sandboxing. | [[methods/self-improving code loops]], [[sources/Darwin Godel Machine]], [[sources/Meta-Harness]], [[sources/AlphaEvolve]] |
 | Context management | Choose between compaction, masking, clearing, retrieval, memory offload, handoff, and task-aware pruning. | [[claims/Claim - Context management is an agent architecture choice]], [[maps/Context Management Map]] |
 | Fresh-context coding loops | Use files, tests, commits, and task ledgers as durable state across repeated agent runs. | [[methods/ralph loop]] |
 | Tool contracts | Improve schemas, errors, affordances, permissions, and observability. | [[concepts/tool use]], [[concepts/tool-use contracts]] |
@@ -62,3 +64,5 @@ Agent systems get better when structure, runtime control, tools, context, memory
 - [[maps/Evaluation Map]]
 - [[maps/Context Management Map]]
 - [[maps/Recent Agent Operating Concepts]]
+- [[concepts/loop engineering]]
+- [[methods/self-improving code loops]]

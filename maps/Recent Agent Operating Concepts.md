@@ -17,6 +17,8 @@ The point is not to collect every vendor feature. A source belongs here when it 
 | Programmatic tool calling | Agents write code to call tools, filter results, and keep intermediates outside model context. | [[concepts/programmatic tool calling]], [[sources/Anthropic Code Execution with MCP]] |
 | Agent operating surfaces | APIs, MCP, CLIs, SDKs, docs, schemas, skills, and code execution become a designed capability surface for agents. | [[concepts/agent operating surfaces]], [[sources/OpenAI Agents SDK Tools]] |
 | Subagent context isolation | Subagents isolate context, tools, and role prompts as much as they provide parallelism. | [[concepts/subagent context isolation]], [[sources/OpenAI Codex Subagents]] |
+| Loop engineering | Outer loops wake, prompt, monitor, verify, retry, and stop agents over time. | [[concepts/loop engineering]], [[sources/Claude Code Scheduled Tasks]], [[sources/Addy Osmani Loop Engineering]] |
+| Self-improving code loops | Agents mutate code, harnesses, workflows, algorithms, or skills and keep changes only when evidence improves. | [[methods/self-improving code loops]], [[sources/Darwin Godel Machine]], [[sources/Meta-Harness]], [[sources/AlphaEvolve]] |
 | Ralph loops | Fresh-context coding iterations use files, tests, plans, and commits as the durable agent state. | [[sources/Ralph Playbook]], [[methods/ralph loop]] |
 | Worktree isolation | Parallel coding-agent tasks get separate Git checkouts so edits, branches, and review state do not collide. | [[operations/worktree isolation]], [[sources/Cursor 3.2]] |
 | Issue-tracker control planes | Tickets become durable work units and agent workspaces rather than ad hoc chat sessions. | [[sources/OpenAI Symphony]] |
@@ -42,5 +44,7 @@ This map should stay compact. If three sources explain the same vendor implement
 - [[maps/Agent Skills Map]]
 - [[maps/Context Management Map]]
 - [[operations/agent harnesses]]
+- [[concepts/loop engineering]]
+- [[methods/self-improving code loops]]
 - [[operations/worktree isolation]]
 - [[concepts/agent operating surfaces]]

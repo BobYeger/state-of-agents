@@ -24,6 +24,7 @@ Observability improves agent systems by making hidden coordination and tool beha
 - [[sources/LangChain Delta Channels|Delta Channels: Evolving our Runtime for Long-Running Agents]]
 - [[sources/OpenAI Symphony|OpenAI Symphony]]
 - [[sources/Cloudflare Think Docs|Cloudflare Think docs]]
+- [[sources/Cloudflare Dynamic Workflows|Introducing Dynamic Workflows]]
 - [[sources/SHADE-Arena|SHADE-Arena: Evaluating Sabotage and Monitoring in LLM Agents]]
 - [[sources/Stop Wasting Your Tokens|Stop Wasting Your Tokens: Towards Efficient Runtime Multi-Agent Systems]]
 - [[sources/Cursor Self-Driving Codebases|Towards self-driving codebases]]

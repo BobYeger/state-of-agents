@@ -14,9 +14,13 @@ The important design move is narrowing the research environment until autonomous
 ## Related
 
 - [[methods/agentic workflow search]]
+- [[methods/self-improving code loops]]
 - [[concepts/long-horizon agents]]
 - [[methods/runtime routing]]
 
 ## Related Sources
 
 - [[sources/Karpathy Autoresearch|autoresearch]]
+- [[sources/Darwin Godel Machine]]
+- [[sources/AlphaEvolve]]
+- [[sources/The AI Scientist-v2]]

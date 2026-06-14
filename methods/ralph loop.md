@@ -18,6 +18,7 @@ It is useful because it turns an open-ended coding session into a restartable co
 - Files and commits make progress auditable and recoverable.
 - Tests, builds, and review criteria provide backpressure against plausible but broken code.
 - The loop composes with worktrees, subagents, and rubric-based outcomes.
+- The loop now also reads cleanly as [[concepts/loop engineering]]: a repeated outer control structure around a coding agent, with repository state as memory.
 
 ## Risks
 
@@ -29,6 +30,7 @@ It is useful because it turns an open-ended coding session into a restartable co
 ## Related Sources
 
 - [[sources/Ralph Playbook]]
+- [[sources/Addy Osmani Loop Engineering]]
 - [[sources/Claude Managed Agents Define Outcomes]]
 - [[sources/Anthropic Effective Harnesses for Long-Running Agents]]
 - [[sources/OpenAI Codex Agent Loop]]
@@ -36,6 +38,7 @@ It is useful because it turns an open-ended coding session into a restartable co
 ## Related
 
 - [[operations/agent harnesses]]
+- [[concepts/loop engineering]]
 - [[concepts/long-horizon agents]]
 - [[concepts/context engineering]]
 - [[operations/worktree isolation]]

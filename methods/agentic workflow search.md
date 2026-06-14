@@ -19,12 +19,18 @@ Workflow search improves agent systems by making design choices empirical. Promp
 ## Related
 
 - [[concepts/scaling with computation]]
+- [[methods/self-improving code loops]]
 - [[maps/What Makes Agent Systems Better]]
 
 ## Related Sources
 
 - [[sources/AFlow|AFlow: Automating Agentic Workflow Generation]]
 - [[sources/ADAS|Automated Design of Agentic Systems]]
+- [[sources/Meta-Harness]]
+- [[sources/Darwin Godel Machine]]
+- [[sources/Hyperagents]]
+- [[sources/AlphaEvolve]]
+- [[sources/The AI Scientist-v2]]
 - [[sources/HALO|HALO: Hierarchical Autonomous Logic-Oriented Orchestration for Multi-Agent LLM Systems]]
 - [[sources/Karpathy Autoresearch|autoresearch]]
 - [[sources/Rich Sutton The Bitter Lesson|The Bitter Lesson]]

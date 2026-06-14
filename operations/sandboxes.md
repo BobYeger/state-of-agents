@@ -33,6 +33,7 @@ Useful control points:
 - [[sources/Anthropic Managed Agents Sandboxes MCP Tunnels|New in Claude Managed Agents: self-hosted sandboxes and MCP tunnels]]
 - [[sources/OpenHands|OpenHands: An Open Platform for AI Software Developers as Generalist Agents]]
 - [[sources/Cloudflare Project Think|Project Think: building the next generation of AI agents on Cloudflare]]
+- [[sources/Cloudflare Dynamic Workflows|Introducing Dynamic Workflows]]
 - [[sources/Cloudflare Sandboxing AI Agents|Sandboxing AI agents, 100x faster]]
 - [[sources/Cloudflare Code Mode MCP API|Code Mode: give agents an entire API in 1,000 tokens]]
 - [[sources/Cursor Scaling Long-Running Autonomous Coding|Scaling long-running autonomous coding]]

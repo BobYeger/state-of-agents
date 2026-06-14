@@ -8,6 +8,7 @@ This pattern replaces raw transcript replay with explicit state machines and dur
 
 - [[sources/Google ADK Durable Agents]]
 - [[sources/Cloudflare Project Think]]
+- [[sources/Cloudflare Dynamic Workflows]]
 - [[sources/Anthropic Managed Agents]]
 - [[sources/LangChain Delta Channels]]
 

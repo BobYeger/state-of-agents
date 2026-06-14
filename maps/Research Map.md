@@ -9,6 +9,7 @@
 - If more agents is not sufficient, which concrete levers actually improve agent systems? See [[maps/What Makes Agent Systems Better]].
 - When should planning, execution, verification, and human approval be separated? See [[methods/deliberative control]].
 - Which agent designs scale with more compute, search, learning, feedback, and experience? See [[concepts/scaling with computation]].
+- How do self-improving code loops change harness engineering, evaluation, and safety? See [[methods/self-improving code loops]].
 - How should [[benchmarks/agent evaluation|agent evaluation]] handle long horizons, tools, state, and interaction?
 - What infrastructure is needed for [[concepts/long-horizon agents|long-horizon agents]]?
 - How do [[protocols/agent protocols|agent protocols]] such as MCP and A2A change interoperability?
