@@ -20,7 +20,7 @@ except ImportError as exc:  # pragma: no cover - dependency guard
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_TOPICS = ROOT / "notebooklm" / "topics.yml"
-DEFAULT_OUT = ROOT / "exports" / "notebooklm"
+DEFAULT_OUT = ROOT.parent / "state-of-agents-exports" / "notebooklm"
 
 
 def read_text(path: Path) -> str:
@@ -265,7 +265,11 @@ def main() -> int:
     if args.dry_run:
         print(f"Validated {len(summaries)} NotebookLM bundle definitions")
     else:
-        print(f"Exported {len(summaries)} NotebookLM bundles to {args.out.relative_to(ROOT)}")
+        try:
+            display_out = args.out.relative_to(ROOT)
+        except ValueError:
+            display_out = args.out
+        print(f"Exported {len(summaries)} NotebookLM bundles to {display_out}")
     return 0
 
 

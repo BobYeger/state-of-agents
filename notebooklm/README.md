@@ -7,9 +7,9 @@ The goal is not to upload the whole vault. Each notebook should contain a focuse
 ## Files
 
 - `topics.yml` is the curated notebook plan.
-- `../scripts/export_notebooklm_bundles.py` creates local upload bundles in `exports/notebooklm/`.
+- `../scripts/export_notebooklm_bundles.py` creates local upload bundles outside the vault at `../state-of-agents-exports/notebooklm/`.
 
-Generated exports are ignored by Git because they duplicate source material already stored in `raw/`.
+Generated exports live outside the vault because they duplicate source material already stored in `raw/` and should not appear as knowledge graph nodes.
 
 ## Export
 
@@ -20,7 +20,7 @@ python3 scripts/export_notebooklm_bundles.py
 Each topic becomes:
 
 ```text
-exports/notebooklm/<topic-id>/
+../state-of-agents-exports/notebooklm/<topic-id>/
   00-guide.md
   manifest.json
   podcast_prompt.md
