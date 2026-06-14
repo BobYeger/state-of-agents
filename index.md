@@ -8,6 +8,7 @@ This vault tracks frontier AI agent research and practice, with emphasis on mult
 - [[maps/Systems Map]]
 - [[maps/Claims Map]]
 - [[maps/Frontier Reading Queue]]
+- [[talk/State of Agents Talk - Outline]]
 
 Project metadata and private working artifacts are kept outside the public knowledge graph. This repository contains the public vault, the source notes, and the raw source archive needed to inspect the evidence trail.
 
