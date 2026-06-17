@@ -19,3 +19,4 @@ Anthropic's coding-agent product and harness surface for terminal-centered softw
 - [[sources/Anthropic Claude Code Sandboxing]]
 - [[sources/Anthropic Claude Code Auto Mode]]
 - [[sources/Anthropic Parallel Claudes C Compiler]]
+- [[sources/SkillOpt]]

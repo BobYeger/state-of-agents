@@ -7,10 +7,12 @@ Skills differ from tools: tools provide actions, while skills provide procedural
 ## Key Sources
 
 - [[sources/Anthropic Agent Skills]]
+- [[sources/Anthropic Building Effective AI Agents eBook]]
 - [[sources/Agent Skills Specification]]
 - [[sources/OpenAI Skills Docs]]
 - [[sources/GitHub Copilot Agent Skills Docs]]
 - [[sources/SkillsBench]]
+- [[sources/SkillOpt]]
 - [[sources/Agent Skills for Large Language Models]]
 
 ## Related

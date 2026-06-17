@@ -21,3 +21,4 @@ Topology is a performance lever, not decoration. Better agent systems search or 
 - [[sources/Multi-Agent Design - MASS|Multi-Agent Design: Optimizing Agents with Better Prompts and Topologies]]
 - [[sources/MultiAgentBench|MultiAgentBench: Evaluating the Collaboration and Competition of LLM agents]]
 - [[sources/Graph-of-Agents|Graph-of-Agents: A Graph-based Framework for Multi-Agent LLM Collaboration]]
+- [[sources/OpenRouter Fusion Beats Frontier]]

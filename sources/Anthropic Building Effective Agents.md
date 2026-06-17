@@ -43,6 +43,7 @@ updated: 2026-05-18
 - [[concepts/agentic systems]]
 - [[methods/multi-agent orchestration]]
 - [[concepts/tool use]]
+- [[sources/Anthropic Building Effective AI Agents eBook]]
 
 ## Artifacts
 

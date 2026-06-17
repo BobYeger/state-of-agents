@@ -28,4 +28,5 @@ In this vault, the useful version of the idea is not that all hand-designed stru
 - [[sources/AFlow]]
 - [[sources/ADAS]]
 - [[sources/Multi-Agent Design - MASS]]
+- [[sources/OpenRouter Fusion Beats Frontier]]
 - [[sources/SiriuS]]

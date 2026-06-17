@@ -8,6 +8,7 @@ The important design move is that learning happens between runs, not only inside
 
 - [[sources/Anthropic Managed Agents Dreaming Outcomes]]
 - [[sources/Letta Code Memory Docs]]
+- [[sources/SkillOpt]]
 - [[sources/Trajectory-Informed Memory Generation]]
 - [[sources/Google ReasoningBank]]
 

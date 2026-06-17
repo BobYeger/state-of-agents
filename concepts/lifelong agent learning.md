@@ -32,6 +32,7 @@ The useful design question is how an agent turns experience into reusable, gover
 - [[sources/Cursor Bugbot Learned Rules]]
 - [[sources/SkillRL]]
 - [[sources/SAGE Skill Library]]
+- [[sources/SkillOpt]]
 - [[sources/SiriuS]]
 - [[sources/SkillsBench]]
 - [[sources/Agentic Skills in the Wild]]

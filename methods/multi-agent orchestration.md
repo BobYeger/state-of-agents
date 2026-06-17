@@ -22,6 +22,8 @@ Orchestration improves agent systems when it turns task structure into explicit 
 ## Related Sources
 
 - [[sources/AFlow|AFlow: Automating Agentic Workflow Generation]]
+- [[sources/Anthropic Building Effective AI Agents eBook]]
+- [[sources/Claude Common Workflow Patterns for AI Agents|Common workflow patterns for AI agents—and when to use them]]
 - [[sources/Anthropic Multi-Agent Coordination Patterns|Multi-agent coordination patterns: Five approaches and when to use them]]
 - [[sources/Claude Code Agent Teams|Orchestrate teams of Claude Code sessions]]
 - [[sources/Google ADK Multi-Agent Patterns|Developer's guide to multi-agent patterns in ADK]]
@@ -47,6 +49,7 @@ Orchestration improves agent systems when it turns task structure into explicit 
 - [[sources/MAPRO|MAPRO: Recasting Multi-Agent Prompt Optimization as Maximum a Posteriori Inference]]
 - [[sources/MAS2|MAS2: Self-Generative, Self-Configuring, Self-Rectifying Multi-Agent Systems]]
 - [[sources/MasRouter|MasRouter: Learning to Route LLMs for Multi-Agent Systems]]
+- [[sources/OpenRouter Fusion Beats Frontier]]
 - [[sources/MegaAgent|MegaAgent: A Large-Scale Autonomous LLM-based Multi-Agent System Without Predefined SOPs]]
 - [[sources/Multi-Agent Collaboration Mechanisms - A Survey of LLMs|Multi-Agent Collaboration Mechanisms: A Survey of LLMs]]
 - [[sources/Multi-Agent Collaboration via Evolving Orchestration|Multi-Agent Collaboration via Evolving Orchestration]]

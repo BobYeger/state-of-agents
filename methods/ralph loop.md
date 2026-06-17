@@ -19,6 +19,7 @@ It is useful because it turns an open-ended coding session into a restartable co
 - Tests, builds, and review criteria provide backpressure against plausible but broken code.
 - The loop composes with worktrees, subagents, and rubric-based outcomes.
 - The loop now also reads cleanly as [[concepts/loop engineering]]: a repeated outer control structure around a coding agent, with repository state as memory.
+- Codex Goals add an adjacent user-facing completion contract: the objective persists in thread state, while files, tests, logs, and generated artifacts provide evidence for whether the loop is done.
 
 ## Risks
 
@@ -30,6 +31,7 @@ It is useful because it turns an open-ended coding session into a restartable co
 ## Related Sources
 
 - [[sources/Ralph Playbook]]
+- [[sources/OpenAI Codex Using Goals]]
 - [[sources/Addy Osmani Loop Engineering]]
 - [[sources/Claude Managed Agents Define Outcomes]]
 - [[sources/Anthropic Effective Harnesses for Long-Running Agents]]

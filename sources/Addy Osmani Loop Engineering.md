@@ -50,6 +50,7 @@ updated: 2026-06-14
 - [[operations/agent observability]]
 - [[concepts/agent skills]]
 - [[concepts/subagent context isolation]]
+- [[sources/OpenAI Codex Using Goals]]
 - [[sources/Claude Code Scheduled Tasks]]
 - [[sources/Claude Code Workflows]]
 - [[sources/OpenAI Codex Agent Loop]]

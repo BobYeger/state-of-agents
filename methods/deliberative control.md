@@ -45,6 +45,7 @@ Deliberative control improves agent systems when the task benefits from planning
 
 - [[sources/On Three-Layer Architectures]]
 - [[sources/Anthropic Building Effective Agents]]
+- [[sources/Claude Common Workflow Patterns for AI Agents]]
 - [[sources/Anthropic Think Tool]]
 - [[sources/Anthropic Harness Design Long-Running Apps]]
 - [[sources/Magentic-One]]

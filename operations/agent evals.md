@@ -12,8 +12,10 @@ Evals improve agent systems when they expose the behavior that matters in deploy
 - [[sources/Anthropic Demystifying Agent Evals]]
 - [[sources/OpenAI Eval Skills]]
 - [[sources/SkillsBench]]
+- [[sources/SkillOpt]]
 - [[sources/Agentic Skills in the Wild]]
 - [[sources/MultiAgentBench]]
+- [[sources/OpenRouter Fusion Beats Frontier]]
 - [[sources/TheAgentCompany]]
 
 ## Related

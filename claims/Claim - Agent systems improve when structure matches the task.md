@@ -9,6 +9,8 @@ The positive design rule is task-contingent orchestration: choose the smallest s
 ## Supporting Sources
 
 - [[sources/Anthropic Multi-Agent Research System]] is the clearest production case for broad research tasks where subagents get separate context windows and tool-heavy search paths.
+- [[sources/Anthropic Building Effective AI Agents eBook]] gives enterprise decision guidance for choosing single-agent, workflow, hierarchical multi-agent, or collaborative multi-agent architectures based on task breadth, dependencies, risk, budget, and auditability.
+- [[sources/Claude Common Workflow Patterns for AI Agents]] gives the production heuristic for matching workflow structure to task shape: sequential for dependencies, parallel for independent subtasks, evaluator-optimizer for measurable quality improvement.
 - [[sources/Google Scaling Agent Systems]] frames scaling as a scientific question about when coordination helps versus when it adds overhead.
 - [[sources/Multi-Agent Collaboration Mechanisms - A Survey of LLMs]] gives the taxonomy: actors, structures, strategies, cooperation/competition, and coordination protocols.
 - [[sources/Multi-Agent Design - MASS]] shows prompts and topologies jointly determine MAS quality.
@@ -17,6 +19,7 @@ The positive design rule is task-contingent orchestration: choose the smallest s
 - [[sources/The Orchestration of Multi-Agent Systems]] frames orchestration as the control plane that makes agent collectives coherent, auditable, and policy-compliant.
 - [[sources/Magentic-One]] is a concrete orchestrator-worker architecture where the lead agent plans, tracks progress, delegates, and replans.
 - [[sources/Google ADK Multi-Agent Patterns]] is practical evidence for pipelines, routing, delegation, and human-in-loop patterns.
+- [[sources/OpenRouter Fusion Beats Frontier]] is product evidence for task-fit model panels: deep-research synthesis benefits from parallel model diversity and a judge/synthesizer, while simpler coding remains better served by selective use.
 - [[sources/Plan-Then-Execute]] and [[sources/VeriMAP]] show that explicit planner-executor or planner-executor-verifier structure helps when tasks benefit from plan review, structured subtask I/O, or verification.
 
 ## Design Implications

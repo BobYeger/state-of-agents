@@ -17,6 +17,7 @@ Durable sessions store agent events, state transitions, artifacts, and progress 
 - [[sources/Cloudflare Think Docs|Cloudflare Think docs]]
 - [[sources/Cloudflare Dynamic Workflows|Introducing Dynamic Workflows]]
 - [[sources/OpenAI Symphony|OpenAI Symphony]]
+- [[sources/OpenAI Codex Using Goals]]
 - [[sources/Anthropic Effective Harnesses for Long-Running Agents|Effective harnesses for long-running agents]]
 - [[sources/Cloudflare MCP Auth Durable Objects|Piecing together the Agent puzzle: MCP, authentication & authorization, and Durable Objects free tier]]
 - [[sources/Cloudflare Project Think|Project Think: building the next generation of AI agents on Cloudflare]]

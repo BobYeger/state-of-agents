@@ -28,7 +28,13 @@ candidate code/procedure -> run evaluator -> score/trace -> keep, branch, or rev
 | Harness optimization | Context, retrieval, tools, completion checks, and model wrapper code | [[sources/Meta-Harness]], [[sources/AFlow]], [[sources/ADAS]] |
 | Algorithm evolution | Candidate algorithms or programs | [[sources/AlphaEvolve]], [[sources/LoongFlow]] |
 | Autonomous research code | Experimental code, hypotheses, figures, and papers | [[sources/The AI Scientist-v2]], [[sources/Karpathy Autoresearch]] |
-| Skill/procedure evolution | Reusable skills, rules, or trajectory memories | [[sources/Voyager]], [[sources/SAGE Skill Library]], [[sources/SkillRL]], [[sources/Cursor Bugbot Learned Rules]] |
+| Skill/procedure evolution | Reusable skills, rules, or trajectory memories | [[sources/SkillOpt]], [[sources/Voyager]], [[sources/SAGE Skill Library]], [[sources/SkillRL]], [[sources/Cursor Bugbot Learned Rules]] |
+
+## Boundary Case: AI R&D Acceleration
+
+[[sources/Anthropic When AI Builds Itself]] should sit next to this method without being collapsed into it. The article is not a paper about an agent directly editing its own scaffold under benchmark selection. Its value is showing the surrounding organizational loop: humans set goals and rubrics, Claude writes code, runs experiments, reviews defects, suggests next steps, and increases the amount of work that must be evaluated.
+
+That is still important for self-improving-code research because it names the likely bottleneck shift. As code and experiment execution get cheaper, the hard harness problems become goal selection, evaluator quality, review throughput, provenance, permission boundaries, and governance.
 
 ## Why It Matters
 
@@ -46,3 +52,4 @@ The key safety distinction is evidence quality. A self-improving code loop is on
 - [[operations/sandboxes]]
 - [[concepts/lifelong agent learning]]
 - [[concepts/procedural memory]]
+- [[sources/Anthropic When AI Builds Itself]]

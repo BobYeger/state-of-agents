@@ -10,6 +10,7 @@ This node avoids creating a separate low-content page for every product. Add a d
 - [[systems/Codex]]
 - [[systems/Cursor agents]]
 - [[sources/OpenAI Workspace Agents]]
+- [[sources/OpenRouter Fusion Beats Frontier]]
 - [[sources/Hermes Agent Repository]]
 - [[sources/OpenClaw Repository]]
 - [[sources/MiniMax Agent Lessons 2025]]

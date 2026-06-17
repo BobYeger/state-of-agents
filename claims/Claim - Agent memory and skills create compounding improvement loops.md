@@ -6,6 +6,8 @@ Agent systems improve when successful procedures, failed attempts, learned rules
 
 - [[sources/Anthropic Agent Skills]] and [[sources/Agent Skills Specification]] define the modern skill package as reusable procedural knowledge.
 - [[sources/SkillsBench]] measures when skills help across diverse tasks.
+- [[sources/SkillOpt]] trains natural-language skill files through scored rollouts, bounded text edits, rejected-edit feedback, and held-out validation gates.
+- [[sources/Anthropic Building Effective AI Agents eBook]] presents Skills as modular capability packages that let single-agent and multi-agent systems reuse workflows, domain knowledge, integrations, and best practices.
 - [[sources/Agentic Skills in the Wild]] adds the realistic constraint that agents must retrieve and choose useful skills from larger collections.
 - [[sources/Google ReasoningBank]] distills strategies from successful and failed experiences.
 - [[sources/SiriuS]] uses bootstrapped reasoning trajectories for self-improving MAS.

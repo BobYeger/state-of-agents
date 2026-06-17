@@ -10,6 +10,7 @@ In this vault, Agent Skills are the standardized packaging layer for procedural 
 - [[sources/Anthropic Agent Skills]]
 - [[sources/SAGE Skill Library]]
 - [[sources/SkillRL]]
+- [[sources/SkillOpt]]
 - [[sources/SiriuS]]
 - [[sources/Google ReasoningBank]]
 

@@ -110,9 +110,9 @@ As systems move rightward, harness work increases. More autonomy means more need
 
 Goal-oriented agents are best understood as a harness pattern, not a model personality.
 
-The user-facing version is the slash goal command. Claude Code's `/goal` sets a completion condition; after each turn, a separate small model checks whether the condition is satisfied and either clears the goal or starts another turn. Codex CLI docs list `/goal <objective>`, `/goal`, `/goal pause`, `/goal resume`, and `/goal clear`; the Codex goals cookbook frames a goal as a measurable outcome, verification surface, constraints, boundaries, iteration policy, and blocked stop condition. Current official docs consulted: [Claude `/goal`](https://code.claude.com/docs/en/goal), [Codex CLI slash commands](https://developers.openai.com/codex/cli/slash-commands), and [Using Goals in Codex](https://developers.openai.com/cookbook/examples/codex/using_goals_in_codex).
+The user-facing version is the slash goal command. Claude Code's `/goal` sets a completion condition; after each turn, a separate small model checks whether the condition is satisfied and either clears the goal or starts another turn. Codex CLI docs list `/goal <objective>`, `/goal`, `/goal pause`, `/goal resume`, and `/goal clear`; [[sources/OpenAI Codex Using Goals]] frames a goal as a measurable outcome, verification surface, constraints, boundaries, iteration policy, and blocked stop condition. Current official docs consulted: [Claude `/goal`](https://code.claude.com/docs/en/goal), [Codex CLI slash commands](https://developers.openai.com/codex/cli/slash-commands), and [Using Goals in Codex](https://developers.openai.com/cookbook/examples/codex/using_goals_in_codex).
 
-The local vault does not yet have dedicated source cards for those exact `/goal` docs. It does have the stronger general pattern through [[sources/Claude Managed Agents Define Outcomes]], [[concepts/outcomes and rubric graders]], and [[methods/ralph loop]].
+The local vault now has a dedicated Codex Goals source card through [[sources/OpenAI Codex Using Goals]]. The broader general pattern also appears in [[sources/Claude Managed Agents Define Outcomes]], [[concepts/outcomes and rubric graders]], and [[methods/ralph loop]].
 
 A goal-oriented harness needs five parts:
 
@@ -237,14 +237,17 @@ Ralph's risk is also a harness risk: if specs are weak, tests absent, permission
 |---|---|
 | [[sources/OpenAI Codex Agent Loop]] | Codex makes the agent loop explicit: prompt assembly, tool calls, observations, context growth, prompt caching, and compaction. |
 | [[sources/OpenAI Unlocking Codex Harness]] | App Server exposes the same Codex harness through stable JSON-RPC primitives, thread persistence, streaming events, approvals, and diffs. |
+| [[sources/Anthropic Building Effective AI Agents eBook]] | Enterprise agent architecture still reduces to harness choices: single-agent versus workflow versus multi-agent, Skills, observability, cost, and governance. |
 | [[sources/Anthropic Effective Harnesses for Long-Running Agents]] | Compaction is not enough; long-running work needs initializer/coding roles, progress artifacts, git history, feature lists, and testing tools. |
 | [[sources/Anthropic Harness Design Long-Running Apps]] | Separate generator and evaluator contexts, tune the harness, and use external feedback loops for quality. |
 | [[sources/Cursor Improving Agent Harness]] | Harness improvement is product engineering: evals, online experiments, model-specific tools/prompts, dynamic context, tool-error monitoring. |
+| [[sources/Claude Common Workflow Patterns for AI Agents]] | Production workflow choice is a harness decision: dependencies, independence, quality criteria, aggregation, stop policy, and cost decide the pattern. |
 | [[sources/Claude Code Workflows]] | Workflows move orchestration into readable, rerunnable scripts with separate runtime state. |
 | [[sources/Claude Code Scheduled Tasks]] | `/loop` and cron tools make recurrence a harness primitive with cadence, expiry, local state, and task management. |
 | [[sources/Addy Osmani Loop Engineering]] | Loop engineering names the layer that designs recurring prompt/workflow systems above direct manual prompting. |
 | [[sources/Meta-Harness]] | Harness code itself becomes the optimization target: what to store, retrieve, present, and check. |
 | [[sources/Darwin Godel Machine]] | Self-improving coding agents can mutate their own scaffold under benchmark feedback, but need sandboxing and objective-hacking controls. |
+| [[sources/SkillOpt]] | Natural-language skills become trainable external state through rollouts, bounded text edits, held-out validation, and reusable `best_skill.md` artifacts. |
 | [[sources/Anthropic When AI Builds Itself]] | AI-assisted engineering is shifting the bottleneck from implementation to direction-setting, review, validation, and governance. |
 | [[sources/Cloudflare Dynamic Workflows]] | Durable infrastructure can run agent-written plans with retries, hibernation, event waits, routing metadata, and sandboxed dynamic code. |
 | [[sources/Google ADK Durable Agents]] | Durable agents need explicit state machines and wakeup events, not raw chat replay. |
@@ -274,7 +277,9 @@ Relevant local figure pages:
 
 [[methods/self-improving code loops]] is the sharper form of loop engineering where the mutable artifact is executable. The loop proposes code or procedure changes, runs an evaluator, records trace and score, then keeps, branches, or reverts the candidate.
 
-[[sources/Meta-Harness]] applies this to harness code itself: context, retrieval, storage, and presentation policy become searchable source code. [[sources/Darwin Godel Machine]] applies it to coding-agent scaffolds with an archive of variants. [[sources/Hyperagents]] extends the idea toward meta-agents that improve the improvement process. [[sources/AlphaEvolve]] applies the loop to algorithms and production infrastructure code. [[sources/The AI Scientist-v2]] applies related agentic tree search to research hypotheses, experiments, figures, and manuscripts.
+[[sources/Meta-Harness]] applies this to harness code itself: context, retrieval, storage, and presentation policy become searchable source code. [[sources/Darwin Godel Machine]] applies it to coding-agent scaffolds with an archive of variants. [[sources/SkillOpt]] applies it to natural-language skills: a frozen target agent runs scored rollouts, an optimizer proposes bounded edits, and held-out validation decides whether the skill changes. [[sources/Hyperagents]] extends the idea toward meta-agents that improve the improvement process. [[sources/AlphaEvolve]] applies the loop to algorithms and production infrastructure code. [[sources/The AI Scientist-v2]] applies related agentic tree search to research hypotheses, experiments, figures, and manuscripts.
+
+[[sources/Anthropic When AI Builds Itself]] is the organizational boundary case: it is not evidence that full recursive self-improvement has arrived, but it shows AI development work moving toward goal-driven loops where agents implement, test, review, and suggest next steps while humans retain problem selection, rubric design, and governance.
 
 Harness implication: once the harness can improve executable artifacts, evaluator quality becomes the safety boundary. The system needs sandboxing, provenance, rollback, budget caps, and adversarial checks for metric hacking.
 
@@ -469,7 +474,7 @@ If those questions are unanswered, the system is probably still a prompt demo, n
 
 ## Gaps in the Current Vault
 
-- Exact local source cards for Codex `/goal` and Claude Code `/goal` are absent. The report cites current official docs externally.
+- Claude Code `/goal` is still cited from current official docs externally; Codex `/goal` is now captured as [[sources/OpenAI Codex Using Goals]].
 - The vault has many later sources that reference ReAct-style loops, but it does not appear to have dedicated source cards for ReAct, Reflexion, or Self-Refine. Those would help complete the methodology lineage.
 - There is no standalone `concepts/harness engineering.md`; the concept currently lives across [[operations/agent harnesses]], [[maps/Harness Tracker]], and this report.
 - The OpenAI "harness engineering" page referenced by the Symphony README is not yet curated as a source card.
@@ -506,9 +511,12 @@ Core vault anchors:
 Product and runtime sources:
 
 - [[sources/OpenAI Codex Agent Loop]]
+- [[sources/OpenAI Codex Using Goals]]
 - [[sources/OpenAI Unlocking Codex Harness]]
 - [[sources/OpenAI Symphony]]
 - [[sources/Anthropic Building Effective Agents]]
+- [[sources/Anthropic Building Effective AI Agents eBook]]
+- [[sources/Claude Common Workflow Patterns for AI Agents]]
 - [[sources/Anthropic Effective Harnesses for Long-Running Agents]]
 - [[sources/Anthropic Harness Design Long-Running Apps]]
 - [[sources/Anthropic Demystifying Agent Evals]]
@@ -518,6 +526,7 @@ Product and runtime sources:
 - [[sources/Addy Osmani Loop Engineering]]
 - [[sources/Meta-Harness]]
 - [[sources/Darwin Godel Machine]]
+- [[sources/SkillOpt]]
 - [[sources/Hyperagents]]
 - [[sources/AlphaEvolve]]
 - [[sources/The AI Scientist-v2]]
@@ -543,6 +552,7 @@ Research sources:
 - [[sources/AFlow]]
 - [[sources/Meta-Harness]]
 - [[sources/Darwin Godel Machine]]
+- [[sources/SkillOpt]]
 - [[sources/Hyperagents]]
 - [[sources/AlphaEvolve]]
 - [[sources/The AI Scientist-v2]]

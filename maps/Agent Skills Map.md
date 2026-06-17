@@ -13,6 +13,7 @@ Related synthesis: [[claims/Claim - Agent memory and skills create compounding i
 ## Core Standard and Adoption
 
 - [[sources/Anthropic Agent Skills]]
+- [[sources/Anthropic Building Effective AI Agents eBook]]
 - [[sources/Agent Skills Specification]]
 - [[sources/Anthropic Skills Repository]]
 - [[sources/OpenAI Skills Docs]]
@@ -26,6 +27,7 @@ Related synthesis: [[claims/Claim - Agent memory and skills create compounding i
 
 - [[sources/Agent Skills for Large Language Models]]
 - [[sources/SkillsBench]]
+- [[sources/SkillOpt]]
 - [[sources/Agentic Skills in the Wild]]
 - [[sources/Comprehensive Survey on Agent Skills]]
 - [[sources/PolySkill]]
@@ -58,8 +60,9 @@ Related synthesis: [[claims/Claim - Agent memory and skills create compounding i
 3. OpenAI Skills Docs
 4. GitHub Copilot Agent Skills Docs
 5. SkillsBench
-6. Agentic Skills in the Wild
-7. Agent Skills for Large Language Models
-8. Comprehensive Survey on Agent Skills
-9. SAGE Skill Library
-10. SkillRL
+6. SkillOpt
+7. Agentic Skills in the Wild
+8. Agent Skills for Large Language Models
+9. Comprehensive Survey on Agent Skills
+10. SAGE Skill Library
+11. SkillRL

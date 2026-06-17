@@ -13,8 +13,12 @@ Agent systems improve when runtime behavior is supervised, pruned, verified, and
 - [[sources/PEAR]] shows planner-stage attacks can be especially dangerous in planner-executor agents.
 - [[sources/AgentFlow]] treats planner, executor, verifier, and generator roles as an optimizable live system.
 - [[sources/Claude Managed Agents Define Outcomes]] makes the definition of done executable through rubric-driven artifact evaluation and repair feedback.
+- [[sources/Anthropic Building Effective AI Agents eBook]] treats observability, auditability, quality gates, failure handling, and cost visibility as production requirements for workflow and multi-agent systems.
+- [[sources/Claude Common Workflow Patterns for AI Agents]] emphasizes stopping criteria, measurable quality thresholds, fallback behavior, retry logic, and aggregation strategy before adding workflow complexity.
 - [[sources/Cursor Building Better Bugbot]] and [[sources/Cursor Bugbot Learned Rules]] show production improvement through eval loops and feedback.
 - [[sources/Anthropic Demystifying Agent Evals]] makes agent evals a design practice for multi-turn, tool-using behavior.
+- [[sources/OpenAI Codex Using Goals]] makes completion criteria, lifecycle state, budget limits, and evidence checks first-class thread state for Codex continuation.
+- [[sources/OpenRouter Fusion Beats Frontier]] shows runtime selection and synthesis as a controllable path: a base model can use Fusion selectively for high-value questions, with benchmark contamination controls and per-task cost/latency tradeoffs.
 
 ## Design Implications
 

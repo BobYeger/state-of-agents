@@ -31,12 +31,15 @@ Loop engineering is part of harness engineering because a loop is not just a pro
 The current graph has several loop-engineering forms:
 
 - [[sources/Claude Code Scheduled Tasks]]: `/loop` and cron tools make prompt recurrence a Claude Code runtime feature.
+- [[sources/OpenAI Codex Using Goals]]: Codex Goals make a persistent, thread-scoped objective into an evidence-checked continuation loop.
+- [[sources/Claude Common Workflow Patterns for AI Agents]]: sequential, parallel, and evaluator-optimizer workflows are recurring control patterns with explicit dependency, aggregation, and stop-policy tradeoffs.
 - [[sources/Claude Code Workflows]]: workflow scripts move orchestration state out of conversation context and into executable JavaScript.
 - [[sources/Cloudflare Dynamic Workflows]]: durable infrastructure persists and resumes workflow steps, including agent-written plans.
 - [[methods/self-improving code loops]]: executable artifacts mutate under evaluator feedback, so loop quality depends on tests, sandboxes, archives, and rollback.
 - [[methods/ralph loop]]: repository files, tests, plans, and commits become the loop substrate.
 - [[sources/OpenAI Codex Agent Loop]]: the inner model-tool-observation loop is the base layer every higher loop builds on.
 - [[sources/Addy Osmani Loop Engineering]]: names the current industry framing of designing loops that prompt agents.
+- [[sources/Anthropic When AI Builds Itself]]: shows AI development itself becoming a goal -> implementation -> experiment -> review loop, with human judgement and verification as the bottleneck.
 
 ## Risks
 
@@ -45,6 +48,7 @@ The current graph has several loop-engineering forms:
 - Long loops create comprehension debt when generated artifacts outpace review.
 - Scheduled or unattended loops need explicit cost, permission, and stop policies.
 - Self-improving code loops can overfit or hack the evaluator if the evidence surface is weak.
+- AI-R&D loops can shift the bottleneck from doing work to choosing goals, judging evidence, and verifying that generated work should be trusted.
 
 ## Related
 

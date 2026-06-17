@@ -27,6 +27,7 @@ For this vault, Codex is mainly a production-harness case study: the useful obje
 ## Related Sources
 
 - [[sources/OpenAI Codex Agent Loop|Unrolling the Codex agent loop]]
+- [[sources/OpenAI Codex Using Goals]]
 - [[sources/OpenAI Responses API Computer Environment|From model to agent: Equipping the Responses API with a computer environment]]
 - [[sources/OpenAI Running Codex Safely]]
 - [[sources/OpenAI Unlocking Codex Harness]]
@@ -35,3 +36,4 @@ For this vault, Codex is mainly a production-harness case study: the useful obje
 - [[sources/OpenAI Symphony]]
 - [[sources/OpenAI Agents SDK Tools]]
 - [[sources/OpenAI Codex CLI Agents SDK Cookbook]]
+- [[sources/SkillOpt]]

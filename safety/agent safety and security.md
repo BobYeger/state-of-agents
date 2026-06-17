@@ -29,6 +29,7 @@ Agent safety covers the risks created when models can act, use tools, access pri
 - [[sources/Anthropic Safe and Trustworthy Agents Framework|Our framework for developing safe and trustworthy agents]]
 - [[sources/Anthropic Shortcuts to Sabotage|From shortcuts to sabotage]]
 - [[sources/Anthropic Teaching Claude Why|Teaching Claude why]]
+- [[sources/Anthropic When AI Builds Itself|When AI builds itself]]
 - [[sources/SHADE-Arena|SHADE-Arena: Evaluating Sabotage and Monitoring in LLM Agents]]
 - [[sources/TAMAS|TAMAS: Benchmarking Adversarial Risks in Multi-Agent LLM Systems]]
 - [[sources/Web Agents Plan-Then-Execute|Web Agents Should Adopt the Plan-Then-Execute Paradigm]]

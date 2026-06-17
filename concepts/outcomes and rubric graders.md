@@ -9,7 +9,9 @@ This pattern matters because a generator is often too lenient about its own outp
 - [[sources/Claude Managed Agents Define Outcomes]]
 - [[sources/Anthropic Managed Agents Dreaming Outcomes]]
 - [[sources/Anthropic Demystifying Agent Evals]]
+- [[sources/Claude Common Workflow Patterns for AI Agents]]
 - [[sources/OpenAI Eval Skills]]
+- [[sources/OpenAI Codex Using Goals]]
 - [[sources/Anthropic Harness Design Long-Running Apps]]
 
 ## Related

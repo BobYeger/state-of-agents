@@ -5,11 +5,14 @@ More agents can increase coverage, diversity, parallelism, and specialization, b
 ## Supporting Sources
 
 - [[sources/Anthropic Building Effective Agents]] argues for simple workflows when they are enough and treats agentic complexity as an engineering tradeoff.
+- [[sources/Anthropic Building Effective AI Agents eBook]] gives the enterprise version of the same principle: start with single agents, add Skills and routing first, then move to workflows or multi-agent systems when measurable requirements justify the cost.
+- [[sources/Claude Common Workflow Patterns for AI Agents]] says to try a single agent first and add sequential, parallel, or evaluator-optimizer workflow structure only when the task shape justifies the cost.
 - [[sources/Anthropic Multi-Agent Research System]] reports strong gains for broad research tasks, but also notes high token cost and narrower domains where multi-agent systems are not the right fit.
 - [[sources/MultiAgentBench]] evaluates multiple topologies and makes coordination protocol a measured variable rather than an assumed improvement.
 - [[sources/Multi-Agent Design - MASS]] shows that prompts and topology jointly matter; adding agents without topology design is not the point.
 - [[sources/Why Do Multi-Agent LLM Systems Fail]] provides the strongest failure taxonomy: specification/design failures, inter-agent misalignment, and verification or termination failures.
 - [[sources/AgentDropout]] and [[sources/Stop Wasting Your Tokens]] both treat unnecessary agents or messages as a runtime efficiency and quality problem.
+- [[sources/OpenRouter Fusion Beats Frontier]] is a qualifying product example: model panels can beat solo models on a deep-research benchmark, but the article also frames Fusion as task-selective, slower, and not a drop-in replacement for coding or long-horizon work.
 - [[sources/Understanding Multi-Agent LLM Frameworks]] shows framework architecture can strongly change latency, planning accuracy, and coordination success.
 - [[sources/Aligned Agents Biased Swarm]] extends the claim into safety: individually aligned or neutral agents can still amplify collective bias.
 

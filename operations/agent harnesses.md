@@ -25,9 +25,11 @@ Harnesses improve agent systems by making the loop inspectable and recoverable: 
 ## Current Anchors
 
 - [[sources/OpenAI Codex Agent Loop]]
+- [[sources/OpenAI Codex Using Goals]]
 - [[sources/OpenAI Unlocking Codex Harness]]
 - [[sources/OpenAI Agents SDK Tools]]
 - [[sources/OpenAI Codex CLI Agents SDK Cookbook]]
+- [[sources/Anthropic Building Effective AI Agents eBook]]
 - [[sources/Anthropic Effective Harnesses for Long-Running Agents]]
 - [[sources/Anthropic Harness Design Long-Running Apps]]
 - [[sources/Anthropic Parallel Claudes C Compiler]]
@@ -36,6 +38,7 @@ Harnesses improve agent systems by making the loop inspectable and recoverable: 
 - [[sources/Claude Code Workflows]]
 - [[sources/Addy Osmani Loop Engineering]]
 - [[sources/Meta-Harness]]
+- [[sources/SkillOpt]]
 - [[sources/Darwin Godel Machine]]
 - [[sources/Hyperagents]]
 - [[sources/Anthropic When AI Builds Itself]]
