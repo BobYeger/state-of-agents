@@ -30,6 +30,7 @@ Cost is part of system quality for agents. A design that only works through unbo
 - [[sources/MasRouter]]
 - [[sources/OpenRouter Fusion Beats Frontier]]
 - [[sources/Anthropic Building Effective AI Agents eBook]]
+- [[sources/Claude Code Hooks]]
 - [[sources/X-MAS]]
 - [[sources/Anthropic Code Execution with MCP]]
 - [[sources/Cloudflare Code Mode MCP]]

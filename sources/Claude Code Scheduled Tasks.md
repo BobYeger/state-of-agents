@@ -51,7 +51,9 @@ updated: 2026-06-14
 - [[operations/agent observability]]
 - [[operations/permissions]]
 - [[methods/ralph loop]]
+- [[methods/hook-based control]]
 - [[concepts/loop engineering]]
+- [[sources/Claude Code Hooks]]
 
 ## Artifacts
 

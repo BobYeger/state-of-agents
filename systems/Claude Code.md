@@ -11,6 +11,7 @@ Anthropic's coding-agent product and harness surface for terminal-centered softw
 ## Related Sources
 
 - [[sources/Anthropic Claude Code Worktrees]]
+- [[sources/Claude Code Hooks]]
 - [[sources/Claude Code Skills Docs]]
 - [[sources/Claude Code Scheduled Tasks]]
 - [[sources/Claude Code Workflows]]

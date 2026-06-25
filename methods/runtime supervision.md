@@ -12,6 +12,7 @@ Supervision improves agent systems by creating a control layer between raw agent
 - [[claims/Claim - Runtime control and verification improve agent reliability]]
 - [[maps/What Makes Agent Systems Better]]
 - [[safety/agent safety and security]]
+- [[methods/hook-based control]]
 - [[methods/deliberative control]]
 - [[methods/multi-agent orchestration]]
 
@@ -22,4 +23,5 @@ Supervision improves agent systems by creating a control layer between raw agent
 - [[sources/PEAR|PEAR: Planner-Executor Agent Robustness Benchmark]]
 - [[sources/VeriMAP|Verification-Aware Planning for Multi-Agent Systems]]
 - [[sources/Stop Wasting Your Tokens|Stop Wasting Your Tokens: Towards Efficient Runtime Multi-Agent Systems]]
+- [[sources/Claude Code Hooks]]
 - [[sources/Why Do Multi-Agent LLM Systems Fail|Why Do Multi-Agent LLM Systems Fail?]]

@@ -45,7 +45,9 @@ updated: 2026-05-26
 - [[concepts/subagent context isolation]]
 - [[operations/agent harnesses]]
 - [[operations/worktree isolation]]
+- [[methods/hook-based control]]
 - [[maps/Agent Teams and Workforces Map]]
+- [[sources/Claude Code Hooks]]
 
 ## Artifacts
 

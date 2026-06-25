@@ -9,6 +9,7 @@ Agent systems improve when the harness, tools, and context are engineered as car
 - [[sources/Anthropic Effective Context Engineering]] treats context as agent runtime state.
 - [[sources/Anthropic Effective Harnesses for Long-Running Agents]] shows how initialization, progress artifacts, and handoffs help across context windows.
 - [[sources/OpenAI Codex Agent Loop]] gives a concrete production loop across model calls, tools, context, and compaction.
+- [[sources/Claude Code Hooks]] shows how lifecycle hooks make tool calls, compaction, stop conditions, subagents, and worktree events programmable harness surfaces.
 - [[sources/Cursor Improving Agent Harness]] treats harness improvement as an ongoing engineering discipline.
 - [[sources/OpenClaw Agent Harness Plugins]] gives a clean boundary for the harness as executor of prepared agent turns.
 
@@ -23,6 +24,7 @@ Agent systems improve when the harness, tools, and context are engineered as car
 
 - [[maps/What Makes Agent Systems Better]]
 - [[methods/deliberative control]]
+- [[methods/hook-based control]]
 - [[operations/agent harnesses]]
 - [[concepts/tool use]]
 - [[concepts/context engineering]]

@@ -24,6 +24,7 @@ Observability improves agent systems by making hidden coordination and tool beha
 - [[sources/LangChain Delta Channels|Delta Channels: Evolving our Runtime for Long-Running Agents]]
 - [[sources/OpenAI Symphony|OpenAI Symphony]]
 - [[sources/OpenAI Codex Using Goals]]
+- [[sources/Claude Code Hooks]]
 - [[sources/Anthropic Building Effective AI Agents eBook]]
 - [[sources/OpenRouter Fusion Beats Frontier]]
 - [[sources/Cloudflare Think Docs|Cloudflare Think docs]]

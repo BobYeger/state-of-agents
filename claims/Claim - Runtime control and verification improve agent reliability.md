@@ -13,6 +13,7 @@ Agent systems improve when runtime behavior is supervised, pruned, verified, and
 - [[sources/PEAR]] shows planner-stage attacks can be especially dangerous in planner-executor agents.
 - [[sources/AgentFlow]] treats planner, executor, verifier, and generator roles as an optimizable live system.
 - [[sources/Claude Managed Agents Define Outcomes]] makes the definition of done executable through rubric-driven artifact evaluation and repair feedback.
+- [[sources/Claude Code Hooks]] makes lifecycle control explicit: hooks can block tool calls, inject context, enforce stop conditions, gate task completion, and log hook execution.
 - [[sources/Anthropic Building Effective AI Agents eBook]] treats observability, auditability, quality gates, failure handling, and cost visibility as production requirements for workflow and multi-agent systems.
 - [[sources/Claude Common Workflow Patterns for AI Agents]] emphasizes stopping criteria, measurable quality thresholds, fallback behavior, retry logic, and aggregation strategy before adding workflow complexity.
 - [[sources/Cursor Building Better Bugbot]] and [[sources/Cursor Bugbot Learned Rules]] show production improvement through eval loops and feedback.
@@ -31,6 +32,7 @@ Agent systems improve when runtime behavior is supervised, pruned, verified, and
 
 - [[maps/What Makes Agent Systems Better]]
 - [[methods/deliberative control]]
+- [[methods/hook-based control]]
 - [[methods/runtime supervision]]
 - [[methods/runtime routing]]
 - [[concepts/outcomes and rubric graders]]

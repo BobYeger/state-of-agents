@@ -10,6 +10,7 @@ It is closely related to [[operations/agent harnesses]], but it names a slightly
 |---|---|---|---|
 | Inner agent loop | model call, tool call, observation | model returns final or policy stops | context window and harness event stream |
 | Goal loop | next turn after previous turn | completion condition is judged satisfied or blocked | goal state plus conversation/session |
+| Hook loop | lifecycle event, matcher, handler, decision | hook allows, blocks, injects context, or lets runtime continue | hook config, handler output, transcript, event stream |
 | Scheduled loop | prompt on a cadence | user stop, expiry, or model decides work is done | scheduler task plus session/local state |
 | Workflow loop | coded phases and worker calls | script completion, stop, pause, or failure | workflow runtime variables and artifacts |
 | Ralph loop | fresh coding-agent run over repo files | commit, plan update, or bounded failure | specs, plan, tests, git history |
@@ -32,6 +33,7 @@ The current graph has several loop-engineering forms:
 
 - [[sources/Claude Code Scheduled Tasks]]: `/loop` and cron tools make prompt recurrence a Claude Code runtime feature.
 - [[sources/OpenAI Codex Using Goals]]: Codex Goals make a persistent, thread-scoped objective into an evidence-checked continuation loop.
+- [[sources/Claude Code Hooks]]: hooks make lifecycle interception points programmable; Claude Code documents `/goal` as a built-in shortcut for a session-scoped prompt-based `Stop` hook.
 - [[sources/Claude Common Workflow Patterns for AI Agents]]: sequential, parallel, and evaluator-optimizer workflows are recurring control patterns with explicit dependency, aggregation, and stop-policy tradeoffs.
 - [[sources/Claude Code Workflows]]: workflow scripts move orchestration state out of conversation context and into executable JavaScript.
 - [[sources/Cloudflare Dynamic Workflows]]: durable infrastructure persists and resumes workflow steps, including agent-written plans.
@@ -61,6 +63,7 @@ The current graph has several loop-engineering forms:
 - [[concepts/outcomes and rubric graders]]
 - [[concepts/subagent context isolation]]
 - [[concepts/agent skills]]
+- [[methods/hook-based control]]
 - [[methods/ralph loop]]
 - [[methods/self-improving code loops]]
 - [[methods/multi-agent orchestration]]

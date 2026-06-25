@@ -17,6 +17,7 @@ Agent systems get better when structure, runtime control, tools, context, memory
 | Scaling-compatible design | Prefer structures that improve with more compute, search, learning, traces, feedback, and experience. | [[concepts/scaling with computation]] |
 | Runtime routing and pruning | Route by task state, role, model cost, uncertainty, and observed redundancy. | [[methods/runtime routing]], [[sources/OpenRouter Fusion Beats Frontier]] |
 | Supervision and verification | Add monitors, critics, evaluators, stopping criteria, and repair loops. | [[claims/Claim - Runtime control and verification improve agent reliability]], [[methods/runtime supervision]] |
+| Hook-based control | Run deterministic gates, validators, context injections, and continuation checks at lifecycle points in the agent loop. | [[methods/hook-based control]], [[sources/Claude Code Hooks]] |
 | Harness and context design | Make the loop, state, tools, approvals, compaction, and handoffs explicit. | [[claims/Claim - Harnesses tools and context are core agent performance levers]], [[operations/agent harnesses]] |
 | Loop engineering | Design how agents are re-entered over time: wake trigger, recurrence, durable state, verification, retry, escalation, and stop policy. | [[concepts/loop engineering]], [[sources/Claude Code Scheduled Tasks]], [[sources/Addy Osmani Loop Engineering]] |
 | Self-improving code loops | Mutate executable artifacts only when evaluator evidence improves, with rollback and sandboxing. | [[methods/self-improving code loops]], [[sources/Darwin Godel Machine]], [[sources/Meta-Harness]], [[sources/SkillOpt]], [[sources/AlphaEvolve]] |
@@ -33,29 +34,30 @@ Agent systems get better when structure, runtime control, tools, context, memory
 1. [[sources/Anthropic Building Effective Agents]]
 2. [[sources/Anthropic Building Effective AI Agents eBook]]
 3. [[sources/Claude Common Workflow Patterns for AI Agents]]
-4. [[sources/Rich Sutton The Bitter Lesson]]
-5. [[sources/Anthropic Multi-Agent Research System]]
-6. [[sources/Google Scaling Agent Systems]]
-7. [[sources/Anthropic Multi-Agent Coordination Patterns]]
-8. [[sources/Multi-Agent Teams Hold Experts Back]]
-9. [[sources/SAND]]
-10. [[sources/VeriMAP]]
-11. [[sources/AgentFlow]]
-12. [[sources/Multi-Agent Design - MASS]]
-13. [[sources/Why Do Multi-Agent LLM Systems Fail]]
-14. [[sources/Stop Wasting Your Tokens]]
-15. [[sources/OpenRouter Fusion Beats Frontier]]
-16. [[sources/Anthropic Writing Tools for Agents]]
-17. [[sources/Anthropic Effective Harnesses for Long-Running Agents]]
-18. [[sources/SkillsBench]]
-19. [[sources/Google ReasoningBank]]
-20. [[sources/Anthropic Managed Agents Dreaming Outcomes]]
-21. [[sources/Agentic Context Engineering]]
-22. [[sources/The Complexity Trap]]
-23. [[sources/ACON]]
-24. [[sources/ContextBench]]
-25. [[sources/MCP-Zero]]
-26. [[sources/OpenAI Symphony]]
+4. [[sources/Claude Code Hooks]]
+5. [[sources/Rich Sutton The Bitter Lesson]]
+6. [[sources/Anthropic Multi-Agent Research System]]
+7. [[sources/Google Scaling Agent Systems]]
+8. [[sources/Anthropic Multi-Agent Coordination Patterns]]
+9. [[sources/Multi-Agent Teams Hold Experts Back]]
+10. [[sources/SAND]]
+11. [[sources/VeriMAP]]
+12. [[sources/AgentFlow]]
+13. [[sources/Multi-Agent Design - MASS]]
+14. [[sources/Why Do Multi-Agent LLM Systems Fail]]
+15. [[sources/Stop Wasting Your Tokens]]
+16. [[sources/OpenRouter Fusion Beats Frontier]]
+17. [[sources/Anthropic Writing Tools for Agents]]
+18. [[sources/Anthropic Effective Harnesses for Long-Running Agents]]
+19. [[sources/SkillsBench]]
+20. [[sources/Google ReasoningBank]]
+21. [[sources/Anthropic Managed Agents Dreaming Outcomes]]
+22. [[sources/Agentic Context Engineering]]
+23. [[sources/The Complexity Trap]]
+24. [[sources/ACON]]
+25. [[sources/ContextBench]]
+26. [[sources/MCP-Zero]]
+27. [[sources/OpenAI Symphony]]
 
 ## Related Maps
 
@@ -68,4 +70,5 @@ Agent systems get better when structure, runtime control, tools, context, memory
 - [[maps/Context Management Map]]
 - [[maps/Recent Agent Operating Concepts]]
 - [[concepts/loop engineering]]
+- [[methods/hook-based control]]
 - [[methods/self-improving code loops]]

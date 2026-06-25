@@ -242,6 +242,7 @@ Ralph's risk is also a harness risk: if specs are weak, tests absent, permission
 | [[sources/Anthropic Harness Design Long-Running Apps]] | Separate generator and evaluator contexts, tune the harness, and use external feedback loops for quality. |
 | [[sources/Cursor Improving Agent Harness]] | Harness improvement is product engineering: evals, online experiments, model-specific tools/prompts, dynamic context, tool-error monitoring. |
 | [[sources/Claude Common Workflow Patterns for AI Agents]] | Production workflow choice is a harness decision: dependencies, independence, quality criteria, aggregation, stop policy, and cost decide the pattern. |
+| [[sources/Claude Code Hooks]] | Hooks expose lifecycle interception points for deterministic policy gates, context injection, validators, continuation checks, and telemetry. |
 | [[sources/Claude Code Workflows]] | Workflows move orchestration into readable, rerunnable scripts with separate runtime state. |
 | [[sources/Claude Code Scheduled Tasks]] | `/loop` and cron tools make recurrence a harness primitive with cadence, expiry, local state, and task management. |
 | [[sources/Addy Osmani Loop Engineering]] | Loop engineering names the layer that designs recurring prompt/workflow systems above direct manual prompting. |
@@ -521,6 +522,7 @@ Product and runtime sources:
 - [[sources/Anthropic Harness Design Long-Running Apps]]
 - [[sources/Anthropic Demystifying Agent Evals]]
 - [[sources/Claude Managed Agents Define Outcomes]]
+- [[sources/Claude Code Hooks]]
 - [[sources/Claude Code Workflows]]
 - [[sources/Claude Code Scheduled Tasks]]
 - [[sources/Addy Osmani Loop Engineering]]

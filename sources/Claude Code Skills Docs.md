@@ -37,6 +37,8 @@ updated: 2026-05-18
 
 - [[maps/Agent Skills Map]]
 - [[operations/agent harnesses]]
+- [[methods/hook-based control]]
+- [[sources/Claude Code Hooks]]
 
 ## Artifacts
 
