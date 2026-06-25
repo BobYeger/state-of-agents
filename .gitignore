@@ -17,3 +17,9 @@ playwright/.auth/
 # Generated media
 *.mp3
 *.mp4
+
+# Local-only working materials
+.claude/
+talk/
+assets/multi-agent-architectures/
+scripts/build_multi_agent_contact_sheets.mjs

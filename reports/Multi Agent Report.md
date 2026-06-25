@@ -54,27 +54,25 @@ This does not make older patterns obsolete. Chains, role teams, debate, voting, 
 
 ## Architecture Map
 
-The report uses the generated architecture images in [assets/multi-agent-architectures](../assets/multi-agent-architectures/contact-sheet.svg) as the local visual taxonomy.
+The generated architecture images are local working assets and are not part of the public vault. The textual taxonomy below preserves the same pattern IDs without depending on those SVG files. The strongest 2026 product evidence concentrates around `03 Fan-out / Gather`, `04 Hub-and-Spoke`, `08 Planner-Executor-Verifier`, `12 Message Bus`, `15 Dynamic DAG / Graph Workflow`, `20 Human-in-the-Loop Gate`, `21 Issue-Tracker Control Plane`, `24 Runtime Supervisor / Monitor`, `25 Durable Harness / Runtime`, `26 Independent Parallel`, and `29 Centralized Swarm`. `30 Ralph Loop` is included as a practical coding-agent loop pattern rather than a multi-agent topology.
 
-![Multi-agent architecture contact sheet](../assets/multi-agent-architectures/contact-sheet.svg)
-
-Figure 1. Local architecture contact sheet generated for the Remotion animation sequence. The strongest 2026 product evidence concentrates around `04 Fan-out / Gather`, `05 Hub-and-Spoke`, `09 Planner-Executor-Verifier`, `13 Message Bus`, `18 Dynamic DAG / Graph Workflow`, `23 Human-in-the-Loop Gate`, `24 Issue-Tracker Control Plane`, `27 Runtime Supervisor / Monitor`, `28 Durable Harness / Runtime`, and `29 Independent Parallel`.
-
-The 32 designs should be read across two axes:
+The 30 active patterns should be read across two axes:
 
 | Axis | Question | Examples |
 |---|---|---|
 | **Topology** | Who talks to whom? | chain, hub-and-spoke, hierarchy, graph, selector group chat, blackboard |
 | **Operating mode** | What starts and sustains work? | foreground chat, background task, event-driven webhook, scheduled job, issue queue |
 
+Some patterns deliberately sit outside pure topology. Ralph loop, issue-control plane, runtime supervisor, and durable harness are harness patterns: they describe how the run is bounded, resumed, supervised, or triggered, not just how agents exchange messages.
+
 The "Background Agents" graphic from ONA belongs mostly to the second axis:
 
 | ONA mode | Meaning | Closest local designs | 2026 evidence |
 |---|---|---|---|
-| **Swarms** | Many agents converge on one result from multiple angles. | `04 Fan-out / Gather`, `29 Independent Parallel`, `30 Voting / Ensemble`, sometimes `05 Hub-and-Spoke` | Kimi Agent Swarm; Cursor `/best-of-n`; Anthropic parallel Claude compiler prototype |
-| **Fleets** | Many agents do independent background work across issues, repos, or workspaces. | `24 Issue-Tracker Control Plane`, `28 Durable Harness`, `07 Persistent Team` | Devin managing Devins; OpenAI Symphony; Codex/Cursor/GitHub background coding agents |
-| **Event-driven** | Agents start from PR events, CI failures, Slack, alerts, webhooks, APIs. | `13 Message Bus`, `24 Issue Control Plane`, `27 Runtime Supervisor` | GitHub Copilot cloud agent integrations; Devin Automations; Google ADK event/dormancy patterns |
-| **Scheduled** | Agents run on recurring maintenance or audit cadence. | `28 Durable Harness`, `24 Issue Control Plane`, `27 Runtime Supervisor` | Devin scheduled sessions; Google Jules scheduled tasks |
+| **Swarms** | Many agents converge on one result from multiple angles. | `03 Fan-out / Gather`, `26 Independent Parallel`, `27 Voting / Ensemble`, sometimes `04 Hub-and-Spoke` | Kimi Agent Swarm; Cursor `/best-of-n`; Anthropic parallel Claude compiler prototype |
+| **Fleets** | Many agents do independent background work across issues, repos, or workspaces. | `21 Issue-Tracker Control Plane`, `25 Durable Harness`, `06 Persistent Team` | Devin managing Devins; OpenAI Symphony; Codex/Cursor/GitHub background coding agents |
+| **Event-driven** | Agents start from PR events, CI failures, Slack, alerts, webhooks, APIs. | `12 Message Bus`, `21 Issue Control Plane`, `24 Runtime Supervisor` | GitHub Copilot cloud agent integrations; Devin Automations; Google ADK event/dormancy patterns |
+| **Scheduled** | Agents run on recurring maintenance or audit cadence. | `25 Durable Harness`, `21 Issue Control Plane`, `24 Runtime Supervisor` | Devin scheduled sessions; Google Jules scheduled tasks |
 
 The practical lesson: a "swarm" that works in 2026 is usually not an unmanaged mesh. It is fan-out/gather or independent parallel work under a harness that can isolate sessions and compare outcomes.
 
@@ -125,9 +123,7 @@ Short source anchors: "separate context windows"; "15x more tokens"; "breadth-fi
 
 Sources: [Anthropic Multi-Agent Research System](../sources/Anthropic%20Multi-Agent%20Research%20System.md), [BrowseComp](../sources/BrowseComp.md).
 
-![Hub-and-spoke orchestrator](../assets/multi-agent-architectures/svg/05-hub-spoke-orchestrator.svg)
-
-Figure 2. Hub-and-spoke is the right mental model for Anthropic Research: the lead decomposes and synthesizes, while subagents explore separate context paths.
+Pattern reference: `04 Hub-and-Spoke Orchestrator`. Hub-and-spoke is the right mental model for Anthropic Research: the lead decomposes and synthesizes, while subagents explore separate context paths.
 
 ### Kimi: Swarm as Horizontal Scaling
 
@@ -135,13 +131,11 @@ Kimi Agent Swarm is the boldest product claim for large-scale agent fan-out. The
 
 The important design details are not just the agent count. Kimi emphasizes training the orchestrator rather than the subagents, preventing serial collapse and fake parallelism, and sharding context so subagents keep detailed local notes while returning key conclusions to the commander.
 
-This is product evidence for `04 Fan-out / Gather`, `29 Independent Parallel`, and `05 Hub-and-Spoke`, not strong evidence for a fully decentralized mesh. It is still a commander-led system.
+This is product evidence for `29 Centralized Swarm`, `03 Fan-out / Gather`, `26 Independent Parallel`, and `04 Hub-and-Spoke`, not strong evidence for a fully decentralized mesh. It is still a commander-led system.
 
 Source: [Kimi Agent Swarm](../sources/Kimi%20Agent%20Swarm.md).
 
-![Fan-out gather](../assets/multi-agent-architectures/svg/04-fanout-gather.svg)
-
-Figure 3. Kimi-style swarm is best viewed as controlled fan-out/gather: many workers, one commander, compressed return paths.
+Pattern reference: `29 Centralized Swarm`. Kimi-style swarm is best viewed as controlled fan-out/gather: many workers, one commander, isolated context shards, and compressed return paths.
 
 ### Coding Agents: Fleets Need Worktrees, VMs, and Review
 
@@ -167,9 +161,7 @@ flowchart LR
 
 Sources: [OpenAI Symphony](../sources/OpenAI%20Symphony.md), [OpenAI Codex App Worktrees](../sources/OpenAI%20Codex%20App%20Worktrees.md), [OpenAI Codex Subagents](../sources/OpenAI%20Codex%20Subagents.md), [Devin Manages Devins](../sources/Devin%20Manages%20Devins.md), [Cursor 3.2](../sources/Cursor%203.2.md), [Cursor 3 Agents Window](../sources/Cursor%203%20Agents%20Window.md), [GitHub Copilot cloud agent docs](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent).
 
-![Issue control plane](../assets/multi-agent-architectures/svg/24-issue-control-plane.svg)
-
-Figure 4. Issue tracker as control plane is the strongest 2026 background-agent pattern for software work.
+Pattern reference: `21 Issue-Tracker Control Plane`. Issue tracker as control plane is the strongest 2026 background-agent pattern for software work.
 
 ### Claude Code Agent Teams: Peer Communication Is Powerful but Expensive
 
@@ -181,9 +173,7 @@ The architecture is not just "many agents." It includes a team lead, teammates, 
 
 Source: [Claude Code Agent Teams](../sources/Claude%20Code%20Agent%20Teams.md).
 
-![Persistent team workforce](../assets/multi-agent-architectures/svg/07-persistent-team-workforce.svg)
-
-Figure 5. Peer teams are valuable when teammates need to communicate and own separate work, but they add coordination overhead.
+Pattern reference: `06 Persistent Team Workforce`. Peer teams are valuable when teammates need to communicate and own separate work, but they add coordination overhead.
 
 ### Anthropic C Compiler: Parallel Agents Need Better Harnesses Than Prompts
 
@@ -195,9 +185,7 @@ This is the clearest warning against naive parallelism. When there were many ind
 
 Source: [Anthropic Parallel Claudes C Compiler](../sources/Anthropic%20Parallel%20Claudes%20C%20Compiler.md).
 
-![Independent parallel](../assets/multi-agent-architectures/svg/29-independent-parallel.svg)
-
-Figure 6. Independent parallelism is effective only when the task can be split into independently verifiable slices.
+Pattern reference: `26 Independent Parallel`. Independent parallelism is effective only when the task can be split into independently verifiable slices.
 
 ### Cursor Kernels: Measurable Optimization Is a Sweet Spot
 
@@ -237,7 +225,7 @@ Figure 9. MultiAgentBench protocol comparison and results table. Source: [MultiA
 
 ### MASS: Optimize Prompts Before Multiplying Agents
 
-MASS is one of the most important 2026-framed sources because it does not treat topology as independent of prompts. Its analysis says prompts frequently dominate MAS performance, and influential topologies are a small fraction of the design space. The design method interleaves local prompt optimization, topology optimization, and global prompt optimization. The reported average score moves from 65.28 for chain-of-thought and 70.26 for debate to 78.79 for MASS; the ablation is also instructive, with topology optimization supplying most of the jump from prompt optimization alone.
+MASS is one of the most important 2026-framed sources because it does not treat topology as independent of prompts. Its analysis says prompts frequently dominate MAS performance, and influential topologies are a small fraction of the design space. The design method interleaves local prompt optimization, topology optimization, and global prompt optimization. The reported average score moves from 65.28 for chain-of-thought and 70.26 for debate to 78.79 for MASS. The stage ablation is instructive in the opposite direction from the usual "add agents" intuition: block-level prompt optimization supplies the largest single gain, topology optimization adds a smaller increment on top, and workflow-level prompt optimization adds a little more. The paper's own framing is that prompts are frequently the dominant design component and that influential topologies are only a small fraction of the search space — which is exactly why the method optimizes prompts first and searches topologies second.
 
 The practical lesson is blunt: do not add agents to compensate for weak instructions, unclear tools, or bad role definitions. Optimize the local agent first, then scale the topology.
 
@@ -287,7 +275,7 @@ Figure 14. BAMAS topology distributions across datasets and budgets. Source: [BA
 
 Graph-of-Agents is a 2026 graph-message-passing framework over a pool of heterogeneous models. It selects relevant agents, constructs directed edges, performs forward and reverse message passing, then pools outputs. The important production direction is efficiency: use fewer selected agents and structured communication, not full all-to-all chatter. The paper reports that a three-agent GoA setting can beat or match six-agent baselines; on MMLU-Pro, the reported GoAMax result uses fewer calls and far fewer tokens than a MoA-style baseline while scoring higher.
 
-This is the research counterpart to product systems that use routers and specialists. It supports `18 Dynamic DAG / Graph Workflow`, `19 Adaptive Routing`, and `21 Heterogeneous Model Assignment`.
+This is the research counterpart to product systems that use routers and specialists. It supports `15 Dynamic DAG / Graph Workflow`, `16 Adaptive Routing`, and `18 Heterogeneous Model Assignment`.
 
 Source: [Graph-of-Agents](../sources/Graph-of-Agents.md).
 
@@ -323,10 +311,11 @@ Figure 18. Teams fail to leverage expertise and can dilute the best member. Sour
 
 | Pattern | Use when | Avoid when | Strong examples |
 |---|---|---|---|
-| **Single Agent** | Task is short, sequential, same-context, low-risk | Need broad search, independent verification, or background execution | Baseline for every eval |
+| **Ralph Loop** | One coding agent needs restartable file-by-file progress | Weak tests or checkpoints without evidence | Ralph Playbook, Codex-style coding loops |
 | **Fixed Chain** | Stages are stable: classify, retrieve, draft, review | Branching and discovery dominate | OpenAI code-orchestrated chains; ADK sequential pattern |
 | **Router / Dispatcher** | Request classes are clear and specialists differ | Misclassification is costly or labels are fuzzy | OpenAI handoffs; AWS Bedrock routing supervisor; ADK dispatcher |
 | **Fan-out / Gather** | Subtasks independent and final answer synthesizable | Shared mutable files or dependencies dominate | Anthropic Research, Kimi, Cursor best-of-N |
+| **Centralized Swarm** | Many specialists should work in isolated context under one accountable commander | Merge criteria are weak or commander bottleneck dominates | Kimi Agent Swarm, Anthropic Research-style broad research |
 | **Hub-and-Spoke** | One lead should own final synthesis and guardrails | Lead bottleneck loses too much detail | Anthropic Research, Magentic-One |
 | **Hierarchy** | Work is large enough for managers and subteams | Latency and overhead exceed benefit | Devin managing Devins, CrewAI hierarchy, LangGraph supervisors |
 | **Planner-Executor-Verifier** | Plans and outputs can be checked | Bad verifier or subjective output | MiniMax, Magentic-One, coding agents with CI |
@@ -335,9 +324,7 @@ Figure 18. Teams fail to leverage expertise and can dilute the best member. Sour
 | **Selector Group Chat** | Dynamic turn-taking is useful | Context pollution or endless discussion likely | AutoGen SelectorGroupChat |
 | **Message Bus** | Events should trigger independent handlers | Tracing and cascading side effects are weak | Devin Automations, GitHub/Slack/Jira/Linear integrations |
 | **Shared State / Blackboard** | Agents coordinate through artifacts | Stale state and write conflicts unmanaged | Claude Code team task list, memory stores, progress files |
-| **Dense All-to-All** | Small team, high need for consensus | Cost/noise scales poorly | Mostly research/deliberation |
-| **Sparse / Small-World** | Need scalable local coordination | Global agreement required | Research frontier |
-| **Decentralized Mesh / Swarm** | Cross-org, fault tolerance, no central controller | Need strong security and final accountability | AgentNet-style research; weak production evidence |
+| **Decentralized Agent Mesh** | Cross-org, fault tolerance, no central controller | Need strong security and final accountability | AgentNet-style research; weak production evidence |
 | **Dynamic DAG / Graph Workflow** | Dependencies, branching, retries, human interrupts | Simple pipeline is enough | LangGraph, CrewAI Flows, AutoGen GraphFlow |
 | **Adaptive Routing / Dropout** | Cost or expertise varies by task | Router may hide needed expertise | MasRouter, BAMAS, Graph-of-Agents |
 | **Workflow / Topology Search** | Stable evaluator exists | Metric overfit likely | AFlow, ADAS, MASS |
@@ -351,7 +338,6 @@ Figure 18. Teams fail to leverage expertise and can dilute the best member. Sour
 | **Durable Harness / Runtime** | Work spans turns, events, schedules, or failures | One-shot answer is enough | Google ADK durable agents, LangGraph, Managed Agents, Codex |
 | **Independent Parallel** | Embarrassingly parallel work | Results need mutual correction | Subagents, best-of-N, compiler task locks |
 | **Voting / Ensemble** | Answers can be independently ranked | Errors are correlated | Self-consistency, MoA, simple candidate selection |
-| **Round-Robin Team** | Equal turns and predictable review matter | Fixed order wastes turns | AutoGen round-robin group chat |
 | **Role-Based SOP Team** | Work phases are known | Roles are fake ceremony | MetaGPT, ChatDev, CrewAI crews |
 
 ## Tooling Guide
