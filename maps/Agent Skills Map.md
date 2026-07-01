@@ -41,6 +41,8 @@ Related synthesis: [[claims/Claim - Agent memory and skills create compounding i
 
 - [[sources/OpenAI Using Skills for OSS Maintenance]]
 - [[sources/OpenAI Eval Skills]]
+- [[sources/OpenAI Codex Record and Replay]]
+- [[sources/Metis]]
 
 ## Concept Threads
 
@@ -66,3 +68,5 @@ Related synthesis: [[claims/Claim - Agent memory and skills create compounding i
 9. Comprehensive Survey on Agent Skills
 10. SAGE Skill Library
 11. SkillRL
+12. OpenAI Codex Record and Replay
+13. Metis

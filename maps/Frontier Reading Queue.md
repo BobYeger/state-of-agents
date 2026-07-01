@@ -9,6 +9,12 @@ Prioritized queue for deeper reading. Source notes and raw artifacts are already
 
 ## Priority 1: Deep Reading
 
+- [[sources/Agent Memory Characterization]]
+- [[sources/Harness-1]]
+- [[sources/Self-Harness]]
+- [[sources/HarnessFix]]
+- [[sources/Adaptive Auto-Harness]]
+- [[sources/Recursive Agent Harnesses]]
 - [[sources/Why Do Multi-Agent LLM Systems Fail]]
 - [[sources/Multi-Agent Design - MASS]]
 - [[sources/Anthropic Multi-Agent Research System]]
@@ -23,6 +29,18 @@ Prioritized queue for deeper reading. Source notes and raw artifacts are already
 - [[sources/OpenAI Codex Agent Loop]]
 - [[sources/Cloudflare Project Think]]
 
-## Priority 2: Verification Backlog
+## Priority 2: June 2026 Follow-Up
+
+- [[sources/SWE-MeM]]
+- [[sources/TokenPilot]]
+- [[sources/Memory Poisoning Attacks in LLM Agents]]
+- [[sources/Do More Agents Help]]
+- [[sources/MAS-Lab]]
+- [[sources/Metis]]
+- [[sources/Red Queen Godel Machine]]
+- [[sources/GitHub Agentic Workflows]]
+- [[sources/Google Agentic Resource Discovery]]
+
+## Priority 3: Verification Backlog
 
 Unverified leads are kept outside the public graph until they have enough source evidence to become source notes.

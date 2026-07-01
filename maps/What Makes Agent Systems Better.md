@@ -19,7 +19,8 @@ Agent systems get better when structure, runtime control, tools, context, memory
 | Supervision and verification | Add monitors, critics, evaluators, stopping criteria, and repair loops. | [[claims/Claim - Runtime control and verification improve agent reliability]], [[methods/runtime supervision]] |
 | Hook-based control | Run deterministic gates, validators, context injections, and continuation checks at lifecycle points in the agent loop. | [[methods/hook-based control]], [[sources/Claude Code Hooks]] |
 | Harness and context design | Make the loop, state, tools, approvals, compaction, and handoffs explicit. | [[claims/Claim - Harnesses tools and context are core agent performance levers]], [[operations/agent harnesses]] |
-| Loop engineering | Design how agents are re-entered over time: wake trigger, recurrence, durable state, verification, retry, escalation, and stop policy. | [[concepts/loop engineering]], [[sources/Claude Code Scheduled Tasks]], [[sources/Addy Osmani Loop Engineering]] |
+| Loop engineering | Design how agents are re-entered over time: wake trigger, recurrence, durable state, verification, retry, escalation, stop policy, and human/product feedback cadence. | [[concepts/loop engineering]], [[sources/Claude Code Scheduled Tasks]], [[sources/Addy Osmani Loop Engineering]], [[sources/Andrew Ng Three Key Loops]], [[sources/Armin Ronacher The Coming Loop]] |
+| Code factory control plane | Connect signals, specs, isolated agent work, verification, review, release, monitoring, and learning into an auditable SDLC loop. | [[concepts/code factories]], [[sources/Factory 2.0 Software Factory]], [[sources/Microsoft Agentic Platform Agent Factory]], [[sources/Microsoft Spec-Driven AI-Native Engineering]] |
 | Self-improving code loops | Mutate executable artifacts only when evaluator evidence improves, with rollback and sandboxing. | [[methods/self-improving code loops]], [[sources/Darwin Godel Machine]], [[sources/Meta-Harness]], [[sources/SkillOpt]], [[sources/AlphaEvolve]] |
 | Context management | Choose between compaction, masking, clearing, retrieval, memory offload, handoff, and task-aware pruning. | [[claims/Claim - Context management is an agent architecture choice]], [[maps/Context Management Map]] |
 | Fresh-context coding loops | Use files, tests, commits, and task ledgers as durable state across repeated agent runs. | [[methods/ralph loop]] |
@@ -35,29 +36,33 @@ Agent systems get better when structure, runtime control, tools, context, memory
 2. [[sources/Anthropic Building Effective AI Agents eBook]]
 3. [[sources/Claude Common Workflow Patterns for AI Agents]]
 4. [[sources/Claude Code Hooks]]
-5. [[sources/Rich Sutton The Bitter Lesson]]
-6. [[sources/Anthropic Multi-Agent Research System]]
-7. [[sources/Google Scaling Agent Systems]]
-8. [[sources/Anthropic Multi-Agent Coordination Patterns]]
-9. [[sources/Multi-Agent Teams Hold Experts Back]]
-10. [[sources/SAND]]
-11. [[sources/VeriMAP]]
-12. [[sources/AgentFlow]]
-13. [[sources/Multi-Agent Design - MASS]]
-14. [[sources/Why Do Multi-Agent LLM Systems Fail]]
-15. [[sources/Stop Wasting Your Tokens]]
-16. [[sources/OpenRouter Fusion Beats Frontier]]
-17. [[sources/Anthropic Writing Tools for Agents]]
-18. [[sources/Anthropic Effective Harnesses for Long-Running Agents]]
-19. [[sources/SkillsBench]]
-20. [[sources/Google ReasoningBank]]
-21. [[sources/Anthropic Managed Agents Dreaming Outcomes]]
-22. [[sources/Agentic Context Engineering]]
-23. [[sources/The Complexity Trap]]
-24. [[sources/ACON]]
-25. [[sources/ContextBench]]
-26. [[sources/MCP-Zero]]
-27. [[sources/OpenAI Symphony]]
+5. [[sources/Addy Osmani Loop Engineering]]
+6. [[sources/Factory 2.0 Software Factory]]
+7. [[sources/Andrew Ng Three Key Loops]]
+8. [[sources/Armin Ronacher The Coming Loop]]
+9. [[sources/Rich Sutton The Bitter Lesson]]
+10. [[sources/Anthropic Multi-Agent Research System]]
+11. [[sources/Google Scaling Agent Systems]]
+12. [[sources/Anthropic Multi-Agent Coordination Patterns]]
+13. [[sources/Multi-Agent Teams Hold Experts Back]]
+14. [[sources/SAND]]
+15. [[sources/VeriMAP]]
+16. [[sources/AgentFlow]]
+17. [[sources/Multi-Agent Design - MASS]]
+18. [[sources/Why Do Multi-Agent LLM Systems Fail]]
+19. [[sources/Stop Wasting Your Tokens]]
+20. [[sources/OpenRouter Fusion Beats Frontier]]
+21. [[sources/Anthropic Writing Tools for Agents]]
+22. [[sources/Anthropic Effective Harnesses for Long-Running Agents]]
+23. [[sources/SkillsBench]]
+24. [[sources/Google ReasoningBank]]
+25. [[sources/Anthropic Managed Agents Dreaming Outcomes]]
+26. [[sources/Agentic Context Engineering]]
+27. [[sources/The Complexity Trap]]
+28. [[sources/ACON]]
+29. [[sources/ContextBench]]
+30. [[sources/MCP-Zero]]
+31. [[sources/OpenAI Symphony]]
 
 ## Related Maps
 
@@ -70,5 +75,6 @@ Agent systems get better when structure, runtime control, tools, context, memory
 - [[maps/Context Management Map]]
 - [[maps/Recent Agent Operating Concepts]]
 - [[concepts/loop engineering]]
+- [[concepts/code factories]]
 - [[methods/hook-based control]]
 - [[methods/self-improving code loops]]

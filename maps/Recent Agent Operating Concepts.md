@@ -13,12 +13,16 @@ The point is not to collect every vendor feature. A source belongs here when it 
 | Agent skills as procedural packages | Reusable procedures are loaded selectively rather than stuffed into every prompt. | [[maps/Agent Skills Map]] |
 | Versioned context | Context becomes a versioned operational artifact, not a one-off prompt. | [[concepts/versioned context]], [[sources/Agentic Context Engineering]] |
 | Context compaction and pruning | Long-running agents must decide what to summarize, mask, clear, retrieve, offload, or hand off. | [[maps/Context Management Map]], [[sources/Parallel Context Compaction]] |
+| Agent-native memory systems | Memory becomes a maintained operating subsystem with construction, retrieval/routing, freshness, provenance, and poisoning defenses. | [[sources/Agent Memory Characterization]], [[sources/Are We Ready For An Agent-Native Memory System]], [[sources/Memory Poisoning Attacks in LLM Agents]] |
 | Dynamic tool discovery | Agents retrieve or request tools when needed instead of seeing every schema up front. | [[concepts/dynamic tool discovery]], [[sources/MCP-Zero]] |
+| Agentic resource discovery | Agents discover and verify tools, skills, agents, and catalogs across organizational boundaries. | [[sources/Google Agentic Resource Discovery]], [[concepts/agent operating surfaces]] |
 | Programmatic tool calling | Agents write code to call tools, filter results, and keep intermediates outside model context. | [[concepts/programmatic tool calling]], [[sources/Anthropic Code Execution with MCP]] |
 | Agent operating surfaces | APIs, MCP, CLIs, SDKs, docs, schemas, skills, and code execution become a designed capability surface for agents. | [[concepts/agent operating surfaces]], [[sources/OpenAI Agents SDK Tools]] |
 | Subagent context isolation | Subagents isolate context, tools, and role prompts as much as they provide parallelism. | [[concepts/subagent context isolation]], [[sources/OpenAI Codex Subagents]] |
-| Loop engineering | Outer loops wake, prompt, monitor, verify, retry, and stop agents over time. | [[concepts/loop engineering]], [[sources/Claude Code Scheduled Tasks]], [[sources/Addy Osmani Loop Engineering]] |
-| Self-improving code loops | Agents mutate code, harnesses, workflows, algorithms, or skills and keep changes only when evidence improves. | [[methods/self-improving code loops]], [[sources/Darwin Godel Machine]], [[sources/Meta-Harness]], [[sources/AlphaEvolve]] |
+| Workflow scripts as orchestration state | A generated script or CI workflow holds the plan, spawns workers, tracks intermediate results, and reports back. | [[sources/Claude Code Workflows]], [[sources/Recursive Agent Harnesses]], [[sources/GitHub Agentic Workflows]] |
+| Loop engineering | Outer loops wake, prompt, monitor, verify, retry, and stop agents over time. | [[concepts/loop engineering]], [[sources/Claude Code Scheduled Tasks]], [[sources/Addy Osmani Loop Engineering]], [[sources/Andrew Ng Three Key Loops]], [[sources/Armin Ronacher The Coming Loop]], [[sources/GitHub Agentic Workflows]] |
+| Code/software factories | Agent work becomes an SDLC control plane that links signals, specs, agent execution, verification, release, monitoring, and organizational learning. | [[concepts/code factories]], [[sources/Factory 2.0 Software Factory]], [[sources/Microsoft Agentic Platform Agent Factory]], [[sources/Microsoft Spec-Driven AI-Native Engineering]] |
+| Self-improving code loops | Agents mutate code, harnesses, workflows, algorithms, or skills and keep changes only when evidence improves. | [[methods/self-improving code loops]], [[sources/Darwin Godel Machine]], [[sources/Self-Harness]], [[sources/HarnessFix]], [[sources/Adaptive Auto-Harness]] |
 | Ralph loops | Fresh-context coding iterations use files, tests, plans, and commits as the durable agent state. | [[sources/Ralph Playbook]], [[methods/ralph loop]] |
 | Worktree isolation | Parallel coding-agent tasks get separate Git checkouts so edits, branches, and review state do not collide. | [[operations/worktree isolation]], [[sources/Cursor 3.2]] |
 | Issue-tracker control planes | Tickets become durable work units and agent workspaces rather than ad hoc chat sessions. | [[sources/OpenAI Symphony]] |
@@ -34,6 +38,8 @@ The old agent stack was prompt plus tools plus loop.
 
 The newer stack is versioned context plus skills plus dynamic tools plus memory consolidation plus evaluators plus durable runtime plus subagents plus observability plus governance.
 
+June 2026 adds a clearer layer above "prompt the agent": generated workflow scripts, recurring loops, code/software factories, resource discovery, and self-improving harnesses. The shared move is to make the control surface explicit and inspectable outside a single chat context.
+
 This map should stay compact. If three sources explain the same vendor implementation, keep the original architecture source, the strongest empirical paper, and one implementation example only when it introduces a distinct mechanism.
 
 ## Related
@@ -45,6 +51,7 @@ This map should stay compact. If three sources explain the same vendor implement
 - [[maps/Context Management Map]]
 - [[operations/agent harnesses]]
 - [[concepts/loop engineering]]
+- [[concepts/code factories]]
 - [[methods/self-improving code loops]]
 - [[operations/worktree isolation]]
 - [[concepts/agent operating surfaces]]

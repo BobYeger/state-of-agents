@@ -12,6 +12,9 @@ Agent systems improve when the harness, tools, and context are engineered as car
 - [[sources/Claude Code Hooks]] shows how lifecycle hooks make tool calls, compaction, stop conditions, subagents, and worktree events programmable harness surfaces.
 - [[sources/Cursor Improving Agent Harness]] treats harness improvement as an ongoing engineering discipline.
 - [[sources/OpenClaw Agent Harness Plugins]] gives a clean boundary for the harness as executor of prepared agent turns.
+- [[sources/Harness-1]] and [[sources/Agent Memory Characterization]] show that externalized state, memory construction, evidence records, and budget-aware rendering can be first-order performance levers.
+- [[sources/Self-Harness]], [[sources/HarnessFix]], and [[sources/Adaptive Auto-Harness]] make the harness itself the object of optimization.
+- [[sources/Harness-MU]] shows that governance belongs in deterministic harness controls rather than prompt-only policy.
 
 ## Design Implications
 
@@ -19,6 +22,7 @@ Agent systems improve when the harness, tools, and context are engineered as car
 - Make observations, errors, and state legible to the model.
 - Keep progress artifacts durable outside the context window.
 - Treat approvals, sandboxing, and compaction as part of performance, not only safety.
+- Treat traces and failed trajectories as repair data for the harness itself.
 
 ## Related
 

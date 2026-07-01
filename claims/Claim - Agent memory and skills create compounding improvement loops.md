@@ -7,6 +7,10 @@ Agent systems improve when successful procedures, failed attempts, learned rules
 - [[sources/Anthropic Agent Skills]] and [[sources/Agent Skills Specification]] define the modern skill package as reusable procedural knowledge.
 - [[sources/SkillsBench]] measures when skills help across diverse tasks.
 - [[sources/SkillOpt]] trains natural-language skill files through scored rollouts, bounded text edits, rejected-edit feedback, and held-out validation gates.
+- [[sources/OpenAI Codex Record and Replay]] turns demonstrated workflows into reusable skills, making tacit GUI/workflow knowledge inspectable and repeatable.
+- [[sources/Agent Memory Characterization]], [[sources/Are We Ready For An Agent-Native Memory System]], and [[sources/Memora]] treat memory as a maintained agent subsystem rather than a raw context dump.
+- [[sources/Metis]] shows the bridge between textual experience and validated callable tools.
+- [[sources/Memory Poisoning Attacks in LLM Agents]] gives the safety constraint: compounding memory can also compound adversarial writes and stale facts.
 - [[sources/Anthropic Building Effective AI Agents eBook]] presents Skills as modular capability packages that let single-agent and multi-agent systems reuse workflows, domain knowledge, integrations, and best practices.
 - [[sources/Agentic Skills in the Wild]] adds the realistic constraint that agents must retrieve and choose useful skills from larger collections.
 - [[sources/Google ReasoningBank]] distills strategies from successful and failed experiences.
@@ -25,6 +29,7 @@ Agent systems improve when successful procedures, failed attempts, learned rules
 - For executable improvements, require sandboxing, rollback, and evaluator-hardening before reuse.
 - Separate trusted project instructions from untrusted retrieved content.
 - Prefer compact, discoverable skills over stuffing every procedure into the base prompt.
+- Add provenance, validity, and deletion paths before allowing memory to influence future runs automatically.
 
 ## Related
 

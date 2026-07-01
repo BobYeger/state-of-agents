@@ -40,6 +40,8 @@ This is especially useful for:
 
 The important design link is that Claude Code describes `/goal` as a built-in shortcut for a session-scoped prompt-based `Stop` hook. Goal-oriented agents, loop engineering, and hook-based control are therefore part of the same harness control family.
 
+[[sources/Harness-MU]] adds the governance angle: in multi-user systems, permissions, restrictions, and instruction precedence should be deterministic runtime variables enforced by execution hooks or equivalent harness controls, not prompt-only safeguards.
+
 ## Boundaries
 
 Hooks are not a substitute for permissions, sandboxing, or managed policy. They are also not just webhooks. A webhook wakes or notifies a system from the outside; a hook is a lifecycle interception point inside the agent runtime.

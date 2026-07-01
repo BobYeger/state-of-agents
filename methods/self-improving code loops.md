@@ -25,10 +25,11 @@ candidate code/procedure -> run evaluator -> score/trace -> keep, branch, or rev
 | Subtype | Artifact that improves | Examples |
 |---|---|---|
 | Self-editing agent scaffold | The agent's own tools, prompts, memory, workflow, or code | [[sources/Darwin Godel Machine]], [[sources/Hyperagents]], [[sources/Meta-Harness]] |
-| Harness optimization | Context, retrieval, tools, completion checks, and model wrapper code | [[sources/Meta-Harness]], [[sources/AFlow]], [[sources/ADAS]] |
+| Harness optimization | Context, retrieval, tools, completion checks, and model wrapper code | [[sources/Meta-Harness]], [[sources/AFlow]], [[sources/ADAS]], [[sources/Self-Harness]], [[sources/HarnessFix]], [[sources/Adaptive Auto-Harness]], [[sources/Retrospective Harness Optimization]] |
 | Algorithm evolution | Candidate algorithms or programs | [[sources/AlphaEvolve]], [[sources/LoongFlow]] |
 | Autonomous research code | Experimental code, hypotheses, figures, and papers | [[sources/The AI Scientist-v2]], [[sources/Karpathy Autoresearch]] |
-| Skill/procedure evolution | Reusable skills, rules, or trajectory memories | [[sources/SkillOpt]], [[sources/Voyager]], [[sources/SAGE Skill Library]], [[sources/SkillRL]], [[sources/Cursor Bugbot Learned Rules]] |
+| Skill/procedure evolution | Reusable skills, rules, or trajectory memories | [[sources/SkillOpt]], [[sources/Metis]], [[sources/Voyager]], [[sources/SAGE Skill Library]], [[sources/SkillRL]], [[sources/Cursor Bugbot Learned Rules]] |
+| Co-evolving evaluators | Agent and evaluator improve together under explicit epoch or utility controls | [[sources/Red Queen Godel Machine]] |
 
 ## Boundary Case: AI R&D Acceleration
 
@@ -41,6 +42,8 @@ That is still important for self-improving-code research because it names the li
 This is the strongest emerging form of harness engineering because the harness is no longer only executing work. It is also exposing itself or adjacent executable artifacts to search.
 
 The key safety distinction is evidence quality. A self-improving code loop is only as trustworthy as its evaluator, sandbox, provenance, and rollback policy. [[sources/Darwin Godel Machine]] is especially useful here because it reports both capability gains and objective-hacking failures.
+
+The June 2026 harness-optimization papers push this method from research curiosity toward an engineering loop: mine failed trajectories, attribute failures to harness layers, propose bounded repairs, and validate against held-out or retrospective evidence before the change becomes reusable.
 
 ## Related
 

@@ -7,9 +7,9 @@ source_type: "article"
 kind: "harness-analysis"
 status: "verified"
 year: 2026
-publication_date: null
-publication_date_basis: "not_visible_in_defuddle_snapshot"
-source_updated_date: "2026-06-14"
+publication_date: "2026-06-07"
+publication_date_basis: "visible_page_date"
+source_updated_date: "2026-07-01"
 source_updated_date_basis: "snapshot_date"
 arxiv_id: null
 citation_count: null
@@ -24,7 +24,7 @@ pdf_url: ""
 artifacts:
   - "raw/articles/addy-osmani-loop-engineering.md"
 created: 2026-06-14
-updated: 2026-06-14
+updated: 2026-07-01
 ---
 
 # Loop Engineering
@@ -43,6 +43,7 @@ updated: 2026-06-14
 ## Connections
 
 - [[concepts/loop engineering]]
+- [[concepts/code factories]]
 - [[operations/agent harnesses]]
 - [[methods/ralph loop]]
 - [[operations/worktree isolation]]
@@ -54,6 +55,9 @@ updated: 2026-06-14
 - [[sources/Claude Code Scheduled Tasks]]
 - [[sources/Claude Code Workflows]]
 - [[sources/OpenAI Codex Agent Loop]]
+- [[sources/Factory 2.0 Software Factory]]
+- [[sources/Andrew Ng Three Key Loops]]
+- [[sources/Armin Ronacher The Coming Loop]]
 
 ## Artifacts
 
@@ -62,5 +66,5 @@ updated: 2026-06-14
 ## Notes
 
 - Canonical URL: https://addyosmani.com/blog/loop-engineering/
-- The local raw artifact is intentionally a partial research snapshot, not a full article copy.
 - Treat this as a live industry term source rather than a formal research paper.
+- The July 1 snapshot exposes the June 7, 2026 publication date and a fuller mapping across Codex and Claude primitives.

@@ -20,6 +20,8 @@ Useful control points:
 - Add review gates before memories affect high-authority actions.
 - Periodically audit memory for stale, adversarial, or overfit entries.
 
+The June 2026 memory cluster pushes this from "what should we remember?" toward "what memory subsystem should the harness operate?": construction scheduling, retrieval/routing, freshness, cache-aware compaction, visible context state, topic maintenance, and poisoning resistance.
+
 ## Related
 
 - [[concepts/context engineering]]
@@ -37,6 +39,15 @@ Useful control points:
 - [[sources/Agent Security Bench|Agent Security Bench (ASB): Formalizing and Benchmarking Attacks and Defenses in LLM-based Agents]]
 - [[sources/AgentNet|AgentNet: Decentralized Evolutionary Coordination for LLM-based Multi-Agent Systems]]
 - [[sources/Cloudflare Agent Memory|Agents that remember: introducing Agent Memory]]
+- [[sources/Agent Memory Characterization|Agent Memory: Characterization and System Implications of Stateful Long-Horizon Workloads]]
+- [[sources/Are We Ready For An Agent-Native Memory System]]
+- [[sources/Memory Poisoning Attacks in LLM Agents]]
+- [[sources/SWE-MeM]]
+- [[sources/TokenPilot]]
+- [[sources/Memora]]
+- [[sources/Metis]]
+- [[sources/Zep Smart Context Assembly]]
+- [[sources/Zep Markdown Is Not Agent Memory]]
 - [[sources/Anthropic Context Engineering Cookbook|Context Engineering for AI Agents: Memory vs. Compaction vs. Tool Clearing]]
 - [[sources/Anthropic Managed Agents Dreaming Outcomes|New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration]]
 - [[sources/Anthropic Effective Context Engineering|Effective context engineering for AI agents]]

@@ -32,6 +32,16 @@ Use this as a navigation page, not a source registry. Start from the synthesis n
 - [[claims/Claim - Harnesses tools and context are core agent performance levers]]
 - [[claims/Claim - Agent memory and skills create compounding improvement loops]]
 
+## June 2026 Anchors
+
+- [[sources/Do More Agents Help]]
+- [[sources/Recursive Agent Harnesses]]
+- [[sources/MAS-Lab]]
+- [[sources/MESA]]
+- [[sources/Linguistic Firewall]]
+- [[sources/GBC AgentChord]]
+- [[sources/Google ADK A2A Cross-Language Multi-Agent Team]]
+
 ## Source Trail
 
 Follow the related-source sections in the core notes. Source cards in `sources/` hold the public evidence trail; private crawl logs and working registries stay outside this graph.
