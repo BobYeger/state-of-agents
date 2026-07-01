@@ -31,6 +31,16 @@ Obsidian must be running and CLI access must be enabled in Obsidian: Settings ->
 obsidian help
 ```
 
+## Vault Health
+
+Check Obsidian wikilinks before publishing or after a large source import:
+
+```bash
+python3 scripts/check_wikilinks.py
+```
+
+The checker resolves both note-name links such as `[[Codex]]` and path links such as `[[sources/OpenAI Codex Agent Loop]]`. It ignores `talk/` by default because talk materials are local working artifacts.
+
 ## Publish Notes
 
 `publish.css` provides the public site theme. Obsidian Publish does not expose the same full local graph configuration surface as the desktop app, so graph color groups remain canonical in `.obsidian/graph.json`; the public CSS adds matching folder/topic color cues where Publish supports them.
