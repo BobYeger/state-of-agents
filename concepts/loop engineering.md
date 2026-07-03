@@ -35,8 +35,10 @@ The current graph has several loop-engineering forms:
 - [[sources/Andrew Ng Three Key Loops]]: separates fast agentic coding loops from slower developer and external feedback loops, making product feedback cadence part of loop design.
 - [[sources/Armin Ronacher The Coming Loop]]: distinguishes the inner agent loop from the harness-level loop and emphasizes bounded, legible use for porting, experiments, security scanning, and research.
 - [[sources/Claude Code Scheduled Tasks]]: `/loop` and cron tools make prompt recurrence a Claude Code runtime feature.
+- [[sources/OpenAI Codex Automations]]: Codex thread automations are heartbeat-style recurring wake-up calls attached to a thread — the Codex analogue of `/loop`, distinct from the persistent objective of `/goal`.
 - [[sources/OpenAI Codex Using Goals]]: Codex Goals make a persistent, thread-scoped objective into an evidence-checked continuation loop.
 - [[sources/Claude Code Hooks]]: hooks make lifecycle interception points programmable; Claude Code documents `/goal` as a built-in shortcut for a session-scoped prompt-based `Stop` hook.
+- [[sources/Claude Code Goals]]: `/goal` sets a completion condition that a separate small evaluator model re-checks after every turn, turning a slash command into a persistent, evidence-checked continuation loop.
 - [[sources/Claude Common Workflow Patterns for AI Agents]]: sequential, parallel, and evaluator-optimizer workflows are recurring control patterns with explicit dependency, aggregation, and stop-policy tradeoffs.
 - [[sources/Claude Code Workflows]]: workflow scripts move orchestration state out of conversation context and into executable JavaScript.
 - [[sources/Cloudflare Dynamic Workflows]]: durable infrastructure persists and resumes workflow steps, including agent-written plans.

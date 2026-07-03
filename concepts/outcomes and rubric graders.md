@@ -12,6 +12,7 @@ This pattern matters because a generator is often too lenient about its own outp
 - [[sources/Claude Common Workflow Patterns for AI Agents]]
 - [[sources/OpenAI Eval Skills]]
 - [[sources/OpenAI Codex Using Goals]]
+- [[sources/Claude Code Goals]]
 - [[sources/Anthropic Harness Design Long-Running Apps]]
 
 ## Related

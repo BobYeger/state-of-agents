@@ -7,9 +7,12 @@ Agent evaluation is one of the main mechanisms for making agent systems better: 
 ## Core Notes
 
 - [[benchmarks/agent evaluation]]
+- [[benchmarks/coding agent benchmarks]]
 - [[benchmarks/multi-agent benchmarks]]
 - [[benchmarks/long-horizon benchmarks]]
 - [[operations/agent evals]]
+- [[concepts/evaluator reliability]]
+- [[concepts/outcomes and rubric graders]]
 - [[methods/deliberative control]]
 - [[maps/Context Management Map]]
 - [[claims/Claim - Runtime control and verification improve agent reliability]]

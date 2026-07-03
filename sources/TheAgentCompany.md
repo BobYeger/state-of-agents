@@ -30,7 +30,6 @@ artifacts:
 created: 2026-05-18
 updated: 2026-05-18
 ---
-s
 # TheAgentCompany: Benchmarking LLM Agents on Consequential Real World Tasks
 
 ## Summary

@@ -8,14 +8,22 @@ Use this map for named agent systems, platforms, and productized harnesses. The 
 - [[systems/AgentKit]]
 - [[systems/autoresearch]]
 - [[systems/ChatGPT agent]]
+- [[systems/Claude Code]]
 - [[systems/Cloudflare Agents SDK]]
 - [[systems/Codex]]
+- [[systems/Cursor Bugbot]]
 - [[systems/Cursor agents]]
 - [[systems/Google ADK]]
 - [[systems/OpenAI Agents SDK]]
 - [[systems/OpenHands]]
 - [[systems/Operator]]
 - [[systems/deep research]]
+
+## Category Hubs
+
+- [[systems/agent frameworks and orchestration libraries]]
+- [[systems/china agent ecosystem]]
+- [[systems/deployed agent products]]
 
 ## Related Areas
 

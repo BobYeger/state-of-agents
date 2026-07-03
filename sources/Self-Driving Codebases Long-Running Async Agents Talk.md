@@ -2,6 +2,7 @@
 title: "Building Towards Self-Driving Codebases with Long-Running, Asynchronous Agents"
 aliases: ["Staying in the context window means staying in distribution", "Self-Driving Codebases talk"]
 source_type: "talk"
+status: "verified"
 creator: "NVIDIA Developer (channel); content reflects Cursor's self-driving-codebases framing"
 url: "https://www.youtube.com/watch?v=2Fp3jIrFTMo"
 created: 2026-06-23

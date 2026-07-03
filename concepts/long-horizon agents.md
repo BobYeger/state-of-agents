@@ -23,3 +23,4 @@ Long-horizon agents work across many steps, tool calls, context transitions, and
 - [[sources/OpenHands|OpenHands: An Open Platform for AI Software Developers as Generalist Agents]]
 - [[sources/Cursor Scaling Long-Running Autonomous Coding|Scaling long-running autonomous coding]]
 - [[sources/TheAgentCompany|TheAgentCompany: Benchmarking LLM Agents on Consequential Real World Tasks]]
+- [[sources/Claude Fable 5 and Claude Mythos 5]] — vendor-claimed longest autonomous operation of any Claude model, with long-horizon performance further improved by persistent file-based memory

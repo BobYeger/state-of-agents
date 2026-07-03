@@ -18,12 +18,18 @@ Multi-agent systems coordinate multiple agents through roles, communication chan
 - Optimize prompts, roles, and topology instead of assuming a fixed team.
 - Add runtime routing, dropout, supervision, and verification to control cost and error propagation.
 - Use shared artifacts, memory, evals, and observability as coordination surfaces.
+- Give shared state an explicit authority model: who may write, which version wins, and how conflicts resolve.
+
+## Evidence on Scale and Coordination Cost
+
+Coordination now has measured costs, not just anecdotes. [[sources/Towards a Science of Scaling Agent Systems]] finds independent agents amplify errors 17.2x versus 4.4x under centralized coordination, and coordination returns turn negative once the single-agent baseline passes roughly 0.45 accuracy. [[sources/MacNet]] shows performance follows a logistic curve in agent count and topology choice matters more than count. [[sources/Correlated Errors in Large Language Models]] explains why adding similar agents saturates: models agree 60% of the time when both err, even across vendors. On the coordination-mechanism side, [[sources/LLM Multi-Agent Blackboard System]] shows volunteer pickup from a shared blackboard beating coordinator-assigned subtasks by 13-57%, and [[sources/Cognition Dont Build Multi-Agents]] is the standing counter-position: parallel writers make conflicting implicit decisions, so writes should stay single-threaded. See [[methods/multi-agent orchestration]] for the design consequences and [[methods/debate and aggregation]] for when spending agents on the same question pays.
 
 ## Related
 
 - [[methods/multi-agent orchestration]]
 - [[maps/What Makes Agent Systems Better]]
 - [[methods/topology optimization]]
+- [[methods/debate and aggregation]]
 - [[methods/runtime routing]]
 - [[methods/runtime supervision]]
 - [[protocols/agent protocols]]
@@ -55,3 +61,11 @@ Multi-agent systems coordinate multiple agents through roles, communication chan
 - [[sources/When Agents Misremember Collectively|When Agents Misremember Collectively: Exploring the Mandela Effect in LLM-based Multi-Agent Systems]]
 - [[sources/Why Do Multi-Agent LLM Systems Fail|Why Do Multi-Agent LLM Systems Fail?]]
 - [[sources/X-MAS|X-MAS: Towards Building Multi-Agent Systems with Heterogeneous LLMs]]
+- [[sources/Towards a Science of Scaling Agent Systems|Towards a Science of Scaling Agent Systems]]
+- [[sources/MacNet|Scaling Large Language Model-based Multi-Agent Collaboration (MacNet)]]
+- [[sources/Correlated Errors in Large Language Models|Correlated Errors in Large Language Models]]
+- [[sources/Cognition Dont Build Multi-Agents|Don't Build Multi-Agents]]
+- [[sources/Cognition Multi-Agents Whats Actually Working|Multi-Agents: What's Actually Working]]
+- [[sources/LLM Multi-Agent Blackboard System|LLM-based Multi-Agent Blackboard System for Information Discovery in Data Science]]
+- [[sources/Governed Shared Memory for Multi-Agent LLM Systems|Governed Shared Memory for Multi-Agent LLM Systems]]
+- [[sources/G-Memory|G-Memory: Tracing Hierarchical Memory for Multi-Agent Systems]]

@@ -21,7 +21,7 @@ pdf_url: ""
 artifacts:
   - "raw/articles/google-scaling-agent-systems.md"
 created: 2026-05-18
-updated: 2026-05-18
+updated: 2026-07-03
 ---
 
 # Towards a science of scaling agent systems
@@ -38,6 +38,7 @@ updated: 2026-05-18
 
 ## Connections
 
+- [[sources/Towards a Science of Scaling Agent Systems]]
 - [[claims/Claim - More agents are not automatically better]]
 - [[concepts/multi-agent systems]]
 - [[methods/topology optimization]]
@@ -51,3 +52,4 @@ updated: 2026-05-18
 
 - Canonical URL: https://research.google/blog/towards-a-science-of-scaling-agent-systems-when-and-why-agent-systems-work/
 - Publication date basis: google_research_visible_date.
+- Companion blog post to the arXiv paper carded at [[sources/Towards a Science of Scaling Agent Systems]] (2512.08296), which is the canonical card for this work — cite the paper card for the formulas, coefficients, and R^2 values the blog omits.

@@ -87,6 +87,7 @@ updated: 2026-06-23
 - Official Codex app docs: worktrees let Codex "run multiple independent tasks in the same project without interfering with each other," each worktree keeping its own file copies while sharing the same `.git` metadata.
 - Use it "when you want to try a new idea without touching your current work, or when you want Codex to run independent tasks side by side." Automations "run on dedicated background worktrees so they don't conflict with your ongoing work."
 - Mechanics: select "Worktree" when creating a thread, pick a base branch, submit. Codex creates worktrees in `$CODEX_HOME/worktrees` in detached-HEAD state. A "Handoff" feature moves a thread between Local and Worktree environments, handling the git operations.
+- Coordination: Codex App Server exposes the thread/turn control plane. A coordinator can create or resume worker threads, relay assignments as turns, steer active turns, and organize workers through naming and archive state. The Codex desktop environment may expose this as `codex_app.*` tools, but the public primitive is the App Server protocol.
 - Branch constraint mirrors git: "Git only allows a branch to be checked out in one place at a time," so checking out an existing worktree branch locally errors.
 - Secrets/env: Codex also supports a root `.worktreeinclude` to copy ignored files (e.g. `.env`, config) into new managed worktrees — convergent design with Claude Code.
 - Lifecycle: by default Codex keeps ~15 recent Codex-managed worktrees, auto-deleting older ones after "saving a snapshot of the work."
@@ -110,7 +111,7 @@ updated: 2026-06-23
 | What is isolated | Files, branch, index (shared `.git`) | Files, branch, index (shared `.git`) | Shell, browser, dev env, filesystem, processes |
 | Secrets / env | `.worktreeinclude` copies gitignored `.env`/config into each worktree | `.worktreeinclude` copies ignored files into managed worktrees | Secrets vault + Machine Snapshot per VM |
 | IDE / runtime access | User's local machine, terminal/desktop sessions | Codex desktop app threads, local | Each VM has own terminal + browser + editor |
-| Coordination | Subagents / agent teams over worktrees | Threads + automations + Handoff | Main Devin scopes, assigns, monitors, resolves, compiles |
+| Coordination | Subagents / agent teams over worktrees | Thread control plane + worktrees + automations + Handoff | Main Devin scopes, assigns, monitors, resolves, compiles |
 | Lifecycle | Auto-clean if no changes; `cleanupPeriodDays` sweep; locks while running | Keeps ~15 recent worktrees; snapshot before delete | Spin up / message / sleep / terminate child VMs |
 | Same-host resource contention | Yes (shared ports/db/daemon) | Yes (shared ports/db/daemon) | No (separate VMs) |
 

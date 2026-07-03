@@ -1,8 +1,11 @@
 # Operator
 
-Operator is OpenAI's browser/computer-using agent product powered by the Computer-Using Agent model.
+> [!note] Historical
+> Operator was deprecated mid-2025 and folded into [[systems/ChatGPT agent]], which absorbed its browser/computer-use capability alongside deep research behavior ([[sources/OpenAI ChatGPT Agent System Card]]: system card for the unified successor product). This note is kept as a record of the standalone product and its design pattern.
 
-It matters because it turns GUI interaction into the agent's action space: screenshots, clicks, typing, browser state, and user confirmations become part of the loop. This makes Operator a useful anchor for prompt injection, UI-grounded tool use, and safety boundaries around real-world web actions.
+Operator was OpenAI's browser/computer-using agent product powered by the Computer-Using Agent model.
+
+It mattered because it turned GUI interaction into the agent's action space: screenshots, clicks, typing, browser state, and user confirmations became part of the loop. It remains a useful anchor for prompt injection, UI-grounded tool use, and safety boundaries around real-world web actions — the patterns survived the product.
 
 ## Design Pattern
 

@@ -14,6 +14,18 @@ This is narrower than "multi-agent system." A MAS can be a debate, voting ensemb
 - How are outputs verified and conflicts resolved?
 - What does the human supervise: every action, the lead, or final artifacts?
 
+## The Human Gate Under Team Output
+
+The last design question — what the human supervises — now has measured constraints on both sides.
+
+Human review capacity is small and well-characterized. [[sources/Modern Code Review at Google]] is the pre-agents baseline: the median reviewer handles about 4 changes per week in roughly 3 hours, and that throughput depends on gate design — median diffs of 24 lines, a single owner-reviewer, and static analysis pre-filtering findings into the review UI. An agent team that multiplies change volume without reproducing those conditions is spending output against a ceiling the humans cannot raise.
+
+What happens when volume exceeds the gate is no longer hypothetical. [[sources/How Humans Review AI-Generated Pull Requests]] finds that most agent-authored PRs in the AIDev dataset receive no review activity at all, and when they are reviewed, the reviewer is usually another agent — so "reviewed" in team metrics increasingly does not mean human oversight. [[sources/Bias in the Loop]] supplies the mechanism from a 2,784-participant experiment: when flagging an error costs more effort than approving, humans rubber-stamp, and prior attitude toward AI predicts error detection better than any demographic. A human gate is only as strong as the cost of saying no.
+
+The constructive responses are tiered gates and mechanical throughput levers. [[sources/Intercom AI Approving Pull Requests]] is the strongest practitioner datapoint for tiering: a multi-agent review gate auto-approves 19.2% of PRs (6-16x faster at p75, 0.53% vs 5.39% revert rate against human-authored backend code), with a size gate that refuses large diffs and a full audit log — the human stays available on request rather than in every loop. [[sources/Cognition Multi-Agents Whats Actually Working]] reports agent reviewers catch ~2 bugs per PR, and perform best with clean context rather than the author's context — team-internal review is a real filter if the reviewer is independent. [[sources/GitHub Merge Queue Docs]] is the mechanical layer most agent PRs already flow through: batching, concurrency limits, and automatic requeue-on-failure are the knobs when merge volume becomes agent-scale. [[sources/DORA State of AI-assisted Software Development 2025]] frames the stakes across ~5,000 respondents: AI-assisted volume correlates with delivery throughput but with worse stability unless automated testing and fast feedback absorb the verification load.
+
+The design consequence: size the human's role against measured capacity, not aspiration. Keep changes small enough that a human can actually review them, make rejection as cheap as approval, route routine verified changes through automated tiers with audit trails, and reserve human attention for scope, design, and the cases the automated gate refuses.
+
 ## Related
 
 - [[concepts/multi-agent systems]]
@@ -22,8 +34,10 @@ This is narrower than "multi-agent system." A MAS can be a debate, voting ensemb
 - [[operations/worktree isolation]]
 - [[operations/agent observability]]
 - [[methods/multi-agent orchestration]]
+- [[methods/codex thread orchestration]]
 - [[maps/Agent Teams and Workforces Map]]
 - [[maps/MAS Orchestration and Architecture]]
+- [[claims/Claim - Agent teams need explicit organization]]
 
 ## Related Sources
 
@@ -36,3 +50,10 @@ This is narrower than "multi-agent system." A MAS can be a debate, voting ensemb
 - [[sources/MetaGPT]]
 - [[sources/Experiential Co-Learning]]
 - [[sources/Developing Guidelines for Human-LLM Agent Teams]]
+- [[sources/Modern Code Review at Google]]
+- [[sources/How Humans Review AI-Generated Pull Requests]]
+- [[sources/Bias in the Loop]]
+- [[sources/Intercom AI Approving Pull Requests]]
+- [[sources/Cognition Multi-Agents Whats Actually Working]]
+- [[sources/GitHub Merge Queue Docs]]
+- [[sources/DORA State of AI-assisted Software Development 2025]]

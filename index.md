@@ -7,7 +7,17 @@ This vault tracks frontier AI agent research and practice, with emphasis on mult
 - [[maps/Research Map]]
 - [[maps/Systems Map]]
 - [[maps/Claims Map]]
+- [[maps/Harness Tracker]]
+- [[maps/Harness Design Playbook]]
+- [[maps/Self-Improving Systems Map]]
+- [[maps/Code Factory Playbook]]
+- [[maps/What Makes Agent Systems Better]]
 - [[maps/Frontier Reading Queue]]
+
+## Entry Points by Goal
+
+- **Designing a harness for agent work** — start at [[maps/Harness Design Playbook]] for the decision path (architecture choice, the twelve harness questions, verification and failure-mode design), and [[maps/Harness Tracker]] for the inventory of shipped harnesses to compare against.
+- **Building systems that improve themselves** — start at [[maps/Self-Improving Systems Map]] for the synthesis notes and the canonical reading order over the evidence, and [[maps/Code Factory Playbook]] for the organization-level lifecycle with the maturity of evidence marked per stage.
 
 Project metadata and private working artifacts are kept outside the public knowledge graph. This repository contains the public vault, the source notes, and the raw source archive needed to inspect the evidence trail.
 

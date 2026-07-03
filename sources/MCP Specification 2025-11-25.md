@@ -46,4 +46,4 @@ updated: 2026-05-18
 
 - Canonical URL: https://modelcontextprotocol.io/specification/2025-11-25
 - Publication date basis: mcp_versioned_spec_date.
-- Local raw capture source: https://r.jina.ai/http://r.jina.ai/http://https://modelcontextprotocol.io/specification/2025-11-25
+- Local raw capture source: https://r.jina.ai/https://modelcontextprotocol.io/specification/2025-11-25

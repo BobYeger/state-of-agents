@@ -7,10 +7,17 @@ Use this as a navigation page for agent safety, security, and robustness. Source
 - [[safety/agent safety and security]]
 - [[safety/prompt injection]]
 - [[safety/protocol security]]
+- [[safety/reward hacking]]
+- [[safety/AI control]]
+- [[safety/sandbox escape and credential exposure]]
 - [[operations/agent memory]]
 - [[safety/agentic misalignment risk]]
 - [[methods/deliberative control]]
 - [[operations/sandboxes]]
+
+## Claims
+
+- [[claims/Claim - Untrusted content must not drive agent control flow]]
 
 ## Systems
 

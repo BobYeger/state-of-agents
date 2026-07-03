@@ -12,6 +12,7 @@ The core distinction is:
 | Pattern | What It Adds | Anchor Sources |
 |---|---|---|
 | Agent teams vs subagents | Independent teammates keep their own context, communicate directly, and coordinate through a shared task list. | [[sources/Claude Code Agent Teams]], [[sources/OpenAI Codex Subagents]] |
+| Thread-control-plane teams | A coordinator manages durable worker threads by creating, messaging, reading, naming, pinning, and archiving them; worktrees isolate edits while helper subagents handle local fanout. | [[sources/OpenAI Codex App Server Docs]], [[sources/OpenAI Codex App Worktrees]], [[sources/OpenAI Codex Subagents]], [[methods/codex thread orchestration]] |
 | Coordination-pattern taxonomy | Chooses between generator-verifier, orchestrator-subagent, agent teams, message bus, and shared state. | [[sources/Anthropic Multi-Agent Coordination Patterns]] |
 | Leader / Worker / Verifier | Lead decomposes, workers execute, verifiers challenge or reject. | [[sources/MiniMax Agent Team]], [[sources/Agyn]] |
 | Orchestrator-specialist team | A lead plans and directs specialists across web, files, code, and terminal tools. | [[sources/Magentic-One]], [[sources/Magentic-UI]] |

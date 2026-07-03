@@ -15,6 +15,10 @@ The organizing distinction is between prompt compression and agent context manag
 | Observation masking | Hides older observations while preserving trajectory structure. | [[concepts/observation masking]], [[sources/The Complexity Trap]] |
 | Tool-result clearing | Drops old bulky tool outputs while preserving the tool-call record. | [[concepts/tool-result clearing]], [[sources/Anthropic Context Engineering Cookbook]] |
 | Memory offload | Writes durable knowledge outside the active context window. | [[operations/agent memory]], [[sources/Cloudflare Agent Memory]], [[sources/Agent Memory Characterization]], [[sources/Are We Ready For An Agent-Native Memory System]] |
+| Virtual context paging | Pages information between bounded main context and external storage, with the model editing its own memory via function calls. | [[sources/MemGPT]], [[sources/Letta Code Memory Docs]] |
+| Plan recitation | Continuously rewrites a plan file so the global goal stays in recent attention against mid-context drift. | [[sources/Manus Context Engineering]] |
+| Shared memory stores | Governs fleet- or team-level memory: write authority, reconciliation, namespacing, provenance. | [[concepts/shared agent memory]], [[sources/Claude Managed Agents Memory Stores]], [[sources/Governed Shared Memory for Multi-Agent LLM Systems]], [[sources/G-Memory]] |
+| Background consolidation | Runs a between-session process that merges, prunes, and generalizes accumulated memory. | [[concepts/dreaming and memory consolidation]], [[sources/Anthropic Managed Agents Dreaming Outcomes]], [[sources/Generative Agents]] |
 | Agent-native memory representation | Designs memory as an agent data-management subsystem with storage, extraction, retrieval/routing, and maintenance. | [[sources/Agent Memory Characterization]], [[sources/Are We Ready For An Agent-Native Memory System]], [[sources/Memora]] |
 | Execution-state memory | Stores the current task trajectory as structured execution state rather than only semantic facts. | [[sources/MAGE Memory Execution State Management]], [[sources/VISTA Latent Context Managers]] |
 | Cache-aware context policy | Optimizes compaction and eviction for cache stability, latency, cost, and long-running coding trajectories. | [[sources/TokenPilot]], [[sources/SWE-MeM]] |
@@ -30,6 +34,8 @@ Prompt compression is useful background, but it should not dominate the agent gr
 
 | Background Thread | Anchor Sources |
 |---|---|
+| Long-context degradation (why compaction exists) | [[sources/Lost in the Middle]] positional U-shape; [[sources/Context Rot]] length degradation across 18 models |
+| Memory architecture lineage | [[sources/MemGPT]] OS-style paging; [[sources/Cognitive Architectures for Language Agents]] memory taxonomy; [[sources/Generative Agents]] retrieval triple and reflection |
 | Prompt compression survey | [[concepts/prompt compression]], [[sources/Prompt Compression Survey]] |
 | Token pruning | [[concepts/prompt compression]], [[sources/LLMLingua]] |
 | Retrieval compression | [[sources/RECOMP]] |
@@ -40,6 +46,7 @@ Prompt compression is useful background, but it should not dominate the agent gr
 - [[sources/LOCA-bench]] evaluates agents under controlled context growth.
 - [[sources/ContextBench]] evaluates coding-agent context retrieval.
 - [[sources/Letta Context-Bench]] evaluates agentic context engineering with file tools.
+- [[sources/LongMemEval]] evaluates long-term memory across sessions, including knowledge updates and abstention; memory-substrate selection guidance lives in [[operations/agent memory]].
 
 ## Synthesis
 
@@ -53,6 +60,8 @@ The June 2026 memory sources sharpen the map: memory is no longer only retrieval
 
 - [[concepts/context engineering]]
 - [[concepts/context compaction]]
+- [[concepts/shared agent memory]]
+- [[concepts/dreaming and memory consolidation]]
 - [[operations/agent harnesses]]
 - [[operations/agent memory]]
 - [[maps/Recent Agent Operating Concepts]]

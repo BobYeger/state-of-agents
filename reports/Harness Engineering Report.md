@@ -237,6 +237,7 @@ Ralph's risk is also a harness risk: if specs are weak, tests absent, permission
 |---|---|
 | [[sources/OpenAI Codex Agent Loop]] | Codex makes the agent loop explicit: prompt assembly, tool calls, observations, context growth, prompt caching, and compaction. |
 | [[sources/OpenAI Unlocking Codex Harness]] | App Server exposes the same Codex harness through stable JSON-RPC primitives, thread persistence, streaming events, approvals, and diffs. |
+| [[sources/OpenAI Codex App Server Docs]] | The thread/turn/item protocol makes Codex sessions programmatically controllable: start, resume, fork, message, steer, name, archive, compact, and stream worker state. |
 | [[sources/Anthropic Building Effective AI Agents eBook]] | Enterprise agent architecture still reduces to harness choices: single-agent versus workflow versus multi-agent, Skills, observability, cost, and governance. |
 | [[sources/Anthropic Effective Harnesses for Long-Running Agents]] | Compaction is not enough; long-running work needs initializer/coding roles, progress artifacts, git history, feature lists, and testing tools. |
 | [[sources/Anthropic Harness Design Long-Running Apps]] | Separate generator and evaluator contexts, tune the harness, and use external feedback loops for quality. |
@@ -475,7 +476,7 @@ If those questions are unanswered, the system is probably still a prompt demo, n
 
 ## Gaps in the Current Vault
 
-- Claude Code `/goal` is still cited from current official docs externally; Codex `/goal` is now captured as [[sources/OpenAI Codex Using Goals]].
+- Claude Code `/goal` is now captured as [[sources/Claude Code Goals]]; Codex `/goal` is captured as [[sources/OpenAI Codex Using Goals]].
 - The vault has many later sources that reference ReAct-style loops, but it does not appear to have dedicated source cards for ReAct, Reflexion, or Self-Refine. Those would help complete the methodology lineage.
 - There is no standalone `concepts/harness engineering.md`; the concept currently lives across [[operations/agent harnesses]], [[maps/Harness Tracker]], and this report.
 - The OpenAI "harness engineering" page referenced by the Symphony README is not yet curated as a source card.

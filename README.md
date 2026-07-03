@@ -11,6 +11,11 @@ Open `index.md` first, then use the maps:
 - `maps/Claims Map.md`
 - `maps/Frontier Reading Queue.md`
 
+For design work, two playbooks are the goal-scoped entry points:
+
+- `maps/Harness Design Playbook.md` — designing an agent harness or multi-agent system
+- `maps/Code Factory Playbook.md` — designing self-improving, self-healing development loops (with `maps/Self-Improving Systems Map.md` as the evidence map)
+
 The vault is organized around durable synthesis notes. `sources/` contains compact evidence cards with dates, citations, summaries, and links into the conceptual graph. `raw/` contains downloaded source material and is intentionally excluded from graph exploration.
 
 ## Local Obsidian Use
