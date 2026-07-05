@@ -40,7 +40,7 @@ updated: 2026-07-05
 
 ## Claims
 
-- [[claims/Claim - More agents are not automatically better]]
+- [[claims/Claim - Coordination is a cost the task must justify]]
 
 ## Connections
 
@@ -56,5 +56,6 @@ updated: 2026-07-05
 
 ## Notes
 
+- Era note (2026-07-05): one of the two evaluations that settled the debate-era question (debate does not reliably beat self-consistency and ensembling at matched cost); its agreement-modulation lever remains cited. Read as settled evidence, not an open controversy. Live guidance: [[methods/debate and aggregation]].
 - Canonical URL: https://arxiv.org/abs/2311.17371
 - The measured counterweight to Du et al.: gives harness designers a decision rule (debate vs self-consistency vs ensembling under a budget) plus the one tunable knob (agreement level) that makes debate pay off.

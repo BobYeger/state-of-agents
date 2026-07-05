@@ -54,6 +54,7 @@ updated: 2026-07-05
 
 ## Notes
 
+- Era note (2026-07-05): 2022 result on pre-tool-calling models; remains the control condition every aggregation method must beat, but its absolute numbers do not transfer to current models. Live aggregation guidance: [[methods/debate and aggregation]].
 - Canonical URL: https://arxiv.org/abs/2203.11171
 - Both the origin of answer-voting in LLMs and the baseline that the debate-critique literature shows debate often fails to beat at matched compute.
 - Directly applicable to code factories: voting over candidate patches or tests is self-consistency with an execution-grounded equivalence check.

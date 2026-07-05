@@ -39,7 +39,7 @@ updated: 2026-07-03
 ## Connections
 
 - [[sources/Towards a Science of Scaling Agent Systems]]
-- [[claims/Claim - More agents are not automatically better]]
+- [[claims/Claim - Coordination is a cost the task must justify]]
 - [[concepts/multi-agent systems]]
 - [[methods/topology optimization]]
 - [[operations/cost control]]

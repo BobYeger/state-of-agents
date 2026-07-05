@@ -22,5 +22,5 @@ Agent teams improve systems only when team structure is explicit: roles, task ow
 - [[concepts/agent teams]]
 - [[methods/multi-agent orchestration]]
 - [[maps/Agent Teams and Workforces Map]]
-- [[claims/Claim - More agents are not automatically better]]
+- [[claims/Claim - Coordination is a cost the task must justify]]
 - [[claims/Claim - Agent systems improve when structure matches the task]]

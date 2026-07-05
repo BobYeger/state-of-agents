@@ -40,7 +40,7 @@ updated: 2026-07-05
 
 ## Claims
 
-- [[claims/Claim - More agents are not automatically better]]
+- [[claims/Claim - Coordination is a cost the task must justify]]
 
 ## Connections
 
@@ -55,6 +55,7 @@ updated: 2026-07-05
 
 ## Notes
 
+- Era note (2026-07-05): 2024 sampling-ensemble result on Llama2-era models; the scaling shape holds as lineage, the absolute numbers do not transfer. Voting gains are capped by error correlation ([[sources/Correlated Errors in Large Language Models]]). Live guidance: [[methods/debate and aggregation]].
 - Canonical URL: https://arxiv.org/abs/2402.05120
 - Canonical pro-scaling side of the agent-count debate: the empirical baseline that [[sources/Towards a Science of Scaling Agent Systems]] and later coordination-cost work correct. Listed under the "more agents are not automatically better" claim as the strongest counter-evidence, not as support.
 - "Agents" here are independent samples of the same model aggregated by majority vote — no inter-agent communication — so results speak to inference-time sampling more than to coordinated multi-agent systems.

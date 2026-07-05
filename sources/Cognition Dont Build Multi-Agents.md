@@ -36,7 +36,7 @@ updated: 2026-07-05
 
 ## Claims
 
-- [[claims/Claim - More agents are not automatically better]]
+- [[claims/Claim - Coordination is a cost the task must justify]]
 - [[claims/Claim - Context management is an agent architecture choice]]
 
 ## Connections

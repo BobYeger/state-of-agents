@@ -37,7 +37,7 @@ updated: 2026-05-18
 ## Claims
 
 - [[claims/Claim - Agent systems improve when structure matches the task]]
-- [[claims/Claim - More agents are not automatically better]]
+- [[claims/Claim - Coordination is a cost the task must justify]]
 
 ## Connections
 

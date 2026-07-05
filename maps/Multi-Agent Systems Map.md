@@ -26,7 +26,7 @@ Use this as a navigation page, not a source registry. Start from the synthesis n
 
 ## Claims
 
-- [[claims/Claim - More agents are not automatically better]]
+- [[claims/Claim - Coordination is a cost the task must justify]]
 - [[claims/Claim - Agent systems improve when structure matches the task]]
 - [[claims/Claim - Runtime control and verification improve agent reliability]]
 - [[claims/Claim - Harnesses tools and context are core agent performance levers]]

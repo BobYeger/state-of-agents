@@ -36,7 +36,7 @@ updated: 2026-05-18
 
 ## Claims
 
-- [[claims/Claim - More agents are not automatically better]]
+- [[claims/Claim - Coordination is a cost the task must justify]]
 
 ## Connections
 

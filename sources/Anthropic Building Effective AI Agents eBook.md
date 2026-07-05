@@ -41,7 +41,7 @@ updated: 2026-06-17
 ## Claims
 
 - [[claims/Claim - Agent systems improve when structure matches the task]]
-- [[claims/Claim - More agents are not automatically better]]
+- [[claims/Claim - Coordination is a cost the task must justify]]
 - [[claims/Claim - Harnesses tools and context are core agent performance levers]]
 - [[claims/Claim - Runtime control and verification improve agent reliability]]
 - [[claims/Claim - Agent memory and skills create compounding improvement loops]]

@@ -23,7 +23,7 @@ updated: 2026-06-23
 
 - [[claims/Claim - Context management is an agent architecture choice]]
 - [[claims/Claim - Agent systems improve when structure matches the task]]
-- [[claims/Claim - More agents are not automatically better]]
+- [[claims/Claim - Coordination is a cost the task must justify]]
 
 ## Connections
 

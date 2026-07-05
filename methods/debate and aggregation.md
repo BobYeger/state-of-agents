@@ -4,6 +4,8 @@ Debate and aggregation are inference-time methods that combine multiple model ou
 
 This is narrower than [[methods/multi-agent orchestration]]. Orchestration divides a task into different roles and subtasks; aggregation spends extra samples or extra participants on the *same* question and then reconciles them. The design questions are correspondingly different: not "who owns what" but "how do outputs get reconciled, and when does another sample stop paying for itself."
 
+The headline question of the 2022-2024 literature — does debate beat sampling? — is settled: rarely at matched compute, with error correlation as the mechanism. This note is the reference treatment of the families and the two levers that still move results (heterogeneity, agreement modulation); the source cards carry era notes marking which results are lineage rather than live guidance.
+
 ## Aggregation Families
 
 | Family | Mechanism | Anchor evidence |
@@ -19,7 +21,7 @@ This is narrower than [[methods/multi-agent orchestration]]. Orchestration divid
 
 The pro-aggregation results are real but predate cost-matched comparisons. [[sources/Multiagent Debate Improves Factuality and Reasoning]] reports gains across arithmetic, MMLU, and biography factuality with no task-specific tuning; [[sources/More Agents Is All You Need]] shows performance scaling with sample count, orthogonal to other methods; [[sources/Mixture-of-Agents]] documents the "collaborativeness" phenomenon in which models improve when shown other models' outputs even when those outputs are individually worse.
 
-The controlled evaluations are corrective. [[sources/Should We Be Going MAD]] benchmarks debate protocols on cost, time, and accuracy and finds debate does not reliably outperform self-consistency and ensembling. [[sources/Stop Overvaluing Multi-Agent Debate]] evaluates five debate methods across nine benchmarks and four base models under matched conditions and finds they often fail to beat chain-of-thought and self-consistency while consuming significantly more compute.
+The controlled evaluations settled the question. [[sources/Should We Be Going MAD]] benchmarks debate protocols on cost, time, and accuracy and finds debate does not reliably outperform self-consistency and ensembling. [[sources/Stop Overvaluing Multi-Agent Debate]] evaluates five debate methods across nine benchmarks and four base models under matched conditions and finds they often fail to beat chain-of-thought and self-consistency while consuming significantly more compute.
 
 The mechanism behind both saturation and debate failure is error correlation. [[sources/Correlated Errors in Large Language Models]] measures 350+ models and finds that when two models err, they agree 60% of the time — far above independence — which breaks the jury-theorem assumption behind majority voting. Correlation is worst among large, accurate models even across vendors, so diversity cannot be bought by mixing frontier providers. The same correlation contaminates judge aggregation: judge errors correlate with judged-model errors.
 
@@ -56,5 +58,5 @@ Default decision procedure: establish the self-consistency baseline at the inten
 - [[operations/agent evals]]
 - [[operations/cost control]]
 - [[maps/MAS Orchestration and Architecture]]
-- [[claims/Claim - More agents are not automatically better]]
+- [[claims/Claim - Coordination is a cost the task must justify]]
 - [[claims/Claim - Agent systems improve when structure matches the task]]

@@ -2,12 +2,14 @@
 
 Agent systems improve when the decomposition, roles, communication topology, and coordination protocol match the task. Multi-agent systems are most defensible when the work is broad, parallelizable, context-heavy, or benefits from specialized roles.
 
-## What This Adds Beyond "More Agents Are Not Better"
+## The Design Rule
 
-The positive design rule is task-contingent orchestration: choose the smallest structure that creates useful parallelism, independent context, specialization, or verification without adding unnecessary coordination cost.
+Task-contingent orchestration: choose the smallest structure that creates useful parallelism, independent context, specialization, or verification without adding unnecessary coordination cost. The cost side of the same decision is [[claims/Claim - Coordination is a cost the task must justify]].
 
 ## Supporting Sources
 
+- [[sources/Towards a Science of Scaling Agent Systems]] is the quantitative anchor: across 260 configurations, relative performance against a single-agent baseline spans +80.8% (decomposable financial reasoning under centralized coordination) to -70.0% (sequential planning under independent agents), and a predictor built from coordination metrics selects the best architecture for 87% of held-out configurations — structure-task fit is measurable, not taste.
+- [[sources/Do More Agents Help]] shows the fit has to be found, not assumed: fixed multi-agent workflows often trail matched single-agent setups under a normalized protocol, while runtime-generated workflows can help on harder tasks.
 - [[sources/Anthropic Multi-Agent Research System]] is the clearest production case for broad research tasks where subagents get separate context windows and tool-heavy search paths.
 - [[sources/Anthropic Building Effective AI Agents eBook]] gives enterprise decision guidance for choosing single-agent, workflow, hierarchical multi-agent, or collaborative multi-agent architectures based on task breadth, dependencies, risk, budget, and auditability.
 - [[sources/Claude Common Workflow Patterns for AI Agents]] gives the production heuristic for matching workflow structure to task shape: sequential for dependencies, parallel for independent subtasks, evaluator-optimizer for measurable quality improvement.
@@ -31,7 +33,7 @@ The positive design rule is task-contingent orchestration: choose the smallest s
 
 ## Related
 
-- [[claims/Claim - More agents are not automatically better]]
+- [[claims/Claim - Coordination is a cost the task must justify]]
 - [[maps/What Makes Agent Systems Better]]
 - [[maps/MAS Orchestration and Architecture]]
 - [[methods/multi-agent orchestration]]

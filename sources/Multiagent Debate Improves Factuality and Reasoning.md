@@ -54,6 +54,7 @@ updated: 2026-07-05
 
 ## Notes
 
+- Era note (2026-07-05): the 2023 "society of minds" origin paper; retained as lineage. Cost-matched evaluations found debate rarely beats self-consistency ([[sources/Should We Be Going MAD]], [[sources/Stop Overvaluing Multi-Agent Debate]]). Live guidance: [[methods/debate and aggregation]].
 - Canonical URL: https://arxiv.org/abs/2305.14325
 - Origin point of the LLM multi-agent debate literature; the 2024-2026 critique papers ([[sources/Should We Be Going MAD]], [[sources/Stop Overvaluing Multi-Agent Debate]]) argue against this paper's free-form consensus setup specifically.
 - The headline gains predate compute-matched comparisons; later controlled evaluations find debate often fails to beat self-consistency at equal cost.

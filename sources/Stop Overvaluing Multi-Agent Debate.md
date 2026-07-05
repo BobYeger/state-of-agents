@@ -42,7 +42,7 @@ updated: 2026-07-05
 
 ## Claims
 
-- [[claims/Claim - More agents are not automatically better]]
+- [[claims/Claim - Coordination is a cost the task must justify]]
 
 ## Connections
 
@@ -59,6 +59,7 @@ updated: 2026-07-05
 
 ## Notes
 
+- Era note (2026-07-05): one of the two evaluations that settled the debate-era question; its model-heterogeneity antidote remains cited. Read as settled evidence, not an open controversy. Live guidance: [[methods/debate and aggregation]].
 - Canonical URL: https://arxiv.org/abs/2502.08788
 - The most-cited critical evaluation of MAD: compute-matched evidence on when debate converges vs entrenches, with an actionable fix (heterogeneous debaters).
 - Beware duplicate citations under the v1 title; both titles resolve to arXiv 2502.08788.

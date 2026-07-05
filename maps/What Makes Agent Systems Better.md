@@ -1,6 +1,6 @@
 # What Makes Agent Systems Better
 
-This map answers the positive version of [[claims/Claim - More agents are not automatically better]]: if agent count is not the main lever, what actually improves agent systems?
+This map answers the positive version of [[claims/Claim - Coordination is a cost the task must justify]]: if agent count is not the main lever, what actually improves agent systems?
 
 ## Core Answer
 

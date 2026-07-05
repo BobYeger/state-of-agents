@@ -51,6 +51,7 @@ updated: 2026-07-05
 
 ## Notes
 
+- Era note (2026-07-05): 2024 layered-synthesis result on GPT-4o-era models; the collaborativeness phenomenon is the durable lesson, the leaderboard numbers do not transfer. Live guidance: [[methods/debate and aggregation]].
 - Canonical URL: https://arxiv.org/abs/2406.04692
 - Canonical citation for the mixture-of-agents layering pattern: synthesis-style aggregation beating both voting and any single frontier model.
 - Headline result is on AlpacaEval 2.0 (LLM-judged, length-controlled win rate), not on agentic or tool-use tasks; transfer to agent harnesses is an open question.

@@ -33,7 +33,7 @@ Coordination now has measured costs, not just anecdotes. [[sources/Towards a Sci
 - [[methods/runtime routing]]
 - [[methods/runtime supervision]]
 - [[protocols/agent protocols]]
-- [[claims/Claim - More agents are not automatically better]]
+- [[claims/Claim - Coordination is a cost the task must justify]]
 - [[claims/Claim - Agent systems improve when structure matches the task]]
 
 ## Related Sources

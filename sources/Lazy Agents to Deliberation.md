@@ -48,7 +48,7 @@ updated: 2026-05-19
 - [[methods/deliberative control]]
 - [[methods/multi-agent learning]]
 - [[concepts/multi-agent systems]]
-- [[claims/Claim - More agents are not automatically better]]
+- [[claims/Claim - Coordination is a cost the task must justify]]
 
 ## Artifacts
 
