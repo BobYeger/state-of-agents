@@ -2,7 +2,7 @@
 
 Agent memory stores reusable knowledge, preferences, task state, or experience outside the current context window.
 
-Two surveys now anchor the field. [[sources/Memory for Autonomous LLM Agents]] is the earlier, narrower map of mechanisms and evaluation. [[sources/Memory in the Age of AI Agents]] is the larger successor: a three-axis taxonomy (forms, functions, dynamics) that also draws the boundary between agent memory, RAG, LLM memory, and context engineering — a boundary worth keeping when reading vendor material that blurs them.
+Two surveys now anchor the field. [[sources/Memory for Autonomous LLM Agents]] (2026-03-08) is the narrower, single-author map of mechanisms and evaluation. [[sources/Memory in the Age of AI Agents]] (2025-12-15) is the larger 47-author survey: a three-axis taxonomy (forms, functions, dynamics) that also draws the boundary between agent memory, RAG, LLM memory, and context engineering — a boundary worth keeping when reading vendor material that blurs them.
 
 ## Lineage
 
@@ -39,7 +39,7 @@ The substrate question — where memory physically lives — is separable from t
 | Substrate | Best for | Evidence | Cost of choosing it wrongly |
 |---|---|---|---|
 | Markdown / plain files | Single agent, single user, low write volume, human-auditable state (`CLAUDE.md`, progress files) | [[sources/Zep Markdown Is Not Agent Memory]]: works at small scale, breaks under contradiction, supersession, and concurrency; [[sources/Letta Code Memory Docs]]: file-backed self-editing memory as a harness profile | No answer to "which version is current"; concurrent writers clobber each other |
-| Vector store + extraction | Conversational recall; salient-fact QA | [[sources/Mem0]]: 26% relative improvement over OpenAI memory on LoCoMo with 91% lower p95 latency; its graph variant adds only ~2%, so extraction quality dominates structure here | Multi-hop and corpus-level questions fail: no small set of chunks contains the answer |
+| Vector store + extraction | Conversational recall; salient-fact QA | [[sources/Mem0]]: 26% relative improvement over OpenAI memory on LoCoMo; 91% lower p95 latency and >90% token savings versus full-context replay; its graph variant adds only ~2%, so extraction quality dominates structure here | Multi-hop and corpus-level questions fail: no small set of chunks contains the answer |
 | Knowledge graph | Multi-hop reasoning; corpus-level sensemaking | [[sources/HippoRAG]]: KG index + PageRank matches iterative retrieval at 10-30x lower cost; [[sources/GraphRAG]]: community summaries answer global questions top-k vector RAG structurally cannot | Significant upfront indexing cost; wasted if queries are single-hop |
 | Temporal knowledge graph | Facts that change; provenance and supersession requirements | [[sources/Zep Temporal Knowledge Graph Memory]]: bi-temporal records with automatic fact invalidation, up to +18.5% on LongMemEval (vendor-reported) | Same indexing cost, plus schema commitment; overkill for static reference material |
 | Agent-curated notes | An agent maintaining its own evolving understanding | [[sources/A-MEM]]: Zettelkasten-style notes with agent-decided links and retroactive evolution, gains across six models | Retroactive rewriting erases the original record — a provenance loss shared stores cannot afford |

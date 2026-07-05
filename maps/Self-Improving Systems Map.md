@@ -1,6 +1,6 @@
 # Self-Improving Systems Map
 
-This map is the entry point for readers designing systems that improve themselves: agent loops that mutate code, prompts, skills, memory, or whole harnesses, and keep changes only when external evidence improves. It assembles the synthesis notes, then gives a canonical reading order over the source evidence.
+This map is the entry point for readers designing systems that improve themselves: agent loops that mutate code, prompts, skills, memory, or whole harnesses, and keep changes only when external evidence improves. It assembles the synthesis notes, then gives a canonical reading order over the source evidence. [[reports/Self-Improving Systems Report]] is the narrative treatment of this cluster; this page stays the inventory.
 
 The organizing claim is that self-improvement is a harness property, not a model property. Every credible result in this cluster pairs a mutation mechanism with an evaluator, a selection policy, provenance, and rollback — and every documented failure traces back to one of those four being weak.
 

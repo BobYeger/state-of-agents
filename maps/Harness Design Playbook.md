@@ -6,7 +6,7 @@ The order matters: architecture first, then the twelve harness questions, then f
 
 ## Step 1: Choose the Architecture
 
-Measure the single-agent baseline before adding anything. [[sources/Towards a Science of Scaling Agent Systems]] shows coordination returns turn negative once the single-agent baseline exceeds roughly 0.45 accuracy, and the spread between best and worst architecture on the same task runs from +80.8% to -70.0% — architecture selection, not agent count, is the decision that matters.
+Measure the single-agent baseline before adding anything. [[sources/Towards a Science of Scaling Agent Systems]] shows coordination yields diminishing or negative returns once the single-agent baseline exceeds roughly 0.45 accuracy, and relative performance against single-agent spans +80.8% (decomposable financial reasoning under centralized coordination) to -70.0% (sequential planning under independent agents) — architecture selection matched to task structure, not agent count, is the decision that matters.
 
 | Task property | Choice | Evidence |
 |---|---|---|

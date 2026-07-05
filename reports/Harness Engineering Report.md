@@ -1,7 +1,7 @@
 # Harness Engineering Report: Goals, Workflows, and Runtime Control
 
-Date: 2026-06-14
-Scope: local project graph, with current official Codex and Claude `/goal`, `/loop`, and workflow docs consulted for the goal-command and loop-engineering sections. Direct excerpts are intentionally short; longer source passages are summarized. Source-paper figures are referenced through local PDF page embeds for private vault analysis rather than copied as standalone images.
+Date: 2026-07-05
+Scope: local project graph, with current official Codex and Claude `/goal`, `/loop`, and workflow docs consulted for the goal-command and loop-engineering sections. Originally written 2026-06-14; revised 2026-07-05 against the rebuilt 471-source graph, with the self-improvement lineage now carried by [[reports/Self-Improving Systems Report]]. This report owns within-run loop mechanics: goals, workflows, wake/verify/retry/stop policies, and ralph-style loops. Direct excerpts are intentionally short; longer source passages are summarized. Source-paper figures are referenced through local PDF page embeds for private vault analysis rather than copied as standalone images.
 
 ## Executive Summary
 
@@ -42,7 +42,7 @@ This is visible across the graph. OpenAI describes the Codex harness as the agen
 
 ## The Unit of Design
 
-The useful design unit is the loop, not the model call.
+The useful design unit is the loop, not the model call. The loop has a founding citation: [[sources/ReAct]] defined the interleaved reasoning-trace plus grounded-action pattern that every modern harness assumes, worth +34% absolute success on ALFWorld and +10% on WebShop with only 1-2 in-context examples. The card's caveat is part of the lesson: those results predate native tool-calling APIs, and the durable contribution is the loop structure, not the benchmark numbers.
 
 ```mermaid
 flowchart TD
@@ -148,6 +148,10 @@ Claude Code's [[sources/Claude Code Scheduled Tasks]] makes this concrete. `/loo
 
 That means `/loop` belongs in harness engineering. It changes who owns continuation: the user is no longer manually starting every turn. The harness owns the wakeup and the model owns the next iteration. The design problem becomes: what should wake the loop, what evidence should it inspect, what may it touch, and when must it stop?
 
+Codex has the same recurrence surface under a different name. The closest Codex analogue to `/loop` is a thread automation, not `/goal`: automations are scheduled wake-up calls that run standalone or attached to a thread, can use skills and plugins, run on dedicated background worktrees, and inherit the user's sandbox and policy configuration ([[sources/OpenAI Codex Automations]]).
+
+Practitioner analyses sharpen what the loop above the agent looks like. [[sources/Armin Ronacher The Coming Loop]] separates the inner coding-agent loop from the harness-level loop that keeps a task alive after the model would normally stop: put work in a queue, let a machine attempt it, then decide whether to continue the session, inject a new message, restart with modified context, or route the task elsewhere. His caution is a harness caution: loops can amplify defensive, over-complex code and widen comprehension debt when humans no longer understand what shipped. [[sources/Andrew Ng Three Key Loops]] adds the cadence structure around it: the agentic coding loop runs in minutes, the developer feedback loop in hours, and the external feedback loop in days or longer, with humans injecting user and product context the agent does not have rather than acting only as a safety brake.
+
 Loop engineering also clarifies the relation among Ralph, workflows, and durable infrastructure:
 
 | Pattern | Wake trigger | Durable state | Primary risk |
@@ -157,6 +161,8 @@ Loop engineering also clarifies the relation among Ralph, workflows, and durable
 | Self-improving code loop | benchmark result, evaluator score, or experiment metric | candidate code, traces, archive/database of variants | evaluator hacking or unsafe generated code |
 | Cloudflare Dynamic Workflow | event, request, tenant code, or agent-written plan | platform workflow state and routing metadata | durable execution of the wrong plan |
 | Ralph loop | human or shell restarts a fresh agent run | specs, plan, tests, commits | local progress against weak specs |
+
+The self-improving code loop row describes loop mechanics: what wakes the run, what state persists, what the loop risks. The across-run design of such systems — what mutates between runs, what selects among candidates, and what makes a bad keep decision revertible — is the subject of [[reports/Self-Improving Systems Report]].
 
 ## Outcomes and Rubric Graders
 
@@ -193,16 +199,31 @@ That is a harness boundary. Moving the plan into code moves state and control ou
 
 [[sources/Cloudflare Dynamic Workflows]] pushes the same idea into infrastructure. A workflow can be tenant-specific, repo-specific, request-specific, or agent-written. The platform persists the workflow envelope, routes later steps back to the correct dynamic code, retries steps, hibernates during sleeps, and waits for external events such as approval.
 
+[[sources/GitHub Agentic Workflows]] moves the workflow into CI. Natural-language Markdown workflows compile into GitHub Actions YAML with agent execution, and the security posture is the harness: read-only defaults, sandboxed container execution, integrity filters, an Agent Workflow Firewall, and safe outputs. The workflow file becomes a reviewable, versioned control plan living next to the code it operates on.
+
 The pattern:
 
 ```text
 Claude workflow: model writes script -> local runtime coordinates subagents
 Claude /loop: scheduler wakes prompt -> model checks state -> scheduler repeats or stops
 Cloudflare workflow: model/user writes run(event, step) -> durable platform executes it
+GitHub agentic workflow: markdown compiles to Actions YAML -> CI runs the agent under policy
 Ralph workflow: human/agent writes files -> shell loop repeatedly runs coding agent
 ```
 
 All five are harness engineering because they decide where control, state, and evidence live.
+
+The adoption evidence carries a warning. A study of more than 6,000 public n8n workflows using LLM agents finds the models embedded inside broader automation structures with control logic, external services, storage, and human review points, while explicit reliability mechanisms — fallback paths, repair loops, failure-specific alerts, human approval gates — remain uncommon ([[sources/n8n Agentic Workflows Study]]). Workflow adoption is moving faster than the reliability engineering this report describes.
+
+## Durable Execution and Delivery Semantics
+
+An agent loop is a distributed system: it makes remote calls with unreliable delivery, holds state that must survive crashes, and produces side effects that retries can duplicate. The full failure taxonomy and handling patterns live in [[operations/harness fault tolerance]]; the design choices below are the harness-shaping ones.
+
+Durable execution gives the loop crash recovery without re-spending tokens. The reference mapping is Temporal's OpenAI Agents SDK integration: the agent orchestration loop runs as a Workflow while every LLM invocation and tool call executes as an Activity; event history records each Activity's arguments and results, so after a crash the workflow replays deterministically and picks up where it left off without re-running completed steps ([[sources/Temporal OpenAI Agents SDK Integration]]). OpenAI made `Runner` an abstract base class specifically so Temporal could supply an Activity-creating implementation, and the integration reached general availability on 2026-03-23. Restate makes the counter-argument for dynamic, non-graph loops: journal-based durable execution as lightweight middleware over existing SDK loops rather than restructuring around a workflow runtime, with suspension as a first-class state — agents pause indefinitely awaiting human approval or slow inference at zero serverless cost and resume via journal replay ([[sources/Restate Durable AI Loops]]).
+
+Pause and resume have precise semantics, and the details bind application code. LangGraph's `interrupt()` throws an exception the runtime catches, persists exact state through a mandatory checkpointer, and resumes via `Command(resume=value)` — but resumption restarts the entire node from the beginning, so pre-interrupt code re-executes and must be idempotent ([[sources/LangGraph Interrupts]]).
+
+Idempotency is not an implementation nicety; it is forced by delivery semantics. Exactly-once delivery is impossible over unreliable channels, so every event-driven loop chooses at-most-once (loss possible) or at-least-once (duplicates possible) and designs for the consequence: idempotent handlers, deduplication, or distributing immutable facts rather than mutable operations ([[sources/You Cannot Have Exactly-Once Delivery]]). Any harness that feeds agents from queues, schedules, or event streams inherits this rule.
 
 ## Ralph as Minimal Harness
 
@@ -231,6 +252,8 @@ This is harness engineering without a hosted platform. The durable substrate is 
 
 Ralph's risk is also a harness risk: if specs are weak, tests absent, permissions too loose, or plan updates sloppy, the loop can keep moving while optimizing the wrong target.
 
+The research-side counterpart is [[sources/Mini-SWE-agent]]: a roughly 100-line Python agent class whose only tool is bash, with a linear message history and no stateful shell session, scoring over 74% on SWE-bench Verified as of mid-2026, up from about 65% at its 2025 launch. Built by the SWE-bench team, it functions as the control condition for harness engineering: it quantifies how much harness complexity current models still require, and it gives elaborate scaffolds a baseline they must beat to justify their machinery.
+
 ## Product and Runtime Evidence
 
 | Source | Harness engineering lesson |
@@ -246,11 +269,8 @@ Ralph's risk is also a harness risk: if specs are weak, tests absent, permission
 | [[sources/Claude Code Hooks]] | Hooks expose lifecycle interception points for deterministic policy gates, context injection, validators, continuation checks, and telemetry. |
 | [[sources/Claude Code Workflows]] | Workflows move orchestration into readable, rerunnable scripts with separate runtime state. |
 | [[sources/Claude Code Scheduled Tasks]] | `/loop` and cron tools make recurrence a harness primitive with cadence, expiry, local state, and task management. |
+| [[sources/Claude Agent SDK Streaming vs Single Message]] | Interruption, message queueing and injection, and image input exist only on a persistent input stream; single-message mode trades them for stateless simplicity. |
 | [[sources/Addy Osmani Loop Engineering]] | Loop engineering names the layer that designs recurring prompt/workflow systems above direct manual prompting. |
-| [[sources/Meta-Harness]] | Harness code itself becomes the optimization target: what to store, retrieve, present, and check. |
-| [[sources/Darwin Godel Machine]] | Self-improving coding agents can mutate their own scaffold under benchmark feedback, but need sandboxing and objective-hacking controls. |
-| [[sources/SkillOpt]] | Natural-language skills become trainable external state through rollouts, bounded text edits, held-out validation, and reusable `best_skill.md` artifacts. |
-| [[sources/Anthropic When AI Builds Itself]] | AI-assisted engineering is shifting the bottleneck from implementation to direction-setting, review, validation, and governance. |
 | [[sources/Cloudflare Dynamic Workflows]] | Durable infrastructure can run agent-written plans with retries, hibernation, event waits, routing metadata, and sandboxed dynamic code. |
 | [[sources/Google ADK Durable Agents]] | Durable agents need explicit state machines and wakeup events, not raw chat replay. |
 | [[sources/LangGraph Docs]] | Graph state machines expose durable execution, interrupts, human-in-the-loop, and stateful orchestration. |
@@ -258,58 +278,49 @@ Ralph's risk is also a harness risk: if specs are weak, tests absent, permission
 | [[sources/OpenHarness Docs]] | Harness primitives can be made composable: tools, compaction, streaming, subagents, providers, and middleware. |
 | [[sources/OpenClaw Agent Harness Plugins]] | A clean harness boundary can be the low-level executor for prepared agent turns. |
 | [[sources/OpenAI Symphony]] | Issue trackers become control planes: one ticket, one workspace, bounded policy, proof of work, review, retry. |
+| [[sources/Git Worktrees for Agents - Evolution and Vendor Approaches]] | Worktrees give file and branch isolation on a shared repo, not a runtime sandbox; the isolation ladder runs from local worktrees (Claude Code, Codex) to per-agent cloud VMs (Devin). |
+| [[sources/Kubernetes Agent Sandbox]] | Kubernetes standardizes the agent runtime primitive: a Sandbox CRD with gVisor/Kata isolation, warm pools against roughly 1-second cold starts, and scale-to-zero for mostly-idle agents. |
+| [[sources/Anthropic Sandbox Runtime Repository]] | OS-level sandboxing without containers; all network egress is forced through host-side proxies, which become the enforcement point for domain allowlists and credential injection. |
+
+Sources whose harness lesson is the across-run mutation of the harness itself — [[sources/Meta-Harness]], [[sources/Darwin Godel Machine]], [[sources/SkillOpt]], and the organizational evidence in [[sources/Anthropic When AI Builds Itself]] — are treated in [[reports/Self-Improving Systems Report]].
 
 ## Research Lineage
 
 The research sources do not usually use the phrase "harness engineering." They still study the same design surface: control flow, verification, memory, workflow search, runtime supervision, and plan isolation.
 
+The scholarship has now caught up to the term. [[sources/Code as Agent Harness]] is a 42-author survey that treats the harness as a first-class research object, reframing code as the "operational substrate for agent reasoning, acting, environment modeling, and execution-based verification" and organizing the field into harness interface, harness mechanisms, and scaling layers. Its open-problems list — verification with incomplete feedback, regression-free improvement, multi-agent state consistency, human safety oversight — reads as this report's agenda stated as research questions.
+
 ### AFlow: Search Over Workflows
 
-[[sources/AFlow]] treats workflow design itself as an optimization problem. Rather than hand-design a chain, the system searches over code-represented agentic workflows using execution feedback.
+[[sources/AFlow]] treats workflow design itself as an optimization problem: prompts, roles, operators, and edges are not sacred; they are candidates to evaluate and improve.
 
-Harness implication: prompts, roles, operators, and edges are not sacred. They are candidates to evaluate and improve.
+Harness implication for this report: a workflow is code, so its control flow can be inspected, compared, and versioned like any other harness artifact. The search loop that evolves workflows across runs belongs to [[reports/Self-Improving Systems Report]].
 
-Relevant local figure pages:
+Relevant local figure page:
 
 ![[raw/papers/AFlow - Automating Agentic Workflow Generation.pdf#page=5]]
 
-![[raw/papers/AFlow - Automating Agentic Workflow Generation.pdf#page=10]]
-
 ### Self-Improving Code Loops
 
-[[methods/self-improving code loops]] is the sharper form of loop engineering where the mutable artifact is executable. The loop proposes code or procedure changes, runs an evaluator, records trace and score, then keeps, branches, or reverts the candidate.
-
-[[sources/Meta-Harness]] applies this to harness code itself: context, retrieval, storage, and presentation policy become searchable source code. [[sources/Darwin Godel Machine]] applies it to coding-agent scaffolds with an archive of variants. [[sources/SkillOpt]] applies it to natural-language skills: a frozen target agent runs scored rollouts, an optimizer proposes bounded edits, and held-out validation decides whether the skill changes. [[sources/Hyperagents]] extends the idea toward meta-agents that improve the improvement process. [[sources/AlphaEvolve]] applies the loop to algorithms and production infrastructure code. [[sources/The AI Scientist-v2]] applies related agentic tree search to research hypotheses, experiments, figures, and manuscripts.
-
-[[sources/Anthropic When AI Builds Itself]] is the organizational boundary case: it is not evidence that full recursive self-improvement has arrived, but it shows AI development work moving toward goal-driven loops where agents implement, test, review, and suggest next steps while humans retain problem selection, rubric design, and governance.
-
-Harness implication: once the harness can improve executable artifacts, evaluator quality becomes the safety boundary. The system needs sandboxing, provenance, rollback, budget caps, and adversarial checks for metric hacking.
-
-Relevant local figure pages:
-
-![[raw/papers/Meta-Harness - End-to-End Optimization of Model Harnesses.pdf#page=1]]
-
-![[raw/papers/Darwin Godel Machine - Open-Ended Evolution of Self-Improving Agents.pdf#page=3]]
-
-![[raw/papers/AlphaEvolve - A coding agent for scientific and algorithmic discovery.pdf#page=2]]
+[[methods/self-improving code loops]] is the across-run extension of harness engineering: the same loop machinery, wrapped around runs instead of inside them, mutates agent code, harness code, prompts, skills, or memory between runs and keeps changes only on evaluator evidence. The anchor result is the Darwin Godel Machine, which rewrites its own scaffold under benchmark selection and lifts SWE-bench from 20.0% to 50.0% ([[sources/Darwin Godel Machine]]). For this report the relevant boundary is the within-run loop those systems assume as their unit of execution: a meta-loop wrapped around a broken inner loop optimizes noise. The full lineage — [[sources/Meta-Harness]], [[sources/SkillOpt]], [[sources/Hyperagents]], [[sources/AlphaEvolve]], [[sources/The AI Scientist-v2]] — together with its correctives and trust rails is carried by [[reports/Self-Improving Systems Report]].
 
 ### Voyager: Procedural Memory and Self-Verification
 
-[[sources/Voyager]] predates the current harness vocabulary, but it has many of the pieces: automatic curriculum, executable skill library, code-as-action, environment feedback, and self-verification.
+[[sources/Voyager]] predates the current harness vocabulary, but it already runs the within-run loop this report describes: code-as-action, environment feedback, and a self-verifier that decides whether a task is complete before the loop moves on.
 
-Harness implication: a capable agent needs a loop that turns experience into reusable procedures, not just a prompt that asks it to try harder.
+Harness implication: verification is a loop component, not a post-hoc check. The across-run half of Voyager — the skill library that accumulates verified procedures between episodes — is treated in [[reports/Self-Improving Systems Report]].
 
-Relevant local figure pages:
+Relevant local figure page:
 
 ![[raw/papers/Voyager - An Open-Ended Embodied Agent with Large Language Models.pdf#page=2]]
-
-![[raw/papers/Voyager - An Open-Ended Embodied Agent with Large Language Models.pdf#page=4]]
 
 ### Plan-Then-Execute: Human Review and Trust
 
 [[sources/Plan-Then-Execute]] shows the human side of harness design. Plan-first interfaces let users inspect and edit the plan before execution, but they also create trust and cognitive-load tradeoffs.
 
-Harness implication: planning is not only a reasoning tactic. It is a user interface, approval surface, and risk-control boundary.
+The approval surface itself has measured failure mechanics. In a randomized experiment with 2,784 participants reviewing AI-generated suggestions, friction drove rubber-stamping: when flagging an AI error required typing a corrected value, participants made fewer corrections and accepted more incorrect suggestions, and pre-existing attitude toward AI predicted performance more strongly than demographics ([[sources/Bias in the Loop]]). The design guidance is direct: in a review gate, rejection must be as cheap as approval, or the gate stops catching errors. The card's caveat applies: the task was annotation-style review with crowd participants, not code review by engineers.
+
+Harness implication: planning is not only a reasoning tactic. It is a user interface, approval surface, and risk-control boundary — and the human side of that boundary degrades in measurable, design-sensitive ways.
 
 Relevant local figure page:
 
@@ -336,6 +347,14 @@ Relevant local figure pages:
 ![[raw/papers/Stop Wasting Your Tokens - Towards Efficient Runtime Multi-Agent Systems.pdf#page=2]]
 
 ![[raw/papers/Stop Wasting Your Tokens - Towards Efficient Runtime Multi-Agent Systems.pdf#page=5]]
+
+### AI Control: Supervision Under Adversarial Assumptions
+
+The AI control line hardens runtime supervision by assuming the worst case. [[sources/AI Control Despite Intentional Subversion]] evaluates safety protocols under the assumption that the untrusted model is intentionally trying to subvert them, with a weaker trusted model and limited trusted human labor as the only resources. Its protocols are harness patterns: trusted editing (the weak model rates suspiciousness and rewrites above-threshold code) and untrusted monitoring with anti-collusion redaction, evaluated as a safety-versus-usefulness frontier by a red team supplying attack policies.
+
+[[sources/Ctrl-Z Controlling AI Agents via Resampling]] extends the methodology to multi-step agents on BashBench, 257 multi-step system-administration tasks with an adversarial agent trying to covertly download and execute malicious code. Resample protocols take additional samples of suspicious actions and use the variance across samples to incriminate attackers; the best protocol cuts covert malicious-code-execution success from 58% to 7% at a 5% cost to legitimate task performance, and the strongest results analyze historical trajectory steps, not just the current action. The card's caveat: these are protocol-versus-attack-policy numbers on one benchmark, not general guarantees.
+
+Harness implication: the supervision machinery this report describes — monitors, approvals, resampling, trajectory review — can be designed and measured against an adversarial model of the agent, not just an error-prone one.
 
 ### VeriMAP: Planning with Checkability
 
@@ -423,6 +442,12 @@ If future agents need it, write it down somewhere inspectable. Long-running harn
 
 Autonomy without a stop policy is not a harness. Bound it by evidence, budget, time, turns, approvals, tool allowlists, workspace isolation, and human review.
 
+### 7. Design for the Cache, Cap the Spend
+
+An agent loop replays the whole transcript plus one new observation on every iteration, which makes the workload prefix-heavy and makes cache behavior a design input rather than a billing detail. Manus reports a roughly 100:1 input-to-output token ratio, a typical task of about 50 tool calls, and a 10x price difference between cached and uncached input ($0.30 versus $3.00 per million tokens on mid-2025 Claude Sonnet pricing), and calls KV-cache hit rate "the single most important metric for a production-stage AI agent" ([[sources/Manus Context Engineering]]). The API mechanics set the rules: cache reads cost 0.1x base input while writes cost 1.25x or 2x depending on TTL, and the prefix hierarchy runs tools, then system, then messages, so a tool-definition change invalidates everything downstream ([[sources/Claude API Prompt Caching]]). The design consequences — stable prefixes, append-only context, masking tools instead of removing them, compaction as planned cache invalidation ([[sources/Claude Code Prompt Caching]]) — are specified in [[concepts/cache-aware harness design]].
+
+Spend is bounded at two layers. Planning numbers come from fleet telemetry: Claude Code enterprise deployments average about $13 per developer per active day, $150-250 per developer per month, with 90% of users under $30 on any active day, and agent teams use approximately 7x more tokens than standard sessions when teammates run in plan mode ([[sources/Claude Code Manage Costs]]). Enforcement lives in the gateway: per-developer spend caps that reject over-cap requests live — "a circuit breaker, not an invoice" — with anti-evasion mechanics such as fallback pricing for unknown model IDs and floor-estimated billing for aborted streams ([[sources/Claude Apps Gateway Spend Limits]]); in self-hosted stacks, proxy budget hierarchies scope limits from the whole gateway down to teams, keys, models, end customers, and agents, with `max_iterations` and `max_budget_per_session` aimed directly at runaway loops ([[sources/LiteLLM Proxy Budgets and Spend Tracking]]). See [[operations/cost control]] for the full layer.
+
 ## Failure Modes
 
 | Failure | What it looks like | Harness countermeasure |
@@ -453,7 +478,7 @@ Harness engineering includes:
 - Evaluators, tests, rubrics, traces, dashboards, and replay.
 - Cost, latency, and resource controls.
 
-It does not include every aspect of agent development. Model training, dataset curation, product UX, and business process design matter, but they become harness engineering only when they control the runtime loop around the model.
+It does not include every aspect of agent development. Model training, dataset curation, product UX, and business process design matter, but they become harness engineering only when they control the runtime loop around the model. The across-run meta-loop — systems that mutate their own code, prompts, skills, or harness between runs under evaluators and selection — is the adjacent discipline, treated in [[reports/Self-Improving Systems Report]]; every system there assumes the within-run loop this report describes as its unit of execution.
 
 ## Practical Checklist
 
@@ -477,19 +502,21 @@ If those questions are unanswered, the system is probably still a prompt demo, n
 ## Gaps in the Current Vault
 
 - Claude Code `/goal` is now captured as [[sources/Claude Code Goals]]; Codex `/goal` is captured as [[sources/OpenAI Codex Using Goals]].
-- The vault has many later sources that reference ReAct-style loops, but it does not appear to have dedicated source cards for ReAct, Reflexion, or Self-Refine. Those would help complete the methodology lineage.
+- The methodology lineage now has [[sources/ReAct]] (cited above) and [[sources/Reflexion]] (treated in [[reports/Self-Improving Systems Report]]); a Self-Refine card is still missing.
 - There is no standalone `concepts/harness engineering.md`; the concept currently lives across [[operations/agent harnesses]], [[maps/Harness Tracker]], and this report.
 - The OpenAI "harness engineering" page referenced by the Symphony README is not yet curated as a source card.
 - The source-paper figure pages are embedded through local PDFs. If this report is exported publicly, redraw the figures as original diagrams or check rights before distribution.
-- The graph has strong product evidence and strong MAS workflow-search evidence, but fewer papers that explicitly name "harness" as a term. The report therefore treats harness engineering as a synthesis across runtime, orchestration, eval, context, and infrastructure sources.
 
 ## Bibliography
 
 Core vault anchors:
 
+- [[reports/Self-Improving Systems Report]]
 - [[operations/agent harnesses]]
 - [[operations/agent infrastructure]]
+- [[operations/cost control]]
 - [[operations/durable sessions]]
+- [[operations/harness fault tolerance]]
 - [[operations/permissions]]
 - [[operations/sandboxes]]
 - [[operations/agent observability]]
@@ -502,6 +529,7 @@ Core vault anchors:
 - [[claims/Claim - Harnesses tools and context are core agent performance levers]]
 - [[claims/Claim - Runtime control and verification improve agent reliability]]
 - [[concepts/agent operating surfaces]]
+- [[concepts/cache-aware harness design]]
 - [[concepts/tool use]]
 - [[concepts/outcomes and rubric graders]]
 - [[concepts/loop engineering]]
@@ -512,63 +540,84 @@ Core vault anchors:
 
 Product and runtime sources:
 
-- [[sources/OpenAI Codex Agent Loop]]
-- [[sources/OpenAI Codex Using Goals]]
-- [[sources/OpenAI Unlocking Codex Harness]]
-- [[sources/OpenAI Symphony]]
-- [[sources/Anthropic Building Effective Agents]]
+- [[sources/Addy Osmani Loop Engineering]]
+- [[sources/Andrew Ng Three Key Loops]]
 - [[sources/Anthropic Building Effective AI Agents eBook]]
-- [[sources/Claude Common Workflow Patterns for AI Agents]]
+- [[sources/Anthropic Building Effective Agents]]
+- [[sources/Anthropic Claude Code Worktrees]]
+- [[sources/Anthropic Demystifying Agent Evals]]
 - [[sources/Anthropic Effective Harnesses for Long-Running Agents]]
 - [[sources/Anthropic Harness Design Long-Running Apps]]
-- [[sources/Anthropic Demystifying Agent Evals]]
-- [[sources/Claude Managed Agents Define Outcomes]]
-- [[sources/Claude Code Hooks]]
-- [[sources/Claude Code Workflows]]
-- [[sources/Claude Code Scheduled Tasks]]
-- [[sources/Addy Osmani Loop Engineering]]
-- [[sources/Meta-Harness]]
-- [[sources/Darwin Godel Machine]]
-- [[sources/SkillOpt]]
-- [[sources/Hyperagents]]
-- [[sources/AlphaEvolve]]
-- [[sources/The AI Scientist-v2]]
-- [[sources/Anthropic When AI Builds Itself]]
-- [[sources/Claude Code Agent Teams]]
-- [[sources/Anthropic Claude Code Worktrees]]
-- [[sources/Cloudflare Dynamic Workflows]]
-- [[sources/Cloudflare Project Think]]
 - [[sources/Anthropic Managed Agents]]
 - [[sources/Anthropic Managed Agents Dreaming Outcomes]]
+- [[sources/Anthropic Sandbox Runtime Repository]]
+- [[sources/Anthropic When AI Builds Itself]]
+- [[sources/Armin Ronacher The Coming Loop]]
+- [[sources/Claude API Prompt Caching]]
+- [[sources/Claude Agent SDK Streaming vs Single Message]]
+- [[sources/Claude Apps Gateway Spend Limits]]
+- [[sources/Claude Code Agent Teams]]
+- [[sources/Claude Code Goals]]
+- [[sources/Claude Code Hooks]]
+- [[sources/Claude Code Manage Costs]]
+- [[sources/Claude Code Prompt Caching]]
+- [[sources/Claude Code Scheduled Tasks]]
+- [[sources/Claude Code Workflows]]
+- [[sources/Claude Common Workflow Patterns for AI Agents]]
+- [[sources/Claude Managed Agents Define Outcomes]]
+- [[sources/Cloudflare Dynamic Workflows]]
+- [[sources/Cloudflare Project Think]]
 - [[sources/Cursor Improving Agent Harness]]
-- [[sources/Cursor Scaling Long-Running Autonomous Coding]]
 - [[sources/Cursor Multi-Agent Kernels]]
+- [[sources/Cursor Scaling Long-Running Autonomous Coding]]
+- [[sources/Git Worktrees for Agents - Evolution and Vendor Approaches]]
+- [[sources/GitHub Agentic Workflows]]
 - [[sources/Google ADK Durable Agents]]
-- [[sources/LangGraph Docs]]
+- [[sources/Kubernetes Agent Sandbox]]
 - [[sources/LangChain Deep Agents v0.6]]
-- [[sources/OpenHarness Docs]]
+- [[sources/LangGraph Docs]]
+- [[sources/LangGraph Interrupts]]
+- [[sources/LiteLLM Proxy Budgets and Spend Tracking]]
+- [[sources/Manus Context Engineering]]
+- [[sources/Mini-SWE-agent]]
+- [[sources/OpenAI Codex Agent Loop]]
+- [[sources/OpenAI Codex Automations]]
+- [[sources/OpenAI Codex Using Goals]]
+- [[sources/OpenAI Symphony]]
+- [[sources/OpenAI Unlocking Codex Harness]]
 - [[sources/OpenClaw Agent Harness Plugins]]
+- [[sources/OpenHarness Docs]]
 - [[sources/Ralph Playbook]]
+- [[sources/Restate Durable AI Loops]]
+- [[sources/Temporal OpenAI Agents SDK Integration]]
+- [[sources/You Cannot Have Exactly-Once Delivery]]
 
 Research sources:
 
 - [[sources/AFlow]]
-- [[sources/Meta-Harness]]
-- [[sources/Darwin Godel Machine]]
-- [[sources/SkillOpt]]
-- [[sources/Hyperagents]]
-- [[sources/AlphaEvolve]]
-- [[sources/The AI Scientist-v2]]
-- [[sources/Voyager]]
-- [[sources/Plan-Then-Execute]]
-- [[sources/Web Agents Plan-Then-Execute]]
-- [[sources/Stop Wasting Your Tokens]]
-- [[sources/VeriMAP]]
-- [[sources/AgentFlow]]
-- [[sources/PEAR]]
+- [[sources/AI Control Despite Intentional Subversion]]
 - [[sources/AgentDropout]]
-- [[sources/Why Do Multi-Agent LLM Systems Fail]]
+- [[sources/AgentFlow]]
+- [[sources/AlphaEvolve]]
+- [[sources/Bias in the Loop]]
+- [[sources/Code as Agent Harness]]
+- [[sources/Ctrl-Z Controlling AI Agents via Resampling]]
+- [[sources/Darwin Godel Machine]]
+- [[sources/Hyperagents]]
+- [[sources/Meta-Harness]]
+- [[sources/PEAR]]
+- [[sources/Plan-Then-Execute]]
+- [[sources/ReAct]]
+- [[sources/Reflexion]]
+- [[sources/SkillOpt]]
+- [[sources/Stop Wasting Your Tokens]]
+- [[sources/The AI Scientist-v2]]
 - [[sources/The Orchestration of Multi-Agent Systems]]
+- [[sources/VeriMAP]]
+- [[sources/Voyager]]
+- [[sources/Web Agents Plan-Then-Execute]]
+- [[sources/Why Do Multi-Agent LLM Systems Fail]]
+- [[sources/n8n Agentic Workflows Study]]
 
 External current docs consulted:
 

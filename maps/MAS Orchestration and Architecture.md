@@ -29,7 +29,7 @@ The organizing question is: what coordination structure should exist for a given
 ## Design Heuristics
 
 - Start with task structure. Parallelizable, broad, context-heavy tasks justify different orchestration than sequential reasoning tasks.
-- Try the single-agent baseline first; add sequential, parallel, or evaluator-optimizer workflow structure only when it addresses a specific dependency, latency, or quality problem. Measured version: coordination returns turn negative once the single-agent baseline passes roughly 0.45 accuracy, and tool-heavy tasks pay disproportionate coordination overhead ([[sources/Towards a Science of Scaling Agent Systems]]).
+- Try the single-agent baseline first; add sequential, parallel, or evaluator-optimizer workflow structure only when it addresses a specific dependency, latency, or quality problem. Measured version: coordination yields diminishing or negative returns once the single-agent baseline exceeds roughly 0.45 accuracy, and tool-heavy tasks pay disproportionate coordination overhead ([[sources/Towards a Science of Scaling Agent Systems]]).
 - Distinguish dividing the task (orchestration, [[methods/topology optimization]]) from re-asking the same question (aggregation, [[methods/debate and aggregation]]); for the latter, establish the self-consistency baseline before paying for debate.
 - Add a central orchestrator when task decomposition, progress tracking, and recovery matter more than decentralization.
 - Use agent teams only when teammate context, clear ownership, shared state, and team-level verification justify the coordination overhead.

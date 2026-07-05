@@ -82,7 +82,7 @@ Note: [[operations/incident response]]. Second-best-evidenced stage, with publis
 Notes: [[methods/self-improving code loops]], [[concepts/lifelong agent learning]], [[maps/Self-Improving Systems Map]].
 
 - [[sources/LangChain Agent Improvement Loop]]: traces to eval cases to judge alignment as an operational loop. **Deployed, thin measurement.**
-- [[sources/Cursor Bugbot Learned Rules]]: learned review rules in a shipped product. **Deployed, thin measurement.**
+- [[sources/Cursor Bugbot Learned Rules]]: learned review rules in a shipped product, with published resolution telemetry (78.13% over 50,310 PRs across 110k+ repos and 44k+ rules — vendor-reported, LLM-judged at merge time). **Production-measured.**
 - Closed-loop factory self-improvement — the factory improving its own stages under evidence — remains **research**; the harness-optimization cluster in [[maps/Self-Improving Systems Map]] is where that evidence is accumulating.
 
 ## Sequencing Adoption
