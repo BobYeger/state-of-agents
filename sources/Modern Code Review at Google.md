@@ -22,8 +22,10 @@ authors:
 venue: "ICSE-SEIP 2018 (DOI 10.1145/3183519.3183525)"
 url: "https://sback.it/publications/icse2018seip.pdf"
 pdf_url: "https://sback.it/publications/icse2018seip.pdf"
+artifacts:
+  - "raw/papers/Modern Code Review - A Case Study at Google.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Modern Code Review at Google
@@ -44,6 +46,10 @@ updated: 2026-07-03
 - [[sources/GitHub Merge Queue Docs]]
 - [[sources/DORA State of AI-assisted Software Development 2025]]
 - [[sources/How Humans Review AI-Generated Pull Requests]]
+
+## Artifacts
+
+- [[raw/papers/Modern Code Review - A Case Study at Google.pdf]]
 
 ## Notes
 

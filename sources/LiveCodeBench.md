@@ -19,8 +19,10 @@ authors:
 venue: "arXiv / UC Berkeley, MIT, Cornell"
 url: "https://arxiv.org/abs/2403.07974"
 pdf_url: "https://arxiv.org/pdf/2403.07974"
+artifacts:
+  - "raw/papers/LiveCodeBench - Holistic and Contamination Free Evaluation of Large Language Models for Code.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # LiveCodeBench
@@ -40,6 +42,10 @@ updated: 2026-07-03
 - [[concepts/code factories]]
 - [[sources/SWE-bench Illusion]]
 - [[sources/SWE-bench Pro]]
+
+## Artifacts
+
+- [[raw/papers/LiveCodeBench - Holistic and Contamination Free Evaluation of Large Language Models for Code.pdf]]
 
 ## Notes
 

@@ -18,8 +18,10 @@ authors:
 venue: "Anthropic Newsroom"
 url: "https://www.anthropic.com/news/claude-sonnet-5"
 pdf_url: ""
+artifacts:
+  - "raw/articles/claude-sonnet-5.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Claude Sonnet 5
@@ -37,6 +39,10 @@ updated: 2026-07-03
 - [[methods/runtime routing]]
 - [[methods/multi-agent orchestration]]
 - [[systems/Claude Code]]
+
+## Artifacts
+
+- [[raw/articles/claude-sonnet-5.md]]
 
 ## Notes
 

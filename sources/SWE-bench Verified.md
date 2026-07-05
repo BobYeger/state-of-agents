@@ -18,8 +18,10 @@ authors:
 venue: "OpenAI blog"
 url: "https://openai.com/index/introducing-swe-bench-verified/"
 pdf_url: ""
+artifacts:
+  - "raw/articles/swe-bench-verified.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Introducing SWE-bench Verified
@@ -39,6 +41,10 @@ updated: 2026-07-03
 - [[sources/SWE-bench]]
 - [[sources/OpenAI Retires SWE-bench Verified]]
 - [[sources/Anthropic Demystifying Agent Evals]]
+
+## Artifacts
+
+- [[raw/articles/swe-bench-verified.md]]
 
 ## Notes
 

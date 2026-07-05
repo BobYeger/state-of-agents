@@ -22,8 +22,10 @@ authors:
 venue: "TMLR (arXiv 2402.05120), Tencent"
 url: "https://arxiv.org/abs/2402.05120"
 pdf_url: "https://arxiv.org/pdf/2402.05120"
+artifacts:
+  - "raw/papers/More Agents Is All You Need.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # More Agents Is All You Need
@@ -46,6 +48,10 @@ updated: 2026-07-03
 - [[methods/multi-agent orchestration]]
 - [[sources/Towards a Science of Scaling Agent Systems]]
 - [[sources/Self-Consistency Improves Chain of Thought Reasoning]]
+
+## Artifacts
+
+- [[raw/papers/More Agents Is All You Need.pdf]]
 
 ## Notes
 

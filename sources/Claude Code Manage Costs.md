@@ -18,8 +18,10 @@ authors:
 venue: "Claude Code docs"
 url: "https://code.claude.com/docs/en/costs"
 pdf_url: ""
+artifacts:
+  - "raw/docs/claude-code-manage-costs.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Claude Code Manage Costs
@@ -40,6 +42,10 @@ updated: 2026-07-03
 - [[concepts/agent teams]]
 - [[sources/Claude Code Agent Teams]]
 - [[sources/Claude Apps Gateway Spend Limits]]
+
+## Artifacts
+
+- [[raw/docs/claude-code-manage-costs.md]]
 
 ## Notes
 

@@ -19,8 +19,10 @@ authors:
 venue: "Google Developers Blog"
 url: "https://developers.googleblog.com/build-with-google-antigravity-our-new-agentic-development-platform/"
 pdf_url: ""
+artifacts:
+  - "raw/articles/google-antigravity.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Google Antigravity
@@ -45,6 +47,10 @@ updated: 2026-07-03
 - [[operations/agent observability]]
 - [[concepts/computer use]]
 - [[sources/Google Antigravity CLI Transition]]
+
+## Artifacts
+
+- [[raw/articles/google-antigravity.md]]
 
 ## Notes
 

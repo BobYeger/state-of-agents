@@ -20,8 +20,10 @@ authors:
 venue: "LF AI & Data community blog"
 url: "https://lfaidata.foundation/communityblog/2025/08/29/acp-joins-forces-with-a2a-under-the-linux-foundations-lf-ai-data/"
 pdf_url: ""
+artifacts:
+  - "raw/articles/acp-joins-a2a-under-linux-foundation.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # ACP Joins A2A Under Linux Foundation
@@ -40,6 +42,10 @@ updated: 2026-07-03
 - [[protocols/agent protocol governance]]
 - [[sources/Linux Foundation A2A Project Launch]]
 - [[sources/A2A Specification]]
+
+## Artifacts
+
+- [[raw/articles/acp-joins-a2a-under-linux-foundation.md]]
 
 ## Notes
 

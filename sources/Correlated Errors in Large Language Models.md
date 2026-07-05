@@ -20,8 +20,10 @@ authors:
 venue: "arXiv / ICML 2025 (Cornell / Cornell Tech)"
 url: "https://arxiv.org/abs/2506.07962"
 pdf_url: "https://arxiv.org/pdf/2506.07962"
+artifacts:
+  - "raw/papers/Correlated Errors in Large Language Models.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Correlated Errors in Large Language Models
@@ -46,6 +48,10 @@ updated: 2026-07-03
 - [[sources/Judging LLM-as-a-Judge with MT-Bench]]
 - [[sources/X-MAS]]
 - [[sources/Aligned Agents Biased Swarm]]
+
+## Artifacts
+
+- [[raw/papers/Correlated Errors in Large Language Models.pdf]]
 
 ## Notes
 

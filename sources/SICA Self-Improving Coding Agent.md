@@ -22,8 +22,10 @@ authors:
 venue: "arXiv (ICLR 2025 SSI-FM workshop)"
 url: "https://arxiv.org/abs/2504.15228"
 pdf_url: "https://arxiv.org/pdf/2504.15228"
+artifacts:
+  - "raw/papers/A Self-Improving Coding Agent (SICA).pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # SICA Self-Improving Coding Agent
@@ -49,6 +51,10 @@ updated: 2026-07-03
 - [[sources/Darwin Godel Machine]]
 - [[sources/ADAS]]
 - [[sources/SWE-bench Verified]]
+
+## Artifacts
+
+- [[raw/papers/A Self-Improving Coding Agent (SICA).pdf]]
 
 ## Notes
 

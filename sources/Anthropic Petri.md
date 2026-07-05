@@ -18,8 +18,10 @@ authors:
 venue: "Anthropic Research blog"
 url: "https://www.anthropic.com/research/petri-open-source-auditing"
 pdf_url: "https://alignment.anthropic.com/2025/petri"
+artifacts:
+  - "raw/articles/anthropic-petri.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Petri: An Open-Source Auditing Tool
@@ -39,6 +41,10 @@ updated: 2026-07-03
 - [[operations/agent evals]]
 - [[sources/SHADE-Arena]]
 - [[sources/Agentic Misalignment]]
+
+## Artifacts
+
+- [[raw/articles/anthropic-petri.md]]
 
 ## Notes
 

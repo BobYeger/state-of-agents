@@ -27,8 +27,10 @@ authors:
 venue: "arXiv / ICML 2024 Best Paper (UCL / Anthropic / Speechmatics)"
 url: "https://arxiv.org/abs/2402.06782"
 pdf_url: "https://arxiv.org/pdf/2402.06782"
+artifacts:
+  - "raw/papers/Debating with More Persuasive LLMs Leads to More Truthful Answers.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Debating with More Persuasive LLMs
@@ -51,6 +53,10 @@ updated: 2026-07-03
 - [[operations/agent evals]]
 - [[sources/Judging LLM-as-a-Judge with MT-Bench]]
 - [[sources/Multiagent Debate Improves Factuality and Reasoning]]
+
+## Artifacts
+
+- [[raw/papers/Debating with More Persuasive LLMs Leads to More Truthful Answers.pdf]]
 
 ## Notes
 

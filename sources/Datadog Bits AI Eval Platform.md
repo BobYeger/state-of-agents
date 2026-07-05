@@ -18,8 +18,10 @@ authors:
 venue: "Datadog Engineering Blog"
 url: "https://www.datadoghq.com/blog/engineering/bits-ai-eval-platform/"
 pdf_url: ""
+artifacts:
+  - "raw/articles/datadog-bits-ai-eval-platform.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Datadog Bits AI Eval Platform
@@ -39,6 +41,10 @@ updated: 2026-07-03
 - [[concepts/code factories]]
 - [[sources/AIOpsLab]]
 - [[sources/Anthropic Demystifying Agent Evals]]
+
+## Artifacts
+
+- [[raw/articles/datadog-bits-ai-eval-platform.md]]
 
 ## Notes
 

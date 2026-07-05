@@ -18,8 +18,10 @@ authors:
 venue: "arXiv / Anthropic"
 url: "https://arxiv.org/abs/2501.18837"
 pdf_url: "https://arxiv.org/pdf/2501.18837"
+artifacts:
+  - "raw/papers/Constitutional Classifiers - Defending against Universal Jailbreaks across Thousands of Hours of Red Teaming.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Constitutional Classifiers
@@ -38,6 +40,10 @@ updated: 2026-07-03
 - [[safety/agent safety and security]]
 - [[sources/LlamaFirewall]]
 - [[sources/The Attacker Moves Second]]
+
+## Artifacts
+
+- [[raw/papers/Constitutional Classifiers - Defending against Universal Jailbreaks across Thousands of Hours of Red Teaming.pdf]]
 
 ## Notes
 

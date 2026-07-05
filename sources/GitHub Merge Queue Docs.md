@@ -18,8 +18,10 @@ authors:
 venue: "docs.github.com"
 url: "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue"
 pdf_url: ""
+artifacts:
+  - "raw/docs/github-merge-queue-docs.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # GitHub Merge Queue Docs
@@ -37,6 +39,10 @@ updated: 2026-07-03
 - [[concepts/code factories]]
 - [[concepts/issue tracker control plane]]
 - [[sources/Cursor Self-Driving Codebases]]
+
+## Artifacts
+
+- [[raw/docs/github-merge-queue-docs.md]]
 
 ## Notes
 

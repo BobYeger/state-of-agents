@@ -92,12 +92,15 @@ def main() -> int:
     ignored_dirs = set(args.ignore_dir)
     files = iter_files(ignored_dirs)
     markdown_files = [path for path in files if path.suffix == ".md"]
+    # raw/ captures are third-party content: valid as link targets, but their
+    # literal [[...]] text (code snippets, spec editorial notes) is not wikilinks.
+    link_sources = [path for path in markdown_files if rel(path).split("/")[0] != "raw"]
     exact, note_names = build_targets(files)
-    missing = find_missing(markdown_files, exact, note_names)
+    missing = find_missing(link_sources, exact, note_names)
 
     if not missing:
         if not args.quiet:
-            print(f"OK: {len(markdown_files)} markdown files checked; no missing wikilinks.")
+            print(f"OK: {len(link_sources)} markdown files checked; no missing wikilinks.")
         return 0
 
     print(f"Missing wikilink targets: {len(missing)}", file=sys.stderr)

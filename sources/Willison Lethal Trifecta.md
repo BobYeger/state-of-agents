@@ -12,8 +12,10 @@ authors:
   - "Simon Willison"
 venue: "simonwillison.net (blog)"
 url: "https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/"
+artifacts:
+  - "raw/articles/willison-lethal-trifecta.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # The Lethal Trifecta for AI Agents
@@ -34,6 +36,10 @@ updated: 2026-07-03
 - [[sources/MCP Security Best Practices]]
 - [[sources/CaMeL]]
 - [[sources/Design Patterns for Securing LLM Agents]]
+
+## Artifacts
+
+- [[raw/articles/willison-lethal-trifecta.md]]
 
 ## Notes
 

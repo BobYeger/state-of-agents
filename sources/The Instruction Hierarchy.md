@@ -23,8 +23,10 @@ authors:
 venue: "arXiv / OpenAI"
 url: "https://arxiv.org/abs/2404.13208"
 pdf_url: "https://arxiv.org/pdf/2404.13208"
+artifacts:
+  - "raw/papers/The Instruction Hierarchy - Training LLMs to Prioritize Privileged Instructions.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # The Instruction Hierarchy
@@ -43,6 +45,10 @@ updated: 2026-07-03
 - [[concepts/tool use]]
 - [[sources/IH-Challenge]]
 - [[sources/SecAlign]]
+
+## Artifacts
+
+- [[raw/papers/The Instruction Hierarchy - Training LLMs to Prioritize Privileged Instructions.pdf]]
 
 ## Notes
 

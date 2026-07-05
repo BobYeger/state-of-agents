@@ -18,8 +18,10 @@ authors:
 venue: "arXiv / KTH"
 url: "https://arxiv.org/abs/2602.07150"
 pdf_url: "https://arxiv.org/pdf/2602.07150"
+artifacts:
+  - "raw/papers/On Randomness in Agentic Evals.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # On Randomness in Agentic Evals
@@ -39,6 +41,10 @@ updated: 2026-07-03
 - [[methods/self-improving code loops]]
 - [[sources/Adding Error Bars to Evals]]
 - [[sources/Tau-Bench]]
+
+## Artifacts
+
+- [[raw/papers/On Randomness in Agentic Evals.pdf]]
 
 ## Notes
 

@@ -18,8 +18,10 @@ authors:
 venue: "GitHub Blog"
 url: "https://github.blog/news-insights/company-news/pick-your-agent-use-claude-and-codex-on-agent-hq/"
 pdf_url: ""
+artifacts:
+  - "raw/articles/github-agent-hq-claude-and-codex.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # GitHub Agent HQ Claude and Codex
@@ -40,6 +42,10 @@ updated: 2026-07-03
 - [[systems/Claude Code]]
 - [[sources/GitHub Agent HQ]]
 - [[sources/GitHub Copilot Coding Agent]]
+
+## Artifacts
+
+- [[raw/articles/github-agent-hq-claude-and-codex.md]]
 
 ## Notes
 

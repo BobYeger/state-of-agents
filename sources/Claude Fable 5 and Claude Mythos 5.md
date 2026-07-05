@@ -19,8 +19,10 @@ authors:
 venue: "Anthropic Newsroom"
 url: "https://www.anthropic.com/news/claude-fable-5-mythos-5"
 pdf_url: ""
+artifacts:
+  - "raw/articles/claude-fable-5-and-claude-mythos-5.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Claude Fable 5 and Claude Mythos 5
@@ -45,6 +47,10 @@ updated: 2026-07-03
 - [[systems/Claude Code]]
 - [[sources/Anthropic Effective Harnesses for Long-Running Agents]]
 - [[sources/Redeploying Claude Fable 5]]
+
+## Artifacts
+
+- [[raw/articles/claude-fable-5-and-claude-mythos-5.md]]
 
 ## Notes
 

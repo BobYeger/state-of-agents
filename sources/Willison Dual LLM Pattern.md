@@ -12,8 +12,10 @@ authors:
   - "Simon Willison"
 venue: "simonwillison.net (blog)"
 url: "https://simonwillison.net/2023/Apr/25/dual-llm-pattern/"
+artifacts:
+  - "raw/articles/willison-dual-llm-pattern.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # The Dual LLM Pattern
@@ -33,6 +35,10 @@ updated: 2026-07-03
 - [[sources/CaMeL]]
 - [[sources/Design Patterns for Securing LLM Agents]]
 - [[sources/Willison Lethal Trifecta]]
+
+## Artifacts
+
+- [[raw/articles/willison-dual-llm-pattern.md]]
 
 ## Notes
 

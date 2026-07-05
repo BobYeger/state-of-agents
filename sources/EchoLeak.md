@@ -20,8 +20,10 @@ authors:
 venue: "arXiv (AAAI Fall Symposium Series 2025)"
 url: "https://arxiv.org/abs/2509.10540"
 pdf_url: "https://arxiv.org/pdf/2509.10540"
+artifacts:
+  - "raw/papers/EchoLeak - The First Real-World Zero-Click Prompt Injection Exploit in a Production LLM System (CVE-2025-32711).pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # EchoLeak (CVE-2025-32711)
@@ -41,6 +43,10 @@ updated: 2026-07-03
 - [[sources/Willison Lethal Trifecta]]
 - [[sources/Design Patterns for Securing LLM Agents]]
 - [[sources/CaMeL]]
+
+## Artifacts
+
+- [[raw/papers/EchoLeak - The First Real-World Zero-Click Prompt Injection Exploit in a Production LLM System (CVE-2025-32711).pdf]]
 
 ## Notes
 

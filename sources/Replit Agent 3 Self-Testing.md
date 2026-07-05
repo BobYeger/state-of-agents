@@ -18,8 +18,10 @@ authors:
 venue: "Replit Blog"
 url: "https://replit.com/blog/automated-self-testing"
 pdf_url: ""
+artifacts:
+  - "raw/articles/replit-agent-3-self-testing.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Replit Agent 3 Self-Testing
@@ -44,6 +46,10 @@ updated: 2026-07-03
 - [[operations/agent harnesses]]
 - [[concepts/computer use]]
 - [[systems/deployed agent products]]
+
+## Artifacts
+
+- [[raw/articles/replit-agent-3-self-testing.md]]
 
 ## Notes
 

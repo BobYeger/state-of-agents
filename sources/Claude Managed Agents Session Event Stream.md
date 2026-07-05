@@ -19,8 +19,10 @@ authors:
 venue: "Claude Platform Docs"
 url: "https://platform.claude.com/docs/en/managed-agents/events-and-streaming"
 pdf_url: ""
+artifacts:
+  - "raw/docs/claude-managed-agents-session-event-stream.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Claude Managed Agents Session Event Stream
@@ -46,6 +48,10 @@ updated: 2026-07-03
 - [[sources/Anthropic Managed Agents]]
 - [[sources/Claude Managed Agents Define Outcomes]]
 - [[sources/Claude Agent SDK Streaming vs Single Message]]
+
+## Artifacts
+
+- [[raw/docs/claude-managed-agents-session-event-stream.md]]
 
 ## Notes
 

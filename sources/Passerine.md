@@ -25,8 +25,10 @@ authors:
 venue: "arXiv / ICSE 2025 SEIP (Google)"
 url: "https://arxiv.org/abs/2501.07531"
 pdf_url: "https://arxiv.org/pdf/2501.07531"
+artifacts:
+  - "raw/papers/Evaluating Agent-based Program Repair at Google.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Passerine
@@ -45,6 +47,10 @@ updated: 2026-07-03
 - [[sources/SWE-bench]]
 - [[sources/Agentless]]
 - [[sources/Meta Agentic Program Repair]]
+
+## Artifacts
+
+- [[raw/papers/Evaluating Agent-based Program Repair at Google.pdf]]
 
 ## Notes
 

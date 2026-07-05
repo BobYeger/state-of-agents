@@ -16,8 +16,10 @@ authors:
 venue: "arXiv / Anthropic"
 url: "https://arxiv.org/abs/2411.00640"
 pdf_url: "https://arxiv.org/pdf/2411.00640"
+artifacts:
+  - "raw/papers/Adding Error Bars to Evals - A Statistical Approach to Language Model Evaluations.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Adding Error Bars to Evals
@@ -37,6 +39,10 @@ updated: 2026-07-03
 - [[methods/self-improving code loops]]
 - [[sources/On Randomness in Agentic Evals]]
 - [[sources/Anthropic Demystifying Agent Evals]]
+
+## Artifacts
+
+- [[raw/papers/Adding Error Bars to Evals - A Statistical Approach to Language Model Evaluations.pdf]]
 
 ## Notes
 

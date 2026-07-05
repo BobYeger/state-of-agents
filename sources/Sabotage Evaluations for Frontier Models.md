@@ -21,8 +21,10 @@ authors:
 venue: "arXiv / Anthropic"
 url: "https://arxiv.org/abs/2410.21514"
 pdf_url: "https://arxiv.org/pdf/2410.21514"
+artifacts:
+  - "raw/papers/Sabotage Evaluations for Frontier Models.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Sabotage Evaluations for Frontier Models
@@ -41,6 +43,10 @@ updated: 2026-07-03
 - [[operations/agent evals]]
 - [[sources/SHADE-Arena]]
 - [[sources/In-Context Scheming]]
+
+## Artifacts
+
+- [[raw/papers/Sabotage Evaluations for Frontier Models.pdf]]
 
 ## Notes
 

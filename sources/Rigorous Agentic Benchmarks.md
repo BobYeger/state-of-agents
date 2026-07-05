@@ -23,8 +23,10 @@ authors:
 venue: "arXiv / UIUC, Stanford, Berkeley, Princeton, MLCommons, UK AISI"
 url: "https://arxiv.org/abs/2507.02825"
 pdf_url: "https://arxiv.org/pdf/2507.02825"
+artifacts:
+  - "raw/papers/Establishing Best Practices for Building Rigorous Agentic Benchmarks.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Rigorous Agentic Benchmarks
@@ -45,6 +47,10 @@ updated: 2026-07-03
 - [[sources/SWE-bench Verified]]
 - [[sources/AI Agents That Matter]]
 - [[sources/Holistic Agent Leaderboard]]
+
+## Artifacts
+
+- [[raw/papers/Establishing Best Practices for Building Rigorous Agentic Benchmarks.pdf]]
 
 ## Notes
 

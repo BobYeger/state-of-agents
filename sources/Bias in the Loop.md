@@ -20,8 +20,10 @@ authors:
 venue: "arXiv; Harvard Data Science Review 8.2 (Spring 2026)"
 url: "https://arxiv.org/abs/2509.08514"
 pdf_url: "https://arxiv.org/pdf/2509.08514"
+artifacts:
+  - "raw/papers/Bias in the Loop - How Humans Evaluate AI-Generated Suggestions.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Bias in the Loop
@@ -39,6 +41,10 @@ updated: 2026-07-03
 - [[concepts/code factories]]
 - [[operations/permissions]]
 - [[sources/How Humans Review AI-Generated Pull Requests]]
+
+## Artifacts
+
+- [[raw/papers/Bias in the Loop - How Humans Evaluate AI-Generated Suggestions.pdf]]
 
 ## Notes
 

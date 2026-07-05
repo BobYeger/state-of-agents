@@ -25,8 +25,10 @@ authors:
 venue: "arXiv / FSE 2025 industry track (Meta)"
 url: "https://arxiv.org/abs/2501.12862"
 pdf_url: "https://arxiv.org/pdf/2501.12862"
+artifacts:
+  - "raw/papers/Mutation-Guided LLM-based Test Generation at Meta.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # ACH Mutation-Guided Test Generation
@@ -48,6 +50,10 @@ updated: 2026-07-03
 - [[concepts/code factories]]
 - [[sources/TestGen-LLM]]
 - [[sources/Meta Agentic Program Repair]]
+
+## Artifacts
+
+- [[raw/papers/Mutation-Guided LLM-based Test Generation at Meta.pdf]]
 
 ## Notes
 

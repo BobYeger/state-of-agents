@@ -23,8 +23,10 @@ authors:
 venue: "ICLR 2025 / arXiv (UCLA / Tencent AI Lab)"
 url: "https://arxiv.org/abs/2410.10813"
 pdf_url: "https://arxiv.org/pdf/2410.10813"
+artifacts:
+  - "raw/papers/LongMemEval - Benchmarking Chat Assistants on Long-Term Interactive Memory.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # LongMemEval
@@ -43,6 +45,10 @@ updated: 2026-07-03
 - [[benchmarks/long-horizon benchmarks]]
 - [[operations/agent memory]]
 - [[sources/Letta Context-Bench]]
+
+## Artifacts
+
+- [[raw/papers/LongMemEval - Benchmarking Chat Assistants on Long-Term Interactive Memory.pdf]]
 
 ## Notes
 

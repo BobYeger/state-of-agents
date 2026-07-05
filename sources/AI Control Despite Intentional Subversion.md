@@ -21,8 +21,10 @@ authors:
 venue: "arXiv / ICML 2024 (Redwood Research)"
 url: "https://arxiv.org/abs/2312.06942"
 pdf_url: "https://arxiv.org/pdf/2312.06942"
+artifacts:
+  - "raw/papers/AI Control - Improving Safety Despite Intentional Subversion.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # AI Control: Improving Safety Despite Intentional Subversion
@@ -46,6 +48,10 @@ updated: 2026-07-03
 - [[safety/agentic misalignment risk]]
 - [[sources/Ctrl-Z Controlling AI Agents via Resampling]]
 - [[sources/In-Context Scheming]]
+
+## Artifacts
+
+- [[raw/papers/AI Control - Improving Safety Despite Intentional Subversion.pdf]]
 
 ## Notes
 

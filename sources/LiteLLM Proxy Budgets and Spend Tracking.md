@@ -18,8 +18,10 @@ authors:
 venue: "LiteLLM docs"
 url: "https://docs.litellm.ai/docs/proxy/users"
 pdf_url: ""
+artifacts:
+  - "raw/docs/litellm-proxy-budgets-and-spend-tracking.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # LiteLLM Proxy Budgets and Spend Tracking
@@ -39,6 +41,10 @@ updated: 2026-07-03
 - [[operations/agent infrastructure]]
 - [[sources/Claude Apps Gateway Spend Limits]]
 - [[sources/Envoy AI Gateway 1.0]]
+
+## Artifacts
+
+- [[raw/docs/litellm-proxy-budgets-and-spend-tracking.md]]
 
 ## Notes
 

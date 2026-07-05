@@ -18,8 +18,10 @@ authors:
 venue: "kagent.dev docs + CNCF project page"
 url: "https://kagent.dev/docs/kagent/introduction/what-is-kagent"
 pdf_url: ""
+artifacts:
+  - "raw/docs/kagent.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # kagent
@@ -40,6 +42,10 @@ updated: 2026-07-03
 - [[protocols/MCP]]
 - [[systems/Google ADK]]
 - [[concepts/human-in-the-loop agents]]
+
+## Artifacts
+
+- [[raw/docs/kagent.md]]
 
 ## Notes
 

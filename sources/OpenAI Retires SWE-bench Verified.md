@@ -18,8 +18,10 @@ authors:
 venue: "OpenAI blog"
 url: "https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified/"
 pdf_url: ""
+artifacts:
+  - "raw/articles/openai-retires-swe-bench-verified.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Why SWE-bench Verified No Longer Measures Frontier Coding Capabilities
@@ -39,6 +41,10 @@ updated: 2026-07-03
 - [[concepts/code factories]]
 - [[sources/SWE-bench]]
 - [[sources/SWE-bench Verified]]
+
+## Artifacts
+
+- [[raw/articles/openai-retires-swe-bench-verified.md]]
 
 ## Notes
 

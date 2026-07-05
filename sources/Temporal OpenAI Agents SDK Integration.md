@@ -18,8 +18,10 @@ authors:
 venue: "Temporal blog"
 url: "https://temporal.io/blog/announcing-openai-agents-sdk-integration"
 pdf_url: ""
+artifacts:
+  - "raw/articles/temporal-openai-agents-sdk-integration.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Temporal OpenAI Agents SDK Integration
@@ -41,6 +43,10 @@ updated: 2026-07-03
 - [[systems/OpenAI Agents SDK]]
 - [[concepts/durable dormant agents]]
 - [[sources/Restate Durable AI Loops]]
+
+## Artifacts
+
+- [[raw/articles/temporal-openai-agents-sdk-integration.md]]
 
 ## Notes
 

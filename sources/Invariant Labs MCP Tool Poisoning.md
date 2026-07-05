@@ -20,8 +20,10 @@ authors:
 venue: "Invariant Labs blog"
 url: "https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks"
 pdf_url: ""
+artifacts:
+  - "raw/articles/invariant-labs-mcp-tool-poisoning.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # MCP Security Notification: Tool Poisoning Attacks
@@ -42,6 +44,10 @@ updated: 2026-07-03
 - [[safety/agent safety and security]]
 - [[sources/MCP Security Best Practices]]
 - [[sources/Willison Lethal Trifecta]]
+
+## Artifacts
+
+- [[raw/articles/invariant-labs-mcp-tool-poisoning.md]]
 
 ## Notes
 

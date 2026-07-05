@@ -25,8 +25,10 @@ authors:
 venue: "arXiv / ICLR 2023 (Google)"
 url: "https://arxiv.org/abs/2203.11171"
 pdf_url: "https://arxiv.org/pdf/2203.11171"
+artifacts:
+  - "raw/papers/Self-Consistency Improves Chain of Thought Reasoning in Language Models.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Self-Consistency Improves Chain of Thought Reasoning
@@ -45,6 +47,10 @@ updated: 2026-07-03
 - [[sources/Should We Be Going MAD]]
 - [[sources/Stop Overvaluing Multi-Agent Debate]]
 - [[sources/More Agents Is All You Need]]
+
+## Artifacts
+
+- [[raw/papers/Self-Consistency Improves Chain of Thought Reasoning in Language Models.pdf]]
 
 ## Notes
 

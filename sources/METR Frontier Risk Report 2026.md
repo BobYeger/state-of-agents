@@ -17,8 +17,10 @@ authors:
 venue: "METR blog"
 url: "https://metr.org/blog/2026-05-19-frontier-risk-report/"
 pdf_url: ""
+artifacts:
+  - "raw/reports/metr-frontier-risk-report-2026.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Frontier Risk Report (February to March 2026)
@@ -40,6 +42,10 @@ updated: 2026-07-03
 - [[sources/METR Recent Reward Hacking]]
 - [[sources/METR Time Horizon 1.1]]
 - [[sources/Anthropic Measuring Agent Autonomy]]
+
+## Artifacts
+
+- [[raw/reports/metr-frontier-risk-report-2026.md]]
 
 ## Notes
 

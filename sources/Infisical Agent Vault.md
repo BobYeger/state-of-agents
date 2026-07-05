@@ -18,8 +18,10 @@ authors:
 venue: "Infisical blog"
 url: "https://infisical.com/blog/agent-vault-the-open-source-credential-proxy-and-vault-for-agents"
 pdf_url: ""
+artifacts:
+  - "raw/articles/infisical-agent-vault.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Agent Vault: Open Source Credential Proxy for Agents
@@ -38,6 +40,10 @@ updated: 2026-07-03
 - [[operations/agent infrastructure]]
 - [[operations/sandboxes]]
 - [[sources/Anthropic Sandbox Runtime Repository]]
+
+## Artifacts
+
+- [[raw/articles/infisical-agent-vault.md]]
 
 ## Notes
 

@@ -21,8 +21,10 @@ authors:
 venue: "arXiv (Microsoft Research)"
 url: "https://arxiv.org/abs/2404.16130"
 pdf_url: "https://arxiv.org/pdf/2404.16130"
+artifacts:
+  - "raw/papers/From Local to Global - A Graph RAG Approach to Query-Focused Summarization.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # GraphRAG
@@ -40,6 +42,10 @@ updated: 2026-07-03
 - [[concepts/LLM-maintained knowledge bases]]
 - [[operations/agent memory]]
 - [[sources/HippoRAG]]
+
+## Artifacts
+
+- [[raw/papers/From Local to Global - A Graph RAG Approach to Query-Focused Summarization.pdf]]
 
 ## Notes
 

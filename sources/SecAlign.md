@@ -23,8 +23,10 @@ authors:
 venue: "arXiv / ACM CCS 2025 (Meta / UC Berkeley)"
 url: "https://arxiv.org/abs/2410.05451"
 pdf_url: "https://arxiv.org/pdf/2410.05451"
+artifacts:
+  - "raw/papers/SecAlign - Defending Against Prompt Injection with Preference Optimization.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # SecAlign
@@ -42,6 +44,10 @@ updated: 2026-07-03
 - [[sources/The Instruction Hierarchy]]
 - [[sources/AgentDojo]]
 - [[sources/The Attacker Moves Second]]
+
+## Artifacts
+
+- [[raw/papers/SecAlign - Defending Against Prompt Injection with Preference Optimization.pdf]]
 
 ## Notes
 

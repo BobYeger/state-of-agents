@@ -20,8 +20,10 @@ authors:
 venue: "arXiv / Purdue + Microsoft"
 url: "https://arxiv.org/abs/2506.12286"
 pdf_url: "https://arxiv.org/pdf/2506.12286"
+artifacts:
+  - "raw/papers/The SWE-Bench Illusion - When State-of-the-Art LLMs Remember Instead of Reason.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # SWE-bench Illusion
@@ -41,6 +43,10 @@ updated: 2026-07-03
 - [[sources/SWE-bench Verified]]
 - [[sources/SWE-bench Pro]]
 - [[sources/LiveCodeBench]]
+
+## Artifacts
+
+- [[raw/papers/The SWE-Bench Illusion - When State-of-the-Art LLMs Remember Instead of Reason.pdf]]
 
 ## Notes
 

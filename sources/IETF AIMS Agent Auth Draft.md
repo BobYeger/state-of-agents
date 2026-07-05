@@ -25,8 +25,10 @@ authors:
 venue: "IETF Internet-Draft (individual submission)"
 url: "https://datatracker.ietf.org/doc/draft-klrc-aiagent-auth/"
 pdf_url: ""
+artifacts:
+  - "raw/protocols/ietf-aims-agent-auth-draft.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # IETF AIMS Agent Auth Draft
@@ -46,6 +48,10 @@ updated: 2026-07-03
 - [[safety/agent safety and security]]
 - [[sources/MCP Authorization]]
 - [[sources/Microsoft Entra Agent ID]]
+
+## Artifacts
+
+- [[raw/protocols/ietf-aims-agent-auth-draft.md]]
 
 ## Notes
 

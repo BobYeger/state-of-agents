@@ -27,8 +27,10 @@ authors:
 venue: "arXiv / FSE 2024 industry track (Meta)"
 url: "https://arxiv.org/abs/2402.09171"
 pdf_url: "https://arxiv.org/pdf/2402.09171"
+artifacts:
+  - "raw/papers/Automated Unit Test Improvement using Large Language Models at Meta.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # TestGen-LLM
@@ -49,6 +51,10 @@ updated: 2026-07-03
 - [[concepts/code factories]]
 - [[sources/ACH Mutation-Guided Test Generation]]
 - [[sources/Meta Agentic Program Repair]]
+
+## Artifacts
+
+- [[raw/papers/Automated Unit Test Improvement using Large Language Models at Meta.pdf]]
 
 ## Notes
 

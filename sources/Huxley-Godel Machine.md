@@ -23,8 +23,10 @@ authors:
 venue: "arXiv / KAUST"
 url: "https://arxiv.org/abs/2510.21614"
 pdf_url: "https://arxiv.org/pdf/2510.21614"
+artifacts:
+  - "raw/papers/Huxley-Godel Machine - Human-Level Coding Agent Development by an Approximation of the Optimal Self-Improving Machine.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Huxley-Godel Machine
@@ -46,6 +48,10 @@ updated: 2026-07-03
 - [[sources/Red Queen Godel Machine]]
 - [[sources/SICA Self-Improving Coding Agent]]
 - [[sources/SWE-bench Verified]]
+
+## Artifacts
+
+- [[raw/papers/Huxley-Godel Machine - Human-Level Coding Agent Development by an Approximation of the Optimal Self-Improving Machine.pdf]]
 
 ## Notes
 

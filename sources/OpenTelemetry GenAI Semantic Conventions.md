@@ -19,8 +19,10 @@ authors:
 venue: "GitHub (open-telemetry/semantic-conventions-genai)"
 url: "https://github.com/open-telemetry/semantic-conventions-genai"
 pdf_url: ""
+artifacts:
+  - "raw/protocols/opentelemetry-genai-semantic-conventions.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # OpenTelemetry GenAI Semantic Conventions
@@ -40,6 +42,10 @@ updated: 2026-07-03
 - [[operations/agent infrastructure]]
 - [[protocols/MCP]]
 - [[sources/MCP Specification 2025-11-25]]
+
+## Artifacts
+
+- [[raw/protocols/opentelemetry-genai-semantic-conventions.md]]
 
 ## Notes
 

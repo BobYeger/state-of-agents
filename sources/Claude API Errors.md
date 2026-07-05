@@ -19,8 +19,10 @@ authors:
 venue: "Claude Platform Docs"
 url: "https://platform.claude.com/docs/en/api/errors"
 pdf_url: ""
+artifacts:
+  - "raw/docs/claude-api-errors.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Claude API Errors
@@ -42,6 +44,10 @@ updated: 2026-07-03
 - [[sources/Temporal OpenAI Agents SDK Integration]]
 - [[sources/Restate Durable AI Loops]]
 - [[sources/Architecting Resilient LLM Agents]]
+
+## Artifacts
+
+- [[raw/docs/claude-api-errors.md]]
 
 ## Notes
 

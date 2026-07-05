@@ -18,8 +18,10 @@ authors:
 venue: "METR blog"
 url: "https://metr.org/blog/2026-1-29-time-horizon-1-1/"
 pdf_url: ""
+artifacts:
+  - "raw/reports/metr-time-horizon-1.1.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Time Horizon 1.1
@@ -39,6 +41,10 @@ updated: 2026-07-03
 - [[benchmarks/long-horizon benchmarks]]
 - [[benchmarks/agent evaluation]]
 - [[sources/Anthropic Measuring Agent Autonomy]]
+
+## Artifacts
+
+- [[raw/reports/metr-time-horizon-1.1.md]]
 
 ## Notes
 

@@ -20,8 +20,10 @@ authors:
 venue: "arXiv (Shanghai Jiao Tong University, 14 authors)"
 url: "https://arxiv.org/abs/2504.16736"
 pdf_url: "https://arxiv.org/pdf/2504.16736"
+artifacts:
+  - "raw/papers/A Survey of AI Agent Protocols.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # A Survey of AI Agent Protocols
@@ -40,6 +42,10 @@ updated: 2026-07-03
 - [[protocols/MCP]]
 - [[protocols/A2A]]
 - [[sources/Google Developer Guide to AI Agent Protocols]]
+
+## Artifacts
+
+- [[raw/papers/A Survey of AI Agent Protocols.pdf]]
 
 ## Notes
 

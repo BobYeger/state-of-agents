@@ -31,8 +31,10 @@ authors:
 venue: "arXiv (joint OpenAI / Anthropic / Google DeepMind / ETH Zurich)"
 url: "https://arxiv.org/abs/2510.09023"
 pdf_url: "https://arxiv.org/pdf/2510.09023"
+artifacts:
+  - "raw/papers/The Attacker Moves Second - Stronger Adaptive Attacks Bypass Defenses Against LLM Jailbreaks and Prompt Injections.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # The Attacker Moves Second
@@ -54,6 +56,10 @@ updated: 2026-07-03
 - [[sources/FIDES]]
 - [[sources/LlamaFirewall]]
 - [[sources/Constitutional Classifiers]]
+
+## Artifacts
+
+- [[raw/papers/The Attacker Moves Second - Stronger Adaptive Attacks Bypass Defenses Against LLM Jailbreaks and Prompt Injections.pdf]]
 
 ## Notes
 

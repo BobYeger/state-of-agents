@@ -26,8 +26,10 @@ authors:
 venue: "arXiv (Redwood Research)"
 url: "https://arxiv.org/abs/2504.10374"
 pdf_url: "https://arxiv.org/pdf/2504.10374"
+artifacts:
+  - "raw/papers/Ctrl-Z - Controlling AI Agents via Resampling.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Ctrl-Z: Controlling AI Agents via Resampling
@@ -50,6 +52,10 @@ updated: 2026-07-03
 - [[methods/runtime supervision]]
 - [[operations/sandboxes]]
 - [[safety/agent safety and security]]
+
+## Artifacts
+
+- [[raw/papers/Ctrl-Z - Controlling AI Agents via Resampling.pdf]]
 
 ## Notes
 

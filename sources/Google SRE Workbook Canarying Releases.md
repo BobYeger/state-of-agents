@@ -20,8 +20,10 @@ authors:
 venue: "Google SRE Workbook (O'Reilly, free online)"
 url: "https://sre.google/workbook/canarying-releases/"
 pdf_url: ""
+artifacts:
+  - "raw/docs/google-sre-workbook-canarying-releases.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Google SRE Workbook Canarying Releases
@@ -44,6 +46,10 @@ updated: 2026-07-03
 - [[concepts/code factories]]
 - [[concepts/loop engineering]]
 - [[operations/agent observability]]
+
+## Artifacts
+
+- [[raw/docs/google-sre-workbook-canarying-releases.md]]
 
 ## Notes
 

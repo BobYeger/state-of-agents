@@ -20,8 +20,10 @@ authors:
 venue: "arXiv (ICLR 2026 poster)"
 url: "https://arxiv.org/abs/2510.20270"
 pdf_url: "https://arxiv.org/pdf/2510.20270"
+artifacts:
+  - "raw/papers/ImpossibleBench - Measuring LLMs' Propensity of Exploiting Test Cases.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # ImpossibleBench
@@ -40,6 +42,10 @@ updated: 2026-07-03
 - [[operations/agent evals]]
 - [[sources/SWE-bench]]
 - [[sources/METR Recent Reward Hacking]]
+
+## Artifacts
+
+- [[raw/papers/ImpossibleBench - Measuring LLMs' Propensity of Exploiting Test Cases.pdf]]
 
 ## Notes
 

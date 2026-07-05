@@ -25,8 +25,10 @@ authors:
 venue: "ICLR 2025 (arXiv 2406.07155), Tsinghua"
 url: "https://arxiv.org/abs/2406.07155"
 pdf_url: "https://arxiv.org/pdf/2406.07155"
+artifacts:
+  - "raw/papers/Scaling Large Language Model-based Multi-Agent Collaboration (MacNet).pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # MacNet
@@ -51,6 +53,10 @@ updated: 2026-07-03
 - [[concepts/scaling with computation]]
 - [[sources/ChatDev]]
 - [[sources/More Agents Is All You Need]]
+
+## Artifacts
+
+- [[raw/papers/Scaling Large Language Model-based Multi-Agent Collaboration (MacNet).pdf]]
 
 ## Notes
 

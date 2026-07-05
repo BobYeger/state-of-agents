@@ -19,8 +19,10 @@ authors:
 venue: "Kubernetes blog (kubernetes.io)"
 url: "https://kubernetes.io/blog/2026/03/20/running-agents-on-kubernetes-with-agent-sandbox/"
 pdf_url: ""
+artifacts:
+  - "raw/articles/kubernetes-agent-sandbox.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Kubernetes Agent Sandbox
@@ -41,6 +43,10 @@ updated: 2026-07-03
 - [[safety/sandbox escape and credential exposure]]
 - [[sources/kagent]]
 - [[sources/Cloudflare Sandboxing AI Agents]]
+
+## Artifacts
+
+- [[raw/articles/kubernetes-agent-sandbox.md]]
 
 ## Notes
 

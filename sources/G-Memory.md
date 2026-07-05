@@ -23,8 +23,10 @@ authors:
 venue: "arXiv (cs.MA)"
 url: "https://arxiv.org/abs/2506.07398"
 pdf_url: "https://arxiv.org/pdf/2506.07398"
+artifacts:
+  - "raw/papers/G-Memory - Tracing Hierarchical Memory for Multi-Agent Systems.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # G-Memory
@@ -47,6 +49,10 @@ updated: 2026-07-03
 - [[methods/multi-agent learning]]
 - [[concepts/lifelong agent learning]]
 - [[sources/When Agents Misremember Collectively]]
+
+## Artifacts
+
+- [[raw/papers/G-Memory - Tracing Hierarchical Memory for Multi-Agent Systems.pdf]]
 
 ## Notes
 

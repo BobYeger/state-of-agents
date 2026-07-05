@@ -18,8 +18,10 @@ authors:
 venue: "Sentry Blog"
 url: "https://blog.sentry.io/seer-sentrys-ai-debugger-is-generally-available/"
 pdf_url: ""
+artifacts:
+  - "raw/articles/sentry-seer.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Sentry Seer
@@ -40,6 +42,10 @@ updated: 2026-07-03
 - [[operations/cost control]]
 - [[sources/Sentry Issue Noise Reduction]]
 - [[sources/Sentry Issue Grouping v2]]
+
+## Artifacts
+
+- [[raw/articles/sentry-seer.md]]
 
 ## Notes
 

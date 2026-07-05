@@ -18,8 +18,10 @@ authors:
 venue: "arXiv (Penn State / UCSC / Amazon, 17 authors)"
 url: "https://arxiv.org/abs/2605.30621"
 pdf_url: "https://arxiv.org/pdf/2605.30621"
+artifacts:
+  - "raw/papers/Harness Updating Is Not Harness Benefit - Disentangling Evolution Capabilities in Self-Evolving LLM Agents.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Harness Updating Is Not Harness Benefit
@@ -43,6 +45,10 @@ updated: 2026-07-03
 - [[sources/Self-Harness]]
 - [[sources/HarnessFix]]
 - [[sources/Retrospective Harness Optimization]]
+
+## Artifacts
+
+- [[raw/papers/Harness Updating Is Not Harness Benefit - Disentangling Evolution Capabilities in Self-Evolving LLM Agents.pdf]]
 
 ## Notes
 

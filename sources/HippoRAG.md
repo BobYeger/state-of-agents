@@ -22,8 +22,10 @@ authors:
 venue: "NeurIPS 2024 / arXiv (Ohio State / Stanford)"
 url: "https://arxiv.org/abs/2405.14831"
 pdf_url: "https://arxiv.org/pdf/2405.14831"
+artifacts:
+  - "raw/papers/HippoRAG - Neurobiologically Inspired Long-Term Memory for Large Language Models.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # HippoRAG
@@ -39,6 +41,10 @@ updated: 2026-07-03
 
 - [[concepts/context retrieval]]
 - [[operations/agent memory]]
+
+## Artifacts
+
+- [[raw/papers/HippoRAG - Neurobiologically Inspired Long-Term Memory for Large Language Models.pdf]]
 
 ## Notes
 

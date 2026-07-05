@@ -27,8 +27,10 @@ authors:
 venue: "arXiv / Google DeepMind / ETH Zurich; IEEE SaTML 2026"
 url: "https://arxiv.org/abs/2503.18813"
 pdf_url: "https://arxiv.org/pdf/2503.18813"
+artifacts:
+  - "raw/papers/Defeating Prompt Injections by Design (CaMeL).pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Defeating Prompt Injections by Design (CaMeL)
@@ -54,6 +56,10 @@ updated: 2026-07-03
 - [[sources/Design Patterns for Securing LLM Agents]]
 - [[sources/Willison Dual LLM Pattern]]
 - [[sources/FIDES]]
+
+## Artifacts
+
+- [[raw/papers/Defeating Prompt Injections by Design (CaMeL).pdf]]
 
 ## Notes
 

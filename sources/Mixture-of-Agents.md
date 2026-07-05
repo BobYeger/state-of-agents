@@ -22,8 +22,10 @@ authors:
 venue: "arXiv / ICLR 2025 Spotlight (Together AI / Duke / Stanford)"
 url: "https://arxiv.org/abs/2406.04692"
 pdf_url: "https://arxiv.org/pdf/2406.04692"
+artifacts:
+  - "raw/papers/Mixture-of-Agents Enhances Large Language Model Capabilities.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Mixture-of-Agents
@@ -42,6 +44,10 @@ updated: 2026-07-03
 - [[sources/OpenRouter Fusion Beats Frontier]]
 - [[sources/X-MAS]]
 - [[sources/Self-Consistency Improves Chain of Thought Reasoning]]
+
+## Artifacts
+
+- [[raw/papers/Mixture-of-Agents Enhances Large Language Model Capabilities.pdf]]
 
 ## Notes
 

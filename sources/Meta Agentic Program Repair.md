@@ -18,8 +18,10 @@ authors:
 venue: "arXiv (Meta Platforms)"
 url: "https://arxiv.org/abs/2507.18755"
 pdf_url: "https://arxiv.org/pdf/2507.18755"
+artifacts:
+  - "raw/papers/Agentic Program Repair from Test Failures at Scale - A Neuro-symbolic Approach with Static Analysis and Test Execution Feedback.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Meta Agentic Program Repair
@@ -42,6 +44,10 @@ updated: 2026-07-03
 - [[concepts/loop engineering]]
 - [[sources/TestGen-LLM]]
 - [[sources/Passerine]]
+
+## Artifacts
+
+- [[raw/papers/Agentic Program Repair from Test Failures at Scale - A Neuro-symbolic Approach with Static Analysis and Test Execution Feedback.pdf]]
 
 ## Notes
 

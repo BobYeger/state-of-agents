@@ -25,8 +25,10 @@ authors:
 venue: "arXiv / NeurIPS 2023"
 url: "https://arxiv.org/abs/2303.11366"
 pdf_url: "https://arxiv.org/pdf/2303.11366"
+artifacts:
+  - "raw/papers/Reflexion - Language Agents with Verbal Reinforcement Learning.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Reflexion
@@ -50,6 +52,10 @@ updated: 2026-07-03
 - [[concepts/lifelong agent learning]]
 - [[sources/ReAct]]
 - [[sources/Google ReasoningBank]]
+
+## Artifacts
+
+- [[raw/papers/Reflexion - Language Agents with Verbal Reinforcement Learning.pdf]]
 
 ## Notes
 

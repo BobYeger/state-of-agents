@@ -1,0 +1,117 @@
+Title: Announcing Envoy AI Gateway 1.0 — A Stable, Production-Ready AI Gateway
+
+URL Source: https://aigateway.envoyproxy.io/blog/v1.0-release-announcement/
+
+Published Time: 2026-06-23T00:00:00.000Z
+
+Markdown Content:
+![Image 1: Announcing Envoy AI Gateway 1.0](https://aigateway.envoyproxy.io/assets/images/v1.0-hero-776951c462990778857b7fae7b9fa419.png)
+
+Today we're thrilled to announce **Envoy AI Gateway 1.0** — the first **stable, generally available** release of the open source AI gateway built on **CNCF's [Envoy Gateway](https://gateway.envoyproxy.io/)**.
+
+When we [shipped v0.1 in February 2025](https://aigateway.envoyproxy.io/blog/01-release-announcement), we closed that post with three words: **"Onward to 1.0!"** Sixteen months and many releases later, backed by a community of maintainers and adopters across the industry, we're here. 1.0 means you can build on Envoy AI Gateway with confidence: a control-plane API we're committing to keep stable, running on the same battle-tested Envoy foundation that already powers production traffic at the world's largest companies.
+
+## 🔒 What 1.0 Means: Stability You Can Build On[​](https://aigateway.envoyproxy.io/blog/v1.0-release-announcement/#-what-10-means-stability-you-can-build-on "Direct link to 🔒 What 1.0 Means: Stability You Can Build On")
+
+The headline of 1.0 isn't a single new feature — it's a **promise**. Our [release policy](https://github.com/envoyproxy/ai-gateway/blob/main/RELEASES.md) has always said that we'd cut the major v1.0.0 release once we had a _first stable control-plane API_. That moment is here.
+
+For stable APIs, the commitment is simple and strong:
+
+> **We will never break the APIs unless there is a critical security issue**, and we will always provide a migration path in the release notes if we ever must.
+
+Concretely, that means:
+
+| Guarantee | What it means for you |
+| --- | --- |
+| **Stable CRDs** | The resources you author — `AIGatewayRoute`, `AIServiceBackend`, `BackendSecurityPolicy`, `GatewayConfig`, `MCPRoute`, all served at `v1beta1` — won't break under you. |
+| **Predictable upgrades** | Upgrading the controller won't break a valid, migrated configuration. |
+| **Documented migrations** | Any future change that requires action will ship with a clear, documented upgrade path. |
+
+This is the foundation enterprises have been asking for — the ability to standardize on a single, provider-agnostic AI gateway without betting on a moving target.
+
+## 🛣️ The Road from 0.1 to 1.0[​](https://aigateway.envoyproxy.io/blog/v1.0-release-announcement/#%EF%B8%8F-the-road-from-01-to-10 "Direct link to 🛣️ The Road from 0.1 to 1.0")
+
+v0.1 launched with a unified API in front of **two** providers and the essentials: upstream authorization and token-based rate limiting. 1.0 is a different animal. Here's how far the project has come:
+
+| Capability | v0.1 (Feb 2025) | 1.0 |
+| --- | --- | --- |
+| **AI providers** | 2 (OpenAI, AWS Bedrock) | **16**, with cross-provider request/response translation |
+| **API surface** | Chat completions | Chat, completions, embeddings, image generation, audio (transcription / translation / speech), and the OpenAI Responses API |
+| **MCP (Model Context Protocol)** | — | A full **MCP gateway**: server multiplexing, tool routing & filtering, and fine-grained authorization |
+| **Multimodal** | — | Image, audio, and video inputs across supported providers |
+| **Observability** | Basic metrics | OpenTelemetry tracing, OpenInference, GenAI token metrics, separate reasoning-token accounting |
+| **Multi-tenancy & routing** | Token rate limiting | Hostname-based routing, model virtualization, and quota-aware rate limiting |
+| **Control-plane API** | v1alpha1 (experimental) | **v1beta1 (stable)** |
+
+Sixteen providers, integrated through a single OpenAI-compatible interface, including OpenAI, Azure OpenAI, Google Gemini, Google Vertex AI, AWS Bedrock, Anthropic, Mistral, Cohere, Groq, Together AI, DeepInfra, DeepSeek, Hunyuan, SambaNova, Grok, and the Tetrate Agent Router Service.
+
+## ✨ What's in 1.0[​](https://aigateway.envoyproxy.io/blog/v1.0-release-announcement/#-whats-in-10 "Direct link to ✨ What's in 1.0")
+
+### One API, every provider[​](https://aigateway.envoyproxy.io/blog/v1.0-release-announcement/#one-api-every-provider "Direct link to One API, every provider")
+
+Point your application at a single OpenAI-compatible endpoint and let the gateway handle provider-specific translation, authentication, and routing. Switch or mix providers without touching application code — and use **model virtualization** to keep your app code stable while routing changes underneath:
+
+`backendRefs:  - name: openai-backend    modelNameOverride: "gpt-4o"  - name: anthropic-backend    modelNameOverride: "claude-opus-4"`
+
+This is the key to A/B testing, gradual migrations, multi-provider strategies, and safeguarding against vendor lock-in.
+
+### Provider authentication, handled for you[​](https://aigateway.envoyproxy.io/blog/v1.0-release-announcement/#provider-authentication-handled-for-you "Direct link to Provider authentication, handled for you")
+
+`BackendSecurityPolicy` keeps provider credentials out of your application and centralizes upstream auth — API keys, AWS, Azure, and GCP cloud-native identity (including Workload Identity), all managed at the gateway.
+
+### An MCP gateway for the agent era[​](https://aigateway.envoyproxy.io/blog/v1.0-release-announcement/#an-mcp-gateway-for-the-agent-era "Direct link to An MCP gateway for the agent era")
+
+Aggregate multiple **Model Context Protocol** servers behind one endpoint, route and filter the tools clients can see, and enforce **fine-grained, CEL-based authorization** — so `tools/list` only ever returns what a caller is actually allowed to use.
+
+### Enterprise observability, built in[​](https://aigateway.envoyproxy.io/blog/v1.0-release-announcement/#enterprise-observability-built-in "Direct link to Enterprise observability, built in")
+
+Token-aware metrics, OpenTelemetry tracing with OpenInference compatibility (for evaluation tools like Arize Phoenix), and separate accounting for reasoning tokens give you the cost control and visibility that AI workloads demand.
+
+### Standards all the way down[​](https://aigateway.envoyproxy.io/blog/v1.0-release-announcement/#standards-all-the-way-down "Direct link to Standards all the way down")
+
+Built on the Kubernetes **Gateway API** and the [Gateway API Inference Extension](https://gateway-api-inference-extension.sigs.k8s.io/), Envoy AI Gateway is an additive layer on Envoy Gateway — it expands what Envoy can do for GenAI traffic without changing how you already deploy and operate it.
+
+1.0 is the work of a genuinely cross-industry community. Maintainers come from **Tetrate, Bloomberg, Tencent, Netflix, and Nutanix**, alongside a growing roster of independent contributors who join our **weekly community meetings**, file issues, and ship code.
+
+Just as importantly, the project has been shaped by real-world use. Our thanks to the organizations who used, tested, and shared feedback along the way — including **LY Corporation, Alan by Comma Soft, and the National Research Platform**.
+
+[![Image 2: Star History Chart](https://api.star-history.com/svg?repos=envoyproxy/ai-gateway&type=Date)](https://www.star-history.com/#envoyproxy/ai-gateway&Date)
+
+[Visit us on GitHub](https://github.com/envoyproxy/ai-gateway) and star the repo to show your support.
+
+## 🔭 What's Next, Beyond 1.0[​](https://aigateway.envoyproxy.io/blog/v1.0-release-announcement/#-whats-next-beyond-10 "Direct link to 🔭 What's Next, Beyond 1.0")
+
+A stable API is a starting line, not a finish line. On the roadmap:
+
+*   **A dedicated `MCPBackend` CRD**, decoupling MCP backend configuration from `MCPRoute`.
+*   **Deeper MCP authorization** across tools, resources, and prompts.
+*   **Fuller quota-aware routing** that automatically steers around rate-limited upstreams.
+*   **More provider translation paths** and **expanded multimodal** support.
+
+The roadmap is community-driven — and we'd love your help shaping it.
+
+## 🚀 Get Involved[​](https://aigateway.envoyproxy.io/blog/v1.0-release-announcement/#-get-involved "Direct link to 🚀 Get Involved")
+
+| Action | Resource | Description |
+| --- | --- | --- |
+| **Try 1.0 today** | [Download the release](https://github.com/envoyproxy/ai-gateway/releases) | Get the latest release and start exploring |
+|  | [Follow the getting started guide](https://aigateway.envoyproxy.io/docs/getting-started/) | Step-by-step setup instructions |
+|  | [Explore the examples](https://github.com/envoyproxy/ai-gateway/tree/main/examples) | Real-world configuration examples |
+| **Join the community** | [Weekly community meetings](https://docs.google.com/document/d/10e1sfsF-3G3Du5nBHGmLjXw5GVMqqCvFDqp_O65B0_w/edit?tab=t.0#heading=h.6nxfjwmrm5g6) | Add it to your calendar |
+|  | [Slack #envoy-ai-gateway](https://envoyproxy.slack.com/channels/envoy-ai-gateway) | Join the conversation on Envoy Slack |
+|  | [GitHub Discussions](https://github.com/envoyproxy/ai-gateway/discussions) | Share experiences and ask questions |
+| **Contribute** | [Report issues](https://github.com/envoyproxy/ai-gateway/issues/new?template=bug_report.md) | Help us improve by reporting bugs |
+|  | [Request features](https://github.com/envoyproxy/ai-gateway/issues/new?template=feature_request.md) | Tell us what you need next |
+|  | [Submit code](https://github.com/envoyproxy/ai-gateway/blob/main/CONTRIBUTING.md) | Build the next release with us |
+
+## 🙏 Acknowledgments[​](https://aigateway.envoyproxy.io/blog/v1.0-release-announcement/#-acknowledgments "Direct link to 🙏 Acknowledgments")
+
+1.0 belongs to everyone who got us here: the maintainers and contributors who wrote the code and reviews, the early adopters who tested pre-releases and told us what broke, and the broader Gateway API, Envoy, and CNCF communities whose standards we build on. Thank you.
+
+The future of AI infrastructure is **open, stable, and community-driven**. We can't wait to see what you build on it.
+
+🚀 **This is just the beginning.**
+
+* * *
+
+_Envoy AI Gateway 1.0 is available now. For detailed release notes, API changes, and upgrade guidance, visit our [release notes page](https://aigateway.envoyproxy.io/release-notes/v1.0)._

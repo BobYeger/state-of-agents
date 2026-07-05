@@ -23,8 +23,10 @@ authors:
 venue: "arXiv (cs.MA)"
 url: "https://arxiv.org/abs/2606.24535"
 pdf_url: "https://arxiv.org/pdf/2606.24535"
+artifacts:
+  - "raw/papers/Governed Shared Memory for Multi-Agent LLM Systems.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Governed Shared Memory for Multi-Agent LLM Systems
@@ -44,6 +46,10 @@ updated: 2026-07-03
 - [[safety/agent safety and security]]
 - [[sources/When Agents Misremember Collectively]]
 - [[sources/Memory Poisoning Attacks in LLM Agents]]
+
+## Artifacts
+
+- [[raw/papers/Governed Shared Memory for Multi-Agent LLM Systems.pdf]]
 
 ## Notes
 

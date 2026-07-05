@@ -22,8 +22,10 @@ authors:
 venue: "arXiv (Nicolaus Copernicus University, Toruń)"
 url: "https://arxiv.org/abs/2605.02273"
 pdf_url: "https://arxiv.org/pdf/2605.02273"
+artifacts:
+  - "raw/papers/These Aren't the Reviews You're Looking For - How Humans Review AI-Generated Pull Requests.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # How Humans Review AI-Generated Pull Requests
@@ -43,6 +45,10 @@ updated: 2026-07-03
 - [[sources/Modern Code Review at Google]]
 - [[sources/DORA State of AI-assisted Software Development 2025]]
 - [[sources/Bias in the Loop]]
+
+## Artifacts
+
+- [[raw/papers/These Aren't the Reviews You're Looking For - How Humans Review AI-Generated Pull Requests.pdf]]
 
 ## Notes
 

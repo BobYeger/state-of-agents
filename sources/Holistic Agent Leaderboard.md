@@ -21,8 +21,10 @@ authors:
 venue: "arXiv / ICLR 2026 (Princeton PLI)"
 url: "https://arxiv.org/abs/2510.11977"
 pdf_url: "https://arxiv.org/pdf/2510.11977"
+artifacts:
+  - "raw/papers/Holistic Agent Leaderboard - The Missing Infrastructure for AI Agent Evaluation.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Holistic Agent Leaderboard
@@ -43,6 +45,10 @@ updated: 2026-07-03
 - [[operations/agent observability]]
 - [[sources/AI Agents That Matter]]
 - [[sources/Rigorous Agentic Benchmarks]]
+
+## Artifacts
+
+- [[raw/papers/Holistic Agent Leaderboard - The Missing Infrastructure for AI Agent Evaluation.pdf]]
 
 ## Notes
 

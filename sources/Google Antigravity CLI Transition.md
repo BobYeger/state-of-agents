@@ -19,8 +19,10 @@ authors:
 venue: "Google Developers Blog"
 url: "https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/"
 pdf_url: ""
+artifacts:
+  - "raw/articles/google-antigravity-cli-transition.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Google Antigravity CLI Transition
@@ -40,6 +42,10 @@ updated: 2026-07-03
 - [[methods/hook-based control]]
 - [[methods/multi-agent orchestration]]
 - [[sources/Google Antigravity]]
+
+## Artifacts
+
+- [[raw/articles/google-antigravity-cli-transition.md]]
 
 ## Notes
 

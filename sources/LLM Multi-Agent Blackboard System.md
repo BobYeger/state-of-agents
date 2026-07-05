@@ -25,8 +25,10 @@ authors:
 venue: "arXiv (cs.MA), UMass Amherst / Google"
 url: "https://arxiv.org/abs/2510.01285"
 pdf_url: "https://arxiv.org/pdf/2510.01285"
+artifacts:
+  - "raw/papers/LLM-based Multi-Agent Blackboard System for Information Discovery in Data Science.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # LLM Multi-Agent Blackboard System
@@ -49,6 +51,10 @@ updated: 2026-07-03
 - [[concepts/multi-agent systems]]
 - [[sources/Corkill Blackboard Systems]]
 - [[sources/AutoGen SelectorGroupChat]]
+
+## Artifacts
+
+- [[raw/papers/LLM-based Multi-Agent Blackboard System for Information Discovery in Data Science.pdf]]
 
 ## Notes
 

@@ -23,8 +23,10 @@ authors:
 venue: "NeurIPS 2025 / arXiv (Rutgers)"
 url: "https://arxiv.org/abs/2502.12110"
 pdf_url: "https://arxiv.org/pdf/2502.12110"
+artifacts:
+  - "raw/papers/A-MEM - Agentic Memory for LLM Agents.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # A-MEM
@@ -46,6 +48,10 @@ updated: 2026-07-03
 - [[concepts/LLM-maintained knowledge bases]]
 - [[concepts/context evolution]]
 - [[sources/Zep Markdown Is Not Agent Memory]]
+
+## Artifacts
+
+- [[raw/papers/A-MEM - Agentic Memory for LLM Agents.pdf]]
 
 ## Notes
 

@@ -30,8 +30,10 @@ authors:
 venue: "arXiv / OpenAI"
 url: "https://arxiv.org/abs/2603.10521"
 pdf_url: "https://arxiv.org/pdf/2603.10521"
+artifacts:
+  - "raw/papers/IH-Challenge - A Training Dataset to Improve Instruction Hierarchy on Frontier LLMs.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # IH-Challenge
@@ -49,6 +51,10 @@ updated: 2026-07-03
 - [[benchmarks/agent evaluation]]
 - [[sources/The Instruction Hierarchy]]
 - [[sources/The Attacker Moves Second]]
+
+## Artifacts
+
+- [[raw/papers/IH-Challenge - A Training Dataset to Improve Instruction Hierarchy on Frontier LLMs.pdf]]
 
 ## Notes
 

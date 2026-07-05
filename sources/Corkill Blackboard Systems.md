@@ -18,8 +18,10 @@ authors:
 venue: "AI Expert 6(9):40-47 (unabridged version hosted by UMass MAS lab)"
 url: "https://mas.cs.umass.edu/Documents/Corkill/ai-expert.pdf"
 pdf_url: "https://mas.cs.umass.edu/Documents/Corkill/ai-expert.pdf"
+artifacts:
+  - "raw/articles/corkill-blackboard-systems.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Corkill Blackboard Systems
@@ -43,6 +45,10 @@ updated: 2026-07-03
 - [[methods/runtime routing]]
 - [[concepts/multi-agent systems]]
 - [[sources/LLM Multi-Agent Blackboard System]]
+
+## Artifacts
+
+- [[raw/articles/corkill-blackboard-systems.md]]
 
 ## Notes
 

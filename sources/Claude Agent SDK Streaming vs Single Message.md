@@ -19,8 +19,10 @@ authors:
 venue: "Claude Code Docs (code.claude.com)"
 url: "https://code.claude.com/docs/en/agent-sdk/streaming-vs-single-mode"
 pdf_url: ""
+artifacts:
+  - "raw/docs/claude-agent-sdk-streaming-vs-single-message.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Claude Agent SDK Streaming vs Single Message
@@ -45,6 +47,10 @@ updated: 2026-07-03
 - [[concepts/human-in-the-loop agents]]
 - [[sources/Claude Managed Agents Session Event Stream]]
 - [[sources/LangGraph Interrupts]]
+
+## Artifacts
+
+- [[raw/docs/claude-agent-sdk-streaming-vs-single-message.md]]
 
 ## Notes
 

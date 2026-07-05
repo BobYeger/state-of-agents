@@ -18,8 +18,10 @@ authors:
 venue: "OpenAI Blog"
 url: "https://openai.com/index/introducing-gpt-5-5/"
 pdf_url: ""
+artifacts:
+  - "raw/articles/openai-gpt-5.5.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # OpenAI GPT-5.5
@@ -39,6 +41,10 @@ updated: 2026-07-03
 - [[sources/Terminal-Bench]]
 - [[sources/SWE-bench Pro]]
 - [[sources/OpenAI Codex Agent Loop]]
+
+## Artifacts
+
+- [[raw/articles/openai-gpt-5.5.md]]
 
 ## Notes
 

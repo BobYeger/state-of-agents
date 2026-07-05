@@ -18,8 +18,10 @@ authors:
 venue: "Brave New Geek (blog)"
 url: "https://bravenewgeek.com/you-cannot-have-exactly-once-delivery/"
 pdf_url: ""
+artifacts:
+  - "raw/articles/you-cannot-have-exactly-once-delivery.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # You Cannot Have Exactly-Once Delivery
@@ -38,6 +40,10 @@ updated: 2026-07-03
 - [[operations/durable sessions]]
 - [[sources/Armin Ronacher The Coming Loop]]
 - [[sources/Restate Durable AI Loops]]
+
+## Artifacts
+
+- [[raw/articles/you-cannot-have-exactly-once-delivery.md]]
 
 ## Notes
 

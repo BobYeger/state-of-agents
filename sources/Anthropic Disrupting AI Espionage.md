@@ -18,8 +18,11 @@ authors:
 venue: "Anthropic news + full PDF report"
 url: "https://www.anthropic.com/news/disrupting-AI-espionage"
 pdf_url: "https://www-cdn.anthropic.com/d7dd50dd1185f59be051b307150d877f2b82bd2c.pdf"
+artifacts:
+  - "raw/reports/Disrupting the first reported AI-orchestrated cyber espionage campaign.pdf"
+  - "raw/articles/anthropic-disrupting-ai-espionage.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Disrupting the First Reported AI-Orchestrated Cyber Espionage Campaign
@@ -39,6 +42,11 @@ updated: 2026-07-03
 - [[protocols/MCP]]
 - [[sources/Anthropic Measuring Agent Autonomy]]
 - [[sources/METR Frontier Risk Report 2026]]
+
+## Artifacts
+
+- [[raw/reports/Disrupting the first reported AI-orchestrated cyber espionage campaign.pdf]]
+- [[raw/articles/anthropic-disrupting-ai-espionage.md]]
 
 ## Notes
 

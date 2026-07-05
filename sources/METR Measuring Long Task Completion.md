@@ -22,8 +22,10 @@ authors:
 venue: "arXiv / NeurIPS 2025"
 url: "https://arxiv.org/abs/2503.14499"
 pdf_url: "https://arxiv.org/pdf/2503.14499"
+artifacts:
+  - "raw/papers/Measuring AI Ability to Complete Long Software Tasks.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Measuring AI Ability to Complete Long Software Tasks
@@ -43,6 +45,10 @@ updated: 2026-07-03
 - [[benchmarks/agent evaluation]]
 - [[sources/METR Time Horizon 1.1]]
 - [[sources/Anthropic Measuring Agent Autonomy]]
+
+## Artifacts
+
+- [[raw/papers/Measuring AI Ability to Complete Long Software Tasks.pdf]]
 
 ## Notes
 

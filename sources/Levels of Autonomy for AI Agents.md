@@ -21,8 +21,10 @@ authors:
 venue: "Knight First Amendment Institute (Columbia) / arXiv"
 url: "https://arxiv.org/abs/2506.12469"
 pdf_url: "https://arxiv.org/pdf/2506.12469"
+artifacts:
+  - "raw/papers/Levels of Autonomy for AI Agents.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Levels of Autonomy for AI Agents
@@ -43,6 +45,10 @@ updated: 2026-07-03
 - [[safety/agent safety and security]]
 - [[sources/Anthropic Measuring Agent Autonomy]]
 - [[sources/The 2025 AI Agent Index]]
+
+## Artifacts
+
+- [[raw/papers/Levels of Autonomy for AI Agents.pdf]]
 
 ## Notes
 

@@ -19,8 +19,10 @@ authors:
 venue: "LangChain Docs (docs.langchain.com)"
 url: "https://docs.langchain.com/oss/python/langgraph/interrupts"
 pdf_url: ""
+artifacts:
+  - "raw/docs/langgraph-interrupts.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # LangGraph Interrupts
@@ -46,6 +48,10 @@ updated: 2026-07-03
 - [[sources/LangGraph Docs]]
 - [[sources/AG-UI Protocol]]
 - [[sources/Claude Managed Agents Session Event Stream]]
+
+## Artifacts
+
+- [[raw/docs/langgraph-interrupts.md]]
 
 ## Notes
 

@@ -19,8 +19,10 @@ authors:
 venue: "Manus blog"
 url: "https://manus.im/blog/Context-Engineering-for-AI-Agents-Lessons-from-Building-Manus"
 pdf_url: ""
+artifacts:
+  - "raw/articles/manus-context-engineering.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Manus Context Engineering
@@ -47,6 +49,10 @@ updated: 2026-07-03
 - [[operations/cost control]]
 - [[sources/Manus Sandbox]]
 - [[sources/Anthropic Effective Context Engineering]]
+
+## Artifacts
+
+- [[raw/articles/manus-context-engineering.md]]
 
 ## Notes
 

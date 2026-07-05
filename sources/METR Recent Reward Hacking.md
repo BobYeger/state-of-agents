@@ -19,8 +19,10 @@ authors:
 venue: "METR blog"
 url: "https://metr.org/blog/2025-06-05-recent-reward-hacking/"
 pdf_url: ""
+artifacts:
+  - "raw/reports/metr-recent-reward-hacking.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Recent Frontier Models Are Reward Hacking
@@ -41,6 +43,10 @@ updated: 2026-07-03
 - [[sources/Anthropic Shortcuts to Sabotage]]
 - [[sources/ImpossibleBench]]
 - [[sources/METR Frontier Risk Report 2026]]
+
+## Artifacts
+
+- [[raw/reports/metr-recent-reward-hacking.md]]
 
 ## Notes
 

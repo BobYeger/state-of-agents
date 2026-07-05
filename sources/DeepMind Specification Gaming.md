@@ -26,8 +26,10 @@ authors:
 venue: "DeepMind Safety blog"
 url: "https://deepmind.google/blog/specification-gaming-the-flip-side-of-ai-ingenuity/"
 pdf_url: ""
+artifacts:
+  - "raw/articles/deepmind-specification-gaming.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Specification Gaming: The Flip Side of AI Ingenuity
@@ -45,6 +47,10 @@ updated: 2026-07-03
 - [[safety/agentic misalignment risk]]
 - [[sources/METR Recent Reward Hacking]]
 - [[sources/ImpossibleBench]]
+
+## Artifacts
+
+- [[raw/articles/deepmind-specification-gaming.md]]
 
 ## Notes
 

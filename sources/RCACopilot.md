@@ -35,8 +35,10 @@ authors:
 venue: "EuroSys 2024 (arXiv preprint 2023) / Microsoft, UIUC"
 url: "https://arxiv.org/abs/2305.15778"
 pdf_url: "https://arxiv.org/pdf/2305.15778"
+artifacts:
+  - "raw/papers/Automatic Root Cause Analysis via Large Language Models for Cloud Incidents.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # RCACopilot
@@ -55,6 +57,10 @@ updated: 2026-07-03
 - [[sources/AIOpsLab]]
 - [[sources/Meta AI Incident Response]]
 - [[sources/Azure SRE Agent Docs]]
+
+## Artifacts
+
+- [[raw/papers/Automatic Root Cause Analysis via Large Language Models for Cloud Incidents.pdf]]
 
 ## Notes
 

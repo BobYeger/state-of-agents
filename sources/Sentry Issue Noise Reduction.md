@@ -19,8 +19,10 @@ authors:
 venue: "Sentry Blog (engineering)"
 url: "https://blog.sentry.io/how-sentry-decreased-issue-noise-with-ai/"
 pdf_url: ""
+artifacts:
+  - "raw/articles/sentry-issue-noise-reduction.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Sentry Issue Noise Reduction
@@ -38,6 +40,10 @@ updated: 2026-07-03
 - [[concepts/issue tracker control plane]]
 - [[sources/Sentry Seer]]
 - [[sources/Sentry Issue Grouping v2]]
+
+## Artifacts
+
+- [[raw/articles/sentry-issue-noise-reduction.md]]
 
 ## Notes
 

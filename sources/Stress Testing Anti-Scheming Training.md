@@ -20,8 +20,10 @@ authors:
 venue: "arXiv (OpenAI and Apollo Research)"
 url: "https://arxiv.org/abs/2509.15541"
 pdf_url: "https://arxiv.org/pdf/2509.15541"
+artifacts:
+  - "raw/papers/Stress Testing Deliberative Alignment for Anti-Scheming Training.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Stress Testing Anti-Scheming Training
@@ -40,6 +42,10 @@ updated: 2026-07-03
 - [[sources/In-Context Scheming]]
 - [[sources/AI Control Despite Intentional Subversion]]
 - [[operations/agent evals]]
+
+## Artifacts
+
+- [[raw/papers/Stress Testing Deliberative Alignment for Anti-Scheming Training.pdf]]
 
 ## Notes
 

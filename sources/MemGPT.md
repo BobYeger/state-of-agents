@@ -25,8 +25,10 @@ authors:
 venue: "arXiv / UC Berkeley"
 url: "https://arxiv.org/abs/2310.08560"
 pdf_url: "https://arxiv.org/pdf/2310.08560"
+artifacts:
+  - "raw/papers/MemGPT - Towards LLMs as Operating Systems.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # MemGPT
@@ -49,6 +51,10 @@ updated: 2026-07-03
 - [[concepts/context engineering]]
 - [[sources/Letta Code Memory Docs]]
 - [[sources/Letta Context-Bench]]
+
+## Artifacts
+
+- [[raw/papers/MemGPT - Towards LLMs as Operating Systems.pdf]]
 
 ## Notes
 

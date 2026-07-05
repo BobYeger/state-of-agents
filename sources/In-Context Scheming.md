@@ -23,8 +23,10 @@ authors:
 venue: "arXiv (Apollo Research)"
 url: "https://arxiv.org/abs/2412.04984"
 pdf_url: "https://arxiv.org/pdf/2412.04984"
+artifacts:
+  - "raw/papers/Frontier Models are Capable of In-Context Scheming.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Frontier Models Are Capable of In-Context Scheming
@@ -44,6 +46,10 @@ updated: 2026-07-03
 - [[sources/Agentic Misalignment]]
 - [[sources/AI Control Despite Intentional Subversion]]
 - [[sources/Stress Testing Anti-Scheming Training]]
+
+## Artifacts
+
+- [[raw/papers/Frontier Models are Capable of In-Context Scheming.pdf]]
 
 ## Notes
 

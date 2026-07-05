@@ -23,8 +23,10 @@ authors:
 venue: "arXiv / ICML 2024 (MIT / Google Brain)"
 url: "https://arxiv.org/abs/2305.14325"
 pdf_url: "https://arxiv.org/pdf/2305.14325"
+artifacts:
+  - "raw/papers/Improving Factuality and Reasoning in Language Models through Multiagent Debate.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Multiagent Debate Improves Factuality and Reasoning
@@ -45,6 +47,10 @@ updated: 2026-07-03
 - [[sources/Self-Consistency Improves Chain of Thought Reasoning]]
 - [[sources/Stop Overvaluing Multi-Agent Debate]]
 - [[sources/Should We Be Going MAD]]
+
+## Artifacts
+
+- [[raw/papers/Improving Factuality and Reasoning in Language Models through Multiagent Debate.pdf]]
 
 ## Notes
 

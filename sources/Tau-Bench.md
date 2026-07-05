@@ -22,8 +22,10 @@ authors:
 venue: "arXiv / Sierra"
 url: "https://arxiv.org/abs/2406.12045"
 pdf_url: "https://arxiv.org/pdf/2406.12045"
+artifacts:
+  - "raw/papers/Tau-bench - A Benchmark for Tool-Agent-User Interaction in Real-World Domains.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Tau-Bench
@@ -43,6 +45,10 @@ updated: 2026-07-03
 - [[concepts/tool use]]
 - [[sources/On Randomness in Agentic Evals]]
 - [[sources/Rigorous Agentic Benchmarks]]
+
+## Artifacts
+
+- [[raw/papers/Tau-bench - A Benchmark for Tool-Agent-User Interaction in Real-World Domains.pdf]]
 
 ## Notes
 

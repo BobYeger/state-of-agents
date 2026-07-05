@@ -21,8 +21,10 @@ authors:
 venue: "arXiv / Meta AI + KAUST"
 url: "https://arxiv.org/abs/2410.10934"
 pdf_url: "https://arxiv.org/pdf/2410.10934"
+artifacts:
+  - "raw/papers/Agent-as-a-Judge - Evaluate Agents with Agents.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Agent-as-a-Judge
@@ -42,6 +44,10 @@ updated: 2026-07-03
 - [[operations/agent evals]]
 - [[sources/Judging LLM-as-a-Judge with MT-Bench]]
 - [[sources/OpenHands]]
+
+## Artifacts
+
+- [[raw/papers/Agent-as-a-Judge - Evaluate Agents with Agents.pdf]]
 
 ## Notes
 

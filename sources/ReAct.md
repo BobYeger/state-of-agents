@@ -26,8 +26,10 @@ authors:
 venue: "arXiv / ICLR 2023"
 url: "https://arxiv.org/abs/2210.03629"
 pdf_url: "https://arxiv.org/pdf/2210.03629"
+artifacts:
+  - "raw/papers/ReAct - Synergizing Reasoning and Acting in Language Models.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # ReAct
@@ -46,6 +48,10 @@ updated: 2026-07-03
 - [[concepts/tool use]]
 - [[sources/Reflexion]]
 - [[sources/SWE-agent]]
+
+## Artifacts
+
+- [[raw/papers/ReAct - Synergizing Reasoning and Acting in Language Models.pdf]]
 
 ## Notes
 

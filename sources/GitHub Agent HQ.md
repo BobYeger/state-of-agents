@@ -18,8 +18,10 @@ authors:
 venue: "GitHub Blog"
 url: "https://github.blog/news-insights/company-news/welcome-home-agents/"
 pdf_url: ""
+artifacts:
+  - "raw/articles/github-agent-hq.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # GitHub Agent HQ
@@ -44,6 +46,10 @@ updated: 2026-07-03
 - [[protocols/MCP]]
 - [[sources/GitHub Copilot Coding Agent]]
 - [[sources/MCP Registry]]
+
+## Artifacts
+
+- [[raw/articles/github-agent-hq.md]]
 
 ## Notes
 

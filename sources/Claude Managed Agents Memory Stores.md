@@ -19,8 +19,10 @@ authors:
 venue: "Claude Platform Docs"
 url: "https://platform.claude.com/docs/en/managed-agents/memory"
 pdf_url: ""
+artifacts:
+  - "raw/docs/claude-managed-agents-memory-stores.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Claude Managed Agents Memory Stores
@@ -46,6 +48,10 @@ updated: 2026-07-03
 - [[safety/prompt injection]]
 - [[sources/Anthropic Managed Agents]]
 - [[sources/Anthropic Managed Agents Dreaming Outcomes]]
+
+## Artifacts
+
+- [[raw/docs/claude-managed-agents-memory-stores.md]]
 
 ## Notes
 

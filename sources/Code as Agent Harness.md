@@ -17,8 +17,10 @@ authors:
 venue: "arXiv (42-author survey)"
 url: "https://arxiv.org/abs/2605.18747"
 pdf_url: "https://arxiv.org/pdf/2605.18747"
+artifacts:
+  - "raw/papers/Code as Agent Harness.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Code as Agent Harness
@@ -44,6 +46,10 @@ updated: 2026-07-03
 - [[sources/Cloudflare Code Mode MCP]]
 - [[sources/Self-Harness]]
 - [[sources/HarnessFix]]
+
+## Artifacts
+
+- [[raw/papers/Code as Agent Harness.pdf]]
 
 ## Notes
 

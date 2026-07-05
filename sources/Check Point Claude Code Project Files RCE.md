@@ -19,8 +19,10 @@ authors:
 venue: "Check Point Research blog"
 url: "https://research.checkpoint.com/2026/rce-and-api-token-exfiltration-through-claude-code-project-files-cve-2025-59536/"
 pdf_url: ""
+artifacts:
+  - "raw/reports/check-point-claude-code-project-files-rce.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Check Point Claude Code Project Files RCE
@@ -41,6 +43,10 @@ updated: 2026-07-03
 - [[systems/Claude Code]]
 - [[sources/Claude Code Hooks]]
 - [[sources/Koi Security Postmark MCP Backdoor]]
+
+## Artifacts
+
+- [[raw/reports/check-point-claude-code-project-files-rce.md]]
 
 ## Notes
 

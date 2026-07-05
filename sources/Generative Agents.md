@@ -24,8 +24,10 @@ authors:
 venue: "UIST 2023 / arXiv"
 url: "https://arxiv.org/abs/2304.03442"
 pdf_url: "https://arxiv.org/pdf/2304.03442"
+artifacts:
+  - "raw/papers/Generative Agents - Interactive Simulacra of Human Behavior.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Generative Agents
@@ -43,6 +45,10 @@ updated: 2026-07-03
 - [[operations/agent memory]]
 - [[concepts/multi-agent systems]]
 - [[concepts/dreaming and memory consolidation]]
+
+## Artifacts
+
+- [[raw/papers/Generative Agents - Interactive Simulacra of Human Behavior.pdf]]
 
 ## Notes
 

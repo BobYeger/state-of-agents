@@ -30,8 +30,10 @@ authors:
 venue: "arXiv / MLSys 2026 (All Hands AI / CMU)"
 url: "https://arxiv.org/abs/2511.03690"
 pdf_url: "https://arxiv.org/pdf/2511.03690"
+artifacts:
+  - "raw/papers/The OpenHands Software Agent SDK - A Composable and Extensible Foundation for Production Agents.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # OpenHands Software Agent SDK
@@ -55,6 +57,10 @@ updated: 2026-07-03
 - [[operations/agent infrastructure]]
 - [[operations/sandboxes]]
 - [[sources/OpenHands]]
+
+## Artifacts
+
+- [[raw/papers/The OpenHands Software Agent SDK - A Composable and Extensible Foundation for Production Agents.pdf]]
 
 ## Notes
 

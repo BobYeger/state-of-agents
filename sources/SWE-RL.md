@@ -23,8 +23,10 @@ authors:
 venue: "arXiv / NeurIPS 2025 (main track); Meta FAIR"
 url: "https://arxiv.org/abs/2502.18449"
 pdf_url: "https://arxiv.org/pdf/2502.18449"
+artifacts:
+  - "raw/papers/SWE-RL - Advancing LLM Reasoning via Reinforcement Learning on Open Software Evolution.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # SWE-RL
@@ -47,6 +49,10 @@ updated: 2026-07-03
 - [[concepts/code factories]]
 - [[sources/SWE-bench Verified]]
 - [[sources/Meta Agentic Program Repair]]
+
+## Artifacts
+
+- [[raw/papers/SWE-RL - Advancing LLM Reasoning via Reinforcement Learning on Open Software Evolution.pdf]]
 
 ## Notes
 

@@ -21,8 +21,10 @@ authors:
 venue: "DORA annual report (dora.dev)"
 url: "https://dora.dev/dora-report-2025/"
 pdf_url: ""
+artifacts:
+  - "raw/reports/dora-state-of-ai-assisted-software-development-2025.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # DORA State of AI-assisted Software Development 2025
@@ -45,6 +47,10 @@ updated: 2026-07-03
 - [[concepts/code factories]]
 - [[sources/DORA ROI of AI-assisted Software Development]]
 - [[sources/Factory 2.0 Software Factory]]
+
+## Artifacts
+
+- [[raw/reports/dora-state-of-ai-assisted-software-development-2025.md]]
 
 ## Notes
 

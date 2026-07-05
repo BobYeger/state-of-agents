@@ -19,8 +19,10 @@ authors:
 venue: "Intercom Blog"
 url: "https://www.intercom.com/blog/ai-is-approving-our-pull-requests-heres-how-we-made-it-safe/"
 pdf_url: ""
+artifacts:
+  - "raw/articles/intercom-ai-approving-pull-requests.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Intercom AI Approving Pull Requests
@@ -45,6 +47,10 @@ updated: 2026-07-03
 - [[sources/Modern Code Review at Google]]
 - [[sources/GitHub Merge Queue Docs]]
 - [[sources/Cursor Building Better Bugbot]]
+
+## Artifacts
+
+- [[raw/articles/intercom-ai-approving-pull-requests.md]]
 
 ## Notes
 

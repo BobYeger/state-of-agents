@@ -23,8 +23,10 @@ authors:
 venue: "arXiv (Zep AI)"
 url: "https://arxiv.org/abs/2501.13956"
 pdf_url: "https://arxiv.org/pdf/2501.13956"
+artifacts:
+  - "raw/papers/Zep - A Temporal Knowledge Graph Architecture for Agent Memory.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Zep Temporal Knowledge Graph Memory
@@ -49,6 +51,10 @@ updated: 2026-07-03
 - [[sources/Zep Smart Context Assembly]]
 - [[sources/LongMemEval]]
 - [[sources/MemGPT]]
+
+## Artifacts
+
+- [[raw/papers/Zep - A Temporal Knowledge Graph Architecture for Agent Memory.pdf]]
 
 ## Notes
 

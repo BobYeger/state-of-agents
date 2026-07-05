@@ -26,8 +26,10 @@ authors:
 venue: "arXiv / Microsoft Research"
 url: "https://arxiv.org/abs/2505.23643"
 pdf_url: "https://arxiv.org/pdf/2505.23643"
+artifacts:
+  - "raw/papers/Securing AI Agents with Information-Flow Control (FIDES).pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Securing AI Agents with Information-Flow Control (FIDES)
@@ -51,6 +53,10 @@ updated: 2026-07-03
 - [[operations/permissions]]
 - [[sources/CaMeL]]
 - [[sources/AgentDojo]]
+
+## Artifacts
+
+- [[raw/papers/Securing AI Agents with Information-Flow Control (FIDES).pdf]]
 
 ## Notes
 

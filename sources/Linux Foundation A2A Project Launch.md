@@ -19,8 +19,10 @@ authors:
 venue: "Linux Foundation press release"
 url: "https://www.linuxfoundation.org/press/linux-foundation-launches-the-agent2agent-protocol-project-to-enable-secure-intelligent-communication-between-ai-agents"
 pdf_url: ""
+artifacts:
+  - "raw/articles/linux-foundation-a2a-project-launch.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Linux Foundation A2A Project Launch
@@ -39,6 +41,10 @@ updated: 2026-07-03
 - [[protocols/agent protocol governance]]
 - [[sources/A2A Specification]]
 - [[sources/A2A GitHub Repository]]
+
+## Artifacts
+
+- [[raw/articles/linux-foundation-a2a-project-launch.md]]
 
 ## Notes
 

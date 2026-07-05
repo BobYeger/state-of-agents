@@ -18,8 +18,10 @@ authors:
 venue: "Microsoft Learn"
 url: "https://learn.microsoft.com/en-us/azure/sre-agent/overview"
 pdf_url: ""
+artifacts:
+  - "raw/docs/azure-sre-agent-docs.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Azure SRE Agent Docs
@@ -45,6 +47,10 @@ updated: 2026-07-03
 - [[methods/hook-based control]]
 - [[protocols/MCP]]
 - [[concepts/code factories]]
+
+## Artifacts
+
+- [[raw/docs/azure-sre-agent-docs.md]]
 
 ## Notes
 

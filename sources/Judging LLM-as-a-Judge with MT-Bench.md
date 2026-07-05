@@ -22,8 +22,10 @@ authors:
 venue: "NeurIPS 2023 Datasets and Benchmarks Track (arXiv)"
 url: "https://arxiv.org/abs/2306.05685"
 pdf_url: "https://arxiv.org/pdf/2306.05685"
+artifacts:
+  - "raw/papers/Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Judging LLM-as-a-Judge with MT-Bench
@@ -42,6 +44,10 @@ updated: 2026-07-03
 - [[benchmarks/agent evaluation]]
 - [[sources/Agent-as-a-Judge]]
 - [[sources/Anthropic Demystifying Agent Evals]]
+
+## Artifacts
+
+- [[raw/papers/Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena.pdf]]
 
 ## Notes
 

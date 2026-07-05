@@ -20,8 +20,10 @@ authors:
 venue: "arXiv (Terminal-Bench 2.0 released 2025-11-07)"
 url: "https://arxiv.org/abs/2601.11868"
 pdf_url: "https://arxiv.org/pdf/2601.11868"
+artifacts:
+  - "raw/papers/Terminal-Bench - Benchmarking Agents on Hard, Realistic Tasks in Command Line Interfaces.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Terminal-Bench
@@ -43,6 +45,10 @@ updated: 2026-07-03
 - [[operations/agent harnesses]]
 - [[operations/sandboxes]]
 - [[sources/TheAgentCompany]]
+
+## Artifacts
+
+- [[raw/papers/Terminal-Bench - Benchmarking Agents on Hard, Realistic Tasks in Command Line Interfaces.pdf]]
 
 ## Notes
 

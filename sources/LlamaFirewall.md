@@ -21,8 +21,10 @@ authors:
 venue: "arXiv / Meta"
 url: "https://arxiv.org/abs/2505.03574"
 pdf_url: "https://arxiv.org/pdf/2505.03574"
+artifacts:
+  - "raw/papers/LlamaFirewall - An open source guardrail system for building secure AI agents.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # LlamaFirewall
@@ -46,6 +48,10 @@ updated: 2026-07-03
 - [[sources/AgentDojo]]
 - [[sources/The Attacker Moves Second]]
 - [[sources/Constitutional Classifiers]]
+
+## Artifacts
+
+- [[raw/papers/LlamaFirewall - An open source guardrail system for building secure AI agents.pdf]]
 
 ## Notes
 

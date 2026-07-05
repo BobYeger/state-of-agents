@@ -19,8 +19,10 @@ authors:
 venue: "Claude Platform Docs"
 url: "https://platform.claude.com/docs/en/build-with-claude/compaction"
 pdf_url: ""
+artifacts:
+  - "raw/docs/claude-api-compaction.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Claude API Compaction
@@ -47,6 +49,10 @@ updated: 2026-07-03
 - [[sources/OpenAI Agents SDK Compaction Sessions]]
 - [[sources/Google ADK Context Compression]]
 - [[sources/Claude API Prompt Caching]]
+
+## Artifacts
+
+- [[raw/docs/claude-api-compaction.md]]
 
 ## Notes
 

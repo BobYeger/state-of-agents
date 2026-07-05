@@ -19,8 +19,10 @@ authors:
 venue: "Microsoft Learn docs"
 url: "https://learn.microsoft.com/en-us/entra/agent-id/what-is-microsoft-entra-agent-id"
 pdf_url: ""
+artifacts:
+  - "raw/docs/microsoft-entra-agent-id.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Microsoft Entra Agent ID
@@ -41,6 +43,10 @@ updated: 2026-07-03
 - [[safety/agent safety and security]]
 - [[protocols/A2A]]
 - [[protocols/MCP]]
+
+## Artifacts
+
+- [[raw/docs/microsoft-entra-agent-id.md]]
 
 ## Notes
 

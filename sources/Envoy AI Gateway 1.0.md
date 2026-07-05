@@ -18,8 +18,10 @@ authors:
 venue: "Envoy AI Gateway blog"
 url: "https://aigateway.envoyproxy.io/blog/v1.0-release-announcement/"
 pdf_url: ""
+artifacts:
+  - "raw/articles/envoy-ai-gateway-1.0.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Envoy AI Gateway 1.0
@@ -41,6 +43,10 @@ updated: 2026-07-03
 - [[protocols/MCP]]
 - [[sources/LiteLLM Proxy Budgets and Spend Tracking]]
 - [[sources/agentgateway]]
+
+## Artifacts
+
+- [[raw/articles/envoy-ai-gateway-1.0.md]]
 
 ## Notes
 

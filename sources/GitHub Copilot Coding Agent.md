@@ -18,8 +18,10 @@ authors:
 venue: "GitHub Blog"
 url: "https://github.blog/news-insights/product-news/github-copilot-meet-the-new-coding-agent/"
 pdf_url: ""
+artifacts:
+  - "raw/articles/github-copilot-coding-agent.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # GitHub Copilot Coding Agent
@@ -40,6 +42,10 @@ updated: 2026-07-03
 - [[protocols/MCP]]
 - [[systems/deployed agent products]]
 - [[sources/GitHub Agent HQ]]
+
+## Artifacts
+
+- [[raw/articles/github-copilot-coding-agent.md]]
 
 ## Notes
 

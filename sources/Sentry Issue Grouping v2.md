@@ -19,8 +19,10 @@ authors:
 venue: "Sentry Blog (engineering)"
 url: "https://blog.sentry.io/enhancing-issue-grouping/"
 pdf_url: ""
+artifacts:
+  - "raw/articles/sentry-issue-grouping-v2.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Sentry Issue Grouping v2
@@ -40,6 +42,10 @@ updated: 2026-07-03
 - [[operations/agent evals]]
 - [[sources/Sentry Issue Noise Reduction]]
 - [[sources/Sentry Seer]]
+
+## Artifacts
+
+- [[raw/articles/sentry-issue-grouping-v2.md]]
 
 ## Notes
 

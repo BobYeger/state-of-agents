@@ -20,8 +20,10 @@ authors:
 venue: "Anthropic news"
 url: "https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation"
 pdf_url: ""
+artifacts:
+  - "raw/articles/anthropic-mcp-donation-and-agentic-ai-foundation.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Anthropic MCP Donation and Agentic AI Foundation
@@ -42,6 +44,10 @@ updated: 2026-07-03
 - [[sources/MCP Specification 2025-11-25]]
 - [[sources/Linux Foundation A2A Project Launch]]
 - [[sources/MCP Governance and Stewardship]]
+
+## Artifacts
+
+- [[raw/articles/anthropic-mcp-donation-and-agentic-ai-foundation.md]]
 
 ## Notes
 

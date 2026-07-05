@@ -22,8 +22,10 @@ authors:
 venue: "arXiv"
 url: "https://arxiv.org/abs/2512.13564"
 pdf_url: "https://arxiv.org/pdf/2512.13564"
+artifacts:
+  - "raw/papers/Memory in the Age of AI Agents - A Survey.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Memory in the Age of AI Agents
@@ -44,8 +46,12 @@ updated: 2026-07-03
 - [[concepts/lifelong agent learning]]
 - [[sources/Memory for Autonomous LLM Agents]]
 
+## Artifacts
+
+- [[raw/papers/Memory in the Age of AI Agents - A Survey.pdf]]
+
 ## Notes
 
 - Canonical URL: https://arxiv.org/abs/2512.13564
-- Umbrella card for the memory space: use it to situate the narrower substrate cards (MemGPT, Zep, Mem0, A-MEM, G-Memory) and the earlier, smaller survey in [[sources/Memory for Autonomous LLM Agents]].
+- Umbrella card for the memory space: use it to situate the narrower substrate cards (MemGPT, Zep, Mem0, A-MEM, G-Memory) and the narrower single-author survey in [[sources/Memory for Autonomous LLM Agents]] (published 2026-03-08, three months after this one).
 - Only the first five of 47 authors are listed in frontmatter.

@@ -24,8 +24,10 @@ authors:
 venue: "TACL 2024 / arXiv"
 url: "https://arxiv.org/abs/2307.03172"
 pdf_url: "https://arxiv.org/pdf/2307.03172"
+artifacts:
+  - "raw/papers/Lost in the Middle - How Language Models Use Long Contexts.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Lost in the Middle
@@ -47,6 +49,10 @@ updated: 2026-07-03
 - [[concepts/context retrieval]]
 - [[concepts/context compaction]]
 - [[concepts/task-aware context pruning]]
+
+## Artifacts
+
+- [[raw/papers/Lost in the Middle - How Language Models Use Long Contexts.pdf]]
 
 ## Notes
 

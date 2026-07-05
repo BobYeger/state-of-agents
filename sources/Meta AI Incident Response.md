@@ -18,8 +18,10 @@ authors:
 venue: "Engineering at Meta blog"
 url: "https://engineering.fb.com/2024/06/24/data-infrastructure/leveraging-ai-for-efficient-incident-response/"
 pdf_url: ""
+artifacts:
+  - "raw/articles/meta-ai-incident-response.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Meta AI Incident Response
@@ -38,6 +40,10 @@ updated: 2026-07-03
 - [[sources/RCACopilot]]
 - [[sources/Sentry Seer]]
 - [[sources/Meta Agentic Program Repair]]
+
+## Artifacts
+
+- [[raw/articles/meta-ai-incident-response.md]]
 
 ## Notes
 

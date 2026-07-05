@@ -19,8 +19,10 @@ authors:
 venue: "Model Context Protocol blog"
 url: "https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/"
 pdf_url: ""
+artifacts:
+  - "raw/articles/mcp-specification-2026-07-28-release-candidate.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # MCP Specification 2026-07-28 Release Candidate
@@ -42,6 +44,10 @@ updated: 2026-07-03
 - [[sources/MCP Governance and Stewardship]]
 - [[operations/agent infrastructure]]
 - [[operations/durable sessions]]
+
+## Artifacts
+
+- [[raw/articles/mcp-specification-2026-07-28-release-candidate.md]]
 
 ## Notes
 

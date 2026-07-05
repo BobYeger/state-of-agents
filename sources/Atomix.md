@@ -22,8 +22,10 @@ authors:
 venue: "arXiv (v1 2026-02-16, v2 2026-05-29)"
 url: "https://arxiv.org/abs/2602.14849"
 pdf_url: "https://arxiv.org/pdf/2602.14849"
+artifacts:
+  - "raw/papers/Atomix - Timely, Transactional Tool Use for Reliable Agentic Workflows.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Atomix
@@ -47,6 +49,10 @@ updated: 2026-07-03
 - [[concepts/tool-use contracts]]
 - [[sources/Restate Durable AI Loops]]
 - [[sources/Temporal OpenAI Agents SDK Integration]]
+
+## Artifacts
+
+- [[raw/papers/Atomix - Timely, Transactional Tool Use for Reliable Agentic Workflows.pdf]]
 
 ## Notes
 

@@ -18,8 +18,10 @@ authors:
 venue: "Claude Code docs"
 url: "https://code.claude.com/docs/en/claude-apps-gateway-spend-limits"
 pdf_url: ""
+artifacts:
+  - "raw/docs/claude-apps-gateway-spend-limits.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Claude Apps Gateway Spend Limits
@@ -40,6 +42,10 @@ updated: 2026-07-03
 - [[systems/Claude Code]]
 - [[sources/Claude Code Manage Costs]]
 - [[sources/LiteLLM Proxy Budgets and Spend Tracking]]
+
+## Artifacts
+
+- [[raw/docs/claude-apps-gateway-spend-limits.md]]
 
 ## Notes
 

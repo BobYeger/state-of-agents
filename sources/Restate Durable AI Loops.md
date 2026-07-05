@@ -20,8 +20,10 @@ authors:
 venue: "Restate blog"
 url: "https://www.restate.dev/blog/durable-ai-loops-fault-tolerance-across-frameworks-and-without-handcuffs"
 pdf_url: ""
+artifacts:
+  - "raw/articles/restate-durable-ai-loops.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Restate Durable AI Loops
@@ -42,6 +44,10 @@ updated: 2026-07-03
 - [[concepts/durable dormant agents]]
 - [[sources/Temporal OpenAI Agents SDK Integration]]
 - [[sources/Google ADK Durable Agents]]
+
+## Artifacts
+
+- [[raw/articles/restate-durable-ai-loops.md]]
 
 ## Notes
 

@@ -20,8 +20,10 @@ authors:
 venue: "modelcontextprotocol.io community docs"
 url: "https://modelcontextprotocol.io/community/governance"
 pdf_url: ""
+artifacts:
+  - "raw/docs/mcp-governance-and-stewardship.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # MCP Governance and Stewardship
@@ -40,6 +42,10 @@ updated: 2026-07-03
 - [[protocols/agent protocol governance]]
 - [[sources/MCP Specification 2025-11-25]]
 - [[sources/Anthropic MCP Donation and Agentic AI Foundation]]
+
+## Artifacts
+
+- [[raw/docs/mcp-governance-and-stewardship.md]]
 
 ## Notes
 

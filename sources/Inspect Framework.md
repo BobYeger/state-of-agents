@@ -14,8 +14,10 @@ authors:
   - "Meridian Labs"
 venue: "inspect.aisi.org.uk"
 url: "https://inspect.aisi.org.uk/"
+artifacts:
+  - "raw/docs/inspect-framework.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Inspect Framework
@@ -36,6 +38,10 @@ updated: 2026-07-03
 - [[operations/sandboxes]]
 - [[benchmarks/agent evaluation]]
 - [[sources/Anthropic Demystifying Agent Evals]]
+
+## Artifacts
+
+- [[raw/docs/inspect-framework.md]]
 
 ## Notes
 

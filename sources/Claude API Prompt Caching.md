@@ -19,8 +19,10 @@ authors:
 venue: "Claude Platform Docs"
 url: "https://platform.claude.com/docs/en/build-with-claude/prompt-caching"
 pdf_url: ""
+artifacts:
+  - "raw/docs/claude-api-prompt-caching.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Claude API Prompt Caching
@@ -46,6 +48,10 @@ updated: 2026-07-03
 - [[sources/Claude Code Prompt Caching]]
 - [[sources/Manus Context Engineering]]
 - [[sources/Claude API Compaction]]
+
+## Artifacts
+
+- [[raw/docs/claude-api-prompt-caching.md]]
 
 ## Notes
 

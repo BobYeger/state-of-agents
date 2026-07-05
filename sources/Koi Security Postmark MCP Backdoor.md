@@ -18,8 +18,10 @@ authors:
 venue: "Koi Security blog"
 url: "https://www.koi.ai/blog/postmark-mcp-npm-malicious-backdoor-email-theft"
 pdf_url: ""
+artifacts:
+  - "raw/articles/koi-security-postmark-mcp-backdoor.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # First Malicious MCP in the Wild: The Postmark Backdoor
@@ -39,6 +41,10 @@ updated: 2026-07-03
 - [[safety/agent safety and security]]
 - [[sources/Invariant Labs MCP Tool Poisoning]]
 - [[sources/MCP Security Best Practices]]
+
+## Artifacts
+
+- [[raw/articles/koi-security-postmark-mcp-backdoor.md]]
 
 ## Notes
 

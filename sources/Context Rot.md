@@ -20,8 +20,10 @@ authors:
 venue: "Chroma technical report"
 url: "https://www.trychroma.com/research/context-rot"
 pdf_url: ""
+artifacts:
+  - "raw/reports/context-rot.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Context Rot
@@ -46,6 +48,10 @@ updated: 2026-07-03
 - [[sources/Lost in the Middle]]
 - [[sources/LongMemEval]]
 - [[sources/Cloudflare Agent Memory]]
+
+## Artifacts
+
+- [[raw/reports/context-rot.md]]
 
 ## Notes
 

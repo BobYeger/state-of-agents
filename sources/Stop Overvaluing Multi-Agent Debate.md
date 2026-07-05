@@ -25,8 +25,10 @@ authors:
 venue: "arXiv (Penn State / Shanghai AI Lab / NWPU / SMU)"
 url: "https://arxiv.org/abs/2502.08788"
 pdf_url: "https://arxiv.org/pdf/2502.08788"
+artifacts:
+  - "raw/papers/Stop Overvaluing Multi-Agent Debate - We Must Rethink Evaluation and Embrace Model Heterogeneity.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Stop Overvaluing Multi-Agent Debate
@@ -50,6 +52,10 @@ updated: 2026-07-03
 - [[sources/Why Do Multi-Agent LLM Systems Fail]]
 - [[sources/Multiagent Debate Improves Factuality and Reasoning]]
 - [[sources/Self-Consistency Improves Chain of Thought Reasoning]]
+
+## Artifacts
+
+- [[raw/papers/Stop Overvaluing Multi-Agent Debate - We Must Rethink Evaluation and Embrace Model Heterogeneity.pdf]]
 
 ## Notes
 

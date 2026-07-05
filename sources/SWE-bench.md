@@ -24,8 +24,10 @@ authors:
 venue: "arXiv / ICLR 2024"
 url: "https://arxiv.org/abs/2310.06770"
 pdf_url: "https://arxiv.org/pdf/2310.06770"
+artifacts:
+  - "raw/papers/SWE-bench - Can Language Models Resolve Real-World GitHub Issues.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # SWE-bench
@@ -45,6 +47,10 @@ updated: 2026-07-03
 - [[sources/SWE-bench Verified]]
 - [[sources/OpenAI Retires SWE-bench Verified]]
 - [[sources/TheAgentCompany]]
+
+## Artifacts
+
+- [[raw/papers/SWE-bench - Can Language Models Resolve Real-World GitHub Issues.pdf]]
 
 ## Notes
 

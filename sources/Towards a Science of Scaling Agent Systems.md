@@ -27,8 +27,10 @@ authors:
 venue: "arXiv (Google Research / MIT)"
 url: "https://arxiv.org/abs/2512.08296"
 pdf_url: "https://arxiv.org/pdf/2512.08296"
+artifacts:
+  - "raw/papers/Towards a Science of Scaling Agent Systems.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Towards a Science of Scaling Agent Systems
@@ -55,6 +57,10 @@ updated: 2026-07-03
 - [[operations/cost control]]
 - [[sources/Google Scaling Agent Systems]]
 - [[sources/Do More Agents Help]]
+
+## Artifacts
+
+- [[raw/papers/Towards a Science of Scaling Agent Systems.pdf]]
 
 ## Notes
 

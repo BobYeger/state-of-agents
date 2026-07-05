@@ -18,8 +18,10 @@ authors:
 venue: "Cognition blog"
 url: "https://cognition.com/blog/multi-agents-working"
 pdf_url: ""
+artifacts:
+  - "raw/articles/cognition-multi-agents-whats-actually-working.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Cognition Multi-Agents Whats Actually Working
@@ -45,6 +47,10 @@ updated: 2026-07-03
 - [[methods/runtime routing]]
 - [[sources/Cognition Dont Build Multi-Agents]]
 - [[sources/Devin Manages Devins]]
+
+## Artifacts
+
+- [[raw/articles/cognition-multi-agents-whats-actually-working.md]]
 
 ## Notes
 

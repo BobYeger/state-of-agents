@@ -20,8 +20,10 @@ authors:
 venue: "arXiv (cs.LG) / Princeton"
 url: "https://arxiv.org/abs/2407.01502"
 pdf_url: "https://arxiv.org/pdf/2407.01502"
+artifacts:
+  - "raw/papers/AI Agents That Matter.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # AI Agents That Matter
@@ -41,6 +43,10 @@ updated: 2026-07-03
 - [[benchmarks/agent evaluation]]
 - [[sources/Holistic Agent Leaderboard]]
 - [[sources/Evaluation and Benchmarking of LLM Agents - A Survey]]
+
+## Artifacts
+
+- [[raw/papers/AI Agents That Matter.pdf]]
 
 ## Notes
 

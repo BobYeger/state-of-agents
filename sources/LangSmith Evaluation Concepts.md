@@ -10,8 +10,10 @@ authors:
   - "LangChain"
 venue: "docs.langchain.com"
 url: "https://docs.langchain.com/langsmith/evaluation-concepts"
+artifacts:
+  - "raw/docs/langsmith-evaluation-concepts.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # LangSmith Evaluation Concepts
@@ -30,6 +32,10 @@ updated: 2026-07-03
 - [[concepts/outcomes and rubric graders]]
 - [[sources/LangSmith Context Hub]]
 - [[sources/LangChain Agent Improvement Loop]]
+
+## Artifacts
+
+- [[raw/docs/langsmith-evaluation-concepts.md]]
 
 ## Notes
 

@@ -10,8 +10,10 @@ authors:
   - "Sam Crowder"
 venue: "LangChain blog"
 url: "https://www.langchain.com/blog/traces-start-agent-improvement-loop"
+artifacts:
+  - "raw/articles/langchain-agent-improvement-loop.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # LangChain Agent Improvement Loop
@@ -31,6 +33,10 @@ updated: 2026-07-03
 - [[concepts/outcomes and rubric graders]]
 - [[concepts/loop engineering]]
 - [[sources/LangSmith Evaluation Concepts]]
+
+## Artifacts
+
+- [[raw/articles/langchain-agent-improvement-loop.md]]
 
 ## Notes
 

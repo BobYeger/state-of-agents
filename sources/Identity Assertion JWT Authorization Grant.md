@@ -21,8 +21,10 @@ authors:
 venue: "IETF OAuth Working Group Internet-Draft"
 url: "https://datatracker.ietf.org/doc/draft-ietf-oauth-identity-assertion-authz-grant/"
 pdf_url: ""
+artifacts:
+  - "raw/protocols/identity-assertion-jwt-authorization-grant.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Identity Assertion JWT Authorization Grant
@@ -41,6 +43,10 @@ updated: 2026-07-03
 - [[operations/permissions]]
 - [[sources/IETF AIMS Agent Auth Draft]]
 - [[sources/MCP Authorization]]
+
+## Artifacts
+
+- [[raw/protocols/identity-assertion-jwt-authorization-grant.md]]
 
 ## Notes
 

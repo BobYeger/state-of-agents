@@ -24,8 +24,10 @@ authors:
 venue: "arXiv / ICML 2024"
 url: "https://arxiv.org/abs/2402.01030"
 pdf_url: "https://arxiv.org/pdf/2402.01030"
+artifacts:
+  - "raw/papers/Executable Code Actions Elicit Better LLM Agents (CodeAct).pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # CodeAct
@@ -48,6 +50,10 @@ updated: 2026-07-03
 - [[systems/OpenHands]]
 - [[sources/Cloudflare Code Mode MCP]]
 - [[sources/Anthropic Code Execution with MCP]]
+
+## Artifacts
+
+- [[raw/papers/Executable Code Actions Elicit Better LLM Agents (CodeAct).pdf]]
 
 ## Notes
 

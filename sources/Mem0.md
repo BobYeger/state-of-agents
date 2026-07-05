@@ -22,8 +22,10 @@ authors:
 venue: "arXiv (Mem0)"
 url: "https://arxiv.org/abs/2504.19413"
 pdf_url: "https://arxiv.org/pdf/2504.19413"
+artifacts:
+  - "raw/papers/Mem0 - Building Production-Ready AI Agents with Scalable Long-Term Memory.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Mem0
@@ -47,6 +49,10 @@ updated: 2026-07-03
 - [[sources/Zep Temporal Knowledge Graph Memory]]
 - [[sources/LongMemEval]]
 - [[sources/Memora]]
+
+## Artifacts
+
+- [[raw/papers/Mem0 - Building Production-Ready AI Agents with Scalable Long-Term Memory.pdf]]
 
 ## Notes
 

@@ -12,8 +12,10 @@ authors:
   - "Braintrust Team"
 venue: "Braintrust articles"
 url: "https://www.braintrust.dev/articles/eval-driven-development"
+artifacts:
+  - "raw/articles/braintrust-eval-driven-development.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Braintrust Eval-Driven Development
@@ -32,6 +34,10 @@ updated: 2026-07-03
 - [[methods/self-improving code loops]]
 - [[sources/Google SRE Workbook Canarying Releases]]
 - [[sources/LangSmith Evaluation Concepts]]
+
+## Artifacts
+
+- [[raw/articles/braintrust-eval-driven-development.md]]
 
 ## Notes
 

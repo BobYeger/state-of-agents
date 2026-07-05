@@ -18,8 +18,10 @@ authors:
 venue: "Cognition blog"
 url: "https://cognition.com/blog/dont-build-multi-agents"
 pdf_url: ""
+artifacts:
+  - "raw/articles/cognition-dont-build-multi-agents.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Cognition Dont Build Multi-Agents
@@ -45,6 +47,10 @@ updated: 2026-07-03
 - [[concepts/multi-agent systems]]
 - [[sources/Why Do Multi-Agent LLM Systems Fail]]
 - [[sources/Cognition Multi-Agents Whats Actually Working]]
+
+## Artifacts
+
+- [[raw/articles/cognition-dont-build-multi-agents.md]]
 
 ## Notes
 

@@ -19,7 +19,7 @@ venue: "Koi Security blog"
 url: "https://www.koi.ai/blog/clawhavoc-341-malicious-clawedbot-skills-found-by-the-bot-they-were-targeting"
 pdf_url: ""
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # ClawHavoc: 341 Malicious ClawHub Skills
@@ -43,5 +43,6 @@ updated: 2026-07-03
 ## Notes
 
 - Canonical URL: https://www.koi.ai/blog/clawhavoc-341-malicious-clawedbot-skills-found-by-the-bot-they-were-targeting
+- No raw/ capture: the article embeds malicious-skill payloads/IOCs, and local security scanning quarantines any on-disk copy (verified 2026-07-05). Intentionally left link-only; do not retry the capture.
 - Malicious-skill counts moved quickly (341 → 824 → 1,184 across three snapshots by different parties); treat any single percentage as a point-in-time measurement.
 - Strongest quantified evidence to date that agent-skill marketplaces are an active supply-chain attack surface, extending the MCP-server attack pattern to skill ecosystems.

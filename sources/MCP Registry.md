@@ -23,8 +23,10 @@ authors:
 venue: "Model Context Protocol blog"
 url: "https://blog.modelcontextprotocol.io/posts/2025-09-08-mcp-registry-preview/"
 pdf_url: ""
+artifacts:
+  - "raw/articles/mcp-registry.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # MCP Registry
@@ -44,6 +46,10 @@ updated: 2026-07-03
 - [[operations/agent infrastructure]]
 - [[safety/protocol security]]
 - [[sources/MCP Specification 2025-11-25]]
+
+## Artifacts
+
+- [[raw/articles/mcp-registry.md]]
 
 ## Notes
 

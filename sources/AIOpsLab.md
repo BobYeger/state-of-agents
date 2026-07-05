@@ -21,8 +21,10 @@ authors:
 venue: "MLSys 2025 (arXiv) / Microsoft Research"
 url: "https://arxiv.org/abs/2501.06706"
 pdf_url: "https://arxiv.org/pdf/2501.06706"
+artifacts:
+  - "raw/papers/AIOpsLab - A Holistic Framework to Evaluate AI Agents for Enabling Autonomous Clouds.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # AIOpsLab
@@ -42,6 +44,10 @@ updated: 2026-07-03
 - [[concepts/code factories]]
 - [[sources/RCACopilot]]
 - [[sources/Datadog Bits AI Eval Platform]]
+
+## Artifacts
+
+- [[raw/papers/AIOpsLab - A Holistic Framework to Evaluate AI Agents for Enabling Autonomous Clouds.pdf]]
 
 ## Notes
 

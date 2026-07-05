@@ -18,8 +18,10 @@ authors:
 venue: "arXiv / Scale AI"
 url: "https://arxiv.org/abs/2509.16941"
 pdf_url: "https://arxiv.org/pdf/2509.16941"
+artifacts:
+  - "raw/papers/SWE-Bench Pro - Can AI Agents Solve Long-Horizon Software Engineering Tasks.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # SWE-bench Pro
@@ -40,6 +42,10 @@ updated: 2026-07-03
 - [[sources/OpenAI Retires SWE-bench Verified]]
 - [[sources/SWE-bench Illusion]]
 - [[concepts/code factories]]
+
+## Artifacts
+
+- [[raw/papers/SWE-Bench Pro - Can AI Agents Solve Long-Horizon Software Engineering Tasks.pdf]]
 
 ## Notes
 

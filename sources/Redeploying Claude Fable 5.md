@@ -18,8 +18,10 @@ authors:
 venue: "Anthropic Newsroom"
 url: "https://www.anthropic.com/news/redeploying-fable-5"
 pdf_url: ""
+artifacts:
+  - "raw/articles/redeploying-claude-fable-5.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Redeploying Claude Fable 5
@@ -37,6 +39,10 @@ updated: 2026-07-03
 - [[sources/Claude Fable 5 and Claude Mythos 5]]
 - [[sources/METR Frontier Risk Report 2026]]
 - [[sources/Constitutional Classifiers]]
+
+## Artifacts
+
+- [[raw/articles/redeploying-claude-fable-5.md]]
 
 ## Notes
 

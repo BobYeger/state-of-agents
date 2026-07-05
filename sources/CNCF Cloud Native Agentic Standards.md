@@ -18,8 +18,10 @@ authors:
 venue: "CNCF blog"
 url: "https://www.cncf.io/blog/2026/03/23/cloud-native-agentic-standards/"
 pdf_url: ""
+artifacts:
+  - "raw/protocols/cncf-cloud-native-agentic-standards.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # CNCF Cloud Native Agentic Standards
@@ -40,6 +42,10 @@ updated: 2026-07-03
 - [[protocols/AP2]]
 - [[sources/kagent]]
 - [[sources/OpenTelemetry GenAI Semantic Conventions]]
+
+## Artifacts
+
+- [[raw/protocols/cncf-cloud-native-agentic-standards.md]]
 
 ## Notes
 

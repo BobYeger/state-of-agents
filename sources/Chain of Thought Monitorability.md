@@ -21,8 +21,10 @@ authors:
 venue: "arXiv (cross-lab position paper)"
 url: "https://arxiv.org/abs/2507.11473"
 pdf_url: "https://arxiv.org/pdf/2507.11473"
+artifacts:
+  - "raw/papers/Chain of Thought Monitorability - A New and Fragile Opportunity for AI Safety.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Chain of Thought Monitorability
@@ -41,6 +43,10 @@ updated: 2026-07-03
 - [[methods/runtime supervision]]
 - [[sources/Monitoring Reasoning Models for Misbehavior]]
 - [[sources/METR Frontier Risk Report 2026]]
+
+## Artifacts
+
+- [[raw/papers/Chain of Thought Monitorability - A New and Fragile Opportunity for AI Safety.pdf]]
 
 ## Notes
 

@@ -19,8 +19,10 @@ authors:
 venue: "Cloudflare blog"
 url: "https://blog.cloudflare.com/signed-agents/"
 pdf_url: ""
+artifacts:
+  - "raw/articles/cloudflare-signed-agents.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Cloudflare Signed Agents
@@ -40,6 +42,10 @@ updated: 2026-07-03
 - [[sources/IETF AIMS Agent Auth Draft]]
 - [[sources/Microsoft Entra Agent ID]]
 - [[systems/ChatGPT agent]]
+
+## Artifacts
+
+- [[raw/articles/cloudflare-signed-agents.md]]
 
 ## Notes
 

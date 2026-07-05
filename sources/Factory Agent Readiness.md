@@ -19,8 +19,10 @@ authors:
 venue: "Factory.ai blog"
 url: "https://factory.ai/news/agent-readiness"
 pdf_url: ""
+artifacts:
+  - "raw/articles/factory-agent-readiness.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Introducing Agent Readiness
@@ -44,6 +46,10 @@ updated: 2026-07-03
 - [[operations/agent harnesses]]
 - [[sources/Factory 2.0 Software Factory]]
 - [[sources/Factory Context Compression Evaluation]]
+
+## Artifacts
+
+- [[raw/articles/factory-agent-readiness.md]]
 
 ## Notes
 

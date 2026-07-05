@@ -27,8 +27,10 @@ authors:
 venue: "arXiv / NeurIPS 2024"
 url: "https://arxiv.org/abs/2405.15793"
 pdf_url: "https://arxiv.org/pdf/2405.15793"
+artifacts:
+  - "raw/papers/SWE-agent - Agent-Computer Interfaces Enable Automated Software Engineering.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # SWE-agent
@@ -53,6 +55,10 @@ updated: 2026-07-03
 - [[sources/SWE-bench]]
 - [[sources/Mini-SWE-agent]]
 - [[sources/ReAct]]
+
+## Artifacts
+
+- [[raw/papers/SWE-agent - Agent-Computer Interfaces Enable Automated Software Engineering.pdf]]
 
 ## Notes
 

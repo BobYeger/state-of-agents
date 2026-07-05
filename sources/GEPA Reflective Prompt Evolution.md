@@ -20,8 +20,10 @@ authors:
 venue: "arXiv / ICLR 2026 (oral)"
 url: "https://arxiv.org/abs/2507.19457"
 pdf_url: "https://arxiv.org/pdf/2507.19457"
+artifacts:
+  - "raw/papers/GEPA - Reflective Prompt Evolution Can Outperform Reinforcement Learning.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # GEPA Reflective Prompt Evolution
@@ -46,6 +48,10 @@ updated: 2026-07-03
 - [[concepts/loop engineering]]
 - [[sources/Darwin Godel Machine]]
 - [[sources/AFlow]]
+
+## Artifacts
+
+- [[raw/papers/GEPA - Reflective Prompt Evolution Can Outperform Reinforcement Learning.pdf]]
 
 ## Notes
 

@@ -22,8 +22,10 @@ authors:
 venue: "arXiv / OpenAI"
 url: "https://arxiv.org/abs/2503.11926"
 pdf_url: "https://arxiv.org/pdf/2503.11926"
+artifacts:
+  - "raw/papers/Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Monitoring Reasoning Models for Misbehavior
@@ -47,6 +49,10 @@ updated: 2026-07-03
 - [[concepts/outcomes and rubric graders]]
 - [[sources/Chain of Thought Monitorability]]
 - [[sources/METR Recent Reward Hacking]]
+
+## Artifacts
+
+- [[raw/papers/Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation.pdf]]
 
 ## Notes
 

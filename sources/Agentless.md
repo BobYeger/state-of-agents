@@ -21,8 +21,10 @@ authors:
 venue: "arXiv / FSE 2025 (UIUC)"
 url: "https://arxiv.org/abs/2407.01489"
 pdf_url: "https://arxiv.org/pdf/2407.01489"
+artifacts:
+  - "raw/papers/Agentless - Demystifying LLM-based Software Engineering Agents.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Agentless
@@ -44,6 +46,10 @@ updated: 2026-07-03
 - [[concepts/code factories]]
 - [[sources/SWE-bench]]
 - [[sources/Passerine]]
+
+## Artifacts
+
+- [[raw/papers/Agentless - Demystifying LLM-based Software Engineering Agents.pdf]]
 
 ## Notes
 

@@ -22,8 +22,10 @@ authors:
 venue: "arXiv / ICML 2024 (InstaDeep)"
 url: "https://arxiv.org/abs/2311.17371"
 pdf_url: "https://arxiv.org/pdf/2311.17371"
+artifacts:
+  - "raw/papers/Should we be going MAD A Look at Multi-Agent Debate Strategies for LLMs.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Should We Be Going MAD
@@ -47,6 +49,10 @@ updated: 2026-07-03
 - [[operations/cost control]]
 - [[sources/Multiagent Debate Improves Factuality and Reasoning]]
 - [[sources/Self-Consistency Improves Chain of Thought Reasoning]]
+
+## Artifacts
+
+- [[raw/papers/Should we be going MAD A Look at Multi-Agent Debate Strategies for LLMs.pdf]]
 
 ## Notes
 

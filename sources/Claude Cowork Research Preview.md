@@ -19,8 +19,10 @@ authors:
 venue: "Claude Blog"
 url: "https://claude.com/blog/cowork-research-preview"
 pdf_url: ""
+artifacts:
+  - "raw/articles/claude-cowork-research-preview.md"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # Claude Cowork Research Preview
@@ -41,6 +43,10 @@ updated: 2026-07-03
 - [[concepts/agent operating surfaces]]
 - [[sources/Anthropic When AI Builds Itself]]
 - [[sources/TheAgentCompany]]
+
+## Artifacts
+
+- [[raw/articles/claude-cowork-research-preview.md]]
 
 ## Notes
 

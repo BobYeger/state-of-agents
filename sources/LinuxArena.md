@@ -20,8 +20,10 @@ authors:
 venue: "arXiv / Redwood Research"
 url: "https://arxiv.org/abs/2604.15384"
 pdf_url: "https://arxiv.org/pdf/2604.15384"
+artifacts:
+  - "raw/papers/LinuxArena - A Control Setting for AI Agents in Live Production Software Environments.pdf"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 ---
 
 # LinuxArena
@@ -46,6 +48,10 @@ updated: 2026-07-03
 - [[sources/SHADE-Arena]]
 - [[sources/AI Control Despite Intentional Subversion]]
 - [[sources/Ctrl-Z Controlling AI Agents via Resampling]]
+
+## Artifacts
+
+- [[raw/papers/LinuxArena - A Control Setting for AI Agents in Live Production Software Environments.pdf]]
 
 ## Notes
 
