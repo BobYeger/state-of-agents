@@ -38,7 +38,6 @@ Agent safety covers the risks created when models can act, use tools, access pri
 - [[sources/Koi Security ClawHavoc|ClawHavoc: 341 Malicious ClawHub Skills]]
 - [[sources/Koi Security Postmark MCP Backdoor|First Malicious MCP in the Wild: The Postmark Backdoor]]
 - [[sources/LlamaFirewall|LlamaFirewall: An open source guardrail system for building secure AI agents]]
-- [[sources/MADRA|MADRA: Multi-Agent Debate for Risk-Aware Embodied Planning]]
 - [[sources/METR Frontier Risk Report 2026|Frontier Risk Report (February to March 2026)]]
 - [[sources/METR Recent Reward Hacking|Recent Frontier Models Are Reward Hacking]]
 - [[sources/Monitoring Reasoning Models for Misbehavior|Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation]]

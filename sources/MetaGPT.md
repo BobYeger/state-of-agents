@@ -36,7 +36,7 @@ pdf_url: "https://arxiv.org/pdf/2308.00352"
 artifacts:
   - "raw/papers/MetaGPT - Meta Programming for a Multi-Agent Collaborative Framework.pdf"
 created: 2026-05-26
-updated: 2026-05-26
+updated: 2026-07-06
 ---
 
 # MetaGPT
@@ -66,6 +66,7 @@ updated: 2026-05-26
 
 ## Notes
 
+- Era note (2026-07-06): seminal role-play-era MAS (SOP-encoded roles); retained as lineage. Production MAS design has moved to harnessed-workforce patterns; see [[reports/Multi Agent Report]].
 - Canonical URL: https://arxiv.org/abs/2308.00352
 - PDF URL: https://arxiv.org/pdf/2308.00352
 - Venue note: ICLR 2024 paper; publication date records the first arXiv posting.

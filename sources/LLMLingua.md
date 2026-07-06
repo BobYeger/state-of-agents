@@ -26,7 +26,7 @@ pdf_url: "https://aclanthology.org/2023.emnlp-main.825.pdf"
 artifacts:
   - "raw/papers/LLMLingua - Compressing Prompts for Accelerated Inference.pdf"
 created: 2026-05-26
-updated: 2026-05-26
+updated: 2026-07-06
 ---
 
 # LLMLingua
@@ -39,7 +39,6 @@ updated: 2026-05-26
 
 ## Connections
 
-- [[concepts/prompt compression]]
 - [[operations/cost control]]
 - [[maps/Context Management Map]]
 
@@ -49,5 +48,6 @@ updated: 2026-05-26
 
 ## Notes
 
+- Era note (2026-07-06): namesake of the small-context-era prompt-compression family (S2-count ~95+ against a fragmented OpenAlex record); kept as lineage after the family's me-too method cards were pruned. In 2026 agent practice the live descendants are task-aware pruning ([[sources/SWE-Pruner]]) and learned compaction ([[sources/ACON]]).
 - Canonical URL: https://aclanthology.org/2023.emnlp-main.825/
 - arXiv URL: https://arxiv.org/abs/2310.05736

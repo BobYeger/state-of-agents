@@ -20,7 +20,7 @@ The core distinction is:
 | Team learning | Teams reuse experience from prior trajectories instead of solving every task from scratch. | [[sources/Experiential Co-Learning]], [[operations/agent memory]] |
 | Cross-team orchestration | Multiple teams explore solution paths and exchange insights. | [[sources/Croto]] |
 | Human-agent team management | A manager agent allocates work between human and AI workers while monitoring constraints and progress. | [[sources/Orchestrating Human-AI Teams]], [[sources/Developing Guidelines for Human-LLM Agent Teams]], [[concepts/human-in-the-loop agents]] |
-| Team composition optimization | Model/role assignments are optimized for accuracy and cost. | [[sources/MALBO]], [[sources/MasRouter]] |
+| Team composition optimization | Model/role assignments are optimized for accuracy and cost. | [[sources/MasRouter]] |
 | Team failure modes | Teams can dilute expertise, compromise incorrectly, or add coordination overhead. | [[sources/Multi-Agent Teams Hold Experts Back]], [[sources/Why Do Multi-Agent LLM Systems Fail]], [[sources/Google Scaling Agent Systems]] |
 | Product command centers | Human operators supervise many agent sessions across repos, worktrees, and environments. These are product-evidence examples, not core conceptual anchors. | [[sources/OpenAI Codex App]], [[sources/Cursor 3.2]], [[sources/Devin Manages Devins]] |
 | Framework team patterns | Frameworks expose teams through crews, group chat, supervisor graphs, and ADK patterns. | [[sources/CrewAI Docs]], [[sources/AutoGen SelectorGroupChat]], [[sources/Google ADK Multi-Agent Patterns]] |

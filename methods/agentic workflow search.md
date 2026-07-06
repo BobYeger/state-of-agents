@@ -31,6 +31,5 @@ Workflow search improves agent systems by making design choices empirical. Promp
 - [[sources/Hyperagents]]
 - [[sources/AlphaEvolve]]
 - [[sources/The AI Scientist-v2]]
-- [[sources/HALO|HALO: Hierarchical Autonomous Logic-Oriented Orchestration for Multi-Agent LLM Systems]]
 - [[sources/Karpathy Autoresearch|autoresearch]]
 - [[sources/Rich Sutton The Bitter Lesson|The Bitter Lesson]]

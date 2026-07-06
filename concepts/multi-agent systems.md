@@ -45,7 +45,6 @@ Coordination now has measured costs, not just anecdotes. [[sources/Towards a Sci
 - [[sources/A2A Specification|Agent2Agent Protocol Specification]]
 - [[sources/Anthropic Multi-Agent Research System|How we built our multi-agent research system]]
 - [[sources/MARSHAL|MARSHAL: Incentivizing Multi-Agent Reasoning via Self-Play with Strategic LLMs]]
-- [[sources/MAS2|MAS2: Self-Generative, Self-Configuring, Self-Rectifying Multi-Agent Systems]]
 - [[sources/MegaAgent|MegaAgent: A Large-Scale Autonomous LLM-based Multi-Agent System Without Predefined SOPs]]
 - [[sources/Multi-Agent Collaboration Mechanisms - A Survey of LLMs|Multi-Agent Collaboration Mechanisms: A Survey of LLMs]]
 - [[sources/Multi-Agent Collaboration via Evolving Orchestration|Multi-Agent Collaboration via Evolving Orchestration]]

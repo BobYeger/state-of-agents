@@ -13,7 +13,7 @@ The most consistent finding is that bigger context windows do not remove the nee
 
 On the product side, compaction has moved from harness code into provider APIs: Anthropic and OpenAI both ship a native path, and the live axis between them is inspectability, an opaque encrypted item versus a readable compaction block with a pause hook ([[sources/OpenAI Codex Agent Loop]], [[sources/Claude API Compaction]]). Cloudflare treats compaction as the natural point to ingest session knowledge into a persistent memory profile. Google ADK separates durable workflow state from raw chat history. Cursor's posts emphasize the harness: dynamic context, summarization tradeoffs, learned rules. Manus and the Claude caching docs add the economic constraint underneath all of it: every context mutation has a cache price as well as a semantic effect, so production loops keep a stable prefix and an append-only tail ([[sources/Manus Context Engineering]], [[sources/Claude API Prompt Caching]]). Zep draws the boundary where file-based memory stops sufficing: changing facts, concurrent writers, and compliance regimes ([[sources/Zep Markdown Is Not Agent Memory]]). The newer memory stack also includes dreaming/sleep-time reflection, background jobs that consolidate memories outside the task loop, and shared memory stores with explicit write authority, optimistic concurrency, and versioned audit ([[sources/Claude Managed Agents Memory Stores]]).
 
-Research sources sharpen the toolkit further: observation masking, task-aware pruning, optimized compressors and learned management policies, retrieval compression, execution-state tree memory for long-horizon tasks ([[sources/MAGE Memory Execution State Management|MAGE]]), storage decoupled from retrieval ([[sources/Memora]]), agent-visible context dashboards with reversible archives ([[sources/VISTA Latent Context Managers]]), trajectory memory that pays off when grounded in external evaluation signals ([[sources/Reflexion]]), and constructive designs plus governance primitives for memory shared across agents ([[sources/G-Memory]], [[sources/Governed Shared Memory for Multi-Agent LLM Systems]]). Memory also raises the security stakes: a poisoned write outlives the turn that planted it, the attack surface maps onto the same write channels this report recommends, compaction ingestion and skill promotion included ([[sources/Memory Poisoning Attacks in LLM Agents]]), and malicious skills have already appeared at marketplace scale ([[sources/Koi Security ClawHavoc]]).
+Research sources sharpen the toolkit further: observation masking, task-aware pruning, optimized compressors and learned management policies, execution-state tree memory for long-horizon tasks ([[sources/MAGE Memory Execution State Management|MAGE]]), storage decoupled from retrieval ([[sources/Memora]]), agent-visible context dashboards with reversible archives ([[sources/VISTA Latent Context Managers]]), trajectory memory that pays off when grounded in external evaluation signals ([[sources/Reflexion]]), and constructive designs plus governance primitives for memory shared across agents ([[sources/G-Memory]], [[sources/Governed Shared Memory for Multi-Agent LLM Systems]]). Memory also raises the security stakes: a poisoned write outlives the turn that planted it, the attack surface maps onto the same write channels this report recommends, compaction ingestion and skill promotion included ([[sources/Memory Poisoning Attacks in LLM Agents]]), and malicious skills have already appeared at marketplace scale ([[sources/Koi Security ClawHavoc]]).
 
 For a builder, the design rule is simple but demanding: decide what must be exact, what can be summarized, what can be re-fetched, what should persist across sessions, and what should never be written. Memory is a write-manage-read loop, not just a vector database. Compaction is a lossy transition, not a permanent memory strategy. Durable sessions are runtime state, not chat transcript replay. Skills are procedural memory, not just prompt text. And the write path is where both the cost and the risk concentrate, so provenance, review, and rollback belong there first.
 
@@ -54,13 +54,12 @@ This also answers a recurring confusion: compaction does not store the mathemati
 
 ## Taxonomy of Techniques
 
-Each row names what a technique stores or removes, when it fires, where it fits, and its main failure mode. The table carries citations only; the quantitative evidence behind each row lives in the product and research sections below. The newest rows cover retrieval compression, dynamic tool discovery, recitation, agent-visible context dashboards, and execution-state tree memory, drawn from the pre-agent compression canon, production harness practice, and the June 2026 memory-systems wave.
+Each row names what a technique stores or removes, when it fires, where it fits, and its main failure mode. The table carries citations only; the quantitative evidence behind each row lives in the product and research sections below. The newest rows cover dynamic tool discovery, recitation, agent-visible context dashboards, and execution-state tree memory, drawn from production harness practice and the June 2026 memory-systems wave.
 
 | Technique | What It Stores or Removes | Trigger | Best Use | Main Risk | Key Sources |
 |---|---|---|---|---|---|
 | Active context | Current instructions, user request, recent messages, tool outputs | Every turn | Immediate reasoning | Context rot, cost, lost-in-middle | [[sources/Anthropic Effective Context Engineering]], [[sources/Cursor Improving Agent Harness]], [[sources/Context Rot]], [[sources/Lost in the Middle]] |
 | Just-in-time retrieval | File paths, queries, references, selected source snippets | Need-driven | Large codebases and corpora | Bad query, missing hidden dependency | [[sources/Anthropic Effective Context Engineering]], [[sources/ContextBench]] |
-| Retrieval compression | Trained extractive or abstractive summaries of retrieved documents, possibly an empty string | Post-retrieval, before context injection | RAG-heavy memory recall channels | Unfaithful summary; wrongly empty gate | [[sources/RECOMP]] |
 | Dynamic tool discovery / tool-schema retrieval | Tool schemas held outside context, retrieved on demand | Need-driven, per task step | Large MCP tool ecosystems | Wrong tool routing; stale tool index | [[sources/MCP-Zero]], [[sources/ScaleMCP]] |
 | Whole-transcript compaction | A summary or typed compaction block replacing older history | Token threshold or manual command | Long dialogue and decisions that cannot be re-fetched | Loss of exact details | [[sources/Anthropic Context Engineering Cookbook]], [[sources/OpenAI Codex Agent Loop]] |
 | Provider-native compaction (opaque or inspectable) | API compaction items or blocks; opaque encrypted content (OpenAI) or inspectable text (Anthropic) | Server threshold or `/compact` | Long-running hosted agent loops | Opaque variants resist audit | [[sources/OpenAI Responses API Computer Environment]], [[sources/OpenAI Agents SDK Compaction Sessions]], [[sources/Claude API Compaction]] |
@@ -77,7 +76,7 @@ Each row names what a technique stores or removes, when it fires, where it fits,
 | Handoff | Fresh thread/agent seeded with extracted goal, files, and state | Thread becomes meandering or too long | Starting a cleaner work unit | Bad handoff omits tacit context | [[sources/Anthropic Effective Harnesses for Long-Running Agents]], [[sources/Amp Handoff]] |
 | Procedural memory / skills | Reusable workflows, rules, instructions, examples; text playbooks and crystallized callable tools carry different cost and transfer profiles | Curation, feedback, user command, agent reflection, demonstration recording | Repeated work and organization-specific behavior | Bad rule compounds across runs; malicious skill supply chain | [[claims/Claim - Agent memory and skills create compounding improvement loops]], [[sources/Cognitive Architectures for Language Agents|CoALA]], [[sources/Comprehensive Survey on Agent Skills]], [[sources/Cursor Bugbot Learned Rules]], [[sources/LangSmith Context Hub]], [[sources/Metis]], [[sources/OpenAI Codex Record and Replay]] |
 | Trajectory memory | Strategy, recovery, and optimization lessons from prior runs | Post-run analysis | Self-improving agents | False causal attribution; reflections ungrounded in external signals | [[sources/Reflexion]], [[sources/Trajectory-Informed Memory Generation]], [[sources/Agentic Context Engineering]] |
-| Model-internal compression | Dense state summaries or soft/latent summaries inside inference | During reasoning/inference | Reducing KV/context cost in reasoning models | Less transparent; training-dependent | [[sources/MEMENTO]], [[sources/AutoCompressors]], [[sources/Prompt Compression Survey]] |
+| Model-internal compression | Dense state summaries or soft/latent summaries inside inference | During reasoning/inference | Reducing KV/context cost in reasoning models | Less transparent; training-dependent | [[sources/MEMENTO]], [[sources/Prompt Compression Survey]] |
 
 ## What the Product Sources Say
 
@@ -330,7 +329,7 @@ Figure 6. ContextBench retrieval performance across file, block, and line metric
 
 ### MEMENTO and Soft/Internal Compression
 
-The [[sources/Prompt Compression Survey]] (NAACL 2025) supplies the organizing axis for this bucket: hard-prompt methods filter or paraphrase text, the family of LLMLingua and the agent-native pruners above, while soft-prompt methods compress into special tokens or embeddings, where [[sources/AutoCompressors]] and MEMENTO sit. Its documented challenges, compressor overfitting and long compression time, are the research-side statement of the training-dependent risk this report's taxonomy lists.
+The [[sources/Prompt Compression Survey]] (NAACL 2025) supplies the organizing axis for this bucket: hard-prompt methods filter or paraphrase text, the small-window family of [[sources/LLMLingua]] and kin, superseded in agent practice by task-aware pruning ([[sources/SWE-Pruner]]) and learned compaction ([[sources/ACON]]) covered above, while soft-prompt methods compress into special tokens or embeddings, where MEMENTO sits. Its documented challenges, compressor overfitting and long compression time, are the research-side statement of the training-dependent risk this report's taxonomy lists.
 
 MEMENTO is the main source in the graph for model-internal context management. It trains reasoning models to segment long reasoning traces into blocks, compress each block into a memento, and continue while attending to mementos rather than the full earlier trace. The paper reports about 2.5x peak KV cache reduction and 1.75x throughput improvement in its setup ([[sources/MEMENTO]]). It also notes a dual information stream: text mementos plus corresponding KV states.
 
@@ -356,13 +355,13 @@ Sources: [[sources/Trajectory-Informed Memory Generation]], [[sources/Agentic Co
 
 ### Retrieve or Think
 
-To Retrieve or To Think? adds a control-policy point. Retrieval is not always beneficial. The paper frames context evolution as a decision between acquiring external evidence and reasoning over existing context. This matters for memory systems because automatic recall on every turn can saturate the prompt with stale or irrelevant memories. The agent should retrieve when it has an information gap, not as a ritual. [[sources/RECOMP]] implements the same gate one step later: its trained extractive and abstractive compressors summarize retrieved documents before injection and return an empty string when the documents are unhelpful ("selective augmentation"), so the gate can live in the compressor after retrieval as well as before it.
+To Retrieve or To Think? adds a control-policy point. Retrieval is not always beneficial. The paper frames context evolution as a decision between acquiring external evidence and reasoning over existing context. This matters for memory systems because automatic recall on every turn can saturate the prompt with stale or irrelevant memories. The agent should retrieve when it has an information gap, not as a ritual.
 
 ![[assets/agent-memory-context-figures/ace_fig1_retrieve_or_think_loop.png]]
 
 Figure 9. Retrieve-or-think routing: agents vote whether to retrieve external context or reason over the current context. Source crop from [[sources/To Retrieve or To Think]].
 
-Sources: [[sources/To Retrieve or To Think]], [[sources/RECOMP]].
+Sources: [[sources/To Retrieve or To Think]].
 
 ### Shared Memory Across Agents
 
@@ -374,7 +373,7 @@ Multi-agent memory now has constructive designs to set against the shared-false-
 
 Factory's context-compression evaluation source argues that summary similarity metrics miss the real issue: can the agent continue the task? It evaluates compressed context through probes about artifacts, continuity, context awareness, accuracy, completeness, and instruction following. It also compares styles: structured persistent summaries, opaque high-compression approaches, and detailed regenerated summaries.
 
-The report's builder lesson is important: compression ratio is not the goal. Good compaction preserves what later action needs. Weak compaction often loses artifact trails, exact decisions, and next steps even if the summary reads well. The pre-agent compression canon (LLMLingua, RECOMP) headlines compression ratio as its success metric; those sources enter this report as baselines and vocabulary, not as evaluation methodology.
+The report's builder lesson is important: compression ratio is not the goal. Good compaction preserves what later action needs. Weak compaction often loses artifact trails, exact decisions, and next steps even if the summary reads well. The small-window compression era (LLMLingua and kin; survey: [[sources/Prompt Compression Survey]]) headlines compression ratio as its success metric; those sources enter this report as baselines and vocabulary, not as evaluation methodology.
 
 Sources: [[sources/Factory Context Compression Evaluation]], [[claims/Claim - Context management is an agent architecture choice]].
 
@@ -467,7 +466,7 @@ A robust memory layer should implement:
 4. Classification: separate preferences, facts, tasks, events, decisions, procedures, failures, recoveries, and constraints.
 5. Conflict handling: supersede stale entries instead of silently accumulating contradictions. Systems that skip this step return stale facts, what one multi-workload evaluation calls "hallucinations of the past"; graph-based stores handle targeted overwrites more reliably than fact-extraction plugins or append-only logs ([[sources/Are We Ready For An Agent-Native Memory System]]). Bi-temporal validity intervals with automatic fact invalidation and episode-level provenance are the production mechanism ([[sources/Zep Temporal Knowledge Graph Memory]]). The same staleness discipline applies to tool indexes: auto-synchronize them against the tool servers as the source of truth ([[sources/ScaleMCP]]).
 6. Retrieval: combine exact lookup, keyword search, vector search, raw transcript fallback, and recency/authority scoring. For multi-hop questions, add graph-index traversal as a channel; it replaces iterative retrieval rounds at much lower query cost ([[sources/HippoRAG]], caveats above). Index lightweight abstractions and cue anchors rather than raw memory values, and consider iterative policy-guided retrieval as an alternative to one-shot top-k ([[sources/Memora]]).
-7. Context injection: synthesize only what the current turn needs; avoid dumping memory wholesale. Trained retrieval compressors are the mechanism precedent for a synthesis channel: RECOMP reaches compression rates as low as 6% with minimal performance loss ([[sources/RECOMP]]; selective augmentation covered under Retrieve or Think). Zep's query-adaptive context assembly under a fixed character budget is a production counterpart ([[sources/Zep Smart Context Assembly]]).
+7. Context injection: synthesize only what the current turn needs; avoid dumping memory wholesale. Zep's query-adaptive context assembly under a fixed character budget is the production mechanism ([[sources/Zep Smart Context Assembly]]).
 8. Forgetting: support deletion, expiry, and user review.
 
 Cloudflare's source is the best production example of this lifecycle. The memory survey gives the general write-manage-read formalization. [[sources/Infini Memory]] names the recurring failure modes the lifecycle guards against: memory fragmentation, memory conflict, compression loss, and retrieval that returns fragments too isolated to support reasoning. For the manage step, the evaluated default is conservative: consolidate cautiously, and prefer localized maintenance over global reorganization ([[sources/Are We Ready For An Agent-Native Memory System]]). The project operation note adds safety concerns: memory poisoning is more damaging than one-turn prompt injection because bad memory can persist across tasks.
@@ -594,7 +593,6 @@ Source cards cited in this report:
 | [[sources/Anthropic Effective Harnesses for Long-Running Agents]] | 2025-11-26 | article |
 | [[sources/Anthropic Managed Agents Dreaming Outcomes]] | 2026-05-06 | article |
 | [[sources/Are We Ready For An Agent-Native Memory System]] | 2026-06-23 | paper |
-| [[sources/AutoCompressors]] | 2023-12-01 | paper |
 | [[sources/BrowseSafe]] | 2025-11-25 | paper |
 | [[sources/Claude API Compaction]] | 2026-01-12 | docs |
 | [[sources/Claude API Prompt Caching]] | 2026-02-05 | docs |
@@ -653,7 +651,6 @@ Source cards cited in this report:
 | [[sources/OpenAI Skills Docs]] | 2026-05-18 | docs |
 | [[sources/Parallel Context Compaction]] | 2026-05-22 | paper |
 | [[sources/Prompt Compression Survey]] | 2025-04-01 | paper |
-| [[sources/RECOMP]] | 2024-01-01 | paper |
 | [[sources/Reflexion]] | 2023-03-20 | paper |
 | [[sources/SAGE Skill Library]] | 2025-12-18 | paper |
 | [[sources/ScaleMCP]] | 2025-05-09 | paper |

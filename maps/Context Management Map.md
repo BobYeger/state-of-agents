@@ -37,10 +37,7 @@ Prompt compression is useful background, but it should not dominate the agent gr
 |---|---|
 | Long-context degradation (why compaction exists) | [[sources/Lost in the Middle]] positional U-shape; [[sources/Context Rot]] length degradation across 18 models |
 | Memory architecture lineage | [[sources/MemGPT]] OS-style paging; [[sources/Cognitive Architectures for Language Agents]] memory taxonomy; [[sources/Generative Agents]] retrieval triple and reflection |
-| Prompt compression survey | [[concepts/prompt compression]], [[sources/Prompt Compression Survey]] |
-| Token pruning | [[concepts/prompt compression]], [[sources/LLMLingua]] |
-| Retrieval compression | [[sources/RECOMP]] |
-| Soft-prompt / embedding compression | [[sources/AutoCompressors]], [[sources/Pretraining Context Compressor]] |
+| Small-window prompt compression era | [[sources/Prompt Compression Survey]] maps the family, [[sources/LLMLingua]] is the namesake; superseded in agent practice by task-aware pruning ([[sources/SWE-Pruner]]) and learned compaction ([[sources/ACON]]) |
 
 ## Benchmarks
 

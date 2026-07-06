@@ -7,7 +7,6 @@ This matters for code agents because naive token pruning can break syntax, line-
 ## Related
 
 - [[concepts/context compaction]]
-- [[concepts/prompt compression]]
 - [[concepts/context retrieval]]
 - [[operations/agent harnesses]]
 - [[maps/Context Management Map]]

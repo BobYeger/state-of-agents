@@ -35,7 +35,7 @@ pdf_url: "https://aclanthology.org/2024.acl-long.810.pdf"
 artifacts:
   - "raw/papers/ChatDev - Communicative Agents for Software Development.pdf"
 created: 2026-05-26
-updated: 2026-05-26
+updated: 2026-07-06
 ---
 
 # ChatDev
@@ -65,6 +65,7 @@ updated: 2026-05-26
 
 ## Notes
 
+- Era note (2026-07-06): seminal role-play-era MAS (persona pipeline for software tasks); retained as lineage — its repo also hosts [[sources/MacNet]]. Production MAS design has moved to harnessed-workforce patterns; see [[reports/Multi Agent Report]].
 - Canonical URL: https://aclanthology.org/2024.acl-long.810/
 - PDF URL: https://aclanthology.org/2024.acl-long.810.pdf
 - Publication date basis: ACL 2024 proceedings month.

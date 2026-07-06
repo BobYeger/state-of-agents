@@ -9,7 +9,7 @@ The sources do not describe one thing called "memory." They describe a stack, an
 
 ```text
 online context management
-  = just-in-time retrieval + retrieval compression + dynamic tool discovery
+  = just-in-time retrieval + dynamic tool discovery
   + compaction / compacted items        # provider-native on both major APIs
   + tool-result clearing / observation masking / pruning / recitation
   + handoff / rewind
@@ -76,7 +76,6 @@ Builder rule from the sources: decide what must be exact, what can be summarized
 | Online context | Recitation | rewritten plan file (todo.md) restated into recent context | every turn on long tasks | high | [[sources/Manus Context Engineering]] |
 | Online context | Task-aware pruning | long code context -> selected relevant lines | before model call / middleware | high if lines retained | [[sources/SWE-Pruner]] |
 | Online context | Optimized compression / learned policies | learned compressors; learned when/what/how-to-compress policies | long-horizon agent traces | training-dependent | [[sources/LLMLingua]], [[sources/ACON]], [[sources/SWE-MeM]] |
-| Online context | Retrieval compression | retrieved documents -> trained summaries, possibly an empty string | post-retrieval, before injection | medium; trained compressor | [[sources/RECOMP]] |
 | Online context | Dynamic tool discovery | tool schemas held outside context, retrieved on demand | need-driven, per task step | high if index audited | [[sources/MCP-Zero]], [[sources/ScaleMCP]] |
 | Online context | Context retrieval | file/block/line search -> selected evidence | information gap | high if source linked | [[sources/ContextBench]], [[sources/Letta Context-Bench]] |
 | Online context | Agent-visible context dashboard | typed, addressable blocks + reversible full-fidelity archive | agent keep/archive decisions under budget stats | high | [[sources/VISTA Latent Context Managers]] |
@@ -91,7 +90,7 @@ Builder rule from the sources: decide what must be exact, what can be summarized
 | Durable runtime | Durable state | workflow event -> explicit state/checkpoint/artifact pointer | every workflow transition | high | [[sources/Google ADK Durable Agents]], [[operations/durable sessions|operations/durable sessions]] |
 | Durable runtime | Execution-state tree memory | subgoal transitions -> hierarchical state tree (Grow, Compress, Maintain, Revise) | every subgoal transition | high | [[sources/MAGE Memory Execution State Management|MAGE]] |
 | Boundary reset | Handoff | current thread -> new goal + relevant files + prompt draft | thread becomes too long/meandering | high if editable | [[sources/Amp Handoff]], [[sources/Anthropic Effective Harnesses for Long-Running Agents]] |
-| Model/inference | Mementos / soft compression | reasoning blocks -> dense state summaries / soft prompts | during inference or trained compression | lower | [[sources/MEMENTO]], [[sources/AutoCompressors]], [[sources/Prompt Compression Survey]] |
+| Model/inference | Mementos / soft compression | reasoning blocks -> dense state summaries / soft prompts | during inference or trained compression | lower | [[sources/MEMENTO]], [[sources/Prompt Compression Survey]] |
 
 ## 3. Implementation Contracts
 
@@ -148,7 +147,7 @@ Substrate choice is workload-dependent. Global sensemaking over roughly 1M-token
 
 File-based memory has a boundary rubric: how many agents and users share the memory, do facts change, can facts be re-derived from a local source, and is there a retention or compliance regime ([[sources/Zep Markdown Is Not Agent Memory]]). Past the boundary, shared stores need explicit semantics; the shipped example mounts workspace-scoped stores at `/mnt/memory/<slug>/`, attached via `resources[]` at session creation only, with `read_write` (default) or `read_only` enforced at the filesystem level, at most 8 stores per session, 2,000 memories per store, 100 kB (about 25k tokens) per memory, per-store instructions capped at 4,096 characters, optimistic concurrency via a `content_sha256` precondition, and an immutable version per mutation attributed to the writing session ([[sources/Claude Managed Agents Memory Stores]]).
 
-On the read side, synthesize only what the current turn needs. Trained retrieval compressors reach compression rates as low as 6% and can return an empty string when documents are unhelpful ([[sources/RECOMP]]). Zep's Smart Context Assembly ranks candidates from five of six context types simultaneously into a fixed 2,500-character budget; one LoCoMo run traded 54% fewer tokens for about 8 points of accuracy, while a different run gained accuracy on fewer tokens ([[sources/Zep Smart Context Assembly]]).
+On the read side, synthesize only what the current turn needs. Zep's Smart Context Assembly ranks candidates from five of six context types simultaneously into a fixed 2,500-character budget; one LoCoMo run traded 54% fewer tokens for about 8 points of accuracy, while a different run gained accuracy on fewer tokens ([[sources/Zep Smart Context Assembly]]).
 
 ### 3.3 Dreaming / Consolidation Contract
 

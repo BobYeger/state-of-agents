@@ -25,7 +25,7 @@ pdf_url: "https://aclanthology.org/2025.naacl-long.368.pdf"
 artifacts:
   - "raw/papers/prompt-compression-survey.pdf"
 created: 2026-05-26
-updated: 2026-05-26
+updated: 2026-07-06
 ---
 
 # Prompt Compression Survey
@@ -42,7 +42,6 @@ updated: 2026-05-26
 
 ## Connections
 
-- [[concepts/prompt compression]]
 - [[concepts/context compaction]]
 - [[maps/Context Management Map]]
 
@@ -52,5 +51,6 @@ updated: 2026-05-26
 
 ## Notes
 
+- Era note (2026-07-06): kept as the map of the small-context-era compression family after its individual method cards (Selective Context, RECOMP, AutoCompressors, Pretraining Context Compressor) were pruned as superseded scaffolding. Read for lineage, not live guidance.
 - Canonical URL: https://aclanthology.org/2025.naacl-long.368/
 - PDF URL: https://aclanthology.org/2025.naacl-long.368.pdf

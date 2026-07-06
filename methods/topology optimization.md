@@ -44,7 +44,6 @@ The consistent negative result: fully-connected "everyone talks every round" lay
 - [[sources/LLM Multi-Agent Blackboard System|LLM-based Multi-Agent Blackboard System for Information Discovery in Data Science]]
 - [[sources/AgentNet|AgentNet: Decentralized Evolutionary Coordination for LLM-based Multi-Agent Systems]]
 - [[sources/BAMAS|BAMAS: Structuring Budget-Aware Multi-Agent Systems]]
-- [[sources/MAPRO|MAPRO: Recasting Multi-Agent Prompt Optimization as Maximum a Posteriori Inference]]
 - [[sources/Multi-Agent Design - MASS|Multi-Agent Design: Optimizing Agents with Better Prompts and Topologies]]
 - [[sources/MultiAgentBench|MultiAgentBench: Evaluating the Collaboration and Competition of LLM agents]]
 - [[sources/Graph-of-Agents|Graph-of-Agents: A Graph-based Framework for Multi-Agent LLM Collaboration]]
