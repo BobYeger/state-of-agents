@@ -29,7 +29,21 @@ Prioritized queue for deeper reading. Source notes and raw artifacts are already
 - [[sources/OpenAI Codex Agent Loop]]
 - [[sources/Cloudflare Project Think]]
 
-## Priority 2: June 2026 Follow-Up
+## Priority 2: July 2026 Follow-Up
+
+These are the strongest uncatalogued leads from the GPT-5.6/Fable/J-space sweep. Promote them only after a full-text read and claim-level verification.
+
+- Better Harnesses, Smaller Models: Harness Design Dominates Model Scale in Agentic Coding — tests whether harness quality can outweigh model scale on software tasks. https://arxiv.org/abs/2607.08938
+- Remember When It Matters: Memory Control for Long-Horizon Agents — studies when agents should retain, retrieve, or discard working state. https://arxiv.org/abs/2607.08716
+- Scoped Verification (GRACE) — proposes verification whose scope tracks the agent's actual change set rather than a broad task-level verdict. https://arxiv.org/abs/2607.09175
+- Long-Horizon-Terminal-Bench — extends terminal-agent evaluation toward longer, stateful task trajectories. https://arxiv.org/abs/2607.08964
+- Agentic coding and persistent returns to expertise (Anthropic) — examines how human domain expertise continues to matter when coding agents do more of the execution. https://www.anthropic.com/research/claude-code-expertise
+- GRAM / off-switch dual-use research (Anthropic) — studies capability-control trade-offs around stopping or redirecting agents. https://www.anthropic.com/research/off-switch-dual-use
+- Test-Time Harness Evolution — treats the runtime scaffold itself as an object of test-time adaptation. https://arxiv.org/abs/2607.08124
+- AgentLens — analyzes agent behavior through trajectory-level representations and diagnostics. https://arxiv.org/abs/2607.06624
+- STRACE — develops structured tracing for diagnosing long agent trajectories. https://arxiv.org/abs/2607.07702
+
+## Priority 3: June 2026 Follow-Up
 
 - [[sources/SWE-MeM]]
 - [[sources/TokenPilot]]
@@ -41,11 +55,11 @@ Prioritized queue for deeper reading. Source notes and raw artifacts are already
 - [[sources/GitHub Agentic Workflows]]
 - [[sources/Google Agentic Resource Discovery]]
 
-## Priority 3: Verification Backlog
+## Priority 4: Verification Backlog
 
 Unverified leads are kept outside the public graph until they have enough source evidence to become source notes.
 
-## Priority 4: Verified External Leads (2026-07-03 research sweep)
+## Priority 5: Verified External Leads (2026-07-03 research sweep)
 
 ~180 URL-verified leads, no source cards yet. Plain URLs by design; promote to `sources/` cards on deep read.
 

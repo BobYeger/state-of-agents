@@ -21,7 +21,7 @@ pdf_url: ""
 artifacts:
   - "raw/articles/openai-gpt-5.5.md"
 created: 2026-07-03
-updated: 2026-07-05
+updated: 2026-07-13
 ---
 
 # OpenAI GPT-5.5
@@ -32,7 +32,7 @@ updated: 2026-07-05
 - Benchmarks (per Vellum's roundup of OpenAI's numbers): Terminal-Bench 2.0 82.7% (vs Opus 4.7's 69.4%), SWE-bench Pro 58.6% (behind Claude's 64.3%), long-context 512K-1M 74.0% vs GPT-5.4's 36.6%, OSWorld-Verified 78.7%, CyberGym 81.8%.
 - API pricing $5/M input, $30/M output — a 2x increase over GPT-5.4, which OpenAI says is offset by a ~40% token-efficiency gain, delivering better Codex results with fewer tokens.
 - Positioned as agent-first: "moving across tools until a task is finished" — operating software, building documents and spreadsheets, researching, debugging.
-- Sits in a rapid 2026 Codex model cadence: GPT-5.2-Codex and GPT-5.3-Codex (with its own system card) preceded it; GPT-5.6 "Sol" was previewed after.
+- Sits in a rapid 2026 Codex model cadence: GPT-5.2-Codex and GPT-5.3-Codex (with its own system card) preceded it; [[sources/OpenAI GPT-5.6|GPT-5.6]] followed in July with a three-model family and provider-native orchestration controls.
 
 ## Connections
 
@@ -41,6 +41,7 @@ updated: 2026-07-05
 - [[sources/Terminal-Bench]]
 - [[sources/SWE-bench Pro]]
 - [[sources/OpenAI Codex Agent Loop]]
+- [[sources/OpenAI GPT-5.6]]
 
 ## Artifacts
 

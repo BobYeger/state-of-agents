@@ -22,7 +22,7 @@ pdf_url: ""
 artifacts:
   - "raw/articles/claude-fable-5-and-claude-mythos-5.md"
 created: 2026-07-03
-updated: 2026-07-05
+updated: 2026-07-13
 ---
 
 # Claude Fable 5 and Claude Mythos 5
@@ -46,6 +46,8 @@ updated: 2026-07-05
 - [[concepts/code factories]]
 - [[systems/Claude Code]]
 - [[sources/Anthropic Effective Harnesses for Long-Running Agents]]
+- [[sources/Claude Fable 5 Prompting Guide]]
+- [[sources/Claude Advisor Tool]]
 - [[sources/Redeploying Claude Fable 5]]
 
 ## Artifacts
@@ -56,4 +58,5 @@ updated: 2026-07-05
 
 - Canonical URL: https://www.anthropic.com/news/claude-fable-5-mythos-5
 - All benchmark figures and the Stripe migration anecdote are vendor-reported and not independently verified.
+- The launch card records model and availability claims; model-specific harness guidance and asymmetric executor/advisor routing are tracked separately in [[sources/Claude Fable 5 Prompting Guide]] and [[sources/Claude Advisor Tool]].
 - Three days after launch, Fable 5 and Mythos 5 were pulled under US export controls (2026-06-12) and restored 2026-07-01 — see [[sources/Redeploying Claude Fable 5]].

@@ -12,6 +12,12 @@ The question "should this be multi-agent at all" has moved from taste to measure
 
 For designers this yields a concrete order of operations: measure the single-agent baseline first; if it is already strong, coordination is more likely to subtract than add; if the task decomposes, prefer centralized coordination for its error containment; budget for the disproportionate overhead on tool-heavy work.
 
+## Role-Aware Capacity Allocation
+
+Orchestration also decides where model capability belongs. [[sources/Think Big Search Small]] holds answer generation fixed and sweeps the models assigned to delegation and execution: scaling the delegator adds about 11.3 exact-match points, while scaling the executor adds about 2.6. A task-specialized 1.7B executor then matches a frontier executor with 37% fewer subagent tokens. The result is limited to fixed-corpus multi-hop QA, but it supplies a controlled mechanism behind a practical pattern: concentrate expensive reasoning where plans and subtask contracts are formed, then route bounded execution to cheaper workers.
+
+[[sources/Claude Advisor Tool]] implements the same asymmetry inside one request by letting an executor consult a stronger advisor, while [[sources/OpenAI Responses API Multi-Agent]] implements context-isolated parallel workers. Neither removes the task-fit gate: the OpenAI API explicitly recommends one agent for ordered chains, frequent shared-state writes, and workflows dominated by one slow operation.
+
 ## Handoff Information Design
 
 What crosses an agent boundary is a design surface, and the strongest positions disagree in an instructive way. [[sources/Cognition Dont Build Multi-Agents]] argues that handoffs should carry full agent traces rather than summaries, because actions encode implicit decisions and parallel workers making conflicting implicit decisions produce incoherent results — the case for single-threaded execution with context compression instead of parallel subagents. The ten-month follow-up [[sources/Cognition Multi-Agents Whats Actually Working]] narrows rather than retracts this: multiple agents may contribute intelligence (a review loop catching ~2 bugs per PR, escalation to a stronger model, manager-child delegation), but writes stay single-threaded, and reviewers perform best with completely *clean* context rather than shared context.
@@ -90,3 +96,6 @@ The recurring lesson: shared state needs an explicit authority model (who may wr
 - [[sources/Atomix|Atomix: Timely, Transactional Tool Use for Reliable Agentic Workflows]]
 - [[sources/Governed Shared Memory for Multi-Agent LLM Systems|Governed Shared Memory for Multi-Agent LLM Systems]]
 - [[sources/G-Memory|G-Memory: Tracing Hierarchical Memory for Multi-Agent Systems]]
+- [[sources/Think Big Search Small|Think Big, Search Small: Where Capacity Matters in Hierarchical Search Agents?]]
+- [[sources/Claude Advisor Tool|Advisor tool]]
+- [[sources/OpenAI Responses API Multi-Agent|Multi-agent in the Responses API]]

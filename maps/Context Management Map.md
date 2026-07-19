@@ -10,6 +10,7 @@ The organizing distinction is between prompt compression and agent context manag
 |---|---|---|
 | Structured summarization | Rewrites earlier history into task-state summaries. | [[concepts/context compaction]], [[sources/Factory Context Compression Evaluation]] |
 | Provider-native compaction | Lets the model/provider emit a compact state representation or compaction item. | [[concepts/context compaction]], [[sources/OpenAI Responses API Computer Environment]] |
+| Per-agent context isolation | Gives each delegated worker an independent history and compaction lifecycle, reducing cross-task interference while making handoff design more important. | [[concepts/subagent context isolation]], [[sources/OpenAI Responses API Multi-Agent]], [[sources/Claude Fable 5 Prompting Guide]] |
 | Parallel compaction | Splits compaction into blocks to improve latency and make summary volume more predictable. | [[concepts/context compaction]], [[sources/Parallel Context Compaction]] |
 | Model-internal compaction | Teaches models to carry compact intermediate state rather than relying only on harness summaries. | [[concepts/context evolution]], [[sources/MEMENTO]] |
 | Observation masking | Hides older observations while preserving trajectory structure. | [[concepts/observation masking]], [[sources/The Complexity Trap]] |
@@ -52,7 +53,7 @@ The core question is not "Should we compact?" It is: what information is lossy, 
 
 For coding agents, exact files, test results, decisions, and current goals are often more important than broad narrative summaries. For research agents, citations, document provenance, and dead ends may matter more. A maintainable harness should expose the method, trigger, preserved fields, risks, and evaluation criteria.
 
-The June 2026 memory sources sharpen the map: memory is no longer only retrieval. It is construction scheduling, freshness, budget-aware rendering, provenance, maintenance, poisoning resistance, and sometimes a visible dashboard that lets the agent manage its own context state.
+The June 2026 memory sources sharpen the map: memory is no longer only retrieval. It is construction scheduling, freshness, budget-aware rendering, provenance, maintenance, poisoning resistance, and sometimes a visible dashboard that lets the agent manage its own context state. The July 2026 orchestration sources add a second boundary: a multi-agent system also needs an explicit policy for which state stays private to a worker, what crosses handoffs, and whether each worker compacts independently.
 
 ## Related
 

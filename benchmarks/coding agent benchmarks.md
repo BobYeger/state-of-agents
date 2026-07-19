@@ -10,10 +10,11 @@ Coding agent benchmarks measure end-to-end completion of software tasks — issu
 |---|---|---|
 | [[sources/SWE-bench]] | 2,294 issues from 12 Python repos | Superseded for reporting by its subsets; contamination-affected |
 | [[sources/SWE-bench Verified]] | 500-task subset validated by 93 human annotators to remove underspecified issues and unfair tests | Retired: saturated (~75%+), contaminated, and grading-flawed |
-| [[sources/SWE-bench Pro]] | 1,865 human-verified long-horizon tasks; public + never-published commercial + reserved holdout splits; copyleft licensing as contamination deterrent | The recommended successor; frontier launch scores below 25% pass@1 |
+| [[sources/SWE-bench Pro]] | 1,865 human-verified long-horizon tasks; public + never-published commercial + reserved holdout splits; copyleft licensing as contamination deterrent | Adoption recommendation retracted after [[sources/OpenAI SWE-bench Pro Audit]] found 249/731 public tasks broken under human review |
+| [[sources/DeepSWE]] | 113 original, never-upstreamed tasks across 91 repositories and five languages; hand-written functional verifiers | New contamination-resistant benchmark; full trajectories released, but binary reward and one fixed harness limit scope |
 | rebench (no card yet) | Rolling-refresh continuation of the family with post-cutoff tasks | Follows the LiveCodeBench refresh logic |
 
-The retirement is the instructive part. [[sources/OpenAI Retires SWE-bench Verified]] documents the audit that ended it: every tested frontier model could reproduce verbatim gold patches from training data, and 59.4% of a hard-problem sample had test cases that reject correct solutions. [[sources/SWE-bench Illusion]] had already shown the memorization signature — models identify the buggy file from the issue description alone at up to 76% on SWE-bench tasks versus 53% on repos outside the benchmark. The gap between families quantifies the inflation: the same models scoring 70%+ on Verified scored under 25% on Pro at its launch.
+The retirement is the instructive part. [[sources/OpenAI Retires SWE-bench Verified]] documents the audit that ended it: every tested frontier model could reproduce verbatim gold patches from training data, and 59.4% of a hard-problem sample had test cases that reject correct solutions. [[sources/SWE-bench Illusion]] had already shown the memorization signature — models identify the buggy file from the issue description alone at up to 76% on SWE-bench tasks versus 53% on repos outside the benchmark. The apparent successor then failed its own audit: [[sources/OpenAI SWE-bench Pro Audit]] found roughly one-third of the public split broken and retracted OpenAI's recommendation. [[sources/DeepSWE]] responds with original never-merged tasks and functional verifiers, but its own limitations show that benchmark repair is iterative rather than final.
 
 ## Beyond Issue Resolution
 
@@ -31,7 +32,7 @@ Every headline number should be read against four threats, each with direct evid
 | Threat | Evidence | Designer response |
 |---|---|---|
 | Contamination | [[sources/SWE-bench Illusion]] memorization probes; [[sources/OpenAI Retires SWE-bench Verified]] verbatim-patch audit | Prefer refresh-by-design or held-out splits; discount pre-cutoff results |
-| Grading defects | [[sources/Rigorous Agentic Benchmarks]]: 7 of 10 audited benchmarks with outcome-validity flaws, errors up to 100% relative; [[sources/Terminal-Bench]] 2.1 task fixes moved one agent +12.1% | Check benchmark version before comparing numbers; audit graders like code |
+| Grading defects | [[sources/Rigorous Agentic Benchmarks]]: 7 of 10 audited benchmarks with outcome-validity flaws; [[sources/OpenAI SWE-bench Pro Audit]]: 249/731 public tasks broken; [[sources/DeepSWE]]: functional-verifier design and remaining judge disagreement | Check benchmark version; audit prompts and graders jointly; prefer implementation-independent final-state tests |
 | Test gaming | [[sources/ImpossibleBench]] cheating rates on spec-contradicting tests; [[sources/METR Recent Reward Hacking]] exploit patterns on scored tasks | Grade through channels the agent cannot modify; inspect high scores |
 | Harness confound | [[sources/SWE-agent]] showed interface design drives scores at fixed model capability; [[sources/Mini-SWE-agent]] — ~100 lines of bash-only agent — now exceeds 74% on Verified; [[sources/Agentless]] beat agent scaffolds with a fixed pipeline | Report model+harness pairs, never bare model names; include a minimal-harness baseline |
 

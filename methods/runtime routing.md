@@ -17,6 +17,8 @@ For long-horizon and multi-agent systems, cost is part of correctness. A design 
 
 Routing improves agent systems by making participation conditional. Instead of every agent speaking every round, the runtime chooses who acts, which model is worth using, when to escalate, and when to stop.
 
+Role-aware routing is stronger than a flat difficulty router. [[sources/Think Big Search Small]] finds that hierarchical search benefits much more from scaling the delegator than the executor, and [[sources/Claude Advisor Tool]] exposes the corresponding production pattern: a cheaper executor calls a stronger advisor at planning, risk, or completion checkpoints. The important control is call timing — forcing a consult before the executor has gathered relevant context can erase the benefit.
+
 ## Budget Controls
 
 - Route easy tasks to cheaper models or single-agent paths.
@@ -34,3 +36,5 @@ Routing improves agent systems by making participation conditional. Instead of e
 - [[sources/OpenRouter Fusion Beats Frontier]]
 - [[sources/Stop Wasting Your Tokens|Stop Wasting Your Tokens: Towards Efficient Runtime Multi-Agent Systems]]
 - [[sources/X-MAS|X-MAS: Towards Building Multi-Agent Systems with Heterogeneous LLMs]]
+- [[sources/Think Big Search Small|Think Big, Search Small: Where Capacity Matters in Hierarchical Search Agents?]]
+- [[sources/Claude Advisor Tool|Advisor tool]]

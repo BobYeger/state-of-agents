@@ -4,6 +4,8 @@ Subagents are useful not only for parallelism, but for context isolation. A lead
 
 This reduces contamination of the lead context and makes specialization auditable. It also introduces coordination costs, so subagents need task-fit, handoff contracts, and observability.
 
+Provider-native implementations now make that isolation explicit. [[sources/OpenAI Responses API Multi-Agent]] compacts the root and each subagent independently, while [[sources/Think Big Search Small]] shows why role boundaries also change where capability is worth spending: decomposition benefited far more from model scale than execution on its hierarchical-search tasks.
+
 ## Related Sources
 
 - [[sources/Anthropic Managed Agents Dreaming Outcomes]]
@@ -13,6 +15,9 @@ This reduces contamination of the lead context and makes specialization auditabl
 - [[sources/Anthropic Multi-Agent Research System]]
 - [[sources/LangChain Deep Agents Docs]]
 - [[sources/MiniMax Agent Team]]
+- [[sources/OpenAI Responses API Multi-Agent]]
+- [[sources/Claude Fable 5 Prompting Guide]]
+- [[sources/Think Big Search Small]]
 
 ## Related
 

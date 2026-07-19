@@ -56,6 +56,13 @@ Harnesses improve agent systems by making the loop inspectable and recoverable: 
 - [[sources/Hermes Agent Docs]] — the documentation view of the same runtime's harness surface.
 - [[sources/MiniMax Agent Lessons 2025]] — engineering lessons on tools and sub-agents from complex real-world tasks.
 
+### How should roles and model capacity be allocated?
+
+- [[sources/Think Big Search Small]] — controlled evidence that hierarchical-search accuracy is far more sensitive to delegator capacity than executor capacity; a trained 1.7B executor matches a frontier worker with fewer tokens.
+- [[sources/Claude Advisor Tool]] — provider implementation of asymmetric capacity: a cheaper executor consults a stronger advisor at selected checkpoints inside one request.
+- [[sources/OpenAI Responses API Multi-Agent]] — provider-native agent trees with isolated contexts, explicit collaboration actions, bounded concurrency, and per-agent compaction.
+- [[sources/Claude Fable 5 Prompting Guide]] — operational guidance for long-lived asynchronous subagents, fresh-context verifiers, tool-grounded status, and model-specific failure modes.
+
 ### How is context assembled and paid for?
 
 - [[sources/Manus Context Engineering]] — KV-cache hit rate named the dominant production metric; masking over removing tools; restorable truncation; keep failure evidence in context.
@@ -63,6 +70,7 @@ Harnesses improve agent systems by making the loop inspectable and recoverable: 
 - [[sources/Claude API Compaction]] — context overflow recovery moved into the API, with a pause stop-reason and documented cache interaction.
 - [[sources/Parallel Context Compaction]] — compaction studied as a serving/runtime problem, not only a semantic one.
 - [[sources/Letta Code Memory Docs]] — durable agents whose memory is self-edited rather than transcript-accumulated.
+- [[sources/OpenAI GPT-5.6]] — explicit cache breakpoints, cache-write pricing, and minimum cache lifetime make prefix policy a first-class runtime lever.
 
 ### How is the loop controlled and steered?
 
@@ -73,6 +81,8 @@ Harnesses improve agent systems by making the loop inspectable and recoverable: 
 - [[sources/Harness-MU]] — multi-principal governance enforced by execution hooks rather than prompts.
 - [[sources/Plan-Then-Execute]] — human-agent evidence for separating planning from execution as a control point.
 - [[sources/Web Agents Plan-Then-Execute]] — the security case: untrusted content steers ReAct-style control flow unless plans are fixed before execution.
+- [[sources/OpenAI Programmatic Tool Calling]] — code-mediated orchestration for bounded stages, with direct calls retained for semantic judgment, evidence validation, and approval-sensitive writes.
+- [[sources/OpenAI GPT-5.6 System Card]] — greater persistence can expand scope and fabricate completion, so permission and evidence gates must scale with autonomy.
 
 ### How does the loop survive faults and long horizons?
 

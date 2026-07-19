@@ -29,6 +29,12 @@ Agent evaluation is one of the main mechanisms for making agent systems better: 
 
 Follow the related-source sections in the benchmark notes. Source cards in `sources/` hold the public evidence trail; private crawl logs and working registries stay outside this graph.
 
+## Current Benchmark Validity Updates
+
+- [[sources/OpenAI SWE-bench Pro Audit]] documents task and grader defects serious enough for OpenAI to retract its SWE-bench Pro recommendation.
+- [[sources/DeepSWE]] uses original repository tasks and functional verifiers, and shows a large disagreement between an LLM judge and the benchmark's execution-based grader.
+- [[sources/Think Big Search Small]] separates delegation quality from execution quality, making model-capacity allocation itself an evaluated system variable.
+
 ## Context Management Benchmarks
 
 - [[sources/LOCA-bench]]

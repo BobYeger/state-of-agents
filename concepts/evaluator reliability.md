@@ -72,6 +72,12 @@ An evaluator that the worker (or its training data) has seen is measuring memori
 
 For internal eval suites the same logic applies at smaller scale: keep a slice of the golden set out of the iteration loop, and refresh it from production traces on a schedule ([[operations/agent evals]]).
 
+## Task–Grader Alignment
+
+Clean holdouts do not help if the task and grader disagree. [[sources/OpenAI SWE-bench Pro Audit]] reviewed the 731-task public SWE-Bench Pro split and found 249 tasks (34.1%) broken under five-engineer review: tests enforced unstated implementation choices, prompts omitted hidden requirements, low-coverage tests passed incomplete work, or prompts pointed toward the wrong behavior. OpenAI consequently retracted its recommendation to adopt the benchmark.
+
+[[sources/DeepSWE]] is the constructive response: author tasks specifically for evaluation and use functional verifiers that accept any implementation with the requested observable behavior. Its independent judge disagreed with the verifier on 1.4% of audited rollouts versus 32.4% for SWE-Bench Pro. That number is not ground-truth accuracy — GPT-5.5 was the judge, the DeepSWE errors are single-digit counts, and the judge prompt is private — but the design principle survives: prompt, verifier, and permitted solution space must form a tested contract.
+
 ## Design Checklist
 
 - Judge from a different model family than the worker; positions swapped; length controlled.
@@ -81,6 +87,7 @@ For internal eval suites the same logic applies at smaller scale: keep a slice o
 - Scorer code, reference answers, and hidden tests unreachable from the worker's environment.
 - A holdout slice excluded from the iteration loop, refreshed over time.
 - Transcript inspection for anomalously high scores before believing them.
+- Task prompts and graders audited together for implementation-independent acceptance and requirement coverage.
 
 ## Related
 

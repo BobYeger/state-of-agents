@@ -39,6 +39,7 @@ Two maintenance obligations come with the gate:
 
 - The suite itself decays. [[sources/Terminal-Bench]] had to fix 28 of 89 tasks within months of release — dependency breaks, hardware mismatches, misspecifications — and one agent gained +12.1% purely from task fixes. Internal suites rot the same way; schedule validation passes and pin suite versions so scores stay comparable.
 - Graders are code and need audits. [[sources/Rigorous Agentic Benchmarks]] found outcome-validity flaws in 7 of 10 audited agentic benchmarks, with grading bugs misestimating performance by up to 100% relative — a gate built on a buggy grader blocks the wrong changes and passes the wrong ones.
+- Prompts and tests need joint audits. [[sources/OpenAI SWE-bench Pro Audit]] found breaking issues in 249 of 731 public tasks under five-engineer review and retracted OpenAI's earlier adoption recommendation. [[sources/DeepSWE]] shows the stronger construction pattern: original tasks, implementation-independent functional verifiers, repeated verifier runs, diagnostic rollouts, and human review before inclusion.
 
 ## Judge Calibration
 

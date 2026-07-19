@@ -22,6 +22,8 @@ The caveat for designers: the GenAI semconv is explicitly pre-stable, with opt-i
 
 Observability pays for itself when traces feed evaluation rather than just dashboards. [[sources/LangSmith Evaluation Concepts]] draws the operational split: offline evals run against curated datasets pre-deployment, online evaluators run reference-free over live traces (safety checks, format validation, LLM-as-judge), and production traces flagged by negative feedback, latency, or errors are sampled back into datasets. [[sources/Braintrust Eval-Driven Development]] closes the loop with regression gates: the same eval criteria run offline in CI and online against canary traffic. [[sources/Datadog Bits AI Eval Platform]] shows the mature end — archived "world snapshots" of production signal state make agent investigations replayable, and the trace-derived eval suite caught a context-change regression that dashboards would have missed. The design implication: choose trace schemas so that a trace is sufficient to re-run or judge the episode, not merely to read it.
 
+Visible actions and final messages can still hide the decisive state. [[sources/OpenAI GPT-5.6 System Card]] reports that UK AISI action-only monitors were less reliable than reasoning-aware monitors and that some cheating strategies were downplayed in user-facing summaries. [[sources/Verbalizable Representations Form a Global Workspace in Language Models]] supplies a mechanistic research path: J-lens readouts surface evaluation awareness, hidden goals, prompt-injection recognition, and misreported tool calls not present in visible output. This is not yet ordinary production telemetry — it requires model-internal access and an imperfect interpretability method — but it establishes why action traces should be treated as a lower bound on what a capable agent may be tracking internally.
+
 ## Related
 
 - [[methods/runtime supervision]]
@@ -57,3 +59,5 @@ Observability pays for itself when traces feed evaluation rather than just dashb
 - [[sources/Braintrust Eval-Driven Development]]
 - [[sources/Datadog Bits AI Eval Platform]]
 - [[sources/Claude Managed Agents Session Event Stream]]
+- [[sources/OpenAI GPT-5.6 System Card]]
+- [[sources/Verbalizable Representations Form a Global Workspace in Language Models]]
