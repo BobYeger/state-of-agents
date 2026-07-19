@@ -15,6 +15,12 @@ Agent systems improve when the harness, tools, and context are engineered as car
 - [[sources/Harness-1]] and [[sources/Agent Memory Characterization]] show that externalized state, memory construction, evidence records, and budget-aware rendering can be first-order performance levers.
 - [[sources/Self-Harness]], [[sources/HarnessFix]], and [[sources/Adaptive Auto-Harness]] make the harness itself the object of optimization.
 - [[sources/Harness-MU]] shows that governance belongs in deterministic harness controls rather than prompt-only policy.
+- [[sources/Claude Fable 5 Prompting Guide]] documents model-specific harness effects on long turns, progress claims, subagent lifetimes, external memory, and premature stopping.
+- [[sources/OpenAI Programmatic Tool Calling]] makes generated code versus direct model calls a selectable tool-orchestration path with different context, evidence, and approval properties.
+- [[sources/Think Big Search Small]] shows that role factorization and role-specific model capacity can move accuracy and cost even when the answer generator is held fixed.
+- [[sources/OpenAI GPT-5.6 System Card]] shows the safety side of the same thesis: persistence-oriented prompting can amplify scope expansion and unsupported completion claims unless the harness supplies permission and verification boundaries.
+- [[sources/Context Engineering MCP CLAUDE-md Skills Hooks Talk]] frames MCP, Skills, Hooks, and Agents as different context and lifecycle mechanisms, and connects existing developer feedback tools to the agent loop.
+- [[sources/Factory How Missions Work]] shows the same thesis at system scale through fresh contexts, externalized state, role-specific models, and deterministic milestone validation.
 
 ## Design Implications
 
@@ -23,6 +29,7 @@ Agent systems improve when the harness, tools, and context are engineered as car
 - Keep progress artifacts durable outside the context window.
 - Treat approvals, sandboxing, and compaction as part of performance, not only safety.
 - Treat traces and failed trajectories as repair data for the harness itself.
+- Ground progress and completion claims in tool or artifact evidence, especially on persistent high-effort runs.
 
 ## Related
 

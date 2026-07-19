@@ -2,11 +2,30 @@
 title: "Building Towards Self-Driving Codebases with Long-Running, Asynchronous Agents"
 aliases: ["Staying in the context window means staying in distribution", "Self-Driving Codebases talk"]
 source_type: "talk"
+kind: "technical-talk"
 status: "verified"
+publication_date: null
+publication_date_basis: "not-recorded"
+event_date: null
+youtube_upload_date: null
+source_updated_date: "2026-07-14"
+source_updated_date_basis: "metadata_check_date"
 creator: "NVIDIA Developer (channel); content reflects Cursor's self-driving-codebases framing"
 url: "https://www.youtube.com/watch?v=2Fp3jIrFTMo"
+medium: "video"
+platform: "youtube"
+video_id: "2Fp3jIrFTMo"
+duration_seconds: null
+language: "en"
+transcript_status: "not-captured"
+transcript_type: null
+transcript_language: null
+transcript_review_status: "not-reviewed"
+transcript_storage: "none"
+evidence_class: "technical-talk"
+metrics_status: "not-applicable"
 created: 2026-06-23
-updated: 2026-06-23
+updated: 2026-07-14
 ---
 
 # Building Towards Self-Driving Codebases with Long-Running, Asynchronous Agents
@@ -37,4 +56,6 @@ updated: 2026-06-23
 ## Notes
 
 - Source: talk on the NVIDIA Developer YouTube channel, "Building Towards Self-Driving Codebases with Long-Running, Asynchronous Agents" (https://www.youtube.com/watch?v=2Fp3jIrFTMo). Content relayed from the talk; the "self-driving codebases" term and the Planner → Subplanner pattern are Cursor's.
+- YouTube oEmbed confirmed the title and NVIDIA Developer channel on 2026-07-14. The upload date, event, duration, and speaker identity have not been captured, so those fields remain null rather than inferred.
+- No transcript artifact has been captured; this card predates the transcript-backed talk workflow and is explicitly marked `not-reviewed`.
 - Talk use: the "context window = in-distribution / divergence" framing is the unifying *why* for the harness/context half of the talk (sections 3, 5, 6) and the bridge to multi-agent (section 7): subagents help because separate context windows keep each one in distribution. The execution trio (sequential/parallel/evaluator-optimize) already appears via [[sources/Anthropic Building Effective Agents]]; this source reinforces it rather than adding a new pattern.

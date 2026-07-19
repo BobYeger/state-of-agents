@@ -9,6 +9,10 @@ Agent teams improve systems only when team structure is explicit: roles, task ow
 - [[sources/MiniMax Agent Team]] uses a Leader / Worker / Verifier loop with explicit task states and adversarial quality gates.
 - [[sources/Agyn]] models autonomous software engineering as an organizational process with coordination, research, implementation, review, structured communication, and isolated sandboxes.
 - [[sources/Multi-Agent Teams Hold Experts Back]] shows self-organizing teams can underuse their strongest member, so team interaction is not automatically beneficial.
+- [[sources/OpenAI Responses API Multi-Agent]] defines the useful/poor-fit boundary for provider-native subagents and makes concurrency, agent trees, collaboration actions, and per-agent context explicit runtime controls.
+- [[sources/Think Big Search Small]] shows that role design includes capacity allocation: delegation was more than four times as sensitive to model scale as execution on controlled hierarchical-search tasks.
+- [[sources/Claude Advisor Tool]] implements a narrow executor/advisor organization in which the stronger model is consulted at selected decision points rather than generating every token.
+- [[sources/Factory How Missions Work]] gives a vendor-operated orchestrator/worker/validator system with explicit role authority, externalized state, milestone gates, and a predeclared validation contract; its outcome telemetry is a single vendor-reported run.
 
 ## Implications
 
@@ -16,6 +20,7 @@ Agent teams improve systems only when team structure is explicit: roles, task ow
 - Avoid agent teams for tightly coupled same-file or sequential work unless the control layer handles conflicts and dependencies.
 - Add verification and conflict resolution before adding more teammates.
 - Treat team observability as part of the product, not an afterthought.
+- Allocate model capacity by role and information bottleneck, not uniformly across teammates.
 
 ## Related
 

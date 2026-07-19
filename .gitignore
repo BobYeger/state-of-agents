@@ -23,6 +23,7 @@ node_modules/
 
 # Local-only working materials
 .claude/
+.private/
 talk/
 assets/multi-agent-architectures/
 scripts/build_multi_agent_contact_sheets.mjs

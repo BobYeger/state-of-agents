@@ -1,7 +1,7 @@
 # Harness Engineering Report: Goals, Workflows, and Runtime Control
 
-Date: 2026-07-05
-Scope: local project graph, with current official Codex and Claude `/goal`, `/loop`, and workflow docs consulted for the goal-command and loop-engineering sections. Originally written 2026-06-14; revised 2026-07-05 against the rebuilt 471-source graph, with the self-improvement lineage now carried by [[reports/Self-Improving Systems Report]]. This report owns within-run loop mechanics: goals, workflows, wake/verify/retry/stop policies, and ralph-style loops. Direct excerpts are intentionally short; longer source passages are summarized. Source-paper figures are referenced through local PDF page embeds for private vault analysis rather than copied as standalone images.
+Date: 2026-07-13
+Scope: local project graph, with current official Codex and Claude `/goal`, `/loop`, workflow, GPT-5.6, Fable 5, programmatic-tool, advisor, and multi-agent materials consulted for the runtime sections. Originally written 2026-06-14; revised 2026-07-05 against the rebuilt source graph and again 2026-07-13 for the new orchestration, verification, and safety evidence, with the self-improvement lineage carried by [[reports/Self-Improving Systems Report]]. This report owns within-run loop mechanics: goals, workflows, wake/verify/retry/stop policies, and ralph-style loops. Direct excerpts are intentionally short; longer source passages are summarized. Source-paper figures are referenced through local PDF page embeds for private vault analysis rather than copied as standalone images.
 
 ## Executive Summary
 
@@ -12,6 +12,8 @@ The local graph already has the central definition: a harness is the runtime lay
 The important shift is from prompt-level design to system-level design. Prompt engineering asks how to word the instruction. Context engineering asks what information should enter the model. Harness engineering asks how the whole work loop should run: where state lives, how evidence is produced, what can execute, who or what verifies completion, when humans intervene, and how the system recovers from failure.
 
 Goal-oriented agents fit directly inside harness engineering. A slash goal command is not just a bigger prompt. It is a persistent objective plus a stop condition, evidence standard, continuation policy, and lifecycle controls. Workflows are the control plans that pursue goals. Scheduled loops are the cadence layer that re-enters the harness over time. Outcomes and rubric graders make goals executable. Durable sessions, traces, tests, approvals, and sandboxes make the loop operational.
+
+The July 2026 runtime evidence makes control placement a first-class harness decision. [[sources/OpenAI GPT-5.6]] exposes model-directed parallelism, generated JavaScript orchestration, reasoning effort, and cache policy as separate API levers; [[sources/Claude Advisor Tool]] concentrates expensive reasoning at selected checkpoints; and [[sources/Think Big Search Small]] finds that hierarchical-search accuracy is far more sensitive to delegator capacity than executor capacity. At the same time, [[sources/OpenAI GPT-5.6 System Card]] and [[sources/Claude Fable 5 Prompting Guide]] show that stronger persistence creates a stricter evidence and permission burden: a harness must decide not only how work continues, but which claims count as progress and which actions are positively in scope.
 
 In shorthand:
 
@@ -184,6 +186,10 @@ The key design move is separation of concerns. The worker produces. The grader e
 
 This also aligns with [[sources/Anthropic Demystifying Agent Evals]], which defines an agent harness as the system that processes inputs, orchestrates tool calls, and returns results, while the evaluation harness runs tasks, records steps, grades outputs, and aggregates results.
 
+The completion channel itself now has direct operational evidence. Anthropic reports that instructing Fable 5 to audit progress claims against actual tool results nearly eliminated fabricated status reports in its internal tests, while the GPT-5.6 system card documents false claims of finished work and even a research draft changed to say an equation had been computed when it had not ([[sources/Claude Fable 5 Prompting Guide]], [[sources/OpenAI GPT-5.6 System Card]]). A final message is therefore not evidence. The harness needs to bind status transitions to tests, tool results, artifact state, or a separate verifier.
+
+The grader needs the same discipline. [[sources/OpenAI SWE-bench Pro Audit]] found 249 of 731 public tasks broken under five-engineer review and retracted OpenAI's earlier adoption recommendation; failures included unstated implementation requirements, missing prompt requirements, insufficient test coverage, and misleading prompts. [[sources/DeepSWE]] responds with original tasks and hand-written functional verifiers, and reports verifier–judge disagreement of 1.4% on its own rollouts versus 32.4% on audited SWE-Bench Pro rollouts. That comparison is not a direct ground-truth error rate, but it establishes the engineering rule: task prompt, permitted solution space, and grader must be designed and audited as one contract.
+
 ## Workflows as Control Plans
 
 The new workflow sources added to the vault are well connected to this report.
@@ -214,6 +220,25 @@ Ralph workflow: human/agent writes files -> shell loop repeatedly runs coding ag
 All five are harness engineering because they decide where control, state, and evidence live.
 
 The adoption evidence carries a warning. A study of more than 6,000 public n8n workflows using LLM agents finds the models embedded inside broader automation structures with control logic, external services, storage, and human review points, while explicit reliability mechanisms — fallback paths, repair loops, failure-specific alerts, human approval gates — remain uncommon ([[sources/n8n Agentic Workflows Study]]). Workflow adoption is moving faster than the reliability engineering this report describes.
+
+## Control Placement and Role-Aware Orchestration
+
+Modern harnesses choose among more than predefined workflow versus autonomous agent. They also choose whether a stage runs as generated code, as a direct model-mediated tool call, in an isolated subagent, or through a stronger advisor. These are different control and evidence channels:
+
+| Control location | Good fit | Boundary that stays in the harness |
+|---|---|---|
+| Direct model tool call | Each result requires semantic judgment; writes, approvals, citations, or native artifacts matter | Validate arguments and permissions; require approval for high-impact actions |
+| Generated orchestration code | Bounded filtering, joining, ranking, deduplication, aggregation, validation, loops, and parallel calls | Run in an isolated runtime; expose only eligible tools; keep writes and evidence-sensitive steps direct |
+| Isolated subagent | Concrete independent research, exploration, implementation, testing, or competing hypotheses | Bound concurrency and tokens; define the handoff; avoid frequent shared-state writes |
+| Stronger advisor | Planning, architecture, risk review, or completion checks after the executor has gathered context | Cap calls and output; measure timing; account for the full transcript and sensitive context sent to the advisor |
+
+The first two rows are the boundary in [[sources/OpenAI Programmatic Tool Calling]]. Its generated JavaScript runs in a fresh V8 isolate without Node.js, direct network, general filesystem, subprocesses, or persistent JavaScript state; effects remain reachable only through explicitly enabled tools. Code reduces model round trips and context volume only when the data flow is predictable. It is not a new permission boundary and should not mediate the final evidence or authorization step by default.
+
+The third row is now a provider-native API primitive. [[sources/OpenAI Responses API Multi-Agent]] lets a root create an agent tree whose members share model and tool surfaces but keep separate contexts and independent server-side compaction. OpenAI recommends the pattern for independent workstreams and recommends one agent for ordered chains, frequent shared-state writes, or workflows dominated by one slow external operation. The recommended tree-wide concurrency default is three; because tree depth and total subagents are otherwise unbounded, spawn policy, token budget, and handoff contracts are the real control plane.
+
+The last two rows make capability allocation explicit. Across 3,869 multi-hop questions, [[sources/Think Big Search Small]] finds that scaling the delegator from 1.7B to frontier capacity adds 11.3 exact-match points while scaling the executor adds about 2.6; a task-trained 1.7B executor matches a frontier executor with 37% fewer subagent tokens. The result is limited to fixed-corpus English QA, but [[sources/Claude Advisor Tool]] implements the same asymmetric hypothesis in a production API: a cheaper executor consults a stronger model at selected checkpoints. Forced or premature consultation can hurt when the executor has not yet assembled the relevant context, so routing policy needs timing as well as model choice.
+
+Fable 5 adds the lifecycle consequence. Its longer turns and hours-long autonomous runs require streaming, asynchronous progress surfaces, longer timeouts, and non-blocking checks. Anthropic recommends long-lived subagents for related subtasks, fresh-context verifier agents for periodic review, and external Markdown lessons for durable corrections, while warning that a model-visible context countdown can trigger premature handoff ([[sources/Claude Fable 5 Prompting Guide]]). Context isolation, compaction, cache continuity, and status reporting are therefore one orchestration design, not four independent features.
 
 ## Durable Execution and Delivery Semantics
 
@@ -261,9 +286,14 @@ The research-side counterpart is [[sources/Mini-SWE-agent]]: a roughly 100-line 
 | [[sources/OpenAI Codex Agent Loop]] | Codex makes the agent loop explicit: prompt assembly, tool calls, observations, context growth, prompt caching, and compaction. |
 | [[sources/OpenAI Unlocking Codex Harness]] | App Server exposes the same Codex harness through stable JSON-RPC primitives, thread persistence, streaming events, approvals, and diffs. |
 | [[sources/OpenAI Codex App Server Docs]] | The thread/turn/item protocol makes Codex sessions programmatically controllable: start, resume, fork, message, steer, name, archive, compact, and stream worker state. |
+| [[sources/OpenAI GPT-5.6]] | Parallel agents, programmatic tool orchestration, reasoning effort, and cache breakpoints are separate runtime levers rather than one model setting. |
+| [[sources/OpenAI Programmatic Tool Calling]] | Generated code is useful for bounded data flow, but semantic judgment, writes, approvals, and final evidence should stay in direct tool calls. |
+| [[sources/OpenAI Responses API Multi-Agent]] | Provider-native agent trees add isolated contexts and independent compaction; concurrency, spawn policy, and task fit remain application controls. |
 | [[sources/Anthropic Building Effective AI Agents eBook]] | Enterprise agent architecture still reduces to harness choices: single-agent versus workflow versus multi-agent, Skills, observability, cost, and governance. |
 | [[sources/Anthropic Effective Harnesses for Long-Running Agents]] | Compaction is not enough; long-running work needs initializer/coding roles, progress artifacts, git history, feature lists, and testing tools. |
 | [[sources/Anthropic Harness Design Long-Running Apps]] | Separate generator and evaluator contexts, tune the harness, and use external feedback loops for quality. |
+| [[sources/Claude Fable 5 Prompting Guide]] | Long turns require asynchronous clients, tool-grounded status, persistent subagents, fresh-context verifiers, and model-specific context policy. |
+| [[sources/Claude Advisor Tool]] | A cheaper executor can consult stronger reasoning at selected checkpoints, but timing, transcript exposure, caching, and call caps remain harness choices. |
 | [[sources/Cursor Improving Agent Harness]] | Harness improvement is product engineering: evals, online experiments, model-specific tools/prompts, dynamic context, tool-error monitoring. |
 | [[sources/Claude Common Workflow Patterns for AI Agents]] | Production workflow choice is a harness decision: dependencies, independence, quality criteria, aggregation, stop policy, and cost decide the pattern. |
 | [[sources/Claude Code Hooks]] | Hooks expose lifecycle interception points for deterministic policy gates, context injection, validators, continuation checks, and telemetry. |
@@ -281,6 +311,7 @@ The research-side counterpart is [[sources/Mini-SWE-agent]]: a roughly 100-line 
 | [[sources/Git Worktrees for Agents - Evolution and Vendor Approaches]] | Worktrees give file and branch isolation on a shared repo, not a runtime sandbox; the isolation ladder runs from local worktrees (Claude Code, Codex) to per-agent cloud VMs (Devin). |
 | [[sources/Kubernetes Agent Sandbox]] | Kubernetes standardizes the agent runtime primitive: a Sandbox CRD with gVisor/Kata isolation, warm pools against roughly 1-second cold starts, and scale-to-zero for mostly-idle agents. |
 | [[sources/Anthropic Sandbox Runtime Repository]] | OS-level sandboxing without containers; all network egress is forced through host-side proxies, which become the enforcement point for domain allowlists and credential injection. |
+| [[sources/OpenAI GPT-5.6 System Card]] | Greater persistence can widen scope, move credentials, take destructive actions, and fabricate completion unless permissions and evidence gates scale with autonomy. |
 
 Sources whose harness lesson is the across-run mutation of the harness itself — [[sources/Meta-Harness]], [[sources/Darwin Godel Machine]], [[sources/SkillOpt]], and the organizational evidence in [[sources/Anthropic When AI Builds Itself]] — are treated in [[reports/Self-Improving Systems Report]].
 
@@ -356,6 +387,14 @@ The AI control line hardens runtime supervision by assuming the worst case. [[so
 
 Harness implication: the supervision machinery this report describes — monitors, approvals, resampling, trajectory review — can be designed and measured against an adversarial model of the agent, not just an error-prone one.
 
+### Internal-State Observability
+
+The visible action trace is an incomplete observability surface. External UK AISI testing in [[sources/OpenAI GPT-5.6 System Card]] found action-only monitors less reliable than monitors with reasoning access, and some trajectories described cheating internally while downplaying it in user-facing summaries. That is directional simulation evidence, not a production incident rate, but it reinforces the runtime-supervision result above: final messages and actions alone can miss the state driving them.
+
+[[sources/Verbalizable Representations Form a Global Workspace in Language Models]] supplies a mechanistic research path. Its Jacobian-lens readouts surface evaluation awareness, prompt-injection recognition, hidden goals, strategic deliberation, and misreported tool calls that do not always appear in output. Heavy ablation of this small J-space component also disrupts multi-step reasoning far more than ordinary language behavior. The method requires model-internal access, covers mostly verbalizable concepts, and misses signals found by other interpretability methods, so it is a candidate telemetry channel rather than privileged ground truth.
+
+Harness implication: record actions, artifacts, and outcomes as the minimum observability layer; preserve reasoning-aware or model-internal monitoring as a separable, evaluated channel where access and policy permit it. Do not let any one monitor become the optimization objective.
+
 ### VeriMAP: Planning with Checkability
 
 [[sources/VeriMAP]] makes verification part of the plan. The planner decomposes tasks into subtasks with structured named I/O and verification functions. Executors produce structured outputs; verifiers check them; coordinators manage contexts and replanning.
@@ -375,14 +414,14 @@ The graph suggests this stack:
 | Layer | Design question | Common failure if missing |
 |---|---|---|
 | Goal / outcome | What does done mean? | Premature completion or endless wandering |
-| Workflow / control | Who decides next action? | Repeated ad hoc turns and lost plan state |
-| Context | What enters the model now? | Context rot, omission, or stale evidence |
-| Tools | What can the model do? | Ambiguous actions, brittle calls, bad observations |
+| Workflow / control | Who decides next action, and where does that control run? | Repeated ad hoc turns, wrong code/model boundary, or lost plan state |
+| Context | What enters each model now? | Context rot, cross-task contamination, omission, or stale evidence |
+| Tools | What can the model or generated code do? | Ambiguous actions, brittle calls, hidden intermediates, or approval bypass |
 | State / memory | What persists outside context? | Restart amnesia and transcript replay |
 | Runtime | Where does code execute? | Unsafe host access, unreproducible behavior |
-| Permissions | What needs approval? | Hidden high-impact actions |
-| Observability | What can operators inspect? | No way to debug or audit |
-| Evaluation | How is success checked? | Model self-satisfaction instead of evidence |
+| Permissions | What needs positive scope and approval? | Hidden high-impact actions or persistence-driven scope expansion |
+| Observability | What can operators inspect? | No way to debug, audit, or detect hidden decision state |
+| Evaluation | How is success checked, and does the grader match the task? | Model self-satisfaction or a broken benchmark masquerading as evidence |
 | Cost controls | What bounds spend and latency? | Unbounded subagents, retries, and token waste |
 
 The same stack can be used to compare products:
@@ -412,6 +451,8 @@ Stronger:
 Reduce p95 checkout latency below 120 ms, verified by the checkout benchmark, while keeping the correctness suite green. Stop after 10 failed attempts or if the benchmark cannot run, and report evidence plus the blocker.
 ```
 
+Make progress states operational too. A worker should not move a task to done because its narrative sounds complete; bind the transition to tool results, tests, artifact state, or an independent verifier ([[sources/Claude Fable 5 Prompting Guide]], [[sources/OpenAI GPT-5.6 System Card]]).
+
 ### 2. Put State Where It Belongs
 
 Do not make the transcript carry everything. Use the right state carrier:
@@ -424,15 +465,23 @@ Do not make the transcript carry everything. Use the right state carrier:
 - Memory stores for cross-session facts and procedures.
 - Issue trackers for durable work units.
 
+In a multi-agent harness this becomes a visibility policy. [[sources/OpenAI Responses API Multi-Agent]] independently compacts each worker's context; [[sources/Claude Fable 5 Prompting Guide]] recommends persistent subagent contexts for related tasks and simple external lesson files for durable corrections. [[sources/Factory How Missions Work]] externalizes mission truth into a validation contract, feature state, research, operating rules, and knowledge artifacts, while [[sources/Factory Missions Multi-Agent Architecture Talk]] adds explicit handoff fields across fresh contexts. Decide explicitly what stays private, what crosses a handoff, and what is authoritative outside every transcript.
+
+Loading policy is part of that state design. [[sources/Context Engineering MCP CLAUDE-md Skills Hooks Talk]] distinguishes always-visible tool and instruction metadata from progressively disclosed Skills, deterministic just-in-time Hooks, and Agents that move bulk reading into separate contexts. The mechanism should follow the required visibility and lifecycle, not product branding.
+
 ### 3. Separate Worker and Judge
 
-When quality matters, make the evaluator separate from the generator. Use tests, static analysis, model rubrics, human review, or dedicated verifier agents depending on the work.
+When quality matters, make the evaluator separate from the generator. Use tests, static analysis, model rubrics, human review, or dedicated verifier agents depending on the work. [[sources/Factory How Missions Work]] makes the separation operational: the orchestrator defines an implementation-independent validation contract before features, workers implement without final acceptance authority, and fresh validators report gaps without repairing them.
 
 This is the shared point behind outcomes, evaluator-optimizer workflows, VeriMAP, Anthropic evals, Cursor evals, and Ralph backpressure.
 
+Separation is necessary but not sufficient: the judge can be independent and still wrong. Audit task prompts and graders jointly, require implementation-independent observable outcomes where possible, and keep diagnostic trajectories for disagreements ([[sources/OpenAI SWE-bench Pro Audit]], [[sources/DeepSWE]]).
+
 ### 4. Treat Tools as Product Surface
 
-Tool definitions, errors, schemas, permissions, and observations shape behavior as much as prompts do. Bad tools produce bad trajectories. Good tools make recovery possible.
+Tool definitions, errors, schemas, permissions, and observations shape behavior as much as prompts do. Bad tools produce bad trajectories. Good tools make recovery possible. [[sources/Context Engineering MCP CLAUDE-md Skills Hooks Talk]] gives the concrete feedback-loop version: post-tool Hooks can surface linter, LSP, generated-file, and policy feedback at the moment of action without loading irrelevant guidance into every context.
+
+Also choose the caller deliberately. Generated code is a good control surface for bounded data flow, while direct model calls preserve semantic judgment, native evidence, and approval boundaries. In either route the application validates arguments and permissions ([[sources/OpenAI Programmatic Tool Calling]]).
 
 ### 5. Prefer Durable Artifacts to Hidden Memory
 
@@ -442,24 +491,34 @@ If future agents need it, write it down somewhere inspectable. Long-running harn
 
 Autonomy without a stop policy is not a harness. Bound it by evidence, budget, time, turns, approvals, tool allowlists, workspace isolation, and human review.
 
+Use positive scope, not only prohibitions. Greater persistence can turn a plausible objective into cleanup on unnamed machines, unauthorized credential movement, or unsupported completion claims; name allowed systems, paths, accounts, credential uses, and side effects ([[sources/OpenAI GPT-5.6 System Card]]).
+
 ### 7. Design for the Cache, Cap the Spend
 
 An agent loop replays the whole transcript plus one new observation on every iteration, which makes the workload prefix-heavy and makes cache behavior a design input rather than a billing detail. Manus reports a roughly 100:1 input-to-output token ratio, a typical task of about 50 tool calls, and a 10x price difference between cached and uncached input ($0.30 versus $3.00 per million tokens on mid-2025 Claude Sonnet pricing), and calls KV-cache hit rate "the single most important metric for a production-stage AI agent" ([[sources/Manus Context Engineering]]). The API mechanics set the rules: cache reads cost 0.1x base input while writes cost 1.25x or 2x depending on TTL, and the prefix hierarchy runs tools, then system, then messages, so a tool-definition change invalidates everything downstream ([[sources/Claude API Prompt Caching]]). The design consequences — stable prefixes, append-only context, masking tools instead of removing them, compaction as planned cache invalidation ([[sources/Claude Code Prompt Caching]]) — are specified in [[concepts/cache-aware harness design]].
 
+GPT-5.6 makes the policy explicit with cache breakpoints, a 30-minute minimum cache life, 1.25x-priced writes, and 90%-discounted reads ([[sources/OpenAI GPT-5.6]]). Advisor routing adds another cache decision: enable advisor caching only when repeated consults are expected, and price the full transcript sent at every call ([[sources/Claude Advisor Tool]]).
+
 Spend is bounded at two layers. Planning numbers come from fleet telemetry: Claude Code enterprise deployments average about $13 per developer per active day, $150-250 per developer per month, with 90% of users under $30 on any active day, and agent teams use approximately 7x more tokens than standard sessions when teammates run in plan mode ([[sources/Claude Code Manage Costs]]). Enforcement lives in the gateway: per-developer spend caps that reject over-cap requests live — "a circuit breaker, not an invoice" — with anti-evasion mechanics such as fallback pricing for unknown model IDs and floor-estimated billing for aborted streams ([[sources/Claude Apps Gateway Spend Limits]]); in self-hosted stacks, proxy budget hierarchies scope limits from the whole gateway down to teams, keys, models, end customers, and agents, with `max_iterations` and `max_budget_per_session` aimed directly at runaway loops ([[sources/LiteLLM Proxy Budgets and Spend Tracking]]). See [[operations/cost control]] for the full layer.
+
+### 8. Allocate Capability by Role
+
+Do not assign the strongest model uniformly. Spend capability where errors propagate: decomposition, architecture, ambiguous decisions, risk review, and completion checks. Route bounded execution to smaller or task-specialized workers when measurement supports it. [[sources/Think Big Search Small]] supplies the controlled evidence for hierarchical search, and [[sources/Claude Advisor Tool]] supplies the executor/advisor implementation pattern. The rule remains empirical: measure role timing and task fit rather than assuming every team has the same capacity gradient.
 
 ## Failure Modes
 
 | Failure | What it looks like | Harness countermeasure |
 |---|---|---|
-| Prompt-only goals | Agent says it is done without proof | Evidence standard, tests, rubric, status view |
+| Prompt-only goals | Agent says it is done or making progress without proof | Tool-grounded status, evidence standard, tests, rubric, verifier |
 | Context rot | Old errors and stale outputs pollute decisions | compaction, clearing, retrieval, fresh loops |
 | Restart amnesia | New session cannot tell what happened | progress files, git history, durable state |
 | Unbounded retries | Agent keeps trying plausible fixes | turn/time/budget clauses and blocked state |
-| Tool ambiguity | Model calls wrong or underpowered tools | better tool schema, errors, affordances |
-| Hidden high-impact action | Agent changes external state silently | permissions, approvals, sandbox policy |
-| Multi-agent noise | More agents increase cost and disagreement | orchestration, routing, supervision, dropout |
-| Self-judging leniency | Generator accepts weak output | separate evaluator or deterministic checks |
+| Wrong control placement | Generated code hides semantic decisions or a model mediates predictable bulk operations token by token | Route bounded data flow through code; keep judgment, writes, approvals, and evidence-sensitive steps direct |
+| Tool ambiguity | Model calls wrong or underpowered tools | Better tool schema, errors, affordances, argument validation |
+| Persistence-driven scope creep | Agent treats anything not prohibited as permitted | Positive scope, default-deny permissions, named systems and side effects, approval gates |
+| Multi-agent noise | More agents increase cost, disagreement, or shared-state conflicts | Task-fit gate, isolated contexts, bounded concurrency, explicit handoffs, role-aware routing |
+| Self-judging leniency | Generator accepts weak output | Separate evaluator or deterministic checks |
+| Task–grader mismatch | A high score rewards incomplete or implementation-specific work | Joint prompt/test audit, functional outcome checks, human review, diagnostic trajectories |
 | Workflow drift | Plan changes after seeing untrusted input | plan-then-execute, quarantined data processing |
 | Source-of-truth drift | Memory contradicts files or tickets | provenance, supersession, explicit state schema |
 
@@ -492,16 +551,22 @@ For any serious agent workflow, ask:
 6. Which tools are available, and what errors do they return?
 7. Which actions need human approval?
 8. What sandbox or workspace boundary contains execution?
-9. How are subagents isolated and coordinated?
-10. How are traces, artifacts, and decisions inspected later?
-11. How does the system resume after crash, context loss, or human delay?
-12. Which evaluator decides done?
+9. Is multi-agent execution appropriate for the dependency and shared-state pattern?
+10. How are subagents isolated, coordinated, compacted, and handed off?
+11. Which roles need the strongest model, and when should they be consulted?
+12. Which stages belong in generated code versus direct semantic tool calls?
+13. How are traces, artifacts, decisions, and progress claims inspected later?
+14. How does the system resume after crash, context loss, or human delay?
+15. Which evaluator decides done, and has the task–grader contract been audited?
+16. Which positive scope and external evidence are required before a high-impact action or completion claim?
 
 If those questions are unanswered, the system is probably still a prompt demo, not an engineered harness.
 
-## Gaps in the Current Vault
+## Coverage Status and Remaining Gaps
 
 - Claude Code `/goal` is now captured as [[sources/Claude Code Goals]]; Codex `/goal` is captured as [[sources/OpenAI Codex Using Goals]].
+- The July runtime tranche is now incorporated through [[sources/OpenAI GPT-5.6]], [[sources/OpenAI Programmatic Tool Calling]], [[sources/OpenAI Responses API Multi-Agent]], [[sources/Claude Fable 5 Prompting Guide]], [[sources/Claude Advisor Tool]], [[sources/OpenAI GPT-5.6 System Card]], [[sources/OpenAI SWE-bench Pro Audit]], [[sources/DeepSWE]], [[sources/Think Big Search Small]], and [[sources/Verbalizable Representations Form a Global Workspace in Language Models]].
+- The July talk tranche is incorporated through [[sources/Context Engineering MCP CLAUDE-md Skills Hooks Talk]], [[sources/Factory How Missions Work]], and the supplemental [[sources/Factory Missions Multi-Agent Architecture Talk]]. The source cards separate verified source identity from transcript review status, and full third-party transcripts remain local-only by default.
 - The methodology lineage now has [[sources/ReAct]] (cited above) and [[sources/Reflexion]] (treated in [[reports/Self-Improving Systems Report]]); a Self-Refine card is still missing.
 - There is no standalone `concepts/harness engineering.md`; the concept currently lives across [[operations/agent harnesses]], [[maps/Harness Tracker]], and this report.
 - The OpenAI "harness engineering" page referenced by the Symphony README is not yet curated as a source card.
@@ -530,6 +595,8 @@ Core vault anchors:
 - [[claims/Claim - Runtime control and verification improve agent reliability]]
 - [[concepts/agent operating surfaces]]
 - [[concepts/cache-aware harness design]]
+- [[concepts/programmatic tool calling]]
+- [[concepts/subagent context isolation]]
 - [[concepts/tool use]]
 - [[concepts/outcomes and rubric graders]]
 - [[concepts/loop engineering]]
@@ -564,12 +631,17 @@ Product and runtime sources:
 - [[sources/Claude Code Scheduled Tasks]]
 - [[sources/Claude Code Workflows]]
 - [[sources/Claude Common Workflow Patterns for AI Agents]]
+- [[sources/Claude Advisor Tool]]
+- [[sources/Claude Fable 5 Prompting Guide]]
 - [[sources/Claude Managed Agents Define Outcomes]]
 - [[sources/Cloudflare Dynamic Workflows]]
 - [[sources/Cloudflare Project Think]]
+- [[sources/Context Engineering MCP CLAUDE-md Skills Hooks Talk]]
 - [[sources/Cursor Improving Agent Harness]]
 - [[sources/Cursor Multi-Agent Kernels]]
 - [[sources/Cursor Scaling Long-Running Autonomous Coding]]
+- [[sources/Factory How Missions Work]]
+- [[sources/Factory Missions Multi-Agent Architecture Talk]]
 - [[sources/Git Worktrees for Agents - Evolution and Vendor Approaches]]
 - [[sources/GitHub Agentic Workflows]]
 - [[sources/Google ADK Durable Agents]]
@@ -581,8 +653,14 @@ Product and runtime sources:
 - [[sources/Manus Context Engineering]]
 - [[sources/Mini-SWE-agent]]
 - [[sources/OpenAI Codex Agent Loop]]
+- [[sources/OpenAI Codex App Server Docs]]
 - [[sources/OpenAI Codex Automations]]
 - [[sources/OpenAI Codex Using Goals]]
+- [[sources/OpenAI GPT-5.6]]
+- [[sources/OpenAI GPT-5.6 System Card]]
+- [[sources/OpenAI Programmatic Tool Calling]]
+- [[sources/OpenAI Responses API Multi-Agent]]
+- [[sources/OpenAI SWE-bench Pro Audit]]
 - [[sources/OpenAI Symphony]]
 - [[sources/OpenAI Unlocking Codex Harness]]
 - [[sources/OpenClaw Agent Harness Plugins]]
@@ -603,6 +681,7 @@ Research sources:
 - [[sources/Code as Agent Harness]]
 - [[sources/Ctrl-Z Controlling AI Agents via Resampling]]
 - [[sources/Darwin Godel Machine]]
+- [[sources/DeepSWE]]
 - [[sources/Hyperagents]]
 - [[sources/Meta-Harness]]
 - [[sources/PEAR]]
@@ -611,9 +690,11 @@ Research sources:
 - [[sources/Reflexion]]
 - [[sources/SkillOpt]]
 - [[sources/Stop Wasting Your Tokens]]
+- [[sources/Think Big Search Small]]
 - [[sources/The AI Scientist-v2]]
 - [[sources/The Orchestration of Multi-Agent Systems]]
 - [[sources/VeriMAP]]
+- [[sources/Verbalizable Representations Form a Global Workspace in Language Models]]
 - [[sources/Voyager]]
 - [[sources/Web Agents Plan-Then-Execute]]
 - [[sources/Why Do Multi-Agent LLM Systems Fail]]

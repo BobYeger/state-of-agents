@@ -25,7 +25,7 @@ Note: [[concepts/issue tracker control plane]]. The work-unit boundary is decide
 
 ## Stage 2: Specs and Planning
 
-Durable intent is what agent work gets validated against. [[sources/Microsoft Spec-Driven AI-Native Engineering]] makes specs the source of truth; [[sources/Factory 2.0 Software Factory]] frames the end-to-end agent-native SDLC. **Maturity: deployed, thin measurement** — this is the stage with the largest gap between vendor conviction and published evidence. Treat spec-first as a sound default inherited from pre-agent practice rather than a proven agent-specific result.
+Durable intent is what agent work gets validated against. [[sources/Microsoft Spec-Driven AI-Native Engineering]] makes specs the source of truth; [[sources/Factory 2.0 Software Factory]] frames the end-to-end agent-native SDLC; [[sources/Factory How Missions Work]] supplies the concrete mechanism of an implementation-independent validation contract written during planning and mapped from assertions to features. **Maturity: deployed, thin measurement** — this is the stage with the largest gap between vendor conviction and published evidence. Treat spec-first as a sound default inherited from pre-agent practice rather than a proven agent-specific result.
 
 ## Stage 3: Dispatch and Isolation
 
@@ -33,6 +33,8 @@ Notes: [[concepts/issue tracker control plane]], [[operations/worktree isolation
 
 - [[sources/OpenAI Symphony]]: one isolated workspace per ticket, workflow policy, bounded concurrency, proof-of-work before review. **Deployed, thin measurement.**
 - [[sources/Anthropic Claude Code Worktrees]] and [[sources/OpenAI Codex App Worktrees]]: worktree isolation as a shipped harness feature. **Deployed, thin measurement.**
+- [[sources/Factory How Missions Work]]: the April 2026 architecture uses fresh workers, shared state, and ordered feature execution; [[sources/Factory Missions Multi-Agent Architecture Talk]] adds structured handoffs and read-only fan-out. Factory's current product page advertises parallel Droid execution, so treat the ordered topology as a dated architecture snapshot rather than timeless product behavior. **Deployed, thin measurement; vendor-reported.**
+- [[sources/Context Engineering MCP CLAUDE-md Skills Hooks Talk]]: long-lived worktrees and persistent agent identities reduce repeated setup, while a multi-session control surface reduces the human cost of switching among asynchronous streams. **Deployed, thin measurement; operator-reported.**
 
 ## Stage 4: Implementation and Repair
 
@@ -50,6 +52,8 @@ Notes: [[methods/automated program repair]] (test-generation half), [[operations
 - [[sources/TestGen-LLM]]: filter cascade — build, repeated-run reliability, coverage gain — with 73% of surviving recommendations accepted by engineers. **Production-measured.**
 - [[sources/ACH Mutation-Guided Test Generation]]: mutation killing as the stronger adequacy criterion, hardening the repair loop against overfitted patches. **Production-measured.**
 - [[sources/ImpossibleBench]] and [[sources/METR Recent Reward Hacking]]: verification will be gamed where the task is scored by an optimizable metric — repair agents should not have write access to the tests that validate them. **Research**, directly actionable.
+- [[sources/Factory How Missions Work]]: two distinct gates — scrutiny of implementation and trajectory, plus behavioral QA against a live application — run at milestone boundaries against the predeclared contract; [[sources/Factory Missions Multi-Agent Architecture Talk]] supplies additional oral detail. **Deployed, thin measurement; vendor-reported.**
+- [[sources/Context Engineering MCP CLAUDE-md Skills Hooks Talk]]: post-tool hooks connect existing linters, LSPs, generated-file warnings, and other developer feedback at the moment of action — “red squigglies for agents” rather than review-only correction. **Deployed, thin measurement; operator-reported.**
 
 ## Stage 6: Review Gate
 

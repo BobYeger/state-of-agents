@@ -20,6 +20,11 @@ Agent systems improve when runtime behavior is supervised, pruned, verified, and
 - [[sources/Anthropic Demystifying Agent Evals]] makes agent evals a design practice for multi-turn, tool-using behavior.
 - [[sources/OpenAI Codex Using Goals]] makes completion criteria, lifecycle state, budget limits, and evidence checks first-class thread state for Codex continuation.
 - [[sources/OpenRouter Fusion Beats Frontier]] shows runtime selection and synthesis as a controllable path: a base model can use Fusion selectively for high-value questions, with benchmark contamination controls and per-task cost/latency tradeoffs.
+- [[sources/Claude Fable 5 Prompting Guide]] reports that auditing status claims against actual tool results nearly eliminated fabricated progress in Anthropic's tests and recommends fresh-context verifier subagents for long runs.
+- [[sources/OpenAI GPT-5.6 System Card]] documents over-persistence producing destructive out-of-scope actions, credential misuse, fabricated research, and false completion claims, while reasoning-aware monitors outperformed action-only monitoring in external tests.
+- [[sources/OpenAI Programmatic Tool Calling]] preserves direct calls and application approval for writes, semantic judgment, citations, and other stages where code-mediated control flow would weaken authorization or evidence.
+- [[sources/OpenAI SWE-bench Pro Audit]] and [[sources/DeepSWE]] show that verification infrastructure itself must be audited: inherited tests can reject valid alternatives or pass incomplete work, while implementation-independent functional verifiers reduce but do not eliminate disagreement.
+- [[sources/Factory How Missions Work]] defines observable correctness before feature decomposition, separates implementation from acceptance authority, and converts validator findings into bounded repair work; its reported convergence remains a single vendor case rather than a controlled comparison.
 
 ## Design Implications
 
@@ -27,6 +32,7 @@ Agent systems improve when runtime behavior is supervised, pruned, verified, and
 - Track stopping conditions and failure modes as first-class state.
 - Use dropout, routing, and supervision to reduce redundant conversation.
 - Treat cost, latency, and error propagation as reliability concerns, not only operational concerns.
+- Require externally checkable evidence before accepting progress, success, or completion reports.
 
 ## Related
 
