@@ -503,7 +503,7 @@ Spend is bounded at two layers. Planning numbers come from fleet telemetry: Clau
 
 ### 8. Allocate Capability by Role
 
-Do not assign the strongest model uniformly. Spend capability where errors propagate: decomposition, architecture, ambiguous decisions, risk review, and completion checks. Route bounded execution to smaller or task-specialized workers when measurement supports it. [[sources/Think Big Search Small]] supplies the controlled evidence for hierarchical search, and [[sources/Claude Advisor Tool]] supplies the executor/advisor implementation pattern. The rule remains empirical: measure role timing and task fit rather than assuming every team has the same capacity gradient.
+Do not assign the strongest model uniformly. Spend capability where errors propagate: decomposition, architecture, ambiguous decisions, risk review, and completion checks. Route bounded execution to smaller or task-specialized workers when measurement supports it. [[sources/Think Big Search Small]] supplies the controlled evidence for hierarchical search, [[sources/Claude Advisor Tool]] supplies the executor/advisor implementation pattern, and [[sources/Cursor Agent Swarm Model Economics]] supplies a vendor-scale coding example where planner/worker role assignment materially changes cost at similar reported quality. The rule remains empirical: measure role timing and task fit rather than assuming every team has the same capacity gradient.
 
 ## Failure Modes
 
@@ -638,6 +638,7 @@ Product and runtime sources:
 - [[sources/Cloudflare Project Think]]
 - [[sources/Context Engineering MCP CLAUDE-md Skills Hooks Talk]]
 - [[sources/Cursor Improving Agent Harness]]
+- [[sources/Cursor Agent Swarm Model Economics]]
 - [[sources/Cursor Multi-Agent Kernels]]
 - [[sources/Cursor Scaling Long-Running Autonomous Coding]]
 - [[sources/Factory How Missions Work]]

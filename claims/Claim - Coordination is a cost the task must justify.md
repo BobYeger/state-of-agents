@@ -19,6 +19,7 @@ Every agent added to a system buys coverage, diversity, parallelism, or speciali
 - [[sources/OpenRouter Fusion Beats Frontier]] is a qualifying product example: model panels can beat solo models on a deep-research benchmark, but the article also frames Fusion as task-selective, slower, and not a drop-in replacement for coding or long-horizon work.
 - [[sources/Understanding Multi-Agent LLM Frameworks]] shows framework architecture can strongly change latency, planning accuracy, and coordination success.
 - [[sources/Aligned Agents Biased Swarm]] extends the claim into safety: individually aligned or neutral agents can still amplify collective bias.
+- [[sources/Cursor Agent Swarm Model Economics]] supplies a vendor-scale cost and coordination case: similar reported quality across model mixes, but large spend differences and a custom VCS/control substrate required to contain swarm contention.
 
 ## Contradicting Or Qualifying Sources
 

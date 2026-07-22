@@ -18,6 +18,8 @@ Orchestration also decides where model capability belongs. [[sources/Think Big S
 
 [[sources/Claude Advisor Tool]] implements the same asymmetry inside one request by letting an executor consult a stronger advisor, while [[sources/OpenAI Responses API Multi-Agent]] implements context-isolated parallel workers. Neither removes the task-fit gate: the OpenAI API explicitly recommends one agent for ordered chains, frequent shared-state writes, and workflows dominated by one slow operation.
 
+[[sources/Cursor Agent Swarm Model Economics]] adds a vendor-run coding-swarm case at much larger scale. Recursive frontier planners form task contracts for faster workers; Cursor reports similar quality across model mixes but total spend ranging from about $1,339 for an Opus 4.8/Composer 2.5 hybrid to $10,565 for GPT-5.5 throughout. This strengthens the routing hypothesis while leaving its generality unproven: the comparison is one task, the model matrix is incomplete, and the bundled harness changed at the same time.
+
 ## Handoff Information Design
 
 What crosses an agent boundary is a design surface, and the strongest positions disagree in an instructive way. [[sources/Cognition Dont Build Multi-Agents]] argues that handoffs should carry full agent traces rather than summaries, because actions encode implicit decisions and parallel workers making conflicting implicit decisions produce incoherent results — the case for single-threaded execution with context compression instead of parallel subagents. The ten-month follow-up [[sources/Cognition Multi-Agents Whats Actually Working]] narrows rather than retracts this: multiple agents may contribute intelligence (a review loop catching ~2 bugs per PR, escalation to a stronger model, manager-child delegation), but writes stay single-threaded, and reviewers perform best with completely *clean* context rather than shared context.
@@ -34,6 +36,7 @@ When agents coordinate through shared artifacts rather than messages, the orches
 - [[sources/Atomix]]: names the failure modes of orchestrators that mishandle tool side effects under concurrency — partial effects, losing-branch residue, stale writes, irreversible sends — and proposes transactional settlement with per-resource frontiers.
 - [[sources/Governed Shared Memory for Multi-Agent LLM Systems]]: fleet-shared memory fails as leakage, stale propagation, persistent contradiction, and provenance collapse; the governance primitives are scoped retrieval, temporal supersession, provenance tracking, and policy-governed propagation.
 - [[sources/G-Memory]]: a constructive design for team memory — hierarchical insight/query/interaction graphs propagate cross-trial lessons without flattening per-agent context.
+- [[sources/Cursor Agent Swarm Model Economics]]: a purpose-built VCS becomes the coordination control plane at reported peaks near 1,000 commits per second, enforcing design authority, neutral conflict resolution, and megafile decomposition. On the SQLite comparison, conflicts fell from more than 70,000 before the old run was paused to fewer than 1,000 over the new run's four hours; these are first-party, bundled-system measurements.
 
 The recurring lesson: shared state needs an explicit authority model (who may write, which version wins, how conflicts resolve) before it needs more participants. Cognition's single-writer principle, Corkill's control component, and Atomix's commit frontiers are the same idea at three layers.
 
@@ -99,3 +102,4 @@ The recurring lesson: shared state needs an explicit authority model (who may wr
 - [[sources/Think Big Search Small|Think Big, Search Small: Where Capacity Matters in Hierarchical Search Agents?]]
 - [[sources/Claude Advisor Tool|Advisor tool]]
 - [[sources/OpenAI Responses API Multi-Agent|Multi-agent in the Responses API]]
+- [[sources/Cursor Agent Swarm Model Economics]]

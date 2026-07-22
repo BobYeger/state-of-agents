@@ -27,6 +27,8 @@ Note: [[concepts/issue tracker control plane]]. The work-unit boundary is decide
 
 Durable intent is what agent work gets validated against. [[sources/Microsoft Spec-Driven AI-Native Engineering]] makes specs the source of truth; [[sources/Factory 2.0 Software Factory]] frames the end-to-end agent-native SDLC; [[sources/Factory How Missions Work]] supplies the concrete mechanism of an implementation-independent validation contract written during planning and mapped from assertions to features. **Maturity: deployed, thin measurement** — this is the stage with the largest gap between vendor conviction and published evidence. Treat spec-first as a sound default inherited from pre-agent practice rather than a proven agent-specific result.
 
+- [[sources/Cursor Agent Swarm Model Economics]]: at swarm scale, planners retain architecture authority, recursively decompose the specification, and give workers bounded leaves; shared design documents turn architectural decisions into referenced artifacts. **Maturity: research-style vendor case study**, with no component ablation.
+
 ## Stage 3: Dispatch and Isolation
 
 Notes: [[concepts/issue tracker control plane]], [[operations/worktree isolation]], [[operations/durable sessions]].
@@ -35,6 +37,7 @@ Notes: [[concepts/issue tracker control plane]], [[operations/worktree isolation
 - [[sources/Anthropic Claude Code Worktrees]] and [[sources/OpenAI Codex App Worktrees]]: worktree isolation as a shipped harness feature. **Deployed, thin measurement.**
 - [[sources/Factory How Missions Work]]: the April 2026 architecture uses fresh workers, shared state, and ordered feature execution; [[sources/Factory Missions Multi-Agent Architecture Talk]] adds structured handoffs and read-only fan-out. Factory's current product page advertises parallel Droid execution, so treat the ordered topology as a dated architecture snapshot rather than timeless product behavior. **Deployed, thin measurement; vendor-reported.**
 - [[sources/Context Engineering MCP CLAUDE-md Skills Hooks Talk]]: long-lived worktrees and persistent agent identities reduce repeated setup, while a multi-session control surface reduces the human cost of switching among asynchronous streams. **Deployed, thin measurement; operator-reported.**
+- [[sources/Cursor Agent Swarm Model Economics]]: a purpose-built VCS mediates fleet-scale writes, with design-document reconciliation, neutral conflict agents, and automatic megafile decomposition. The old/new SQLite comparison reports sharply lower conflict churn, but this is an exceptional greenfield swarm with a cheap evaluator. **Research-style vendor case study.**
 
 ## Stage 4: Implementation and Repair
 
@@ -54,6 +57,7 @@ Notes: [[methods/automated program repair]] (test-generation half), [[operations
 - [[sources/ImpossibleBench]] and [[sources/METR Recent Reward Hacking]]: verification will be gamed where the task is scored by an optimizable metric — repair agents should not have write access to the tests that validate them. **Research**, directly actionable.
 - [[sources/Factory How Missions Work]]: two distinct gates — scrutiny of implementation and trajectory, plus behavioral QA against a live application — run at milestone boundaries against the predeclared contract; [[sources/Factory Missions Multi-Agent Architecture Talk]] supplies additional oral detail. **Deployed, thin measurement; vendor-reported.**
 - [[sources/Context Engineering MCP CLAUDE-md Skills Hooks Talk]]: post-tool hooks connect existing linters, LSPs, generated-file warnings, and other developer feedback at the moment of action — “red squigglies for agents” rather than review-only correction. **Deployed, thin measurement; operator-reported.**
+- [[sources/Cursor Agent Swarm Model Economics]]: held-out `sqllogictest` supplies millions of known-answer queries, while review agents vary transcript/output/code visibility, model, and personality to reduce correlated blind spots. Cursor reports that these lenses stack but publishes no review ablation. **Research-style vendor case study.**
 
 ## Stage 6: Review Gate
 

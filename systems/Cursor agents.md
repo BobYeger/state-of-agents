@@ -10,12 +10,17 @@ Cursor 3.x moved the center of gravity from a single agent in an editor to the I
 
 Two design commitments carry through from the 2.x era into 3.x: isolation as the default for parallel attempts (worktrees or remote machines), and comparison of outcomes rather than trust in any single attempt (best-of-n over parallel runs).
 
+## Research Swarm Economics
+
+Cursor's July 2026 SQLite experiment makes the research harness more concrete. The architecture is a centralized recursive planner-worker tree, not a decentralized peer swarm: frontier planners own design and decomposition, faster workers execute bounded leaves, and a purpose-built VCS mediates collisions. In Cursor's vendor-run old/new comparison, conflicts, code sprawl, and commit churn fell sharply under the new harness, while planner-worker model mixes produced similar reported quality at very different costs ([[sources/Cursor Agent Swarm Model Economics]]). The result is a boundary case—a massive greenfield build with millions of held-out known-answer queries—and should not override the single-writer default for ordinary shared-codebase work.
+
 ## Design Pattern
 
 - Run many coding agents in parallel when the work can be decomposed.
 - Use worktrees or remote machines to keep parallel agent attempts from interfering with one another.
 - Use shared project state, tests, screenshots, logs, and review artifacts as coordination surfaces.
 - Treat harness design and evaluation as the durable product, not only the model choice.
+- Route model capability by role when measured task contracts support it; budget the coordination substrate as part of the swarm, not as incidental infrastructure.
 
 ## Related
 
@@ -36,5 +41,6 @@ Two design commitments carry through from the 2.x era into 3.x: isolation as the
 - [[sources/Cursor Scaling Long-Running Autonomous Coding|Scaling long-running autonomous coding]]
 - [[sources/Cursor Multi-Agent Kernels|Speeding up GPU kernels by 38% with a multi-agent system]]
 - [[sources/Cursor Self-Driving Codebases|Towards self-driving codebases]]
+- [[sources/Cursor Agent Swarm Model Economics|Agent swarms and the new model economics]]
 - [[sources/Cursor Building Better Bugbot|Building a better Bugbot]]
 - [[sources/Cursor Bugbot Learned Rules|Bugbot now self-improves with learned rules]]

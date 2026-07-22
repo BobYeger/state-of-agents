@@ -23,6 +23,7 @@ Task-contingent orchestration: choose the smallest structure that creates useful
 - [[sources/Google ADK Multi-Agent Patterns]] is practical evidence for pipelines, routing, delegation, and human-in-loop patterns.
 - [[sources/OpenRouter Fusion Beats Frontier]] is product evidence for task-fit model panels: deep-research synthesis benefits from parallel model diversity and a judge/synthesizer, while simpler coding remains better served by selective use.
 - [[sources/Plan-Then-Execute]] and [[sources/VeriMAP]] show that explicit planner-executor or planner-executor-verifier structure helps when tasks benefit from plan review, structured subtask I/O, or verification.
+- [[sources/Cursor Agent Swarm Model Economics]] reports that recursive planner/worker context separation and role-specific model routing improved a large coding swarm's reported outcomes, while also showing that the result depends on a substantial coordination substrate.
 
 ## Design Implications
 
