@@ -1,7 +1,7 @@
 # Harness Engineering Report: Goals, Workflows, and Runtime Control
 
-Date: 2026-07-13
-Scope: local project graph, with current official Codex and Claude `/goal`, `/loop`, workflow, GPT-5.6, Fable 5, programmatic-tool, advisor, and multi-agent materials consulted for the runtime sections. Originally written 2026-06-14; revised 2026-07-05 against the rebuilt source graph and again 2026-07-13 for the new orchestration, verification, and safety evidence, with the self-improvement lineage carried by [[reports/Self-Improving Systems Report]]. This report owns within-run loop mechanics: goals, workflows, wake/verify/retry/stop policies, and ralph-style loops. Direct excerpts are intentionally short; longer source passages are summarized. Source-paper figures are referenced through local PDF page embeds for private vault analysis rather than copied as standalone images.
+Date: 2026-08-02
+Scope: local project graph, with current official Codex and Claude `/goal`, `/loop`, workflow, GPT-5.6, Fable 5, programmatic-tool, advisor, multi-agent, and Buzz materials consulted for the runtime sections. Originally written 2026-06-14; revised through 2026-08-02 for new orchestration, verification, safety, protocol-composition, and durable-execution evidence, with the self-improvement lineage carried by [[reports/Self-Improving Systems Report]]. This report owns within-run loop mechanics: goals, workflows, wake/verify/retry/stop policies, and ralph-style loops. Direct excerpts are intentionally short; longer source passages are summarized. Source-paper figures are referenced through local PDF page embeds for private vault analysis rather than copied as standalone images.
 
 ## Executive Summary
 
@@ -240,6 +240,8 @@ The last two rows make capability allocation explicit. Across 3,869 multi-hop qu
 
 Fable 5 adds the lifecycle consequence. Its longer turns and hours-long autonomous runs require streaming, asynchronous progress surfaces, longer timeouts, and non-blocking checks. Anthropic recommends long-lived subagents for related subtasks, fresh-context verifier agents for periodic review, and external Markdown lessons for durable corrections, while warning that a model-visible context countdown can trigger premature handoff ([[sources/Claude Fable 5 Prompting Guide]]). Context isolation, compaction, cache continuity, and status reporting are therefore one orchestration design, not four independent features.
 
+Buzz adds a protocol-composition case. Signed Nostr events are the communication substrate, `buzz-acp` bridges them to arbitrary ACP agents, and the first-party `buzz-agent` can use the separate `buzz-dev-mcp` tool server. Other ACP agents need not use that MCP server. Per-channel serialization is a concurrency control, while the separate Orchestra layer supplies persona-prompt roles and runtime-gated completion. Protocol seams, process topology, and team organization are three independent harness choices ([[sources/Buzz Repository]]).
+
 ## Durable Execution and Delivery Semantics
 
 An agent loop is a distributed system: it makes remote calls with unreliable delivery, holds state that must survive crashes, and produces side effects that retries can duplicate. The full failure taxonomy and handling patterns live in [[operations/harness fault tolerance]]; the design choices below are the harness-shaping ones.
@@ -247,6 +249,8 @@ An agent loop is a distributed system: it makes remote calls with unreliable del
 Durable execution gives the loop crash recovery without re-spending tokens. The reference mapping is Temporal's OpenAI Agents SDK integration: the agent orchestration loop runs as a Workflow while every LLM invocation and tool call executes as an Activity; event history records each Activity's arguments and results, so after a crash the workflow replays deterministically and picks up where it left off without re-running completed steps ([[sources/Temporal OpenAI Agents SDK Integration]]). OpenAI made `Runner` an abstract base class specifically so Temporal could supply an Activity-creating implementation, and the integration reached general availability on 2026-03-23. Restate makes the counter-argument for dynamic, non-graph loops: journal-based durable execution as lightweight middleware over existing SDK loops rather than restructuring around a workflow runtime, with suspension as a first-class state — agents pause indefinitely awaiting human approval or slow inference at zero serverless cost and resume via journal replay ([[sources/Restate Durable AI Loops]]).
 
 Pause and resume have precise semantics, and the details bind application code. LangGraph's `interrupt()` throws an exception the runtime catches, persists exact state through a mandatory checkpointer, and resumes via `Command(resume=value)` — but resumption restarts the entire node from the beginning, so pre-interrupt code re-executes and must be idempotent ([[sources/LangGraph Interrupts]]).
+
+Buzz marks the opposite boundary: signed channel events and encrypted engrams can preserve conversation and memory while execution itself remains non-durable. In the audited workflow path, an ordinary approval request is marked failed rather than persisted as a pending action that resumes after approval. Durable history is not durable execution ([[sources/Buzz Repository]]).
 
 Idempotency is not an implementation nicety; it is forced by delivery semantics. Exactly-once delivery is impossible over unreliable channels, so every event-driven loop chooses at-most-once (loss possible) or at-least-once (duplicates possible) and designs for the consequence: idempotent handlers, deduplication, or distributing immutable facts rather than mutable operations ([[sources/You Cannot Have Exactly-Once Delivery]]). Any harness that feeds agents from queues, schedules, or event streams inherits this rule.
 
@@ -295,6 +299,7 @@ The research-side counterpart is [[sources/Mini-SWE-agent]]: a roughly 100-line 
 | [[sources/Claude Fable 5 Prompting Guide]] | Long turns require asynchronous clients, tool-grounded status, persistent subagents, fresh-context verifiers, and model-specific context policy. |
 | [[sources/Claude Advisor Tool]] | A cheaper executor can consult stronger reasoning at selected checkpoints, but timing, transcript exposure, caching, and call caps remain harness choices. |
 | [[sources/Cursor Improving Agent Harness]] | Harness improvement is product engineering: evals, online experiments, model-specific tools/prompts, dynamic context, tool-error monitoring. |
+| [[sources/Block Buzz]]; [[sources/Buzz Repository]] | A shared signed event substrate makes workspace activity attributable; `buzz-acp` bridges arbitrary ACP agents, the first-party path can compose MCP, and Orchestra adds prompt-level role/verification contracts plus runtime-gated completion. No public benchmark results establish outcome lift, and the disclosed common local posture remains outside a sandbox. |
 | [[sources/Claude Common Workflow Patterns for AI Agents]] | Production workflow choice is a harness decision: dependencies, independence, quality criteria, aggregation, stop policy, and cost decide the pattern. |
 | [[sources/Claude Code Hooks]] | Hooks expose lifecycle interception points for deterministic policy gates, context injection, validators, continuation checks, and telemetry. |
 | [[sources/Claude Code Workflows]] | Workflows move orchestration into readable, rerunnable scripts with separate runtime state. |
@@ -620,6 +625,8 @@ Product and runtime sources:
 - [[sources/Anthropic Sandbox Runtime Repository]]
 - [[sources/Anthropic When AI Builds Itself]]
 - [[sources/Armin Ronacher The Coming Loop]]
+- [[sources/Block Buzz]]
+- [[sources/Buzz Repository]]
 - [[sources/Claude API Prompt Caching]]
 - [[sources/Claude Agent SDK Streaming vs Single Message]]
 - [[sources/Claude Apps Gateway Spend Limits]]

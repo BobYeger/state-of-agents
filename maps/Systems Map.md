@@ -7,6 +7,7 @@ Use this map for named agent systems, platforms, and productized harnesses. The 
 - [[systems/AI co-scientist]]
 - [[systems/AgentKit]]
 - [[systems/autoresearch]]
+- [[systems/Buzz]]
 - [[systems/ChatGPT agent]]
 - [[systems/Claude Code]]
 - [[systems/Cloudflare Agents SDK]]

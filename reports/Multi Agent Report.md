@@ -1,7 +1,7 @@
 # Multi-Agent Report: Architectures, Evidence, and 2026 Build Patterns
 
-Date: 2026-07-05
-Scope: local project graph plus official vendor/product pages as captured in the vault's source cards. Originally written 2026-06-03; revised 2026-07-05 against the rebuilt 471-source graph, folding in the scaling-science measurements, the Cognition and Cursor production positions, the settled aggregation evidence, and the mid-2026 platform landscape. Strong recency bias: 2026 product systems and 2025-2026 papers are weighted above earlier role-play and debate-era systems. Direct excerpts are intentionally short; longer source arguments are summarized. Source-paper figures are embedded as local PDF page references for vault analysis; for public distribution, verify paper licenses or redraw the figures. The generated architecture image set is a local working asset and is not part of the public vault.
+Date: 2026-08-02
+Scope: local project graph plus official vendor/product pages and audited open-source implementations as captured in the vault's source cards. Originally written 2026-06-03; revised 2026-07-05 against the rebuilt 471-source graph, then through 2026-08-02 for the expanding product landscape, including Buzz's collaboration substrate and result-free Orchestra evaluation harness. Strong recency bias: 2026 product systems and 2025-2026 papers are weighted above earlier role-play and debate-era systems. Direct excerpts are intentionally short; longer source arguments are summarized. Source-paper figures are embedded as local PDF page references for vault analysis; for public distribution, verify paper licenses or redraw the figures. The generated architecture image set is a local working asset and is not part of the public vault.
 
 ## Executive Summary
 
@@ -110,6 +110,7 @@ Task structure decides the sign of the coordination benefit ([[sources/Towards a
 | **Cognition Devin** | Single-writer core with agents as added intelligence: clean-context Devin Review loop, capability-routed "smart friend" escalation, manager Devin coordinating child Devins over internal MCP; scheduled sessions and automations | Writes stay single-threaded; delegated agents review, escalate, and coordinate rather than co-write | Fleet-style coding, PR review, recurring tasks | Reports about 2 bugs caught per PR, 58% of them severe, and about 8x enterprise usage growth over six months; Cognition telemetry, not independently audited |
 | **Factory (Droids)** | Agent-native software factory: Droids for task execution, skills for bounded procedures, automations with objective and memory, Droid Computers for persistent execution, Missions for multi-agent autonomous runs | External signals become planned changes that are built, tested, reviewed, shipped, and monitored, with monitoring feeding back into new signals | Organization-level SDLC loops above per-run fleets | Vendor architecture post; customer and production-readiness claims are vendor-reported |
 | **Kimi Agent Swarm** | Commander plus up to 300 specialists; trained orchestrator; context sharding | Horizontal scaling for retrieval, writing, docs, code, office automation | Large-scale search, document processing, long outputs | Beta; reports 4.5x speedup and BrowseComp 15.9% to 33.3% |
+| **Block Buzz** | Signed Nostr workspace for humans and separately identified agents; ACP bridge, optional first-party MCP tool seam, and explicit Orchestra harness | Keeps assignments, messages, repository activity, evidence, and decisions in one shared event substrate | Human-agent software work needing attributable shared state and self-hosting | Open source and early; ordinary multi-worker mode is a shared-identity pool, Orchestra publishes methodology but no scores, and the disclosed local posture is commonly unsandboxed |
 | **OpenRouter Fusion** | Server-side parallel model panel with web search/fetch per panel model; judge/synthesizer identifies consensus, contradictions, blind spots, and unique insights | One API call, model slug, server tool, plugin, or chatroom fans a prompt across the panel and grounds the final answer in the judge analysis | Deep research and question answering | Reports a Fable 5 + GPT-5.5 panel at 69.0% on 93 of 100 DRACO tasks (7 content-filtered) and Opus 4.8 fused with itself at 65.5% vs 58.8% solo; FAQ says it is not a drop-in coding-model replacement |
 | **Google ADK** | Sequential, routing, delegation, human-in-loop, durable agents with state machines | Builder framework for multi-agent apps | Enterprise workflows, durable/event-driven agents | Framework docs/tutorials; production quality depends on implementation |
 | **Google Antigravity** | Editor view plus a Manager surface for spawning, orchestrating, and observing multiple async agents; Artifacts (task lists, plans, screenshots, browser recordings) as verifiable deliverables; agents browser-test their own changes | Users assign work across workspaces and comment on Artifacts like documents while agents run asynchronously | Parallel coding with artifact-first review | Public preview, free for individuals; model-pluralist at launch (Gemini 3 Pro plus Claude Sonnet 4.5 and OpenAI GPT-OSS); Gemini CLI retired into the Antigravity CLI |
@@ -149,6 +150,14 @@ The counterweight comes from the same vendor. Moonshot's earlier Kimi-Researcher
 Sources: [[sources/Kimi Agent Swarm]], [[sources/Kimi Researcher]].
 
 Pattern reference: `29 Centralized Swarm`. Kimi-style swarm is best viewed as controlled fan-out/gather: many workers, one commander, isolated context shards, and compressed return paths.
+
+### Block Buzz: The Shared Room Is the Control Plane
+
+Buzz contributes a collaboration substrate rather than a new swarm topology. Humans and separately identified agents share one signed event workspace, while `buzz-acp --agents N` is merely a same-identity pool that serializes each channel. Harbor Buzz Orchestra adds distinct identities and persona-prompt contracts for task ownership and cross-worker verification; the runtime itself gates process liveness and orchestrator-authored completion ([[sources/Block Buzz]], [[sources/Buzz Repository]]).
+
+Orchestra records useful condition and trace data, but publishes no score, single-agent baseline, pass rate, or cost comparison; ATIF and token/cost result plumbing remain incomplete. Its methodology is therefore reusable without supporting a claim of multi-agent lift. Block also says Buzz agents typically run locally outside a sandbox with permission bypass enabled, so signed authorship should not be read as execution containment or least privilege.
+
+Sources: [[sources/Block Buzz]], [[sources/Buzz Repository]].
 
 ### Coding Agents: Fleets Need Worktrees, VMs, and Review
 
@@ -826,10 +835,10 @@ Row evidence: duplicate delivery and its idempotency fix, [[sources/You Cannot H
 
 | Evidence tier | Meaning | Sources in this report |
 |---|---|---|
-| **Tier 1: 2026 product / official docs** | Shipped or official feature with current docs | Claude Code Agent Teams, Codex worktrees/subagents, Cursor 3.2, Devin manages Devins, Kimi Agent Swarm, Google ADK durable agents, GitHub Copilot coding agent and Agent HQ (Claude/Codex in public preview since 2026-02), Claude Managed Agents memory stores and session event stream (beta-versioned surface), Temporal OpenAI Agents SDK integration (GA 2026-03-23) |
+| **Tier 1: 2026 product / official docs** | Shipped or official feature with current docs | Claude Code Agent Teams, Codex worktrees/subagents, Cursor 3.2, Devin manages Devins, Kimi Agent Swarm, Block Buzz, Google ADK durable agents, GitHub Copilot coding agent and Agent HQ (Claude/Codex in public preview since 2026-02), Claude Managed Agents memory stores and session event stream (beta-versioned surface), Temporal OpenAI Agents SDK integration (GA 2026-03-23) |
 | **Tier 2: 2026 production-style case study** | Real hard task or internal production evidence, but not a general product claim | Anthropic C compiler, Cursor GPU kernels, OpenAI Symphony, Cognition single-writer Devin telemetry, Cursor self-driving-codebase fleet runs and SQLite swarm comparison, OpenRouter Fusion panel benchmarks, Microsoft AIRT failure taxonomy and agent-factory claims |
 | **Tier 3: 2025-2026 research paper with evals** | Benchmark or architecture paper with experimental results | MultiAgentBench, MASS, BAMAS, MasRouter, Graph-of-Agents, MAST, AI Co-Scientist, Towards a Science of Scaling Agent Systems, Do More Agents Help, Stop Overvaluing Multi-Agent Debate, MAFBench, MacNet (2024 work, published ICLR 2025), AgentFlow, PEAR, the LLM blackboard study, G-Memory, MemClaw governed shared memory, MANBENCH, Ctrl-Z, Tongyi DeepResearch, Atomix (research prototype) |
-| **Tier 4: framework docs** | Useful implementation primitives, adoption depends on builder | OpenAI Agents SDK, LangGraph, CrewAI, AutoGen, AgentScope, AWS Bedrock, OpenHands Software Agent SDK (vendor failure-reduction data in an MLSys 2026 paper), durable-execution vendor arguments (Restate, Temporal) |
+| **Tier 4: framework docs** | Useful implementation primitives, adoption depends on builder | OpenAI Agents SDK, LangGraph, CrewAI, AutoGen, AgentScope, AWS Bedrock, OpenHands Software Agent SDK (vendor failure-reduction data in an MLSys 2026 paper), Buzz Orchestra's result-free evaluation harness, durable-execution vendor arguments (Restate, Temporal) |
 | **Tier 5: older foundational systems** | Still conceptually useful but weaker recency weight | MetaGPT, ChatDev, Generative Agents, CoALA (taxonomy, not empirical results), Corkill blackboard systems, Reflexion (its external-signal ablation is still load-bearing), and the debate-era aggregation family (Du et al. debate, self-consistency, More Agents sampling, Mixture-of-Agents) — settled at matched compute; family treatment in [[methods/debate and aggregation]] |
 
 Vendor-reported production figures stay in Tier 2 regardless of scale: the Cognition, Cursor, Microsoft, Kimi, and OpenRouter numbers are internal telemetry or vendor-run benchmarks, not independent measurement. Aggregation spans tiers: the debate-era originals are settled Tier 5 lineage, the compute-matched debate evaluations are Tier 3 research, and synthesis-style aggregation ships as a Tier 2 production system in OpenRouter Fusion.
@@ -857,6 +866,8 @@ Product, platform, and docs sources:
 - [[sources/Anthropic Multi-Agent Coordination Patterns]]
 - [[sources/Anthropic Multi-Agent Research System]]
 - [[sources/Anthropic Parallel Claudes C Compiler]]
+- [[sources/Block Buzz]]
+- [[sources/Buzz Repository]]
 - [[sources/Claude Code Agent Teams]]
 - [[sources/Context Engineering MCP CLAUDE-md Skills Hooks Talk]]
 - [[sources/Claude Cowork Research Preview]]

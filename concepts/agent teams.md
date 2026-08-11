@@ -14,6 +14,12 @@ This is narrower than "multi-agent system." A MAS can be a debate, voting ensemb
 - How are outputs verified and conflicts resolved?
 - What does the human supervise: every action, the lead, or final artifacts?
 
+## A Collaboration Substrate Is Not Team Organization
+
+Buzz demonstrates a useful distinction. A shared signed channel can give humans and agents attributable common state without deciding who leads, who owns a task, which edits may overlap, or who can accept the result. Its ordinary multi-worker mode is a same-identity process pool serialized per channel; Orchestra adds distinct identities and persona prompts for coordinator/worker roles, scoped assignments, and cross-worker verification. The runtime itself enforces only liveness and orchestrator-authored completion ([[systems/Buzz]], [[sources/Buzz Repository]]).
+
+Treat the event room as a team primitive, not the team design. Explicit organization still sits above the transport and storage layer.
+
 ## The Human Gate Under Team Output
 
 The last design question — what the human supervises — now has measured constraints on both sides.
@@ -57,3 +63,4 @@ The design consequence: size the human's role against measured capacity, not asp
 - [[sources/Cognition Multi-Agents Whats Actually Working]]
 - [[sources/GitHub Merge Queue Docs]]
 - [[sources/DORA State of AI-assisted Software Development 2025]]
+- [[sources/Buzz Repository]]

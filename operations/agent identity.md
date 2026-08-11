@@ -23,8 +23,11 @@ The hard problem is not naming agents but scoping delegation: user → orchestra
 - [[sources/IETF AIMS Agent Auth Draft]] maps OAuth flows to delegation scenarios: authorization code + PKCE for user-delegated access, client credentials for autonomous access, token exchange for cross-domain hops, and Transaction Tokens for per-transaction downscoping that limits lateral movement.
 - [[sources/Identity Assertion JWT Authorization Grant]] (ID-JAG, the spec behind Okta Cross App Access) makes the enterprise IdP the policy decision point for cross-domain access: the client exchanges an SSO identity assertion for a JWT authorization grant, replacing N-by-M pairwise app consents. This is the current best answer to "how does my agent reach a SaaS app in another trust domain on the user's behalf without a consent screen per pair."
 - [[sources/MCP Authorization]] covers the tool-server hop: MCP servers as OAuth resource servers, so tool access rides on tokens rather than ambient credentials.
+- [[sources/Block User Identity Delegation]] gives a deployed-architecture formulation of the subject/actor split: effective authority is the intersection of the user's current grants and the capabilities consented for that actor, with revocation evaluated at decision time.
 
 The design rule that falls out of these drafts: every hop in the chain should be a token exchange that narrows scope, and the chain should be reconstructable from logs. If a subagent's token is indistinguishable from its parent's, attribution and revocation both fail.
+
+Buzz supplies a narrower identity pattern: separate agent keys preserve authorship while owner attestation supports relay admission without transferring owner roles. That improves provenance, but it is not Block's subject/actor capability-intersection control plane ([[sources/Block Buzz]], [[sources/Buzz Repository]]).
 
 ## Cross-Agent Injection Is the Threat Model
 

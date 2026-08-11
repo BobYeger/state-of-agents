@@ -21,6 +21,8 @@ A durable session is usually consumed through a stream, and the stream's reconne
 
 The common lesson across all four: durable sessions need two distinct guarantees, a durable event history that survives disconnects and crashes, and defined interruption points whose resume semantics (what re-executes, what is dropped, what is final) are explicit rather than assumed.
 
+Buzz supplies a useful counterexample to equating those guarantees. Signed channel history and encrypted engrams are durable records, but the audited ordinary approval path does not persist a waiting action and resume it after approval. A system can preserve everything the team said and still lack durable workflow execution ([[sources/Buzz Repository]]).
+
 ## Related
 
 - [[concepts/long-horizon agents]]
@@ -51,3 +53,4 @@ The common lesson across all four: durable sessions need two distinct guarantees
 - [[sources/Claude Agent SDK Streaming vs Single Message]]
 - [[sources/LangGraph Interrupts]]
 - [[sources/OpenAI Codex App Server Docs]]
+- [[sources/Buzz Repository]]

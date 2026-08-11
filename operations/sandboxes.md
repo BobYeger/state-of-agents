@@ -10,6 +10,8 @@ Worktrees are useful for file and branch isolation, but they are not sandboxes. 
 
 The risk is not only a classical sandbox escape. A model can also be tricked into reading credentials, exfiltrating logs, modifying configuration, authorizing unintended actions, or using one tool's authority to affect another system.
 
+[[sources/Block Buzz]] documents the explicit no-sandbox endpoint of this design space: Buzz agents commonly run locally with permission checks bypassed so they inherit the host's files, skills, and credentials. Buzz authenticates which owner may directly instruct the agent, but signatures do not contain a correctly authenticated agent after indirect prompt injection or a mistaken request. This is a useful negative control for architecture reviews: command-origin integrity and execution containment solve different failure modes.
+
 Useful control points:
 
 - Separate working directories from sensitive user files.
@@ -40,3 +42,4 @@ Useful control points:
 - [[sources/Anthropic Managed Agents|Scaling Managed Agents: Decoupling the brain from the hands]]
 - [[sources/Manus Sandbox|Understanding Manus sandbox - your cloud computer]]
 - [[sources/OpenAI Codex App]]
+- [[sources/Block Buzz]]
