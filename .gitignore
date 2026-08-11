@@ -6,6 +6,7 @@
 # Common Obsidian/local generated folders
 .trash/
 .obsidian/cache/
+.code-diagram/
 
 # Generated NotebookLM bundles and local auth/browser state
 exports/notebooklm/
@@ -27,3 +28,7 @@ node_modules/
 talk/
 assets/multi-agent-architectures/
 scripts/build_multi_agent_contact_sheets.mjs
+
+# Local paper copies without downstream redistribution permission
+/raw/papers/LoopsBench - From Harness Engineering to Loop Engineering in Coding Agent Evaluation.pdf
+/raw/papers/MasDrift - Benchmarking Authorization Preservation Across Multi-Agent Architectures.pdf

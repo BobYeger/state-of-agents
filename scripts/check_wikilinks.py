@@ -12,7 +12,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 WIKILINK_RE = re.compile(r"!?\[\[([^\]|#]+)(?:[|#][^\]]*)?\]\]")
-DEFAULT_IGNORES = (".git", "node_modules", "talk")
+DEFAULT_IGNORES = (".git", ".claude", ".code-diagram", "node_modules", "talk")
 
 
 def is_ignored(path: Path, ignored_dirs: set[str]) -> bool:
