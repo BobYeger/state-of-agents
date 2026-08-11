@@ -29,6 +29,7 @@ Agent systems improve when successful procedures, failed attempts, learned rules
 - For executable improvements, require sandboxing, rollback, and evaluator-hardening before reuse.
 - Separate trusted project instructions from untrusted retrieved content.
 - Prefer compact, discoverable skills over stuffing every procedure into the base prompt.
+- Evaluate both positive activation and restraint: a skill system must retrieve the right procedure, execute it faithfully, and avoid invoking it on adjacent out-of-scope work.
 - Add provenance, validity, and deletion paths before allowing memory to influence future runs automatically.
 
 ## Related

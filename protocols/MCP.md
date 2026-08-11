@@ -4,32 +4,36 @@ Model Context Protocol is an interoperability protocol for connecting agents and
 
 Launched by Anthropic in November 2024 ([[sources/Anthropic Introducing MCP]]), MCP is now the de facto tool-protocol layer of the agent stack: 10,000+ active public servers and 97M+ monthly SDK downloads at the December 2025 foundation transfer, vendor-reported ([[sources/Anthropic MCP Donation and Agentic AI Foundation]]).
 
-## Spec State as of 2026-07
+## Spec State as of 2026-08
 
-The current final revision is **2025-11-25** ([[sources/MCP Specification 2025-11-25]]). Relative to the 2025-06-18 revision it made three changes that matter for harness design:
+The current final revision is **2026-07-28** ([[sources/MCP Specification 2026-07-28]]). It is a breaking revision whose central change is a stateless protocol core:
 
-- **Async tasks.** A Tasks primitive for long-running operations: instead of holding a connection open for the duration of a tool call, a server can accept work and let the client poll for completion — the protocol-level answer to tools that run for minutes or hours.
-- **Extensions.** A mechanism for optional capabilities negotiated outside the core spec, so vendor and domain features can ship without forking the protocol.
-- **Enterprise auth.** Authorization additions aimed at enterprise deployment, extending the OAuth-based model of the 2025-06-18 lineage toward centrally managed identity and client registration.
+- **No protocol handshake or session.** `initialize`/`notifications/initialized` and `Mcp-Session-Id` are retired. Protocol version and client capabilities are required on every request; client identity is recommended. Servers must implement `server/discover`, but calling it is optional for clients. Applications may still expose explicit state handles as tool arguments rather than relying on transport-hidden state.
+- **Stateless interaction.** Multi Round-Trip Requests replace server-initiated elicitation, sampling, and roots requests with an input-required result and a retry of the original operation. If a server supplies opaque `requestState`, the client echoes it unchanged; the server validates it when it affects security-sensitive logic.
+- **Gateway and cache surfaces.** Streamable HTTP requires `Mcp-Method` on every request and `Mcp-Name` on `tools/call`, `resources/read`, and `prompts/get`. Cache metadata applies to `tools/list`, `prompts/list`, `resources/list`, `resources/read`, and `resources/templates/list`; only `tools/list` has an explicit deterministic-order recommendation.
+- **Extensions and Tasks.** The extensions framework becomes formal. The final changelog calls `io.modelcontextprotocol/tasks` an official extension, but the current Tasks repository still labels itself experimental and not official; treat maturity as unresolved. MCP Apps and Enterprise Managed Authorization are other named extensions.
+- **Authorization and deprecation.** RFC 9207 issuer validation and issuer-bound credentials harden OAuth flows; Dynamic Client Registration, Roots, Sampling, and Logging are deprecated under a minimum 12-month window. HTTP+SSE had already been deprecated since `2025-03-26` and is now classified under that lifecycle policy. Deprecated features remain functional during the window but should not be adopted by new implementations.
 
-The next revision string is **2026-07-28**; its release candidate froze on 2026-05-21 with final publication scheduled after a 10-week SDK validation window ([[sources/MCP Specification 2026-07-28 Release Candidate]]). Its headline change is statelessness: the initialize handshake and session header are removed so servers can run behind plain load balancers; the extensions framework becomes official with reverse-DNS identifiers; **MCP Apps** (interactive UI surfaces served over MCP) and a redesigned stateless Tasks ship as the first two extensions; Roots, Sampling, and Logging are deprecated with 12-month removal windows; and authorization is hardened with RFC 9207 issuer validation. Until 2026-07-28 publishes, quote 2025-11-25 as normative.
+The TypeScript, Python, Go, and C# Tier 1 SDKs shipped support with the revision. Compatibility must still be negotiated: implementations built around the 2025-11-25 session model, experimental Tasks API, former server-initiated request flow, or SSE stream resumption need explicit migration.
 
-| Revision | Status as of 2026-07 | Vault source |
+| Revision | Status as of 2026-08 | Vault source |
 |---|---|---|
 | 2024-11 (launch) | Historical | [[sources/Anthropic Introducing MCP]] |
 | 2025-06-18 | Superseded; auth/security lineage | [[sources/MCP Authorization]], [[sources/MCP Security Best Practices]] |
-| 2025-11-25 | Current final revision | [[sources/MCP Specification 2025-11-25]] |
-| 2026-07-28 | RC frozen 2026-05-21, final scheduled 2026-07-28 | [[sources/MCP Specification 2026-07-28 Release Candidate]] |
+| 2025-11-25 | Superseded final revision | [[sources/MCP Specification 2025-11-25]] |
+| 2026-07-28 | Current final revision; published 2026-07-28 | [[sources/MCP Specification 2026-07-28]] |
 
-**Supersession note.** The vault's [[sources/MCP Authorization]] and [[sources/MCP Security Best Practices]] cards capture the 2025-06-18 lineage. Their threat framing and patterns remain useful, but the 2025-11-25 revision reworked authorization for enterprise deployment and 2026-07-28 tightens it further — do not quote those cards for current normative auth requirements. Re-verify auth and security claims against the live spec after 2026-07-28 ships.
+**Supersession note.** The vault's [[sources/MCP Authorization]] and [[sources/MCP Security Best Practices]] cards capture the 2025-06-18 lineage, while [[sources/MCP Specification 2026-07-28 Release Candidate]] records the pre-release design and validation window. Their threat framing and history remain useful, but quote [[sources/MCP Specification 2026-07-28]] and the versioned live specification for current normative requirements.
 
 ## Registry and Distribution
 
 The official MCP Registry launched in preview at registry.modelcontextprotocol.io in September 2025 and remains pre-GA as of 2026-07 ([[sources/MCP Registry]]): a central authoritative catalog with standardized server.json metadata, DNS/GitHub-based namespacing, and public or private sub-registries sharing the same API. Its moderation is a reactive denylist — flagged servers are removed after the fact — which makes server distribution a live supply-chain surface: [[sources/Invariant Labs MCP Tool Poisoning]] shows tool descriptions themselves carrying injected instructions, and [[sources/Koi Security Postmark MCP Backdoor]] documents a trojaned server exfiltrating mail in production. Registry presence is discoverability, not vetting.
 
+[[concepts/agent plugins|Agent Plugins 1.0]] adds a portable package configuration above MCP: an optional root `mcp.json` can carry client connection definitions, and a package may also carry Agent Skills ([[sources/Agent Plugins Specification]]). It does not change MCP's wire, lifecycle, or authorization semantics and should not be confused with the MCP Registry's server-authored `server.json` metadata.
+
 ## Governance
 
-Technical governance runs through the SEP process and a maintainer hierarchy formalized in July 2025, with working groups producing proposals and core maintainers voting ([[sources/MCP Governance and Stewardship]]). In December 2025 Anthropic donated MCP to the Agentic AI Foundation under the Linux Foundation, co-founded with Block and OpenAI; the donation moved IP and funding without changing the maintainer-led technical process ([[sources/Anthropic MCP Donation and Agentic AI Foundation]]). The 2026 roadmap shifted planning from fixed releases to working-group-driven development ([[sources/MCP Specification 2026-07-28 Release Candidate]]). Event-level history is in [[protocols/agent protocol governance]].
+Technical governance runs through the SEP process and a maintainer hierarchy formalized in July 2025, with working groups producing proposals and core maintainers voting ([[sources/MCP Governance and Stewardship]]). In December 2025 Anthropic donated MCP to the Agentic AI Foundation under the Linux Foundation, co-founded with Block and OpenAI; the donation moved IP and funding without changing the maintainer-led technical process ([[sources/Anthropic MCP Donation and Agentic AI Foundation]]). The 2026 roadmap shifted planning from fixed releases to working-group-driven development, and the 2026-07-28 revision completed the first 10-week SDK validation cycle under that process ([[sources/MCP Specification 2026-07-28 Release Candidate]], [[sources/MCP Specification 2026-07-28]]). Event-level history is in [[protocols/agent protocol governance]].
 
 Enterprise deployment patterns — gateways, access control, audit, and the "shadow MCP" sprawl problem — are covered by [[sources/Cloudflare Scaling MCP Adoption]].
 
@@ -40,12 +44,15 @@ Enterprise deployment patterns — gateways, access control, audit, and the "sha
 - [[protocols/A2A]]
 - [[concepts/tool use]]
 - [[concepts/dynamic tool discovery]]
+- [[concepts/agent plugins]]
 - [[safety/protocol security]]
 - [[operations/agent infrastructure]]
 
 ## Related Sources
 
 - [[sources/Anthropic Introducing MCP|Introducing the Model Context Protocol]]
+- [[sources/Agent Plugins Specification]]
+- [[sources/MCP Specification 2026-07-28|MCP Specification 2026-07-28]]
 - [[sources/MCP Specification 2025-11-25|MCP Specification 2025-11-25]]
 - [[sources/MCP Specification 2026-07-28 Release Candidate]]
 - [[sources/MCP Registry]]

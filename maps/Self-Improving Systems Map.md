@@ -45,6 +45,7 @@ The June 2026 cluster that turned self-improvement from research demo into engin
 - [[sources/Adaptive Auto-Harness]]: harness optimization extended to open-ended task streams.
 - [[sources/Retrospective Harness Optimization]]: self-supervised improvement from past trajectories, no labeled validation set.
 - [[sources/Harness Updating Is Not Harness Benefit]]: the corrective — generating harness updates and benefiting from them are separate capabilities; benefit is non-monotonic in model tier, so put the capable model on the task, not the meta-loop.
+- [[sources/Evo-Bench]]: benchmarks executable harness evolution with visible validation tasks and held-out evaluation while keeping the policy model fixed within each run; reruns under other policy models again improve their baselines, while gains vary strongly by domain and can saturate early.
 
 ### 4. Algorithm and Program Evolution
 

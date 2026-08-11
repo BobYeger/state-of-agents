@@ -40,3 +40,11 @@ Follow the related-source sections in the benchmark notes. Source cards in `sour
 - [[sources/LOCA-bench]]
 - [[sources/ContextBench]]
 - [[sources/Letta Context-Bench]]
+- [[sources/Toward Reliable Context Compression for Long-Horizon Agents]]
+
+## Harness-Conditioned Benchmarks
+
+- [[sources/LoopsBench]] evaluates sustained coding as a model–harness–outer-loop configuration over dependency-structured work and retained regression obligations.
+- [[sources/Skill-Use]] separates skill triggering, procedural compliance, and boundary adherence across models and harnesses.
+- [[sources/Evo-Bench]] holds a policy model fixed while measuring whether an evolver can improve executable harness code on held-out tasks.
+- [[sources/HarnessSafe]] evaluates safety across complete persistent-carrier lifecycles and treats the model–harness configuration as the comparison unit.

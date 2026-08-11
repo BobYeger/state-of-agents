@@ -25,7 +25,7 @@ candidate code/procedure -> run evaluator -> score/trace -> keep, branch, or rev
 | Subtype | Artifact that improves | Examples |
 |---|---|---|
 | Self-editing agent scaffold | The agent's own tools, prompts, memory, workflow, or code | [[sources/Darwin Godel Machine]], [[sources/SICA Self-Improving Coding Agent]], [[sources/Huxley-Godel Machine]], [[sources/Hyperagents]], [[sources/Meta-Harness]] |
-| Harness optimization | Context, retrieval, tools, completion checks, and model wrapper code | [[sources/Meta-Harness]], [[sources/AFlow]], [[sources/ADAS]], [[sources/Self-Harness]], [[sources/HarnessFix]], [[sources/Adaptive Auto-Harness]], [[sources/Retrospective Harness Optimization]] |
+| Harness optimization | Context, retrieval, tools, completion checks, and model wrapper code | [[sources/Meta-Harness]], [[sources/AFlow]], [[sources/ADAS]], [[sources/Self-Harness]], [[sources/HarnessFix]], [[sources/Adaptive Auto-Harness]], [[sources/Retrospective Harness Optimization]], [[sources/Evo-Bench]] |
 | Algorithm evolution | Candidate algorithms or programs | [[sources/AlphaEvolve]], [[sources/LoongFlow]] |
 | Autonomous research code | Experimental code, hypotheses, figures, and papers | [[sources/The AI Scientist-v2]], [[sources/Karpathy Autoresearch]] |
 | Skill/procedure evolution | Reusable skills, rules, or trajectory memories | [[sources/SkillOpt]], [[sources/Metis]], [[sources/Voyager]], [[sources/SAGE Skill Library]], [[sources/SkillRL]], [[sources/Cursor Bugbot Learned Rules]] |
@@ -43,6 +43,12 @@ The keep/branch/revert decision is where these loops differ most, and the lineag
 | Pareto frontier per instance | Sample candidates from the Pareto frontier of per-instance scores, preserving complementary strengths instead of one global best | [[sources/GEPA Reflective Prompt Evolution]]: frontier sampling avoids premature convergence and beats single-best iteration and MIPROv2 | Frontier can bloat on noisy evaluators; per-instance scores must be trustworthy |
 
 The design reading: aggregate score alone is a bad parent-selection signal, so keep per-instance results, and budget for an archive rather than a single champion. All four policies inherit the measurement problem in [[concepts/evaluator reliability]] — a selection policy applied to a noisy evaluator selects for noise.
+
+## Evaluating Harness Evolution
+
+[[sources/Evo-Bench]] turns harness evolution itself into a benchmark: an evolver edits a shared executable policy harness using 160 visible validation tasks and up to 20 formal evaluations, then one frozen revision is evaluated on 448 held-out tasks across Search, Office, and General-agent domains. Keeping the policy model fixed within a run separates gains in the surrounding procedure from gains due to swapping the worker model.
+
+The best reported evolver improves the seed harness by 16.6 points and approaches a composite human-engineered baseline. Separate evolution reruns under two evolvers and three policy models improve each policy's own CodeAct baseline; they do not transplant one frozen harness between models. The result also exposes the control problem: improvement varies sharply by domain, can saturate early, and does not increase monotonically with additional iterations. Because main configurations have one run, some grading is model-based, and task construction deliberately selects for harness sensitivity, the benchmark supports “harness evolution is measurable and robust to these policy-model changes,” not a general claim that autonomous evolution matches human harness engineering.
 
 ## Provenance and Lineage
 
@@ -93,3 +99,4 @@ The June 2026 harness-optimization papers push this method from research curiosi
 - [[concepts/lifelong agent learning]]
 - [[concepts/procedural memory]]
 - [[sources/Anthropic When AI Builds Itself]]
+- [[sources/Evo-Bench]]

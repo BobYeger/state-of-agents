@@ -16,6 +16,7 @@ Agent context management is not a single technique like summarization. It is a d
 - [[sources/Claude Fable 5 Prompting Guide]] shows model-specific context behavior: external Markdown lessons help long runs, while exposing a remaining-token countdown can trigger premature summarization or handoff.
 - [[sources/Context Engineering MCP CLAUDE-md Skills Hooks Talk]] distinguishes always-visible metadata, progressively disclosed procedures, deterministic just-in-time feedback, and context-isolated delegation as different loading policies.
 - [[sources/Factory How Missions Work]] uses fresh role contexts plus authoritative shared artifacts so no one trajectory must carry the full mission state.
+- [[sources/Toward Reliable Context Compression for Long-Horizon Agents]] evaluates individual compaction events through paired closed-loop continuations from the same environment state, showing why behavioral continuity is a stronger target than summary similarity.
 
 ## Implications
 
@@ -24,6 +25,7 @@ Agent context management is not a single technique like summarization. It is a d
 - Prefer clearing or masking for stale, bulky, re-fetchable tool outputs.
 - Prefer handoff when a long thread has become a poor unit of work.
 - Treat subagent boundaries and model-visible budget signals as context-policy choices, not neutral UI details.
+- Test lossy context transitions at the boundary: compare what equivalent continuations can execute before and after compaction, then retain the resulting failures as regression cases.
 
 ## Related
 

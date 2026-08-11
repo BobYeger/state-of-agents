@@ -17,6 +17,17 @@ The offline half needs three patterns for a promotion pipeline: regression testi
 
 Neither half substitutes for the other. Offline evals catch regressions before exposure but only on the distribution you thought to curate; online telemetry catches drift on real traffic but cannot compare against references. The bridge between them is the trace-to-dataset loop below.
 
+## Choose the Behavioral Boundary
+
+An end-state score is necessary but often too coarse to identify which harness boundary failed. Recent benchmarks make the evaluated unit explicit:
+
+- [[sources/Toward Reliable Context Compression for Long-Horizon Agents]] compares paired continuations from the same environment state with raw versus compressed history, estimating the immediate execution burden introduced at one compaction boundary.
+- [[sources/Skill-Use]] separately scores whether a skill was triggered, followed, and kept within its declared boundaries; task success alone can credit an agent that never used the governed procedure.
+- [[sources/LoopsBench]] activates test obligations for evaluator-side scoring along a dependency frontier while retaining completed predecessors as regression obligations; manifests and attached tests remain visible to the agent.
+- [[sources/HarnessSafe]] traces persistent-risk chains stage by stage across entry, persistence, boundary crossing, trigger, and violation instead of collapsing containment into one final attack-success number.
+
+The operational rule is to place intermediate graders at state transitions where information, authority, or obligations can be lost. Final outcomes still decide usefulness, but boundary-local signals make a failed trajectory actionable and turn the responsible transition into a regression case.
+
 ## Trace-Derived Regression Suites
 
 The most valuable eval cases are not authored — they are harvested. A production failure that gets labeled and added to the golden set becomes a permanent regression test: that failure mode can never silently return.

@@ -16,6 +16,7 @@ Agent protocol governance is how agent protocols move from vendor proposals to o
 | 2026-03-12 | A2A v1.0.0 ships | First stable major release under LF governance | [[sources/A2A Specification]] is the versioned v1.0.0 spec |
 | 2026-03-23 | CNCF publishes cloud native agentic standards | First vendor-neutral deployment-standards framework naming a concrete protocol stack: MCP, A2A, AP2, SPIFFE/SPIRE | [[sources/CNCF Cloud Native Agentic Standards]] is the endorsement snapshot, self-described as high-churn |
 | 2026-05-21 | MCP 2026-07-28 release candidate freezes | Next revision developed under working-group process with a 10-week SDK validation window before the scheduled 2026-07-28 final | [[sources/MCP Specification 2026-07-28 Release Candidate]] details the RC content and the roadmap shift to working-group-driven development |
+| 2026-07-28 | MCP 2026-07-28 final specification ships | Stateless core, formal extensions, authorization hardening, cacheable list results, and a 12-month deprecation policy complete the first release under the 10-week SDK-validation process | [[sources/MCP Specification 2026-07-28]] records the final normative state and Tier 1 SDK support |
 
 ## What the 2025 Events Teach
 
@@ -43,6 +44,7 @@ The counterweight: infrastructure support is not production traffic. [[sources/C
 ## Related Sources
 
 - [[sources/Anthropic Introducing MCP]]
+- [[sources/MCP Specification 2026-07-28]]
 - [[sources/MCP Specification 2025-11-25]]
 - [[sources/MCP Specification 2026-07-28 Release Candidate]]
 - [[sources/MCP Governance and Stewardship]]

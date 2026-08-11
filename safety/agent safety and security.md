@@ -14,6 +14,14 @@ Agent safety covers the risks created when models can act, use tools, access pri
 - [[methods/deliberative control]]
 - [[operations/sandboxes]]
 
+## Persistent Harness Carriers
+
+Agent security is temporal as well as per-request. [[sources/HarnessSafe]] models a Persistent-Risk Lifecycle in which attacker-influenced content enters during one task, survives through memory, skills, MCP/tools, summaries, subagents, or shared artifacts, and is activated later by an otherwise benign request. Its 328 executable cases use trace-based stage scoring to show where a chain enters, persists, crosses a boundary, triggers, and finally causes a violation.
+
+The main design lesson is that containment belongs to the model–harness configuration and to the entire carrier lifecycle. A scanner or prompt defense at ingestion is not sufficient if transformed content later crosses into a trusted summary, generated skill, delegated context, or shared artifact. Provenance, taint, expiry, re-validation at trust-boundary crossings, and stage-level traces must follow persistent state after the original session ends. The benchmark is a new preprint with mostly one run per configuration, so its per-harness ordering should not be treated as a stable product ranking.
+
+Delegation creates a related non-adversarial failure: [[sources/MasDrift]] shows authorization constraints drifting as goals move through multi-agent architectures. Together the two results argue that persisted content and delegated authority need external provenance that survives model-written summaries and handoffs.
+
 ## Related Sources
 
 - [[sources/AI Control Despite Intentional Subversion|AI Control: Improving Safety Despite Intentional Subversion]]
@@ -25,6 +33,7 @@ Agent safety covers the risks created when models can act, use tools, access pri
 - [[sources/Anthropic Petri|Petri: An Open-Source Auditing Tool to Accelerate AI Safety Research]]
 - [[sources/BrowseSafe|BrowseSafe: Understanding and Preventing Prompt Injection Within AI Browser Agents]]
 - [[sources/Architecting Resilient LLM Agents|Architecting Resilient LLM Agents]]
+- [[sources/HarnessSafe|HarnessSafe: Evaluating Safety Across Persistent Carriers in Agent Harnesses]]
 - [[sources/CaMeL|Defeating Prompt Injections by Design (CaMeL)]]
 - [[sources/Chain of Thought Monitorability|Chain of Thought Monitorability: A New and Fragile Opportunity for AI Safety]]
 - [[sources/Check Point Claude Code Project Files RCE|RCE and API Token Exfiltration Through Claude Code Project Files]]
@@ -40,6 +49,7 @@ Agent safety covers the risks created when models can act, use tools, access pri
 - [[sources/LlamaFirewall|LlamaFirewall: An open source guardrail system for building secure AI agents]]
 - [[sources/METR Frontier Risk Report 2026|Frontier Risk Report (February to March 2026)]]
 - [[sources/METR Recent Reward Hacking|Recent Frontier Models Are Reward Hacking]]
+- [[sources/MasDrift|MasDrift: Benchmarking Authorization Preservation Across Multi-Agent Architectures]]
 - [[sources/Monitoring Reasoning Models for Misbehavior|Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation]]
 - [[sources/OpenAI Deep Research System Card|Deep research System Card]]
 - [[sources/PEAR|PEAR: Planner-Executor Agent Robustness Benchmark]]

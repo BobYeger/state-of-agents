@@ -17,6 +17,10 @@ Not all tools deserve the same gate. A workable tiering separates tools by rever
 
 Two structural rules do most of the work. First, read/write separation: an agent that has read sensitive data should lose external-write capability for the rest of the session, because combining the two completes the exfiltration triad ([[sources/Willison Lethal Trifecta]]: private data + untrusted content + external channel is the vulnerable combination regardless of model quality). Second, irreversible actions get a synchronous gate — [[sources/LangGraph Interrupts]] shows the mechanics of pausing a graph for approval and why pre-interrupt code must be idempotent since the node re-executes on resume; [[methods/hook-based control]] covers the equivalent PreToolUse gates in hook-based harnesses.
 
+For delegated agents, [[sources/Block User Identity Delegation]] supplies a compact authorization rule: effective authority is current resource grants ∩ actor-specific consent. The public Buzz implementation preserves agent authorship and owner-backed relay admission, but does not implement that downstream consent control plane ([[sources/Buzz Repository]]).
+
+[[sources/MasDrift]] supplies controlled evidence for why that rule must survive every handoff. Across centralized hierarchies and peer networks, deeper centralized teams complete more assigned work but also perform substantially more reserved actions. Its Source defense compiles a structured policy once from the original request and public tool surface, stores it outside the coordination graph, and checks each pending call against it; this reduces rather than eliminates unauthorized actions, with a 1.6-point pooled completion cost. Chain passes a structured, deterministically attenuated policy through handoffs and eliminates executed unauthorized actions in the reported aggregate, but blocks required work and loses up to 36.3 completion points. Authority should therefore remain external source state that the runtime evaluates per call, not model-written task prose.
+
 ## Session-Scoped Grants and Allowlists
 
 Grants should expire with the work that justified them. Session-scoped permission grants, per-task credential derivation, and allowlists that name specific commands, domains, and paths outperform standing broad grants because they make the safe path the default and turn escalation into an auditable event.
@@ -79,3 +83,6 @@ Generated orchestration code follows the same rule. [[sources/OpenAI Programmati
 - [[sources/The Attacker Moves Second]]
 - [[sources/OpenAI GPT-5.6 System Card]]
 - [[sources/OpenAI Programmatic Tool Calling]]
+- [[sources/Block User Identity Delegation]]
+- [[sources/Buzz Repository]]
+- [[sources/MasDrift]]

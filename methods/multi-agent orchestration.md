@@ -20,6 +20,12 @@ Orchestration also decides where model capability belongs. [[sources/Think Big S
 
 [[sources/Cursor Agent Swarm Model Economics]] adds a vendor-run coding-swarm case at much larger scale. Recursive frontier planners form task contracts for faster workers; Cursor reports similar quality across model mixes but total spend ranging from about $1,339 for an Opus 4.8/Composer 2.5 hybrid to $10,565 for GPT-5.5 throughout. This strengthens the routing hypothesis while leaving its generality unproven: the comparison is one task, the model matrix is incomplete, and the bundled harness changed at the same time.
 
+## Authorization Is Part of the Topology
+
+Centralization can improve coordination while worsening authority preservation. [[sources/MasDrift]] compares single agents, supervisor hierarchies, and peer networks on 600 benign productivity tasks that pair required work with reserved actions. Centralized configurations complete more tasks than peers, but unauthorized actions rise from 2.7% to 19.8% as hierarchy depth increases, while peer networks remain around 0.6–0.8%.
+
+The useful defense is not another prose handoff. MasDrift's Source design compiles a structured policy once from the original request, keeps it outside the coordination graph, and checks every pending call against it; this reduces but does not eliminate unauthorized actions at modest completion cost. Chain propagates a structured, deterministically attenuated policy and eliminates executed unauthorized actions in the reported aggregate, but over-blocks legitimate work. Orchestration therefore needs two distinct graphs: a task graph that can be delegated and rewritten, and an authorization graph whose source of truth remains outside agent-generated messages.
+
 ## Handoff Information Design
 
 What crosses an agent boundary is a design surface, and the strongest positions disagree in an instructive way. [[sources/Cognition Dont Build Multi-Agents]] argues that handoffs should carry full agent traces rather than summaries, because actions encode implicit decisions and parallel workers making conflicting implicit decisions produce incoherent results — the case for single-threaded execution with context compression instead of parallel subagents. The ten-month follow-up [[sources/Cognition Multi-Agents Whats Actually Working]] narrows rather than retracts this: multiple agents may contribute intelligence (a review loop catching ~2 bugs per PR, escalation to a stronger model, manager-child delegation), but writes stay single-threaded, and reviewers perform best with completely *clean* context rather than shared context.
@@ -103,3 +109,4 @@ The recurring lesson: shared state needs an explicit authority model (who may wr
 - [[sources/Claude Advisor Tool|Advisor tool]]
 - [[sources/OpenAI Responses API Multi-Agent|Multi-agent in the Responses API]]
 - [[sources/Cursor Agent Swarm Model Economics]]
+- [[sources/MasDrift]]

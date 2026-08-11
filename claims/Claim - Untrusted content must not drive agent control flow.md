@@ -15,6 +15,7 @@ Prompt injection is unsolved at the model layer, so agent security comes from ar
 - [[sources/Invariant Labs MCP Tool Poisoning]] shows control-flow capture does not require user-visible content: instructions hidden in MCP tool descriptions redirect a co-connected trusted server's actions.
 - [[sources/Check Point Claude Code Project Files RCE]] extends the surface to configuration: repository-provided hooks and settings executed on project open are untrusted content driving harness control flow directly (CVE-2025-59536).
 - [[sources/PEAR]] quantifies why the planning stage is the crown jewel: planner-stage attacks are disproportionately damaging in planner-executor agents.
+- [[sources/HarnessSafe]] extends the boundary across time: attacker influence can survive through memory, skills, tools/MCP, summaries, subagents, and shared artifacts, then drive a later benign task after the original input has left active context.
 
 ## Design Implications
 
@@ -23,6 +24,7 @@ Prompt injection is unsolved at the model layer, so agent security comes from ar
 - Treat tool descriptions, MCP server metadata, repository config, and lifecycle automation as untrusted inputs with the same standing as web content.
 - Use the lethal-trifecta test at review time: if an agent combines private data, untrusted content, and egress, require a by-design control, not a classifier.
 - Accept and budget the utility cost — the CaMeL/FIDES line shows expressiveness can be partially recovered, but some tasks are unsecurable without constraining them.
+- Preserve provenance and re-validate persistent state when it crosses sessions, carriers, agents, or workspaces; ingestion-time filtering does not contain a payload that later reappears through a trusted summary or artifact.
 
 ## Related
 

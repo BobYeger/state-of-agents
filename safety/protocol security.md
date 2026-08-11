@@ -14,7 +14,7 @@ The MCP ecosystem inherits package-registry threats and adds a new one: tool met
 | Skill-marketplace campaigns | Malicious agent skills distributed through official marketplaces, with the agent itself surfacing the fake install step to the user | In the wild at scale: [[sources/Koi Security ClawHavoc]] — 341 of 2,857 ClawHub skills malicious at first scan (7.7–11.9% across snapshots), 335 in one macOS-stealer campaign |
 | Client-config execution | Repository- or project-provided configuration executes on open: lifecycle hooks, auto-enabled MCP servers, redirected API endpoints | Disclosed and patched: [[sources/Check Point Claude Code Project Files RCE]] (CVE-2025-59536, CVSS 8.7), plus 30+ MCP-ecosystem CVEs tallied in early 2026 |
 
-Distribution-side mitigation is thin: [[sources/MCP Registry]] namespaces servers to DNS/GitHub identity but moderates by reactive community denylisting, which the Postmark incident postdates trust decisions by construction. Client-side scanning (Invariant's mcp-scan), pinned tool descriptions, and treating minor version bumps of agent-invoked packages as trust events are the current practical controls. [[sources/MCP Specification 2026-07-28 Release Candidate]] hardens authorization (RFC 9207 issuer validation) but does not address tool-description trust. Offense already uses the same plumbing: [[sources/Anthropic Disrupting AI Espionage]] documents a state-sponsored campaign running Claude Code with off-the-shelf MCP tools at 80–90% autonomy.
+Distribution-side mitigation is thin: [[sources/MCP Registry]] namespaces servers to DNS/GitHub identity but moderates by reactive community denylisting, which the Postmark incident postdates trust decisions by construction. Client-side scanning (Invariant's mcp-scan), pinned tool descriptions, and treating minor version bumps of agent-invoked packages as trust events are the current practical controls. [[sources/MCP Specification 2026-07-28]] hardens authorization with RFC 9207 issuer validation and issuer-bound credentials, but does not address tool-description trust. Offense already uses the same plumbing: [[sources/Anthropic Disrupting AI Espionage]] documents a state-sponsored campaign running Claude Code with off-the-shelf MCP tools at 80–90% autonomy.
 
 ## Agent Identity and Delegation
 
@@ -56,6 +56,6 @@ Design rule of thumb: identity answers "which agent, for whom, with what standin
 - [[sources/MCP Authorization|MCP Authorization]]
 - [[sources/MCP Registry|Introducing the MCP Registry]]
 - [[sources/MCP Security Best Practices|MCP Security Best Practices]]
-- [[sources/MCP Specification 2026-07-28 Release Candidate|The 2026-07-28 MCP Specification Release Candidate]]
+- [[sources/MCP Specification 2026-07-28|The 2026-07-28 MCP Specification]]
 - [[sources/Microsoft Entra Agent ID|What is Microsoft Entra Agent ID?]]
 - [[sources/TAMAS|TAMAS: Benchmarking Adversarial Risks in Multi-Agent LLM Systems]]

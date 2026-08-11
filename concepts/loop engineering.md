@@ -48,6 +48,12 @@ The current graph has several loop-engineering forms:
 - [[concepts/code factories]]: lifts loop engineering into an organization-level SDLC control plane.
 - [[sources/Anthropic When AI Builds Itself]]: shows AI development itself becoming a goal -> implementation -> experiment -> review loop, with human judgement and verification as the bottleneck.
 
+## Evaluating Sustained Loops
+
+[[sources/LoopsBench]] makes the loop, rather than the isolated task endpoint, an explicit evaluation unit. Its 112 coding tasks are dependency DAGs over separately testable development units. Unit manifests and attached tests are visible up front; the evaluator activates obligations for scoring along the ready frontier and keeps completed predecessors active as regression obligations. That structure distinguishes forward progress from a loop that repeatedly repairs one area while breaking another.
+
+The benchmark's strongest evaluated model–harness–continuation configuration resolves only 25% of tasks, recorded plans recover only part of the source-derived dependency structure, and regressions remain visible across loop profiles. The design implication is narrower than “keep looping longer”: evaluate the model, harness, outer continuation policy, planning fidelity, and retained verification obligations as one configuration. Endpoint pass/fail alone hides whether a long run decomposed the work coherently or accumulated regression debt.
+
 ## Risks
 
 - A loop can amplify a weak objective faster than a single prompt.
@@ -74,3 +80,4 @@ The current graph has several loop-engineering forms:
 - [[methods/ralph loop]]
 - [[methods/self-improving code loops]]
 - [[methods/multi-agent orchestration]]
+- [[sources/LoopsBench]]

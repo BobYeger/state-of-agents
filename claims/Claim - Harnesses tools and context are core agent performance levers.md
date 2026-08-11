@@ -21,6 +21,9 @@ Agent systems improve when the harness, tools, and context are engineered as car
 - [[sources/OpenAI GPT-5.6 System Card]] shows the safety side of the same thesis: persistence-oriented prompting can amplify scope expansion and unsupported completion claims unless the harness supplies permission and verification boundaries.
 - [[sources/Context Engineering MCP CLAUDE-md Skills Hooks Talk]] frames MCP, Skills, Hooks, and Agents as different context and lifecycle mechanisms, and connects existing developer feedback tools to the agent loop.
 - [[sources/Factory How Missions Work]] shows the same thesis at system scale through fresh contexts, externalized state, role-specific models, and deterministic milestone validation.
+- [[sources/LoopsBench]] shows that model, coding harness, and outer continuation policy jointly determine sustained progress and regression on the same dependency-structured tasks.
+- [[sources/Skill-Use]] shows that skill triggering, compliance, boundaries, and even model rankings change with the harness rather than behaving as fixed model capabilities.
+- [[sources/Evo-Bench]] holds the policy model fixed during each executable harness-evolution run and finds strongly domain-dependent held-out gains; rerunning evolution with other policy models again improves each model's own baseline.
 
 ## Design Implications
 

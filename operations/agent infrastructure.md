@@ -20,7 +20,7 @@ A parallel track makes the agent a first-class cluster workload rather than a pr
 - [[sources/kagent]]: agents, model configs, and tool servers as Kubernetes CRDs — versioned in Git, reviewed in PRs, deployed by GitOps — with A2A for delegation, OTel tracing built in, and CNCF Sandbox status. The durable idea is that agent definitions become declarative, reviewable infrastructure.
 - [[sources/Kubernetes Agent Sandbox]]: upstream Kubernetes (SIG Apps) standardizing a Sandbox CRD for isolated, stateful, mostly-idle singleton agents, with gVisor/Kata isolation, warm pools against cold starts, and scale-to-zero with preserved state — the argument being that StatefulSets and Services mismatch agent workload shape.
 
-Gateways are becoming the corresponding data plane: [[sources/agentgateway]] (Linux Foundation/AAIF) proxies LLM, MCP, and A2A traffic with per-tool policies and CEL authorization; [[sources/Envoy AI Gateway 1.0]] adds token-aware quotas and a full MCP gateway on Envoy. Protocol design is converging on this deployment model from the other side: [[sources/MCP Specification 2026-07-28 Release Candidate]] removes MCP's session handshake so servers run stateless behind plain load balancers.
+Gateways are becoming the corresponding data plane: [[sources/agentgateway]] (Linux Foundation/AAIF) proxies LLM, MCP, and A2A traffic with per-tool policies and CEL authorization; [[sources/Envoy AI Gateway 1.0]] adds token-aware quotas and a full MCP gateway on Envoy. Protocol design is converging on this deployment model from the other side: [[sources/MCP Specification 2026-07-28]] removes protocol-level session state, permitting compatible servers to run behind plain load balancers when application state is explicit. Streamable HTTP mirrors the method and, for tool calls, resource reads, and prompt gets, the relevant name or URI into headers for gateway routing and policy.
 
 ## Self-Hosted vs Managed
 
@@ -83,4 +83,4 @@ The practical middle is hybrid: managed model access behind a self-hosted gatewa
 - [[sources/Kubernetes Agent Sandbox]]
 - [[sources/agentgateway]]
 - [[sources/Envoy AI Gateway 1.0]]
-- [[sources/MCP Specification 2026-07-28 Release Candidate]]
+- [[sources/MCP Specification 2026-07-28]]

@@ -9,6 +9,7 @@ The organizing distinction is between prompt compression and agent context manag
 | Method | What It Does | Anchor Sources |
 |---|---|---|
 | Structured summarization | Rewrites earlier history into task-state summaries. | [[concepts/context compaction]], [[sources/Factory Context Compression Evaluation]] |
+| Boundary-local compaction evaluation | Compares paired continuations from the same environment state with raw versus compressed history to estimate the marginal execution burden introduced at that transition. | [[concepts/context compaction]], [[sources/Toward Reliable Context Compression for Long-Horizon Agents]] |
 | Provider-native compaction | Lets the model/provider emit a compact state representation or compaction item. | [[concepts/context compaction]], [[sources/OpenAI Responses API Computer Environment]] |
 | Per-agent context isolation | Gives each delegated worker an independent history and compaction lifecycle, reducing cross-task interference while making handoff design more important. | [[concepts/subagent context isolation]], [[sources/OpenAI Responses API Multi-Agent]], [[sources/Claude Fable 5 Prompting Guide]] |
 | Parallel compaction | Splits compaction into blocks to improve latency and make summary volume more predictable. | [[concepts/context compaction]], [[sources/Parallel Context Compaction]] |

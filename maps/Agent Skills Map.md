@@ -15,6 +15,7 @@ Related synthesis: [[claims/Claim - Agent memory and skills create compounding i
 - [[sources/Anthropic Agent Skills]]
 - [[sources/Anthropic Building Effective AI Agents eBook]]
 - [[sources/Agent Skills Specification]]
+- [[sources/Agent Plugins Specification]]
 - [[sources/Anthropic Skills Repository]]
 - [[sources/OpenAI Skills Docs]]
 - [[sources/OpenAI Skills Catalog]]
@@ -27,6 +28,7 @@ Related synthesis: [[claims/Claim - Agent memory and skills create compounding i
 
 - [[sources/Agent Skills for Large Language Models]]
 - [[sources/SkillsBench]]
+- [[sources/Skill-Use]]
 - [[sources/SkillOpt]]
 - [[sources/Agentic Skills in the Wild]]
 - [[sources/Comprehensive Survey on Agent Skills]]
@@ -47,6 +49,7 @@ Related synthesis: [[claims/Claim - Agent memory and skills create compounding i
 ## Concept Threads
 
 - [[concepts/agent skills]]
+- [[concepts/agent plugins]]
 - [[concepts/procedural memory]]
 - [[methods/self-improving code loops]]
 - [[concepts/versioned context]]
@@ -59,14 +62,16 @@ Related synthesis: [[claims/Claim - Agent memory and skills create compounding i
 
 1. Anthropic Agent Skills
 2. Agent Skills Specification
-3. OpenAI Skills Docs
-4. GitHub Copilot Agent Skills Docs
-5. SkillsBench
-6. SkillOpt
-7. Agentic Skills in the Wild
-8. Agent Skills for Large Language Models
-9. Comprehensive Survey on Agent Skills
-10. SAGE Skill Library
-11. SkillRL
-12. OpenAI Codex Record and Replay
-13. Metis
+3. Agent Plugins Specification
+4. OpenAI Skills Docs
+5. GitHub Copilot Agent Skills Docs
+6. SkillsBench
+7. Skill-Use
+8. SkillOpt
+9. Agentic Skills in the Wild
+10. Agent Skills for Large Language Models
+11. Comprehensive Survey on Agent Skills
+12. SAGE Skill Library
+13. SkillRL
+14. OpenAI Codex Record and Replay
+15. Metis

@@ -18,6 +18,7 @@ Two design lessons transfer. First, the methodology survives benchmark churn: ta
 | [[sources/TheAgentCompany]] | Multi-checkpoint professional workflows across websites, code, and coworker communication | The gap between simple-task competence and full workflow completion |
 | [[sources/Terminal-Bench]] | Hard multi-step terminal tasks graded by final container state | Sustained environment manipulation; its 2.1 release showed long-horizon task suites decay and need continuous validation |
 | The SWE-bench line (see [[benchmarks/coding agent benchmarks]]) | Repository issues through to passing held-out tests; [[sources/SWE-bench Pro]] extends to deliberately long-horizon tasks with frontier launch scores below 25% | Long-horizon coding specifically, with the contamination and grading caveats documented in that note |
+| [[sources/LoopsBench]] | 112 coding tasks represented as dependency DAGs over more than 5,300 separately testable units | Sustained development flow: prerequisite-aware planning, ready-frontier progress, outer continuation, and regression across already completed units |
 | [[sources/LongMemEval]] | Question answering over long multi-session chat histories | The memory axis: overall accuracy drops ~30% when memorizing information across sustained interactions, tested along information extraction, multi-session reasoning, temporal reasoning, knowledge updates, and abstention |
 | [[sources/PaperBench]], [[sources/MLR-Bench]] | Research replication and open-ended ML research | Multi-day expert work graded by rubric |
 | [[sources/BrowseComp]], [[sources/OpenAI Deep Research System Card]] | Extended browsing and research sessions | Long-horizon information seeking |
@@ -46,6 +47,7 @@ Two design lessons transfer. First, the methodology survives benchmark churn: ta
 - [[sources/OpenAI Deep Research System Card|Deep research System Card]]
 - [[sources/Evaluation and Benchmarking of LLM Agents - A Survey|Evaluation and Benchmarking of LLM Agents: A Survey]]
 - [[sources/LongMemEval]]
+- [[sources/LoopsBench]]
 - [[sources/METR Frontier Risk Report 2026]]
 - [[sources/METR Measuring Long Task Completion]]
 - [[sources/METR Time Horizon 1.1]]

@@ -13,6 +13,7 @@ Agent teams improve systems only when team structure is explicit: roles, task ow
 - [[sources/Think Big Search Small]] shows that role design includes capacity allocation: delegation was more than four times as sensitive to model scale as execution on controlled hierarchical-search tasks.
 - [[sources/Claude Advisor Tool]] implements a narrow executor/advisor organization in which the stronger model is consulted at selected decision points rather than generating every token.
 - [[sources/Factory How Missions Work]] gives a vendor-operated orchestrator/worker/validator system with explicit role authority, externalized state, milestone gates, and a predeclared validation contract; its outcome telemetry is a single vendor-reported run.
+- [[sources/MasDrift]] shows that task organization and authorization organization are separate: deeper centralized hierarchies improve completion while increasing reserved actions; Source re-anchoring reduces but does not eliminate those actions, while Chain prevents them at a large utility cost.
 
 ## Implications
 
@@ -21,6 +22,7 @@ Agent teams improve systems only when team structure is explicit: roles, task ow
 - Add verification and conflict resolution before adding more teammates.
 - Treat team observability as part of the product, not an afterthought.
 - Allocate model capacity by role and information bottleneck, not uniformly across teammates.
+- Keep delegated task state separate from authoritative permission state; re-evaluate effective authority at the action boundary.
 
 ## Related
 
