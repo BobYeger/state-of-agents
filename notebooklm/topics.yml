@@ -233,6 +233,32 @@ topics:
       - note: "sources/Anthropic Managed Agents Dreaming Outcomes.md"
         why: "Dreaming and outcomes as managed-agent operating concepts."
 
+  - id: agent-memory-evaluation
+    title: "Agent Memory: Architecture and Evaluation"
+    focus: "How agent memory is built, governed, and tested across conversational recall, incremental operations, interdependent action, and environment experience."
+    podcast_angle: "Use the report and benchmark registry to explain why no single memory score establishes a good memory system."
+    questions:
+      - "Which memory abilities does each benchmark actually isolate?"
+      - "Why are scores incomparable without the model, harness, budget, judge, runs, and cost basis?"
+      - "What changes when memory must guide later action rather than answer a recall question?"
+    sources:
+      - note: "reports/Agent Memory Report.md"
+        why: "Full synthesis of memory architecture, governance, safety, economics, and evaluation."
+      - note: "reports/Agent Memory Technical Brief.md"
+        why: "Compact builder-facing memory schema, controls, and test plan."
+      - note: "benchmarks/agent memory benchmarks.md"
+        why: "Versioned benchmark registry and result-intake contract."
+      - note: "sources/LoCoMo.md"
+        why: "Canonical conversational-memory benchmark and its release-version caveats."
+      - note: "sources/BEAM.md"
+        why: "Extreme-scale conversational benchmark spanning ten memory abilities."
+      - note: "sources/MemoryAgentBench.md"
+        why: "Incremental evaluation of retrieval, learning, understanding, and forgetting."
+      - note: "sources/MemoryArena.md"
+        why: "Tests whether persistent memory improves interdependent multi-session action."
+      - note: "sources/LongMemEval-V2.md"
+        why: "Extends memory evaluation to environment experience, workflows, and gotchas."
+
   - id: protocol-stack
     title: "Agent Protocol Stack"
     focus: "Interoperability surfaces for tools, agents, UI, clients, commerce, and governance."

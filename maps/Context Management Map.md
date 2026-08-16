@@ -29,6 +29,10 @@ The organizing distinction is between prompt compression and agent context manag
 | Handoff | Starts a focused new session with a continuation package. | [[concepts/handoff over compaction]], [[sources/Amp Handoff]] |
 | Task-aware pruning | Selects lines or evidence according to the current goal. | [[concepts/task-aware context pruning]], [[sources/SWE-Pruner]] |
 | Context retrieval | Measures and improves whether the agent finds useful context. | [[concepts/context retrieval]], [[sources/ContextBench]] |
+| Memory activation / prospective intention | Surfaces decision-critical memory or a deferred action from query, time, event, state, or always-visible policy. | [[sources/Keep It InMind]], [[sources/PM-Bench]] |
+| Source-backed revalidation | Checks a mutable memory against its authoritative live substrate before use. | [[sources/GitHub Copilot Agentic Memory]] |
+| Immutable archive + agent search | Preserves full-fidelity history and shifts semantic work from index construction to query-time controlled search. | [[sources/When Your Agent Opens the Chat App]], [[sources/LongMemEval-V2]] |
+| Structured boundary filtering | Uses namespaces for tenant/security isolation, then deterministic metadata for consolidation partitions and semantic-search prefilters within the namespace. | [[sources/AWS AgentCore Structured Memory Filtering]] |
 | Context evolution | Decides when to retrieve new evidence vs think with existing context. | [[concepts/context evolution]], [[sources/To Retrieve or To Think]] |
 
 ## Background
@@ -43,21 +47,29 @@ Prompt compression is useful background, but it should not dominate the agent gr
 
 ## Benchmarks
 
+- [[benchmarks/agent memory benchmarks]] is the versioned comparison spine for memory abilities, splits, model–harness configurations, judges, runs, latency, and cost.
 - [[sources/LOCA-bench]] evaluates agents under controlled context growth.
 - [[sources/ContextBench]] evaluates coding-agent context retrieval.
 - [[sources/Letta Context-Bench]] evaluates agentic context engineering with file tools.
-- [[sources/LongMemEval]] evaluates long-term memory across sessions, including knowledge updates and abstention; memory-substrate selection guidance lives in [[operations/agent memory]].
+- [[sources/LoCoMo]] and [[sources/LongMemEval]] evaluate conversational memory; LongMemEval includes knowledge updates and abstention.
+- [[sources/BEAM]] stresses ten abilities from 128K to 10M tokens, while [[sources/MemoryAgentBench]] tests incremental retrieval, learning, global understanding, and forgetting.
+- [[sources/MemoryArena]] tests whether memory guides later actions across interdependent sessions; [[sources/LongMemEval-V2]] tests retrieval of environment experience and procedural runbooks.
+
+Memory-substrate selection guidance lives in [[operations/agent memory]].
 
 ## Synthesis
 
-The core question is not "Should we compact?" It is: what information is lossy, what is re-fetchable, what needs exact preservation, and where should the state live?
+The core question is not "Should we compact?" It is: what information is lossy, what is re-fetchable, what needs exact preservation, what must activate without a matching query, and where should the state live?
 
 For coding agents, exact files, test results, decisions, and current goals are often more important than broad narrative summaries. For research agents, citations, document provenance, and dead ends may matter more. A maintainable harness should expose the method, trigger, preserved fields, risks, and evaluation criteria.
 
-The June 2026 memory sources sharpen the map: memory is no longer only retrieval. It is construction scheduling, freshness, budget-aware rendering, provenance, maintenance, poisoning resistance, and sometimes a visible dashboard that lets the agent manage its own context state. The July 2026 orchestration sources add a second boundary: a multi-agent system also needs an explicit policy for which state stays private to a worker, what crosses handoffs, and whether each worker compacts independently.
+The August 2026 memory sources sharpen the map: memory is no longer only retrieval. It includes activation before query similarity exists, prospective intentions, construction scheduling, freshness, read-time verification, operational authority, derivation-aware deletion, budget-aware rendering, and operation-level evaluation. The orchestration sources add a second boundary: a multi-agent system also needs an explicit policy for which state stays private to a worker, what crosses handoffs, and whether each worker compacts independently.
 
 ## Related
 
+- [[reports/Agent Memory Report]]
+- [[reports/Agent Memory Technical Brief]]
+- [[benchmarks/agent memory benchmarks]]
 - [[concepts/context engineering]]
 - [[concepts/context compaction]]
 - [[concepts/shared agent memory]]

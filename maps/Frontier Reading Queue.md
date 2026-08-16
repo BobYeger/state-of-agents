@@ -105,9 +105,7 @@ Unverified leads are kept outside the public graph until they have enough source
 
 **Memory substrates, benchmarks, and long-context limits**
 
-- Beyond a Million Tokens (BEAM) (U Alberta/UMass, Oct 2025) — 10M-token benchmark separating true memory substrates from long-context stuffing. https://arxiv.org/abs/2510.27246
 - Control-Plane Placement Shapes Forgetting (arXiv, Jun 2026) — architecture-vs-forgetting study across thirteen configurations plus the ForgetEval benchmark. https://arxiv.org/abs/2606.15903
-- LoCoMo: Very Long-Term Conversational Memory (ACL 2024) — the shared yardstick that Mem0/Zep/A-MEM score claims trace back to. https://arxiv.org/abs/2402.17753
 - From RAG to Memory (HippoRAG 2) (ICML 2025) — crispest statement of the graph-vs-vector factual/associative trade-off. https://arxiv.org/abs/2502.14802
 - LazyGraphRAG (Microsoft Research, Nov 2024) — GraphRAG's own successor showing eager graph indexing is often not worth its cost. https://www.microsoft.com/en-us/research/blog/lazygraphrag-setting-a-new-standard-for-quality-and-cost/
 - MemBench (Renmin/Huawei, ACL 2025 Findings) — agent-centric rather than chat-centric memory benchmark with reflective-memory scenarios. https://arxiv.org/abs/2506.21605

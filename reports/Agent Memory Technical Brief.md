@@ -1,7 +1,7 @@
 # Agent Memory Technical Brief
 
-Date: 2026-07-05
-Scope: local graph only. Condensed from [[reports/Agent Memory Report]] as revised 2026-07-05. This is the shorter technical version of that report; it uses source terminology as labels and keeps direct excerpts short because verbatim quotation is limited. Text-only: figures live in the full report.
+Date: 2026-08-16
+Scope: local graph only. Condensed from [[reports/Agent Memory Report]] as revised 2026-08-16. This is the shorter technical version of that report; it uses source terminology as labels and keeps direct excerpts short because verbatim quotation is limited. Text-only: figures live in the full report.
 
 ## 0. Core Finding
 
@@ -17,8 +17,9 @@ online context management
 external memory
   = memory stores / profiles / MemFS / ContextHub / shared stores
   + substrates: files, topic documents, abstraction-keyed entries, entity and temporal graphs
-  + remember / recall / list / forget
-  + provenance / supersession / expiry
+  + remember / activate / recall / list / forget
+  + query / time / event / state / always-visible triggers
+  + provenance / authority / lineage / supersession / expiry
 
 background consolidation
   = dreams / sleep-time reflection / trajectory memory
@@ -31,7 +32,7 @@ durable runtime state
   = event logs / checkpoints / workflow state / artifacts / execution-state trees
 ```
 
-The need for this stack is measured, not asserted. All 18 tested models degrade as input length grows even on trivial tasks, and focused prompts of about 300 tokens of relevant content consistently beat full prompts of about 113k tokens ([[sources/Context Rot]]). Mid-context placement alone drops multi-document QA accuracy by roughly 20 or more points ([[sources/Lost in the Middle]]). Commercial assistants and long-context LLMs show a 30% accuracy drop across sustained interactions on [[sources/LongMemEval]]'s 500 questions. Two correctives bound the design space: no single memory architecture dominates, effectiveness follows workload alignment ([[sources/Are We Ready For An Agent-Native Memory System]]), and for LLM-mediated memory the write path, not the read path, dominates lifecycle cost ([[sources/Agent Memory Characterization]]).
+The need for this stack is measured, not asserted. All 18 tested models degrade as input length grows even on trivial tasks, and focused prompts of about 300 tokens of relevant content consistently beat full prompts of about 113k tokens ([[sources/Context Rot]]). Mid-context placement alone drops multi-document QA accuracy by roughly 20 or more points ([[sources/Lost in the Middle]]). Commercial assistants and long-context LLMs show a 30% accuracy drop across sustained interactions on [[sources/LongMemEval]]'s 500 questions. Four correctives bound the design space: no single memory architecture dominates ([[sources/Are We Ready For An Agent-Native Memory System]]); the write path can dominate lifecycle cost ([[sources/Agent Memory Characterization]]); a query may fail to cue a directly recallable fact ([[sources/Keep It InMind]]); and deferred intentions require prospective time/event/state monitoring rather than ordinary recall ([[sources/PM-Bench]]).
 
 These are artifacts passed back into future model calls — text summaries, compaction items, memory stores, retrieved notes, durable state, skills — not the internal activation state studied by mechanistic interpretability. The genuinely latent techniques sit in a separate model-internal bucket that the survey literature names latent memory ([[sources/Memory in the Age of AI Agents]]).
 
@@ -43,8 +44,8 @@ model_input_t =
 + current_goal
 + recent_verbatim_turns
 + compacted_history          # summary or provider compaction block/item
-+ retrieved_memory           # recall/search result, not full store
-+ durable_state_pointer      # workflow step, artifacts, checkpoints
++ activated_memory           # query/time/event/state/policy; not full store
++ durable_state_pointer      # workflow step, pending intentions, artifacts, checkpoints
 + selected_skills            # loaded by progressive disclosure
 
 write_side =
@@ -54,7 +55,7 @@ write_side =
 + skill_promotion(repeated_procedure)   # validation-gated
 
 read_side =
-  recall(query)                         # only on information gap
+  activate(query, time, event, state)   # information gap or prospective trigger
 + retrieve_files_or_blocks(task)
 + load_skill(skill_description_match)
 + read_durable_state(workflow_id)
@@ -70,6 +71,7 @@ Builder rule from the sources: decide what must be exact, what can be summarized
 |---|---|---|---|---|---|
 | Online context | Whole-transcript compaction | transcript -> summary / `compaction` block | token threshold, manual `/compact` | high if text | [[sources/Anthropic Context Engineering Cookbook]], [[sources/OpenAI Codex Agent Loop]] |
 | Online context | Provider-native compaction | prior input -> opaque encrypted item (OpenAI) or readable compaction block with pause hook (Anthropic) | server threshold or `/compact` | opaque vs inspectable text; the live axis | [[sources/OpenAI Responses API Computer Environment]], [[sources/OpenAI Agents SDK Compaction Sessions]], [[sources/Claude API Compaction]] |
+| Online context | Per-agent context/compaction isolation | one team run -> separate bounded root/subagent histories | delegation and each agent's own threshold | high locally; handoff is explicit | [[sources/OpenAI Responses API Multi-Agent]], [[concepts/subagent context isolation]] |
 | Online context | Parallel compaction | context blocks -> concurrent localized summaries -> merged compact context | serving/runtime compaction | text summaries, block-level knobs | [[sources/Parallel Context Compaction]] |
 | Online context | Tool-result clearing | old re-fetchable tool outputs -> placeholders with re-fetch pointer | tool-result volume threshold | high | [[sources/Anthropic Context Engineering Cookbook]], [[sources/Microsoft Agent Framework Harness Compaction]], [[sources/Manus Context Engineering]], [[sources/TokenPilot]] |
 | Online context | Observation masking | old observations omitted | turn/token/cost threshold | high, but lossy by omission | [[sources/The Complexity Trap]] |
@@ -77,7 +79,8 @@ Builder rule from the sources: decide what must be exact, what can be summarized
 | Online context | Task-aware pruning | long code context -> selected relevant lines | before model call / middleware | high if lines retained | [[sources/SWE-Pruner]] |
 | Online context | Optimized compression / learned policies | learned compressors; learned when/what/how-to-compress policies | long-horizon agent traces | training-dependent | [[sources/LLMLingua]], [[sources/ACON]], [[sources/SWE-MeM]] |
 | Online context | Dynamic tool discovery | tool schemas held outside context, retrieved on demand | need-driven, per task step | high if index audited | [[sources/MCP-Zero]], [[sources/ScaleMCP]] |
-| Online context | Context retrieval | file/block/line search -> selected evidence | information gap | high if source linked | [[sources/ContextBench]], [[sources/Letta Context-Bench]] |
+| Online context | Context retrieval | file/block/line search -> selected evidence | information gap | high if source linked | [[sources/ContextBench]], [[sources/Letta Context-Bench]], [[sources/Keep It InMind]] |
+| External/durable | Memory activation / prospective intention | memory or pending action -> visible context / exactly-once attempt | query, time, event, state, always-visible policy | high if trigger and reason logged | [[sources/Keep It InMind]], [[sources/PM-Bench]] |
 | Online context | Agent-visible context dashboard | typed, addressable blocks + reversible full-fidelity archive | agent keep/archive decisions under budget stats | high | [[sources/VISTA Latent Context Managers]] |
 | External memory | Memory profile/store | sessions -> facts/events/instructions/tasks | compaction ingest, `remember` call, self-directed paging | high if provenance stored | [[sources/MemGPT]], [[sources/Cloudflare Agent Memory]], [[sources/Memory for Autonomous LLM Agents]] |
 | External memory | Substrate variants | files/topic documents, abstraction-keyed entries, entity graphs, bi-temporal graphs | workload-dependent | varies; see 3.2 | [[sources/GraphRAG]], [[sources/HippoRAG]], [[sources/A-MEM]], [[sources/Zep Temporal Knowledge Graph Memory]], [[sources/Memora]], [[sources/Infini Memory]] |
@@ -122,7 +125,7 @@ must not pretend to preserve:
 
 Compaction is now a provider feature on both major APIs; the live axis between them is inspectability. Anthropic's server-side path (edit type `compact_20260112`) fires at a configurable input-token trigger, default 150,000 and minimum 50,000; the block is text, `pause_after_compaction: true` returns a `compaction` stop reason so the harness can adjust messages before continuing, and an `instructions` parameter fully replaces the default summarization prompt. Billing subtlety: the compaction pass is a sampling iteration reported in `usage.iterations[]`, not in the top-level token counts ([[sources/Claude API Compaction]]). OpenAI's compacted item is opaque and can be encrypted; the Agents SDK wraps it in `OpenAIResponsesCompactionSession` and warns that automatic compaction can block streaming ([[sources/OpenAI Codex Agent Loop]], [[sources/OpenAI Agents SDK Compaction Sessions]]).
 
-Use compaction for dialogue, reasoning, and decisions that cannot be re-fetched. Use clearing/masking for bulky re-fetchable outputs. The boundary options are compact, handoff, and rewind; rewind truncates back to an already-cached prefix and is the cache-cheapest exit ([[sources/Amp Handoff]], [[sources/Claude Code Prompt Caching]]). Batch context mutations at boundaries: per-turn edits invalidate the prefix cache above the mutated point, and ingestion-aware compaction plus lifecycle-aware eviction reports cost reductions of 61% and 56% in isolated mode and 61% and 87% in continuous mode on PinchBench and Claw-Eval ([[sources/TokenPilot]]). Repeated whole-rewrite compaction risks context collapse; prefer structured incremental updates ([[sources/Agentic Context Engineering]]). Evaluate by continuation probes, not summary similarity ([[sources/Factory Context Compression Evaluation]]).
+Use compaction for dialogue, reasoning, and decisions that cannot be re-fetched. Use clearing/masking for bulky re-fetchable outputs. The boundary options are compact, handoff, and rewind; rewind truncates back to an already-cached prefix and is the cache-cheapest exit ([[sources/Amp Handoff]], [[sources/Claude Code Prompt Caching]]). Batch context mutations at boundaries: per-turn edits invalidate the prefix cache above the mutated point, and ingestion-aware compaction plus lifecycle-aware eviction reports cost reductions of 61% and 56% in isolated mode and 61% and 87% in continuous mode on PinchBench and Claw-Eval ([[sources/TokenPilot]]). Repeated whole-rewrite compaction risks context collapse; prefer structured incremental updates ([[sources/Agentic Context Engineering]]). Evaluate by continuation, not summary similarity: Factory probes whole-task resumability, while TRACE compares paired continuations immediately before and after the lossy boundary ([[sources/Factory Context Compression Evaluation]], [[sources/Toward Reliable Context Compression for Long-Horizon Agents]]).
 
 ### 3.2 Memory Store Contract
 
@@ -133,21 +136,39 @@ memory_item:
   id
   type: fact | event | instruction | task | preference | procedure | failure_lesson
   content
-  source: session_id | transcript_lines | artifact_id | user_write | feedback_event
-  authority: user | system | tool | web | inferred
-  created_at / observed_at / expires_at
+  source:
+    origin_type: user | system | assistant | tool | web | inferred
+    writer_id
+    source_refs: [session_span | artifact_id | citation]
+    epistemic_status: observed | reported | inferred | disputed
+  operational_authority: authorized | attested | unendorsed
+  authority_witness: source_ref | policy_id | delegated_scope
+  permitted_uses: [personalize | inform | instruct | act]
+  activation:
+    mode: query | time | event | state | always_visible
+    trigger_spec
+  created_at / observed_at / valid_from / valid_to / expires_at
   supersedes: [memory_id]
+  derived_from: [memory_id]
+  transformation_chain / purge_group
+  version / content_hash
+  review_state: quarantined | approved | superseded | redacted
+  last_verified_at
   confidence
-  scope: user | project | repo | team | task
+  scope: user | project | repo | team | workspace | tenant | fleet | task
 ```
 
 Cloudflare's architecture is the most explicit production pattern: ingestion extracts, verifies, classifies, deduplicates, tracks provenance, and stores, then retrieval combines channels such as full-text, exact fact-key lookup, raw message search, vector search, HyDE vector search, rank fusion, and synthesis ([[sources/Cloudflare Agent Memory]]).
 
-Substrate choice is workload-dependent. Global sensemaking over roughly 1M-token corpora structurally defeats top-k vector retrieval; an entity graph with community summaries wins on comprehensiveness and diversity at significant upfront indexing cost ([[sources/GraphRAG]]). Single-step graph traversal matches or beats iterative retrieval on multi-hop QA while 10-30x cheaper and 6-13x faster at query time, and the two compose ([[sources/HippoRAG]]). Agent-curated notes with dynamic link generation buy coherence at the price of retroactive rewriting that erases the original record ([[sources/A-MEM]]). Bi-temporal graphs record when a fact became true and when it stopped being true, with automatic invalidation and episode-level provenance ([[sources/Zep Temporal Knowledge Graph Memory]]). The counterweight: Mem0's graph variant adds only about 2% over its base vector configuration on conversational QA, so extraction quality matters more than graph structure for conversational recall ([[sources/Mem0]]). Decoupling storage from retrieval is its own lever: Memora embeds only a 6-8 word primary abstraction per entry, reports 86.3% LLM-judge accuracy on LoCoMo and 87.4% on LongMemEval with up to 98% fewer context tokens and roughly half the entries per conversation that Mem0 stores (344 vs 651) ([[sources/Memora]]). Topic documents with buffered writes and agentic retrieval reach 64.7% overall on MemoryAgentBench without a mandatory vector or graph database ([[sources/Infini Memory]]).
+The split between `origin_type` and `operational_authority` is load-bearing. [[sources/When Memory Becomes Authority]] observes authority collapse in 48 of 49 tested consolidator/backbone configurations when source constraints are washed out. In one selected pipeline, its deployment-specific labels change prohibited actions from 10/70 to 0/70 on held-out pairs and observed unauthorized action from 16.9% to 0.0% across all 350 synthetic pairs; zero observed is not evidence of zero residual risk. The lineage fields make deletion compositional: [[sources/Deployment-Time Memorization in Foundation-Model Agents]] finds raw-only deletion leaves derived summaries recoverable around 20% of the time, while re-summarization, full purge, or tombstoning produces zero observed worst-tier residue in 50-case, text-only, high-entropy exact-match settings—not a compliance guarantee.
+
+Substrate choice is workload-dependent. Global sensemaking over roughly 1M-token corpora structurally defeats top-k vector retrieval; an entity graph with community summaries wins on comprehensiveness and diversity at significant upfront indexing cost ([[sources/GraphRAG]]). Single-step graph traversal matches or beats iterative retrieval on multi-hop QA while 10-30x cheaper and 6-13x faster at query time, and the two compose ([[sources/HippoRAG]]). Agent-curated notes with dynamic link generation buy coherence at the price of retroactive rewriting that erases the original record ([[sources/A-MEM]]). Bi-temporal graphs record when a fact became true and when it stopped being true, with automatic invalidation and episode-level provenance ([[sources/Zep Temporal Knowledge Graph Memory]]). The counterweight: Mem0's graph variant adds only about 2% over its base vector configuration on conversational QA, so extraction quality matters more than graph structure for conversational recall ([[sources/Mem0]]). Decoupling storage from retrieval is its own lever: Memora embeds only a 6-8 word primary abstraction per entry, while topic documents with buffered writes and agentic retrieval reach 64.7% overall on MemoryAgentBench without a mandatory vector or graph database ([[sources/Memora]], [[sources/Infini Memory]]). ReFind is the minimum-structure control: an immutable raw chat archive, lexical turn index, and agent-controlled search reach 58.2 mean accuracy on roughly 2,800 matched MemoryAgentBench questions versus 53.2 for the strongest compared graph/tree system ([[sources/When Your Agent Opens the Chat App]]). Those baseline values are reused from MemoryAgentBench rather than rerun locally. Benchmark full-fidelity search before paying to construct semantic structure.
 
 File-based memory has a boundary rubric: how many agents and users share the memory, do facts change, can facts be re-derived from a local source, and is there a retention or compliance regime ([[sources/Zep Markdown Is Not Agent Memory]]). Past the boundary, shared stores need explicit semantics; the shipped example mounts workspace-scoped stores at `/mnt/memory/<slug>/`, attached via `resources[]` at session creation only, with `read_write` (default) or `read_only` enforced at the filesystem level, at most 8 stores per session, 2,000 memories per store, 100 kB (about 25k tokens) per memory, per-store instructions capped at 4,096 characters, optimistic concurrency via a `content_sha256` precondition, and an immutable version per mutation attributed to the writing session ([[sources/Claude Managed Agents Memory Stores]]).
 
-On the read side, synthesize only what the current turn needs. Zep's Smart Context Assembly ranks candidates from five of six context types simultaneously into a fixed 2,500-character budget; one LoCoMo run traded 54% fewer tokens for about 8 points of accuracy, while a different run gained accuracy on fewer tokens ([[sources/Zep Smart Context Assembly]]).
+GitHub adds a source-backed shared-memory pattern: code review, coding agent, and CLI reuse repository facts that cite exact code and are checked against the current branch before use. GitHub reports vendor-run A/B improvements from 83% to 90% PR merge rate and 75% to 77% positive review feedback, with undisclosed sample sizes ([[sources/GitHub Copilot Agentic Memory]]). AWS adds deterministic candidate control: namespaces provide tenant and security isolation; within them, application-supplied strictly consistent metadata partitions extraction and consolidation and pre-filters before similarity search. Its 151-question vendor test reports overall QA rising from 40% to 64% ([[sources/AWS AgentCore Structured Memory Filtering]]).
+
+On the read side, synthesize only what the current turn needs, but do not assume the query exposes every need. Zep's Smart Context Assembly ranks candidates from five of six context types into a fixed 2,500-character budget ([[sources/Zep Smart Context Assembly]]). [[sources/Keep It InMind]] shows that directly recallable facts can still fail indirect application; decision-critical constraints may require an always-visible or time/event/state activation policy rather than similarity search alone.
 
 ### 3.3 Dreaming / Consolidation Contract
 
@@ -193,9 +214,10 @@ skill:
   version
   owner
   trust_level
+  prohibited_operations
 ```
 
-Skills are procedural memory organized by a four-stage lifecycle: representation, acquisition, retrieval, evolution — the write-manage-read loop applied to procedures ([[sources/Comprehensive Survey on Agent Skills]]). Progressive disclosure makes them a context-management technique: a large library carried without stuffing every procedure into every prompt.
+Skills are procedural memory organized by a four-stage lifecycle: representation, acquisition, retrieval, evolution—the write-manage-activate loop applied to procedures ([[sources/Comprehensive Survey on Agent Skills]]). Progressive disclosure makes them a context-management technique: a large library carried without stuffing every procedure into every prompt. Evaluate **Trigger**, **Compliance**, and **Boundary** separately; [[sources/Skill-Use]] shows that retrieval, procedural execution, and restraint fail independently and that model rankings change with the harness.
 
 The write paths are multiplying. Cursor's Bugbot converts review feedback into learned rules, with more than 110,000 repositories enabled and more than 44,000 rules generated at publication time ([[sources/Cursor Bugbot Learned Rules]]). OpenAI's Record & Replay converts one demonstrated macOS workflow into an inspectable, editable `SKILL.md` ([[sources/OpenAI Codex Record and Replay]]). [[sources/SkillOpt]] treats the skill document as trainable external state and accepts an edit only when held-out validation improves, reporting best or tied-best performance on all 52 evaluated model/benchmark/harness cells, with Codex-trained skills transferring into Claude Code. [[sources/Metis]] crystallizes recurring plans into validated callable tools only when repeated reuse justifies the tool-generation cost, improving AppWorld task accuracy by up to 20.6% over ReAct while reducing execution cost by up to 22.8%.
 
@@ -209,6 +231,11 @@ Source terms: durable state, event history, checkpoint/resume, artifacts, explic
 workflow_state:
   workflow_id / current_step / status
   pending_events
+  pending_intentions:
+    intention_id / payload
+    trigger: time | event | state
+    status: pending | completed | canceled | superseded | expired
+    idempotency_key / last_attempt_at
   artifact_refs / checkpoint_refs
   wakeup_conditions
   last_validated_at
@@ -216,7 +243,7 @@ workflow_state:
 
 Durable state is not chat memory. Google ADK's pattern: the agent reads the current workflow state instead of reconstructing progress from raw transcript history; sliding-window event compaction maintains the session history while the state schema stays authoritative ([[sources/Google ADK Durable Agents]], [[sources/Google ADK Context Compression]]).
 
-The research grounding is [[sources/MAGE Memory Execution State Management|MAGE]]: semantic-similarity organization mismatches execution-state dependencies, and memory systems often fail to improve long-horizon performance versus simply retaining full history. MAGE manages a hierarchical state tree via Grow, Compress, Maintain, and Revise, improving average task success on MemoryArena by 7.8-20.4 percentage points over long-context and memory baselines while reducing token consumption by 55.1%. Recall-oriented conversation favors extraction systems; interdependent execution favors state trees.
+The research grounding is [[sources/MAGE Memory Execution State Management|MAGE]]: semantic-similarity organization mismatches execution-state dependencies, and memory systems often fail to improve long-horizon performance versus simply retaining full history. MAGE manages a hierarchical state tree via Grow, Compress, Maintain, and Revise, improving average task success on MemoryArena by 7.8-20.4 percentage points over long-context and memory baselines while reducing token consumption by 55.1%. [[sources/LongMemEval-V2]] adds environment experience—state, workflows, dynamics, gotchas, and premise awareness—from histories up to 500 trajectories and 115M tokens, with an explicit accuracy-latency tradeoff. [[sources/PM-Bench]] adds pending intentions and trigger precision. Recall-oriented conversation favors extraction; interdependent execution favors state trees; deferred action belongs in durable state.
 
 ### 3.6 Cache Economics Constraint
 
@@ -240,6 +267,8 @@ Claude Code is the harness-level demonstration: requests ordered as system promp
 | Memory store accumulates duplicates/stale facts | dream/consolidation job | more recall |
 | Many reusable procedures exist | Agent Skills / skill library | one huge system prompt |
 | Irrelevant memories injected every turn | retrieval gating and memory ranking | bigger recall budget |
+| Query does not reveal a decision-critical dependency | always-visible or time/event/state activation | similarity search alone |
+| Commitment must fire later | durable pending intention + idempotent trigger | conversational recall |
 | Untrusted web/doc content asks to persist instructions | quarantine + review gate | direct memory write |
 
 Failure-mode-first design has empirical grounding in multi-workload evaluation ([[sources/Are We Ready For An Agent-Native Memory System]]). The tool-discovery row is quantified: the GitHub MCP server costs over 4,600 tokens for 26 tools, and on-demand tool requests cut token consumption 98% on APIBank ([[sources/MCP-Zero]], [[sources/ScaleMCP]]).
@@ -254,44 +283,51 @@ Failure-mode-first design has empirical grounding in multi-workload evaluation (
 | Cursor | harness-level dynamic context + learned rules | context strategy evaluated per model/harness; Bugbot rules at production scale |
 | Manus | cache-first harness engineering | KV-cache hit rate as the governing metric; logit masking over mid-loop tool removal; filesystem as restorable external context; recitation |
 | Cloudflare Agent Memory | managed memory profile | constrained remember/recall/list/forget API; multi-channel retrieval; asynchronous post-ingestion improvement |
+| GitHub Copilot Memory | repository-scoped shared fact memory | code citations checked against the live branch before use; cross-agent sharing; vendor-run production A/B evidence |
+| AWS AgentCore Memory | structured managed memory | namespaces provide tenant/security isolation; within them, deterministic metadata partitions extraction/consolidation and pre-filters before semantic search |
 | Zep | managed ingestion/retrieval service | bi-temporal knowledge graph with validity intervals and point-in-time queries; explicit boundary rubric for file memory; query-adaptive context assembly under a fixed budget |
 | Google ADK | durable workflow state + context compression | state schema is authoritative; sliding-window compaction maintains event history |
 | LangChain / ContextHub | versioned context repository | context, skills, policies, examples, memories as collaborative assets; delta checkpoints |
-| Letta Code | durable agent identity + MemFS + dream subagents | memory-first harness descending from MemGPT; compaction event triggers reflection |
+| Letta Code | durable agent identity + MemFS + dream subagents | memory-first harness descending from MemGPT; Context-Bench V2 separates memory use from generation hygiene |
 | Amp | handoff over repeated compaction | new focused thread with goal, prompt draft, and relevant files |
 
 ## 6. Evaluation Matrix
 
 | Capability | Evaluation Question | Source Pattern |
 |---|---|---|
-| Compaction continuity | Can the agent continue the task, preserve the artifact trail, and follow prior decisions? | [[sources/Factory Context Compression Evaluation]] |
+| Compaction continuity | Can the agent continue the task, and what changes immediately across the lossy boundary? | [[sources/Factory Context Compression Evaluation]], [[sources/Toward Reliable Context Compression for Long-Horizon Agents]] |
 | Context growth | Does performance degrade as irrelevant/long context grows? | [[sources/LOCA-bench]], [[sources/Letta Context-Bench]] |
 | Retrieval | Does the agent retrieve the right file, block, and line? | [[sources/ContextBench]] |
-| Long-term memory and forgetting | Accuracy over sustained histories; preference for newer facts over superseded ones; abstention when memory lacks the answer | [[sources/LongMemEval]] |
-| Cost / latency | Token cost, blocking compaction latency, throughput, prompt-cache hit rate, construction (write-path) cost, energy per correct answer, footprint growth slope | [[sources/The Complexity Trap]], [[sources/Parallel Context Compaction]], [[sources/Agent Memory Characterization]], [[sources/Manus Context Engineering]], [[sources/TokenPilot]] |
-| Dreaming / consolidation | Do background reflections remove duplicates, resolve contradictions, preserve provenance, and improve later success? | [[sources/Anthropic Managed Agents Dreaming Outcomes]], [[sources/Google ReasoningBank]], [[sources/Trajectory-Informed Memory Generation]] |
-| Skills | Does skill loading improve outcome, can the agent select the right skill from a library, and does a candidate edit improve held-out validation before acceptance? | [[sources/SkillsBench]], [[sources/Agentic Skills in the Wild]], [[sources/SkillOpt]], [[sources/OpenAI Eval Skills]] |
-| Memory safety | Can untrusted content poison memory, trigger unsafe tools, or bypass authority boundaries? | [[sources/Agent Security Bench]], [[sources/AgentDojo]], [[sources/InjecAgent]], [[sources/Memory Poisoning Attacks in LLM Agents]] |
-| Shared memory | Do agents amplify false memories or resolve conflicting shared state? Do scope, supersession, provenance, and propagation rules hold under governance testing? | [[sources/When Agents Misremember Collectively]], [[sources/AgentNet]], [[sources/G-Memory]], [[sources/Governed Shared Memory for Multi-Agent LLM Systems]] |
+| Conversational memory / scale | Recall, temporal and multi-session reasoning, updates, and abstention under sustained histories | [[sources/LongMemEval]], [[sources/LoCoMo]], [[sources/BEAM]] |
+| Activation / prospective action | Can a directly recallable fact be applied without a matching cue? Are deferred intentions triggered once, neither missed nor over-fired? | [[sources/Keep It InMind]], [[sources/PM-Bench]] |
+| Memory operations | Did the system remember, forget, update, or reflect on the right target and reach the right state trajectory? | [[sources/MemOps]], [[sources/MemoryAgentBench]] |
+| Environment experience / interdependent action | Does memory preserve workflows, dynamic state, gotchas, and task dependencies at acceptable latency? | [[sources/LongMemEval-V2]], [[sources/MemoryArena]] |
+| Cost / latency | Ingest + retrieval + answer cost, blocking latency, cache-hit rate, energy/correct answer, footprint slope, workload/backbone break-even | [[sources/Agent Memory Characterization]], [[sources/Total Recall at What Cost]], [[sources/Manus Context Engineering]], [[sources/TokenPilot]] |
+| Consolidation / generation | Does maintenance generalize durable rules, remove stale copies, preserve chronology/provenance/authority, and improve later success? | [[sources/Letta Context-Bench V2]], [[sources/Anthropic Managed Agents Dreaming Outcomes]], [[sources/Google ReasoningBank]], [[sources/When Memory Becomes Authority]] |
+| Skills | Trigger, Compliance, Boundary, task outcome, harness, library size, and held-out validation before accepting an edit | [[sources/Skill-Use]], [[sources/SkillsBench]], [[sources/SkillOpt]] |
+| Safety / authority / deletion | Where is persistent risk contained? Can memory bypass action authority or survive deletion in a derived tier? | [[sources/HarnessSafe]], [[sources/When Memory Becomes Authority]], [[sources/Deployment-Time Memorization in Foundation-Model Agents]] |
+| Shared memory / production outcome | Conflict, scope, provenance, propagation, adversarial-memory resilience, and downstream outcome | [[sources/GitHub Copilot Agentic Memory]], [[sources/When Agents Misremember Collectively]], [[sources/Governed Shared Memory for Multi-Agent LLM Systems]] |
 
-The cost row measures the write path as well as the read path. On 1.8M tokens of history and 300 queries, construction wall time runs from under a minute for deterministic indexing to about 3.9 hours (SimpleMem) and 13.3 hours (Letta); LLM-mediated systems carry a 28-47x energy premium per correct answer over flat BM25 retrieval, and agentic stores scale super-linearly as each ingestion re-reads a growing store ([[sources/Agent Memory Characterization]]).
+The cost row measures the complete serving path. On 1.8M tokens of history and 300 queries, LLM-mediated systems carry a 28-47x energy premium per correct answer over flat BM25 retrieval in one study ([[sources/Agent Memory Characterization]]); across three systems, two backbones, and up to 400 turns, another finds break-even ranging from early to absent within the measured horizon ([[sources/Total Recall at What Cost]]). Record the complete configuration in [[benchmarks/agent memory benchmarks]], not only a score.
 
 ## 7. Practical Build Order
 
 ```text
 P0:
   stable_prefix + append-only tail ordering
-  event_log + artifact_store + durable_workflow_state
+  event_log + artifact_store + durable_workflow_state + pending_intentions
   recent_verbatim_window
   structured_text_compaction         # schema keeps failed attempts
   tool-result clearing for bulky outputs
 
 P1:
-  memory_store with provenance/scope/expiry/supersession
-  recall gated by task need
+  memory_store with provenance/authority/lineage/scope/validity
+  full-fidelity source or pointer for exact evidence
+  activation by query/time/event/state/always-visible policy
+  source revalidation + action-time authority gate
   compaction-triggered memory ingestion with poisoning filters
   cache breakpoint on the compaction artifact
-  continuation probes + user-visible list/forget/export
+  continuation/activation/operation probes + user-visible list/forget/export
 
 P2:
   dream/consolidation job producing reviewable output store
@@ -309,7 +345,7 @@ P3:
   multi-agent shared-memory governance and conflict resolution
 ```
 
-Evidence behind the defaults: stable prefix plus append-only tail is the cheap path ([[sources/Claude API Prompt Caching]]); erasing failure evidence removes the model's ability to update its beliefs ([[sources/Manus Context Engineering]]); a fixed token-threshold trigger is the right starting point and the baseline learned policies are evaluated against ([[sources/SWE-MeM]]: 43.4% and 60.2% resolve rates on SWE-Bench Verified with 4B and 30B models); extraction-and-consolidation pipelines drastically cut cost versus full-context replay on vendor-reported benchmarks ([[sources/Mem0]]); heavy LLM-mediated ingestion pays off only when enough queries amortize each write ([[sources/Agent Memory Characterization]]); reversible archives change what counts as safe eviction ([[sources/VISTA Latent Context Managers]]: Gemini-3-Flash lifted from 22.7 to 50.7% on LOCA-Bench).
+Evidence behind the defaults: stable prefix plus append-only tail is the cheap path ([[sources/Claude API Prompt Caching]]); erasing failure evidence removes the model's ability to update its beliefs ([[sources/Manus Context Engineering]]); a fixed token threshold is the simplest baseline and the reference learned policies are evaluated against ([[sources/SWE-MeM]]); query-conditioned recall misses indirect dependencies ([[sources/Keep It InMind]]); a full-fidelity archive with controllable search is a competitive control ([[sources/When Your Agent Opens the Chat App]]); source-backed read-time validation has production evidence ([[sources/GitHub Copilot Agentic Memory]]); and memory has no generic cost break-even across systems and backbones ([[sources/Total Recall at What Cost]]).
 
 ## 8. Safety Controls
 
@@ -317,15 +353,19 @@ Memory turns a one-turn contamination into a durable state problem: a poisoned w
 
 The attack surface maps onto the recommended write channels. [[sources/Memory Poisoning Attacks in LLM Agents]] maps six attack classes onto four write channels — explicit instruction-executed write, system prompt-driven write, compaction-driven write, and experience-to-procedure — the last two being the ingestion and skill-promotion paths above. Its MPBench numbers quantify the capability-security tension: the more aggressive test agent averaged 66.67% attack success versus 34.25% for the conservative one, and the best off-the-shelf guardrail detected 84.44% of strong-signal attacks but only 42.50% of weak-signal ones.
 
+Persistent risk is a lifecycle, not a write event. [[sources/HarnessSafe]] covers 328 cases across memory, skills, Tool/MCP, memory-to-skill transformation, delegation, summaries, and artifacts, then tests reactivation by a later benign task. [[sources/When Memory Becomes Authority]] shows consolidation can preserve content while dropping the limit on whether it may drive action. [[sources/Deployment-Time Memorization in Foundation-Model Agents]] shows raw-only deletion can leave a derived summary copy recoverable. Together they require checks at ingestion, transformation, re-consumption, action, and purge.
+
 Controls from the graph, several with named production mechanisms:
 
 - Separate trusted long-term memory from untrusted retrieved content; add compaction filters that separate them before summarization.
-- Track provenance, timestamp, writer identity, write authority, expiry, and scope (user, project, repo, team, task) on every memory.
+- Separate origin, writer, epistemic support, operational authority, and permitted uses; track validity, version/hash, derivation, review state, and last verification.
 - Quarantine web/tool/document content before durable instruction writes.
-- Require review gates before memories affect high-authority actions, permissions, finance, deployment, or security decisions; review works as explicit process, not as an assumed benefit of a readable format ([[sources/Zep Markdown Is Not Agent Memory]]).
+- Revalidate mutable facts against cited live sources where possible; GitHub's code check is the production example ([[sources/GitHub Copilot Agentic Memory]]).
+- Reinspect persistent carriers at startup/re-consumption and require an action-time authority gate before permissions, finance, deployment, or security decisions.
+- Use namespaces for tenant and security isolation; within them, use application-known strictly consistent metadata for deterministic partitioning and pre-filtering before similarity search ([[sources/AWS AgentCore Structured Memory Filtering]]).
 - Use supersession chains instead of silent overwrite; the production mechanism is bi-temporal fact invalidation with point-in-time queries ([[sources/Zep Temporal Knowledge Graph Memory]]).
 - Audit for stale, adversarial, overfit, and low-value entries; evolution-style stores that retroactively rewrite entries ([[sources/A-MEM]]) need versioning underneath.
-- Support list, forget, export, archive, and delete; separate redaction from deletion so secrets can be scrubbed without destroying the audit trail ([[sources/Claude Managed Agents Memory Stores]]).
+- Support list, forget, export, archive, and delete; purge or tombstone derived summaries, indexes, and promoted skills as well as raw records.
 - For shared/team memory, apply scoped retrieval, temporal supersession, provenance tracking, and policy-governed propagation ([[sources/Governed Shared Memory for Multi-Agent LLM Systems]]); a `read_write` shared store lets injected content become trusted memory in later sessions ([[sources/Claude Managed Agents Memory Stores]]).
 - Treat skills like dependencies: review scripts, references, instructions, versions; the ClawHavoc marketplace incident is the evidence ([[sources/Koi Security ClawHavoc]]).
 - For dreams, keep input stores immutable and make output stores reviewable before attachment.
@@ -333,16 +373,17 @@ Controls from the graph, several with named production mechanisms:
 ## 9. Open Questions
 
 - Opaque compaction quality is hard to audit; Anthropic's readable server-side block is the existing counter-design. The question narrows to whether opaque continuation artifacts perform well enough to justify losing the audit path ([[sources/Claude API Compaction]]).
-- Memory ROI is measured but mostly by vendors: Mem0 reports 91% lower p95 latency and over 90% token cost savings versus full-context; Zep reports up to 18.5% accuracy improvement on LongMemEval with roughly 90% response latency reduction. Independent measurement reframes the question: a measured energy premium with construction dominating, and memory systems sometimes underperforming full-history retention on long-horizon tasks. Which workloads justify the premium is open ([[sources/Mem0]], [[sources/Zep Temporal Knowledge Graph Memory]], [[sources/Agent Memory Characterization]], [[sources/MAGE Memory Execution State Management|MAGE]]).
+- Memory ROI is configuration-dependent. Independent evidence now finds both construction-dominated lifecycle cost and break-even ranging from early to absent within 400 turns depending on memory system and backbone ([[sources/Agent Memory Characterization]], [[sources/Total Recall at What Cost]]).
 - Write timing: Deferred Memory — postponing construction until sufficient context, evidence, or future utility exists — is a named research direction with no published guidance yet ([[sources/Memora]]).
-- Governance UX is immature: understandable review, deletion, provenance, and scope controls.
-- Negative transfer: learned rules, tips, and memories go stale or overgeneralize; validation-gated promotion exists on the skills side ([[sources/SkillOpt]]), an equivalent gate for fact and trajectory memories remains open.
-- Multi-agent shared memory has narrowed from gap to frontier: constructive designs and governance primitives exist, production evidence and cross-provider conflict-resolution semantics do not ([[sources/G-Memory]], [[sources/Governed Shared Memory for Multi-Agent LLM Systems]]).
-- Vendor benchmark scores are incomparable: on LongMemEval, Mem0's 2026 algorithm self-reports 94.4 while multi-workload evaluation measures Zep at 48.0 LLM Judge Accuracy ([[sources/Are We Ready For An Agent-Native Memory System]]).
+- Activation remains open: always-visible memory spends context and can over-influence; heartbeat/reminder systems trade misses for false positives ([[sources/Keep It InMind]], [[sources/PM-Bench]]).
+- Governance UX is uneven across memory types and derived tiers.
+- Negative transfer: source-backed fact validation exists for code ([[sources/GitHub Copilot Agentic Memory]]), but inferred preferences and generalized trajectory lessons lack an equivalent live authority.
+- Shared memory has constructive designs, governance primitives, shipped stores, and vendor-run production evidence; cross-provider conflict semantics and independent comparative evaluation remain open.
+- Vendor scores remain incomparable without the model, harness, split, judge, run count, and cost basis recorded in [[benchmarks/agent memory benchmarks]].
 
 ## 10. Source Spine
 
-Primary maps: [[maps/Context Management Map]], [[maps/Agent Skills Map]], [[maps/Recent Agent Operating Concepts]], [[maps/Safety Map]]. Supporting local notes: [[operations/agent memory]], [[operations/durable sessions]].
+Primary maps: [[maps/Context Management Map]], [[maps/Agent Skills Map]], [[maps/Recent Agent Operating Concepts]], [[maps/Safety Map]]. Supporting local notes: [[operations/agent memory]], [[operations/durable sessions]], [[benchmarks/agent memory benchmarks]].
 
 High-weight source cards:
 
@@ -352,6 +393,7 @@ High-weight source cards:
 - [[sources/Claude API Compaction]]
 - [[sources/Claude API Prompt Caching]]
 - [[sources/OpenAI Codex Agent Loop]]
+- [[sources/OpenAI Responses API Multi-Agent]]
 - [[sources/Manus Context Engineering]]
 - [[sources/Cloudflare Agent Memory]]
 - [[sources/Zep Markdown Is Not Agent Memory]]
@@ -376,3 +418,17 @@ High-weight source cards:
 - [[sources/Memory Poisoning Attacks in LLM Agents]]
 - [[sources/Koi Security ClawHavoc]]
 - [[sources/Memory in the Age of AI Agents]]
+- [[sources/Keep It InMind]]
+- [[sources/PM-Bench]]
+- [[sources/When Memory Becomes Authority]]
+- [[sources/GitHub Copilot Agentic Memory]]
+- [[sources/AWS AgentCore Structured Memory Filtering]]
+- [[sources/Letta Context-Bench V2]]
+- [[sources/Toward Reliable Context Compression for Long-Horizon Agents]]
+- [[sources/HarnessSafe]]
+- [[sources/Deployment-Time Memorization in Foundation-Model Agents]]
+- [[sources/MemOps]]
+- [[sources/LongMemEval-V2]]
+- [[sources/When Your Agent Opens the Chat App]]
+- [[sources/Total Recall at What Cost]]
+- [[sources/Skill-Use]]
