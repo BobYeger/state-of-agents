@@ -1,7 +1,7 @@
 # Self-Improving Systems Report: Evolution Loops, Selection Policies, and Trust Rails
 
-Date: 2026-07-13
-Scope: local project graph only. This report is the narrative treatment of the self-improving-systems cluster; [[maps/Self-Improving Systems Map]] carries the inventory and reading order, and [[methods/self-improving code loops]] carries the method note. Revised 2026-07-13 for the new benchmark-validity, evidence-backed completion, and internal-state monitoring evidence. Direct excerpts are intentionally short; longer source passages are summarized. Source-paper figures are referenced through local PDF page embeds where used, for private vault analysis rather than public redistribution.
+Date: 2026-08-17
+Scope: local project graph only. This report is the narrative treatment of the self-improving-systems cluster; [[maps/Self-Improving Systems Map]] carries the inventory and reading order, and [[methods/self-improving code loops]] carries the method note. Revised 2026-08-17 to distinguish recoverable runtime component mutation from an evaluated self-improvement loop; the preceding revision added benchmark-validity, evidence-backed completion, and internal-state monitoring evidence. Direct excerpts are intentionally short; longer source passages are summarized. Source-paper figures are referenced through local PDF page embeds where used, for private vault analysis rather than public redistribution.
 
 ## Executive Summary
 
@@ -492,6 +492,8 @@ Match the mechanism to the deployment. Harness repairs are model-specific, so ru
 
 Mark what may never mutate. Governance, permissions, and instruction precedence belong in deterministic execution hooks outside the mutation surface, enforced at execution boundaries rather than entrusted to prompt-following ([[sources/Harness-MU]]). Draw that boundary deliberately, because whatever part of the loop stays hardcoded becomes its ceiling ([[sources/Hyperagents]]); the immutable layer should be the one you chose, not the one you forgot.
 
+Separate reversible mutation plumbing from improvement evidence. [[sources/A Programming Paradigm for Spatiotemporal Composability]] formalizes component-owned inverse effects and dependency-aware activation and teardown, while [[sources/DeepSeek Harness Repository]] builds its runtime around those plugin-lifecycle ideas and exposes an opt-in temporary-plugin mechanism. These mechanisms can make component replacement more recoverable; they do not supply an evaluator, selection or promotion policy, persistence of a winning mutation across restart, or atomic reversal of external emissions. They sit below the improvement loop and should not be counted as evidence that the loop improves outcomes.
+
 ### The Selection Policy
 
 Selection is where loops fail silently, because noise, judge bias, and gaming all enter the archive disguised as improvement ([[concepts/evaluator reliability]]).
@@ -604,6 +606,7 @@ The design effort goes where the results come from. Mutation is cheap at every a
 
 Research sources:
 
+- [[sources/A Programming Paradigm for Spatiotemporal Composability]]
 - [[sources/ACH Mutation-Guided Test Generation]]
 - [[sources/Adaptive Auto-Harness]]
 - [[sources/ADAS]]
@@ -671,6 +674,7 @@ Product, platform, and practitioner sources:
 - [[sources/Cursor Agent Swarm Model Economics]]
 - [[sources/Datadog Bits AI Eval Platform]]
 - [[sources/DeepMind Specification Gaming]]
+- [[sources/DeepSeek Harness Repository]]
 - [[sources/DORA ROI of AI-assisted Software Development]]
 - [[sources/DORA State of AI-assisted Software Development 2025]]
 - [[sources/Factory 2.0 Software Factory]]

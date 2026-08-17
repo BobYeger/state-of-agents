@@ -28,6 +28,10 @@ For clients that launch stdio plugin subprocesses, the specification defines `PL
 
 The convergence is therefore compositional rather than a single universal plugin runtime. Portability must be evaluated at each layer: a client can conform while supporting only Skills or only MCP, and an MCP-capable client need not support every transport.
 
+## Runtime-Plugin Boundary
+
+[[sources/DeepSeek Harness Repository|DeepSeek Harness]] uses *plugin* for an internal runtime component that contributes services, typed events, and reversible registrations to a shared Cordis context. Its formal basis, [[sources/A Programming Paradigm for Spatiotemporal Composability|Cordis]], concerns component lifecycle and reactive dependency reconciliation. That is not the portable Agent Plugins package standard: Cordis does not define `plugin.json`, Skills/MCP packaging, cross-client distribution, or conformance, while Agent Plugins does not standardize a host's internal component graph or unload semantics.
+
 ## Vendor Adoption
 
 [[sources/Agent Plugins Specification]] records an initial Technical Steering Committee spanning Amazon, Cursor, Microsoft, OpenAI, and Vercel. The project-maintained compatibility matrix lists VS Code, Cursor, GitHub Copilot, ChatGPT and Codex, Kiro, Hermes Agent, and OpenClaw.
@@ -48,6 +52,8 @@ The release is also very fresh: the versioned repository calls 1.0.0 published, 
 - [[sources/Agent Skills Specification]]
 - [[sources/MCP Specification 2026-07-28]]
 - [[sources/MCP Registry]]
+- [[sources/DeepSeek Harness Repository]]
+- [[sources/A Programming Paradigm for Spatiotemporal Composability]]
 
 ## Related
 

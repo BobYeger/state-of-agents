@@ -48,6 +48,8 @@ Harnesses improve agent systems by making the loop inspectable and recoverable: 
 - [[sources/OpenAI Codex CLI Agents SDK Cookbook]] — one harness nested in another: Codex CLI exposed as an MCP server inside the Agents SDK.
 - [[sources/OpenHands Software Agent SDK]] — event-sourced SDK redesign that substantially reduced system-attributable failures in production.
 - [[sources/OpenHarness Docs]] — composable harness framework: tool loops, subagent delegation, compaction, streaming, provider abstraction.
+- [[sources/DeepSeek Harness Repository]] — a fully plugin-composed harness whose model adapters, tool registry, session log, agent loop, sandbox, approvals, and telemetry are replaceable services over Cordis.
+- [[sources/A Programming Paradigm for Spatiotemporal Composability]] — the formal basis for that composition: reversible registrations plus reactive dependency resolution, without agent-performance evidence.
 - [[sources/Cursor Improving Agent Harness]] — model-specific prompts, tools, and runtime tuning as explicit harness levers.
 - [[sources/Cursor 3.2]] — multitask execution, async subagents, and worktrees landing in a shipping harness.
 - [[sources/OpenClaw Repository]] — personal-assistant runtime: gateway, channels, skills, always-on framing.

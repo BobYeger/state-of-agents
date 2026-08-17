@@ -10,6 +10,8 @@ Two boundary results scope what durability can promise. [[sources/You Cannot Hav
 
 Checkpoint granularity and content remain design choices inside this space: [[sources/LangChain Delta Channels]] stores state deltas rather than full snapshots, and [[sources/Google ADK Durable Agents]] argues for resuming from explicit durable state (memory schemas, state machines, event-driven wake) rather than replayed chat history.
 
+[[sources/DeepSeek Harness Repository]] supplies a clean intermediate case. Its append-only `SessionEvent` log is the source from which model history, transcripts, forks, resumes, and ledger telemetry are derived, and a runtime invariant requires every model-visible input to be reconstructable from that log; operational error and shutdown telemetry uses a separate channel. This is strong reconstructable-history and audit evidence; it does not by itself establish deterministic recovery of an interrupted workflow or [[sources/Atomix|Atomix-style]] transactional settlement of external tool effects. Durable history, crash-safe durable execution, and side-effect correctness are three separate guarantees.
+
 ## Streaming and Interruption Semantics
 
 A durable session is usually consumed through a stream, and the stream's reconnect and interruption semantics decide what "resume" actually restores.
@@ -53,4 +55,5 @@ Buzz supplies a useful counterexample to equating those guarantees. Signed chann
 - [[sources/Claude Agent SDK Streaming vs Single Message]]
 - [[sources/LangGraph Interrupts]]
 - [[sources/OpenAI Codex App Server Docs]]
+- [[sources/DeepSeek Harness Repository]]
 - [[sources/Buzz Repository]]

@@ -1,7 +1,7 @@
 # Harness Engineering Report: Goals, Workflows, and Runtime Control
 
-Date: 2026-08-02
-Scope: local project graph, with current official Codex and Claude `/goal`, `/loop`, workflow, GPT-5.6, Fable 5, programmatic-tool, advisor, multi-agent, and Buzz materials consulted for the runtime sections. Originally written 2026-06-14; revised through 2026-08-02 for new orchestration, verification, safety, protocol-composition, and durable-execution evidence, with the self-improvement lineage carried by [[reports/Self-Improving Systems Report]]. This report owns within-run loop mechanics: goals, workflows, wake/verify/retry/stop policies, and ralph-style loops. Direct excerpts are intentionally short; longer source passages are summarized. Source-paper figures are referenced through local PDF page embeds for private vault analysis rather than copied as standalone images.
+Date: 2026-08-17
+Scope: local project graph, with current official Codex and Claude `/goal`, `/loop`, workflow, GPT-5.6, Fable 5, programmatic-tool, advisor, multi-agent, Buzz, DeepSeek Harness, and Cordis materials consulted for the runtime sections. Originally written 2026-06-14; revised through 2026-08-17 for new orchestration, verification, safety, protocol-composition, composition/lifecycle, and durable-execution evidence, with the self-improvement lineage carried by [[reports/Self-Improving Systems Report]]. This report owns within-run loop mechanics: goals, workflows, wake/verify/retry/stop policies, and ralph-style loops. Direct excerpts are intentionally short; longer source passages are summarized. Source-paper figures are referenced through local PDF page embeds for private vault analysis rather than copied as standalone images.
 
 ## Executive Summary
 
@@ -300,6 +300,7 @@ The research-side counterpart is [[sources/Mini-SWE-agent]]: a roughly 100-line 
 | [[sources/Claude Advisor Tool]] | A cheaper executor can consult stronger reasoning at selected checkpoints, but timing, transcript exposure, caching, and call caps remain harness choices. |
 | [[sources/Cursor Improving Agent Harness]] | Harness improvement is product engineering: evals, online experiments, model-specific tools/prompts, dynamic context, tool-error monitoring. |
 | [[sources/Block Buzz]]; [[sources/Buzz Repository]] | A shared signed event substrate makes workspace activity attributable; `buzz-acp` bridges arbitrary ACP agents, the first-party path can compose MCP, and Orchestra adds prompt-level role/verification contracts plus runtime-gated completion. No public benchmark results establish outcome lift, and the disclosed common local posture remains outside a sandbox. |
+| [[sources/DeepSeek Harness Repository]]; [[sources/A Programming Paradigm for Spatiotemporal Composability]] | DeepSeek Harness is implementation evidence for a fully plugin-composed runtime: model-visible state enters an append-only event log, plugin effects carry cleanup, capability providers are replaceable, and monotonic tool guards can only narrow authority. It is a developer preview with no benchmark results; Cordis's formal guarantees assume correct inverses, confinement, effect independence, acyclic dependencies, and a closed recovery boundary rather than proving every composition correct. |
 | [[sources/Claude Common Workflow Patterns for AI Agents]] | Production workflow choice is a harness decision: dependencies, independence, quality criteria, aggregation, stop policy, and cost decide the pattern. |
 | [[sources/Claude Code Hooks]] | Hooks expose lifecycle interception points for deterministic policy gates, context injection, validators, continuation checks, and telemetry. |
 | [[sources/Claude Code Workflows]] | Workflows move orchestration into readable, rerunnable scripts with separate runtime state. |
@@ -420,6 +421,7 @@ The graph suggests this stack:
 |---|---|---|
 | Goal / outcome | What does done mean? | Premature completion or endless wandering |
 | Workflow / control | Who decides next action, and where does that control run? | Repeated ad hoc turns, wrong code/model boundary, or lost plan state |
+| Composition / lifecycle | Which loops, services, policies, and resources are replaceable, and who owns their registration and cleanup? | Leaked effects, teardown races, incompatible plugin layers, or composition claims that fail under lifecycle violations |
 | Context | What enters each model now? | Context rot, cross-task contamination, omission, or stale evidence |
 | Tools | What can the model or generated code do? | Ambiguous actions, brittle calls, hidden intermediates, or approval bypass |
 | State / memory | What persists outside context? | Restart amnesia and transcript replay |
@@ -648,6 +650,7 @@ Product and runtime sources:
 - [[sources/Cursor Agent Swarm Model Economics]]
 - [[sources/Cursor Multi-Agent Kernels]]
 - [[sources/Cursor Scaling Long-Running Autonomous Coding]]
+- [[sources/DeepSeek Harness Repository]]
 - [[sources/Factory How Missions Work]]
 - [[sources/Factory Missions Multi-Agent Architecture Talk]]
 - [[sources/Git Worktrees for Agents - Evolution and Vendor Approaches]]
@@ -680,6 +683,7 @@ Product and runtime sources:
 
 Research sources:
 
+- [[sources/A Programming Paradigm for Spatiotemporal Composability]]
 - [[sources/AFlow]]
 - [[sources/AI Control Despite Intentional Subversion]]
 - [[sources/AgentDropout]]

@@ -14,6 +14,7 @@ This node is a routing hub. Individual framework source notes stay in the source
 - [[sources/CrewAI Docs]]
 - [[sources/OpenAI Agents SDK Docs]]
 - [[sources/Microsoft Agent Framework Docs]]
+- [[sources/DeepSeek Harness Repository]]
 - [[sources/AgentScope 1.0]]
 - [[sources/Youtu-Agent]]
 - [[sources/Qwen-Agent Repository]]

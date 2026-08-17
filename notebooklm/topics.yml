@@ -152,6 +152,8 @@ topics:
         why: "Managed runtime architecture separating session, harness, and sandbox."
       - note: "sources/OpenClaw Agent Harness Plugins.md"
         why: "Clean definition of the harness as low-level executor."
+      - note: "sources/DeepSeek Harness Repository.md"
+        why: "Fully plugin-composed loop with an append-only event log, replaceable capabilities, and explicit lifecycle seams."
       - note: "sources/Ralph Playbook.md"
         why: "Fresh-context coding loop pattern."
       - note: "sources/OpenAI Running Codex Safely.md"
