@@ -4,17 +4,19 @@ Public Obsidian vault for tracking the state of AI agents: papers, articles, pro
 
 ## How To Read
 
-Open `index.md` first, then use the maps:
+Start with [the vault index](index.md), then use the broad navigation maps:
 
-- `maps/Research Map.md`
-- `maps/Systems Map.md`
-- `maps/Claims Map.md`
-- `maps/Frontier Reading Queue.md`
+- [Research Map](maps/Research%20Map.md)
+- [Systems Map](maps/Systems%20Map.md)
+- [Claims Map](maps/Claims%20Map.md)
+- [Frontier Reading Queue](maps/Frontier%20Reading%20Queue.md)
 
-For design work, two playbooks are the goal-scoped entry points:
+For design work and deeper synthesis, use the goal-scoped paths:
 
-- `maps/Harness Design Playbook.md` — designing an agent harness or multi-agent system
-- `maps/Code Factory Playbook.md` — designing self-improving, self-healing development loops (with `maps/Self-Improving Systems Map.md` as the evidence map)
+- **Harnesses:** [Harness Design Playbook](maps/Harness%20Design%20Playbook.md), [Harness Tracker](maps/Harness%20Tracker.md), and [Harness Engineering Report](reports/Harness%20Engineering%20Report.md)
+- **Multi-agent systems and cross-session communication:** [MAS Orchestration and Architecture](maps/MAS%20Orchestration%20and%20Architecture.md), [Agent Teams and Workforces Map](maps/Agent%20Teams%20and%20Workforces%20Map.md), and [Multi Agent Report](reports/Multi%20Agent%20Report.md)
+- **Memory and context:** [Context Management Map](maps/Context%20Management%20Map.md), [Agent Memory Report](reports/Agent%20Memory%20Report.md), and [Agent Memory Technical Brief](reports/Agent%20Memory%20Technical%20Brief.md)
+- **Self-improving systems:** [Self-Improving Systems Map](maps/Self-Improving%20Systems%20Map.md), [Code Factory Playbook](maps/Code%20Factory%20Playbook.md), and [Self-Improving Systems Report](reports/Self-Improving%20Systems%20Report.md)
 
 The vault is organized around durable synthesis notes. `sources/` contains compact evidence cards with dates, citations, summaries, and links into the conceptual graph. `raw/` contains downloaded source material and is intentionally excluded from graph exploration.
 

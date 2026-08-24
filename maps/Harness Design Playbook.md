@@ -2,7 +2,7 @@
 
 This playbook is the decision path for designing a harness around a task. [[maps/Harness Tracker]] is the inventory of shipped harnesses; [[reports/Harness Engineering Report]] is the narrative treatment; this page is the sequence of choices, each linked to the note that carries the evidence.
 
-The order matters: architecture first, then the twelve harness questions, then failure-mode and verification design. Most harness problems are architecture problems chosen too early or verification problems discovered too late.
+The order matters: architecture first, then the eighteen harness questions, then failure-mode and verification design. Most harness problems are architecture problems chosen too early or verification problems discovered too late.
 
 ## Step 1: Choose the Architecture
 
@@ -20,7 +20,7 @@ Measure the single-agent baseline before adding anything. [[sources/Towards a Sc
 
 Two overheads to budget explicitly: tool-heavy tasks suffer disproportionately from coordination ([[sources/Towards a Science of Scaling Agent Systems]]), and topology choice persists while the marginal agent decays ([[sources/MacNet]]). At fleet scale, also budget for a coordination substrate: Cursor reports a purpose-built VCS, neutral conflict resolution, design-document references, and megafile decomposition as necessary control-plane machinery ([[sources/Cursor Agent Swarm Model Economics]]). [[methods/multi-agent orchestration]] carries the full treatment.
 
-## Step 2: The Twelve Questions
+## Step 2: The Eighteen Questions
 
 The checklist from [[reports/Harness Engineering Report]], expanded with the note that answers each question. If a question has no answer, the system is a prompt demo, not a harness.
 
@@ -34,10 +34,16 @@ The checklist from [[reports/Harness Engineering Report]], expanded with the not
 | 6 | Which tools are available, and what errors do they return? | [[concepts/tool use]] and [[concepts/tool-use contracts]]; [[sources/Anthropic Writing Tools for Agents]]: tool design as interface design; [[sources/Claude API Errors]]: the provider error taxonomy retry policies must branch on |
 | 7 | Which actions need human approval? | [[concepts/human-in-the-loop agents]]; [[operations/permissions]]; [[sources/Levels of Autonomy for AI Agents]]: autonomy as a design decision separable from capability; [[sources/LangGraph Interrupts]]: pause/resume mechanics and their idempotency burden |
 | 8 | What sandbox or workspace boundary contains execution? | [[operations/sandboxes]]; [[sources/Anthropic Sandbox Runtime Repository]] and [[sources/Kubernetes Agent Sandbox]]: the current isolation primitives |
-| 9 | How are subagents isolated and coordinated? | [[concepts/subagent context isolation]]; [[operations/worktree isolation]]; [[methods/multi-agent orchestration]] |
-| 10 | How are traces, artifacts, and decisions inspected later? | [[operations/agent observability]]; [[sources/OpenTelemetry GenAI Semantic Conventions]]: the emerging trace standard; [[sources/LangChain Agent Improvement Loop]]: traces as the raw material of the improvement loop; [[sources/Factory How Missions Work]]: validation contracts, feature state, research, procedures, and knowledge externalized as artifacts; [[sources/Factory Missions Multi-Agent Architecture Talk]]: the operator-facing control surface |
-| 11 | How does the system resume after crash, context loss, or human delay? | [[operations/harness fault tolerance]]; [[sources/Temporal OpenAI Agents SDK Integration]] and [[sources/Restate Durable AI Loops]]: durable execution mapped onto agent loops; [[sources/Atomix]]: transactional semantics for tool side effects |
-| 12 | Which evaluator decides done? | [[concepts/evaluator reliability]]: the judge as a measurement instrument; [[concepts/outcomes and rubric graders]]; [[operations/agent evals]]; [[sources/Factory How Missions Work]]: separate scrutiny and behavioral validators working from clean context |
+| 9 | Is multi-agent execution appropriate for the dependency and shared-state pattern? | [[methods/multi-agent orchestration]]; [[sources/Towards a Science of Scaling Agent Systems]]: task structure and baseline capability govern whether coordination helps; [[sources/Cognition Dont Build Multi-Agents]]: shared-artifact work often needs one writer |
+| 10 | How are subagents isolated, coordinated, compacted, and handed off? | [[concepts/subagent context isolation]]; [[operations/worktree isolation]]; [[concepts/handoff over compaction]]; [[operations/durable sessions]] |
+| 11 | Which roles need the strongest model, and when should they be consulted? | [[methods/runtime routing]]; [[sources/Think Big Search Small]]: delegator capacity dominates executor capacity in hierarchical search; [[sources/Claude Advisor Tool]]: concentrate expensive reasoning at selected checkpoints |
+| 12 | Which stages belong in generated code versus direct semantic tool calls? | [[concepts/programmatic tool calling]]; [[sources/OpenAI Programmatic Tool Calling]]: keep judgment, writes, and approvals in direct calls; [[sources/Claude Code Workflows]]: move repeatable orchestration into inspectable scripts |
+| 13 | How are traces, artifacts, decisions, and progress claims inspected later? | [[operations/agent observability]]; [[sources/OpenTelemetry GenAI Semantic Conventions]]: the emerging trace standard; [[sources/LangChain Agent Improvement Loop]]: traces as improvement-loop evidence; [[sources/Factory How Missions Work]] and [[sources/Factory Missions Multi-Agent Architecture Talk]]: externalized state and operator-facing artifacts |
+| 14 | How does the system resume after crash, context loss, or human delay? | [[operations/harness fault tolerance]]; [[sources/Temporal OpenAI Agents SDK Integration]] and [[sources/Restate Durable AI Loops]]: durable execution mapped onto agent loops; [[sources/Atomix]]: transactional semantics for tool side effects |
+| 15 | Which evaluator decides done, and has the task–grader contract been audited? | [[concepts/evaluator reliability]]: the judge as a measurement instrument; [[concepts/outcomes and rubric graders]]; [[operations/agent evals]]; [[sources/OpenAI SWE-bench Pro Audit]]: prompt, environment, and grader must measure the same contract |
+| 16 | Which positive scope and external evidence are required before a high-impact action or completion claim? | [[operations/permissions]]; [[sources/OpenAI GPT-5.6 System Card]]: persistence can widen scope and fabricate completion; [[claims/Claim - Runtime control and verification improve agent reliability]] |
+| 17 | If sessions communicate, what are the sender identity, target authority, wake, persistence, acknowledgment, reply, and inbound-policy contracts? | [[concepts/cross-session agent communication]]; [[operations/durable sessions]]; [[operations/permissions]]; [[sources/Claude Code Cross-Session Messaging]] and [[sources/OpenAI Codex Session Queueing]]: peer messages and queued turns are different authority and delivery contracts |
+| 18 | Which caches, registries, object stores, logs, files, or other services are writable across runs, and how are they isolated and monitored? | [[operations/sandboxes]]; [[operations/agent observability]]; [[sources/OpenAI Hugging Face Incident Black Hat Talk]] and [[sources/Hugging Face Agent Intrusion Technical Timeline]]: shared infrastructure can become an unauthorized communication and egress plane |
 
 ## Step 3: Design for Failure
 
