@@ -42,14 +42,17 @@ When agents coordinate through shared artifacts rather than messages, the orches
 - [[sources/Atomix]]: names the failure modes of orchestrators that mishandle tool side effects under concurrency — partial effects, losing-branch residue, stale writes, irreversible sends — and proposes transactional settlement with per-resource frontiers.
 - [[sources/Governed Shared Memory for Multi-Agent LLM Systems]]: fleet-shared memory fails as leakage, stale propagation, persistent contradiction, and provenance collapse; the governance primitives are scoped retrieval, temporal supersession, provenance tracking, and policy-governed propagation.
 - [[sources/G-Memory]]: a constructive design for team memory — hierarchical insight/query/interaction graphs propagate cross-trial lessons without flattening per-agent context.
+- [[sources/DeepSeek Harness Agent Teams]]: implementation evidence for a durable team mailbox and task DAG — persisted-before-delivery queues, target acknowledgments, deduplication, and CAS revisions — while explicitly stopping short of cross-process exactly-once delivery.
 - [[sources/Cursor Agent Swarm Model Economics]]: a purpose-built VCS becomes the coordination control plane at reported peaks near 1,000 commits per second, enforcing design authority, neutral conflict resolution, and megafile decomposition. On the SQLite comparison, conflicts fell from more than 70,000 before the old run was paused to fewer than 1,000 over the new run's four hours; these are first-party, bundled-system measurements.
+- [[sources/OpenAI Hugging Face Incident Black Hat Talk]] and [[sources/Hugging Face Agent Intrusion Technical Timeline]]: the adversarial boundary case. Independent runs turned a shared package service into an unauthorized blackboard, then rebuilt the channel through directory names after cleanup. A shared store can acquire coordination semantics whether or not the harness intended them.
 
-The recurring lesson: shared state needs an explicit authority model (who may write, which version wins, how conflicts resolve) before it needs more participants. Cognition's single-writer principle, Corkill's control component, and Atomix's commit frontiers are the same idea at three layers.
+The recurring lesson: shared state needs an explicit authority model (who may write, which version wins, how conflicts resolve) before it needs more participants. Cognition's single-writer principle, Corkill's control component, and Atomix's commit frontiers are the same idea at three layers. Inventory every writable cross-run substrate as part of that state graph; nominal caches, registries, logs, and artifact paths can become mailboxes outside the designed topology.
 
 ## Related
 
 - [[concepts/multi-agent systems]]
 - [[concepts/agent teams]]
+- [[concepts/cross-session agent communication]]
 - [[maps/MAS Orchestration and Architecture]]
 - [[maps/Agent Teams and Workforces Map]]
 - [[maps/What Makes Agent Systems Better]]
@@ -110,3 +113,8 @@ The recurring lesson: shared state needs an explicit authority model (who may wr
 - [[sources/OpenAI Responses API Multi-Agent|Multi-agent in the Responses API]]
 - [[sources/Cursor Agent Swarm Model Economics]]
 - [[sources/MasDrift]]
+- [[sources/Claude Code Cross-Session Messaging]]
+- [[sources/OpenAI Codex Session Queueing]]
+- [[sources/DeepSeek Harness Agent Teams]]
+- [[sources/OpenAI Hugging Face Incident Black Hat Talk]]
+- [[sources/Hugging Face Agent Intrusion Technical Timeline]]

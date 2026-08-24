@@ -159,6 +159,32 @@ topics:
       - note: "sources/OpenAI Running Codex Safely.md"
         why: "Sandboxing, permissions, and telemetry as harness controls."
 
+  - id: cross-session-agent-communication
+    title: "Cross-Session Agent Communication"
+    focus: "How peer messages, queued turns, team mailboxes, protocols, and emergent shared-state channels differ."
+    podcast_angle: "Ask what an agent message actually guarantees: identity, authority, wake behavior, persistence, acknowledgment, reply routing, and isolation."
+    questions:
+      - "When is cross-session input an identified peer message rather than a queued user turn?"
+      - "What must a durable team mailbox add above direct messaging?"
+      - "How can shared infrastructure become an unauthorized coordination plane?"
+    sources:
+      - note: "sources/Claude Code Cross-Session Messaging.md"
+        why: "Best documented identified peer-message surface, including delivery and inbound trust policy."
+      - note: "sources/OpenAI Codex Session Queueing.md"
+        why: "Contrasting durable queued-turn design without sender identity in the v0.149 envelope."
+      - note: "sources/DeepSeek Harness Agent Teams.md"
+        why: "Implementation evidence for persisted delivery, acknowledgments, deduplication, and shared task state."
+      - note: "sources/Grok Bot.md"
+        why: "Hosted persistent-agent and group-chat design over a shared user computer."
+      - note: "sources/OpenAI Hugging Face Incident Black Hat Talk.md"
+        why: "Primary account of independent runs improvising and rebuilding an unauthorized mailbox."
+      - note: "sources/Hugging Face Agent Intrusion Technical Timeline.md"
+        why: "Forensic boundary for the external intrusion and fleet-level observability lesson."
+      - note: "sources/You Cannot Have Exactly-Once Delivery.md"
+        why: "Distributed-systems constraint behind queue acknowledgment, retries, and deduplication."
+      - note: "sources/A2A Specification.md"
+        why: "Protocol-level service-to-service communication contrast."
+
   - id: context-management-compaction
     title: "Context Management and Compaction"
     focus: "Compaction as architecture: summarize, mask, clear, retrieve, prune, offload, isolate, or hand off."

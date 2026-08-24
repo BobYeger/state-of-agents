@@ -2,6 +2,8 @@
 
 Agent2Agent is an interoperability protocol for communication and coordination among agents across vendors, frameworks, and enterprise systems. Where [[protocols/MCP]] connects an agent to tools and data, A2A lets independently implemented agents advertise skills through agent cards, exchange tasks, stream progress, and return artifacts ([[sources/A2A Specification]] is the primary source for protocol semantics).
 
+This is a different layer from same-product session messaging. Claude Code peer messages, Codex queued turns, and team-runtime mailboxes operate inside one provider or harness; A2A defines a service-to-service interoperability contract. [[concepts/cross-session agent communication]] compares the identity, authority, persistence, wake, acknowledgment, and reply semantics across those forms.
+
 ## Version and Governance Timeline
 
 | Date | Event | Source |
@@ -40,6 +42,7 @@ Cross-boundary agent communication inherits every injection and impersonation pr
 - [[protocols/MCP]]
 - [[protocols/ACP]]
 - [[concepts/multi-agent systems]]
+- [[concepts/cross-session agent communication]]
 - [[safety/protocol security]]
 
 ## Related Sources

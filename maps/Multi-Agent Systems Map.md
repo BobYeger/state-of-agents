@@ -5,6 +5,7 @@ Use this as a navigation page, not a source registry. Start from the synthesis n
 ## Core Notes
 
 - [[concepts/multi-agent systems]]
+- [[concepts/cross-session agent communication]]
 - [[maps/MAS Orchestration and Architecture]]
 - [[maps/What Makes Agent Systems Better]]
 - [[methods/multi-agent orchestration]]
@@ -41,6 +42,15 @@ Use this as a navigation page, not a source registry. Start from the synthesis n
 - [[sources/Linguistic Firewall]]
 - [[sources/GBC AgentChord]]
 - [[sources/Google ADK A2A Cross-Language Multi-Agent Team]]
+
+## August 2026 Communication Anchors
+
+- [[sources/Claude Code Cross-Session Messaging]]
+- [[sources/OpenAI Codex Session Queueing]]
+- [[sources/DeepSeek Harness Agent Teams]]
+- [[sources/Grok Bot]]
+- [[sources/OpenAI Hugging Face Incident Black Hat Talk]]
+- [[sources/Hugging Face Agent Intrusion Technical Timeline]]
 
 ## Source Trail
 

@@ -10,7 +10,7 @@ status: "verified"
 year: 2026
 publication_date: "2026-07-01"
 publication_date_basis: "accessed_living_docs_no_visible_publication_date"
-source_updated_date: "2026-07-01"
+source_updated_date: "2026-08-24"
 source_updated_date_basis: "snapshot_date"
 arxiv_id: null
 citation_count: null
@@ -25,7 +25,7 @@ pdf_url: ""
 artifacts:
   - "raw/docs/openai-codex-app-server.md"
 created: 2026-07-01
-updated: 2026-07-01
+updated: 2026-08-24
 ---
 
 # Codex App Server
@@ -35,6 +35,8 @@ updated: 2026-07-01
 - Official Codex docs for the local App Server protocol that exposes Codex as a client-controllable harness.
 - Important because it defines the fundamental runtime objects behind Codex thread orchestration: thread, turn, item, streamed events, approval requests, and persistent session state.
 - Provides the public analogue for the desktop tool surface used by coordinator threads: `thread/start`, `thread/resume`, `thread/fork`, `turn/start`, `turn/steer`, thread naming, archiving, compaction, and interruption.
+- The v0.149 repository protocol also documents an experimental `thread/queue/*` family for durable future user turns. The released `codex queue` CLI is a narrower client of `thread/queue/add`; see [[sources/OpenAI Codex Session Queueing]].
+- Keep `thread/inject_items`, `turn/steer`, `turn/start`, and `thread/queue/add` separate: they respectively append model-visible history, steer an active turn, start a turn now, and persist a future user turn.
 - Best understood with [[sources/OpenAI Unlocking Codex Harness]], which explains why App Server exists as a stable JSON-RPC surface over Codex core.
 
 ## Claims
@@ -52,6 +54,7 @@ updated: 2026-07-01
 - [[operations/permissions]]
 - [[methods/codex thread orchestration]]
 - [[methods/multi-agent orchestration]]
+- [[sources/OpenAI Codex Session Queueing]]
 - [[maps/Harness Tracker]]
 - [[maps/Agent Teams and Workforces Map]]
 
@@ -64,4 +67,5 @@ updated: 2026-07-01
 - Canonical URL: https://developers.openai.com/codex/app-server
 - Open-source protocol reference: https://github.com/openai/codex/blob/main/codex-rs/app-server/README.md
 - Publication date basis: living OpenAI Developers docs accessed on 2026-07-01, no stable visible publication date.
-- Do not confuse the public app-server method names with the local `codex_app.*` tool names exposed inside this Codex desktop environment. They map to the same conceptual control plane, but `codex_app.*` is a session-local tool binding, not the public API.
+- The living OpenAI Developers page was rechecked on 2026-08-24; the queue family is documented in the versioned open-source protocol and remains experimental rather than part of the stable method catalog.
+- Do not confuse public App Server method names with local `codex_app.*` bindings or the main-branch `codex_tui` task tools. They share underlying thread concepts but are separate product surfaces with different availability and message semantics.

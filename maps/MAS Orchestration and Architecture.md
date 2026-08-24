@@ -13,6 +13,7 @@ The organizing question is: what coordination structure should exist for a given
 | Handoff information design | Decide what crosses an agent boundary: full traces or structured records for continued decision streams, deliberately clean context for independent checks. | [[sources/Cognition Dont Build Multi-Agents]], [[sources/Cognition Multi-Agents Whats Actually Working]], [[sources/Factory How Missions Work]], [[sources/Factory Missions Multi-Agent Architecture Talk]] |
 | Serial mutation, parallel reading | Preserve one coherent write path while fanning out search, research, and clean-context review when the task and product version support that topology. | [[sources/Cognition Multi-Agents Whats Actually Working]], [[sources/Factory How Missions Work]], [[sources/Factory Missions Multi-Agent Architecture Talk]] |
 | Shared-state coordination | Coordinate through governed shared artifacts — blackboards, task queues, team memory — with explicit write authority and conflict rules. | [[sources/Corkill Blackboard Systems]], [[sources/LLM Multi-Agent Blackboard System]], [[sources/Atomix]], [[sources/Governed Shared Memory for Multi-Agent LLM Systems]], [[sources/G-Memory]] |
+| Cross-session communication substrates | Separate identified peer messages, durable queued turns, team mailboxes, control-plane delegation, and protocol calls by their authority, wake, persistence, and reply semantics. | [[concepts/cross-session agent communication]], [[sources/Claude Code Cross-Session Messaging]], [[sources/OpenAI Codex Session Queueing]], [[sources/DeepSeek Harness Agent Teams]] |
 | Workflow pattern selection | Choose sequential, parallel, or evaluator-optimizer structures based on dependencies, independence, quality criteria, latency, cost, and aggregation. | [[sources/Claude Common Workflow Patterns for AI Agents]], [[sources/Anthropic Building Effective AI Agents eBook]], [[sources/Anthropic Building Effective Agents]] |
 | Workflow-script orchestration | Move the execution plan into generated or saved code that spawns subagents, runs stages, tracks intermediate state, and reports back. | [[sources/Claude Code Workflows]], [[sources/Recursive Agent Harnesses]], [[sources/GitHub Agentic Workflows]] |
 | Orchestrator-worker systems | A lead agent or recursive planner tree decomposes, delegates, tracks progress, and replans across specialist workers. | [[sources/Anthropic Multi-Agent Research System]], [[sources/Magentic-One]], [[sources/Cursor Agent Swarm Model Economics]] |
@@ -25,7 +26,7 @@ The organizing question is: what coordination structure should exist for a given
 | Decentralized, graph, and swarm systems | Reduce centralized bottlenecks through dynamic DAGs, graph message passing, swarms, and selective agent activation. | [[sources/AgentNet]], [[sources/Graph-of-Agents]], [[sources/GBC AgentChord]] |
 | Framework orchestration patterns | Builder-facing patterns such as supervisor graphs, swarms, hierarchical crews, pipelines, and flows. | [[sources/Google ADK Multi-Agent Patterns]], [[sources/Anthropic Building Effective AI Agents eBook]], [[sources/Microsoft Agent Framework Docs]], [[systems/agent frameworks and orchestration libraries]] |
 | Protocol-mediated orchestration | Agent collectives coordinate through tool, peer, UI, and commerce protocols rather than only private framework calls. | [[protocols/MCP]], [[protocols/A2A]], [[sources/Google Developer Guide to AI Agent Protocols]], [[sources/Google Agentic Resource Discovery]], [[sources/Google ADK A2A Cross-Language Multi-Agent Team]] |
-| Multi-agent security | Treat channels, routers, and agent identity claims as attack surfaces with their own monitoring and hardening priorities. | [[sources/MESA]], [[sources/Linguistic Firewall]], [[safety/protocol security]] |
+| Multi-agent security | Treat channels, routers, identity claims, and every writable cross-run substrate as attack surfaces with their own monitoring and hardening priorities. | [[sources/MESA]], [[sources/Linguistic Firewall]], [[sources/OpenAI Hugging Face Incident Black Hat Talk]], [[sources/Hugging Face Agent Intrusion Technical Timeline]], [[safety/protocol security]] |
 
 ## Design Heuristics
 
@@ -42,12 +43,15 @@ The organizing question is: what coordination structure should exist for a given
 - Prefer runtime routing, dropout, and supervision over fixed "everyone talks every round" designs.
 - Use workflow scripts when the coordination plan and intermediate state should live outside the main conversation context.
 - Treat communication edges and routing metadata as security-critical, especially in swarms and graph-shaped systems.
+- Do not equate a communication edge with a team. Record sender provenance, target authority, wake behavior, queue durability, acknowledgments, reply routing, shared-state scope, and conflict rules separately.
+- Extend the threat model beyond intended message APIs: shared caches, registries, object stores, filenames, and logs can preserve coordination across disposable sessions.
 - Treat A2A, MCP, AG-UI/A2UI, ACP, and AP2 as architecture surfaces, not only protocol specs.
 
 ## Related
 
 - [[maps/Multi-Agent Systems Map]]
 - [[maps/Agent Teams and Workforces Map]]
+- [[concepts/cross-session agent communication]]
 - [[maps/What Makes Agent Systems Better]]
 - [[methods/multi-agent orchestration]]
 - [[methods/debate and aggregation]]

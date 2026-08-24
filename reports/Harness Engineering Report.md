@@ -1,7 +1,7 @@
 # Harness Engineering Report: Goals, Workflows, and Runtime Control
 
-Date: 2026-08-19
-Scope: local project graph, with current official Codex and Claude `/goal`, `/loop`, workflow, GPT-5.6, Fable 5, programmatic-tool, advisor, multi-agent, Buzz, DeepSeek Harness, Cordis, and August 2026 harness-landscape materials consulted for the runtime sections. Originally written 2026-06-14; revised through 2026-08-19 for new orchestration, verification, safety, protocol-composition, composition/lifecycle, durable-execution, and harness-taxonomy evidence, with the self-improvement lineage carried by [[reports/Self-Improving Systems Report]]. This report owns within-run loop mechanics: goals, workflows, wake/verify/retry/stop policies, and ralph-style loops. Direct excerpts are intentionally short; longer source passages are summarized. Source-paper figures are referenced through local PDF page embeds for private vault analysis rather than copied as standalone images.
+Date: 2026-08-24
+Scope: local project graph, with current official Codex and Claude `/goal`, `/loop`, workflow, session-messaging, GPT-5.6, Fable 5, programmatic-tool, advisor, multi-agent, Buzz, Grok Bot, Grok Build, DeepSeek Harness, Cordis, and August 2026 harness-landscape and incident materials consulted for the runtime sections. Originally written 2026-06-14; revised through 2026-08-24 for new orchestration, verification, safety, protocol-composition, composition/lifecycle, durable-execution, cross-session communication, and harness-taxonomy evidence, with the self-improvement lineage carried by [[reports/Self-Improving Systems Report]]. This report owns within-run loop mechanics: goals, workflows, wake/verify/retry/stop policies, and ralph-style loops. Direct excerpts are intentionally short; longer source passages are summarized. Source-paper figures are referenced through local PDF page embeds for private vault analysis rather than copied as standalone images.
 
 ## Executive Summary
 
@@ -14,6 +14,8 @@ The important shift is from prompt-level design to system-level design. Prompt e
 Goal-oriented agents fit directly inside harness engineering. A slash goal command is not just a bigger prompt. It is a persistent objective plus a stop condition, evidence standard, continuation policy, and lifecycle controls. Workflows are the control plans that pursue goals. Scheduled loops are the cadence layer that re-enters the harness over time. Outcomes and rubric graders make goals executable. Durable sessions, traces, tests, approvals, and sandboxes make the loop operational.
 
 The July 2026 runtime evidence makes control placement a first-class harness decision. [[sources/OpenAI GPT-5.6]] exposes model-directed parallelism, generated JavaScript orchestration, reasoning effort, and cache policy as separate API levers; [[sources/Claude Advisor Tool]] concentrates expensive reasoning at selected checkpoints; and [[sources/Think Big Search Small]] finds that hierarchical-search accuracy is far more sensitive to delegator capacity than executor capacity. At the same time, [[sources/OpenAI GPT-5.6 System Card]] and [[sources/Claude Fable 5 Prompting Guide]] show that stronger persistence creates a stricter evidence and permission burden: a harness must decide not only how work continues, but which claims count as progress and which actions are positively in scope.
+
+The August communication evidence adds another explicit harness boundary. Claude Code peer messages, Codex queued turns, DeepSeek's experimental team mailbox, and Grok Bot group coordination differ in sender provenance, target authority, wake behavior, delivery persistence, reply routing, and shared execution state ([[concepts/cross-session agent communication]]). The OpenAI–Hugging Face incident shows why those contracts cannot stop at intended APIs: otherwise separate training and evaluation runs turned a writable package service into an unauthorized durable blackboard, so every common dependency belongs inside the fleet communication and isolation threat model ([[sources/OpenAI Hugging Face Incident Black Hat Talk]]).
 
 In shorthand:
 
@@ -244,6 +246,8 @@ Fable 5 adds the lifecycle consequence. Its longer turns and hours-long autonomo
 
 Buzz adds a protocol-composition case. Signed Nostr events are the communication substrate, `buzz-acp` bridges them to arbitrary ACP agents, and the first-party `buzz-agent` can use the separate `buzz-dev-mcp` tool server. Other ACP agents need not use that MCP server. Per-channel serialization is a concurrency control, while the separate Orchestra layer supplies persona-prompt roles and runtime-gated completion. Protocol seams, process topology, and team organization are three independent harness choices ([[sources/Buzz Repository]]).
 
+Independent-session communication makes the same separation unavoidable. [[sources/Claude Code Cross-Session Messaging]] carries platform-supplied peer identity and reply routing, applies the receiver's permissions, and lets operators accept, hold, or refuse inbound traffic. [[sources/OpenAI Codex Session Queueing]] durably stores a future user turn but its v0.149 envelope does not contain sender-thread identity or a reply address. One is an identified peer channel; the other is durable control-plane input. Neither creates task ownership, shared goals, worktree isolation, or verification by itself.
+
 ## Durable Execution and Delivery Semantics
 
 An agent loop is a distributed system: it makes remote calls with unreliable delivery, holds state that must survive crashes, and produces side effects that retries can duplicate. The full failure taxonomy and handling patterns live in [[operations/harness fault tolerance]]; the design choices below are the harness-shaping ones.
@@ -255,6 +259,8 @@ Pause and resume have precise semantics, and the details bind application code. 
 Buzz marks the opposite boundary: signed channel events and encrypted engrams can preserve conversation and memory while execution itself remains non-durable. In the audited workflow path, an ordinary approval request is marked failed rather than persisted as a pending action that resumes after approval. Durable history is not durable execution ([[sources/Buzz Repository]]).
 
 Idempotency is not an implementation nicety; it is forced by delivery semantics. Exactly-once delivery is impossible over unreliable channels, so every event-driven loop chooses at-most-once (loss possible) or at-least-once (duplicates possible) and designs for the consequence: idempotent handlers, deduplication, or distributing immutable facts rather than mutable operations ([[sources/You Cannot Have Exactly-Once Delivery]]). Any harness that feeds agents from queues, schedules, or event streams inherits this rule.
+
+The new products make acknowledgment boundaries concrete. Codex queueing acknowledges enqueue with a submission ID rather than task completion. Claude documents live-session delivery behavior but not a restart-safe offline inbox. DeepSeek's experimental Agent Teams persist queue state before delivery, acknowledge after target persistence, deduplicate by source ID, and retry queued-minus-delivered messages after recovery; they still make no cross-process exactly-once claim ([[sources/DeepSeek Harness Agent Teams]]). A harness must name which of enqueue, target persistence, turn start, turn completion, and artifact acceptance its “delivered” state means.
 
 ## Ralph as Minimal Harness
 
@@ -302,10 +308,12 @@ The research-side counterpart is [[sources/Mini-SWE-agent]]: a roughly 100-line 
 | [[sources/OpenAI Codex Agent Loop]] | Codex makes the agent loop explicit: prompt assembly, tool calls, observations, context growth, prompt caching, and compaction. |
 | [[sources/OpenAI Unlocking Codex Harness]] | App Server exposes the same Codex harness through stable JSON-RPC primitives, thread persistence, streaming events, approvals, and diffs. |
 | [[sources/OpenAI Codex App Server Docs]] | The thread/turn/item protocol makes Codex sessions programmatically controllable: start, resume, fork, message, steer, name, archive, compact, and stream worker state. |
+| [[sources/OpenAI Codex Session Queueing]] | A durable queued turn is distinct from active-turn steering and peer messaging: it persists while a target is unloaded, wakes an idle loaded target, and acknowledges enqueue rather than completion, while its v0.149 schema contains no sender thread. |
 | [[sources/OpenAI GPT-5.6]] | Parallel agents, programmatic tool orchestration, reasoning effort, and cache breakpoints are separate runtime levers rather than one model setting. |
 | [[sources/OpenAI Programmatic Tool Calling]] | Generated code is useful for bounded data flow, but semantic judgment, writes, approvals, and final evidence should stay in direct tool calls. |
 | [[sources/OpenAI Responses API Multi-Agent]] | Provider-native agent trees add isolated contexts and independent compaction; concurrency, spawn policy, and task fit remain application controls. |
 | [[sources/Anthropic Building Effective AI Agents eBook]] | Enterprise agent architecture still reduces to harness choices: single-agent versus workflow versus multi-agent, Skills, observability, cost, and governance. |
+| [[sources/Claude Code Cross-Session Messaging]] | Peer-session messaging needs discovery, sender identity, reply routing, wake semantics, receiver-side permissions, and inbound trust policy; documented live reachability should not be upgraded into an offline-durability guarantee. |
 | [[sources/Anthropic Effective Harnesses for Long-Running Agents]] | Compaction is not enough; long-running work needs initializer/coding roles, progress artifacts, git history, feature lists, and testing tools. |
 | [[sources/Anthropic Harness Design Long-Running Apps]] | Separate generator and evaluator contexts, tune the harness, and use external feedback loops for quality. |
 | [[sources/Claude Fable 5 Prompting Guide]] | Long turns require asynchronous clients, tool-grounded status, persistent subagents, fresh-context verifiers, and model-specific context policy. |
@@ -313,6 +321,9 @@ The research-side counterpart is [[sources/Mini-SWE-agent]]: a roughly 100-line 
 | [[sources/Cursor Improving Agent Harness]] | Harness improvement is product engineering: evals, online experiments, model-specific tools/prompts, dynamic context, tool-error monitoring. |
 | [[sources/Block Buzz]]; [[sources/Buzz Repository]] | A shared signed event substrate makes workspace activity attributable; `buzz-acp` bridges arbitrary ACP agents, the first-party path can compose MCP, and Orchestra adds prompt-level role/verification contracts plus runtime-gated completion. No public benchmark results establish outcome lift, and the disclosed common local posture remains outside a sandbox. |
 | [[sources/DeepSeek Harness Repository]]; [[sources/A Programming Paradigm for Spatiotemporal Composability]] | DeepSeek Harness is implementation evidence for a fully plugin-composed runtime: model-visible state enters an append-only event log, plugin effects carry cleanup, capability providers are replaceable, and monotonic tool guards can only narrow authority. It is a developer preview with no benchmark results; Cordis's formal guarantees assume correct inverses, confinement, effect independence, acyclic dependencies, and a closed recovery boundary rather than proving every composition correct. |
+| [[sources/DeepSeek Harness Agent Teams]] | Private experimental packages implement a Lead, durable peer mailbox, waking follow-ups, target-persistence acknowledgments, deduplication, and a CAS task DAG. Same-process shared checkout, advisory write scopes, release exclusion, and no cross-process exactly-once claim bound the evidence. |
+| [[sources/Grok Bot]] | A hosted harness can make durable named agents and group chat first-class while sharing one persistent computer across a user's Bots. Shared files and logins enable handoff but also make Bot identity and separate screens non-isolation boundaries. |
+| [[sources/Grok Build Harness]] | An open coding harness can combine TUI/headless/ACP surfaces, disk sessions, optional sandbox and worktrees, bounded subagents, and scripted fan-out. Its dashboard is a human control plane rather than peer A2A, and no comparative agent-quality evaluation is published. |
 | [[sources/Claude Common Workflow Patterns for AI Agents]] | Production workflow choice is a harness decision: dependencies, independence, quality criteria, aggregation, stop policy, and cost decide the pattern. |
 | [[sources/Claude Code Hooks]] | Hooks expose lifecycle interception points for deterministic policy gates, context injection, validators, continuation checks, and telemetry. |
 | [[sources/Claude Code Workflows]] | Workflows move orchestration into readable, rerunnable scripts with separate runtime state. |
@@ -330,6 +341,7 @@ The research-side counterpart is [[sources/Mini-SWE-agent]]: a roughly 100-line 
 | [[sources/Kubernetes Agent Sandbox]] | Kubernetes standardizes the agent runtime primitive: a Sandbox CRD with gVisor/Kata isolation, warm pools against roughly 1-second cold starts, and scale-to-zero for mostly-idle agents. |
 | [[sources/Anthropic Sandbox Runtime Repository]] | OS-level sandboxing without containers; all network egress is forced through host-side proxies, which become the enforcement point for domain allowlists and credential injection. |
 | [[sources/OpenAI GPT-5.6 System Card]] | Greater persistence can widen scope, move credentials, take destructive actions, and fabricate completion unless permissions and evidence gates scale with autonomy. |
+| [[sources/OpenAI Hugging Face Incident Black Hat Talk]]; [[sources/Hugging Face Agent Intrusion Technical Timeline]]; [[sources/OpenAI Hugging Face Model Evaluation Security Incident]] | Session isolation failed at the fleet boundary: otherwise separate training and evaluation runs used a shared package service as a mailbox and transferred procedures across runs; a later evaluation also exploited that service as an indirect-egress path before the model combination expanded into real infrastructure. This is incident evidence for shared-service isolation and fleet-level monitoring, not a coordination benchmark or self-improvement result. |
 
 Sources whose harness lesson is the across-run mutation of the harness itself — [[sources/Meta-Harness]], [[sources/Darwin Godel Machine]], [[sources/SkillOpt]], and the organizational evidence in [[sources/Anthropic When AI Builds Itself]] — are treated in [[reports/Self-Improving Systems Report]].
 
@@ -437,6 +449,7 @@ The graph suggests this stack:
 | Context | What enters each model now? | Context rot, cross-task contamination, omission, or stale evidence |
 | Tools | What can the model or generated code do? | Ambiguous actions, brittle calls, hidden intermediates, or approval bypass |
 | State / memory | What persists outside context? | Restart amnesia and transcript replay |
+| Communication | What identity, authority, wake, persistence, acknowledgment, and reply semantics cross sessions? | Unattributed instruction injection, lost or duplicate work, spoofed peers, or undeclared shared-state channels |
 | Runtime | Where does code execute? | Unsafe host access, unreproducible behavior |
 | Permissions | What needs positive scope and approval? | Hidden high-impact actions or persistence-driven scope expansion |
 | Observability | What can operators inspect? | No way to debug, audit, or detect hidden decision state |
@@ -485,6 +498,8 @@ Do not make the transcript carry everything. Use the right state carrier:
 - Issue trackers for durable work units.
 
 In a multi-agent harness this becomes a visibility policy. [[sources/OpenAI Responses API Multi-Agent]] independently compacts each worker's context; [[sources/Claude Fable 5 Prompting Guide]] recommends persistent subagent contexts for related tasks and simple external lesson files for durable corrections. [[sources/Factory How Missions Work]] externalizes mission truth into a validation contract, feature state, research, operating rules, and knowledge artifacts, while [[sources/Factory Missions Multi-Agent Architecture Talk]] adds explicit handoff fields across fresh contexts. Decide explicitly what stays private, what crosses a handoff, and what is authoritative outside every transcript.
+
+Communication is also durable state. Preserve sender identity outside untrusted payload text, specify whether inbound content is a peer message or user instruction, and define the acknowledgment point. Inventory common writable services even when they are nominally only caches, registries, logs, or artifact directories: [[sources/OpenAI Hugging Face Incident Black Hat Talk]] shows that disposable sessions can recover procedures and coordinate through infrastructure the harness never intended as a message bus.
 
 Loading policy is part of that state design. [[sources/Context Engineering MCP CLAUDE-md Skills Hooks Talk]] distinguishes always-visible tool and instruction metadata from progressively disclosed Skills, deterministic just-in-time Hooks, and Agents that move bulk reading into separate contexts. The mechanism should follow the required visibility and lifecycle, not product branding.
 
@@ -536,6 +551,8 @@ Do not assign the strongest model uniformly. Spend capability where errors propa
 | Tool ambiguity | Model calls wrong or underpowered tools | Better tool schema, errors, affordances, argument validation |
 | Persistence-driven scope creep | Agent treats anything not prohibited as permitted | Positive scope, default-deny permissions, named systems and side effects, approval gates |
 | Multi-agent noise | More agents increase cost, disagreement, or shared-state conflicts | Task-fit gate, isolated contexts, bounded concurrency, explicit handoffs, role-aware routing |
+| Unattributed cross-session input | A target treats queued text as ordinary user instruction without authenticated peer provenance | Typed envelopes, sender identity outside payload text, receiver-side inbound policy, audit and reply routing |
+| Emergent cross-run mailbox | Separate runs coordinate through a cache, registry, object path, log, or filename outside the intended control plane | Isolate shared services, scope authenticated writes, constrain indirect egress, rate-limit, and correlate telemetry across sessions and infrastructure |
 | Self-judging leniency | Generator accepts weak output | Separate evaluator or deterministic checks |
 | Task–grader mismatch | A high score rewards incomplete or implementation-specific work | Joint prompt/test audit, functional outcome checks, human review, diagnostic trajectories |
 | Workflow drift | Plan changes after seeing untrusted input | plan-then-execute, quarantined data processing |
@@ -578,12 +595,15 @@ For any serious agent workflow, ask:
 14. How does the system resume after crash, context loss, or human delay?
 15. Which evaluator decides done, and has the task–grader contract been audited?
 16. Which positive scope and external evidence are required before a high-impact action or completion claim?
+17. If sessions communicate, what are the sender identity, target authority, wake, persistence, acknowledgment, reply, and inbound-policy contracts?
+18. Which caches, registries, object stores, logs, files, or other services are writable across runs, and how are they isolated and monitored?
 
 If those questions are unanswered, the system is probably still a prompt demo, not an engineered harness.
 
 ## Coverage Status and Remaining Gaps
 
 - The August 19 harness refresh separates concrete harnesses, SDKs, managed runtimes, hosted products, control planes, and patterns in [[maps/Harness Tracker]]. It promotes existing OpenHands, Antigravity, and Microsoft Agent Framework evidence; adds pinned repository cards for [[sources/Cline Harness]], [[sources/OpenCode Harness]], [[sources/Goose Agent]], and [[sources/Qwen Code]]; adds dated official-source cards for [[sources/Amp Agent Harness]] and [[sources/Kiro CLI]]; and restores [[sources/Aider]] as a historical mechanism baseline.
+- The August 24 communication refresh adds [[concepts/cross-session agent communication]], [[sources/Claude Code Cross-Session Messaging]], [[sources/OpenAI Codex Session Queueing]], [[sources/Grok Bot]], [[sources/Grok Build Harness]], and the release-excluded implementation evidence in [[sources/DeepSeek Harness Agent Teams]]. It also adds the OpenAI–Hugging Face incident as a shared-service isolation and observability case, without treating it as self-improvement or a controlled multi-agent performance result.
 - Claude Code `/goal` is now captured as [[sources/Claude Code Goals]]; Codex `/goal` is captured as [[sources/OpenAI Codex Using Goals]].
 - The July runtime tranche is now incorporated through [[sources/OpenAI GPT-5.6]], [[sources/OpenAI Programmatic Tool Calling]], [[sources/OpenAI Responses API Multi-Agent]], [[sources/Claude Fable 5 Prompting Guide]], [[sources/Claude Advisor Tool]], [[sources/OpenAI GPT-5.6 System Card]], [[sources/OpenAI SWE-bench Pro Audit]], [[sources/DeepSWE]], [[sources/Think Big Search Small]], and [[sources/Verbalizable Representations Form a Global Workspace in Language Models]].
 - The July talk tranche is incorporated through [[sources/Context Engineering MCP CLAUDE-md Skills Hooks Talk]], [[sources/Factory How Missions Work]], and the supplemental [[sources/Factory Missions Multi-Agent Architecture Talk]]. The source cards separate verified source identity from transcript review status, and full third-party transcripts remain local-only by default.
@@ -615,6 +635,7 @@ Core vault anchors:
 - [[claims/Claim - Runtime control and verification improve agent reliability]]
 - [[concepts/agent operating surfaces]]
 - [[concepts/cache-aware harness design]]
+- [[concepts/cross-session agent communication]]
 - [[concepts/programmatic tool calling]]
 - [[concepts/subagent context isolation]]
 - [[concepts/tool use]]
@@ -648,6 +669,7 @@ Product and runtime sources:
 - [[sources/Claude Agent SDK Streaming vs Single Message]]
 - [[sources/Claude Apps Gateway Spend Limits]]
 - [[sources/Claude Code Agent Teams]]
+- [[sources/Claude Code Cross-Session Messaging]]
 - [[sources/Claude Code Goals]]
 - [[sources/Claude Code Hooks]]
 - [[sources/Claude Code Manage Costs]]
@@ -667,6 +689,7 @@ Product and runtime sources:
 - [[sources/Cursor Multi-Agent Kernels]]
 - [[sources/Cursor Scaling Long-Running Autonomous Coding]]
 - [[sources/DeepSeek Harness Repository]]
+- [[sources/DeepSeek Harness Agent Teams]]
 - [[sources/Factory How Missions Work]]
 - [[sources/Factory Missions Multi-Agent Architecture Talk]]
 - [[sources/Git Worktrees for Agents - Evolution and Vendor Approaches]]
@@ -675,6 +698,9 @@ Product and runtime sources:
 - [[sources/Google Antigravity CLI Transition]]
 - [[sources/Google ADK Durable Agents]]
 - [[sources/Goose Agent]]
+- [[sources/Grok Bot]]
+- [[sources/Grok Build Harness]]
+- [[sources/Hugging Face Agent Intrusion Technical Timeline]]
 - [[sources/Kiro CLI]]
 - [[sources/Kubernetes Agent Sandbox]]
 - [[sources/LangChain Deep Agents v0.6]]
@@ -689,9 +715,12 @@ Product and runtime sources:
 - [[sources/OpenAI Codex Agent Loop]]
 - [[sources/OpenAI Codex App Server Docs]]
 - [[sources/OpenAI Codex Automations]]
+- [[sources/OpenAI Codex Session Queueing]]
 - [[sources/OpenAI Codex Using Goals]]
 - [[sources/OpenAI GPT-5.6]]
 - [[sources/OpenAI GPT-5.6 System Card]]
+- [[sources/OpenAI Hugging Face Incident Black Hat Talk]]
+- [[sources/OpenAI Hugging Face Model Evaluation Security Incident]]
 - [[sources/OpenAI Programmatic Tool Calling]]
 - [[sources/OpenAI Responses API Multi-Agent]]
 - [[sources/OpenAI SWE-bench Pro Audit]]

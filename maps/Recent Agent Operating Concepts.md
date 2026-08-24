@@ -19,6 +19,7 @@ The point is not to collect every vendor feature. A source belongs here when it 
 | Programmatic tool calling | Agents write code to call tools, filter results, and keep intermediates outside model context, while direct calls preserve semantic judgment and approval boundaries. | [[concepts/programmatic tool calling]], [[sources/Anthropic Code Execution with MCP]], [[sources/OpenAI Programmatic Tool Calling]] |
 | Agent operating surfaces | APIs, MCP, CLIs, SDKs, docs, schemas, skills, and code execution become a designed capability surface for agents. | [[concepts/agent operating surfaces]], [[sources/OpenAI Agents SDK Tools]] |
 | Subagent context isolation | Subagents isolate context, tools, and role prompts as much as they provide parallelism; provider APIs now compact each agent independently. | [[concepts/subagent context isolation]], [[sources/OpenAI Codex Subagents]], [[sources/OpenAI Responses API Multi-Agent]] |
+| Cross-session communication contracts | Peer messages, queued turns, team mailboxes, control-plane commands, and protocol tasks differ in identity, authority, wake, persistence, acknowledgment, and reply semantics. | [[concepts/cross-session agent communication]], [[sources/Claude Code Cross-Session Messaging]], [[sources/OpenAI Codex Session Queueing]], [[sources/DeepSeek Harness Agent Teams]] |
 | Role-aware capacity allocation | Strong models concentrate on decomposition or advice while compact workers execute bounded subtasks. | [[methods/runtime routing]], [[sources/Think Big Search Small]], [[sources/Claude Advisor Tool]] |
 | Workflow scripts as orchestration state | A generated script or CI workflow holds the plan, spawns workers, tracks intermediate results, and reports back. | [[sources/Claude Code Workflows]], [[sources/Recursive Agent Harnesses]], [[sources/GitHub Agentic Workflows]] |
 | Loop engineering | Outer loops wake, prompt, monitor, verify, retry, and stop agents over time. | [[concepts/loop engineering]], [[sources/Claude Code Scheduled Tasks]], [[sources/Addy Osmani Loop Engineering]], [[sources/Andrew Ng Three Key Loops]], [[sources/Armin Ronacher The Coming Loop]], [[sources/GitHub Agentic Workflows]] |
@@ -39,7 +40,7 @@ The old agent stack was prompt plus tools plus loop.
 
 The newer stack is versioned context plus skills plus dynamic tools plus memory consolidation plus evaluators plus durable runtime plus subagents plus observability plus governance.
 
-July 2026 adds model-native agent trees, generated tool-control programs, asymmetric advisor/executor routing, and independently compacted subagent contexts. The shared move is still to make control explicit and inspectable outside a single chat context, but some of that control surface is now part of the model API rather than only the application harness.
+July 2026 adds model-native agent trees, generated tool-control programs, asymmetric advisor/executor routing, and independently compacted subagent contexts. August adds direct session messaging, durable queued turns, explicit team-mailbox recovery semantics, and a production incident in which shared infrastructure became an unauthorized cross-run blackboard. The shared move is still to make control explicit and inspectable outside a single chat context, but some of that control surface is now part of the model API—and some can emerge outside the designed harness entirely.
 
 This map should stay compact. If three sources explain the same vendor implementation, keep the original architecture source, the strongest empirical paper, and one implementation example only when it introduces a distinct mechanism.
 
@@ -56,3 +57,4 @@ This map should stay compact. If three sources explain the same vendor implement
 - [[methods/self-improving code loops]]
 - [[operations/worktree isolation]]
 - [[concepts/agent operating surfaces]]
+- [[concepts/cross-session agent communication]]

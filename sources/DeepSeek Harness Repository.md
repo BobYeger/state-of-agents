@@ -27,7 +27,7 @@ license_url: "https://github.com/deepseek-ai/deepseek-harness/blob/47f943859bef6
 evidence_class: "open-source-implementation-and-maintainer-documentation"
 metrics_status: "benchmark-instructions-without-published-results"
 created: 2026-08-17
-updated: 2026-08-17
+updated: 2026-08-24
 ---
 
 # DeepSeek Harness Repository
@@ -55,6 +55,12 @@ This card audits repository commit `47f943859bef60e4160492346772ded9b24f765a`, d
 
 At this snapshot the public repository had no tags or GitHub releases, while npm's `0.1.0-rc.6` default package was ahead of the CLI's `0.1.0-rc.5` version on visible `master`; the published artifact was therefore not traceable to a public release tag. Worker-thread workflows are documented as trusted-code, bash-equivalent execution rather than a security sandbox. The nonpersistent temporary-plugin tool is absent from the default `standard` preset but available through the shipped opt-in `cordis` preset; its VM boundary is likewise not a security boundary.
 
+## Current Status Pointer — August 24, 2026
+
+The historical audit above remains pinned to `47f943859bef60e4160492346772ded9b24f765a`. Since that snapshot, the repository has added release tags; current `master` is `dsh-v0.1.1-rc.2` at `b150a551b8d465e31e418e1b2eaf5e79bbb7d28e`, dated August 21. This supersedes only the old snapshot's present-tense “no tags” status, not the evidence captured at that commit.
+
+The newer tree also contains an Agent Teams implementation with a durable peer mailbox and shared revisioned task DAG. Its two packages are explicitly private, live under `packages/experimental/`, and are mechanically excluded from release artifacts and stable-package dependencies. See [[sources/DeepSeek Harness Agent Teams]] for the separate current evidence boundary; do not read it back into the August 13 snapshot or describe it as a shipped stable harness feature.
+
 ## Connections
 
 - [[sources/A Programming Paradigm for Spatiotemporal Composability]]
@@ -70,6 +76,7 @@ At this snapshot the public repository had no tags or GitHub releases, while npm
 - Canonical repository: https://github.com/deepseek-ai/deepseek-harness
 - Audited snapshot: https://github.com/deepseek-ai/deepseek-harness/tree/47f943859bef60e4160492346772ded9b24f765a
 - Snapshot commit: `47f943859bef60e4160492346772ded9b24f765a` (`Merge pull request #2519 from deepseek-harness/feat/npm-public`).
+- Current-status pointer, not a repin: https://github.com/deepseek-ai/deepseek-harness/tree/b150a551b8d465e31e418e1b2eaf5e79bbb7d28e (`dsh-v0.1.1-rc.2`, August 21, 2026).
 - Default branch at capture time: `master`.
 - License: [MIT](https://github.com/deepseek-ai/deepseek-harness/blob/47f943859bef60e4160492346772ded9b24f765a/LICENSE), copyright DeepSeek.
 - Architecture: https://github.com/deepseek-ai/deepseek-harness/blob/47f943859bef60e4160492346772ded9b24f765a/docs/architecture.md

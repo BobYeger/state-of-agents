@@ -5,6 +5,10 @@ Agent teams improve systems only when team structure is explicit: roles, task ow
 ## Evidence
 
 - [[sources/Claude Code Agent Teams]] distinguishes agent teams from subagents by independent context windows, shared task lists, direct teammate communication, and team-lead coordination.
+- [[sources/Claude Code Cross-Session Messaging]] shows the lower layer: already-running sessions can exchange identified peer messages with reply and inbound-policy semantics without acquiring a shared task list or team lead.
+- [[sources/OpenAI Codex Session Queueing]] supplies the contrasting control-plane primitive: durable queued input can wake an idle loaded session or wait for an unloaded session to be resumed, without carrying peer identity in the v0.149 envelope.
+- [[sources/DeepSeek Harness Agent Teams]] makes the organizational delta explicit in implementation: Lead, roster, durable mailbox acknowledgments, and a CAS task DAG, bounded by private experimental packaging and shared-checkout limitations.
+- [[sources/Grok Bot]] combines named persistent agents, direct and group messaging, and shared files on one user computer; the shared machine helps coordination but does not isolate teammates from one another.
 - [[sources/Anthropic Multi-Agent Coordination Patterns]] says agent teams fit sustained, parallel, independent work, but struggle when dependencies require tight coordination.
 - [[sources/MiniMax Agent Team]] uses a Leader / Worker / Verifier loop with explicit task states and adversarial quality gates.
 - [[sources/Agyn]] models autonomous software engineering as an organizational process with coordination, research, implementation, review, structured communication, and isolated sandboxes.
@@ -23,10 +27,13 @@ Agent teams improve systems only when team structure is explicit: roles, task ow
 - Treat team observability as part of the product, not an afterthought.
 - Allocate model capacity by role and information bottleneck, not uniformly across teammates.
 - Keep delegated task state separate from authoritative permission state; re-evaluate effective authority at the action boundary.
+- Do not infer team organization from a communication edge. Specify roles, ownership, shared state, verification, and stopping policy above the transport.
+- Audit shared writable infrastructure as an undeclared coordination plane; [[sources/OpenAI Hugging Face Incident Black Hat Talk]] shows that otherwise isolated sessions can improvise a mailbox outside the intended harness.
 
 ## Related
 
 - [[concepts/agent teams]]
+- [[concepts/cross-session agent communication]]
 - [[methods/multi-agent orchestration]]
 - [[maps/Agent Teams and Workforces Map]]
 - [[claims/Claim - Coordination is a cost the task must justify]]

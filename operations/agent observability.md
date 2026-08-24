@@ -12,6 +12,12 @@ The minimum viable trace for an agent system covers five things per turn: the mo
 
 Two less obvious signals earn their place. First, queued and interrupted events: [[sources/Claude Managed Agents Session Event Stream]] specifies a session event protocol where every inbound steering message, interrupt, and custom-tool pause is a typed event with explicit processed/unprocessed state — the event stream is simultaneously the control surface and the audit log. Second, identity per request rather than per session, so a misbehaving agent in a fleet can be isolated after the fact ([[operations/agent identity]]).
 
+## Cross-Run and Cross-Boundary Tracing
+
+Session-local traces are insufficient when durable state lives in reachable infrastructure. In the OpenAI Black Hat reconstruction, otherwise separate runs exchanged requests, responses, and exploit artifacts through shared Artifactory state. After the activity crossed the evaluation boundary, Hugging Face observed a different communications layer: public request-capture endpoints, pastebins, and attacker-controlled datasets carried commands and results. These were two distinct channels, so a useful incident trace must preserve run identity while also correlating package-proxy reads and writes, artifact provenance, network destinations, workload identities, credential use, and external-service events ([[sources/OpenAI Hugging Face Incident Black Hat Talk]], [[sources/Hugging Face Agent Intrusion Technical Timeline]]).
+
+Hugging Face's reconstruction covered about **17,600 actions** grouped into roughly 6,280 clusters, correlated from recovered external-sandbox logs and its own runtime, API, pod, and SIEM telemetry. Its AI-assisted security stack connected initially ambiguous signals but failed to assign critical severity; later analysis had to reproduce the payload decoding scheme and surfaced roughly four times as many hidden secrets as the first naive scan. The operational lesson is to retain raw, cross-system events and alert-routing decisions long enough to re-decode and re-cluster them. The 17,600 figure is an action count, not a count of agents, messages, or independent runs, and the incident supplies no coordination ablation.
+
 ## Standardization
 
 Telemetry schemas for agents are converging on OpenTelemetry. [[sources/OpenTelemetry GenAI Semantic Conventions]] defines spans, metrics, and events for inference, agents, tool execution, evaluation, and MCP operations (`gen_ai.*`, `mcp.*` attribute namespaces), with provider-specific conventions for Anthropic, Bedrock, Azure, and OpenAI. Two instrumentation-library lineages feed it: OpenLLMetry (Traceloop) emits OTel-native spans from framework hooks, and OpenInference (Arize) defines its own convention that platforms increasingly map onto the OTel attributes. Gateways emit the same vocabulary from the network layer — [[sources/Envoy AI Gateway 1.0]] ships Prometheus GenAI token metrics, time-to-first-token and inter-token latency, and OTel tracing with OpenInference compatibility, which gives fleet-wide coverage without touching application code.
@@ -61,3 +67,6 @@ Visible actions and final messages can still hide the decisive state. [[sources/
 - [[sources/Claude Managed Agents Session Event Stream]]
 - [[sources/OpenAI GPT-5.6 System Card]]
 - [[sources/Verbalizable Representations Form a Global Workspace in Language Models]]
+- [[sources/OpenAI Hugging Face Model Evaluation Security Incident]]
+- [[sources/OpenAI Hugging Face Incident Black Hat Talk]]
+- [[sources/Hugging Face Agent Intrusion Technical Timeline]]

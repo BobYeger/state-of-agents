@@ -25,11 +25,22 @@ The common lesson across all four: durable sessions need two distinct guarantees
 
 Buzz supplies a useful counterexample to equating those guarantees. Signed channel history and encrypted engrams are durable records, but the audited ordinary approval path does not persist a waiting action and resume it after approval. A system can preserve everything the team said and still lack durable workflow execution ([[sources/Buzz Repository]]).
 
+## Queued Input and Peer Delivery
+
+Cross-session communication adds another durability boundary: whether pending input survives before it becomes part of the target transcript.
+
+- [[sources/OpenAI Codex Session Queueing]] persists text in SQLite for an idle, running, interrupted, or unloaded target thread. A running target consumes it after the active turn; an idle loaded target wakes; an unloaded target waits for a separate load or resume. The enqueue response and submission ID acknowledge queue admission, not delivery, execution, or completion. The v0.149 envelope contains no sender-thread identity or reply address.
+- [[sources/Claude Code Cross-Session Messaging]] delivers identified peer text to reachable sessions, wakes an idle recipient, and records delivered messages in its transcript. Anthropic documents bounded live queues and held messages, but not a restart-safe offline inbox; live reachability and durable pre-delivery persistence must not be conflated.
+- [[sources/DeepSeek Harness Agent Teams]] is implementation evidence for a stronger team-specific contract: queue state is persisted before delivery, the target acknowledges after persistence, source IDs deduplicate, and recovery retries queued-minus-delivered messages. Its packages remain private and experimental, and the design explicitly does not promise cross-process exactly-once delivery.
+
+Name the acknowledgment point precisely: accepted by sender, persisted in queue, persisted by target, turn started, turn completed, or artifact accepted. “Message sent” is otherwise too ambiguous for recovery logic.
+
 ## Related
 
 - [[concepts/long-horizon agents]]
 - [[concepts/context engineering]]
 - [[concepts/durable dormant agents]]
+- [[concepts/cross-session agent communication]]
 - [[operations/agent infrastructure]]
 - [[operations/harness fault tolerance]]
 - [[operations/agent harnesses]]
@@ -56,4 +67,7 @@ Buzz supplies a useful counterexample to equating those guarantees. Signed chann
 - [[sources/LangGraph Interrupts]]
 - [[sources/OpenAI Codex App Server Docs]]
 - [[sources/DeepSeek Harness Repository]]
+- [[sources/DeepSeek Harness Agent Teams]]
+- [[sources/Claude Code Cross-Session Messaging]]
+- [[sources/OpenAI Codex Session Queueing]]
 - [[sources/Buzz Repository]]

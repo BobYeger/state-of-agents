@@ -58,6 +58,14 @@ Greater autonomy does not remove the need for explicit grants. [[sources/OpenAI 
 
 Generated orchestration code follows the same rule. [[sources/OpenAI Programmatic Tool Calling]] recommends direct tool calls for writes and approval-sensitive actions and requires application-side argument and permission checks regardless of whether the caller is the model or model-written JavaScript. A program is a control-flow optimization, not a new authority boundary.
 
+## Inbound Agent Messages Are a Permission Surface
+
+A message from another session is untrusted input with a principal and an intended authority class; it should not be indistinguishable from authenticated user instruction.
+
+[[sources/Claude Code Cross-Session Messaging]] preserves the peer origin and normal reply route, applies the receiver's own permissions, prevents incoming messages from approving actions or changing configuration, and exposes `accept`, `hold`, and `refuse` policy plus an optional approval gate for cross-machine sends. [[sources/OpenAI Codex Session Queueing]] has a different v0.149 contract: queued text becomes ordinary user input for the target and carries no sender-thread identity or reply address in the public schema. The resulting turn still uses the target's policy, but peer provenance cannot be established from that envelope alone. This comparison is a reason to type inbound channels, not a claim that one product's broader security posture is stronger.
+
+For any cross-session path, preserve sender identity outside payload text, evaluate target-side policy before wake or tool use, prohibit delegated approval, record the transport and source session in the audit trail, and make reply routing non-spoofable. See [[concepts/cross-session agent communication]].
+
 ## Related
 
 - [[operations/agent identity]]
@@ -67,6 +75,7 @@ Generated orchestration code follows the same rule. [[sources/OpenAI Programmati
 - [[methods/hook-based control]]
 - [[concepts/tool use]]
 - [[concepts/human-in-the-loop agents]]
+- [[concepts/cross-session agent communication]]
 - [[protocols/AP2]]
 - [[protocols/UCP]]
 
@@ -86,3 +95,5 @@ Generated orchestration code follows the same rule. [[sources/OpenAI Programmati
 - [[sources/Block User Identity Delegation]]
 - [[sources/Buzz Repository]]
 - [[sources/MasDrift]]
+- [[sources/Claude Code Cross-Session Messaging]]
+- [[sources/OpenAI Codex Session Queueing]]

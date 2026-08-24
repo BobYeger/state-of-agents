@@ -8,7 +8,7 @@ status: "verified"
 year: 2026
 publication_date: "2026-05-26"
 publication_date_basis: "accessed_living_docs_no_visible_publication_date"
-source_updated_date: "2026-05-26"
+source_updated_date: "2026-08-24"
 source_updated_date_basis: "snapshot_date"
 arxiv_id: null
 citation_count: null
@@ -23,7 +23,7 @@ pdf_url: ""
 artifacts:
   - "raw/docs/claude-code-agent-teams.md"
 created: 2026-05-26
-updated: 2026-05-26
+updated: 2026-08-24
 ---
 
 # Claude Code Agent Teams
@@ -32,7 +32,8 @@ updated: 2026-05-26
 
 - Official Claude Code docs for coordinating multiple Claude Code sessions as a team.
 - Cleanly distinguishes agent teams from subagents: teammates are independent sessions with their own context windows and can communicate directly.
-- Important because it makes shared task lists, team leads, teammate context, direct messaging, and display modes first-class harness concepts.
+- Agent Teams are experimental and disabled by default. They make a lead, shared task list, teammate context, direct messaging, and display modes first-class harness concepts.
+- Separate, independently started sessions can now communicate through [[sources/Claude Code Cross-Session Messaging]], but that peer channel does not create an Agent Team or shared task list.
 
 ## Claims
 
@@ -48,6 +49,7 @@ updated: 2026-05-26
 - [[methods/hook-based control]]
 - [[maps/Agent Teams and Workforces Map]]
 - [[sources/Claude Code Hooks]]
+- [[sources/Claude Code Cross-Session Messaging]]
 
 ## Artifacts
 
@@ -57,3 +59,4 @@ updated: 2026-05-26
 
 - Canonical URL: https://code.claude.com/docs/en/agent-teams
 - Publication date basis: accessed_living_docs_no_visible_publication_date.
+- The living docs describe Agent Teams as of Claude Code v2.1.178 and explicitly route independent-session messaging to the separate cross-session feature.

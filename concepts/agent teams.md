@@ -20,6 +20,8 @@ Buzz demonstrates a useful distinction. A shared signed channel can give humans 
 
 Treat the event room as a team primitive, not the team design. Explicit organization still sits above the transport and storage layer.
 
+The same distinction now applies to independent-session messaging. [[sources/Claude Code Cross-Session Messaging]] exposes identified peers, replies, wake behavior, and inbound trust controls without automatically creating a roster or shared task board. [[sources/OpenAI Codex Session Queueing]] durably turns queued text into a future user turn but does not carry equivalent sender identity in its v0.149 schema. [[sources/DeepSeek Harness Agent Teams]] adds a Lead, roster, durable mailbox, delivery acknowledgments, and task DAG, while [[sources/Grok Bot]] combines direct and group messaging with a shared persistent computer. These are different organizational layers, not interchangeable examples of “agents talking.” See [[concepts/cross-session agent communication]].
+
 ## The Human Gate Under Team Output
 
 The last design question — what the human supervises — now has measured constraints on both sides.
@@ -35,6 +37,7 @@ The design consequence: size the human's role against measured capacity, not asp
 ## Related
 
 - [[concepts/multi-agent systems]]
+- [[concepts/cross-session agent communication]]
 - [[concepts/subagent context isolation]]
 - [[concepts/human-in-the-loop agents]]
 - [[operations/worktree isolation]]
@@ -48,6 +51,10 @@ The design consequence: size the human's role against measured capacity, not asp
 ## Related Sources
 
 - [[sources/Claude Code Agent Teams]]
+- [[sources/Claude Code Cross-Session Messaging]]
+- [[sources/OpenAI Codex Session Queueing]]
+- [[sources/DeepSeek Harness Agent Teams]]
+- [[sources/Grok Bot]]
 - [[sources/Anthropic Multi-Agent Coordination Patterns]]
 - [[sources/MiniMax Agent Team]]
 - [[sources/Agyn]]
