@@ -34,6 +34,7 @@ Harnesses improve agent systems by making the loop inspectable and recoverable: 
 
 - [[sources/SWE-agent]] — the ACI result: interface design drives coding-agent performance more than prompting, at fixed model capability.
 - [[sources/Mini-SWE-agent]] — the control condition: ~100 lines, bash-only, no tool-calling interface, >74% on SWE-bench Verified.
+- [[sources/Aider]] — an earlier mechanism baseline for graph-ranked repository maps, explicit edit formats, Architect/Editor separation, git-native checkpoints, and reproducible model-plus-harness benchmarking.
 - [[sources/CodeAct]] — executable code as the unified action space, up to 20% over JSON/text tool calls across 17 models.
 - [[sources/Code as Agent Harness]] — 42-author survey treating the harness as a first-class research object with a three-layer taxonomy.
 - [[sources/Harness Updating Is Not Harness Benefit]] — separates generating harness improvements from executing well under them; benefit is non-monotonic in model capability.
@@ -47,6 +48,7 @@ Harnesses improve agent systems by making the loop inspectable and recoverable: 
 - [[sources/OpenAI Agents SDK Tools]] — the tool surface: hosted tools, hosted MCP, function tools, agents-as-tools.
 - [[sources/OpenAI Codex CLI Agents SDK Cookbook]] — one harness nested in another: Codex CLI exposed as an MCP server inside the Agents SDK.
 - [[sources/OpenHands Software Agent SDK]] — event-sourced SDK redesign that substantially reduced system-attributable failures in production.
+- [[sources/Microsoft Agent Framework Harness Compaction]] — an embedded framework harness joining shell/filesystem execution, approvals, sessions, and pre-call compaction while leaving local isolation to the application.
 - [[sources/OpenHarness Docs]] — composable harness framework: tool loops, subagent delegation, compaction, streaming, provider abstraction.
 - [[sources/DeepSeek Harness Repository]] — a fully plugin-composed harness whose model adapters, tool registry, session log, agent loop, sandbox, approvals, and telemetry are replaceable services over Cordis.
 - [[sources/A Programming Paradigm for Spatiotemporal Composability]] — the formal basis for that composition: reversible registrations plus reactive dependency resolution, without agent-performance evidence.
@@ -116,6 +118,7 @@ Harnesses improve agent systems by making the loop inspectable and recoverable: 
 - [[sources/Claude Code Agent Teams]] — coordinating multiple sessions as a team with shared task state.
 - [[sources/OpenAI Codex Subagents]] — subagent workflows for parallel exploration, testing, review, summarization.
 - [[sources/Cursor 3 Agents Window]] — many agents across repos and environments in one operating surface.
+- [[sources/Google Antigravity]] — a dedicated Manager surface for spawning, observing, and reviewing asynchronous agents across workspaces through verifiable artifacts.
 - [[sources/Devin Manages Devins]] — a main session delegating to managed parallel workers.
 - [[sources/Anthropic Parallel Claudes C Compiler]] — the large-scale case study: parallel sessions over one compiler project.
 - [[sources/MiniMax Agent Team]] — Leader/Worker/Verifier loops with async execution and ROI tradeoffs.

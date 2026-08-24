@@ -1,7 +1,7 @@
 # Harness Engineering Report: Goals, Workflows, and Runtime Control
 
-Date: 2026-08-17
-Scope: local project graph, with current official Codex and Claude `/goal`, `/loop`, workflow, GPT-5.6, Fable 5, programmatic-tool, advisor, multi-agent, Buzz, DeepSeek Harness, and Cordis materials consulted for the runtime sections. Originally written 2026-06-14; revised through 2026-08-17 for new orchestration, verification, safety, protocol-composition, composition/lifecycle, and durable-execution evidence, with the self-improvement lineage carried by [[reports/Self-Improving Systems Report]]. This report owns within-run loop mechanics: goals, workflows, wake/verify/retry/stop policies, and ralph-style loops. Direct excerpts are intentionally short; longer source passages are summarized. Source-paper figures are referenced through local PDF page embeds for private vault analysis rather than copied as standalone images.
+Date: 2026-08-19
+Scope: local project graph, with current official Codex and Claude `/goal`, `/loop`, workflow, GPT-5.6, Fable 5, programmatic-tool, advisor, multi-agent, Buzz, DeepSeek Harness, Cordis, and August 2026 harness-landscape materials consulted for the runtime sections. Originally written 2026-06-14; revised through 2026-08-19 for new orchestration, verification, safety, protocol-composition, composition/lifecycle, durable-execution, and harness-taxonomy evidence, with the self-improvement lineage carried by [[reports/Self-Improving Systems Report]]. This report owns within-run loop mechanics: goals, workflows, wake/verify/retry/stop policies, and ralph-style loops. Direct excerpts are intentionally short; longer source passages are summarized. Source-paper figures are referenced through local PDF page embeds for private vault analysis rather than copied as standalone images.
 
 ## Executive Summary
 
@@ -67,6 +67,8 @@ The report's central definition:
 > Harness engineering is the design and operation of the execution scaffold that turns a language model into a bounded, observable, stateful, tool-using system.
 
 That scaffold is not the same as a framework. A framework gives reusable abstractions. A harness is the concrete runtime that closes the loop.
+
+Packaging is a separate axis from function. A hosted product may contain a harness; an SDK may ship an embedded harness; a managed runtime may provide sessions, isolation, and scaling while leaving the inner model/tool loop to application code; and a control plane may dispatch several independent harnesses without being one itself. [[maps/Harness Tracker]] therefore assigns one primary kind to each artifact and splits brands where their control boundaries differ, such as GitHub Copilot coding agent versus Agent HQ and Claude Code versus the Claude Agent SDK.
 
 ## Evidence Anchors
 
@@ -287,6 +289,16 @@ The research-side counterpart is [[sources/Mini-SWE-agent]]: a roughly 100-line 
 
 | Source | Harness engineering lesson |
 |---|---|
+| [[sources/Aider]] | Early coding harnesses already treated context selection, edit representation, role separation, tests, and rollback as runtime design: graph-ranked repository maps and Architect/Editor are mechanism baselines. Its Polyglot benchmark is reproducible within Aider, not comparable to SWE-bench. |
+| [[sources/Goose Agent]] | A general-purpose local loop can keep tools modular through MCP, expose the same sessions to desktop and CLI, and use ACP either as a server or provider boundary. Saved sessions and permission modes improve operability but do not provide transactional replay or an OS sandbox. |
+| [[sources/Qwen Code]] | A provider-plural core can serve interactive, headless, ACP, and SDK clients while keeping sessions, checkpoints, skills, memory, and subagents in the harness. Sandboxing is opt-in; Agent Team and daemon mode are experimental and cannot support default-runtime claims. |
+| [[sources/Cline Harness]] | Separate canonical session history from the working-context projection, and validate compaction against the covered prefix before reuse. Its stateless loop/stateful-core split is inspectable, but CLI approvals are configurable and permissive by default rather than inherently human-gated. |
+| [[sources/OpenCode Harness]] | A local server can make sessions, tools, events, and permissions reusable across terminal, web, desktop, SDK, and ACP clients. Persisted state is shipped; background subagents and the V2/event-sourcing migration are not stable contracts, and permissions do not sandbox shell execution. |
+| [[sources/OpenHands Software Agent SDK]] | A default harness can remain SDK-composable: event sourcing, native sandbox execution, lifecycle control, multi-model routing, and a separate Agent Server support local-to-remote portability. The reported production failure reduction is vendor evidence, not an independent comparison. |
+| [[sources/Google Antigravity]]; [[sources/Google Antigravity CLI Transition]] | A dedicated Manager can make asynchronous multi-agent workspaces and verification artifacts first-class while one harness serves editor and CLI surfaces. The sources expose product mechanics but no comparative benchmark or detailed enforcement model. |
+| [[sources/Microsoft Agent Framework Docs]]; [[sources/Microsoft Agent Framework Harness Compaction]] | Framework, harness, and workflow are separable layers: dynamic tool use sits inside agents, explicit graphs carry multi-step control, and sessions, approvals, middleware, and compaction make the embedded loop operational. Local shell isolation remains the application's responsibility. |
+| [[sources/Amp Agent Harness]] | Thread identity is separable from executor placement across local, managed-orb, and user-runner environments; persistent child threads extend subagents into asynchronous coordination. Plugins carry policy, but tool execution is permissive by default and the proprietary implementation has no systematic evaluation. |
+| [[sources/Kiro CLI]] | A standalone harness process behind ACP can serve several clients, while file-backed requirements, design, and task artifacts make the control plan inspectable. The unified v3 harness and Spec agent are Early Access rather than stable-CLI guarantees. |
 | [[sources/OpenAI Codex Agent Loop]] | Codex makes the agent loop explicit: prompt assembly, tool calls, observations, context growth, prompt caching, and compaction. |
 | [[sources/OpenAI Unlocking Codex Harness]] | App Server exposes the same Codex harness through stable JSON-RPC primitives, thread persistence, streaming events, approvals, and diffs. |
 | [[sources/OpenAI Codex App Server Docs]] | The thread/turn/item protocol makes Codex sessions programmatically controllable: start, resume, fork, message, steer, name, archive, compact, and stream worker state. |
@@ -571,6 +583,7 @@ If those questions are unanswered, the system is probably still a prompt demo, n
 
 ## Coverage Status and Remaining Gaps
 
+- The August 19 harness refresh separates concrete harnesses, SDKs, managed runtimes, hosted products, control planes, and patterns in [[maps/Harness Tracker]]. It promotes existing OpenHands, Antigravity, and Microsoft Agent Framework evidence; adds pinned repository cards for [[sources/Cline Harness]], [[sources/OpenCode Harness]], [[sources/Goose Agent]], and [[sources/Qwen Code]]; adds dated official-source cards for [[sources/Amp Agent Harness]] and [[sources/Kiro CLI]]; and restores [[sources/Aider]] as a historical mechanism baseline.
 - Claude Code `/goal` is now captured as [[sources/Claude Code Goals]]; Codex `/goal` is captured as [[sources/OpenAI Codex Using Goals]].
 - The July runtime tranche is now incorporated through [[sources/OpenAI GPT-5.6]], [[sources/OpenAI Programmatic Tool Calling]], [[sources/OpenAI Responses API Multi-Agent]], [[sources/Claude Fable 5 Prompting Guide]], [[sources/Claude Advisor Tool]], [[sources/OpenAI GPT-5.6 System Card]], [[sources/OpenAI SWE-bench Pro Audit]], [[sources/DeepSWE]], [[sources/Think Big Search Small]], and [[sources/Verbalizable Representations Form a Global Workspace in Language Models]].
 - The July talk tranche is incorporated through [[sources/Context Engineering MCP CLAUDE-md Skills Hooks Talk]], [[sources/Factory How Missions Work]], and the supplemental [[sources/Factory Missions Multi-Agent Architecture Talk]]. The source cards separate verified source identity from transcript review status, and full third-party transcripts remain local-only by default.
@@ -614,6 +627,8 @@ Core vault anchors:
 
 Product and runtime sources:
 
+- [[sources/Aider]]
+- [[sources/Amp Agent Harness]]
 - [[sources/Addy Osmani Loop Engineering]]
 - [[sources/Andrew Ng Three Key Loops]]
 - [[sources/Anthropic Building Effective AI Agents eBook]]
@@ -643,6 +658,7 @@ Product and runtime sources:
 - [[sources/Claude Advisor Tool]]
 - [[sources/Claude Fable 5 Prompting Guide]]
 - [[sources/Claude Managed Agents Define Outcomes]]
+- [[sources/Cline Harness]]
 - [[sources/Cloudflare Dynamic Workflows]]
 - [[sources/Cloudflare Project Think]]
 - [[sources/Context Engineering MCP CLAUDE-md Skills Hooks Talk]]
@@ -655,13 +671,20 @@ Product and runtime sources:
 - [[sources/Factory Missions Multi-Agent Architecture Talk]]
 - [[sources/Git Worktrees for Agents - Evolution and Vendor Approaches]]
 - [[sources/GitHub Agentic Workflows]]
+- [[sources/Google Antigravity]]
+- [[sources/Google Antigravity CLI Transition]]
 - [[sources/Google ADK Durable Agents]]
+- [[sources/Goose Agent]]
+- [[sources/Kiro CLI]]
 - [[sources/Kubernetes Agent Sandbox]]
 - [[sources/LangChain Deep Agents v0.6]]
 - [[sources/LangGraph Docs]]
 - [[sources/LangGraph Interrupts]]
 - [[sources/LiteLLM Proxy Budgets and Spend Tracking]]
 - [[sources/Manus Context Engineering]]
+- [[sources/Microsoft Agent Framework Docs]]
+- [[sources/Microsoft Agent Framework Harness Compaction]]
+- [[sources/Microsoft Agent Framework Skills Docs]]
 - [[sources/Mini-SWE-agent]]
 - [[sources/OpenAI Codex Agent Loop]]
 - [[sources/OpenAI Codex App Server Docs]]
@@ -675,8 +698,11 @@ Product and runtime sources:
 - [[sources/OpenAI Symphony]]
 - [[sources/OpenAI Unlocking Codex Harness]]
 - [[sources/OpenClaw Agent Harness Plugins]]
+- [[sources/OpenCode Harness]]
+- [[sources/OpenHands Software Agent SDK]]
 - [[sources/OpenHarness Docs]]
 - [[sources/Ralph Playbook]]
+- [[sources/Qwen Code]]
 - [[sources/Restate Durable AI Loops]]
 - [[sources/Temporal OpenAI Agents SDK Integration]]
 - [[sources/You Cannot Have Exactly-Once Delivery]]

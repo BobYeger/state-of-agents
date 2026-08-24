@@ -304,7 +304,6 @@ Unverified leads are kept outside the public graph until they have enough source
 **Systems catalog long tail**
 
 - The Contract Net Protocol (Reid G. Smith, IEEE ToC, 1980) — 45-year-old origin of the delegation, bidding, and task-routing patterns behind A2A-style coordination. https://www.reidgsmith.com/The_Contract_Net_Protocol_Dec-1980.pdf
-- Aider Architect/Editor mode and repository map (Paul Gauthier, Sep 2024) — two named, benchmarked mechanisms code-factory designers reuse constantly; vault has zero Aider coverage. https://aider.chat/2024/09/26/architect.html
 - When "A Helpful Assistant" Is Not Really Helpful (EMNLP 2024 Findings) — controlled evidence that personas in system prompts do not improve performance. https://arxiv.org/abs/2311.10054
 - UI-TARS-2 Technical Report (ByteDance Seed, Sep 2025) — strongest public account of a GUI-agent RL data flywheel and sandbox rollout platform. https://arxiv.org/abs/2509.02544
 - Agentic Commerce Protocol (Stripe/OpenAI, Sep 2025) — the OpenAI/Stripe side of the agentic-payments protocol landscape, complementing AP2/UCP. https://stripe.com/blog/developing-an-open-standard-for-agentic-commerce

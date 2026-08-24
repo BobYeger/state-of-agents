@@ -23,7 +23,7 @@ pdf_url: ""
 artifacts:
   - "raw/articles/amp-handoff-no-more-compaction.md"
 created: 2026-05-26
-updated: 2026-05-26
+updated: 2026-08-19
 ---
 
 # Amp Handoff
@@ -31,6 +31,7 @@ updated: 2026-05-26
 ## Summary
 
 - Argues for handoff into focused new threads instead of repeated compaction in one long thread.
+- Historical product design: Amp's rebuilt 2026 loop now uses automatic compaction; retain this card as a general counter-position and design lineage, not a description of current Amp behavior.
 - Useful counter-position to auto-compaction because it treats thread boundaries as a design tool.
 - Important for coding-agent workflow design where focused tasks, files, and goals may preserve continuity better than stacked summaries.
 
@@ -44,6 +45,7 @@ updated: 2026-05-26
 - [[concepts/context compaction]]
 - [[operations/agent harnesses]]
 - [[maps/Context Management Map]]
+- [[sources/Amp Agent Harness]]
 
 ## Artifacts
 

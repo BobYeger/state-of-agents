@@ -26,7 +26,7 @@ The organizing distinction is between prompt compression and agent context manag
 | Agent-visible context dashboard | Exposes typed working-memory blocks with usage/recency stats and reversible archives so the agent manages its own context. | [[sources/VISTA Latent Context Managers]] |
 | Cache-aware context policy | Optimizes compaction and eviction for cache stability, latency, cost, and long-running coding trajectories. | [[sources/TokenPilot]], [[sources/SWE-MeM]] |
 | Topic-document memory | Consolidates observations into maintainable topical documents or dual text/code memory. | [[sources/Infini Memory]], [[sources/Metis]], [[sources/Zep Markdown Is Not Agent Memory]] |
-| Handoff | Starts a focused new session with a continuation package. | [[concepts/handoff over compaction]], [[sources/Amp Handoff]] |
+| Handoff | Starts a focused new session with a continuation package; Amp's 2025 implementation is historical because its rebuilt 2026 loop now auto-compacts. | [[concepts/handoff over compaction]], [[sources/Amp Handoff]], [[sources/Amp Agent Harness]] |
 | Task-aware pruning | Selects lines or evidence according to the current goal. | [[concepts/task-aware context pruning]], [[sources/SWE-Pruner]] |
 | Context retrieval | Measures and improves whether the agent finds useful context. | [[concepts/context retrieval]], [[sources/ContextBench]] |
 | Memory activation / prospective intention | Surfaces decision-critical memory or a deferred action from query, time, event, state, or always-visible policy. | [[sources/Keep It InMind]], [[sources/PM-Bench]] |

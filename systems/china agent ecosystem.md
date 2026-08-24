@@ -8,6 +8,7 @@ The scope is agent-specific material only. Generic model releases stay out unles
 
 - [[sources/AgentScope 1.0]]
 - [[sources/Qwen-Agent Repository]]
+- [[sources/Qwen Code]] — executable coding harness, distinct from the Qwen-Agent framework
 - [[sources/DeepSeek Harness Repository]]
 - [[sources/Tongyi DeepResearch Technical Report]]
 - [[sources/Youtu-Agent]]

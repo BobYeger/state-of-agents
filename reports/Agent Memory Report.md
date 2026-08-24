@@ -233,11 +233,11 @@ Sources: [[sources/Anthropic Agent Skills]], [[sources/Agent Skills Specificatio
 
 ### Handoff Instead of More Compaction
 
-The graph also includes sources arguing that compaction is not always the right boundary. Amp's handoff article says they removed compaction and replaced it with handoff into a fresh goal/thread. Anthropic's long-running harness source similarly uses an initializer agent, a coding agent, progress files, and git history so a fresh context can resume work from artifacts rather than from a repeatedly summarized thread.
+The graph also includes sources arguing that compaction is not always the right boundary. Amp's 2025 handoff article describes replacing compaction with handoff into a fresh goal/thread, but this is design lineage rather than current product behavior: Amp's rebuilt 2026 loop restored automatic compaction. Anthropic's long-running harness source similarly uses an initializer agent, a coding agent, progress files, and git history so a fresh context can resume work from artifacts rather than from a repeatedly summarized thread.
 
 This is an important pattern: sometimes the correct memory artifact is not a smaller chat history. It is a clear new goal plus files, branch state, progress notes, and tests. Cache economics give the boundary choice a cost dimension as well: compaction rebuilds the conversation cache around a new summary, handoff starts a fresh prefix seeded from artifacts ([[sources/Claude Code Prompt Caching]]).
 
-Sources: [[sources/Amp Handoff]], [[sources/Anthropic Effective Harnesses for Long-Running Agents]].
+Sources: [[sources/Amp Handoff]], [[sources/Amp Agent Harness]], [[sources/Anthropic Effective Harnesses for Long-Running Agents]].
 
 ## What the Research Sources Add
 
@@ -645,6 +645,7 @@ Source cards cited in this report:
 | [[sources/Agentic Context Engineering]] | 2025-10-06 | paper |
 | [[sources/Agentic Skills in the Wild]] | 2026-04-06 | paper |
 | [[sources/AgentNet]] | 2025-04-01 | paper |
+| [[sources/Amp Agent Harness]] | 2026-05-27 | docs |
 | [[sources/Amp Handoff]] | 2025-10-23 | article |
 | [[sources/Anthropic Agent Skills]] | 2025-10-16 | article |
 | [[sources/Anthropic Context Engineering Cookbook]] | 2026-05-26 | docs |
