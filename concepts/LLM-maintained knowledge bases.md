@@ -11,9 +11,16 @@ For this vault, the rule is:
 - Topic folders store synthesis and should own the durable conceptual connections.
 - Project metadata, inventories, crawl reports, and scripts stay outside the graph.
 
+## Maintained Wiki vs Organizational Retrieval
+
+An LLM-maintained wiki is one form of organizational knowledge infrastructure, but not the only one. It creates durable synthesis pages whose summaries, claims, contradictions, and links can be inspected and improved over time. [[concepts/organizational knowledge systems|Federated organizational retrieval]] instead leaves authoritative work in systems such as chat, code, documents, tickets, and databases, continuously maintains query-ready derived indexes, and synthesizes an answer when a person or agent asks.
+
+[[sources/Cerebras How We Built Our Knowledge Base]] is the production anchor for the second pattern. Its Slack distillation performs some ingest-time synthesis, but the durable product is an evidence index rather than a generated wiki. The distinction is freshness versus maintained connective structure, not a choice between “RAG” and “knowledge”: a mature system can use source-native retrieval to update a durable synthesis layer while preserving citations and authority boundaries.
+
 ## Related
 
 - [[concepts/context engineering]]
+- [[concepts/organizational knowledge systems]]
 - [[operations/agent memory]]
 - [[operations/agent infrastructure]]
 
@@ -22,3 +29,4 @@ Implementation comparison notes are kept outside the public graph until they are
 ## Related Sources
 
 - [[sources/llm-wiki - Karpathy|llm-wiki]]
+- [[sources/Cerebras How We Built Our Knowledge Base]]

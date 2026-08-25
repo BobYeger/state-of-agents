@@ -17,6 +17,7 @@ The organizing distinction is between prompt compression and agent context manag
 | Observation masking | Hides older observations while preserving trajectory structure. | [[concepts/observation masking]], [[sources/The Complexity Trap]] |
 | Tool-result clearing | Drops old bulky tool outputs while preserving the tool-call record. | [[concepts/tool-result clearing]], [[sources/Anthropic Context Engineering Cookbook]] |
 | Memory offload | Writes durable knowledge outside the active context window. | [[operations/agent memory]], [[sources/Cloudflare Agent Memory]], [[sources/Agent Memory Characterization]], [[sources/Are We Ready For An Agent-Native Memory System]] |
+| Organizational knowledge retrieval | Maintains a fresh evidence layer over source-native company systems for use by people, automations, and agents; preserving source permissions is part of the design contract. | [[concepts/organizational knowledge systems]], [[sources/Cerebras How We Built Our Knowledge Base]], [[concepts/LLM-maintained knowledge bases]] |
 | Virtual context paging | Pages information between bounded main context and external storage, with the model editing its own memory via function calls. | [[sources/MemGPT]], [[sources/Letta Code Memory Docs]] |
 | Plan recitation | Continuously rewrites a plan file so the global goal stays in recent attention against mid-context drift. | [[sources/Manus Context Engineering]] |
 | Shared memory stores | Governs fleet- or team-level memory: write authority, reconciliation, namespacing, provenance. | [[concepts/shared agent memory]], [[sources/Claude Managed Agents Memory Stores]], [[sources/Governed Shared Memory for Multi-Agent LLM Systems]], [[sources/G-Memory]] |
@@ -72,6 +73,7 @@ The August 2026 memory sources sharpen the map: memory is no longer only retriev
 - [[benchmarks/agent memory benchmarks]]
 - [[concepts/context engineering]]
 - [[concepts/context compaction]]
+- [[concepts/organizational knowledge systems]]
 - [[concepts/shared agent memory]]
 - [[concepts/dreaming and memory consolidation]]
 - [[operations/agent harnesses]]

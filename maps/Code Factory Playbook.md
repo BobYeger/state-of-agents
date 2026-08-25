@@ -11,6 +11,10 @@ Maturity labels used below:
 | Framework | A scoring or process framework with internal validation only |
 | Research | Benchmark or lab evidence; not yet demonstrated in a production factory |
 
+## Cross-Lifecycle Blueprint
+
+[[sources/Claude AI-Native SDLC Playbook]] provides an operationally specific full-lifecycle methodology. It connects Plan, Design, Build, Test, Deploy, and Maintain through committed artifacts that can trigger the next stage, with policy encoded as skills, deterministic controls in hooks and managed settings, continuous evals for agent configuration, and production signals returning as new intent. **Maturity: framework.** Its stage metrics are proposed instruments rather than reported outcomes, so use it as a design checklist rather than evidence that an AI-native SDLC improves delivery.
+
 ## Stage 0: Score Readiness Before Autonomy
 
 The factory's ceiling is set by the repository environment, not the agent. [[sources/Factory Agent Readiness]] scores eight pillars (build, testing, docs, observability, governance, and others) across five maturity levels and recommends Level 3 "Standardized" as the production-ready target for routine agent maintenance. **Maturity: framework.** Use it as a checklist, not a benchmark; its strongest idea is inverting the question from "is the agent trustworthy" to "is the environment ready."

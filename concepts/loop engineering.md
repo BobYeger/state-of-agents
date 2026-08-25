@@ -46,6 +46,7 @@ The current graph has several loop-engineering forms:
 - [[methods/ralph loop]]: repository files, tests, plans, and commits become the loop substrate.
 - [[sources/OpenAI Codex Agent Loop]]: the inner model-tool-observation loop is the base layer every higher loop builds on.
 - [[concepts/code factories]]: lifts loop engineering into an organization-level SDLC control plane.
+- [[sources/Claude AI-Native SDLC Playbook]]: makes that factory loop concrete as an artifact-triggered path from intent through production feedback, while keeping human judgment at approval gates.
 - [[sources/Anthropic When AI Builds Itself]]: shows AI development itself becoming a goal -> implementation -> experiment -> review loop, with human judgement and verification as the bottleneck.
 
 ## Evaluating Sustained Loops

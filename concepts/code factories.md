@@ -35,6 +35,7 @@ The factory is bigger than a coding agent. It connects incoming signals, triage,
 ## Current Anchors
 
 - [[sources/Factory 2.0 Software Factory]] frames the software factory as an end-to-end, agent-native, self-improving SDLC loop.
+- [[sources/Claude AI-Native SDLC Playbook]] turns the factory idea into a concrete artifact-triggered lifecycle: versioned intent, specification, plan, code, review, and incident records connect the stages, while skills, hooks, evals, and human gates carry policy and verification through the loop.
 - [[sources/Microsoft Agentic Platform Agent Factory]] frames enterprise agent factories as lifecycle platforms with governance, specs, specialized agents, and operational metrics.
 - [[sources/Microsoft Spec-Driven AI-Native Engineering]] supplies the durable-intent layer: specs become the source of truth for agent work and validation.
 - [[sources/Addy Osmani Loop Engineering]] connects factory thinking to the loop layer: automations, worktrees, skills, connectors, subagents, and external memory.
