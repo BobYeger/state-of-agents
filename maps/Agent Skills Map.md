@@ -30,6 +30,7 @@ Related synthesis: [[claims/Claim - Agent memory and skills create compounding i
 - [[sources/SkillsBench]]
 - [[sources/Skill-Use]]
 - [[sources/SkillOpt]]
+- [[sources/WikiSkill]]
 - [[sources/Agentic Skills in the Wild]]
 - [[sources/Comprehensive Survey on Agent Skills]]
 - [[sources/PolySkill]]
@@ -68,10 +69,11 @@ Related synthesis: [[claims/Claim - Agent memory and skills create compounding i
 6. SkillsBench
 7. Skill-Use
 8. SkillOpt
-9. Agentic Skills in the Wild
-10. Agent Skills for Large Language Models
-11. Comprehensive Survey on Agent Skills
-12. SAGE Skill Library
-13. SkillRL
-14. OpenAI Codex Record and Replay
-15. Metis
+9. WikiSkill
+10. Agentic Skills in the Wild
+11. Agent Skills for Large Language Models
+12. Comprehensive Survey on Agent Skills
+13. SAGE Skill Library
+14. SkillRL
+15. OpenAI Codex Record and Replay
+16. Metis

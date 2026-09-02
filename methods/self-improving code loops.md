@@ -28,7 +28,7 @@ candidate code/procedure -> run evaluator -> score/trace -> keep, branch, or rev
 | Harness optimization | Context, retrieval, tools, completion checks, and model wrapper code | [[sources/Meta-Harness]], [[sources/AFlow]], [[sources/ADAS]], [[sources/Self-Harness]], [[sources/HarnessFix]], [[sources/Adaptive Auto-Harness]], [[sources/Retrospective Harness Optimization]], [[sources/Evo-Bench]] |
 | Algorithm evolution | Candidate algorithms or programs | [[sources/AlphaEvolve]], [[sources/LoongFlow]] |
 | Autonomous research code | Experimental code, hypotheses, figures, and papers | [[sources/The AI Scientist-v2]], [[sources/Karpathy Autoresearch]] |
-| Skill/procedure evolution | Reusable skills, rules, or trajectory memories | [[sources/SkillOpt]], [[sources/Metis]], [[sources/Voyager]], [[sources/SAGE Skill Library]], [[sources/SkillRL]], [[sources/Cursor Bugbot Learned Rules]] |
+| Skill/procedure evolution | Reusable skills, rules, or trajectory memories | [[sources/SkillOpt]], [[sources/WikiSkill]], [[sources/Metis]], [[sources/Voyager]], [[sources/SAGE Skill Library]], [[sources/SkillRL]], [[sources/Cursor Bugbot Learned Rules]] |
 | Co-evolving evaluators | Agent and evaluator improve together under explicit epoch or utility controls | [[sources/Red Queen Godel Machine]] |
 
 ## Selection Policy

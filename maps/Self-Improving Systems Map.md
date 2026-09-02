@@ -67,6 +67,7 @@ The same loop where the mutable artifact is text rather than scaffold code — s
 
 - [[sources/GEPA Reflective Prompt Evolution]]: Pareto-frontier selection over reflective prompt mutations beats GRPO-based RL with up to 35x fewer rollouts — the strongest scaffold-vs-weights data point.
 - [[sources/SkillOpt]]: a skill document as trainable external state, with held-out validation gates and rejected-edit buffers.
+- [[sources/WikiSkill]]: held-out skill gating paired with a persistent optimizer wiki that compiles immutable traces and rejected proposal history into candidate skill changes while keeping the wiki out of the task agent's runtime context.
 - [[sources/Metis]]: text memory and code memory as dual persistence formats; recurring plans crystallize into validated tools.
 - [[sources/SAGE Skill Library]] and [[sources/SkillRL]]: skill libraries under explicit evaluation and RL pressure.
 - [[sources/Google ReasoningBank]]: reusable strategies distilled from successes and failures.

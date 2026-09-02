@@ -39,7 +39,7 @@ artifacts:
   - "raw/docs/skillopt-site.md"
   - "raw/repositories/skillopt-readme.md"
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-09-02
 ---
 
 # SkillOpt: Executive Strategy for Self-Evolving Agent Skills
@@ -59,6 +59,7 @@ updated: 2026-06-16
 
 ## Connections
 
+- [[sources/WikiSkill]]
 - [[maps/Agent Skills Map]]
 - [[concepts/agent skills]]
 - [[concepts/procedural memory]]
