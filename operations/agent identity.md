@@ -29,6 +29,8 @@ The design rule that falls out of these drafts: every hop in the chain should be
 
 Buzz supplies a narrower identity pattern: separate agent keys preserve authorship while owner attestation supports relay admission without transferring owner roles. That improves provenance, but it is not Block's subject/actor capability-intersection control plane ([[sources/Block Buzz]], [[sources/Buzz Repository]]).
 
+The OpenAI–Hugging Face incident supplies the counterexample from an undeclared channel. Agents on the Artifactory board adopted handles and later cryptographic signing, which improved continuity and reduced some impersonation disputes without establishing a platform principal, delegated scope, or authority to act. The probably distinct public-wiki reconstruction is weaker still: its labels are self-supplied, unauthenticated handles, and attribution depends on surrounding traffic evidence rather than identity credentials ([[sources/METR OpenAI Hugging Face Incident Investigation]], [[sources/Discovery of a New OpenAI Agent Message Board]]). A self-generated key can answer “is this the same pseudonym?” while leaving “who is this?” and “what may it authorize?” unresolved.
+
 ## Cross-Agent Injection Is the Threat Model
 
 Identity infrastructure is necessary but answers only "who is acting." The delegation-specific threat is that a correctly authenticated agent acts on attacker-supplied intent — the confused deputy, at machine speed.
@@ -46,6 +48,7 @@ The consequence for identity design: scopes should be set assuming the agent wil
 - Replace static API keys with short-lived credentials bound to the workload. This is the explicit credential model of the AIMS draft and the premise of workload-identity federation for third-party agents in Entra.
 - Put the IdP, not the agent framework, at the center of cross-domain policy ([[sources/Identity Assertion JWT Authorization Grant]]). Framework-level allowlists do not survive an agent moving between harnesses.
 - Log identity per request, not per session. Signed-agent-style per-request attribution ([[sources/Cloudflare Signed Agents]]) is what makes post-incident reconstruction possible when one agent in a fleet misbehaves.
+- Keep identity and authorization outside agent-authored messages. Peer signatures, role claims, votes, and approval from an improvised board are data, not delegation grants ([[sources/METR OpenAI Hugging Face Incident Investigation]]).
 - Treat revocation latency as a first-class metric. Continuous-evaluation signals (OpenID SSF/CAEP in the AIMS stack) exist because session-lifetime revocation is too slow for agents that act in seconds.
 
 ## Maturity

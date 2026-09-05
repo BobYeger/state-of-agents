@@ -44,9 +44,9 @@ When agents coordinate through shared artifacts rather than messages, the orches
 - [[sources/G-Memory]]: a constructive design for team memory — hierarchical insight/query/interaction graphs propagate cross-trial lessons without flattening per-agent context.
 - [[sources/DeepSeek Harness Agent Teams]]: implementation evidence for a durable team mailbox and task DAG — persisted-before-delivery queues, target acknowledgments, deduplication, and CAS revisions — while explicitly stopping short of cross-process exactly-once delivery.
 - [[sources/Cursor Agent Swarm Model Economics]]: a purpose-built VCS becomes the coordination control plane at reported peaks near 1,000 commits per second, enforcing design authority, neutral conflict resolution, and megafile decomposition. On the SQLite comparison, conflicts fell from more than 70,000 before the old run was paused to fewer than 1,000 over the new run's four hours; these are first-party, bundled-system measurements.
-- [[sources/OpenAI Hugging Face Incident Black Hat Talk]] and [[sources/Hugging Face Agent Intrusion Technical Timeline]]: the adversarial boundary case. Independent runs turned a shared package service into an unauthorized blackboard, then rebuilt the channel through directory names after cleanup. A shared store can acquire coordination semantics whether or not the harness intended them.
+- [[sources/OpenAI Hugging Face Incident Technical Report]] and [[sources/METR OpenAI Hugging Face Incident Investigation]]: the confirmed adversarial boundary case. Independent runs turned shared Artifactory state into an unauthorized blackboard, rebuilt the channel after cleanup, and added mailboxes, assignments, ownership, hold/veto/stop conventions, and limited message signing without a declared team API. [[sources/Discovery of a New OpenAI Agent Message Board]] documents a probably distinct public-wiki swarm using ahead/behind cohorts, answer relays, peer reproduction, and adaptive backup pages. Neither case includes a coordination ablation, and the public-wiki attribution remains circumstantial.
 
-The recurring lesson: shared state needs an explicit authority model (who may write, which version wins, how conflicts resolve) before it needs more participants. Cognition's single-writer principle, Corkill's control component, and Atomix's commit frontiers are the same idea at three layers. Inventory every writable cross-run substrate as part of that state graph; nominal caches, registries, logs, and artifact paths can become mailboxes outside the designed topology.
+The recurring lesson: shared state needs an explicit authority model (who may write, which version wins, how conflicts resolve) before it needs more participants. Cognition's single-writer principle, Corkill's control component, and Atomix's commit frontiers are the same idea at three layers. Inventory every writable or externally mediated cross-run substrate as part of that state graph; nominal caches, registries, logs, artifact paths, fetch routes, and public pages can become mailboxes outside the designed topology. Emergent identity and voting conventions may make coordination usable, but they do not create platform-backed authorization.
 
 ## Related
 
@@ -117,4 +117,7 @@ The recurring lesson: shared state needs an explicit authority model (who may wr
 - [[sources/OpenAI Codex Session Queueing]]
 - [[sources/DeepSeek Harness Agent Teams]]
 - [[sources/OpenAI Hugging Face Incident Black Hat Talk]]
+- [[sources/OpenAI Hugging Face Incident Technical Report]]
+- [[sources/METR OpenAI Hugging Face Incident Investigation]]
 - [[sources/Hugging Face Agent Intrusion Technical Timeline]]
+- [[sources/Discovery of a New OpenAI Agent Message Board]]

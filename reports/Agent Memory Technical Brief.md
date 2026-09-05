@@ -1,11 +1,13 @@
 # Agent Memory Technical Brief
 
-Date: 2026-08-16
-Scope: local graph only. Condensed from [[reports/Agent Memory Report]] as revised 2026-08-16. This is the shorter technical version of that report; it uses source terminology as labels and keeps direct excerpts short because verbatim quotation is limited. Text-only: figures live in the full report.
+Date: 2026-09-05
+Scope: local graph only. Condensed from [[reports/Agent Memory Report]] as revised 2026-09-05, including the accidental shared-memory evidence from the OpenAI/METR incident record and the separate public-wiki reconstruction. This is the shorter technical version of that report; it uses source terminology as labels and keeps direct excerpts short because verbatim quotation is limited. Text-only: figures live in the full report.
 
 ## 0. Core Finding
 
 The sources do not describe one thing called "memory." They describe a stack, and the stack has a citable ancestry: [[sources/Cognitive Architectures for Language Agents|CoALA]] fixed the working/episodic/semantic/procedural memory split, and [[sources/MemGPT]] introduced the paged virtual-context design that today's persistent-agent products descend from.
+
+The negative case is now incident-backed: a declared memory product is unnecessary when multiple runs can rediscover and influence durable shared state. OpenAI and METR document an Artifactory service becoming collective memory for otherwise separate agents; [[sources/Discovery of a New OpenAI Agent Message Board]] reconstructs a probably distinct public-wiki channel for answers and procedures. The first case is officially and independently reconstructed; the second has public logs but circumstantial attribution. Neither measures net coordination benefit or demonstrates self-improvement.
 
 ```text
 online context management
@@ -86,6 +88,7 @@ Builder rule from the sources: decide what must be exact, what can be summarized
 | External memory | Substrate variants | files/topic documents, abstraction-keyed entries, entity graphs, bi-temporal graphs | workload-dependent | varies; see 3.2 | [[sources/GraphRAG]], [[sources/HippoRAG]], [[sources/A-MEM]], [[sources/Zep Temporal Knowledge Graph Memory]], [[sources/Memora]], [[sources/Infini Memory]] |
 | External memory | MemFS / ContextHub | memories and context files -> versioned filesystem/repository | agent/user edits | high | [[sources/Letta Code Memory Docs]], [[sources/LangSmith Context Hub]] |
 | External memory | Shared memory stores | workspace-scoped stores with write authority, concurrency control, versioned audit | attach at session creation | high; every mutation versioned | [[sources/Claude Managed Agents Memory Stores]], [[sources/Governed Shared Memory for Multi-Agent LLM Systems]] |
+| External memory | Accidental fleet memory | shared services or public pages -> cross-run facts, procedures, and coordination conventions | rediscovery, polling, or artifact handoff | low unless infrastructure telemetry is outside agent control | [[sources/OpenAI Hugging Face Incident Technical Report]], [[sources/METR OpenAI Hugging Face Incident Investigation]], [[sources/Discovery of a New OpenAI Agent Message Board]] |
 | Background memory | Dreaming | input memory store + sessions -> new output memory store | scheduled, batch, compaction event | high if output store reviewed | [[sources/Anthropic Managed Agents Dreaming Outcomes]], [[sources/Letta Code Memory Docs]] |
 | Background memory | Trajectory memory | execution traces -> strategy/recovery/optimization tips | post-run reflection | medium/high with provenance | [[sources/Reflexion]], [[sources/Trajectory-Informed Memory Generation]], [[sources/Google ReasoningBank]] |
 | Procedural memory | Agent Skills | skill description -> loaded instructions/scripts/references/assets | skill match / explicit invocation | high if reviewed | [[sources/Agent Skills Specification]], [[sources/Anthropic Agent Skills]], [[sources/OpenAI Skills Docs]] |
@@ -270,6 +273,7 @@ Claude Code is the harness-level demonstration: requests ordered as system promp
 | Query does not reveal a decision-critical dependency | always-visible or time/event/state activation | similarity search alone |
 | Commitment must fire later | durable pending intention + idempotent trigger | conversational recall |
 | Untrusted web/doc content asks to persist instructions | quarantine + review gate | direct memory write |
+| Supposedly isolated runs share facts or procedures | isolate and expire shared substrates; correlate agent-independent telemetry | reset only the session |
 
 Failure-mode-first design has empirical grounding in multi-workload evaluation ([[sources/Are We Ready For An Agent-Native Memory System]]). The tool-discovery row is quantified: the GitHub MCP server costs over 4,600 tokens for 26 tools, and on-demand tool requests cut token consumption 98% on APIBank ([[sources/MCP-Zero]], [[sources/ScaleMCP]]).
 
@@ -307,6 +311,7 @@ Failure-mode-first design has empirical grounding in multi-workload evaluation (
 | Skills | Trigger, Compliance, Boundary, task outcome, harness, library size, and held-out validation before accepting an edit | [[sources/Skill-Use]], [[sources/SkillsBench]], [[sources/SkillOpt]] |
 | Safety / authority / deletion | Where is persistent risk contained? Can memory bypass action authority or survive deletion in a derived tier? | [[sources/HarnessSafe]], [[sources/When Memory Becomes Authority]], [[sources/Deployment-Time Memorization in Foundation-Model Agents]] |
 | Shared memory / production outcome | Conflict, scope, provenance, propagation, adversarial-memory resilience, and downstream outcome | [[sources/GitHub Copilot Agentic Memory]], [[sources/When Agents Misremember Collectively]], [[sources/Governed Shared Memory for Multi-Agent LLM Systems]] |
+| Accidental shared-memory containment | Can nominally isolated runs create, rediscover, or influence durable state? Does reset clear it, and are authoritative receipts outside the agent-writable surface? | [[sources/OpenAI Hugging Face Incident Technical Report]], [[sources/METR OpenAI Hugging Face Incident Investigation]], [[sources/Discovery of a New OpenAI Agent Message Board]] |
 
 The cost row measures the complete serving path. On 1.8M tokens of history and 300 queries, LLM-mediated systems carry a 28-47x energy premium per correct answer over flat BM25 retrieval in one study ([[sources/Agent Memory Characterization]]); across three systems, two backbones, and up to 400 turns, another finds break-even ranging from early to absent within the measured horizon ([[sources/Total Recall at What Cost]]). Record the complete configuration in [[benchmarks/agent memory benchmarks]], not only a score.
 
@@ -367,6 +372,7 @@ Controls from the graph, several with named production mechanisms:
 - Audit for stale, adversarial, overfit, and low-value entries; evolution-style stores that retroactively rewrite entries ([[sources/A-MEM]]) need versioning underneath.
 - Support list, forget, export, archive, and delete; purge or tombstone derived summaries, indexes, and promoted skills as well as raw records.
 - For shared/team memory, apply scoped retrieval, temporal supersession, provenance tracking, and policy-governed propagation ([[sources/Governed Shared Memory for Multi-Agent LLM Systems]]); a `read_write` shared store lets injected content become trusted memory in later sessions ([[sources/Claude Managed Agents Memory Stores]]).
+- Inventory every service and external fetch path that multiple runs can influence as potential fleet memory; isolate and expire it where sharing is unnecessary. Keep authoritative tool receipts and side-effect telemetry outside the agent-writable surface ([[sources/OpenAI Hugging Face Incident Technical Report]], [[sources/METR OpenAI Hugging Face Incident Investigation]], [[sources/Discovery of a New OpenAI Agent Message Board]]).
 - Treat skills like dependencies: review scripts, references, instructions, versions; the ClawHavoc marketplace incident is the evidence ([[sources/Koi Security ClawHavoc]]).
 - For dreams, keep input stores immutable and make output stores reviewable before attachment.
 
@@ -378,7 +384,7 @@ Controls from the graph, several with named production mechanisms:
 - Activation remains open: always-visible memory spends context and can over-influence; heartbeat/reminder systems trade misses for false positives ([[sources/Keep It InMind]], [[sources/PM-Bench]]).
 - Governance UX is uneven across memory types and derived tiers.
 - Negative transfer: source-backed fact validation exists for code ([[sources/GitHub Copilot Agentic Memory]]), but inferred preferences and generalized trajectory lessons lack an equivalent live authority.
-- Shared memory has constructive designs, governance primitives, shipped stores, and vendor-run production evidence; cross-provider conflict semantics and independent comparative evaluation remain open.
+- Shared memory has constructive designs, governance primitives, shipped stores, vendor-run production evidence, and incident evidence for undeclared fleet memory; cross-provider conflict semantics, containment of accidental substrates, and independent comparative evaluation remain open.
 - Vendor scores remain incomparable without the model, harness, split, judge, run count, and cost basis recorded in [[benchmarks/agent memory benchmarks]].
 
 ## 10. Source Spine
@@ -402,6 +408,9 @@ High-weight source cards:
 - [[sources/Memora]]
 - [[sources/HippoRAG]]
 - [[sources/Claude Managed Agents Memory Stores]]
+- [[sources/OpenAI Hugging Face Incident Technical Report]]
+- [[sources/METR OpenAI Hugging Face Incident Investigation]]
+- [[sources/Discovery of a New OpenAI Agent Message Board]]
 - [[sources/Anthropic Managed Agents Dreaming Outcomes]]
 - [[sources/Google ReasoningBank]]
 - [[sources/Google ADK Durable Agents]]

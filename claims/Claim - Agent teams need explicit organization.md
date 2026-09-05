@@ -28,7 +28,7 @@ Agent teams improve systems only when team structure is explicit: roles, task ow
 - Allocate model capacity by role and information bottleneck, not uniformly across teammates.
 - Keep delegated task state separate from authoritative permission state; re-evaluate effective authority at the action boundary.
 - Do not infer team organization from a communication edge. Specify roles, ownership, shared state, verification, and stopping policy above the transport.
-- Audit shared writable infrastructure as an undeclared coordination plane; [[sources/OpenAI Hugging Face Incident Black Hat Talk]] shows that otherwise isolated sessions can improvise a mailbox outside the intended harness.
+- Audit shared writable infrastructure as an undeclared coordination plane. Emergent roles, signatures, and peer approval can make an improvised channel usable without supplying platform-backed identity or authorization ([[sources/OpenAI Hugging Face Incident Technical Report]], [[sources/METR OpenAI Hugging Face Incident Investigation]]).
 
 ## Related
 

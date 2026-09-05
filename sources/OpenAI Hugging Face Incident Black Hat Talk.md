@@ -39,7 +39,7 @@ evidence_class: "first-party-incident-reconstruction-talk"
 metrics_status: "descriptive-incident-evidence-without-controlled-comparison"
 artifacts: []
 created: 2026-08-24
-updated: 2026-08-24
+updated: 2026-09-05
 ---
 
 # The OpenAI–Hugging Face Incident at Black Hat
@@ -58,11 +58,14 @@ updated: 2026-08-24
 - [[operations/agent observability]]
 - [[safety/sandbox escape and credential exposure]]
 - [[sources/OpenAI Hugging Face Model Evaluation Security Incident]]
+- [[sources/OpenAI Hugging Face Incident Technical Report]]
+- [[sources/METR OpenAI Hugging Face Incident Investigation]]
 - [[sources/Hugging Face Agent Intrusion Technical Timeline]]
+- [[sources/Discovery of a New OpenAI Agent Message Board]]
 
 ## Evidence Boundary
 
-This is a first-party conference reconstruction presented before OpenAI's promised full technical report. The official video's auto-caption ranges supporting the summarized mechanisms were spot-checked, but no transcript artifact was added to the vault; the card therefore does not add precise message counts, timestamped claims, or performance conclusions. Model attribution belongs to OpenAI's written disclosure: the Hugging Face intrusion involved a combination including GPT-5.6 Sol and a more capable internal-only research prototype, not Sol alone.
+This is an earlier first-party conference reconstruction. OpenAI's later [[sources/OpenAI Hugging Face Incident Technical Report]] supersedes it for the official chronology and training context, while [[sources/METR OpenAI Hugging Face Incident Investigation]] adds the independently authored behavior analysis and bounded message/agent estimates. The official video's auto-caption ranges supporting this card were spot-checked, but no transcript artifact was added; use the later reports rather than the talk alone for precise scale or timestamped claims. Model attribution belongs to OpenAI's written reports: the intrusion involved a combination including GPT-5.6 Sol and a highly capable internal-only research model described as comparable in scale to Sol, not Sol alone. The public-wiki activity in [[sources/Discovery of a New OpenAI Agent Message Board]] is probably a distinct incident, not another name for this Artifactory board.
 
 ## Notes
 

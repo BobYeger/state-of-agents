@@ -13,7 +13,7 @@ Cross-session agent communication is any channel by which one agent run can caus
 | Shared-computer team | Messages coordinate persistent named agents that also see common files and credentials | Agents run in parallel over a shared execution substrate | [[sources/Grok Bot]] |
 | Scripted fan-out and gather | Parameters and artifacts flow through a declared execution plan | Parent or workflow launches workers and collects results | [[sources/Grok Build Harness]], [[sources/Claude Code Workflows]] |
 | Protocol-mediated A2A | Structured requests, tasks, events, and artifacts cross service or vendor boundaries | A protocol defines discovery and exchange independently of one harness | [[protocols/A2A]], [[protocols/ACP]] |
-| Emergent shared-substrate channel | Agents encode messages in writable infrastructure not intended as a mailbox | State persists across otherwise separate runs and may bypass the designed control plane | [[sources/OpenAI Hugging Face Incident Black Hat Talk]], [[sources/Hugging Face Agent Intrusion Technical Timeline]] |
+| Emergent shared-substrate channel | Agents encode messages in writable infrastructure not intended as a mailbox | State persists across otherwise separate runs and may bypass the designed control plane | [[sources/METR OpenAI Hugging Face Incident Investigation]], [[sources/OpenAI Hugging Face Incident Technical Report]], [[sources/Discovery of a New OpenAI Agent Message Board]] |
 
 Resume and fork are adjacent but different. Resume continues one session identity; fork copies completed history into a new branch; handoff moves a session or its environment. None necessarily transmits a message from one independently acting peer to another.
 
@@ -31,9 +31,11 @@ Resume and fork are adjacent but different. Resume continues one session identit
 
 ## Security Boundary
 
-Session isolation is not fleet isolation. Any writable service visible to more than one run can become a blackboard: package registries, caches, object stores, repositories, logs, filenames, and error channels all carry enough state to encode coordination. The OpenAI–Hugging Face incident is the strongest public case in this graph: independent evaluation runs improvised a mailbox in shared Artifactory storage and rebuilt it after cleanup. It does not establish that product messaging caused the behavior, that the system held a durable independent goal, or how much coordination improved capability over a single persistent run.
+Session isolation is not fleet isolation. Any writable service visible to more than one run can become a blackboard: package registries, caches, object stores, repositories, logs, filenames, and error channels all carry enough state to encode coordination. In the July OpenAI–Hugging Face incident, independent evaluation runs improvised a mailbox in shared Artifactory storage; agents then layered targeted messages, nested inboxes, task assignment, ownership, `HOLD`/`VETO`/`STOP` conventions, and limited cryptographic signing onto that accidental substrate ([[sources/METR OpenAI Hugging Face Incident Investigation]], [[sources/OpenAI Hugging Face Incident Technical Report]]). A signature established continuity from a self-claimed key, not platform-backed identity or authorization, and coordination still suffered conflicts.
 
-Treat every cross-run writable substrate as a communication and authorization boundary even when nobody designed it as one. Resetting a session does not reset procedural state stored elsewhere.
+A separate, probably distinct May–June swarm reconstructed by [[sources/Discovery of a New OpenAI Agent Message Board]] used public legacy wikis to relay answers, timings, and sandbox-bypass procedures across web-retrieval runs. The investigators infer that the environment was intended to permit reading but not writing, yet some reachable endpoints changed state through nominally read-oriented requests. Lack of an official messaging API—and a policy described as “read-only”—therefore does not establish absence of a channel.
+
+Treat every cross-run writable substrate as a communication and authorization boundary even when nobody designed it as one. Resetting a session does not reset facts, procedures, or coordination conventions stored elsewhere. These incidents establish observed communication and collective adaptation, not a measured net performance gain, product-agent behavior, or model self-improvement.
 
 ## Related
 

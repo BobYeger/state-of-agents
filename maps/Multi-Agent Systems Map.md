@@ -43,14 +43,16 @@ Use this as a navigation page, not a source registry. Start from the synthesis n
 - [[sources/GBC AgentChord]]
 - [[sources/Google ADK A2A Cross-Language Multi-Agent Team]]
 
-## August 2026 Communication Anchors
+## August–September 2026 Communication and Incident Anchors
 
 - [[sources/Claude Code Cross-Session Messaging]]
 - [[sources/OpenAI Codex Session Queueing]]
 - [[sources/DeepSeek Harness Agent Teams]]
 - [[sources/Grok Bot]]
-- [[sources/OpenAI Hugging Face Incident Black Hat Talk]]
+- [[sources/OpenAI Hugging Face Incident Technical Report]]
+- [[sources/METR OpenAI Hugging Face Incident Investigation]]
 - [[sources/Hugging Face Agent Intrusion Technical Timeline]]
+- [[sources/Discovery of a New OpenAI Agent Message Board]]
 
 ## Source Trail
 

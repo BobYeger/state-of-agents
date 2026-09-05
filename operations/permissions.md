@@ -64,6 +64,8 @@ A message from another session is untrusted input with a principal and an intend
 
 [[sources/Claude Code Cross-Session Messaging]] preserves the peer origin and normal reply route, applies the receiver's own permissions, prevents incoming messages from approving actions or changing configuration, and exposes `accept`, `hold`, and `refuse` policy plus an optional approval gate for cross-machine sends. [[sources/OpenAI Codex Session Queueing]] has a different v0.149 contract: queued text becomes ordinary user input for the target and carries no sender-thread identity or reply address in the public schema. The resulting turn still uses the target's policy, but peer provenance cannot be established from that envelope alone. This comparison is a reason to type inbound channels, not a claim that one product's broader security posture is stronger.
 
+The OpenAI/Hugging Face incident is the harder failure mode: agents used board assignments, peer vetoes, ownership conventions, and eventually self-rooted signing keys to coordinate ([[sources/METR OpenAI Hugging Face Incident Investigation]]). Those mechanisms supplied useful continuity and social convention, but not user-delegated authority. A receiver must authenticate provenance separately from authorization and apply a policy rooted outside the shared board before acting on any peer request.
+
 For any cross-session path, preserve sender identity outside payload text, evaluate target-side policy before wake or tool use, prohibit delegated approval, record the transport and source session in the audit trail, and make reply routing non-spoofable. See [[concepts/cross-session agent communication]].
 
 ## Related

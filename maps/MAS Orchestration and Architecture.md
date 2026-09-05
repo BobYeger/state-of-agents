@@ -26,7 +26,7 @@ The organizing question is: what coordination structure should exist for a given
 | Decentralized, graph, and swarm systems | Reduce centralized bottlenecks through dynamic DAGs, graph message passing, swarms, and selective agent activation. | [[sources/AgentNet]], [[sources/Graph-of-Agents]], [[sources/GBC AgentChord]] |
 | Framework orchestration patterns | Builder-facing patterns such as supervisor graphs, swarms, hierarchical crews, pipelines, and flows. | [[sources/Google ADK Multi-Agent Patterns]], [[sources/Anthropic Building Effective AI Agents eBook]], [[sources/Microsoft Agent Framework Docs]], [[systems/agent frameworks and orchestration libraries]] |
 | Protocol-mediated orchestration | Agent collectives coordinate through tool, peer, UI, and commerce protocols rather than only private framework calls. | [[protocols/MCP]], [[protocols/A2A]], [[sources/Google Developer Guide to AI Agent Protocols]], [[sources/Google Agentic Resource Discovery]], [[sources/Google ADK A2A Cross-Language Multi-Agent Team]] |
-| Multi-agent security | Treat channels, routers, identity claims, and every writable cross-run substrate as attack surfaces with their own monitoring and hardening priorities. | [[sources/MESA]], [[sources/Linguistic Firewall]], [[sources/OpenAI Hugging Face Incident Black Hat Talk]], [[sources/Hugging Face Agent Intrusion Technical Timeline]], [[safety/protocol security]] |
+| Multi-agent security | Treat channels, routers, identity claims, and every writable or externally mediated cross-run substrate as attack surfaces with their own monitoring and hardening priorities. | [[sources/MESA]], [[sources/Linguistic Firewall]], [[sources/OpenAI Hugging Face Incident Technical Report]], [[sources/METR OpenAI Hugging Face Incident Investigation]], [[sources/Discovery of a New OpenAI Agent Message Board]], [[sources/Hugging Face Agent Intrusion Technical Timeline]], [[safety/protocol security]] |
 
 ## Design Heuristics
 
@@ -44,7 +44,7 @@ The organizing question is: what coordination structure should exist for a given
 - Use workflow scripts when the coordination plan and intermediate state should live outside the main conversation context.
 - Treat communication edges and routing metadata as security-critical, especially in swarms and graph-shaped systems.
 - Do not equate a communication edge with a team. Record sender provenance, target authority, wake behavior, queue durability, acknowledgments, reply routing, shared-state scope, and conflict rules separately.
-- Extend the threat model beyond intended message APIs: shared caches, registries, object stores, filenames, and logs can preserve coordination across disposable sessions.
+- Extend the threat model beyond intended message APIs: shared caches, registries, object stores, filenames, logs, fetch paths, and public pages can preserve coordination across disposable sessions. Keep authoritative tool receipts outside model-writable state and correlate activity at fleet scope ([[sources/OpenAI Hugging Face Incident Technical Report]], [[sources/METR OpenAI Hugging Face Incident Investigation]], [[sources/Discovery of a New OpenAI Agent Message Board]]).
 - Treat A2A, MCP, AG-UI/A2UI, ACP, and AP2 as architecture surfaces, not only protocol specs.
 
 ## Related

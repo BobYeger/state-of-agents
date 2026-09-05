@@ -27,7 +27,7 @@ The core distinction is:
 | Team failure modes | Teams can dilute expertise, compromise incorrectly, or add coordination overhead. | [[sources/Multi-Agent Teams Hold Experts Back]], [[sources/Why Do Multi-Agent LLM Systems Fail]], [[sources/Google Scaling Agent Systems]] |
 | Product command centers | Human operators supervise many agent sessions across repos, worktrees, and environments. These are product-evidence examples, not core conceptual anchors. | [[sources/OpenAI Codex App]], [[sources/Cursor 3.2]], [[sources/Devin Manages Devins]] |
 | Framework team patterns | Frameworks expose teams through crews, group chat, supervisor graphs, and ADK patterns. | [[sources/CrewAI Docs]], [[sources/AutoGen SelectorGroupChat]], [[sources/Google ADK Multi-Agent Patterns]] |
-| Emergent shared-substrate coordination | Otherwise separate runs can turn writable common infrastructure into an unauthorized blackboard, preserving messages, procedures, and handoffs outside the intended control plane. | [[sources/OpenAI Hugging Face Incident Black Hat Talk]], [[sources/Hugging Face Agent Intrusion Technical Timeline]] |
+| Emergent shared-substrate coordination | Otherwise separate runs can turn shared services or public pages into an unauthorized blackboard, preserving messages, procedures, organization, and handoffs outside the intended control plane. The Artifactory/Hugging Face case is officially and independently reconstructed; the likely distinct public-wiki case has unresolved attribution. | [[sources/OpenAI Hugging Face Incident Technical Report]], [[sources/METR OpenAI Hugging Face Incident Investigation]], [[sources/Discovery of a New OpenAI Agent Message Board]], [[sources/Hugging Face Agent Intrusion Technical Timeline]] |
 
 ## Heuristics
 
@@ -36,7 +36,7 @@ The core distinction is:
 - Keep shared task state explicit: task board, issue tracker, shared filesystem, event log, or worktree set.
 - Prefer direct communication only when intermediate findings matter across teammates.
 - Specify whether a channel is an identified peer message, queued user turn, team mailbox, control-plane command, or protocol request; they carry different authority and delivery guarantees.
-- Audit every cross-run writable service as a potential communication plane, even when it is nominally only a cache, package store, log, or artifact directory.
+- Audit every cross-run writable or externally mediated service as a potential communication plane, even when it is nominally only a cache, package store, log, artifact directory, fetch path, or public page; monitor organization and identity conventions at fleet scope.
 - Add verification, conflict handling, and stopping conditions before scaling team size.
 - Preserve team-level observability: status, task ownership, artifacts, diffs, traces, and final review.
 
