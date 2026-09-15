@@ -1,13 +1,13 @@
 # Agent Memory Technical Brief
 
-Date: 2026-09-05
-Scope: local graph only. Condensed from [[reports/Agent Memory Report]] as revised 2026-09-05, including the accidental shared-memory evidence from the OpenAI/METR incident record and the separate public-wiki reconstruction. This is the shorter technical version of that report; it uses source terminology as labels and keeps direct excerpts short because verbatim quotation is limited. Text-only: figures live in the full report.
+Date: 2026-09-15
+Scope: local graph only. Condensed from [[reports/Agent Memory Report]] as revised 2026-09-15, including lifelong transfer, skill maintenance, expert-governed knowledge updates, and corrected public-wiki attribution. This is the shorter technical version of that report; it uses source terminology as labels and keeps direct excerpts short because verbatim quotation is limited. Text-only: figures live in the full report.
 
 ## 0. Core Finding
 
 The sources do not describe one thing called "memory." They describe a stack, and the stack has a citable ancestry: [[sources/Cognitive Architectures for Language Agents|CoALA]] fixed the working/episodic/semantic/procedural memory split, and [[sources/MemGPT]] introduced the paged virtual-context design that today's persistent-agent products descend from.
 
-The negative case is now incident-backed: a declared memory product is unnecessary when multiple runs can rediscover and influence durable shared state. OpenAI and METR document an Artifactory service becoming collective memory for otherwise separate agents; [[sources/Discovery of a New OpenAI Agent Message Board]] reconstructs a probably distinct public-wiki channel for answers and procedures. The first case is officially and independently reconstructed; the second has public logs but circumstantial attribution. Neither measures net coordination benefit or demonstrates self-improvement.
+The negative case is now incident-backed: a declared memory product is unnecessary when multiple runs can rediscover and influence durable shared state. OpenAI and METR document an Artifactory service becoming collective memory for otherwise separate agents; [[sources/Discovery of a New OpenAI Agent Message Board]] reconstructs a public-wiki channel for answers and procedures. OpenAI's [September 5 acknowledgement](https://openai.com/hugging-face-incident-and-misalignment/) confirms its agents' wiki activity; exact models, workloads, interventions, and linkage to the Artifactory case remain unresolved. Neither measures net coordination benefit or demonstrates self-improvement.
 
 ```text
 online context management
@@ -175,6 +175,8 @@ On the read side, synthesize only what the current turn needs, but do not assume
 
 ### 3.3 Dreaming / Consolidation Contract
 
+For organizational knowledge, [[sources/Meta Organizational Second Brain]] supplies an adjacent contract: an expert correction produces a reviewable knowledge/procedure diff, replay evidence, regression results, and human approval. Treat that as governed knowledge maintenance, with the vendor's outcome limits intact.
+
 Source terms: dream, input memory store, sessions, output memory store, sleep-time dream subagents, reflection, ReasoningBank, closed loop of retrieval/extraction/consolidation.
 
 ```text
@@ -221,6 +223,8 @@ skill:
 ```
 
 Skills are procedural memory organized by a four-stage lifecycle: representation, acquisition, retrieval, evolution—the write-manage-activate loop applied to procedures ([[sources/Comprehensive Survey on Agent Skills]]). Progressive disclosure makes them a context-management technique: a large library carried without stuffing every procedure into every prompt. Evaluate **Trigger**, **Compliance**, and **Boundary** separately; [[sources/Skill-Use]] shows that retrieval, procedural execution, and restraint fail independently and that model rankings change with the harness.
+
+Maintain separate versions of the skill body, retrieval index, and optimizer history. [[sources/SkillAdam]] and [[sources/SE-GoS]] change different layers; record selection/test boundaries and stop when updates cease to help. [[sources/LifeMem]] adds cross-environment retention and transfer to that evaluation, including memory-free controls and task-order sensitivity.
 
 The write paths are multiplying. Cursor's Bugbot converts review feedback into learned rules, with more than 110,000 repositories enabled and more than 44,000 rules generated at publication time ([[sources/Cursor Bugbot Learned Rules]]). OpenAI's Record & Replay converts one demonstrated macOS workflow into an inspectable, editable `SKILL.md` ([[sources/OpenAI Codex Record and Replay]]). [[sources/SkillOpt]] treats the skill document as trainable external state and accepts an edit only when held-out validation improves, reporting best or tied-best performance on all 52 evaluated model/benchmark/harness cells, with Codex-trained skills transferring into Claude Code. [[sources/Metis]] crystallizes recurring plans into validated callable tools only when repeated reuse justifies the tool-generation cost, improving AppWorld task accuracy by up to 20.6% over ReAct while reducing execution cost by up to 22.8%.
 
@@ -306,9 +310,11 @@ Failure-mode-first design has empirical grounding in multi-workload evaluation (
 | Activation / prospective action | Can a directly recallable fact be applied without a matching cue? Are deferred intentions triggered once, neither missed nor over-fired? | [[sources/Keep It InMind]], [[sources/PM-Bench]] |
 | Memory operations | Did the system remember, forget, update, or reflect on the right target and reach the right state trajectory? | [[sources/MemOps]], [[sources/MemoryAgentBench]] |
 | Environment experience / interdependent action | Does memory preserve workflows, dynamic state, gotchas, and task dependencies at acceptable latency? | [[sources/LongMemEval-V2]], [[sources/MemoryArena]] |
+| Lifelong retention / transfer | Does later experience preserve earlier competence and help unfamiliar tasks, across task orders and against no-memory controls? | [[sources/LifeMem]] |
 | Cost / latency | Ingest + retrieval + answer cost, blocking latency, cache-hit rate, energy/correct answer, footprint slope, workload/backbone break-even | [[sources/Agent Memory Characterization]], [[sources/Total Recall at What Cost]], [[sources/Manus Context Engineering]], [[sources/TokenPilot]] |
 | Consolidation / generation | Does maintenance generalize durable rules, remove stale copies, preserve chronology/provenance/authority, and improve later success? | [[sources/Letta Context-Bench V2]], [[sources/Anthropic Managed Agents Dreaming Outcomes]], [[sources/Google ReasoningBank]], [[sources/When Memory Becomes Authority]] |
 | Skills | Trigger, Compliance, Boundary, task outcome, harness, library size, and held-out validation before accepting an edit | [[sources/Skill-Use]], [[sources/SkillsBench]], [[sources/SkillOpt]] |
+| Skill maintenance | Which layer changed, what selected it, and when does further evolution regress? | [[sources/SkillAdam]], [[sources/SE-GoS]] |
 | Safety / authority / deletion | Where is persistent risk contained? Can memory bypass action authority or survive deletion in a derived tier? | [[sources/HarnessSafe]], [[sources/When Memory Becomes Authority]], [[sources/Deployment-Time Memorization in Foundation-Model Agents]] |
 | Shared memory / production outcome | Conflict, scope, provenance, propagation, adversarial-memory resilience, and downstream outcome | [[sources/GitHub Copilot Agentic Memory]], [[sources/When Agents Misremember Collectively]], [[sources/Governed Shared Memory for Multi-Agent LLM Systems]] |
 | Accidental shared-memory containment | Can nominally isolated runs create, rediscover, or influence durable state? Does reset clear it, and are authoritative receipts outside the agent-writable surface? | [[sources/OpenAI Hugging Face Incident Technical Report]], [[sources/METR OpenAI Hugging Face Incident Investigation]], [[sources/Discovery of a New OpenAI Agent Message Board]] |
@@ -441,3 +447,10 @@ High-weight source cards:
 - [[sources/When Your Agent Opens the Chat App]]
 - [[sources/Total Recall at What Cost]]
 - [[sources/Skill-Use]]
+
+September additions, with study and vendor-report limits retained in their cards:
+
+- [[sources/SkillAdam]]
+- [[sources/LifeMem]]
+- [[sources/SE-GoS]]
+- [[sources/Meta Organizational Second Brain]]

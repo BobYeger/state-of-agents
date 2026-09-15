@@ -34,6 +34,14 @@ Follow the related-source sections in the benchmark notes. Source cards in `sour
 - [[sources/OpenAI SWE-bench Pro Audit]] documents task and grader defects serious enough for OpenAI to retract its SWE-bench Pro recommendation.
 - [[sources/DeepSWE]] uses original repository tasks and functional verifiers, and shows a large disagreement between an LLM judge and the benchmark's execution-based grader.
 - [[sources/Think Big Search Small]] separates delegation quality from execution quality, making model-capacity allocation itself an evaluated system variable.
+- [[sources/What Does an LLM-Agent Leaderboard Rank Actually Compare]] defines when a leaderboard difference supports a scoped superiority claim, including population, labels, coverage, and uncertainty.
+- [[sources/SWE-Bench Pro Verified]] implements leakage controls and repairs selected tasks; its source card records an unresolved baseline-count inconsistency and limited repair scope.
+
+## Alignment and Monitor Evaluation
+
+- [[sources/OpenAI GPT-6 Astra System Card]] separates alignment measurements from declining monitorability, and documents limits of deployment simulation and peer-message evaluations.
+- [[sources/Anthropic Alignment Assessment Cybersecurity Incidents]] turns incidents into tests of stopping, authorization, and simulation assumptions while retaining the limitations of resampling and model self-reports.
+- [[concepts/evaluator reliability]] connects both to detector auditing and evaluation awareness; [[operations/agent evals]] translates them into regression cases.
 
 ## Context Management Benchmarks
 

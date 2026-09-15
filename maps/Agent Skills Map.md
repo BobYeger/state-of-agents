@@ -31,6 +31,9 @@ Related synthesis: [[claims/Claim - Agent memory and skills create compounding i
 - [[sources/Skill-Use]]
 - [[sources/SkillOpt]]
 - [[sources/WikiSkill]]
+- [[sources/SkillAdam]]: optimizer issue history and adaptive edit scope; comparison protocols differ from SkillOpt.
+- [[sources/LifeMem]]: workflow-grouped experience, retention, and transfer across environments.
+- [[sources/SE-GoS]]: retrieval-graph evolution with early saturation and regression on further rounds.
 - [[sources/Agentic Skills in the Wild]]
 - [[sources/Comprehensive Survey on Agent Skills]]
 - [[sources/PolySkill]]
@@ -70,10 +73,13 @@ Related synthesis: [[claims/Claim - Agent memory and skills create compounding i
 7. Skill-Use
 8. SkillOpt
 9. WikiSkill
-10. Agentic Skills in the Wild
-11. Agent Skills for Large Language Models
-12. Comprehensive Survey on Agent Skills
-13. SAGE Skill Library
-14. SkillRL
-15. OpenAI Codex Record and Replay
-16. Metis
+10. SkillAdam
+11. LifeMem
+12. SE-GoS
+13. Agentic Skills in the Wild
+14. Agent Skills for Large Language Models
+15. Comprehensive Survey on Agent Skills
+16. SAGE Skill Library
+17. SkillRL
+18. OpenAI Codex Record and Replay
+19. Metis

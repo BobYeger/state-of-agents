@@ -39,7 +39,7 @@ artifacts:
   - "raw/docs/skillopt-site.md"
   - "raw/repositories/skillopt-readme.md"
 created: 2026-06-16
-updated: 2026-09-02
+updated: 2026-09-15
 ---
 
 # SkillOpt: Executive Strategy for Self-Evolving Agent Skills
@@ -60,6 +60,7 @@ updated: 2026-09-02
 ## Connections
 
 - [[sources/WikiSkill]]
+- [[sources/SkillAdam]]
 - [[maps/Agent Skills Map]]
 - [[concepts/agent skills]]
 - [[concepts/procedural memory]]
@@ -84,3 +85,4 @@ updated: 2026-09-02
 - Repository: https://github.com/microsoft/SkillOpt
 - arXiv metadata: submitted May 22, 2026; revised May 25, 2026.
 - The source is especially relevant to cross-harness skill transfer because the project page reports Codex-trained SpreadsheetBench skills transferring into Claude Code.
+- Follow-up: [[sources/SkillAdam]] adds persistent issue history and adaptive edit scope. It changes optimization/selection protocols, so its comparison is not a controlled replacement of one SkillOpt component.

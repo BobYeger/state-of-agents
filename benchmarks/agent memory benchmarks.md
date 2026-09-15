@@ -59,6 +59,8 @@ Do not compare headline scores unless benchmark version and split, task subset, 
 
 ## Adjacent Evaluation Axes
 
+[[sources/LifeMem]] adds a task-stream evaluation of experience reuse across ten environments: measure retention, backward transfer, domain slices, and sensitivity to task order as memory accumulates. Keep a memory-free baseline; some memory-assisted configurations perform worse. This complements recall and memory-guided-action tests without replacing them.
+
 The core registry above does not cover every memory failure. Use [[sources/Toward Reliable Context Compression for Long-Horizon Agents|TRACE]] for boundary-local compaction continuity; [[sources/Keep It InMind]] for indirect application after successful storage; [[sources/PM-Bench]] for prospective activation; [[sources/MemOps]] for operation-level state trajectories; [[sources/Skill-Use]] for procedural Trigger, Compliance, and Boundary; [[sources/When Memory Becomes Authority]] for authority preservation; [[sources/HarnessSafe]] for delayed carrier reactivation; and [[sources/Deployment-Time Memorization in Foundation-Model Agents]] for deletion residue across derived tiers. Serving economics belongs on a separate configuration-specific curve anchored by [[sources/Total Recall at What Cost]], not inside an accuracy leaderboard.
 
 ## Related

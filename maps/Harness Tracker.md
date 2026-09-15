@@ -1,5 +1,7 @@
 # Harness Tracker
 
+Updated: 2026-09-15. The September addition is the OpenAI Agents API managed runtime; earlier implementation snapshots retain their source-card dates.
+
 An agent harness is the execution scaffold around a model: prompt assembly, the agent loop, tool dispatch, context management, state and memory, sandboxing, permissions, streaming, event logs, compaction, subagents, skills, and resumability.
 
 The practical question for every harness is how the loop closes: what the agent observes, where state lives, what can execute, when humans intervene, how memory and skills enter context, and what makes the run auditable or resumable.
@@ -28,7 +30,7 @@ Each detailed profile receives one primary kind. A brand may appear in more than
 |---|---|---|
 | `harness-implementation` | Owns and executes the model/tool loop in a concrete environment. | Codex, Claude Code, DeepSeek Harness, Grok Build, Pi, OpenHands, Cline, OpenCode, Goose, Qwen Code, Amp, Kiro |
 | `framework-sdk` | Supplies components or an embedded runner from which developers build an executable agent. | OpenAI Agents SDK, Claude Agent SDK, LangGraph, Deep Agents, CrewAI, Google ADK, Microsoft Agent Framework |
-| `managed-runtime` | Hosts agent code or configuration and owns sessions, isolation, scaling, or durable infrastructure; it need not own the inner loop. | Anthropic Managed Agents, Cloudflare Agents SDK / Project Think |
+| `managed-runtime` | Hosts agent code or configuration and owns sessions, isolation, scaling, or durable infrastructure; it need not own the inner loop. | OpenAI Agents API, Anthropic Managed Agents, Cloudflare Agents SDK / Project Think |
 | `hosted-product` | Accepts a task through a provider-controlled harness and completes actions or returns a result, artifact, diff, or PR. | Cursor, Devin, Factory Droid, Grok Bot, Manus, GitHub Copilot coding agent, Google Antigravity |
 | `orchestrator-control-plane` | Dispatches, coordinates, or governs other harnesses or task-scoped agents. | Buzz, GitHub Agent HQ, OpenAI Symphony, MiniMax Agent Team |
 | `pattern` | Reusable loop pattern rather than one deployable product. | Ralph and self-improving harness loops |
@@ -43,7 +45,7 @@ The classes describe artifacts, not companies. OpenHands, for example, has an SD
 | Coding-agent loop | Codex, Claude Code, Pi, OpenCode, Cline, Cascade | Read repo, plan, edit files, run shell/tests, observe, patch, summarize. |
 | Plan/Act split | Cline, OpenCode, Windsurf Cascade | Read-only planning separated from write/execute mode. |
 | Deliberative control | Three-layer architectures, plan-then-execute, planner-executor-verifier | Planning, execution, observation, and verification have explicit boundaries and authority. |
-| Durable session + sandbox | Anthropic Managed Agents, Cloudflare Agents, Manus, Jules, Copilot cloud agent | Long-task state persists outside model context; execution happens in an isolated environment. |
+| Durable session + sandbox | OpenAI Agents API, Anthropic Managed Agents, Cloudflare Agents, Manus, Jules, Copilot cloud agent | Long-task state persists outside model context; identify whether workers share an environment or receive separate ones. |
 | Durable dormant agent | Google ADK durable agents | Agent pauses on external blockers, persists explicit state, and wakes on events. |
 | Initializer + worker handoff | Anthropic long-running harness | First agent creates artifacts; later agents resume from them. |
 | Workflow pattern selection | Claude common workflow patterns, Anthropic building effective agents eBook, Anthropic building effective agents | Match the harness flow to the task: sequential for dependencies, parallel for independent work, evaluator-optimizer for measurable quality gaps. |
@@ -108,6 +110,7 @@ Profiles are grouped by the artifact's primary control boundary. The shared colu
 
 | Name | Kind | Evidence | Loop Pattern | State / Context | Tools / Runtime | Control Layer | Multi-Agent | Skills / Memory | Observability | Primary Sources |
 |---|---|---|---|---|---|---|---|---|---|---|
+| OpenAI Agents API | `managed-runtime` — provider-operated Codex harness | official announcement + docs; public beta September 10 | managed model/tool loop with automatic compaction, recovery, steering, and subagent orchestration | durable sessions, saved turns/items, files, artifacts; API retention remains when sandbox is self-hosted | MCP, web search, functions, programmatic calling, tool search; hosted, self-hosted, partner, or no environment | application supplies tools and environment policy; shared worker filesystem and inherited MCP authority require scoped access and write ownership | create/message/wait/interrupt workers; separate contexts, shared environment; default six workers excluding coordinator; no custom function tools in workers | skills, instructions, plugins, session state | events, webhooks, saved items and worker turns; coordination stream can omit message text; operation completion is not task completion | [[sources/OpenAI Agents API]] |
 | Anthropic Managed Agents | `managed-runtime` — durable session and sandbox runtime | official architecture article + docs | stateless harness over durable session logs, outcomes loops, dreaming jobs, and external sandboxes | append-only session event log separate from model context; memory stores; outcomes | sandbox hands, MCP proxy, vault-backed credentials, self-hosted sandboxes | credential isolation, sandbox separation, resumable sessions, private MCP tunnels | many brains / many hands architecture; lead/specialist sessions | skills and memory stores; dreaming consolidation | durable session log, Console traces, webhooks | [[sources/Anthropic Managed Agents]]<br>[[sources/Anthropic Managed Agents Dreaming Outcomes]]<br>[[sources/Anthropic Managed Agents Sandboxes MCP Tunnels]]<br>[[sources/Claude Managed Agents Define Outcomes]]<br>[[sources/Claude Managed Agents Memory Stores]]<br>[[sources/Claude Managed Agents Session Event Stream]] |
 | Cloudflare Agents SDK / Project Think | `managed-runtime` — serverless durable-agent runtime | official architecture posts + docs | stateful Durable Object agent wakes, reads state, does work, hibernates; Dynamic Workflows route durable steps back into tenant or agent-written code | Durable Object SQL database, key-value state, WebSockets, scheduling, workflow routing metadata | Workers, Workflows, Dynamic Workers, Dynamic Workflows, browser tools, MCP, Code Mode, subagents, email, voice, webhooks, Think runtime, CLI/API schemas | human-in-the-loop, retries, durable execution, MCP governance, sandboxed isolates, per-tenant routing and logging hooks | subagents and workflow orchestration; agent-written plans can become durable Workflows | tools, memory, Agent Skills, and extension primitives | logs, state, workflows, stream resumption, workflow status/pause/retry | [[sources/Cloudflare Project Think]]<br>[[sources/Cloudflare Think Docs]]<br>[[sources/Cloudflare Dynamic Workflows]]<br>[[sources/Cloudflare Agent Memory]]<br>[[sources/Cloudflare Code Mode MCP API]]<br>[[sources/Cloudflare CLI for All Cloudflare]] |
 
@@ -148,6 +151,7 @@ These are calibration anchors, not current product profiles.
 | Aider | Early coding-harness mechanisms: graph-ranked repository maps under a token budget, explicit edit formats, Architect/Editor separation, git-native rollback, and a reproducible project benchmark. | [[sources/Aider]] |
 | SWE-agent | Shows that the agent-computer interface — command grammar, observation design, and feedback — can materially change coding performance at fixed model capability. | [[sources/SWE-agent]] |
 | mini-SWE-agent | Minimal control condition: a roughly 100-line bash-only agent that tests how much scaffold current models still need. | [[sources/Mini-SWE-agent]] |
+| Paired native-versus-neutral harness comparison | Hold the model fixed and measure workload-specific solve rate, autonomous finish, and reconciled cost; a selected private-suite preprint finds no resolved average native advantage and corrects its own telemetry. | [[sources/Harness or Model]] |
 
 ## Related
 

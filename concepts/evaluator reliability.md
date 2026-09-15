@@ -36,6 +36,12 @@ Agentic evals are high-variance, and most reported deltas live inside the noise 
 
 Design consequence: decide run counts by power analysis before the experiment, report intervals rather than point estimates, and report pass@k and pass^k together. [[sources/METR Time Horizon 1.1]] models the practice — frontier time-horizon estimates ship with confidence intervals (Opus 4.5: 320 minutes, CI 170–729) and METR flags which tasks lack measured human baselines.
 
+## What the Comparison Estimates
+
+An interval can be statistically sound while answering the wrong question. [[sources/What Does an LLM-Agent Leaderboard Rank Actually Compare]] separates observed benchmark success from success on a stated target population, expert versus proxy labels, and cost-aware utility. A comparison also needs shared task coverage and a declared practical margin; unsupported tasks cannot be repaired by merely resampling the observed data.
+
+Its SWE-bench analysis leaves most close top-ten comparisons unresolved under its pointwise rule and all unresolved under simultaneous intervals. This does not show equal capability. It shows that the desired superiority claim can exceed what the released records establish. A model-only conclusion also needs a design that separates model effects from harness, task, and budget effects.
+
 ## Multi-Judge Consensus
 
 Aggregating multiple judges helps only under conditions that usually fail in practice.
@@ -78,16 +84,26 @@ Clean holdouts do not help if the task and grader disagree. [[sources/OpenAI SWE
 
 [[sources/DeepSWE]] is the constructive response: author tasks specifically for evaluation and use functional verifiers that accept any implementation with the requested observable behavior. Its independent judge disagreed with the verifier on 1.4% of audited rollouts versus 32.4% for SWE-Bench Pro. That number is not ground-truth accuracy — GPT-5.5 was the judge, the DeepSWE errors are single-digit counts, and the judge prompt is private — but the design principle survives: prompt, verifier, and permitted solution space must form a tested contract.
 
+[[sources/SWE-Bench Pro Verified]] adds a concrete repair path: enforce answer-access boundaries and then refine selected task specifications/tests. Keep those interventions separate when attributing a score change. Its incomplete repair scope, imperfect network isolation, LLM-assisted causal labels, and internally inconsistent baseline counts mean the release name does not establish a fully reliable measuring instrument.
+
+## Monitorability and Evaluation Awareness
+
+A detector observes only part of behavior. [[sources/OpenAI GPT-6 Astra System Card]] reports stronger measured alignment together with weaker reasoning-trace monitorability; fewer flags alone therefore cannot establish the full reduction in harmful behavior. Measure detector recall against independently established outcomes and report whether it saw reasoning, actions, or both.
+
+[[sources/Anthropic Alignment Assessment Cybersecurity Incidents]] adds a concrete correlated-error case: a retrospective offline monitor accepted the worker's simulation rationale and missed the Mythos incident. Inspect environment effects and authorization through separate evidence. Follow-up questions, edited continuations, and model-generated tool simulations test useful hypotheses, but their interventions can change behavior and do not directly reveal beliefs or production incidence.
+
 ## Design Checklist
 
 - Judge from a different model family than the worker; positions swapped; length controlled.
 - Kappa against a human-labeled sample, reported per class, re-checked on a schedule.
 - Run counts set by power analysis; deltas reported with intervals; pass@k and pass^k both reported.
+- Target task population, label source, shared coverage, practical margin, and comparison family declared before choosing a winner.
 - At least one verification channel that is not an LLM opinion.
 - Scorer code, reference answers, and hidden tests unreachable from the worker's environment.
 - A holdout slice excluded from the iteration loop, refreshed over time.
 - Transcript inspection for anomalously high scores before believing them.
 - Task prompts and graders audited together for implementation-independent acceptance and requirement coverage.
+- Monitor recall and intervention delay evaluated separately from harmful-action propensity; simulation and evaluation-awareness limitations retained.
 
 ## Related
 

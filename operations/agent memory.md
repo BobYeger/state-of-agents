@@ -61,6 +61,7 @@ Three decision rules fall out. First, benchmark an immutable raw-record search b
 - Incremental operations: [[sources/MemoryAgentBench]] separates accurate retrieval, test-time learning, long-range understanding, and selective forgetting after chunk-by-chunk ingestion.
 - Memory-guided action: [[sources/MemoryArena]] runs causally dependent subtasks in fresh sessions and measures success, partial progress, degradation with dependency depth, and latency.
 - Environment experience: [[sources/LongMemEval-V2]] tests whether agents recover state, workflows, dynamics, and recurring gotchas from prior environment trajectories rather than only facts about a user.
+- Lifelong experience reuse: [[sources/LifeMem]] tests retention and transfer across environment task streams. Vary task order, report domain-level regressions, and retain memory-free baselines rather than treating a larger memory as an improvement by itself.
 - Adjacent axes: [[sources/Keep It InMind]] tests indirect application after successful storage, [[sources/PM-Bench]] tests prospective triggering, [[sources/MemOps]] tests operation-level state trajectories, and [[sources/HarnessSafe]] tests delayed reactivation through persistent carriers.
 
 These benchmarks are complementary, not successive replacements. A conversational QA score does not establish implicit activation, test-time learning, or correct downstream action. Author and vendor results also use different readers, harnesses, judges, and budgets; compare configurations before quoting deltas.

@@ -21,7 +21,7 @@ pdf_url: ""
 artifacts:
   - "raw/articles/openai-gpt-5.6-system-card.md"
 created: 2026-07-13
-updated: 2026-07-13
+updated: 2026-09-15
 ---
 
 # OpenAI GPT-5.6 System Card
@@ -53,6 +53,8 @@ updated: 2026-07-13
 - [[raw/articles/openai-gpt-5.6-system-card.md]]
 
 ## Notes
+
+- Later comparison: [[sources/OpenAI GPT-6 Astra System Card]] reports improved alignment outcomes alongside reduced monitorability. The GPT-5.6 findings above remain tied to their original model and protocol.
 
 - Canonical URL: https://deploymentsafety.openai.com/gpt-5-6
 - The internal deployment simulation resamples fixed trajectory prefixes and uses automated monitors over chain-of-thought; it is directional evidence rather than a measured production incident rate. OpenAI reports no observed severity-4 actions.

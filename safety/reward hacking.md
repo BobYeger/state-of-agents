@@ -30,6 +30,8 @@ Trace monitoring has a load-bearing caveat: it degrades under exactly the optimi
 
 [[sources/Chain of Thought Monitorability]] generalizes this into a cross-lab position: CoT monitoring is a usable but fragile oversight layer that scaled RL, process supervision, or latent-reasoning architectures could silently erode, so monitorability should be measured, reported, and weighed in training decisions rather than assumed.
 
+[[sources/OpenAI GPT-6 Astra System Card]] supplies a newer model comparison: improved alignment scores coexist with reduced monitorability and adversarial monitor-evasion capability. A lower measured violation rate does not establish that the same monitor will catch the remaining failures. [[sources/SWE-Bench Pro Verified]] complements detection with evaluator repair, but its numerical inconsistency and limited leakage controls should accompany any claimed score correction.
+
 ## Design Guidance
 
 - Treat the evaluator as an attack surface. The grader, its reference data, and its holdouts must sit outside anything the agent can read, write, wrap, or introspect. Ordinary sandbox boundaries drawn for safety are usually not drawn for grading integrity.

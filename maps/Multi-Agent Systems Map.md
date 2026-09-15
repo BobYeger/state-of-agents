@@ -45,6 +45,7 @@ Use this as a navigation page, not a source registry. Start from the synthesis n
 
 ## August–September 2026 Communication and Incident Anchors
 
+- [[sources/OpenAI Agents API]]
 - [[sources/Claude Code Cross-Session Messaging]]
 - [[sources/OpenAI Codex Session Queueing]]
 - [[sources/DeepSeek Harness Agent Teams]]
@@ -53,6 +54,7 @@ Use this as a navigation page, not a source registry. Start from the synthesis n
 - [[sources/METR OpenAI Hugging Face Incident Investigation]]
 - [[sources/Hugging Face Agent Intrusion Technical Timeline]]
 - [[sources/Discovery of a New OpenAI Agent Message Board]]
+- [[sources/The Mechanics of a Swarm]]
 
 ## Source Trail
 

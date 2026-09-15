@@ -14,13 +14,15 @@ The useful design question is how an agent turns experience into reusable, gover
 
 ## Evidence Lineage
 
-Four threads run through the sources, and they matured at different rates.
+The following threads run through the sources, and they matured at different rates.
 
 **Experience distilled into text.** [[sources/Reflexion]]: self-reflections stored as text and prepended to retries, with gains that depend on external evaluation signal quality — the foundational citation for every memory-plus-retry pattern. [[sources/Generative Agents]]: the memory stream with retrieval scored by recency, importance, and relevance, plus reflection that synthesizes raw records into higher-level inferences — the template for memory that restructures itself. [[sources/Google ReasoningBank]] carries the modern form: reusable strategies distilled from both successes and failures.
 
 **Memory substrates.** [[sources/MemGPT]]: the agent manages its own memory through function calls, paging between bounded context and external storage. [[sources/A-MEM]]: each memory becomes a structured note with agent-decided links, and new entries can retroactively rewrite old ones. [[sources/Mem0]]: extraction-and-consolidation pipelines beat full-context replay on cost and latency, and its graph variant adds only ~2% — structure is not free improvement. [[sources/Zep Temporal Knowledge Graph Memory]]: bi-temporal facts with automatic invalidation, so the store knows when a fact stopped being true. [[operations/agent memory]] carries the operational treatment; [[sources/Memory in the Age of AI Agents]] is the survey that gives the field its taxonomy (forms, functions, dynamics) and separates agent memory from RAG and context engineering.
 
 **Measurement.** [[sources/LongMemEval]]: five memory abilities including knowledge updates and abstention — a learning loop that cannot supersede stale facts or decline to answer fails here, and commercial assistants drop ~30% accuracy across sustained interactions. It is now the de-facto reporting benchmark for the substrate thread.
+
+**Retention across changing environments.** [[sources/LifeMem]] tests whether later experience preserves earlier competence and transfers to different tasks. Record the stream order and compare against both memory-free and simpler retrieval baselines. For skill maintenance, evaluate the document, retrieval graph, and optimizer history separately: [[sources/SkillAdam]] and [[sources/SE-GoS]] expose different places where useful experience can accumulate or interfere.
 
 **Governance, and what happens without it.** Learning loops preserve errors as easily as improvements, and shared memory makes that collective: [[sources/When Agents Misremember Collectively]] documents false memories reinforcing across agents. [[sources/Governed Shared Memory for Multi-Agent LLM Systems]] supplies the countermeasure primitives — scoped retrieval, temporal supersession, provenance tracking, policy-governed propagation; [[sources/G-Memory]] shows hierarchical memory propagating lessons across trials without flattening per-agent context. See [[concepts/agent failure modes]] for the failure-side treatment and [[concepts/shared agent memory]] for the design note.
 
@@ -63,6 +65,9 @@ Four threads run through the sources, and they matured at different rates.
 - [[sources/SkillRL]]
 - [[sources/SAGE Skill Library]]
 - [[sources/SkillOpt]]
+- [[sources/SkillAdam]]
+- [[sources/LifeMem]]
+- [[sources/SE-GoS]]
 - [[sources/SiriuS]]
 - [[sources/SkillsBench]]
 - [[sources/Agentic Skills in the Wild]]

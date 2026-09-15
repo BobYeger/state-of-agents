@@ -2,7 +2,7 @@
 
 This map is the entry point for readers designing systems that improve themselves: agent loops that mutate code, prompts, skills, memory, or whole harnesses, and keep changes only when external evidence improves. It assembles the synthesis notes, then gives a canonical reading order over the source evidence. [[reports/Self-Improving Systems Report]] is the narrative treatment of this cluster; this page stays the inventory.
 
-The organizing claim is that self-improvement is a harness property, not a model property. Every credible result in this cluster pairs a mutation mechanism with an evaluator, a selection policy, provenance, and rollback — and every documented failure traces back to one of those four being weak.
+The organizing question is how an improvement loop measures and retains useful change. Most sources keep model weights fixed and mutate external artifacts; the automated-alignment-research boundary case instead trains a target model. In either setting, inspect the evaluator, selection policy, provenance, and rollback before treating a rising score as progress.
 
 ## Core Notes
 
@@ -68,6 +68,9 @@ The same loop where the mutable artifact is text rather than scaffold code — s
 - [[sources/GEPA Reflective Prompt Evolution]]: Pareto-frontier selection over reflective prompt mutations beats GRPO-based RL with up to 35x fewer rollouts — the strongest scaffold-vs-weights data point.
 - [[sources/SkillOpt]]: a skill document as trainable external state, with held-out validation gates and rejected-edit buffers.
 - [[sources/WikiSkill]]: held-out skill gating paired with a persistent optimizer wiki that compiles immutable traces and rejected proposal history into candidate skill changes while keeping the wiki out of the task agent's runtime context.
+- [[sources/SkillAdam]]: issue/attempt history and adaptive edit scope; uses a different acceptance protocol from SkillOpt.
+- [[sources/LifeMem]]: workflow-organized experience evaluated for cross-environment retention and transfer.
+- [[sources/SE-GoS]]: the retrieval graph is mutable even when skill bodies are fixed; repeated evolution eventually regresses.
 - [[sources/Metis]]: text memory and code memory as dual persistence formats; recurring plans crystallize into validated tools.
 - [[sources/SAGE Skill Library]] and [[sources/SkillRL]]: skill libraries under explicit evaluation and RL pressure.
 - [[sources/Google ReasoningBank]]: reusable strategies distilled from successes and failures.
@@ -79,13 +82,19 @@ The same loop where the mutable artifact is text rather than scaffold code — s
 - [[sources/LangChain Agent Improvement Loop]]: the operational seven-stage loop — traces become eval cases, judge/human disagreements become grader tuning examples.
 - [[sources/Braintrust Eval-Driven Development]]: judge calibration against human ratings as a defining property of the loop.
 - [[sources/Replit Agent 3 Self-Testing]]: verification as a separate subagent with its own context, run at production scale.
+- [[sources/Meta Organizational Second Brain]]: expert corrections become reviewed knowledge/procedure edits with replay, regression tests, and human approval; a vendor case study.
 
 ### 8. Factory Operations
 
 The organization-level loop: [[concepts/code factories]] for the synthesis, [[maps/Code Factory Playbook]] for the stage-by-stage evidence walk.
 
 - [[sources/Anthropic When AI Builds Itself]]: where the bottleneck moves — goal selection, evaluator quality, review throughput, provenance.
+- [[sources/OpenAI Research Acceleration]]: internal research-agent usage and intervention telemetry; activity measures are not causal research-speed estimates.
 - [[sources/DORA State of AI-assisted Software Development 2025]]: the quantitative baseline — AI adoption amplifies throughput and instability alike unless verification infrastructure exists.
+
+### 9. Automated Alignment Research: The Target Weights Change
+
+- [[sources/Anthropic Automated Alignment Researchers]]: agents search for post-training methods against human-defined alignment failures; withheld evaluation, capability checks, and selection accounting bound the result.
 
 ## Read Alongside: Trust Rails
 

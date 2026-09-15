@@ -17,6 +17,10 @@ An LLM-maintained wiki is one form of organizational knowledge infrastructure, b
 
 [[sources/Cerebras How We Built Our Knowledge Base]] is the production anchor for the second pattern. Its Slack distillation performs some ingest-time synthesis, but the durable product is an evidence index rather than a generated wiki. The distinction is freshness versus maintained connective structure, not a choice between “RAG” and “knowledge”: a mature system can use source-native retrieval to update a durable synthesis layer while preserving citations and authority boundaries.
 
+## Expert-Reviewed Knowledge Maintenance
+
+[[sources/Meta Organizational Second Brain]] applies maintained text to institutional judgment. Expert-reviewed knowledge files and reasoning procedures have separate responsibilities, while a feedback pipeline proposes edits and checks them before promotion. For a vault, this motivates three distinct checks: structural validity of links, evidential support for statements, and behavioral consistency when the notes guide an agent. Passing the first check cannot substitute for the other two.
+
 ## Experience Wiki vs Executable Skills
 
 [[sources/WikiSkill]] uses a maintained wiki at a different boundary: as internal optimizer-facing memory between immutable execution traces and validated executable skills. A Wiki Maintainer turns successes, failures, and proposal outcomes into pattern pages and evolution and impact logs; a separate proposer uses that history to create or patch skills. The task-running agent receives the active skills but not the wiki by default. This is a write-maintain-compile pipeline for procedural memory, not a company brain or an organizational retrieval system.
@@ -36,4 +40,5 @@ Implementation comparison notes are kept outside the public graph until they are
 
 - [[sources/llm-wiki - Karpathy|llm-wiki]]
 - [[sources/Cerebras How We Built Our Knowledge Base]]
+- [[sources/Meta Organizational Second Brain]]
 - [[sources/WikiSkill]]

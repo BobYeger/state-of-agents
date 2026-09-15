@@ -28,7 +28,7 @@ evidence_class: "vendor-production-architecture-report"
 metrics_status: "vendor-reported-adoption-without-quality-evaluation"
 artifacts: []
 created: 2026-08-25
-updated: 2026-08-25
+updated: 2026-09-15
 ---
 
 # How We Built Our Knowledge Base
@@ -60,6 +60,8 @@ The article names authentication, authorization, and audit, and separately descr
 - [[claims/Claim - Harnesses tools and context are core agent performance levers]]
 
 ## Connections
+
+- [[sources/Meta Organizational Second Brain]] — complementary architecture for maintaining expert-reviewed knowledge and reasoning procedures.
 
 - [[concepts/organizational knowledge systems]]
 - [[concepts/LLM-maintained knowledge bases]]

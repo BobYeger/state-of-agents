@@ -18,6 +18,7 @@ The organizing distinction is between prompt compression and agent context manag
 | Tool-result clearing | Drops old bulky tool outputs while preserving the tool-call record. | [[concepts/tool-result clearing]], [[sources/Anthropic Context Engineering Cookbook]] |
 | Memory offload | Writes durable knowledge outside the active context window. | [[operations/agent memory]], [[sources/Cloudflare Agent Memory]], [[sources/Agent Memory Characterization]], [[sources/Are We Ready For An Agent-Native Memory System]] |
 | Organizational knowledge retrieval | Maintains a fresh evidence layer over source-native company systems for use by people, automations, and agents; preserving source permissions is part of the design contract. | [[concepts/organizational knowledge systems]], [[sources/Cerebras How We Built Our Knowledge Base]], [[concepts/LLM-maintained knowledge bases]] |
+| Reviewed knowledge maintenance | Turns expert corrections into scoped knowledge or procedure edits with structural, replay, and regression checks before promotion. | [[concepts/organizational knowledge systems]], [[sources/Meta Organizational Second Brain]] |
 | Virtual context paging | Pages information between bounded main context and external storage, with the model editing its own memory via function calls. | [[sources/MemGPT]], [[sources/Letta Code Memory Docs]] |
 | Plan recitation | Continuously rewrites a plan file so the global goal stays in recent attention against mid-context drift. | [[sources/Manus Context Engineering]] |
 | Shared memory stores | Governs fleet- or team-level memory: write authority, reconciliation, namespacing, provenance. | [[concepts/shared agent memory]], [[sources/Claude Managed Agents Memory Stores]], [[sources/Governed Shared Memory for Multi-Agent LLM Systems]], [[sources/G-Memory]] |
@@ -55,6 +56,7 @@ Prompt compression is useful background, but it should not dominate the agent gr
 - [[sources/LoCoMo]] and [[sources/LongMemEval]] evaluate conversational memory; LongMemEval includes knowledge updates and abstention.
 - [[sources/BEAM]] stresses ten abilities from 128K to 10M tokens, while [[sources/MemoryAgentBench]] tests incremental retrieval, learning, global understanding, and forgetting.
 - [[sources/MemoryArena]] tests whether memory guides later actions across interdependent sessions; [[sources/LongMemEval-V2]] tests retrieval of environment experience and procedural runbooks.
+- [[sources/LifeMem]] tests cross-environment experience reuse, transfer, and forgetting as the task stream grows; its gains depend on environment and ordering.
 
 Memory-substrate selection guidance lives in [[operations/agent memory]].
 

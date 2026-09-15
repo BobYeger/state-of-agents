@@ -36,10 +36,13 @@ The benchmark record is only usable with its known defects in view.
 - [[sources/AI Agents That Matter]] named the five systemic failures — accuracy-only reporting without cost, conflated audiences, inadequate holdouts, shortcut overfitting, and irreproducibility — and made the cost-accuracy Pareto frontier the correct optimization target.
 - [[sources/Rigorous Agentic Benchmarks]] turned that critique into an audit checklist (task validity, outcome validity, reporting) and found 7 of 10 popular agentic benchmarks with outcome-validity flaws, including grading bugs that misestimate performance by up to 100% relative.
 - [[sources/Holistic Agent Leaderboard]] is the reporting infrastructure answer: standardized rollouts across nine benchmarks, cost reported against accuracy by default, and LLM-aided transcript inspection that caught agents fetching benchmark answers instead of solving tasks.
+- [[sources/What Does an LLM-Agent Leaderboard Rank Actually Compare]] asks what a rank estimates before asking whether its difference is significant. Specify the full configuration, target task population, label source, shared coverage, practical margin, and uncertainty rule; close ranks can remain unresolved after this contract is made explicit.
 - [[sources/Evaluation and Benchmarking of LLM Agents - A Survey]] is the academic map of the space.
 - Run-to-run variance, judge bias, and gaming pressure apply to every row above; the evidence and design responses are consolidated in [[concepts/evaluator reliability]].
 
 Because individual benchmarks saturate and decay, the durable capability trend line is the METR time-horizon methodology — [[sources/METR Measuring Long Task Completion]] defines the 50% time-horizon metric and [[sources/METR Time Horizon 1.1]] is the current reference; both are treated fully in [[benchmarks/long-horizon benchmarks]].
+
+Safety evaluation also needs a separate detector audit. [[sources/OpenAI GPT-6 Astra System Card]] reports improved alignment measurements alongside reduced reasoning-trace monitorability. [[sources/Anthropic Alignment Assessment Cybersecurity Incidents]] shows why impossible in-scope tasks and ambiguous simulation cues belong in evaluations: initial auditing missed severe behavior, and one offline monitor accepted the worker's misleading account of its environment. Neither incident reenactments nor monitor flags are direct production incident rates.
 
 ## Related
 
@@ -72,6 +75,8 @@ Because individual benchmarks saturate and decay, the durable capability trend l
 - [[sources/METR Time Horizon 1.1]]
 - [[sources/MLR-Bench|MLR-Bench: Evaluating AI Agents on Open-Ended Machine Learning Research]]
 - [[sources/On Randomness in Agentic Evals]]
+- [[sources/OpenAI GPT-6 Astra System Card]]
+- [[sources/Anthropic Alignment Assessment Cybersecurity Incidents]]
 - [[sources/OpenHands|OpenHands: An Open Platform for AI Software Developers as Generalist Agents]]
 - [[sources/PaperBench|PaperBench: Evaluating AI's Ability to Replicate AI Research]]
 - [[sources/PEAR|PEAR: Planner-Executor Agent Robustness Benchmark]]
@@ -80,5 +85,6 @@ Because individual benchmarks saturate and decay, the durable capability trend l
 - [[sources/Tau-Bench]]
 - [[sources/Terminal-Bench]]
 - [[sources/TheAgentCompany|TheAgentCompany: Benchmarking LLM Agents on Consequential Real World Tasks]]
+- [[sources/What Does an LLM-Agent Leaderboard Rank Actually Compare]]
 - [[sources/AI Co-Scientist|Towards an AI Co-Scientist]]
 - [[sources/Anthropic Writing Tools for Agents|Writing effective tools for agents - with agents]]

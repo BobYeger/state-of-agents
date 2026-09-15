@@ -1,11 +1,11 @@
 # Self-Improving Systems Report: Evolution Loops, Selection Policies, and Trust Rails
 
-Date: 2026-09-02
-Scope: local project graph only. This report is the narrative treatment of the self-improving-systems cluster; [[maps/Self-Improving Systems Map]] carries the inventory and reading order, and [[methods/self-improving code loops]] carries the method note. Revised 2026-09-02 to add WikiSkill's persistent optimizer-memory boundary; the preceding revision distinguished recoverable runtime component mutation from an evaluated self-improvement loop. Direct excerpts are intentionally short; longer source passages are summarized. Source-paper figures are referenced through local PDF page embeds where used, for private vault analysis rather than public redistribution.
+Date: 2026-09-15
+Scope: local project graph only. This report is the narrative treatment of the self-improving-systems cluster; [[maps/Self-Improving Systems Map]] carries the inventory and reading order, and [[methods/self-improving code loops]] carries the method note. Revised 2026-09-15 with skill and retrieval maintenance, expert-governed knowledge edits, internal research-acceleration telemetry, and a bounded target-model alignment-training case. Direct excerpts are intentionally short; longer source passages are summarized. Source-paper figures are referenced through local PDF page embeds where used, for private vault analysis rather than public redistribution.
 
 ## Executive Summary
 
-Self-improvement is a harness property, not a model property. Every credible result in this cluster, whether the mutable artifact is agent code, harness code, a workflow graph, a prompt, a skill document, or a memory bank, pairs a mutation mechanism with an external evaluator, an explicit selection policy, and provenance with rollback, and every documented failure traces back to one of those four being weak ([[maps/Self-Improving Systems Map]], [[methods/self-improving code loops]]). The mutation mechanism is the cheap part everywhere in the evidence. The evaluator, the selection signal, and the lineage records are where the results come from and where the failures land.
+This cluster primarily studies improvement through persistent changes to agent code, harnesses, workflows, prompts, skills, and memory around a fixed model. The useful engineering question is how the loop measures, selects, and retains a change, using an evaluator, provenance, and rollback ([[maps/Self-Improving Systems Map]], [[methods/self-improving code loops]]). A separately marked automated-alignment-research case changes target-model weights; it tests mitigation of specified failures under human-built evaluations. Across these settings, proposing a change is easier than showing that it improved the intended behavior.
 
 The claim is measured rather than asserted. The anchor result rewrites its own code under benchmark selection and lifts SWE-bench from 20.0% to 50.0%, and its ablations attribute the gain to harness structure: keeping an archive of variants instead of a single champion is worth a double-digit share of the result ([[sources/Darwin Godel Machine]]). The successor line shows the selection signal itself is the lever, replacing own-score parent selection with selection by descendants' pooled performance and reaching better agents at a fraction of the compute ([[sources/Huxley-Godel Machine]]). The same loop wins in text space, where reflective prompt evolution outperforms GRPO-based reinforcement learning by 6% on average and up to 20% with up to 35x fewer rollouts ([[sources/GEPA Reflective Prompt Evolution]]). Production repeats the pattern in reverse order: Cursor's review agent could not improve past qualitative iteration until a human-calibrated resolution metric existed, and with the metric in place, gated experiments raised resolution rate from 52% to over 70% ([[sources/Cursor Building Better Bugbot]], vendor telemetry).
 
@@ -18,7 +18,7 @@ Production adoption is real and deliberately narrow. The shipped loops mutate te
 Short version:
 
 ```text
-the model does not improve; the artifact does
+in the scaffold cluster, the external artifact changes while weights stay fixed
 build and calibrate the evaluator before anything mutates
 select on evidence the candidate did not produce
 keep lineage deep enough to revert any keep decision
@@ -26,7 +26,7 @@ keep lineage deep enough to revert any keep decision
 
 ## Core Model
 
-Every system in this report runs the same loop, and the loop runs between sessions rather than within them. A run produces work and evidence; the meta-loop turns that evidence into a change to a persistent artifact, keeps or discards the change against external signal, and hands the revised artifact to the next run.
+The scaffold and memory systems in this report follow an across-run loop. A run produces work and evidence; the meta-loop turns that evidence into a change to a persistent artifact, keeps or discards the change against external signal, and hands the revised artifact to the next run. The automated-alignment-research boundary case instead produces trained target-model checkpoints under a related evaluation and selection structure.
 
 ```text
 act       run the agent on real work; produce the artifact's output and a full trace
@@ -55,10 +55,12 @@ Every credible self-improving system in this cluster runs the same across-run me
 | Prompts | Reflective edits: an LLM reads full rollout trajectories, diagnoses failures, and proposes targeted rewrites | Per-instance task scores kept as a Pareto frontier | [[sources/GEPA Reflective Prompt Evolution]] |
 | Skills | Bounded creation or editing of skill documents; executable skills committed only after verification | Held-out validation gates; in-environment verification; live-traffic signal in production | [[sources/Voyager]], [[sources/SkillOpt]], [[sources/WikiSkill]], [[sources/Metis]], [[sources/Cursor Bugbot Learned Rules]] |
 | Memory and playbooks | Trajectories distilled into structured items; incremental delta updates rather than wholesale rewrites | LLM-judged trajectory outcomes; downstream task success | [[sources/Google ReasoningBank]], [[sources/Agentic Context Engineering]], [[sources/Trajectory-Informed Memory Generation]] |
+| Retrieval graphs | Trace-guided changes to relationships, weights, and retrieval descriptions; skill bodies stay fixed | Same-task reward; separate held-out transfer check and multi-round regression diagnostic | [[sources/SE-GoS]] |
+| Organizational knowledge and procedures | Expert corrections compiled into versioned file changes | Targeted replay, regression evaluation, structural checks, expert approval | [[sources/Meta Organizational Second Brain]] |
 
 ### What Varies Down the Spectrum
 
-Reading down the table is reading down a cost gradient. Mutating agent code means re-running a benchmark suite for every candidate; mutating a playbook costs a reflection call and a retrieval. Iteration gets cheaper toward the bottom, which is why the text-artifact rows carry the most production deployments and the code rows carry the most compute-intensive research results. The evaluator column is never empty, and its entries get softer in the same direction: benchmark scores at the top, LLM judges over trajectories at the bottom. The judge-scored rows sit lowest on the evidence ladder, a point the evaluator and trust-rails sections return to.
+The table is an artifact taxonomy, not a universal cost or evidence ranking. A text edit can be cheap to propose yet expensive to validate; an organizational correction may require replay and expert review. Compare total iteration cost, including evaluation, rather than the cost of writing the candidate. Likewise, distinguish environment checks, benchmark scores, model judges, and expert approval instead of inferring evidence quality from the artifact's format.
 
 The artifact choice is an economics and transfer decision, not a style preference. Text is cheap to write and transfers across environments; executable code runs fast and composes, but binds to the environment that produced it, so codification is best deferred until recurrence proves a procedure stable ([[sources/Metis]]). The correction runs the other way at the foundations: per-task reflective text plateaus on open-ended tasks where verified executable skills compound into new capability ([[sources/Reflexion]], [[sources/Voyager]]; the foundations section carries the numbers). And the artifacts are portable assets rather than run-local state: discovered scaffolds transfer across backbone models ([[sources/Huxley-Godel Machine]]), invented agent designs transfer across domains and models ([[sources/ADAS]]), and optimized skill documents move between harnesses ([[sources/SkillOpt]]). A team that treats the artifact as a versioned, evaluated object ends up owning something it can carry to the next model generation.
 
@@ -68,9 +70,13 @@ The spectrum extends past the table in both directions. Pointed outward, the sam
 
 ### The Scaffold-Versus-Weights Boundary
 
-The table stops at weights, and the boundary is principled rather than incidental. Every artifact above it is a text or code diff: inspectable in review, revertible by rollback, portable across models. A weight update is none of those. The strongest data point that staying on the scaffold side costs little is GEPA: reflective prompt evolution beats GRPO-based reinforcement learning on both quality and rollout efficiency ([[sources/GEPA Reflective Prompt Evolution]]; numbers with the text-artifact evidence below). When evaluator feedback is legible in language, text-space search extracts more improvement per rollout than gradient updates, and the winning artifact can be read, diffed, and moved.
+The table stops at weights. Its artifacts can be inspected as text or code diffs, reverted, and tested with another model. Weight updates can also be checkpointed and rolled back, but they lack that readable semantic diff and cannot simply be loaded into another backbone. GEPA supplies a bounded comparison: reflective prompt evolution beats GRPO-based reinforcement learning on quality and rollout efficiency in its evaluated settings ([[sources/GEPA Reflective Prompt Evolution]]; numbers with the text-artifact evidence below). This supports testing text-space search when feedback is legible, rather than assuming a general advantage over training.
 
-The counterweight is real. Rule-based-reward RL over open software-evolution data trains a 70B model to a 41.0% solve rate on SWE-bench Verified and improves out-of-domain reasoning ([[sources/SWE-RL]]): capability transfer beyond the training task, which no scaffold edit produces. The working rule follows: mutate the scaffold when the deficit is procedure, and cross into weights when the deficit is capability and rollout volume is affordable. Hybrid designs make the boundary explicit rather than erasing it, co-evolving skill banks with the policy during training ([[sources/SkillRL]], [[sources/SAGE Skill Library]]) or externalizing state into the harness so that RL trains only the semantic decisions ([[sources/Harness-1]]); later sections give those systems their full treatment. The reward-hacking exposure also differs in kind across the boundary: a scaffold-side hack lives in a diff and a trace where review can find it, while RL bakes the hack into the policy ([[safety/reward hacking]]). The taxonomy's lesson is the report's organizing claim in miniature. The rows differ in everything except structure: whichever artifact mutates, the systems that work pair the mutation with an evaluator, a selection policy, provenance, and rollback, so the harness machinery built for one row is reusable engineering for the next.
+The counterweight is real. Rule-based-reward RL over open software-evolution data trains a 70B model to a 41.0% solve rate on SWE-bench Verified and improves out-of-domain reasoning ([[sources/SWE-RL]]): transfer through changed weights, rather than through a retained external procedure. Both routes can transfer; compare them on the intended workload and budget. Hybrid designs make the boundary explicit rather than erasing it, co-evolving skill banks with the policy during training ([[sources/SkillRL]], [[sources/SAGE Skill Library]]) or externalizing state into the harness so that RL trains only the semantic decisions ([[sources/Harness-1]]); later sections give those systems their full treatment. The reward-hacking exposure also differs in kind across the boundary: a scaffold-side hack lives in a diff and a trace where review can find it, while RL can encode the hack in the policy ([[safety/reward hacking]]). Evaluators, selection policies, provenance, and rollback remain useful controls across these different mutation surfaces.
+
+### Boundary Case: Automated Alignment Research
+
+[[sources/Anthropic Automated Alignment Researchers]] crosses the weight boundary: research agents propose post-training methods for human-specified alignment failures. The study's leaderboard winners improve an unseen benchmark across ten failures; further tests cover larger models and behavioral audits. Interpretation depends on selection accounting: the nominally held-out benchmark selects methods for those further tests, while Petri is a separate test. Human ideas are one-shot submissions and agents iterate over many candidates. This supports automating a bounded mitigation search, not a matched claim that agents outperform human researchers or can define alignment goals themselves.
 
 ## The Godel-Machine Line
 
@@ -266,6 +272,10 @@ Four compact results complete the mechanics. PolySkill applies polymorphism to w
 
 The through-line matches the report's organizing claim. Where a system added an acceptance gate, bounded its edits, or kept per-instance score records, the gains held out of distribution; where curation was naive, the failure is visible in the artifact itself, as a collapsed context or an appended bad memory. What no system in this line escapes is the provenance of the signal: every acceptance gate above is ultimately a benchmark score or an LLM judge, so the whole line inherits, rather than solves, the measurement problem carried by [[concepts/evaluator reliability]].
 
+### Separate the Maintained Artifacts
+
+[[sources/SkillAdam]] adds persistent issue history and adaptive edit scope to skill optimization, but changes the pool and acceptance protocol relative to SkillOpt. [[sources/SE-GoS]] instead updates retrieval structure and shows that repeated evolution can regress. [[sources/LifeMem]] evaluates workflow-organized memory for retention and transfer across changing environments. Together they motivate recording exactly what changed—procedure, index, or optimizer state—and testing the effect of subsequent updates. None makes an ever-growing artifact a sufficient measure of improvement.
+
 ## What the Production Sources Say
 
 Production is where the organizing claim leaves the lab. Every shipped improvement loop in this cluster pairs a mutation mechanism with an evaluator, a selection policy, provenance, and rollback, and the shipped systems add a lesson the research lineages state only in ablations: the evaluator gets built first, and the loop does not start climbing until the judge is calibrated. This section owns the across-run form of the loop, the changes that persist between runs as rules, specs, datasets, and workflow files. The within-run mechanics that keep a single session alive (goals, wake conditions, verify-retry cycles) are the territory of [[reports/Harness Engineering Report]].
@@ -278,6 +288,10 @@ Production is where the organizing claim leaves the lab. Every shipped improveme
 | Braintrust EDD | prompts, models, configs | calibrated judge suites | staged eval gates, canary scoring | version lineage, score-triggered rollback |
 | Cursor self-driving codebases | specification and prompt corpus between runs | convergence plus green-branch fixup | constant small error rate, deferred reconciliation | full timestamped logs, session replay |
 | GitHub Agentic Workflows | workflow Markdown in the repo | safe-outputs validation, threat detection | default-deny permissions before apply | git-versioned workflows, sandboxed execution |
+
+### Expert Corrections as Knowledge Changes
+
+[[sources/Meta Organizational Second Brain]] applies the loop to organizational knowledge and procedures. Expert feedback becomes a proposed file diff with structural validation, targeted replay, regression evaluation, and human approval. This is vendor case-study evidence; the reported absence of regressions is limited to the measured suite. A useful pattern for builders is to attach the originating correction and its regression case to each approved knowledge update.
 
 ### Cursor Bugbot: The Metric Precedes the Loop
 
@@ -350,6 +364,10 @@ The organization-level meta-loop treats the engineering pipeline itself as the m
 Anthropic's own account is the cleanest statement of the shift. As of May 2026, more than 80% of merged production code lines at Anthropic were authored by Claude, with the explicit caveat that lines of code overstate productivity; Q2 2026 code output per engineer runs at roughly 8x the 2024 level, and Claude Code success on the most open-ended tasks reached 76% in May 2026 ([[sources/Anthropic When AI Builds Itself]]). The division of labor in the article is the argument: in engineering, humans increasingly supply goals while Claude supplies the method, and in the AI-safety research example, Claude-powered agents proposed hypotheses, ran tests, and iterated while humans still selected the problem and the scoring rubric. The governance section completes the move by recasting recursive self-improvement as a verification problem, with monitoring, evaluation, and slowdown or pause mechanisms as the central institutional work.
 
 Read against the map's organizing claim, this is the harness thesis at organization scale. When the mutation mechanism becomes nearly free, design effort belongs on the remaining pieces: goal selection, evaluator quality, review throughput, and provenance. The caveats travel with every number here. The evidence is internal rather than independently reproducible, and some success measures depend on Claude judges, so the card treats them as operational signals rather than neutral evaluations: a factory grading itself with its own product.
+
+### Research Acceleration Needs Outcome Measures
+
+[[sources/OpenAI Research Acceleration]] reports that internal researchers increasingly delegate concurrent and longer tasks. By mid-August, aggregate agent runtime reached 3.1 agent workdays per human workday, yet more than half of successful tasks estimated at four to eight human hours needed intervention. Usage, code, and experiment growth are observational signals, confounded by growing compute and changing workflows. They do not directly measure end-to-end research acceleration. Track accepted findings, human steering, and downstream bottlenecks alongside activity.
 
 ### Adoption Without Verification Amplifies Instability
 
@@ -592,9 +610,11 @@ Row evidence: reward hacking, [[sources/METR Recent Reward Hacking]], [[sources/
 
 The tier order encodes the cluster's trust structure. The peer-reviewed industry-track papers from Meta anchor Tier 1 because they report acceptance economics honestly; Cursor's numbers sit beside them with the caveat that they are vendor telemetry judged by an LLM at merge time. Passerine ranks in Tier 3 despite its Google setting: it is an evaluation study on Google's internal bug tracker, its plausible-patch rates come from manual author grading, and its deployment discussion is prospective rather than live. Red Queen Godel Machine's results are author-flagged as preliminary and LoongFlow's are vendor-reported with no independent replication at snapshot, so both rank at the bottom of Tier 3 despite headline claims. Braintrust's gating pattern carries no effectiveness data of its own; Cursor's calibrated-judge experiments and Intercom's revert-rate telemetry supply the empirical validation the pattern leans on. Read every vendor loop-level self-improvement claim, including the factory pitches in Tier 2 and Tier 4, against DORA's amplifier finding ([[sources/DORA State of AI-assisted Software Development 2025]]).
 
+[[sources/SkillAdam]], [[sources/LifeMem]], [[sources/SE-GoS]], and [[sources/Anthropic Automated Alignment Researchers]] belong in the research-evaluation tier. [[sources/Meta Organizational Second Brain]] and [[sources/OpenAI Research Acceleration]] belong with internal vendor reports. New publication does not establish influence or independent production replication.
+
 ## Bottom Line
 
-Self-improving systems are shipping, and nothing about them is mystical. The loop is a harness: a bounded mutation surface, an audited evaluator the loop cannot touch, a selection policy that trusts evidence over the candidate's own score, and lineage deep enough to audit and revert any keep decision. Where those pieces exist, the loop climbs, in research and in production alike. Where any one is weak, the loop hill-climbs its own measurement error, and the archive fills with candidates that fooled the judge. Immutability is not enough: a frozen evaluator whose prompt and grader disagree makes the error reproducible rather than trustworthy.
+Self-improving systems are shipping, and nothing about them is mystical. The loop is a harness: a bounded mutation surface, an audited evaluator the loop cannot touch, a selection policy that trusts evidence over the candidate's own score, and lineage deep enough to audit and revert any keep decision. These controls make improvement testable and bad selections reversible; they do not guarantee continued gains or transfer to deployment. Weak controls let the loop optimize measurement error and retain candidates that fooled the judge. Immutability is not enough: a frozen evaluator whose prompt and grader disagree makes the error reproducible rather than trustworthy.
 
 ```text
 self-improvement = bounded mutation
@@ -609,6 +629,10 @@ The design effort goes where the results come from. Mutation is cheap at every a
 
 Research sources:
 
+- [[sources/Anthropic Automated Alignment Researchers]]
+- [[sources/SkillAdam]]
+- [[sources/LifeMem]]
+- [[sources/SE-GoS]]
 - [[sources/A Programming Paradigm for Spatiotemporal Composability]]
 - [[sources/ACH Mutation-Guided Test Generation]]
 - [[sources/Adaptive Auto-Harness]]
@@ -695,6 +719,8 @@ Product, platform, and practitioner sources:
 - [[sources/Microsoft Agentic Platform Agent Factory]]
 - [[sources/Microsoft Spec-Driven AI-Native Engineering]]
 - [[sources/OpenAI GPT-5.6 System Card]]
+- [[sources/OpenAI Research Acceleration]]
+- [[sources/Meta Organizational Second Brain]]
 - [[sources/RCACopilot]]
 - [[sources/Replit Agent 3 Self-Testing]]
 - [[sources/Rich Sutton The Bitter Lesson]]

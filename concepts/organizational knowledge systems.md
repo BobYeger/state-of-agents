@@ -8,6 +8,7 @@ An organizational knowledge system—often marketed as a “company brain”—g
 |---|---|---|---|
 | [[concepts/LLM-maintained knowledge bases]] | Immutable sources plus maintained synthesis pages | During ingestion and ongoing curation | Accumulating cross-linked understanding |
 | Federated organizational retrieval | Source systems remain authoritative; a query-ready index holds derived copies | Distillation at ingestion and synthesis at query time | Finding current evidence across organizational silos |
+| Expert-maintained knowledge and procedures | Reviewed positions and methods, with their source dependencies and regression cases | During expert review and tested maintenance | Applying organizational judgment consistently |
 | [[operations/agent memory]] | A memory store records facts, preferences, experiences, or procedures for later agent use | During or between agent sessions | Continuity and adaptation across runs |
 | [[concepts/shared agent memory]] | Several agents read or mutate a governed common store | During work and consolidation | Team coordination and reusable fleet knowledge |
 
@@ -23,7 +24,9 @@ These forms can be combined, but they should not be conflated. A retrieval plane
 - **Evaluation:** Measure answer support, retrieval precision and recall, staleness, permission leakage, latency, cost, and downstream task outcomes—not query volume alone.
 - **Safety:** Treat chat, documents, tickets, and code comments as untrusted content. Provenance and citations aid review but do not neutralize indirect prompt injection or poisoned organizational knowledge.
 
-[[sources/Cerebras How We Built Our Knowledge Base]] is the current production architecture anchor. It leaves authoring in existing tools, continuously builds a common retrieval index, and exposes the evidence through both a web agent and MCP. Its adoption figures are vendor-reported and its authorization implementation is not public.
+[[sources/Cerebras How We Built Our Knowledge Base]] anchors federated retrieval. It leaves authoring in existing tools, continuously builds a common retrieval index, and exposes the evidence through both a web agent and MCP. Its adoption figures are vendor-reported and its authorization implementation is not public.
+
+[[sources/Meta Organizational Second Brain]] adds a maintenance architecture: expert corrections become reviewed edits to knowledge or reasoning procedures, checked against the triggering case and regression tests. The reusable design distinction is between finding evidence and maintaining how an organization applies it. This suggests testing both source freshness and decision consistency; neither a citation nor a successful replay establishes that every dependent conclusion remains valid.
 
 ## Related
 

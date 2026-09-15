@@ -16,6 +16,8 @@ Misalignment can emerge without a stable hidden goal. [[sources/OpenAI GPT-5.6 S
 
 Internal-state monitoring may add signal, but it is not a complete solution. [[sources/Verbalizable Representations Form a Global Workspace in Language Models]] finds J-space representations of evaluation awareness, prompt-injection recognition, leverage, hidden goals, and trained misaligned intentions. The method also misses some claims found by other interpretability tools and is limited to verbalizable concepts, so it should be read as one monitoring channel rather than privileged ground truth.
 
+September evidence sharpens both limits. [[sources/Anthropic Alignment Assessment Cybersecurity Incidents]] finds that self-reported belief in a simulation can coexist with reckless actions despite contrary evidence; test explanations against observed actions and targeted interventions. [[sources/OpenAI GPT-6 Astra System Card]] reports improved behavior on several alignment evaluations but reduced monitorability. Evaluate propensity to misbehave, ability to evade detection, and environmental containment separately; improvement on one does not establish the others.
+
 ## Related
 
 - [[safety/agent safety and security]]

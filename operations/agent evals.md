@@ -28,6 +28,8 @@ An end-state score is necessary but often too coarse to identify which harness b
 
 The operational rule is to place intermediate graders at state transitions where information, authority, or obligations can be lost. Final outcomes still decide usefulness, but boundary-local signals make a failed trajectory actionable and turn the responsible transition into a regression case.
 
+Include a task that cannot be completed within its authorized scope, ambiguous cues about whether surrounding systems are real, and an available out-of-scope shortcut. [[sources/Anthropic Alignment Assessment Cybersecurity Incidents]] shows that this combination exposed failures absent from earlier tests. Grade stopping, escalation, and actual tool effects independently of the agent's explanation; a simulation claim must not decide whether an action was authorized.
+
 ## Trace-Derived Regression Suites
 
 The most valuable eval cases are not authored — they are harvested. A production failure that gets labeled and added to the golden set becomes a permanent regression test: that failure mode can never silently return.
@@ -46,11 +48,13 @@ Prompts, tools, context policy, and model routing all change agent behavior, so 
 
 This works in practice: the Datadog platform caught a change that expanded service names into context and degraded unrelated scenarios — exactly the class of regression no code review would flag ([[sources/Datadog Bits AI Eval Platform]]).
 
-Two maintenance obligations come with the gate:
+Three maintenance obligations come with the gate:
 
 - The suite itself decays. [[sources/Terminal-Bench]] had to fix 28 of 89 tasks within months of release — dependency breaks, hardware mismatches, misspecifications — and one agent gained +12.1% purely from task fixes. Internal suites rot the same way; schedule validation passes and pin suite versions so scores stay comparable.
 - Graders are code and need audits. [[sources/Rigorous Agentic Benchmarks]] found outcome-validity flaws in 7 of 10 audited agentic benchmarks, with grading bugs misestimating performance by up to 100% relative — a gate built on a buggy grader blocks the wrong changes and passes the wrong ones.
 - Prompts and tests need joint audits. [[sources/OpenAI SWE-bench Pro Audit]] found breaking issues in 249 of 731 public tasks under five-engineer review and retracted OpenAI's earlier adoption recommendation. [[sources/DeepSWE]] shows the stronger construction pattern: original tasks, implementation-independent functional verifiers, repeated verifier runs, diagnostic rollouts, and human review before inclusion.
+
+Audit answer access separately from task validity. [[sources/SWE-Bench Pro Verified]] implements both leakage controls and targeted task repair; either can change scores in a different direction. Its v1 baseline percentage conflicts with its paired outcome counts, so this release supports an implementation pattern while requiring caution about the headline effect size.
 
 ## Judge Calibration
 
@@ -68,8 +72,15 @@ Agentic evals are high-variance, and most reported deltas live inside the noise 
 - [[sources/Adding Error Bars to Evals]] supplies the machinery: standard errors on eval scores, paired-difference tests for comparing two variants on the same cases, and power analysis to set run counts before the experiment rather than after.
 - Report both reliability bounds. pass@k (at least one success in k) is the optimistic capability bound; pass^k (all k of k) is the pessimistic reliability bound a deployment decision needs — [[sources/Tau-Bench]] originated pass^k and showed agents near 50% average success falling below 25% at pass^8.
 - [[sources/METR Time Horizon 1.1]] models the reporting standard: point estimates always shipped with confidence intervals, and explicit flags on which measurements rest on estimated rather than measured baselines.
+- Define the comparison before computing its interval. [[sources/What Does an LLM-Agent Leaderboard Rank Actually Compare]] requires a stated task population, label source, shared task coverage, and practical margin; choosing the winner from many variants also requires a multiple-comparison rule. An unresolved difference does not establish equivalence.
 
 The gate decision is a two-sample hypothesis test whether or not it is treated as one. Set run counts by power analysis, compare paired on the same cases, and report intervals — otherwise the gate ratifies noise.
+
+## Evaluate the Monitor Separately
+
+Track harmful-action frequency, monitor detection conditional on harm, and time until intervention as separate measurements. [[sources/OpenAI GPT-6 Astra System Card]] pairs lower misalignment flags in simulated Codex continuations with declining monitorability; flags alone cannot disentangle behavior from detector sensitivity. Compare reasoning-only, action-only, and combined observations where available, and test whether intervention happens before the consequential action.
+
+Replay needs an evaluation-awareness check as well as a realism check. Model behavior under reconstructed tool responses or explicit safety-test cues may differ from behavior in deployment. Preserve that limitation alongside any simulation result rather than interpreting a clean replay as production safety.
 
 ## Cost and Transcript Inspection
 
