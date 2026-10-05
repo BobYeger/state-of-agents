@@ -12,6 +12,7 @@ publication_date: "2026-08-11"
 publication_date_basis: "xai_article_structured_metadata"
 source_updated_date: null
 source_updated_date_basis: null
+source_checked_date: "2026-10-05"
 arxiv_id: null
 citation_count: null
 citation_source: null
@@ -28,7 +29,7 @@ evidence_class: "vendor-product-announcement-and-documentation"
 metrics_status: "vendor-description-without-systematic-evaluation"
 artifacts: []
 created: 2026-08-24
-updated: 2026-08-24
+updated: 2026-10-05
 ---
 
 # Grok Bot
@@ -46,6 +47,12 @@ Grok Bot combines a persistent-agent product, a shared computer, and a collabora
 
 Consequential actions can pause for approval, and Auto Review can apply require-approval or always-allow rules. The documentation explicitly describes Auto Review as model-based and recommends least privilege. It instructs users to take control for passwords, verification codes, CAPTCHAs, and payment confirmations; execution on the user's local computer is a separate capability whose default is to ask every time.
 
+## October 5 Follow-Up
+
+The September 3 [design account](https://x.ai/news/designing-grok-bot) explains the product around persistent roles, visible activity, and delegated coordination. It is qualitative vendor design evidence. [Routines](https://docs.x.ai/grok-bot/skills-routines-and-automations) can also respond to supported events; demonstrating a workflow creates a reviewable skill draft rather than establishing general learning from one example.
+
+[Team Bots](https://docs.x.ai/grok-bot/team-bots), documentation updated October 2, distinguish shared team memory from private notes with each person. Direct conversations use that person's computer; shared Slack conversations use a separate computer for the Team Bot. OAuth uses the requesting person's account, while configured keys can give the whole team shared access. The personal roster's shared-computer description above should not be applied indiscriminately to this team mode.
+
 ## Evidence Boundary
 
 The launch article and live documentation establish product behavior and operator controls, not the implementation of the underlying harness. They publish no controlled task benchmark, reliability rate, coordination ablation, cost comparison, or independent security evaluation. Grok Bot should therefore be tracked as a `hosted-product`, not as an open harness implementation.
@@ -54,6 +61,8 @@ Do not treat a Bot identity as isolation, infer that group chat prevents duplica
 
 ## Connections
 
+- [[concepts/persistent personal agents]]
+- [[systems/personal assistant agents]]
 - [[concepts/cross-session agent communication]]
 - [[concepts/agent teams]]
 - [[operations/agent harnesses]]
@@ -69,4 +78,4 @@ Do not treat a Bot identity as isolation, infer that group chat prevents duplica
 - Bot lifecycle and memory: https://docs.x.ai/grok-bot/bots
 - Direct messaging, wake behavior, and group chats: https://docs.x.ai/grok-bot/chat-and-collaboration
 - Approvals, Auto Review, local execution, and credential boundary: https://docs.x.ai/grok-bot/approvals-security-and-privacy
-- Documentation reviewed August 24, 2026.
+- Original documentation reviewed August 24, 2026; role, memory, routine, and Team Bot contracts rechecked October 5. This does not reverify every launch-era limit.

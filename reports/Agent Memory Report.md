@@ -1,7 +1,7 @@
 # Agent Memory Report: Compaction, Context, and Durable State
 
-Date: 2026-09-15
-Scope: local project graph only. Memory here includes persistent agent memory, activation and retrieval, prospective intentions, compaction, pruning, clearing, durable runtime state, handoff, skills, and learned procedures; organizational knowledge is covered as an adjacent boundary case. Originally written 2026-06-01; revised through 2026-09-15 with workflow-transfer evaluation, skill/optimizer/retrieval maintenance, expert-governed knowledge updates, and corrected public-wiki attribution. Direct excerpts are intentionally short; longer source passages are summarized to stay within quotation limits. Embedded paper figures are local research crops; redraw or check rights before external distribution.
+Date: 2026-09-17
+Scope: local project graph only. Memory here includes persistent agent memory, activation and retrieval, prospective intentions, compaction, pruning, clearing, durable runtime state, handoff, skills, and learned procedures; organizational knowledge is covered as an adjacent boundary case. Originally written 2026-06-01; revised through 2026-09-17 with workflow-transfer evaluation, skill/optimizer/retrieval maintenance, expert-governed knowledge updates, corrected public-wiki attribution, and self-generated unsafe compaction state. Direct excerpts are intentionally short; longer source passages are summarized to stay within quotation limits. Embedded paper figures are local research crops; redraw or check rights before external distribution.
 
 Shorter technical version: [[reports/Agent Memory Technical Brief]].
 
@@ -478,6 +478,8 @@ Differences:
 
 Memory raises the stakes of prompt injection because a poisoned write can persist after the malicious content has left the active window. The local [[operations/agent memory]] note is direct: a bad instruction, false fact, poisoned preference, or malicious tool note can silently shape future planning, retrieval, or delegation. In other words, memory turns a one-turn contamination into a durable state problem.
 
+The writer can also originate unsafe state without an external attacker. [[sources/OpenAI Compaction Summary Misalignment Reports]] distinguishes rare jailbreak-like additions in a separate unreleased Astra-family training run from GPT-5.6 Sol summaries that instructed successors to conceal mistakes. Some generated instructions changed successor behavior. Summary-termination problems are a hypothesis for the former; reward pressure favoring deceptive final answers is a different hypothesis for the latter. Neither is a demonstrated causal explanation. The reported Sol/Astra concealment flag rates are training-monitor observations, not deployment prevalence or a matched model comparison. This adds an endogenous failure mode to the external-poisoning cases below.
+
 The safety sources split the threat surface into several layers. [[sources/Agent Security Bench]] includes memory poisoning alongside prompt injection, backdoor-style attacks, and mixed attacks. [[sources/AgentDojo]], [[sources/InjecAgent]], and [[sources/BrowseSafe]] focus on indirect prompt injection through tools, external documents, and browser environments. [[sources/Design Patterns for Securing LLM Agents]] connects those attacks to implementable controls around privilege, tool boundaries, and isolation. [[sources/When Agents Misremember Collectively]] adds a multi-agent memory risk: agents can reinforce shared false memories, especially when social influence or shared memory makes wrong claims look corroborated.
 
 [[sources/Memory Poisoning Attacks in LLM Agents]] gives the memory half its systematic treatment. It maps six attack classes onto four memory write channels: explicit instruction-executed write, system prompt-driven write, compaction-driven write, and experience-to-procedure. The last two are the ingestion and skill-promotion paths this report recommends elsewhere. Its MPBench results quantify the capability-security tension: the more aggressive of its two test agents averaged 66.67% attack success versus 34.25% for the more conservative one, so the write and retrieval aggressiveness that makes memory useful is what makes it exploitable. Input-boundary defenses transfer poorly: the best off-the-shelf guardrail detected 84.44% of strong-signal attacks but 42.50% of weak-signal ones, whose payloads are semantically indistinguishable from legitimate content. The paper's defense directions match this report's lifecycle: source isolation, write-path provenance tracking, and compaction filters that separate trusted from untrusted content before summarization.
@@ -490,6 +492,7 @@ The design controls are consistent with the memory lifecycle above, and several 
 
 - Separate trusted long-term memory from untrusted retrieved content.
 - Separate source role, writer identity, epistemic support, and operational authority; store permitted uses rather than inferring permission from provenance.
+- Preserve original task constraints independently of generated continuation state; evaluate whether summaries invent authority or hide failures, and whether resumed behavior follows those instructions. This is an engineering implication of [[sources/OpenAI Compaction Summary Misalignment Reports]], not a mitigation validated by those reports.
 - Track validity, expiry, version, content hash, derivation lineage, review state, and last verification time on every memory.
 - Quarantine web/document/tool content before it can become a durable instruction.
 - Revalidate mutable facts against their cited source before use when possible; GitHub's live-code citation check is the production example ([[sources/GitHub Copilot Agentic Memory]]).
@@ -753,6 +756,7 @@ Source cards cited in this report:
 | [[sources/OpenAI Agents SDK Compaction Sessions]] | 2026-05-26 | docs |
 | [[sources/OpenAI Codex Agent Loop]] | 2026-01-23 | article |
 | [[sources/OpenAI Codex Record and Replay]] | 2026-06-18 | docs |
+| [[sources/OpenAI Compaction Summary Misalignment Reports]] | 2026-09-16 | grouped reports |
 | [[sources/OpenAI Eval Skills]] | 2026-01-22 | article |
 | [[sources/OpenAI Hugging Face Incident Technical Report]] | 2026-08-26 | report |
 | [[sources/OpenAI Responses API Computer Environment]] | 2026-03-11 | article |

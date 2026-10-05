@@ -26,6 +26,8 @@ Calibration is a loop, not a one-time check. [[sources/LangChain Agent Improveme
 
 Giving the judge tools changes the achievable ceiling. [[sources/Agent-as-a-Judge]] reports 90% alignment with human consensus when the judge can inspect code and run tools, versus 60% for a bare LLM judge on the same agent-built software — at about 2% of the cost of human evaluation. The caveat travels with the number: the same team built both benchmark and judge.
 
+[[sources/MemCalib]] illustrates why calibration also needs difficult boundary cases: its judge agrees more strongly with human labels on naturally sampled examples than on stress-stratified examples. For [[concepts/memory use calibration]], a reliable distinction between bounded and controlling influence matters even when the aggregate agreement looks strong.
+
 ## Variance and Statistical Discipline
 
 Agentic evals are high-variance, and most reported deltas live inside the noise band.
@@ -41,6 +43,10 @@ Design consequence: decide run counts by power analysis before the experiment, r
 An interval can be statistically sound while answering the wrong question. [[sources/What Does an LLM-Agent Leaderboard Rank Actually Compare]] separates observed benchmark success from success on a stated target population, expert versus proxy labels, and cost-aware utility. A comparison also needs shared task coverage and a declared practical margin; unsupported tasks cannot be repaired by merely resampling the observed data.
 
 Its SWE-bench analysis leaves most close top-ten comparisons unresolved under its pointwise rule and all unresolved under simultaneous intervals. This does not show equal capability. It shows that the desired superiority claim can exceed what the released records establish. A model-only conclusion also needs a design that separates model effects from harness, task, and budget effects.
+
+[[sources/Agent Evaluation Reliability]] makes that component-versus-system distinction explicit through variance decomposition. More tasks under the same limited scaffold sample cannot remove all model-ranking uncertainty; fixed-system reliability can be high while underlying-model reliability remains lower. Its bounds depend on the sampled competitors and scaffolds, and reliability does not establish real-world validity.
+
+The evaluation protocol also determines what behavior is observable. [[sources/Mind2Web]] supplies correct prior actions for each independent prediction, so its whole-task metric does not establish live recovery. [[sources/Does Learning to Predict the World Help Agents Act]] shows why improved task scores need controlled mechanism tests: prediction accuracy, single-attempt success, and repeated-attempt coverage can move differently.
 
 ## Multi-Judge Consensus
 
@@ -98,6 +104,7 @@ A detector observes only part of behavior. [[sources/OpenAI GPT-6 Astra System C
 - Kappa against a human-labeled sample, reported per class, re-checked on a schedule.
 - Run counts set by power analysis; deltas reported with intervals; pass@k and pass^k both reported.
 - Target task population, label source, shared coverage, practical margin, and comparison family declared before choosing a winner.
+- Complete-system versus component claim declared, with harness coverage sufficient for the intended comparison.
 - At least one verification channel that is not an LLM opinion.
 - Scorer code, reference answers, and hidden tests unreachable from the worker's environment.
 - A holdout slice excluded from the iteration loop, refreshed over time.

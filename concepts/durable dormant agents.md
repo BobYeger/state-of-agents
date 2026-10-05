@@ -14,6 +14,9 @@ This pattern replaces raw transcript replay with explicit state machines and dur
 
 ## Related
 
+- [[concepts/background agents]]
+- [[concepts/event-driven agents]]
+- [[concepts/agent loop]]
 - [[operations/durable sessions]]
 - [[operations/agent harnesses]]
 - [[concepts/long-horizon agents]]

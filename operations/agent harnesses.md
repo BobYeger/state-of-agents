@@ -151,6 +151,7 @@ Harnesses improve agent systems by making the loop inspectable and recoverable: 
 
 ## Related
 
+- [[methods/agent runtime selection]]
 - [[operations/agent infrastructure]]
 - [[operations/durable sessions]]
 - [[operations/harness fault tolerance]]

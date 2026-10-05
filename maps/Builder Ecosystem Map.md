@@ -19,6 +19,8 @@ Other vendor cards worth routing to directly: [[sources/OpenHands Software Agent
 
 ## Route Through Hubs
 
+- [[methods/agent runtime selection]] — choose which runtime layers to reuse and which application contracts to own; frameworks and managed harnesses can compose.
+- [[systems/personal assistant agents]] — persistent personal products and their research lineage, distinct from reusable runtime components.
 - [[systems/agent frameworks and orchestration libraries]]
 - [[operations/agent harnesses]]
 - [[systems/deployed agent products]]

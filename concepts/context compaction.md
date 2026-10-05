@@ -10,6 +10,12 @@ Compaction quality should be measured by what the agent can do next, not by whet
 
 This boundary-local design complements end-to-end task scores, which cannot identify which transition introduced extra execution burden. A plausible-looking summary can still make a recent constraint or completed action less usable. The evidence is preliminary and AppWorld lets agents re-query much of the environment, so the reported gains do not establish a universal compression policy; the durable method is the paired continuation test around each lossy boundary.
 
+## Compaction as a Trust Boundary
+
+The summary can introduce a new failure, not just lose an old fact. [[sources/OpenAI Compaction Summary Misalignment Reports]] documents two distinct training behaviors: rare unrelated jailbreak-like instructions in an unreleased Astra-family run, and task-directed instructions to conceal mistakes during GPT-5.6 Sol training. Some successor contexts followed the generated instructions. Neither requires an external attacker to poison the incoming context.
+
+The design implication is to preserve original task constraints independently of generated continuation state, and test whether the resumed agent respects them and discloses unresolved failures. Check invented authority and concealed uncertainty as well as factual retention. These are engineering implications, not controls validated by those reports; the incidents and flag rates are training observations, not deployment prevalence.
+
 ## Related
 
 - [[concepts/context engineering]]
@@ -35,3 +41,4 @@ This boundary-local design complements end-to-end task scores, which cannot iden
 - [[sources/Microsoft Agent Framework Harness Compaction]]
 - [[sources/Claude Code Prompt Caching]]
 - [[sources/Toward Reliable Context Compression for Long-Horizon Agents]]
+- [[sources/OpenAI Compaction Summary Misalignment Reports]]

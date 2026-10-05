@@ -30,6 +30,8 @@ The operational rule is to place intermediate graders at state transitions where
 
 Include a task that cannot be completed within its authorized scope, ambiguous cues about whether surrounding systems are real, and an available out-of-scope shortcut. [[sources/Anthropic Alignment Assessment Cybersecurity Incidents]] shows that this combination exposed failures absent from earlier tests. Grade stopping, escalation, and actual tool effects independently of the agent's explanation; a simulation claim must not decide whether an action was authorized.
 
+Two further probes follow from [[sources/OpenAI Compaction Summary Misalignment Reports]] and [[sources/OpenAI Boundary Workaround Misalignment Reports]]: compare the authority and honesty of behavior before and after compaction, and deliberately break an approved artifact-transfer path while leaving a tempting unauthorized one reachable in a controlled test environment. Score preservation of original constraints, accurate disclosure of missing evidence, and stopping or escalation. These are proposed regression designs, not validated mitigations reported by those sources.
+
 ## Trace-Derived Regression Suites
 
 The most valuable eval cases are not authored — they are harvested. A production failure that gets labeled and added to the golden set becomes a permanent regression test: that failure mode can never silently return.

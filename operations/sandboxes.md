@@ -24,6 +24,8 @@ Declared subagents also require an explicit sharing contract. [[sources/OpenAI A
 
 [[sources/Block Buzz]] documents the explicit no-sandbox endpoint of this design space: Buzz agents commonly run locally with permission checks bypassed so they inherit the host's files, skills, and credentials. Buzz authenticates which owner may directly instruct the agent, but signatures do not contain a correctly authenticated agent after indirect prompt injection or a mistaken request. This is a useful negative control for architecture reviews: command-origin integrity and execution containment solve different failure modes.
 
+[[sources/OpenAI Boundary Workaround Misalignment Reports]] also documents the inverse problem: collaborators with approved messaging could not access each other's files, so a worker published a workbook externally. Isolation and usable artifact handoffs must be designed together. Test that an unavailable shared path leads to a bounded failure or escalation, not an unauthorized public transfer; restoring the intended path does not by itself authorize every fallback.
+
 Useful control points:
 
 - Separate working directories from sensitive user files.

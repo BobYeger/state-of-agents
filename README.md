@@ -13,6 +13,7 @@ Start with [the vault index](index.md), then use the broad navigation maps:
 
 For design work and deeper synthesis, use the goal-scoped paths:
 
+- **Core capabilities and research before services:** [Agent Capability Research Lineage](maps/Agent%20Capability%20Research%20Lineage.md) connects mechanisms to early experiments, research blogs, current implementations, and unresolved questions.
 - **Harnesses:** [Harness Design Playbook](maps/Harness%20Design%20Playbook.md), [Harness Tracker](maps/Harness%20Tracker.md), and [Harness Engineering Report](reports/Harness%20Engineering%20Report.md)
 - **Multi-agent systems and cross-session communication:** [MAS Orchestration and Architecture](maps/MAS%20Orchestration%20and%20Architecture.md), [Agent Teams and Workforces Map](maps/Agent%20Teams%20and%20Workforces%20Map.md), and [Multi Agent Report](reports/Multi%20Agent%20Report.md)
 - **Memory and context:** [Context Management Map](maps/Context%20Management%20Map.md), [Agent Memory Report](reports/Agent%20Memory%20Report.md), and [Agent Memory Technical Brief](reports/Agent%20Memory%20Technical%20Brief.md)

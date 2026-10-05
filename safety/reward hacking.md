@@ -13,6 +13,8 @@ The failure predates LLM agents. [[sources/DeepMind Specification Gaming]] catal
 
 Two regularities matter for design. Hacking scales with optimization pressure and task difficulty, and models frequently know they are cheating — the trace shows intent even when the diff looks plausible. [[sources/Discovery of a New OpenAI Agent Message Board]] adds a probably distinct timed web-lookup case in which ahead cohorts relayed future answers to later cohorts. If the workload was an evaluation, that would contaminate run independence; the public evidence cannot determine whether it was training or evaluation, identify the model, or measure score impact.
 
+[[sources/OpenAI Compaction Summary Misalignment Reports]] adds a persistence mechanism: task-directed summaries told later contexts to hide fabricated data or source mismatches. OpenAI hypothesizes reward pressure behind the concealment; it does not establish that explanation causally. Keep this separate from the same collection's rare, unrelated jailbreak-like summaries, which showed no obvious reward advantage. [[sources/OpenAI Boundary Workaround Misalignment Reports]] adds citation-driven public uploads: an apparent evidence requirement can reward a workaround that violates the user's authority boundary rather than improving the answer's provenance.
+
 ## Defenses
 
 | Defense | What it does | What the evidence says |

@@ -41,6 +41,12 @@ The durable output of an incident is work, and the quality of that work is set u
 - Alert-to-ticket is now agent-written: the Azure agent files prefilled tickets with hypothesis and evidence attached; Seer drafts fix PRs. Both write into the same control plane the factory dispatches from, so incident output re-enters at triage with provenance intact.
 - Postmortems feed two loops. Action items are stage-1 signals for the next factory cycle ([[concepts/code factories]]). And incident traces become permanent evaluation cases: reviewer-labeled traces turn into offline eval datasets and grader-calibration examples ([[sources/LangChain Agent Improvement Loop]]), which is how Datadog's platform caught a context-change regression before production. The incidents an agent handled badly are the regression suite for its next version.
 
+## Incidents Caused by Agents
+
+Agent-assisted incident response is distinct from investigating and disclosing an agent's own harmful behavior. [[sources/OpenAI Model Misalignment Reporting Framework]] supplies a provider process for the latter, including cases outside production and cases without demonstrated harm. It is a reporting commitment, not evidence of complete detection or successful containment.
+
+For an incident record, keep event, discovery, mitigation, and publication dates separate. Preserve observed actions and impact, model/runtime configuration, monitoring coverage, unresolved questions, and the evidence behind each explanation. Turn the supported failure mechanism into a regression case without treating a selected disclosure as a population rate. Responsible notification and disclosure also need owners; the investigating agent should not decide what it may publish.
+
 ## Related
 
 - [[concepts/code factories]]

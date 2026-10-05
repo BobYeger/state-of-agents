@@ -8,6 +8,8 @@ status: "verified"
 year: 2023
 publication_date: "2023-09-05"
 publication_date_basis: "arxiv_abs_page"
+source_updated_date: "2024-03-15"
+source_updated_date_basis: "arxiv_v3_camera_ready_date"
 arxiv_id: "2309.02427"
 citation_count: null
 citation_source: null
@@ -24,7 +26,7 @@ pdf_url: "https://arxiv.org/pdf/2309.02427"
 artifacts:
   - "raw/papers/Cognitive Architectures for Language Agents.pdf"
 created: 2026-07-03
-updated: 2026-07-05
+updated: 2026-10-05
 ---
 
 # Cognitive Architectures for Language Agents
@@ -42,6 +44,9 @@ updated: 2026-07-05
 
 ## Connections
 
+- [[concepts/agent loop]]
+- [[concepts/harness-aware agent learning]]
+- [[sources/Lilian Weng LLM Powered Autonomous Agents]]
 - [[operations/agent memory]]
 - [[concepts/procedural memory]]
 - [[concepts/reasoning memory]]
@@ -56,3 +61,4 @@ updated: 2026-07-05
 - Canonical URL: https://arxiv.org/abs/2309.02427
 - This is the citable origin for the working/episodic/semantic/procedural memory split the vault's memory concept notes use implicitly.
 - A conceptual framework paper: it contributes taxonomy and design space, not empirical results.
+- [Full text, sections 4–6](https://arxiv.org/html/2309.02427v3) supplies component definitions and agent case studies. The historical comparison with symbolic architectures does not establish product influence.

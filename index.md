@@ -4,6 +4,7 @@ This vault tracks frontier AI agent research and practice, with emphasis on mult
 
 ## Start Here
 
+- [[maps/Agent Capability Research Lineage]]
 - [[maps/Research Map]]
 - [[maps/Systems Map]]
 - [[maps/Claims Map]]
@@ -16,6 +17,9 @@ This vault tracks frontier AI agent research and practice, with emphasis on mult
 
 ## Entry Points by Goal
 
+- **Choosing what to build versus reuse** — [[methods/agent runtime selection]] compares products, managed APIs, embedded harnesses, frameworks, and custom loops by control ownership and evaluation.
+- **Understanding personal assistant agents** — [[systems/personal assistant agents]] compares Dots, Grok Bot, Instinct, and Muse; [[concepts/persistent personal agents]] connects their continuing responsibilities to earlier research.
+- **Understanding core capabilities and their research roots** — start at [[maps/Agent Capability Research Lineage]] for papers, research blogs, current implementations, and open questions about loops, tools, advisors, background work, and learning.
 - **Designing a harness for agent work** — start at [[maps/Harness Design Playbook]] for the decision path (architecture choice, the eighteen harness questions, verification and failure-mode design), and [[maps/Harness Tracker]] for the inventory of shipped harnesses to compare against.
 - **Designing multi-agent teams and communication** — start at [[maps/MAS Orchestration and Architecture]] for topology and task-fit choices, [[maps/Agent Teams and Workforces Map]] for concrete team shapes, and [[reports/Multi Agent Report]] for the evidence synthesis, including cross-session channels and shared-state boundaries.
 - **Designing memory and context** — start at [[maps/Context Management Map]] for the architecture, [[reports/Agent Memory Report]] for the full evidence synthesis, and [[reports/Agent Memory Technical Brief]] for the implementation-oriented schema and evaluation guidance.
@@ -33,6 +37,11 @@ Project metadata and private working artifacts are kept outside the public knowl
 
 ## Core Areas
 
+- [[concepts/agent loop]]
+- [[concepts/dynamic tool discovery]]
+- [[concepts/advisor agents]]
+- [[concepts/background agents]]
+- [[concepts/event-driven agents]]
 - [[concepts/agentic systems]]
 - [[concepts/multi-agent systems]]
 - [[concepts/agent teams]]

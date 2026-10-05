@@ -4,6 +4,8 @@ This playbook is the decision path for designing a harness around a task. [[maps
 
 The order matters: architecture first, then the eighteen harness questions, then failure-mode and verification design. Most harness problems are architecture problems chosen too early or verification problems discovered too late.
 
+Choosing the architecture does not require implementing every layer. [[methods/agent runtime selection]] compares using a product, calling a managed harness, embedding a harness SDK, composing a framework, and writing a custom loop. Reuse decisions should follow required control boundaries and matched-workload evidence.
+
 ## Step 1: Choose the Architecture
 
 Measure the single-agent baseline before adding anything. [[sources/Towards a Science of Scaling Agent Systems]] shows coordination yields diminishing or negative returns once the single-agent baseline exceeds roughly 0.45 accuracy, and relative performance against single-agent spans +80.8% (decomposable financial reasoning under centralized coordination) to -70.0% (sequential planning under independent agents) — architecture selection matched to task structure, not agent count, is the decision that matters.
@@ -21,6 +23,8 @@ Measure the single-agent baseline before adding anything. [[sources/Towards a Sc
 Two overheads to budget explicitly: tool-heavy tasks suffer disproportionately from coordination ([[sources/Towards a Science of Scaling Agent Systems]]), and topology choice persists while the marginal agent decays ([[sources/MacNet]]). At fleet scale, also budget for a coordination substrate: Cursor reports a purpose-built VCS, neutral conflict resolution, design-document references, and megafile decomposition as necessary control-plane machinery ([[sources/Cursor Agent Swarm Model Economics]]). [[methods/multi-agent orchestration]] carries the full treatment.
 
 ## Step 2: The Eighteen Questions
+
+Read [[concepts/agent loop]] for the shared state-and-action model behind these decisions. [[maps/Agent Capability Research Lineage]] connects the mechanisms to research that predates current services: [[concepts/dynamic tool discovery]], [[concepts/advisor agents]], [[concepts/background agents]], and [[concepts/event-driven agents]] each need their own workload and success measure.
 
 The checklist from [[reports/Harness Engineering Report]], expanded with the note that answers each question. If a question has no answer, the system is a prompt demo, not a harness.
 

@@ -18,8 +18,14 @@ The main design decision is when consolidation runs, because the schedule determ
 |---|---|---|---|
 | On write | Every new memory is processed as it arrives; new entries can restructure existing ones. | [[sources/Mem0]]: salient facts extracted and consolidated inline from conversation; [[sources/A-MEM]]: new notes trigger evolution of linked existing memories | Memory is always current, but consolidation competes with task latency, and retroactive rewriting erases the original record |
 | In-session reflection | The agent periodically synthesizes accumulated observations into higher-level inferences during operation. | [[sources/Generative Agents]]: reflection turns the memory stream into abstractions; ablations show removing it critically degrades behavior | Improves reasoning over experience, but consumes task-time context and compute |
-| Between sessions | A scheduled background process reviews stores after runs complete. | [[sources/Anthropic Managed Agents Dreaming Outcomes]]: dreaming as a first-class managed-agent operating concept; [[sources/Letta Code Memory Docs]]: reflection-style subagents on durable agents | Zero task-time cost and reviewable output, but memory is stale between dreams |
+| Between sessions | A scheduled background process reviews stores after runs complete. | [[sources/Anthropic Managed Agents Dreaming Outcomes]]: dreaming as a first-class managed-agent operating concept; [[sources/Letta Code Memory Docs]]: reflection-style subagents on durable agents | Moves work off the foreground path and produces reviewable output, but still consumes compute and shared resources; memory can be stale between runs |
 | Offline trajectory mining | A separate pipeline mines completed trajectories for reusable lessons, skills, or reasoning strategies. | [[sources/Google ReasoningBank]], [[sources/Trajectory-Informed Memory Generation]], [[sources/SkillOpt]] | Strongest generalization per lesson; furthest from real time and needs its own evaluation loop |
+
+## Research Before Managed Services
+
+[[sources/Generative Agents]] (2023) tests reflection over accumulated observations. [[sources/Sleep-time Compute]] (2025) tests a related but different mechanism: preparing persistent context before the next query. Its gains depend on the task, model, budget, and predictability of future questions; lower query-time computation does not establish lower total computation. The associated Letta blog explains the same research, not an independent replication.
+
+[[sources/SCLATE]] (2026) extends evaluation to multi-session lifecycles, including scheduled memory work. [[concepts/harness-aware agent learning]] connects that lifecycle to training, while [[concepts/memory use calibration]] asks whether the resulting memories improve later decisions.
 
 ## Output Target
 
@@ -45,6 +51,8 @@ Consolidation can rewrite the store in place or write to a fresh target. [[sourc
 
 ## Related
 
+- [[concepts/background agents]]
+- [[concepts/harness-aware agent learning]]
 - [[operations/agent memory]]
 - [[concepts/shared agent memory]]
 - [[concepts/reasoning memory]]

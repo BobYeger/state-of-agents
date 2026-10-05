@@ -4,6 +4,8 @@ Agentic systems are AI systems that repeatedly reason, act through tools or envi
 
 ## Related
 
+- [[concepts/agent loop]]
+- [[maps/Agent Capability Research Lineage]]
 - [[concepts/long-horizon agents]]
 - [[concepts/tool use]]
 - [[concepts/scaling with computation]]

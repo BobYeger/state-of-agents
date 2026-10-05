@@ -6,8 +6,17 @@ The point is not to collect every vendor feature. A source belongs here when it 
 
 ## Concept Threads
 
+For the papers and research blogs that studied these mechanisms before their current service implementations, use [[maps/Agent Capability Research Lineage]]. Earlier publication establishes chronology, not direct influence on a vendor.
+
 | Concept | What It Adds | Anchor Sources |
 |---|---|---|
+| Persistent personal agents | A continuing delegate maintains personal context and open responsibilities across conversations and task lifetimes. | [[concepts/persistent personal agents]], [[systems/personal assistant agents]] |
+| Core agent loop | A harness maintains working state, chooses actions, admits execution, records evidence, waits, and verifies completion. | [[concepts/agent loop]], [[sources/ReAct]], [[sources/Cognitive Architectures for Language Agents]] |
+| Advisor agents | A worker consults a stronger model at selected decision points while retaining execution responsibility. | [[concepts/advisor agents]], [[sources/FrugalGPT]], [[sources/RouteLLM]], [[sources/Claude Advisor Tool]] |
+| Background and proactive work | Running off the foreground path, predicting useful preparation, and deciding when to interrupt are separate capabilities. | [[concepts/background agents]], [[sources/Proactive Agent]], [[sources/ProAgentBench]], [[sources/Sleep-time Compute]] |
+| Event-driven agents | External events update state and may wake a task under an explicit admission and notification policy. | [[concepts/event-driven agents]], [[sources/Hearsay-II]], [[sources/OpenAI MCP Events]] |
+| Harness-aware learning | Training and evaluation include the runtime's memory, tools, compaction, and persistent state. | [[concepts/harness-aware agent learning]], [[sources/SCLATE]], [[sources/Agent Lightning v1.0]] |
+| Memory use calibration | The agent learns when retrieved experience should influence a decision, including when to reject misleading memory. | [[concepts/memory use calibration]], [[sources/MemCalib]] |
 | Dreaming and memory consolidation | Agents improve between sessions by reviewing trajectories and curating memory. | [[concepts/dreaming and memory consolidation]], [[sources/Anthropic Managed Agents Dreaming Outcomes]] |
 | Outcomes and rubric graders | A separate evaluator checks artifacts against a rubric and sends repair feedback. | [[concepts/outcomes and rubric graders]], [[sources/Claude Managed Agents Define Outcomes]] |
 | Agent skills as procedural packages | Reusable procedures are loaded selectively rather than stuffed into every prompt. | [[maps/Agent Skills Map]] |

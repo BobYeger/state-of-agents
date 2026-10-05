@@ -4,6 +4,8 @@ Deployed agent products are user-facing systems that perform tasks through tools
 
 This node avoids creating a separate low-content page for every product. Add a dedicated system page only when a product becomes a major case study.
 
+[[systems/personal assistant agents]] is the category hub for Dots, Grok Bot, Instinct, and Muse: continuing delegates with personal context and responsibilities. [[concepts/persistent personal agents]] separates that product relationship from background execution and the harness underneath it.
+
 ## Current Anchors
 
 - [[systems/Claude Code]]

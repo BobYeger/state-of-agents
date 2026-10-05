@@ -8,7 +8,7 @@ It is closely related to [[operations/agent harnesses]], but it names a slightly
 
 | Loop | What repeats | Stop condition | State lives in |
 |---|---|---|---|
-| Inner agent loop | model call, tool call, observation | model returns final or policy stops | context window and harness event stream |
+| [[concepts/agent loop]] (inner) | context assembly, action selection, execution, observation | completion evidence is sufficient or policy stops | working state, pending work, context, and harness event stream |
 | Goal loop | next turn after previous turn | completion condition is judged satisfied or blocked | goal state plus conversation/session |
 | Hook loop | lifecycle event, matcher, handler, decision | hook allows, blocks, injects context, or lets runtime continue | hook config, handler output, transcript, event stream |
 | Scheduled loop | prompt on a cadence | user stop, expiry, or model decides work is done | scheduler task plus session/local state |
@@ -17,6 +17,8 @@ It is closely related to [[operations/agent harnesses]], but it names a slightly
 | Self-improving code loop | code mutation, evaluation, selection | metric improves, rollback, or budget stops | codebase, benchmark traces, archive of variants |
 
 ## Design Questions
+
+[[concepts/event-driven agents]] separates receiving a signal from admitting new work. [[concepts/background agents]] separates unattended execution from deciding that an intervention will be useful. Both need an explicit relationship to the inner loop and its pending work.
 
 - What wakes the loop: a user turn, timer, webhook, issue state, test failure, or external event?
 - What objective and evidence standard does the loop carry?

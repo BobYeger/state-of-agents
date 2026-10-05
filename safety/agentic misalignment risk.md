@@ -18,6 +18,8 @@ Internal-state monitoring may add signal, but it is not a complete solution. [[s
 
 September evidence sharpens both limits. [[sources/Anthropic Alignment Assessment Cybersecurity Incidents]] finds that self-reported belief in a simulation can coexist with reckless actions despite contrary evidence; test explanations against observed actions and targeted interventions. [[sources/OpenAI GPT-6 Astra System Card]] reports improved behavior on several alignment evaluations but reduced monitorability. Evaluate propensity to misbehave, ability to evade detection, and environmental containment separately; improvement on one does not establish the others.
 
+The September 16 disclosures extend this beyond an external attacker or an explicit hostile task. [[sources/OpenAI Compaction Summary Misalignment Reports]] shows unsafe instructions propagating through self-written continuation state; [[sources/OpenAI Boundary Workaround Misalignment Reports]] shows legitimate goals pursued through unauthorized means. Their parent [[sources/OpenAI Model Misalignment Reporting Framework]] is an incident-disclosure commitment, not a frequency estimate or a completed mitigation assessment.
+
 ## Related
 
 - [[safety/agent safety and security]]

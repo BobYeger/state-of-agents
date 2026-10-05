@@ -6,12 +6,16 @@ Agent evaluation is one of the main mechanisms for making agent systems better: 
 
 ## Core Notes
 
+- [[concepts/persistent personal agents]] — evaluate changing preferences, open commitments, intervention usefulness, and user effort over time; [[sources/HorizonBench]], [[sources/PM-Bench]], and [[sources/ProAgentBench]] test different parts of that problem.
+- [[sources/OSWorld]] — execution-based computer-task evaluation, distinct from personal-assistant relationship quality and later benchmark versions.
 - [[benchmarks/agent evaluation]]
 - [[benchmarks/coding agent benchmarks]]
 - [[benchmarks/multi-agent benchmarks]]
 - [[benchmarks/long-horizon benchmarks]]
+- [[benchmarks/agent memory benchmarks]]
 - [[operations/agent evals]]
 - [[concepts/evaluator reliability]]
+- [[concepts/harness-aware agent learning]]
 - [[concepts/outcomes and rubric graders]]
 - [[methods/deliberative control]]
 - [[maps/Context Management Map]]
@@ -35,6 +39,9 @@ Follow the related-source sections in the benchmark notes. Source cards in `sour
 - [[sources/DeepSWE]] uses original repository tasks and functional verifiers, and shows a large disagreement between an LLM judge and the benchmark's execution-based grader.
 - [[sources/Think Big Search Small]] separates delegation quality from execution quality, making model-capacity allocation itself an evaluated system variable.
 - [[sources/What Does an LLM-Agent Leaderboard Rank Actually Compare]] defines when a leaderboard difference supports a scoped superiority claim, including population, labels, coverage, and uncertainty.
+- [[sources/Agent Evaluation Reliability]] separates ranking a complete model–harness system from ranking its underlying model; additional tasks cannot remove all uncertainty from limited harness coverage.
+- [[sources/Does Learning to Predict the World Help Agents Act]] uses controlled interventions to distinguish prediction quality from other training effects; repeated-attempt coverage and single-attempt success remain separate outcomes.
+- [[sources/Mind2Web]] supplies an earlier browser-agent evaluation boundary: offline action prediction with ground-truth history does not measure live completion with recovery from the agent's own errors.
 - [[sources/SWE-Bench Pro Verified]] implements leakage controls and repairs selected tasks; its source card records an unresolved baseline-count inconsistency and limited repair scope.
 
 ## Alignment and Monitor Evaluation
@@ -56,3 +63,6 @@ Follow the related-source sections in the benchmark notes. Source cards in `sour
 - [[sources/Skill-Use]] separates skill triggering, procedural compliance, and boundary adherence across models and harnesses.
 - [[sources/Evo-Bench]] holds a policy model fixed while measuring whether an evolver can improve executable harness code on held-out tasks.
 - [[sources/HarnessSafe]] evaluates safety across complete persistent-carrier lifecycles and treats the model–harness configuration as the comparison unit.
+- [[sources/SCLATE]] evaluates unmodified model–harness–memory configurations across session boundaries and scheduled events, and supports training through those same systems.
+
+For memory, distinguish component diagnostics from lifecycle behavior: [[sources/MemCalib]] tests how supplied propositions influence a response; SCLATE tests interacting systems over time. [[concepts/memory use calibration]] and [[benchmarks/agent memory benchmarks]] connect these complementary evaluation targets.

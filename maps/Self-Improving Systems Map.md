@@ -2,7 +2,7 @@
 
 This map is the entry point for readers designing systems that improve themselves: agent loops that mutate code, prompts, skills, memory, or whole harnesses, and keep changes only when external evidence improves. It assembles the synthesis notes, then gives a canonical reading order over the source evidence. [[reports/Self-Improving Systems Report]] is the narrative treatment of this cluster; this page stays the inventory.
 
-The organizing question is how an improvement loop measures and retains useful change. Most sources keep model weights fixed and mutate external artifacts; the automated-alignment-research boundary case instead trains a target model. In either setting, inspect the evaluator, selection policy, provenance, and rollback before treating a rising score as progress.
+The organizing question is how an improvement loop measures and retains useful change. Separate memory adaptation, executable harness optimization, and model parameter updates. Most harness-evolution sources keep weights fixed; the training branch below changes weights through agent systems. In either setting, inspect the evaluator, selection policy, provenance, and rollback before treating a rising score as progress.
 
 ## Core Notes
 
@@ -13,6 +13,7 @@ The organizing question is how an improvement loop measures and retains useful c
 | [[methods/ralph loop]] | The minimal manual form: fresh-context coding loops with files as state and tests as backpressure |
 | [[methods/agentic workflow search]] | Agent design treated as an optimization problem over prompts, roles, tools, and topology |
 | [[concepts/lifelong agent learning]] | The memory-and-skill form of improvement: experience distilled into governed, reusable capability |
+| [[concepts/harness-aware agent learning]] | Distinguishes what changes—memory, harness, or weights—and how the deployed system shapes the learning experiment |
 | [[concepts/code factories]] | The organization-level loop: signals to specs to agents to release to monitoring and back |
 | [[methods/automated program repair]] | The factory's maintain-and-debug stage, with the strongest production evidence in the cluster |
 | [[operations/release engineering]] | Backpressure between generated change volume and users |
@@ -60,6 +61,7 @@ Read as a lineage: each paper corrects the previous one's selection policy.
 - [[sources/Huxley-Godel Machine]]: names the Metaproductivity-Performance Mismatch — an agent's own score is a poor signal for whether it is a good parent — and selects by descendants' aggregated performance instead, at 2.38x fewer CPU-hours than DGM.
 - [[sources/Red Queen Godel Machine]]: agent and evaluator co-evolving under explicit epoch controls.
 - [[sources/Hyperagents]]: task agent and meta agent integrated into one editable program.
+- [[sources/AIDE2 Recursive Self-Improvement]]: harness rewrites improve research efficiency on held-out tasks, while the test of whether the discovered agent is itself a better recursive self-improver remains inconclusive.
 
 ### 6. Skill, Prompt, and Memory Evolution
 
@@ -92,9 +94,14 @@ The organization-level loop: [[concepts/code factories]] for the synthesis, [[ma
 - [[sources/OpenAI Research Acceleration]]: internal research-agent usage and intervention telemetry; activity measures are not causal research-speed estimates.
 - [[sources/DORA State of AI-assisted Software Development 2025]]: the quantitative baseline — AI adoption amplifies throughput and instability alike unless verification infrastructure exists.
 
-### 9. Automated Alignment Research: The Target Weights Change
+### 9. Model Training Through Agent Systems
 
+- [[sources/Agent Lightning v1.0]]: the deployment harness retains control of tools and context while recorded model calls feed parameter training; sample assembly and reward accounting must respect harness behavior.
+- [[sources/SCLATE]]: trains and evaluates through unmodified harnesses across multi-session lifecycles, including memory maintenance; external memory does not consistently improve native-memory configurations.
+- [[sources/MemCalib]]: parameter training targets appropriate use of supplied memories, distinct from changing the memory store or harness. See [[concepts/memory use calibration]].
 - [[sources/Anthropic Automated Alignment Researchers]]: agents search for post-training methods against human-defined alignment failures; withheld evaluation, capability checks, and selection accounting bound the result.
+
+These are training experiments, not by themselves evidence of learning after deployment. [[sources/Agent Evaluation Reliability]] explains why gains measured in one complete configuration need not identify which component generalizes.
 
 ## Read Alongside: Trust Rails
 

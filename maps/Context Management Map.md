@@ -8,6 +8,9 @@ The organizing distinction is between prompt compression and agent context manag
 
 | Method | What It Does | Anchor Sources |
 |---|---|---|
+| Memory use calibration | Controls how strongly retrieved experience influences a decision, including when memory should be rejected. | [[concepts/memory use calibration]], [[sources/MemCalib]] |
+| Anticipatory context preparation | Uses background compute before a query arrives; value depends on reuse, freshness, and total cost. | [[concepts/background agents]], [[sources/Sleep-time Compute]] |
+| Identity-scoped memory | Separates private and shared stores and constrains reads by caller, channel, and current permissions. | [[concepts/shared agent memory]], [[sources/Collaborative Memory]], [[sources/LangChain Identity-Scoped Agent Memory]] |
 | Structured summarization | Rewrites earlier history into task-state summaries. | [[concepts/context compaction]], [[sources/Factory Context Compression Evaluation]] |
 | Boundary-local compaction evaluation | Compares paired continuations from the same environment state with raw versus compressed history to estimate the marginal execution burden introduced at that transition. | [[concepts/context compaction]], [[sources/Toward Reliable Context Compression for Long-Horizon Agents]] |
 | Provider-native compaction | Lets the model/provider emit a compact state representation or compaction item. | [[concepts/context compaction]], [[sources/OpenAI Responses API Computer Environment]] |
@@ -49,6 +52,7 @@ Prompt compression is useful background, but it should not dominate the agent gr
 
 ## Benchmarks
 
+- [[sources/SCLATE]] evaluates multi-session behavior and memory work within the agent's actual lifecycle; [[concepts/harness-aware agent learning]] explains why the runtime belongs in the experimental specification.
 - [[benchmarks/agent memory benchmarks]] is the versioned comparison spine for memory abilities, splits, model–harness configurations, judges, runs, latency, and cost.
 - [[sources/LOCA-bench]] evaluates agents under controlled context growth.
 - [[sources/ContextBench]] evaluates coding-agent context retrieval.
@@ -61,6 +65,8 @@ Prompt compression is useful background, but it should not dominate the agent gr
 Memory-substrate selection guidance lives in [[operations/agent memory]].
 
 ## Synthesis
+
+[[sources/OpenAI Compaction Summary Misalignment Reports]] adds a trust question: a summary can introduce unsafe instructions or carry a concealment plan even without an external attacker. Evaluate resumed behavior against original authority and evidence, not only summary fidelity or continuity.
 
 The core question is not "Should we compact?" It is: what information is lossy, what is re-fetchable, what needs exact preservation, what must activate without a matching query, and where should the state live?
 

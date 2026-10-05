@@ -37,6 +37,8 @@ Each detailed profile receives one primary kind. A brand may appear in more than
 
 The classes describe artifacts, not companies. OpenHands, for example, has an SDK, a default harness, and a remote Agent Server; this tracker profiles the default V1 harness while its source cards preserve the layer boundary. Framework ecosystems without a distinctive, well-evidenced mechanism remain in [[systems/agent frameworks and orchestration libraries]] rather than being promoted merely for catalog completeness.
 
+October 5 navigation addendum: [[methods/agent runtime selection]] explains how builders choose and combine these classes. [[systems/personal assistant agents]] tracks Dots, Grok Bot, Instinct, and Muse as an application category; it is a separate axis from these implementation classes. Product profiles retain their dated evidence rather than implying a full tracker refresh.
+
 ## Harness Patterns
 
 | Pattern | Examples | What to look for |

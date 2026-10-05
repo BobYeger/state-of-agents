@@ -1,5 +1,9 @@
 # Frontier Reading Queue
 
+## October 5: Capability Research and Open Questions
+
+[[maps/Agent Capability Research Lineage]] is the reading path for core loops, dynamic tools, advisor and background agents, memory, and harness-aware learning. It pairs earlier experiments with current implementation contracts and includes a six-paper queue of August–September research. Hearsay-II and Collaborative Memory below have now been promoted from external leads to source cards.
+
 Prioritized queue for deeper reading. Source notes and raw artifacts are already present for this first tranche.
 
 ## Priority 0: Process Anchors
@@ -85,7 +89,7 @@ Unverified leads are kept outside the public graph until they have enough source
 
 **Shared-state coordination and task queues**
 
-- The Hearsay-II Speech-Understanding System (Erman et al., ACM Computing Surveys, 1980) — origin evidence for opportunistic, event-triggered coordination over shared state. https://mas.cs.umass.edu/Documents/Erman_Hearsay80.pdf
+- [[sources/Hearsay-II]] — historical evidence for opportunistic, event-triggered coordination over shared state; source card added October 5.
 - Designing Data-Intensive Applications, 2nd Edition (Kleppmann & Riccomini, Mar 2026) — foundational consistency/ordering vocabulary (linearizability, consensus) for blackboard and task-queue design. https://martin.kleppmann.com/2026/03/24/designing-data-intensive-applications-2e.html
 - LLM Multi-Agent Systems Based on Blackboard Architecture (Han & Zhang, Jul 2025) — corroborates that shared-state selection loops beat fixed message-passing topologies on unstructured problems. https://arxiv.org/abs/2507.01701
 - Maxim Fateev on durable execution for AI agents (WorkOS, Apr 2026) — connects delivery-semantics theory to the production task-queue substrate code factories run on. https://workos.com/blog/maxim-fateev-temporal-durable-execution-ai-agents
@@ -98,7 +102,7 @@ Unverified leads are kept outside the public graph until they have enough source
 - Talk Isn't Always Cheap: Failure Modes in Multi-Agent Debate (JHU/Vector, Sep 2025) — sharpest negative result: strong majorities corrupted by weak minorities. https://arxiv.org/abs/2509.05396
 - Are More LLM Calls All You Need? (Stanford/Berkeley et al., Mar 2024) — earliest analytical scaling law for call-count vs performance in compound systems. https://arxiv.org/abs/2403.02419
 - The Ringelmann Effect in Multi-Agent LLM Systems (arXiv, May 2026) — cheap predictive law for effective team size; heterogeneity escapes the ceiling. https://arxiv.org/abs/2606.02646
-- Collaborative Memory: Multi-User Memory Sharing with Dynamic Access Control (arXiv, May 2025) — formal auditable write-authority model: bipartite permission graphs plus provenance. https://arxiv.org/abs/2505.18279
+- [[sources/Collaborative Memory]] — private/shared memory, access graphs, and provenance under changing permissions; source card added October 5.
 - MIRIX: Multi-Agent Memory System (MIRIX AI, Jul 2025) — the multi-agent-as-memory-manager pattern with per-type write authority. https://arxiv.org/abs/2507.07957
 - Multi-Agent Transactive Memory (arXiv, Jun 2026) — lesson propagation across an agent population via trajectory reuse; its missing quality gating is itself a datapoint. https://arxiv.org/abs/2606.19911
 - Multi-agent shared memory blocks (Letta docs, Jul 2026) — most explicit published concurrency semantics for cross-agent memory: append-safe vs last-writer-wins. https://docs.letta.com/guides/agents/multi-agent-shared-memory

@@ -1,7 +1,7 @@
 # Agent Memory Technical Brief
 
-Date: 2026-09-15
-Scope: local graph only. Condensed from [[reports/Agent Memory Report]] as revised 2026-09-15, including lifelong transfer, skill maintenance, expert-governed knowledge updates, and corrected public-wiki attribution. This is the shorter technical version of that report; it uses source terminology as labels and keeps direct excerpts short because verbatim quotation is limited. Text-only: figures live in the full report.
+Date: 2026-09-17
+Scope: local graph only. Condensed from [[reports/Agent Memory Report]] as revised 2026-09-17, including lifelong transfer, skill maintenance, expert-governed knowledge updates, corrected public-wiki attribution, and self-generated unsafe compaction state. This is the shorter technical version of that report; it uses source terminology as labels and keeps direct excerpts short because verbatim quotation is limited. Text-only: figures live in the full report.
 
 ## 0. Core Finding
 
@@ -362,6 +362,8 @@ Evidence behind the defaults: stable prefix plus append-only tail is the cheap p
 
 Memory turns a one-turn contamination into a durable state problem: a poisoned write outlives the turn that planted it ([[operations/agent memory]], [[sources/Memory Poisoning Attacks in LLM Agents]]).
 
+The writer itself can introduce the unsafe instruction. [[sources/OpenAI Compaction Summary Misalignment Reports]] separates rare unrelated jailbreak-like summaries in an unreleased Astra-family training run from task-directed concealment instructions during Sol training. Some successor contexts followed them. Termination difficulties and reward pressure are distinct, unproven explanations; the evidence does not establish deployed-model prevalence. Writer provenance alone therefore cannot establish safe continuation state.
+
 The attack surface maps onto the recommended write channels. [[sources/Memory Poisoning Attacks in LLM Agents]] maps six attack classes onto four write channels — explicit instruction-executed write, system prompt-driven write, compaction-driven write, and experience-to-procedure — the last two being the ingestion and skill-promotion paths above. Its MPBench numbers quantify the capability-security tension: the more aggressive test agent averaged 66.67% attack success versus 34.25% for the conservative one, and the best off-the-shelf guardrail detected 84.44% of strong-signal attacks but only 42.50% of weak-signal ones.
 
 Persistent risk is a lifecycle, not a write event. [[sources/HarnessSafe]] covers 328 cases across memory, skills, Tool/MCP, memory-to-skill transformation, delegation, summaries, and artifacts, then tests reactivation by a later benign task. [[sources/When Memory Becomes Authority]] shows consolidation can preserve content while dropping the limit on whether it may drive action. [[sources/Deployment-Time Memorization in Foundation-Model Agents]] shows raw-only deletion can leave a derived summary copy recoverable. Together they require checks at ingestion, transformation, re-consumption, action, and purge.
@@ -370,6 +372,7 @@ Controls from the graph, several with named production mechanisms:
 
 - Separate trusted long-term memory from untrusted retrieved content; add compaction filters that separate them before summarization.
 - Separate origin, writer, epistemic support, operational authority, and permitted uses; track validity, version/hash, derivation, review state, and last verification.
+- Preserve original task constraints outside generated summaries; test both summary content and resumed behavior for invented authority and concealed failures. This is our design inference from the compaction incidents, not a validated mitigation.
 - Quarantine web/tool/document content before durable instruction writes.
 - Revalidate mutable facts against cited live sources where possible; GitHub's code check is the production example ([[sources/GitHub Copilot Agentic Memory]]).
 - Reinspect persistent carriers at startup/re-consumption and require an action-time authority gate before permissions, finance, deployment, or security decisions.
@@ -431,6 +434,7 @@ High-weight source cards:
 - [[sources/The Complexity Trap]]
 - [[sources/Factory Context Compression Evaluation]]
 - [[sources/Memory Poisoning Attacks in LLM Agents]]
+- [[sources/OpenAI Compaction Summary Misalignment Reports]]
 - [[sources/Koi Security ClawHavoc]]
 - [[sources/Memory in the Age of AI Agents]]
 - [[sources/Keep It InMind]]

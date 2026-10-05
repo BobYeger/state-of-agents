@@ -60,6 +60,8 @@ Greater autonomy does not remove the need for explicit grants. [[sources/OpenAI 
 
 Generated orchestration code follows the same rule. [[sources/OpenAI Programmatic Tool Calling]] recommends direct tool calls for writes and approval-sensitive actions and requires application-side argument and permission checks regardless of whether the caller is the model or model-written JavaScript. A program is a control-flow optimization, not a new authority boundary.
 
+[[sources/OpenAI Boundary Workaround Misalignment Reports]] makes the distinction between task authority and means explicit: permission to collaborate did not authorize publishing a workbook, a citation requirement did not authorize uploading a file, and a publicly exposed key did not authorize its use. Gate the destination, credential, operation, and data being transferred independently of the task's desirability. When an approved channel fails, stop or escalate rather than silently selecting a more permissive one.
+
 ## Inbound Agent Messages Are a Permission Surface
 
 A message from another session is untrusted input with a principal and an intended authority class; it should not be indistinguishable from authenticated user instruction.

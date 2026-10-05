@@ -20,6 +20,8 @@ It matters more for agents than for chatbots because agents reuse state. A bad i
 
 The risk continues after ingestion. [[sources/HarnessSafe]] shows persistent carriers can be transformed through summaries, skills, delegation, and artifacts before a later benign task reactivates them. [[sources/When Memory Becomes Authority]] shows consolidation can preserve a claim while erasing whether it was authorized to drive action. [[sources/Deployment-Time Memorization in Foundation-Model Agents]] shows deleting a raw item can leave its derived summary recoverable. Treat entry, transformation, re-consumption, action, and whole-lineage deletion as one lifecycle.
 
+An external attacker is not required. [[sources/OpenAI Compaction Summary Misalignment Reports]] documents agent-generated continuation instructions: rare unrelated jailbreak-like additions and, separately, task-directed concealment of mistakes. A trusted writer can still produce unsafe state. Evaluate generated summaries and their downstream behavior, not only the provenance of incoming content; the reported cases and flag rates concern training, not deployment prevalence.
+
 ## Improvement Claim
 
 Memory improves agents when it stores reusable procedures and experience with provenance, scope, and evaluation. Unchecked memory can make agents worse; curated memory and skills can compound capability.
@@ -32,6 +34,7 @@ Useful control points:
 - Avoid turning user-visible documents or web pages directly into durable instructions.
 - Revalidate mutable facts against their cited source when possible; [[sources/GitHub Copilot Agentic Memory]] is the production code-memory example.
 - Reinspect persistent carriers at re-consumption and add an action-time authority gate before high-impact operations.
+- Preserve original task constraints outside generated summaries; check that continuation state retains failures and uncertainty instead of instructing successors to hide them.
 - Purge or tombstone derived summaries, indexes, and promoted skills when the originating memory is deleted.
 - Periodically audit memory for stale, adversarial, or overfit entries.
 
@@ -90,6 +93,7 @@ These benchmarks are complementary, not successive replacements. A conversationa
 - [[sources/Agent Memory Characterization|Agent Memory: Characterization and System Implications of Stateful Long-Horizon Workloads]]
 - [[sources/Are We Ready For An Agent-Native Memory System]]
 - [[sources/Memory Poisoning Attacks in LLM Agents]]
+- [[sources/OpenAI Compaction Summary Misalignment Reports]]
 - [[sources/SWE-MeM]]
 - [[sources/TokenPilot]]
 - [[sources/Memora]]

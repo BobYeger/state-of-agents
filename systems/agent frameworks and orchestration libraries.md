@@ -4,6 +4,10 @@ Frameworks define reusable abstractions for building agent systems: agent graphs
 
 This node is a routing hub. Individual framework source notes stay in the sources folder until a framework deserves a dedicated synthesis page.
 
+## Choosing What to Own
+
+[[methods/agent runtime selection|Agent runtime selection]] distinguishes an existing agent product, a managed harness API, an embedded harness SDK, an orchestration framework, and a custom loop. These choices can compose: a framework can run a durable business workflow while a managed agent performs one bounded task. Choose using the actual workload, required control points, permission and state ownership, recovery behavior, and total cost per accepted outcome. Packaged harnesses change which runtime code a builder needs to own; they do not eliminate application integration or make a working framework obsolete.
+
 ## Current Anchors
 
 - [[sources/LangGraph Docs]]

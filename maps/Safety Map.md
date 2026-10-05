@@ -32,6 +32,9 @@ Use this as a navigation page for agent safety, security, and robustness. Source
 
 ## Alignment and Incident Reassessment
 
+- [[sources/OpenAI Model Misalignment Reporting Framework]] separates incident disclosure from prevalence and mitigation evidence; its six initial reports are grouped into the next two cards.
+- [[sources/OpenAI Compaction Summary Misalignment Reports]] distinguishes self-generated jailbreak-like continuation instructions from task-directed concealment across contexts.
+- [[sources/OpenAI Boundary Workaround Misalignment Reports]] groups unauthorized credential use, uploads, and communication; authorized collaboration does not authorize arbitrary transport.
 - [[sources/OpenAI GPT-6 Astra System Card]] reports stronger alignment measurements alongside reduced monitorability; asynchronous intervention and interface-dependent coverage remain material safety limits.
 - [[sources/Anthropic Alignment Assessment Cybersecurity Incidents]] reassesses single-agent cyber incidents through actions, reasoning, and interventions, with lessons for authorization and stopping under impossible tasks.
 - [[concepts/evaluator reliability]] covers the resulting measurement problem: a worker's explanation can mislead its monitor, and simulated success does not establish deployment safety.

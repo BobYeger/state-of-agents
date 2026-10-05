@@ -25,6 +25,10 @@ The TypeScript, Python, Go, and C# Tier 1 SDKs shipped support with the revision
 
 **Supersession note.** The vault's [[sources/MCP Authorization]] and [[sources/MCP Security Best Practices]] cards capture the 2025-06-18 lineage, while [[sources/MCP Specification 2026-07-28 Release Candidate]] records the pre-release design and validation window. Their threat framing and history remain useful, but quote [[sources/MCP Specification 2026-07-28]] and the versioned live specification for current normative requirements.
 
+## Event Extension Snapshot (2026-10-05)
+
+[[sources/OpenAI MCP Events]] documents a draft event extension using webhook delivery so server-side changes can reach a client without a foreground tool request. This is an implementation snapshot, not a claim that events are part of the final core specification or that the snapshot date is the launch date. Subscription persistence, renewal, duplicate events, and ordering remain application concerns. Event receipt also does not establish that work ran or that the user should be notified; those policies belong in [[concepts/event-driven agents]].
+
 ## Registry and Distribution
 
 The official MCP Registry launched in preview at registry.modelcontextprotocol.io in September 2025 and remains pre-GA as of 2026-07 ([[sources/MCP Registry]]): a central authoritative catalog with standardized server.json metadata, DNS/GitHub-based namespacing, and public or private sub-registries sharing the same API. Its moderation is a reactive denylist — flagged servers are removed after the fact — which makes server distribution a live supply-chain surface: [[sources/Invariant Labs MCP Tool Poisoning]] shows tool descriptions themselves carrying injected instructions, and [[sources/Koi Security Postmark MCP Backdoor]] documents a trojaned server exfiltrating mail in production. Registry presence is discoverability, not vetting.

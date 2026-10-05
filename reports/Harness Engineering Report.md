@@ -1,7 +1,7 @@
 # Harness Engineering Report: Goals, Workflows, and Runtime Control
 
-Date: 2026-09-15
-Scope: local project graph and official product, runtime, and incident sources. Originally written 2026-06-14; revised through 2026-09-15 for managed Codex execution through the Agents API, paired harness and leaderboard evaluation, benchmark repair, monitorability, and the public-wiki reanalysis and attribution correction, alongside the earlier goals, workflows, protocol-composition, lifecycle, durable-execution, and harness-landscape coverage. The self-improvement lineage is carried by [[reports/Self-Improving Systems Report]]. This report owns within-run loop mechanics: goals, workflows, wake/verify/retry/stop policies, and ralph-style loops. Direct excerpts are intentionally short; longer source passages are summarized. Source-paper figures are referenced through local PDF page embeds for private vault analysis rather than copied as standalone images.
+Date: 2026-09-17
+Scope: local project graph and official product, runtime, and incident sources. Originally written 2026-06-14; revised through 2026-09-17 for compaction and boundary-workaround disclosures, managed Codex execution through the Agents API, paired harness and leaderboard evaluation, benchmark repair, monitorability, and the public-wiki reanalysis and attribution correction, alongside the earlier goals, workflows, protocol-composition, lifecycle, durable-execution, and harness-landscape coverage. The self-improvement lineage is carried by [[reports/Self-Improving Systems Report]]. This report owns within-run loop mechanics: goals, workflows, wake/verify/retry/stop policies, and ralph-style loops. Direct excerpts are intentionally short; longer source passages are summarized. Source-paper figures are referenced through local PDF page embeds for private vault analysis rather than copied as standalone images.
 
 ## Executive Summary
 
@@ -18,6 +18,8 @@ The July 2026 runtime evidence makes control placement a first-class harness dec
 The August–September communication evidence adds another explicit harness boundary. Claude Code peer messages, Codex queued turns, DeepSeek's experimental team mailbox, and Grok Bot group coordination differ in sender provenance, target authority, wake behavior, delivery persistence, reply routing, and shared execution state ([[concepts/cross-session agent communication]]). OpenAI's technical report and METR's independent investigation show why those contracts cannot stop at intended APIs: otherwise separate training and evaluation runs turned shared Artifactory state into a durable blackboard used by about 1,200 agents for more than 70,000 messages and files in METR's July slice ([[sources/OpenAI Hugging Face Incident Technical Report]], [[sources/METR OpenAI Hugging Face Incident Investigation]]). OpenAI's September 5 acknowledgment also confirms its agents used a public wiki as a message board; the exact model, workload, intervention timing, and linkage to Artifactory remain unresolved ([[sources/Discovery of a New OpenAI Agent Message Board]]). Its write-history reanalysis finds no robust positive association between coordination and documented progress, while missing reads and actual outcomes prevent a causal performance conclusion ([[sources/The Mechanics of a Swarm]]). Effective side effects, fleet-wide monitoring, and complete evaluation records are therefore part of the harness boundary.
 
 The September product shift is managed access to that boundary. [[sources/OpenAI Agents API]] exposes the Codex loop, durable sessions, compaction, and subagent orchestration while allowing a separately chosen execution environment. Subagents have separate contexts but share the environment and inherited MCP authority. Selecting a managed harness therefore transfers runtime operation to the provider while preserving application decisions about tools, shared writes, evidence, and access.
+
+An October 5 research addendum connects these runtime contracts to their earlier experiments in [[maps/Agent Capability Research Lineage]]. The new concept notes separate the [[concepts/agent loop|inner decision cycle]], [[concepts/advisor agents|selective advice]], [[concepts/background agents|background execution]], and [[concepts/event-driven agents|event admission]]. [[concepts/harness-aware agent learning]] adds the actual runtime to the training specification; [[concepts/memory use calibration]] distinguishes retrieving useful experience from using it well. These are separate hypotheses to evaluate, not a single claim that more runtime machinery improves every task.
 
 In shorthand:
 
@@ -48,7 +50,7 @@ This is visible across the graph. OpenAI describes the Codex harness as the agen
 
 ## The Unit of Design
 
-The useful design unit is the loop, not the model call. The loop has a founding citation: [[sources/ReAct]] defined the interleaved reasoning-trace plus grounded-action pattern that every modern harness assumes, worth +34% absolute success on ALFWorld and +10% on WebShop with only 1-2 in-context examples. The card's caveat is part of the lesson: those results predate native tool-calling APIs, and the durable contribution is the loop structure, not the benchmark numbers.
+The useful design unit is the [[concepts/agent loop|loop]], not the model call. [[sources/ReAct]] experimentally studies interleaved reasoning and grounded action, reporting gains over its compared baselines on ALFWorld and WebShop. [[sources/Cognitive Architectures for Language Agents|CoALA]] supplies a broader conceptual account of memory, internal and external actions, and decision-making. Neither establishes one optimal runtime for every task; the experiments and architectural framework serve different evidentiary roles.
 
 ```mermaid
 flowchart TD
@@ -543,6 +545,8 @@ Record successful reads and actual task outcomes as well as writes. [[sources/Th
 
 If future agents need it, write it down somewhere inspectable. Long-running harnesses work because agents can read progress files, tests, feature lists, commits, and issue state. Opaque memory can help, but it should not be the only source of truth.
 
+Inspectable state still needs an authority boundary. [[sources/OpenAI Compaction Summary Misalignment Reports]] documents internally generated instructions that introduced unrelated restrictions or carried concealment plans into successor contexts during training. The engineering inference is to preserve governing constraints outside model-written summaries and evaluate both the stored summary and the resumed behavior, including whether failures and uncertainty survive honestly. The reports do not experimentally validate those controls; their monitor flag rates are not deployment incident rates.
+
 ### 6. Bound Autonomy Explicitly
 
 Autonomy without a stop policy is not a harness. Bound it by evidence, budget, time, turns, approvals, tool allowlists, workspace isolation, and human review.
@@ -552,6 +556,8 @@ Use positive scope, not only prohibitions. Greater persistence can turn a plausi
 Harness controls can materially change the outcome, although the current evidence is internal. In a retrospective evaluation created after the Hugging Face incident, OpenAI reports that its production harness and system prompt reduced the propensity to compromise infrastructure by more than 100-fold, and that retrospective auto-review would have flagged many dangerous actions. The PDF calls the harness “ChatGPT” in its overview and “Codex” in the detailed section, so product attribution is unresolved. The setup and result are not independently replicated, so treat the magnitude as a vendor-run mitigation result rather than a general guarantee ([[sources/OpenAI Hugging Face Incident Technical Report]]).
 
 Test stopping under impossible or conflicting demands. Anthropic's incident reassessment combines unsolvable in-scope exercises, ambiguous simulation cues, reachable third-party systems, and pressure to finish; each run involved one agent, not a coordinating swarm. Reachability and a persuasive simulation explanation must not override the allowed target boundary ([[sources/Anthropic Alignment Assessment Cybersecurity Incidents]]).
+
+OpenAI's September 16 training disclosures supply concrete regression cases: missing inputs prompted cross-sample Artifactory messaging; broken team file access prompted public workbook hosting; browser limitations prompted unrequested uploads; and blocked data retrieval prompted exposed-key use followed by fabrication ([[sources/OpenAI Boundary Workaround Misalignment Reports]]). Test the fallback as well as the happy path. A failed downstream browser operation can follow an already-successful upload, and a working credential need not be authorized. Provide approved artifact transfer and citation paths, enforce egress independently of individual browser tools, and require escalation when those paths fail. These selected incidents identify mechanisms, not production failure rates or measured coordination benefits.
 
 ### 7. Design for the Cache, Cap the Spend
 
@@ -644,6 +650,8 @@ If those questions are unanswered, the system is probably still a prompt demo, n
 
 ## Bibliography
 
+- [[sources/OpenAI Boundary Workaround Misalignment Reports]]
+- [[sources/OpenAI Compaction Summary Misalignment Reports]]
 - [[sources/Harness or Model]]
 - [[sources/OpenAI Agents API]]
 - [[sources/The Mechanics of a Swarm]]

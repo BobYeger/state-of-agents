@@ -13,6 +13,14 @@ For long-horizon and multi-agent systems, cost is part of correctness. A design 
 - Topology choice: star, chain, tree, graph, blackboard, or supervisor-mediated.
 - Risk path: route sensitive actions through stricter confirmation or sandboxing.
 
+## Research Lineage and Decision Boundaries
+
+[[sources/FrugalGPT]] (2023) learns escalation after inspecting an answer; [[sources/RouteLLM]] (2024) learns model selection before generation. These establish conditional allocation as a research problem before later advisor APIs. They are conceptual antecedents, not evidence of a product's development history.
+
+Routing, escalation, [[concepts/advisor agents|advice]], and delegation change different things. A router selects the answerer, a cascade replaces an insufficient answer, an advisor informs an executor that continues, and a worker completes an assigned subtask. An independently activated [[concepts/background agents|observer]] can flag a need for intervention even when the actor never requests help. Measure each contract against its own alternative rather than counting every additional model call as collaboration.
+
+Query-level benchmark gains do not establish the best route inside an agent trajectory. Test the state used for routing, available evidence, consultation timing, and the downstream result; an initially cheap route can become expensive after repeated recovery. Include missed escalations and unnecessary consultations in the quality–cost comparison.
+
 ## Improvement Claim
 
 Routing improves agent systems by making participation conditional. Instead of every agent speaking every round, the runtime chooses who acts, which model is worth using, when to escalate, and when to stop.
@@ -29,6 +37,8 @@ Role-aware routing is stronger than a flat difficulty router. [[sources/Think Bi
 
 ## Related Sources
 
+- [[sources/FrugalGPT]]
+- [[sources/RouteLLM]]
 - [[sources/AgentDropout|AgentDropout: Dynamic Agent Elimination for Token-Efficient and High-Performance LLM-Based Multi-Agent Collaboration]]
 - [[sources/BAMAS|BAMAS: Structuring Budget-Aware Multi-Agent Systems]]
 - [[sources/Graph-of-Agents|Graph-of-Agents: A Graph-based Framework for Multi-Agent LLM Collaboration]]

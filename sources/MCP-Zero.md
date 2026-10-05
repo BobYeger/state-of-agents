@@ -24,7 +24,7 @@ pdf_url: "https://arxiv.org/pdf/2506.01056"
 artifacts:
   - "raw/papers/mcp-zero.pdf"
 created: 2026-05-20
-updated: 2026-05-20
+updated: 2026-10-05
 ---
 
 # MCP-Zero
@@ -34,6 +34,13 @@ updated: 2026-05-20
 - Proposes active tool discovery where an agent requests needed tools on demand instead of receiving every tool schema up front.
 - Uses active tool requests, hierarchical semantic routing, and iterative capability extension over a large MCP tool pool.
 - Important because it turns tool access into a dynamic capability-acquisition loop, not only a static retrieval problem.
+
+## Evidence and Limits
+
+- The MCP-tools collection contains 308 servers and 2,797 tools. The separate APIBank experiment extracts 48 unique tools from level 1 and omits server filtering because that dataset has no server hierarchy.
+- Table 1 reports 111 versus 6,308.2 tokens in the full single-turn setting, a 98.24% reduction. This is the paper's tool-context/token comparison, not a demonstrated 98% reduction in total deployment cost or latency.
+- Needle-in-a-haystack retrieval and APIBank selection accuracy do not establish reliable arbitrary tool execution. The paper leaves broader domain validation to future work.
+- Full paper and arXiv version history rechecked October 5, 2026. Discovery does not create a tool implementation or authorize its effects.
 
 ## Claims
 
@@ -45,6 +52,9 @@ updated: 2026-05-20
 - [[concepts/tool use]]
 - [[protocols/MCP]]
 - [[operations/cost control]]
+- [[sources/AnyTool]]
+- [[sources/Gorilla]]
+- [[sources/Claude Mid-Conversation Tool Definitions]]
 
 ## Artifacts
 

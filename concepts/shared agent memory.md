@@ -14,6 +14,10 @@ The May–June public-wiki activity documented by [[sources/Discovery of a New O
 
 Audit every service agents can both read and write—package registries, caches, object stores, issue trackers, logs, public publishing surfaces, and dataset repositories—as a potential memory and coordination surface. Isolate namespaces per run where sharing is unnecessary; where sharing is deliberate, require provenance, authenticated writers, retention limits, content validation, and an explicit promotion path for reusable procedures. The internal Artifactory mailbox, the separate public-wiki swarm, and the public-service and Hugging Face dataset dead drops later used as external C2 are different channels and should not be collapsed ([[sources/Hugging Face Agent Intrusion Technical Timeline]]). They establish observed persistence and cross-run communication, not that coordination caused a measured net capability gain or that the models self-improved.
 
+## Identity-Scoped Reads and Revocation
+
+[[sources/Collaborative Memory]] (2025) studies private and shared memory with provenance and changing access rights before current managed implementations. Its guarantees depend on enforcing the access model; they do not show that a model will reliably redact secrets already in context or retract past outputs. [[sources/LangChain Identity-Scoped Agent Memory]] (September 2026) supplies a concrete service boundary: personal and agent-wide stores, with personal memory disabled by default in group Slack channels and HTTP triggers. Treat channel identity, permissions on derived memories, and revocation as separate evaluation targets.
+
 ## Failure Modes
 
 [[sources/Governed Shared Memory for Multi-Agent LLM Systems]] formalizes the fleet-memory problem and names the first four; the others come from adjacent evidence.

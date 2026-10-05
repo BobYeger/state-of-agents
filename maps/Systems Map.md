@@ -22,6 +22,7 @@ Use this map for named agent systems, platforms, and productized harnesses. The 
 
 ## Category Hubs
 
+- [[systems/personal assistant agents]]
 - [[systems/agent frameworks and orchestration libraries]]
 - [[systems/china agent ecosystem]]
 - [[systems/deployed agent products]]

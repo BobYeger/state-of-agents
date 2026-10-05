@@ -2,6 +2,9 @@
 
 ## Organizing Questions
 
+- Which responsibilities should a builder retain when reusing a harness? See [[methods/agent runtime selection]].
+- How should an assistant maintain commitments and useful initiative across a continuing relationship? See [[concepts/persistent personal agents]] and [[systems/personal assistant agents]].
+- Which research tested today's agent capabilities before they became services, and what remains unresolved? See [[maps/Agent Capability Research Lineage]].
 - What makes a system an [[concepts/agentic systems|agentic system]] rather than a workflow?
 - When do [[concepts/multi-agent systems|multi-agent systems]] outperform single-agent systems?
 - Which topologies, routing policies, and coordination protocols matter?
@@ -18,6 +21,7 @@
 
 ## Map Pages
 
+- [[maps/Agent Capability Research Lineage]]
 - [[maps/Frontier Reading Queue]]
 - [[maps/Systems Map]]
 - [[maps/Claims Map]]
