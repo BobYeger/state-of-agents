@@ -21,6 +21,8 @@ Routing, escalation, [[concepts/advisor agents|advice]], and delegation change d
 
 Query-level benchmark gains do not establish the best route inside an agent trajectory. Test the state used for routing, available evidence, consultation timing, and the downstream result; an initially cheap route can become expensive after repeated recovery. Include missed escalations and unnecessary consultations in the quality–cost comparison.
 
+[[sources/AgentBaton]] adds learned handoff timing within a task. Evaluate the complete handoff cost: its reported API savings assign zero cost to local inference.
+
 ## Improvement Claim
 
 Routing improves agent systems by making participation conditional. Instead of every agent speaking every round, the runtime chooses who acts, which model is worth using, when to escalate, and when to stop.

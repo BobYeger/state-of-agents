@@ -4,6 +4,10 @@ This map tracks how agent systems keep long-running work coherent without floodi
 
 The organizing distinction is between prompt compression and agent context management. Prompt compression shrinks a prepared input. Agent context management governs an evolving trajectory of goals, messages, tool calls, observations, files, decisions, and memory.
 
+## November 9 Update: Memory and Dreaming
+
+[[reports/Memory and Dreaming Update - 2026-11-09]] connects new consolidation evidence to evaluation and runtime design. Start with [[sources/Anthropic Components of Agent Memory]], [[sources/Claude Managed Agents Dreams Lifecycle]], and [[sources/MemProbe]]. Research additions include [[sources/Auto-Dreamer]], [[sources/MemCode]], [[sources/Complementary Memory Curation and Consolidation]], and the distinct parametric branch [[sources/Language Models Need Sleep]].
+
 ## Methods
 
 | Method | What It Does | Anchor Sources |

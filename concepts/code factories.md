@@ -4,6 +4,8 @@ Code factories, software factories, and agent factories are organization-level h
 
 The factory is bigger than a coding agent. It connects incoming signals, triage, specs, planning, implementation, tests, review, security, release, monitoring, and incident feedback into a repeatable system.
 
+For the latest research delta, see [[reports/Code Factories Update - 2026-11-09]]. The new operating distinction is between **more activity** and **more useful, lasting delivery**: measure both, because a factory can also generate its own work and alter its acceptance process.
+
 ## Relationship to Harness Engineering
 
 | Layer | Main question | Typical artifacts |
@@ -31,6 +33,8 @@ The factory is bigger than a coding agent. It connects incoming signals, triage,
 - It needs explicit governance: permission boundaries, risk classification, human gates, audit trails, and rollback.
 - It benefits from model routing because different stages optimize for cost, latency, depth, or judgment.
 - It is only credible when verification is stronger than generation.
+- Coordination can span separate human principals, not only a planner's decomposition of one request. Joint intent and interface compatibility therefore need explicit evaluation ([[sources/ParallACT]]).
+- Integration capacity and review convergence are factory-level constraints. The appropriate controls depend on repository scale and recovery capability, as illustrated by the distinct regimes in [[sources/Anthropic Scion Source Control]] and [[sources/Claude Code Review at Agent Volume]].
 
 ## Current Anchors
 

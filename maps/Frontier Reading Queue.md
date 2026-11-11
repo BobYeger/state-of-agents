@@ -1,5 +1,39 @@
 # Frontier Reading Queue
 
+## November 9: Harnesses, Factories, Teams, and Dreaming
+
+Start with [[reports/Research Update - 2026-11-09]] and its five topic reports. Newly catalogued sources have primary-text reviews and explicit evidence limits; earlier queues below remain historical worklists, not a claim that all leads are equally current.
+
+The [[reports/Cyber Swarms and Attacker Findings - 2026-11-09|October cyber follow-up]] adds 14 reviewed sources. Read observed deployments before capability forecasts, and keep incident dates distinct from disclosure dates. Its next priorities cover campaign-state provenance, human intervention, outcome attribution, containment, and remediation capacity.
+
+### Next Experiments
+
+1. Preserve old successes while measuring harness transfer on future tasks.
+2. Measure dreaming's complete cost over a declared number of future queries.
+3. Separate communicating-team capability from correct final-answer selection.
+4. Measure factory delivery with an independently defined workload and failure follow-up.
+
+### November Leads: Primary Abstracts Checked, Full Review Pending
+
+- [Reglos: A Self-Evolving Personal Memory Agent with Recursive Self-Improvement](https://arxiv.org/abs/2611.06049), November 4. Connects personal memory and evaluated harness patches. Inspect split discipline, critic ablations, and total optimization budget before adopting its claims.
+- [Meta²](https://arxiv.org/abs/2611.05139), November 3. Compare reusable evolution guidance with task-local edits in [[sources/Harness2]] and [[sources/BOXBOX]].
+- [Flex-RSI](https://arxiv.org/abs/2611.08946), November 6. Inspect the paired harness-editing comparison and hidden-test protocol in vision/robotics settings.
+
+These are discovery leads, not verified effectiveness claims. The dated reports distinguish full-text-reviewed sources from this backlog.
+
+### DAIR Discovery Follow-up
+
+[[reports/DAIR Paper Review - 2026-11-09]] documents seven additional primary-text reviews from the user-supplied [DAIR catalog](https://academy.dair.ai/papers). Revisit the [harness collection](https://academy.dair.ai/papers/collections/harness-engineering) and [latest self-improvement papers](https://academy.dair.ai/papers/collections/self-improving-agents?view=latest) as discovery sources. Check paper versions and primary methods before treating catalog summaries as evidence.
+
+New leads with primary abstracts checked, full review pending:
+
+- [AutoRefine](https://arxiv.org/abs/2611.09291), November 6: calibration of code judges from noisy workflow outcomes; inspect held-out sample sizes and workflow drift.
+- [Masked Erosion](https://arxiv.org/abs/2610.38392), October 28: acceptance gates and loss of redundant safeguards; inspect deletion experiments, optimizer runs, and model-transfer tests.
+- [When the Critic Falls Behind / RuHarness](https://arxiv.org/abs/2610.36826), October 27: rubric–harness co-evolution; inspect evaluator independence and unseen-task selection.
+- [OpenJarvis](https://arxiv.org/abs/2605.17172), May 16: cloud-assisted spec search for local execution; separate search cost from marginal inference cost.
+
+Continual Harness remains an earlier queued lead below. These entries are not source-card effectiveness findings.
+
 ## October 5: Capability Research and Open Questions
 
 [[maps/Agent Capability Research Lineage]] is the reading path for core loops, dynamic tools, advisor and background agents, memory, and harness-aware learning. It pairs earlier experiments with current implementation contracts and includes a six-paper queue of August–September research. Hearsay-II and Collaborative Memory below have now been promoted from external leads to source cards.

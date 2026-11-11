@@ -1,5 +1,8 @@
 # Agent Memory Report: Compaction, Context, and Durable State
 
+> [!info] November 9, 2026 extension
+> [[reports/Memory and Dreaming Update - 2026-11-09]] adds the latest consolidation experiments, maintenance diagnostics, and Dreams lifecycle contract. It distinguishes external memory edits from controller training and model-weight updates; the dated synthesis below remains the September baseline.
+
 Date: 2026-09-17
 Scope: local project graph only. Memory here includes persistent agent memory, activation and retrieval, prospective intentions, compaction, pruning, clearing, durable runtime state, handoff, skills, and learned procedures; organizational knowledge is covered as an adjacent boundary case. Originally written 2026-06-01; revised through 2026-09-17 with workflow-transfer evaluation, skill/optimizer/retrieval maintenance, expert-governed knowledge updates, corrected public-wiki attribution, and self-generated unsafe compaction state. Direct excerpts are intentionally short; longer source passages are summarized to stay within quotation limits. Embedded paper figures are local research crops; redraw or check rights before external distribution.
 

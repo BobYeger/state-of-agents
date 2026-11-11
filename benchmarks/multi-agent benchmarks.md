@@ -4,6 +4,20 @@ Benchmarks for collaboration, competition, negotiation, social simulation, and c
 
 Multi-agent benchmarks should measure more than task success. The frontier questions are whether agents coordinate efficiently, avoid redundant work, recover from bad messages, terminate correctly, resist adversarial participants, and handle topology or role changes.
 
+## November 2026 Evaluation Additions
+
+[[reports/Multi-Agent Research Update - 2026-11-09]] gives the current comparison protocol. Record the scorer's unit explicitly: an individually correct candidate, best-of-team availability, selected final answer, merged artifact, or complete user task. These are different estimands.
+
+| Evaluation concern | New source to inspect |
+|---|---|
+| Communication versus independent search | [[sources/Scaling Discovery through Test-Time Communication]] |
+| Shared versus private memory; final-selection gap | [[sources/ScaleMAS]] |
+| Graph, role placement, and input allocation | [[sources/OpenDGO]] |
+| Context partitioning and recursion | [[sources/SAIGE]] |
+| Runtime selection versus extra control layers | [[sources/Runtime Agent Coordination for AI Scientists]] |
+
+Include actual spending, latency, errors, and a task distribution held out from architecture selection. Keep false positives visible when evaluating coverage or discovery.
+
 ## Evaluation Dimensions
 
 - Collaboration quality and division of labor.

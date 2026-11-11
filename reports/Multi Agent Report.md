@@ -1,5 +1,8 @@
 # Multi-Agent Report: Architectures, Evidence, and 2026 Build Patterns
 
+> [!info] November 9, 2026 extension
+> Read [[reports/Multi-Agent Research Update - 2026-11-09]] for the latest audited tranche: verified discovery sharing, retrieval-based coordination, adaptive context boundaries, and simplification. The dated synthesis below remains the September baseline; its study-specific numerical thresholds are not universal rules.
+
 Date: 2026-09-17
 Scope: local project graph plus official vendor/product pages and audited open-source implementations as captured in the vault's source cards. Originally written 2026-06-03; revised 2026-07-05 against the rebuilt 471-source graph, then through 2026-09-17 for boundary-workaround disclosures, the expanding product landscape, managed orchestration in the OpenAI Agents API, and the public-wiki reanalysis and attribution correction alongside the full OpenAI/METR incident record. Strong recency bias: 2026 product systems and 2025-2026 papers are weighted above earlier role-play and debate-era systems. Direct excerpts are intentionally short; longer source arguments are summarized. Source-paper figures are embedded as local PDF page references for vault analysis; for public distribution, verify paper licenses or redraw the figures. The generated architecture image set is a local working asset and is not part of the public vault.
 

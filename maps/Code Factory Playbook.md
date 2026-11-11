@@ -2,6 +2,8 @@
 
 This playbook walks the [[concepts/code factories]] lifecycle stage by stage. For each stage it names the design note that covers it, the anchor evidence, and how mature that evidence is — because factory stages differ enormously in how much of their guidance is measured production result versus vendor framing.
 
+The [[reports/Code Factories Update - 2026-11-09]] adds September–October operating evidence and integration benchmarks, with a proposed measurement plan and follow-up queue.
+
 Maturity labels used below:
 
 | Label | Meaning |
@@ -12,6 +14,8 @@ Maturity labels used below:
 | Research | Benchmark or lab evidence; not yet demonstrated in a production factory |
 
 ## Cross-Lifecycle Blueprint
+
+[[systems/HumanLayer]] adds an inspectable implementation of staged research, design, implementation, review, and conditional progression. [[sources/HumanLayer Open Source Agent Orchestration]] pins the released code and separates workflow-completion signals from correctness checks. **Maturity: implementation evidence; outcome gains unmeasured in this review.**
 
 [[sources/Claude AI-Native SDLC Playbook]] provides an operationally specific full-lifecycle methodology. It connects Plan, Design, Build, Test, Deploy, and Maintain through committed artifacts that can trigger the next stage, with policy encoded as skills, deterministic controls in hooks and managed settings, continuous evals for agent configuration, and production signals returning as new intent. **Maturity: framework.** Its stage metrics are proposed instruments rather than reported outcomes, so use it as a design checklist rather than evidence that an AI-native SDLC improves delivery.
 
@@ -42,6 +46,7 @@ Notes: [[concepts/issue tracker control plane]], [[operations/worktree isolation
 - [[sources/Factory How Missions Work]]: the April 2026 architecture uses fresh workers, shared state, and ordered feature execution; [[sources/Factory Missions Multi-Agent Architecture Talk]] adds structured handoffs and read-only fan-out. Factory's current product page advertises parallel Droid execution, so treat the ordered topology as a dated architecture snapshot rather than timeless product behavior. **Deployed, thin measurement; vendor-reported.**
 - [[sources/Context Engineering MCP CLAUDE-md Skills Hooks Talk]]: long-lived worktrees and persistent agent identities reduce repeated setup, while a multi-session control surface reduces the human cost of switching among asynchronous streams. **Deployed, thin measurement; operator-reported.**
 - [[sources/Cursor Agent Swarm Model Economics]]: a purpose-built VCS mediates fleet-scale writes, with design-document reconciliation, neutral conflict agents, and automatic megafile decomposition. The old/new SQLite comparison reports sharply lower conflict churn, but this is an exceptional greenfield swarm with a cheap evaluator. **Research-style vendor case study.**
+- [[sources/Cursor Projects and Agent SDK]]: persistent coordination and event-driven workflows. **Deployed, thin measurement.** [[sources/Factory OpenCompute]] adds provider conformance and reconciled fleet lifecycles. **Private preview; vendor architecture report.**
 
 ## Stage 4: Implementation and Repair
 
@@ -62,6 +67,7 @@ Notes: [[methods/automated program repair]] (test-generation half), [[operations
 - [[sources/Factory How Missions Work]]: two distinct gates — scrutiny of implementation and trajectory, plus behavioral QA against a live application — run at milestone boundaries against the predeclared contract; [[sources/Factory Missions Multi-Agent Architecture Talk]] supplies additional oral detail. **Deployed, thin measurement; vendor-reported.**
 - [[sources/Context Engineering MCP CLAUDE-md Skills Hooks Talk]]: post-tool hooks connect existing linters, LSPs, generated-file warnings, and other developer feedback at the moment of action — “red squigglies for agents” rather than review-only correction. **Deployed, thin measurement; operator-reported.**
 - [[sources/Cursor Agent Swarm Model Economics]]: held-out `sqllogictest` supplies millions of known-answer queries, while review agents vary transcript/output/code visibility, model, and personality to reduce correlated blind spots. Cursor reports that these lenses stack but publishes no review ablation. **Research-style vendor case study.**
+- Integration probes: [[sources/AsynCodeBench]] measures dependency closure; [[sources/Passes Alone Fails Together]] isolates composition-induced failures; [[sources/ParallACT]] tests joint requirements from independent principals. **Research.** Keep their evaluation units separate.
 
 ## Stage 6: Review Gate
 
@@ -71,6 +77,7 @@ Note: [[operations/release engineering]] (review-gate sizing); failure evidence 
 - [[sources/Modern Code Review at Google]]: the human-capacity baseline — median reviewer handles ~4 changes a week because the median change is 24 lines. **Production-measured**, pre-agent.
 - [[sources/How Humans Review AI-Generated Pull Requests]]: most agent-authored PRs in open source get no human review; "reviewed" increasingly means reviewed by another agent. **Production-measured**, the erosion warning.
 - [[sources/Bias in the Loop]]: correction friction drives rubber-stamping — rejection must be as cheap as approval. **Research** (randomized experiment, n=2,784).
+- [[sources/Claude Code Review at Agent Volume]] adds outcome-guarded review automation and convergence control. **Production-measured, vendor-reported; observational.**
 
 ## Stage 7: Merge and Release
 
@@ -79,6 +86,7 @@ Note: [[operations/release engineering]].
 - [[sources/GitHub Merge Queue Docs]]: serialized integration against the true post-merge state; flaky tests tax the whole queue. **Deployed, thin measurement** as agent evidence; mature pre-agent practice.
 - [[sources/Google SRE Workbook Canarying Releases]]: population-comparison canarying with error-budget sizing, directly reusable for agent-produced changes. **Production-measured**, pre-agent.
 - [[sources/DORA State of AI-assisted Software Development 2025]]: AI adoption correlates with throughput and with worse stability unless testing, small batches, and fast feedback exist. [[sources/DORA ROI of AI-assisted Software Development]]: expect the J-curve; do not remove gates during the dip. **Production-measured** (survey scale).
+- [[sources/Anthropic Scion Source Control]] describes an exceptional alternative with post-merge/pre-deploy checks. **Vendor production report.** It does not replace the default integration-gate recommendation for ordinary repositories.
 
 ## Stage 8: Monitoring and Incident Response
 
@@ -88,6 +96,7 @@ Note: [[operations/incident response]]. Second-best-evidenced stage, with publis
 - [[sources/Meta AI Incident Response]]: 42% top-5 root-cause accuracy at investigation creation — design the human workflow around the 58% case. **Production-measured.**
 - [[sources/Azure SRE Agent Docs]]: permission-gated mitigation and the first public per-task cost model. **Deployed, thin measurement.**
 - [[sources/Datadog Bits AI Eval Platform]] and [[sources/AIOpsLab]]: replayed-reality and injected-fault evaluation for investigation agents. **Production-measured** / **research** respectively.
+- [[sources/Cursor Rollouts and Security Reviewer]] connects change intent to production monitoring. **Deployed, thin measurement.**
 
 ## Stage 9: Learning Loop
 
@@ -95,11 +104,11 @@ Notes: [[methods/self-improving code loops]], [[concepts/lifelong agent learning
 
 - [[sources/LangChain Agent Improvement Loop]]: traces to eval cases to judge alignment as an operational loop. **Deployed, thin measurement.**
 - [[sources/Cursor Bugbot Learned Rules]]: learned review rules in a shipped product, with published resolution telemetry (78.13% over 50,310 PRs across 110k+ repos and 44k+ rules — vendor-reported, LLM-judged at merge time). **Production-measured.**
-- Closed-loop factory self-improvement — the factory improving its own stages under evidence — remains **research**; the harness-optimization cluster in [[maps/Self-Improving Systems Map]] is where that evidence is accumulating.
+- [[sources/Instant Software Factories]] adds operator observations of factories changing their own workload and checks. **Industrial case study.** Sustained improvement under an independent evaluator remains open; use the harness-optimization cluster in [[maps/Self-Improving Systems Map]] for controlled optimization evidence.
 
 ## Sequencing Adoption
 
-Adopt where evidence is strongest and blast radius is bounded: repair on machine-filed bugs with reproduction tests (Stage 4), test generation with filter cascades (Stage 5), and merge/canary controls (Stage 7) have production-measured playbooks. Review-gate automation (Stage 6) has one strong deployment and strong erosion warnings — instrument who reviews what before scaling volume. Spec tooling (Stage 2) and learning loops (Stage 9) are where conviction currently outruns measurement; run them behind explicit evaluation rather than assuming the vendor claim.
+Adopt where evidence is strongest and blast radius is bounded: repair on machine-filed bugs with reproduction tests (Stage 4), test generation with filter cascades (Stage 5), and merge/canary controls (Stage 7) have production-measured playbooks. Review-gate automation (Stage 6) now has several operator reports alongside erosion warnings — instrument who reviews what before scaling volume. Spec tooling (Stage 2) and learning loops (Stage 9) still need independent outcome measurement; run them behind explicit evaluation rather than assuming the vendor claim.
 
 ## Related
 

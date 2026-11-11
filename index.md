@@ -4,6 +4,8 @@ This vault tracks frontier AI agent research and practice, with emphasis on mult
 
 ## Start Here
 
+- **Latest focused update:** [[reports/Research Update - 2026-11-09]] — harness self-improvement, code factories, multi-agent research, memory/dreaming, and cyber swarms/attacker findings.
+
 - [[maps/Agent Capability Research Lineage]]
 - [[maps/Research Map]]
 - [[maps/Systems Map]]

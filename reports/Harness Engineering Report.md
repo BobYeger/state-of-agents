@@ -1,5 +1,8 @@
 # Harness Engineering Report: Goals, Workflows, and Runtime Control
 
+> [!info] November 9, 2026 extension
+> [[reports/Harness Self-Improvement Update - 2026-11-09]] adds the latest harness-optimization mechanisms, evaluation boundaries, and transfer questions. See [[reports/Research Update - 2026-11-09]] for the cross-topic synthesis.
+
 Date: 2026-09-17
 Scope: local project graph and official product, runtime, and incident sources. Originally written 2026-06-14; revised through 2026-09-17 for compaction and boundary-workaround disclosures, managed Codex execution through the Agents API, paired harness and leaderboard evaluation, benchmark repair, monitorability, and the public-wiki reanalysis and attribution correction, alongside the earlier goals, workflows, protocol-composition, lifecycle, durable-execution, and harness-landscape coverage. The self-improvement lineage is carried by [[reports/Self-Improving Systems Report]]. This report owns within-run loop mechanics: goals, workflows, wake/verify/retry/stop policies, and ralph-style loops. Direct excerpts are intentionally short; longer source passages are summarized. Source-paper figures are referenced through local PDF page embeds for private vault analysis rather than copied as standalone images.
 

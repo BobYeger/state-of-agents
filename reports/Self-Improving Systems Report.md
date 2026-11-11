@@ -1,5 +1,8 @@
 # Self-Improving Systems Report: Evolution Loops, Selection Policies, and Trust Rails
 
+> [!info] November 9, 2026 extension
+> Continue with [[reports/Harness Self-Improvement Update - 2026-11-09]], [[reports/Code Factories Update - 2026-11-09]], and [[reports/Memory and Dreaming Update - 2026-11-09]]. The synthesis below retains its original dated evidence base; [[reports/Research Update - 2026-11-09]] explains the new findings across these areas.
+
 Date: 2026-09-15
 Scope: local project graph only. This report is the narrative treatment of the self-improving-systems cluster; [[maps/Self-Improving Systems Map]] carries the inventory and reading order, and [[methods/self-improving code loops]] carries the method note. Revised 2026-09-15 with skill and retrieval maintenance, expert-governed knowledge edits, internal research-acceleration telemetry, and a bounded target-model alignment-training case. Direct excerpts are intentionally short; longer source passages are summarized. Source-paper figures are referenced through local PDF page embeds where used, for private vault analysis rather than public redistribution.
 

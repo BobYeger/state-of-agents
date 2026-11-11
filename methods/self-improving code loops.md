@@ -50,6 +50,21 @@ The design reading: aggregate score alone is a bad parent-selection signal, so k
 
 The best reported evolver improves the seed harness by 16.6 points and approaches a composite human-engineered baseline. Separate evolution reruns under two evolvers and three policy models improve each policy's own CodeAct baseline; they do not transplant one frozen harness between models. The result also exposes the control problem: improvement varies sharply by domain, can saturate early, and does not increase monotonically with additional iterations. Because main configurations have one run, some grading is model-based, and task construction deliberately selects for harness sensitivity, the benchmark supports “harness evolution is measurable and robust to these policy-model changes,” not a general claim that autonomous evolution matches human harness engineering.
 
+## November 2026: Admission, Transfer, and Cost
+
+The newer evidence distinguishes candidate generation from validated improvement. Label-free proposals can be useful, but a retained change needs an explicit account of its selection signal and transfer boundary. See [[reports/Harness Self-Improvement Update - 2026-11-09]] for the dated comparison.
+
+- [[sources/RRSI]]: record rejected edits and remove components that no longer earn their place.
+- [[sources/Harness2]]: distinguish persistent optimizer experience from the current task's executable harness.
+- [[sources/Harmony Harness]] and [[sources/HarnessPro]]: keep separate objectives visible instead of hiding trade-offs inside one score.
+- [[sources/Dream-RSI]]: replay can evaluate exploration allocation; it cannot generate evidence for unvisited outcomes.
+- [[sources/Retrospective Harness Adaptation Study]]: test whether an adaptation is encountered, consulted, and useful on later work.
+- [[sources/Factory Droid 1.0 Frontier Harness]]: cross-model experiments and engineer review appear in an operator's shipped improvement workflow.
+- [[sources/BOXBOX]]: task-local executable adaptation can continue an active run through hot reload.
+- [[sources/Beneath the Surface Agent Evolution]]: count lost and gained tasks, not only aggregate score changes.
+
+The resulting design recommendation is to distinguish **proposed**, **locally supported**, **retained**, and **validated on future work**. These are evidence states, not synonyms. Keep optimization expenditure separate from the cost of running the resulting harness.
+
 ## Provenance and Lineage
 
 Selection policies beyond greedy are only implementable if the archive is a lineage tree, not a best-snapshot. Every candidate needs:

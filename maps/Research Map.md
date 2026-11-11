@@ -1,5 +1,7 @@
 # Research Map
 
+Latest focused sweep: [[reports/Research Update - 2026-11-09]] covers harness self-improvement, code factories, multi-agent research, memory/dreaming, and cyber swarms/attacker findings, with primary-source evidence and ranked follow-up experiments.
+
 ## Organizing Questions
 
 - Which responsibilities should a builder retain when reusing a harness? See [[methods/agent runtime selection]].

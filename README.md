@@ -4,6 +4,8 @@ Public Obsidian vault for tracking the state of AI agents: papers, articles, pro
 
 ## How To Read
 
+Start with the [November 9 research update](reports/Research%20Update%20-%202026-11-09.md) for the latest focused sweep of harness self-improvement, code factories, multi-agent research, memory/dreaming, and cyber swarms/attacker findings.
+
 Start with [the vault index](index.md), then use the broad navigation maps:
 
 - [Research Map](maps/Research%20Map.md)

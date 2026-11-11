@@ -6,6 +6,10 @@ Multi-agent orchestration is the design of agent roles, routing, communication, 
 
 Orchestration improves agent systems when it turns task structure into explicit roles, artifacts, routing rules, and stopping conditions. The best orchestration reduces ambiguity and coordination cost rather than multiplying participants.
 
+## November 2026 Extension
+
+[[reports/Multi-Agent Research Update - 2026-11-09]] adds a second reason to communicate: reusing checked discoveries during exploration. It also makes selective retrieval and collapsing tightly coupled agents into skills explicit design alternatives. Treat older numerical thresholds below as results of their particular studies; deployment decisions need a matched single-agent and independent-parallel baseline.
+
 ## Coordination Cost Is Now Measurable
 
 The question "should this be multi-agent at all" has moved from taste to measurement. [[sources/Towards a Science of Scaling Agent Systems]] evaluates five canonical architectures across 260 configurations and 9 models: independent parallel agents amplify trace-level errors 17.2x while centralized coordination contains amplification to 4.4x; coordination returns turn negative once the single-agent baseline exceeds roughly 0.45 accuracy; and tool-heavy tasks suffer disproportionately from coordination overhead. The spread between the best and worst architecture choice on the same task runs from +80.8% to -70.0% against the single-agent baseline — architecture selection, not agent count, is the decision that matters. [[sources/MacNet]] reaches the same conclusion from the scaling side: performance follows a logistic curve in agent count, and irregular topologies beat regular ones, so the marginal agent decays while the topology choice persists.

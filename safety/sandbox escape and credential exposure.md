@@ -20,6 +20,8 @@ The control unit is the transitive trust graph, not the sandbox process: reachab
 
 ## Related
 
+The October follow-up, [[reports/Cyber Swarms and Attacker Findings - 2026-11-09]], distinguishes additional fleet observations from demonstrated coordination. [[sources/METR Redwood Internal Agent Monitoring Red Team]] also separates monitoring eligibility from detection and documents the limits of remediation verification. These are distinct evidence streams from the July incident above.
+
 - [[operations/sandboxes]]
 - [[operations/permissions]]
 - [[safety/agent safety and security]]

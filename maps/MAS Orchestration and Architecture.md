@@ -4,6 +4,10 @@ This map collects the major sources for designing multi-agent systems as archite
 
 The organizing question is: what coordination structure should exist for a given task, and what control plane makes that structure reliable, observable, and cost-aware?
 
+## November 9 Research Update
+
+[[reports/Multi-Agent Research Update - 2026-11-09]] adds verified progress sharing, selective shared-store retrieval, adaptive context boundaries, and architecture simplification. Its source cards distinguish benchmark capability from delivered-answer selection, and separate author experiments from vendor observations. Start there for September–October developments and a proposed comparison protocol.
+
 ## Architecture Families
 
 | Pattern | What It Optimizes | Anchor Sources |
@@ -32,7 +36,7 @@ The organizing question is: what coordination structure should exist for a given
 ## Design Heuristics
 
 - Start with task structure. Parallelizable, broad, context-heavy tasks justify different orchestration than sequential reasoning tasks.
-- Try the single-agent baseline first; add sequential, parallel, or evaluator-optimizer workflow structure only when it addresses a specific dependency, latency, or quality problem. Measured version: coordination yields diminishing or negative returns once the single-agent baseline exceeds roughly 0.45 accuracy, and tool-heavy tasks pay disproportionate coordination overhead ([[sources/Towards a Science of Scaling Agent Systems]]).
+- Try the single-agent baseline first; add sequential, parallel, or evaluator-optimizer workflow structure only when it addresses a specific dependency, latency, or quality problem. In one study, coordination yields diminishing or negative returns once the single-agent baseline exceeds roughly 0.45 accuracy, and tool-heavy tasks pay disproportionate coordination overhead ([[sources/Towards a Science of Scaling Agent Systems]]). That study-specific threshold is not a universal deployment rule; compare against independent parallel attempts on the actual workload.
 - Distinguish dividing the task (orchestration, [[methods/topology optimization]]) from re-asking the same question (aggregation, [[methods/debate and aggregation]]); for the latter, establish the self-consistency baseline before paying for debate.
 - Add a central orchestrator when task decomposition, progress tracking, and recovery matter more than decentralization.
 - Use agent teams only when teammate context, clear ownership, shared state, and team-level verification justify the coordination overhead.

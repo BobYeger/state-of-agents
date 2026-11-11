@@ -19,6 +19,8 @@ Other vendor cards worth routing to directly: [[sources/OpenHands Software Agent
 
 ## Route Through Hubs
 
+[[systems/HumanLayer]] is an open implementation of coding-agent orchestration across desktop/web interfaces and host daemons, with staged artifacts and configurable workflow transitions. Its current core replaces the earlier repository contents; [[sources/HumanLayer Open Source Agent Orchestration]] preserves that release distinction and the reviewed commit.
+
 - [[methods/agent runtime selection]] — choose which runtime layers to reuse and which application contracts to own; frameworks and managed harnesses can compose.
 - [[systems/personal assistant agents]] — persistent personal products and their research lineage, distinct from reusable runtime components.
 - [[systems/agent frameworks and orchestration libraries]]

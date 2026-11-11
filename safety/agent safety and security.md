@@ -16,6 +16,8 @@ Agent safety covers the risks created when models can act, use tools, access pri
 
 ## Persistent Harness Carriers
 
+For observed deployments, see [[reports/Cyber Swarms and Attacker Findings - 2026-11-09]]. Treat operator intent, delegated authority, coordination, successful intrusion, and AI's causal contribution as separate claims. [[sources/PHP2Shell Exploitation Observations]] illustrates why evidence of compromise can be stronger than evidence about how the attacker developed its tools.
+
 Agent security is temporal as well as per-request. [[sources/HarnessSafe]] models a Persistent-Risk Lifecycle in which attacker-influenced content enters during one task, survives through memory, skills, MCP/tools, summaries, subagents, or shared artifacts, and is activated later by an otherwise benign request. Its 328 executable cases use trace-based stage scoring to show where a chain enters, persists, crosses a boundary, triggers, and finally causes a violation.
 
 The main design lesson is that containment belongs to the model–harness configuration and to the entire carrier lifecycle. A scanner or prompt defense at ingestion is not sufficient if transformed content later crosses into a trusted summary, generated skill, delegated context, or shared artifact. Provenance, taint, expiry, re-validation at trust-boundary crossings, and stage-level traces must follow persistent state after the original session ends. The benchmark is a new preprint with mostly one run per configuration, so its per-harness ordering should not be treated as a stable product ranking.

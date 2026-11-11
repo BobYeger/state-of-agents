@@ -2,6 +2,8 @@
 
 Use this as a navigation page for agent safety, security, and robustness. Source evidence should be reached through the linked safety notes.
 
+Latest review: [[reports/Cyber Swarms and Attacker Findings - 2026-11-09]] separates malicious deployments, rogue fleets and swarms, monitoring findings, and vulnerability-research pipelines. October disclosures retain their actual event dates and attribution limits.
+
 ## Core Notes
 
 - [[safety/agent safety and security]]

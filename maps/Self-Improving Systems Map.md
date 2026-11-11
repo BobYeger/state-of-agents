@@ -22,6 +22,19 @@ The organizing question is how an improvement loop measures and retains useful c
 | [[safety/reward hacking]] | What happens when the loop optimizes the evaluator instead of the task |
 | [[maps/Code Factory Playbook]] | The lifecycle walk: which stage has which evidence at which maturity |
 
+## November 9 Research Refresh
+
+[[reports/Harness Self-Improvement Update - 2026-11-09]] compares the new tranche and ranks follow-up experiments. Start with [[sources/Retrospective Harness Adaptation Study]] for the evidence standard, then read:
+
+- [[sources/RRSI]] — search regularization.
+- [[sources/Harness2]] — two adaptation lifecycles.
+- [[sources/Harmony Harness]] — functionality/security composition.
+- [[sources/HarnessPro]] — performance/cost selection.
+- [[sources/Dream-RSI]] — exploration-policy replay.
+- [[sources/Factory Droid 1.0 Frontier Harness]] — deployed operator loop.
+- [[sources/Beneath the Surface Agent Evolution]] — preservation-aware evaluation.
+- [[sources/BOXBOX]] — adaptation during execution.
+
 ## Reading Order
 
 ### 1. Foundations
